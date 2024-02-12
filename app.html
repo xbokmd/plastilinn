@@ -33,6 +33,12 @@
           <input type="file" id="markdownFileInput" accept=".md">
           <!-- Botón de Descarga -->
           <button id="downloadBtn" class="btn btn-primary">Descargar Modelo de Negocio</button>
+          <div class="mb-3">
+            <label for="tagsFilter" class="form-label">Filtrar por etiquetas:</label>
+            <select class="form-select" id="tagsFilter" multiple>
+                <!-- Las opciones se llenarán dinámicamente con JavaScript -->
+            </select>
+        </div>
           <div id="markdownContent"></div>
       </div>
   </div>
@@ -89,9 +95,9 @@
 <style>
 .line-container {
     display: grid;
-    grid-template-columns: 20% 80%; /* Asigna explícitamente 20% del ancho a las etiquetas y 80% al textarea */
-    gap: 10px; /* Espacio entre las columnas */
-    align-items: start; /* Alinea los elementos al inicio */
+    grid-template-columns: 20% 80%; /* Distribución de columnas */
+    gap: 10px; /* Espacio entre columnas */
+    align-items: start; /* Alineación de elementos */
     margin-bottom: 10px;
 }
 
@@ -99,21 +105,25 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    background-color: #f8f9fa; /* Fondo ligeramente gris para el contenedor de etiquetas */
+    padding: 5px; /* Añade un poco de relleno alrededor de las etiquetas */
 }
 
 .tags-container span {
-    background-color: #e1e1e1;
+    background-color: #e1e1e1; /* Color de fondo de las etiquetas */
     padding: 2px 5px;
     margin: 2px 0;
     border-radius: 3px;
 }
 
 textarea {
-    width: 100%; /* Asegura que el textarea ocupe todo el espacio asignado a su columna */
+    width: 100%; /* Ocupa el espacio asignado */
     min-height: 20px;
     max-height: 400px;
     overflow-y: hidden;
-    resize: vertical; /* Permite al usuario ajustar la altura del textarea, si lo deseas */
+    resize: vertical; /* Permite ajustar la altura */
+    border: 1px solid #dcdcdc; /* Borde gris clarito */
+    padding: 4px; /* Espaciado interno para el texto */
 }
 </style>
 
@@ -220,6 +230,58 @@ textarea {
     } else {
         initApp();
     }
+</script>
+
+<script>
+let allTags = new Set(); // Almacena todas las etiquetas únicas
+
+// Evento que se dispara cuando se selecciona un archivo
+markdownInput.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (!file) {
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const content = e.target.result;
+        const lines = content.split(/\r?\n/); // Divide el contenido en líneas
+        allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
+
+        lines.forEach((line, index) => {
+            const tags = line.match(/#[^\s#]+/g) || []; // Busca etiquetas en la línea actual
+            tags.forEach(tag => allTags.add(tag)); // Añade las etiquetas encontradas al conjunto de todas las etiquetas
+        });
+
+        // Luego de procesar todas las líneas, actualiza el selector de etiquetas
+        updateTagsDropdown(Array.from(allTags));
+    };
+    reader.readAsText(file);
+});
+function updateTagsDropdown(tags) {
+    const tagsFilter = document.getElementById('tagsFilter');
+    tagsFilter.innerHTML = ''; // Limpia opciones existentes
+    tags.forEach(tag => {
+        const option = document.createElement('option');
+        option.value = tag;
+        option.textContent = tag;
+        tagsFilter.appendChild(option); // Añade la opción al selector
+    });
+}
+tagsFilter.addEventListener('change', function() {
+    filterLinesBySelectedTags();
+});
+
+function filterLinesBySelectedTags() {
+    const selectedTags = Array.from(document.getElementById('tagsFilter').selectedOptions).map(option => option.value);
+    const lines = document.querySelectorAll('.line-container');
+    
+    lines.forEach(line => {
+        const lineTags = Array.from(line.querySelectorAll('.tags-container span')).map(span => span.textContent);
+        const isLineVisible = selectedTags.every(selectedTag => lineTags.includes(selectedTag));
+        line.style.display = isLineVisible ? '' : 'none';
+    });
+}
 </script>
 
 
