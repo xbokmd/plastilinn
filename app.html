@@ -81,11 +81,28 @@
         });
     </script>
 <style>
+    .line-container {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+    .tags-container {
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .tags-container span {
+        background-color: #e1e1e1;
+        padding: 2px 5px;
+        margin: 2px 0;
+        border-radius: 3px;
+    }
     textarea {
-        width: 100%; /* Ajusta esto según necesites */
-        min-height: 20px; /* Altura mínima inicial */
-        max-height: 400px; /* Altura máxima */
-        overflow-y: hidden; /* Evita el scrollbar inicialmente */
+        width: calc(100% - 120px); /* Ajusta según el espacio que quieras dejar para los tags */
+        min-height: 20px;
+        max-height: 400px;
+        overflow-y: hidden;
     }
 </style>
 
@@ -104,17 +121,29 @@
             reader.onload = function(e) {
                 const content = e.target.result;
                 const lines = content.split(/\r?\n/);
-                markdownContent.innerHTML = ''; // Limpia el contenido previo
+                markdownContent.innerHTML = '';
 
                 lines.forEach((line, index) => {
+                    const container = document.createElement('div');
+                    container.className = 'line-container';
+
+                    const tagsContainer = document.createElement('div');
+                    tagsContainer.className = 'tags-container';
+
                     const textarea = document.createElement('textarea');
                     textarea.value = line;
                     textarea.dataset.lineNumber = index;
                     textarea.oninput = function() {
                         adjustTextareaHeight(this);
+                        updateTagsList(this, tagsContainer);
                     };
-                    markdownContent.appendChild(textarea);
-                    adjustTextareaHeight(textarea); // Ajusta la altura inicialmente
+
+                    container.appendChild(tagsContainer);
+                    container.appendChild(textarea);
+                    markdownContent.appendChild(container);
+
+                    adjustTextareaHeight(textarea);
+                    updateTagsList(textarea, tagsContainer); // Actualiza los tags inicialmente
                 });
             };
             reader.readAsText(file);
@@ -127,7 +156,7 @@
         const maxHeight = 400; // Máximo de altura en píxeles
         textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`; // Ajusta altura
 
-        document.getElementById('downloadBtn').addEventListener('click', downloadModel);
+                    document.getElementById('downloadBtn').addEventListener('click', downloadModel);
         }
 
     function downloadModel() {
@@ -164,13 +193,22 @@
             document.body.removeChild(element);
         }
 
-        // Llama a initApp directamente si Marked.js ya está cargado, o después de cargarlo
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initApp);
-        } else {
-            initApp();
-        }
+        function updateTagsList(textarea, tagsContainer) {
+        const tags = textarea.value.match(/#[^\s#]+/g) || [];
+        tagsContainer.innerHTML = ''; // Limpia los tags anteriores
 
+        tags.forEach(tag => {
+            const tagElement = document.createElement('span');
+            tagElement.textContent = tag;
+            tagsContainer.appendChild(tagElement);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+        initApp();
+    }
 </script>
 
 
