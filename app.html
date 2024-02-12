@@ -1,119 +1,178 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Model Information with Tabs</title>
-    <style>
-        /* Estilos básicos para las pestañas */
-        .tab {
-            overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
-        }
-        .tab button {
-            background-color: inherit;
-            float: left;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 16px;
-            transition: 0.3s;
-        }
-        .tab button:hover {
-            background-color: #ddd;
-        }
-        .tab button.active {
-            background-color: #ccc;
-        }
-        .tabcontent {
-            display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
-        }
-        /* Estilos para la lista y la ventana emergente */
-        .info-list li {
-            margin-bottom: 10px;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border: 1px solid #000;
-            background-color: #fff;
-            padding: 20px;
-            z-index: 1000;
-        }
-        .overlay {
-            display: none;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 500;
-        }
-    </style>
+    <title>Web App con Pestañas</title>
+    <!-- Incluir jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Marked.js para procesar Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/lib/marked.umd.min.js" onload="initApp()"></script>
 </head>
-<body>
+<body class="container py-5">
+    <h2 class="mb-4">Simplified Model Information</h2>
 
-<h2>Model Information with Tabs</h2>
+    <!-- Pestañas -->
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#metaModel" data-toggle="tab">Meta Model</a></li>
+        <li><a href="#model" data-toggle="tab">Model</a></li>
+    </ul>
 
-<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'Classes')">Classes</button>
-  <button class="tablinks" onclick="openTab(event, 'Markers')">Markers</button>
-  <button class="tablinks" onclick="openTab(event, 'Sections')">Sections</button>
-</div>
+    <!-- Contenido de las pestañas -->
+    <div class="tab-content">
+        <div id="metaModel" class="tab-pane fade in active">
+            <h3>Meta Model</h3>
+            <div id="sectionsTableContainer"></div>
+        </div>
+        <div id="model" class="tab-pane fade">
+            <h3>Model</h3>
+            <input type="file" id="markdownFileInput" accept=".md">
+            <!-- Botón de Descarga -->
+            <button id="downloadBtn">Descargar Modelo de Negocio</button>
+            <div id="markdownContent"></div>
+        </div>
+    </div>
 
-<div id="Classes" class="tabcontent">
-  <div id="classesList"></div>
-</div>
+    <script>
+        // Tu script de JavaScript para crear la tabla, etc.
+        function createSectionsTable(sections) {
+            const table = document.createElement('table');
+            table.className = 'table';
 
-<div id="Markers" class="tabcontent">
-  <div id="markersList"></div>
-</div>
+            // Crear cabecera de la tabla
+            const thead = document.createElement('thead');
+            const headerRow = document.createElement('tr');
+            const headerCell = document.createElement('th');
+            headerCell.textContent = 'Section Name';
+            headerRow.appendChild(headerCell);
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
 
-<div id="Sections" class="tabcontent">
-  <div id="sectionsList"></div>
-</div>
+            // Crear cuerpo de la tabla
+            const tbody = document.createElement('tbody');
+            sections.forEach(section => {
+                const row = document.createElement('tr');
+                const cell = document.createElement('td');
+                cell.textContent = section.name; // Asume que cada sección tiene un atributo 'name'
+                row.appendChild(cell);
+                tbody.appendChild(row);
+            });
+            table.appendChild(tbody);
 
-<div id="popup" class="popup"></div>
-<div id="overlay" class="overlay" onclick="closePopup()"></div>
+            // Agregar la tabla al contenedor
+            const container = document.getElementById('sectionsTableContainer');
+            container.innerHTML = ''; // Limpiar contenido previo
+            container.appendChild(table);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cargar datos JSON y crear la tabla de secciones
+            fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
+            .then(response => response.json())
+            .then(data => {
+                // Suponiendo que 'sections' es una clave en tu JSON
+                createSectionsTable(data.sections);
+            })
+            .catch(error => console.error('Error loading the JSON:', error));
+        });
+    </script>
+<style>
+    textarea {
+        width: 100%; /* Ajusta esto según necesites */
+        min-height: 20px; /* Altura mínima inicial */
+        max-height: 400px; /* Altura máxima */
+        overflow-y: hidden; /* Evita el scrollbar inicialmente */
+    }
+</style>
 
 <script>
-// Cargar datos JSON y crear listas
-fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
-    .then(response => response.json())
-    .then(data => {
-        createList('Classes', data.classes);
-        createList('Markers', data.markers);
-        createList('Sections', data.sections);
-    }).catch(error => console.error('Error loading the JSON:', error));
+    function initApp() {
+        const markdownInput = document.getElementById('markdownFileInput');
+        const markdownContent = document.getElementById('markdownContent');
 
-function createList(category, items) {
-    var listHtml = `<ul class="info-list">`;
-    items.forEach((item, index) => {
-        listHtml += `<li>
-                        ${item.icon || ''} ${item.classes || item.marker || item.name}
-                        <a href="#" onclick="showPopup('${category}', ${index})">View More</a>
-                     </li>`;
-    });
-    listHtml += '</ul>';
-    document.getElementById(`${category}List`).innerHTML = listHtml;
-}
+        markdownInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (!file) {
+                return;
+            }
 
-function showPopup(category, index) {
-    fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
-        .then(response => response.json())
-        .then(data => {
-            var item = data[category.toLowerCase()][index];
-            var popupHtml = `<strong>${category}:</strong> ${item.classes || item.marker || item.name}<br>`;
-            Object.keys(item).forEach(key => {
-                popupHtml += `<strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${item[key]}<br>`;
-            });
-            document.getElementById('popup').innerHTML = popupHtml;
-            document.getElementById('popup').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const content = e.target.result;
+                const lines = content.split(/\r?\n/);
+                markdownContent.innerHTML = ''; // Limpia el contenido previo
+
+                lines.forEach((line, index) => {
+                    const textarea = document.createElement('textarea');
+                    textarea.value = line;
+                    textarea.dataset.lineNumber = index;
+                    textarea.oninput = function() {
+                        adjustTextareaHeight(this);
+                    };
+                    markdownContent.appendChild(textarea);
+                    adjustTextareaHeight(textarea); // Ajusta la altura inicialmente
+                });
+            };
+            reader.readAsText(file);
         });
+    }
+
+    // Función para ajustar la altura del textarea basándose en su contenido
+    function adjustTextareaHeight(textarea) {
+        textarea.style.height = 'auto'; // Resetea la altura para obtener el scrollHeight correcto
+        const maxHeight = 400; // Máximo de altura en píxeles
+        textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`; // Ajusta altura
+
+        document.getElementById('downloadBtn').addEventListener('click', downloadModel);
+        }
+
+    function downloadModel() {
+            const textareas = document.querySelectorAll('textarea');
+            let fileContent = '';
+            textareas.forEach(textarea => {
+                fileContent += textarea.value + '\n'; // Añade un salto de línea después de cada área de texto
+            });
+
+            const fileName = `Business model ${formatDate(new Date())}.md`;
+            downloadFile(fileName, fileContent);
+        }
+
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = (`0${date.getMonth() + 1}`).slice(-2);
+            const day = (`0${date.getDate()}`).slice(-2);
+            const hours = (`0${date.getHours()}`).slice(-2);
+            const minutes = (`0${date.getMinutes()}`).slice(-2);
+            const seconds = (`0${date.getSeconds()}`).slice(-2);
+            return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
+        }
+
+        function downloadFile(fileName, content) {
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+            element.setAttribute('download', fileName);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+        // Llama a initApp directamente si Marked.js ya está cargado, o después de cargarlo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
+
+</script>
+
+
+</body>
+</html>
