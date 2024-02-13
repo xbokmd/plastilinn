@@ -130,6 +130,32 @@ function createSectionsTable(sections) {
 document.addEventListener('DOMContentLoaded', function() {
     const markdownInput = document.getElementById('markdownFileInput');
     const markdownLinesDiv = document.getElementById('markdown-lines');
+    let sections = []; // Este array debe contener los nombres de las secciones
+
+    // Carga los nombres de las secciones desde el JSON
+    fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
+    .then(response => response.json())
+    .then(data => {
+        // Asume que data.sections contiene tus secciones y que cada sección tiene un atributo 'name'
+        sections = data.sections.map(section => section.name);
+        // Ahora sections contiene los nombres de todas tus secciones
+    })
+    .catch(error => console.error('Error al cargar los nombres de las secciones:', error));
+
+    // Función para procesar el título y determinar si coincide con alguna sección
+    function processModelTitle(line) {
+    // Elimina espacios en blanco y guiones iniciales, todas las etiquetas, cualquier cantidad de '#', y los caracteres '[[' y ']]'
+    let title = line.replace(/^[\s-]*/, '')
+                     .replace(/#\S+/g, '')
+                     .replace(/#+/g, '')
+                     .replace(/\[\[/g, '')
+                     .replace(/\]\]/g, '')
+                     .trim();
+    let isSection = sections.includes(title) ? "Yes" : "No";
+    return { title, isSection };
+    }
+
+
 
     markdownInput.addEventListener('change', function(event) {
         const file = event.target.files[0];
@@ -141,32 +167,38 @@ document.addEventListener('DOMContentLoaded', function() {
         reader.onload = function(e) {
             const content = e.target.result;
             const lines = content.split(/\r?\n/);
-            const processedLinesArray = []; // Array para almacenar líneas procesadas
+            markdownLinesDiv.innerHTML = ''; 
 
-            // Procesa cada línea según las especificaciones
-            lines.forEach(line => {
-                // Elimina espacios en blanco y guiones iniciales para el campo title
-                let title = line.replace(/^[\s-]*/, '').replace(/#\S+/g, '').trim();
+            markdownLinesDiv.style.display = 'grid';
+            markdownLinesDiv.style.gridTemplateColumns = '1fr 1fr';
+            markdownLinesDiv.style.gap = '10px';
 
-                // Almacena tanto la línea original como el título procesado
-                processedLinesArray.push({line: line, title: title});
-            });
+            lines.forEach((line, index) => {
+                const result = processModelTitle(line); // Procesa cada línea usando la función
 
-            // Limpia el contenido previo del div
-            markdownLinesDiv.innerHTML = '';
+                const titleDiv = document.createElement('div');
+                titleDiv.textContent = `Title: ${result.title}, Section: ${result.isSection}`;
 
-            // Escribe cada línea y título procesado en el div
-            processedLinesArray.forEach(item => {
-                const p = document.createElement('p');
-                p.innerHTML = `<strong>Line:</strong> ${item.line} <br> <strong>Title:</strong> ${item.title}`; // Muestra ambos campos
-                markdownLinesDiv.appendChild(p);
+                const lineTextarea = document.createElement('textarea');
+                lineTextarea.value = line;
+                lineTextarea.style.width = '100%';
+                lineTextarea.oninput = function() {
+                    // Actualiza dinámicamente al editar
+                    const update = processModelTitle(this.value);
+                    titleDiv.textContent = `Title: ${update.title}, Section: ${update.isSection}`;
+                };
+
+                markdownLinesDiv.appendChild(titleDiv);
+                markdownLinesDiv.appendChild(lineTextarea);
             });
         };
         reader.readAsText(file);
     });
 });
 
-</script>
+
+  </script>
+  
 
 <!-- script model -->
 <script>

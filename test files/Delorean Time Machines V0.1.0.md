@@ -1,5 +1,8 @@
 Delorean Time Machines
 github.com/plastilinn/bm-0-1-0
+
+organization values
+
 - ## [[business summary]]
   - Who are your clients?
     - Historians #** #??? #¡
