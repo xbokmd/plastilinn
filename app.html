@@ -306,86 +306,6 @@ displayTags();
       const markdownContent = document.getElementById('markdownContent');
       const tagsFilter = document.getElementById('tagsFilter');
       let allTags = new Set(); // Almacena todas las etiquetas únicas
-  
-      markdownInput.addEventListener('change', function(event) {
-          const file = event.target.files[0];
-          if (!file) {
-              return;
-          }
-  
-          const reader = new FileReader();
-          reader.onload = function(e) {
-              const content = e.target.result;
-              const lines = content.split(/\r?\n/); // Divide el contenido en líneas
-              allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
-              markdownContent.innerHTML = ''; // Limpia el contenido anterior
-  
-              lines.forEach((line, index) => {
-                  const container = document.createElement('div');
-                  container.className = 'line-container';
-  
-                  const tagsContainer = document.createElement('div');
-                  tagsContainer.className = 'tags-container';
-  
-                  const textarea = document.createElement('textarea');
-                  textarea.value = line;
-                  textarea.dataset.lineNumber = index;
-                  textarea.oninput = function() {
-                      adjustTextareaHeight(this);
-                      updateTagsList(this, tagsContainer);
-                  };
-  
-                  container.appendChild(tagsContainer);
-                  container.appendChild(textarea);
-                  markdownContent.appendChild(container);
-  
-                  adjustTextareaHeight(textarea);
-                  updateTagsList(textarea, tagsContainer); // Actualiza los tags inicialmente
-  
-                  // Procesa etiquetas para el dropdown, removiendo el '#' y evitando duplicados
-                  const tags = line.match(/(?<=\s)#([^\s#]+)/g) || [];
-                  tags.forEach(tag => {
-                      allTags.add(tag.substring(1)); // Añade solo el texto de la etiqueta, sin el '#'
-                  });
-              });
-  
-              updateTagsDropdown(Array.from(allTags)); // Actualiza el dropdown después de procesar todas las líneas
-          };
-          reader.readAsText(file);
-      });
-  
-      function adjustTextareaHeight(textarea) {
-          textarea.style.height = 'auto'; // Resetea la altura para obtener el scrollHeight correcto
-          const maxHeight = 400; // Máximo de altura en píxeles
-          textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`; // Ajusta altura
-      }
-  
-      function updateTagsList(textarea, tagsContainer) {
-    // Procesamiento del contenido del textarea
-    let content = textarea.value;
-    // Eliminar espacios en blanco y guiones previos al primer carácter o número
-    content = content.replace(/^[\s-]*/, '');
-
-    // Limpieza de tagsContainer antes de agregar contenido procesado o tags
-    tagsContainer.innerHTML = ''; 
-
-    // Crear y agregar el contenido procesado al tagsContainer
-    const processedContentDisplay = document.createElement('div');
-    processedContentDisplay.className = 'processed-content';
-    processedContentDisplay.textContent = content; // Asigna el contenido procesado
-    tagsContainer.appendChild(processedContentDisplay);
-
-    // Proceso existente para manejar las etiquetas (si es necesario)
-    const tags = content.match(/(?<=\s)#([^\s#]+)/g) || [];
-    tags.forEach(tag => {
-        const tagElement = document.createElement('span');
-        const tagClass = tag.substring(1); // Obtiene el texto de la etiqueta sin el '#'
-        tagElement.classList.add(tagClass);
-        tagElement.textContent = tagClass; // Asigna el texto de la etiqueta
-        tagsContainer.appendChild(tagElement); // Agrega la etiqueta al tagsContainer
-    });
-}
-
 
         document.getElementById('downloadBtn').addEventListener('click', downloadModel);
 
@@ -422,9 +342,7 @@ displayTags();
 
             document.body.removeChild(element);
         }
-  
 
-  
       // Función para filtrar líneas por etiquetas seleccionadas
       tagsFilter.addEventListener('change', filterLinesBySelectedTags);
   
