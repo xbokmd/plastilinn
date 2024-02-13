@@ -153,7 +153,7 @@
           textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`; // Ajusta altura
       }
   
-      function updateTagsList(textarea, tagsContainer) {
+function updateTagsList(textarea, tagsContainer) {
     // Procesamiento del contenido del textarea para eliminar espacios iniciales y guiones
     let content = textarea.value;
     content = content.replace(/^[\s-]*/, '');
