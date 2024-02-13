@@ -1,0 +1,79 @@
+<style>
+.line-container {
+    display: grid;
+    grid-template-columns: 20% 80%; /* Distribución de columnas */
+    gap: 10px; /* Espacio entre columnas */
+    align-items: start; /* Alineación de elementos */
+    margin-bottom: 10px;
+}
+
+.tags-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #f8f9fa; /* Fondo ligeramente gris para el contenedor de etiquetas */
+    padding: 5px; /* Añade un poco de relleno alrededor de las etiquetas */
+}
+
+.tags-container span {
+    background-color: #e1e1e1; /* Color de fondo de las etiquetas */
+    padding: 2px 5px;
+    margin: 2px 0;
+    border-radius: 3px;
+}
+
+textarea {
+    width: 100%; /* Ocupa el espacio asignado */
+    min-height: 20px;
+    max-height: 400px;
+    overflow-y: hidden;
+    resize: vertical; /* Permite ajustar la altura */
+    border: 1px solid #dcdcdc; /* Borde gris clarito */
+    padding: 4px; /* Espaciado interno para el texto */
+}
+
+span.key { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span.key::before { content: "🔑"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.organization { position: relative; padding-left: 25px;  background-color: lightblue; } span.organization::before { content: "🏢"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.journey { position: relative; padding-left: 25px;  background-color: lightblue; } span.journey::before { content: "✈️"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.assumption { position: relative; padding-left: 25px;  background-color: lightblue; } span.assumption::before { content: "🔮"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.solution { position: relative; padding-left: 25px;  background-color: lightblue; } span.solution::before { content: "💊"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.offering { position: relative; padding-left: 25px;  background-color: lightblue; } span.offering::before { content: "🛍️"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.work { position: relative; padding-left: 25px;  background-color: lightblue; } span.work::before { content: "⚙️"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.metric { position: relative; padding-left: 25px;  background-color: lightblue; } span.metric::before { content: "📐"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.asset { position: relative; padding-left: 25px;  background-color: lightblue; } span.asset::before { content: "⭐"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.revenue { position: relative; padding-left: 25px;  background-color: lightblue; } span.revenue::before { content: "💰"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.segmentation { position: relative; padding-left: 25px;  background-color: lightblue; } span.segmentation::before { content: "✂️"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.segment { position: relative; padding-left: 25px;  background-color: lightblue; } span.segment::before { content: "🙋"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.segment { position: relative; padding-left: 25px;  background-color: lightblue; } span.segment::before { content: "🙋"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.value { position: relative; padding-left: 25px;  background-color: lightblue; } span.value::before { content: "💎"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.channel { position: relative; padding-left: 25px;  background-color: lightblue; } span.channel::before { content: "🎙️"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.cost { position: relative; padding-left: 25px;  background-color: lightblue; } span.cost::before { content: "💸"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.emotion { position: relative; padding-left: 25px;  background-color: lightblue; } span.emotion::before { content: "😐"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.message { position: relative; padding-left: 25px;  background-color: lightblue; } span.message::before { content: "📣"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.feature { position: relative; padding-left: 25px;  background-color: lightblue; } span.feature::before { content: "🌟"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.function { position: relative; padding-left: 25px;  background-color: lightblue; } span.function::before { content: "👔"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.goal { position: relative; padding-left: 25px;  background-color: lightblue; } span.goal::before { content: "🎯"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.hypothesis { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span.hypothesis::before { content: "🔎"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.person { position: relative; padding-left: 25px;  background-color: lightblue; } span.person::before { content: "👤"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.transaction { position: relative; padding-left: 25px;  background-color: lightblue; } span.transaction::before { content: "🛒"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.risk { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span.risk::before { content: "🚨"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.experiment { position: relative; padding-left: 25px;  background-color: #90EE90; } span.experiment::before { content: "🧪"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.question { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span.question::before { content: "💭"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.insight { position: relative; padding-left: 25px;  background-color: #90EE90; } span.insight::before { content: "💡"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.position { position: relative; padding-left: 25px;  background-color: lightblue; } span.position::before { content: "🪪"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.skill { position: relative; padding-left: 25px;  background-color: lightblue; } span.skill::before { content: "🔧"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.phase { position: relative; padding-left: 25px;  background-color: lightblue; } span.phase::before { content: "🗓️"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.milestone { position: relative; padding-left: 25px;  background-color: lightblue; } span.milestone::before { content: "🏁"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.role { position: relative; padding-left: 25px;  background-color: lightblue; } span.role::before { content: "🎩"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.stakeholder { position: relative; padding-left: 25px;  background-color: lightblue; } span.stakeholder::before { content: "👀"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.persona { position: relative; padding-left: 25px;  background-color: lightblue; } span.persona::before { content: "👩‍💼"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.topic { position: relative; padding-left: 25px;  background-color: lightgrey; } span.topic::before { content: "🗄️"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.resource { position: relative; padding-left: 25px;  background-color: lightgrey; } span.resource::before { content: "🖥️"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.artifact { position: relative; padding-left: 25px;  background-color: lightblue; } span.artifact::before { content: "🧿"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.unit { position: relative; padding-left: 25px;  background-color: lightgrey; } span.unit::before { content: "📓"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.content { position: relative; padding-left: 25px;  background-color: lightblue; } span.content::before { content: "📘"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.AI { position: relative; padding-left: 25px;  background-color: lightblue; } span.AI::before { content: "🤖"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.help { position: relative; padding-left: 25px;  background-color: lightgrey; } span.help::before { content: "🌐"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+span.block { position: relative; padding-left: 25px;  background-color: lightblue; } span.block::before { content: "🧿"; position: absolute; left: 0; top: 0; margin-right: 5px; }
+
+</style>

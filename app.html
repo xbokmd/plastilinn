@@ -8,40 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <!-- Bootstrap Icons para usar iconos si es necesario -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <style>
-      .line-container {
-          display: grid;
-          grid-template-columns: 20% 80%; /* Distribución de columnas */
-          gap: 10px; /* Espacio entre columnas */
-          align-items: start; /* Alineación de elementos */
-          margin-bottom: 10px;
-      }
-      
-      .tags-container {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          background-color: #f8f9fa; /* Fondo ligeramente gris para el contenedor de etiquetas */
-          padding: 5px; /* Añade un poco de relleno alrededor de las etiquetas */
-      }
-      
-      .tags-container span {
-          background-color: #e1e1e1; /* Color de fondo de las etiquetas */
-          padding: 2px 5px;
-          margin: 2px 0;
-          border-radius: 3px;
-      }
-      
-      textarea {
-          width: 100%; /* Ocupa el espacio asignado */
-          min-height: 20px;
-          max-height: 400px;
-          overflow-y: hidden;
-          resize: vertical; /* Permite ajustar la altura */
-          border: 1px solid #dcdcdc; /* Borde gris clarito */
-          padding: 4px; /* Espaciado interno para el texto */
-      }
-      </style>
+
   </head>
 <body class="container py-5">
     <h2 class="mb-4">Model Information</h2>
@@ -49,26 +16,24 @@
     <!-- Pestañas actualizadas para Bootstrap 5 -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="metaModel-tab" data-bs-toggle="tab" data-bs-target="#metaModel" type="button" role="tab" aria-controls="metaModel" aria-selected="true">Meta Modelo</button>
+          <button class="nav-link" id="model-tab" data-bs-toggle="tab" data-bs-target="#model" type="button" role="tab" aria-controls="model" aria-selected="false">Model</button>
       </li>
       <li class="nav-item" role="presentation">
-          <button class="nav-link" id="model-tab" data-bs-toggle="tab" data-bs-target="#model" type="button" role="tab" aria-controls="model" aria-selected="false">Modelo</button>
-      </li>
-  </ul>
+        <button class="nav-link active" id="metaModel-tab" data-bs-toggle="tab" data-bs-target="#metaModel" type="button" role="tab" aria-controls="metaModel" aria-selected="true">Metamodel</button>
+    </li>
+    </ul>
 
   <!-- Contenido de las pestañas para Bootstrap 5 -->
   <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="metaModel" role="tabpanel" aria-labelledby="metaModel-tab">
-          <h3>Meta Modelo</h3>
           <div id="sectionsTableContainer"></div>
       </div>
       <div class="tab-pane fade" id="model" role="tabpanel" aria-labelledby="model-tab">
-          <h3>Modelo</h3>
           <input type="file" id="markdownFileInput" accept=".md">
           <!-- Botón de Descarga -->
-          <button id="downloadBtn" class="btn btn-primary">Descargar Modelo de Negocio</button>
+          <button id="downloadBtn" class="btn btn-primary">Download</button>
           <div class="mb-3">
-            <label for="tagsFilter" class="form-label">Filtrar por etiquetas:</label>
+            <label for="tagsFilter" class="form-label">Filter by tags:</label>
             <select class="form-select" id="tagsFilter" multiple>
                 <!-- Las opciones se llenarán dinámicamente con JavaScript -->
             </select>
@@ -130,179 +95,101 @@
 <!-- script model -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-      // Variables globales
-      let allTags = new Set(); // Almacena todas las etiquetas únicas
       const markdownInput = document.getElementById('markdownFileInput');
       const markdownContent = document.getElementById('markdownContent');
       const tagsFilter = document.getElementById('tagsFilter');
+      let allTags = new Set(); // Almacena todas las etiquetas únicas
   
-      // Aquí irían todas tus funciones definidas: initApp, createSectionsTable, adjustTextareaHeight, downloadModel, formatDate, downloadFile, updateTagsList, updateTagsDropdown, filterLinesBySelectedTags
-      function initApp() {
-        const markdownInput = document.getElementById('markdownFileInput');
-        const markdownContent = document.getElementById('markdownContent');
-
-        markdownInput.addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (!file) {
-                return;
-            }
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const content = e.target.result;
-                const lines = content.split(/\r?\n/);
-                markdownContent.innerHTML = '';
-
-                lines.forEach((line, index) => {
-                    const container = document.createElement('div');
-                    container.className = 'line-container';
-
-                    const tagsContainer = document.createElement('div');
-                    tagsContainer.className = 'tags-container';
-
-                    const textarea = document.createElement('textarea');
-                    textarea.value = line;
-                    textarea.dataset.lineNumber = index;
-                    textarea.oninput = function() {
-                        adjustTextareaHeight(this);
-                        updateTagsList(this, tagsContainer);
-                    };
-
-                    container.appendChild(tagsContainer);
-                    container.appendChild(textarea);
-                    markdownContent.appendChild(container);
-
-                    adjustTextareaHeight(textarea);
-                    updateTagsList(textarea, tagsContainer); // Actualiza los tags inicialmente
-                });
-            };
-            reader.readAsText(file);
-        });
-    }
-
-      // Tu script de JavaScript para crear la tabla, etc.
-      function createSectionsTable(sections) {
-          const table = document.createElement('table');
-          table.className = 'table';
-
-          // Crear cabecera de la tabla
-          const thead = document.createElement('thead');
-          const headerRow = document.createElement('tr');
-          const headerCell = document.createElement('th');
-          headerCell.textContent = 'Section Name';
-          headerRow.appendChild(headerCell);
-          thead.appendChild(headerRow);
-          table.appendChild(thead);
-
-          // Crear cuerpo de la tabla
-          const tbody = document.createElement('tbody');
-          sections.forEach(section => {
-              const row = document.createElement('tr');
-              const cell = document.createElement('td');
-              cell.textContent = section.name; // Asume que cada sección tiene un atributo 'name'
-              row.appendChild(cell);
-              tbody.appendChild(row);
-          });
-          table.appendChild(tbody);
-
-          // Agregar la tabla al contenedor
-          const container = document.getElementById('sectionsTableContainer');
-          container.innerHTML = ''; // Limpiar contenido previo
-          container.appendChild(table);
-      }    
- 
-          // Función para ajustar la altura del textarea basándose en su contenido
-    function adjustTextareaHeight(textarea) {
-        textarea.style.height = 'auto'; // Resetea la altura para obtener el scrollHeight correcto
-        const maxHeight = 400; // Máximo de altura en píxeles
-        textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`; // Ajusta altura
-
-                    document.getElementById('downloadBtn').addEventListener('click', downloadModel);
-        }
-
-    function downloadModel() {
-            const textareas = document.querySelectorAll('textarea');
-            let fileContent = '';
-            textareas.forEach(textarea => {
-                fileContent += textarea.value + '\n'; // Añade un salto de línea después de cada área de texto
-            });
-
-            const fileName = `Business model ${formatDate(new Date())}.md`;
-            downloadFile(fileName, fileContent);
-        }
-
-        function formatDate(date) {
-            const year = date.getFullYear();
-            const month = (`0${date.getMonth() + 1}`).slice(-2);
-            const day = (`0${date.getDate()}`).slice(-2);
-            const hours = (`0${date.getHours()}`).slice(-2);
-            const minutes = (`0${date.getMinutes()}`).slice(-2);
-            const seconds = (`0${date.getSeconds()}`).slice(-2);
-            return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
-        }
-
-        function downloadFile(fileName, content) {
-            const element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-            element.setAttribute('download', fileName);
-
-            element.style.display = 'none';
-            document.body.appendChild(element);
-
-            element.click();
-
-            document.body.removeChild(element);
-        }
-
-        function updateTagsList(textarea, tagsContainer) {
-        const tags = textarea.value.match(/#[^\s#]+/g) || [];
-        tagsContainer.innerHTML = ''; // Limpia los tags anteriores
-
-        tags.forEach(tag => {
-            const tagElement = document.createElement('span');
-            tagElement.textContent = tag;
-            tagsContainer.appendChild(tagElement);
-        });
-    }
-
-
-
-
-      // Evento para manejar la carga de archivos Markdown
       markdownInput.addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (!file) {
-            return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const content = e.target.result;
-            const lines = content.split(/\r?\n/); // Divide el contenido en líneas
-            allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
-
-            lines.forEach((line, index) => {
-                const tags = line.match(/#[^\s#]+/g) || []; // Busca etiquetas en la línea actual
-                tags.forEach(tag => allTags.add(tag)); // Añade las etiquetas encontradas al conjunto de todas las etiquetas
-            });
-
-            // Luego de procesar todas las líneas, actualiza el selector de etiquetas
-            updateTagsDropdown(Array.from(allTags));
-        };
-        reader.readAsText(file);
+          const file = event.target.files[0];
+          if (!file) {
+              return;
+          }
+  
+          const reader = new FileReader();
+          reader.onload = function(e) {
+              const content = e.target.result;
+              const lines = content.split(/\r?\n/); // Divide el contenido en líneas
+              allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
+              markdownContent.innerHTML = ''; // Limpia el contenido anterior
+  
+              lines.forEach((line, index) => {
+                  const container = document.createElement('div');
+                  container.className = 'line-container';
+  
+                  const tagsContainer = document.createElement('div');
+                  tagsContainer.className = 'tags-container';
+  
+                  const textarea = document.createElement('textarea');
+                  textarea.value = line;
+                  textarea.dataset.lineNumber = index;
+                  textarea.oninput = function() {
+                      adjustTextareaHeight(this);
+                      updateTagsList(this, tagsContainer);
+                  };
+  
+                  container.appendChild(tagsContainer);
+                  container.appendChild(textarea);
+                  markdownContent.appendChild(container);
+  
+                  adjustTextareaHeight(textarea);
+                  updateTagsList(textarea, tagsContainer); // Actualiza los tags inicialmente
+  
+                  // Procesa etiquetas para el dropdown, removiendo el '#' y evitando duplicados
+                  const tags = line.match(/(?<=\s)#([^\s#]+)/g) || [];
+                  tags.forEach(tag => {
+                      allTags.add(tag.substring(1)); // Añade solo el texto de la etiqueta, sin el '#'
+                  });
+              });
+  
+              updateTagsDropdown(Array.from(allTags)); // Actualiza el dropdown después de procesar todas las líneas
+          };
+          reader.readAsText(file);
       });
   
-      // Evento para manejar el cambio en el selector de etiquetas y filtrar líneas
+      function adjustTextareaHeight(textarea) {
+          textarea.style.height = 'auto'; // Resetea la altura para obtener el scrollHeight correcto
+          const maxHeight = 400; // Máximo de altura en píxeles
+          textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`; // Ajusta altura
+      }
+  
+      function updateTagsList(textarea, tagsContainer) {
+    const tags = textarea.value.match(/(?<=\s)#([^\s#]+)/g) || [];
+    tagsContainer.innerHTML = ''; // Limpia los tags anteriores
+    tags.forEach(tag => {
+        const tagElement = document.createElement('span');
+        // Elimina el símbolo '#' del inicio y usa el texto restante como clase
+        const tagClass = tag.substring(1); // Obtiene el texto de la etiqueta sin el '#'
+        tagElement.classList.add(tagClass); // Asigna el texto de la etiqueta como clase
+        tagElement.textContent = tagClass; // Asigna el texto de la etiqueta al contenido del span
+        tagsContainer.appendChild(tagElement);
+    });
+}
+
+  
+      function updateTagsDropdown(tags) {
+          tagsFilter.innerHTML = ''; // Limpia opciones existentes
+          tags.forEach(tag => {
+              const option = document.createElement('option');
+              option.value = tag;
+              option.textContent = tag; // Ya no incluye el símbolo '#'
+              tagsFilter.appendChild(option); // Añade la opción al selector
+          });
+      }
+  
+      // Función para filtrar líneas por etiquetas seleccionadas
       tagsFilter.addEventListener('change', filterLinesBySelectedTags);
   
-      // Inicialización y lógica adicional que necesites ejecutar al cargar
-      initApp();
+      function filterLinesBySelectedTags() {
+          const selectedTags = Array.from(tagsFilter.selectedOptions).map(option => option.value);
+          document.querySelectorAll('.line-container').forEach(line => {
+              const lineTags = Array.from(line.querySelectorAll('.tags-container span')).map(span => span.textContent);
+              line.style.display = selectedTags.every(tag => lineTags.includes(tag)) ? '' : 'none';
+          });
+      }
   });
   </script>
   
-
-
-
 
   <script>
     let allTags = new Set(); // Almacena todas las etiquetas únicas
@@ -315,31 +202,36 @@
         }
     
         const reader = new FileReader();
-        reader.onload = function(e) {
-            const content = e.target.result;
-            const lines = content.split(/\r?\n/); // Divide el contenido en líneas
-            allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
-    
-            lines.forEach((line, index) => {
-                const tags = line.match(/#[^\s#]+/g) || []; // Busca etiquetas en la línea actual
-                tags.forEach(tag => allTags.add(tag)); // Añade las etiquetas encontradas al conjunto de todas las etiquetas
-            });
-    
-            // Luego de procesar todas las líneas, actualiza el selector de etiquetas
-            updateTagsDropdown(Array.from(allTags));
-        };
-        reader.readAsText(file);
-    });
-    function updateTagsDropdown(tags) {
-        const tagsFilter = document.getElementById('tagsFilter');
-        tagsFilter.innerHTML = ''; // Limpia opciones existentes
+// Este fragmento es parte del evento 'change' del input de archivos Markdown
+reader.onload = function(e) {
+    const content = e.target.result;
+    const lines = content.split(/\r?\n/); // Divide el contenido en líneas
+    allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
+
+    lines.forEach((line, index) => {
+        // Cambia la expresión regular para capturar sin incluir '#'
+        const tags = line.match(/(?<=\s)#([^\s#]+)/g) || []; // Busca etiquetas en la línea actual
         tags.forEach(tag => {
-            const option = document.createElement('option');
-            option.value = tag;
-            option.textContent = tag;
-            tagsFilter.appendChild(option); // Añade la opción al selector
+            // Añade solo el texto de la etiqueta, sin el '#', al conjunto de todas las etiquetas
+            allTags.add(tag.substring(1)); // Elimina el símbolo '#' antes de añadir
         });
-    }
+    });
+
+    // Luego de procesar todas las líneas, actualiza el selector de etiquetas
+    // Asegúrate de que esta llamada se ajuste para trabajar con las etiquetas modificadas
+    updateTagsDropdown(Array.from(allTags));
+};
+
+function updateTagsDropdown(tags) {
+    const tagsFilter = document.getElementById('tagsFilter');
+    tagsFilter.innerHTML = ''; // Limpia opciones existentes
+    tags.forEach(tag => {
+        const option = document.createElement('option');
+        option.value = tag;
+        option.textContent = tag; // Ya no incluye el símbolo '#', ajustado previamente
+        tagsFilter.appendChild(option); // Añade la opción al selector
+    });
+}
     tagsFilter.addEventListener('change', function() {
         filterLinesBySelectedTags();
     });
@@ -355,7 +247,5 @@
         });
     }
     </script>
-    
-    
     </body>
     </html>
