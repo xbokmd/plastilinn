@@ -87,7 +87,17 @@
             .then(data => {
                 // Suponiendo que 'sections' es una clave en tu JSON
                 createSectionsTable(data.sections);
-            })
+        // Ahora, después de crear la tabla, procedemos a buscar en el JSON
+        // y generar el array como se necesite. Por ejemplo, vamos a buscar una entrada específica:
+        const searchString = "TuCadenaDeTextoAqui"; // Cambia esto por la cadena de texto que quieras buscar
+        const found = data.sections.some(section => section.name === searchString);
+
+        console.log(found ? "YES" : "NO"); // Imprime "YES" si encuentra la entrada, "NO" si no la encuentra
+
+        // Si deseas hacer algo más con las secciones o necesitas el array para otro propósito,
+        // puedes procesar o almacenar 'data.sections' según sea necesario aquí.
+
+              })
             .catch(error => console.error('Error loading the JSON:', error));
         });
     </script>
@@ -170,6 +180,7 @@
     const processedContentDisplay = document.createElement('div');
     processedContentDisplay.className = 'processed-content';
     processedContentDisplay.textContent = contentWithoutTags; // Usa el contenido sin etiquetas
+    processedContentDisplay.textContent = "ID: " + contentWithoutTags; // Prefijo "ID" seguido del contenido sin etiquetas
     tagsContainer.appendChild(processedContentDisplay);
 
     // Proceso existente para manejar las etiquetas (si es necesario)
