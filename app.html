@@ -16,18 +16,18 @@
     <!-- Pestañas actualizadas para Bootstrap 5 -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
-          <button class="nav-link" id="model-tab" data-bs-toggle="tab" data-bs-target="#model" type="button" role="tab" aria-controls="model" aria-selected="false">Model</button>
+          <button class="nav-link active" id="model-tab" data-bs-toggle="tab" data-bs-target="#model" type="button" role="tab" aria-controls="model" aria-selected="true">Model</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="metaModel-tab" data-bs-toggle="tab" data-bs-target="#metaModel" type="button" role="tab" aria-controls="metaModel" aria-selected="true">Metamodel</button>
+        <button class="nav-link" id="metaModel-tab" data-bs-toggle="tab" data-bs-target="#metaModel" type="button" role="tab" aria-controls="metaModel" aria-selected="true">Metamodel</button>
     </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="memory-tab" data-bs-toggle="tab" data-bs-target="#memory" type="button" role="tab" aria-controls="memory" aria-selected="false">Memory</button>
+  </li>
     </ul>
 
   <!-- Contenido de las pestañas para Bootstrap 5 -->
   <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="metaModel" role="tabpanel" aria-labelledby="metaModel-tab">
-          <div id="sectionsTableContainer"></div>
-      </div>
       <div class="tab-pane fade" id="model" role="tabpanel" aria-labelledby="model-tab">
           <input type="file" id="markdownFileInput" accept=".md">
           <!-- Botón de Descarga -->
@@ -37,8 +37,17 @@
             <select class="form-select" id="tagsFilter" multiple>
                 <!-- Las opciones se llenarán dinámicamente con JavaScript -->
             </select>
-        </div>
+          </div>
           <div id="markdownContent"></div>
+      </div>
+      <div class="tab-pane fade show active" id="metaModel" role="tabpanel" aria-labelledby="metaModel-tab">
+        <div id="sections"></div>
+      </div>
+
+      <div class="tab-pane fade" id="memory" role="tabpanel" aria-labelledby="memory-tab">
+        <div id="markdown-lines"></div>
+        -------------------------------------
+        <div id="sectionsTableContainer"></div>
       </div>
   </div>
 
@@ -50,57 +59,114 @@
 
 <!-- script metamodel -->
     <script>
-        function createSectionsTable(sections) {
-            const table = document.createElement('table');
-            table.className = 'table';
+function createSectionsTable(sections) {
+    const table = document.createElement('table');
+    table.className = 'table';
 
-            // Crear cabecera de la tabla
-            const thead = document.createElement('thead');
-            const headerRow = document.createElement('tr');
+    // Crear cabecera de la tabla
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+
+    // Suponiendo que todos los objetos tienen las mismas claves, usar el primer objeto para determinarlas
+    if (sections.length > 0) {
+        Object.keys(sections[0]).forEach(key => {
             const headerCell = document.createElement('th');
-            headerCell.textContent = 'Section Name';
+            headerCell.textContent = key; // Usar cada clave como nombre de columna
             headerRow.appendChild(headerCell);
-            thead.appendChild(headerRow);
-            table.appendChild(thead);
+        });
+    }
 
-            // Crear cuerpo de la tabla
-            const tbody = document.createElement('tbody');
-            sections.forEach(section => {
-                const row = document.createElement('tr');
-                const cell = document.createElement('td');
-                cell.textContent = section.name; // Asume que cada sección tiene un atributo 'name'
-                row.appendChild(cell);
-                tbody.appendChild(row);
-            });
-            table.appendChild(tbody);
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
 
-            // Agregar la tabla al contenedor
-            const container = document.getElementById('sectionsTableContainer');
-            container.innerHTML = ''; // Limpiar contenido previo
-            container.appendChild(table);
-        }
+    // Crear cuerpo de la tabla
+    const tbody = document.createElement('tbody');
+
+    sections.forEach(section => {
+        const row = document.createElement('tr');
+        Object.values(section).forEach(value => {
+            const cell = document.createElement('td');
+            cell.textContent = value; // Usar cada valor como contenido de la celda
+            row.appendChild(cell);
+        });
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+
+    // Agregar la tabla al contenedor
+    const container = document.getElementById('sectionsTableContainer');
+    container.innerHTML = ''; // Limpiar contenido previo
+    container.appendChild(table);
+}
+
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Cargar datos JSON y crear la tabla de secciones
-            fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
-            .then(response => response.json())
-            .then(data => {
-                // Suponiendo que 'sections' es una clave en tu JSON
-                createSectionsTable(data.sections);
-        // Ahora, después de crear la tabla, procedemos a buscar en el JSON
-        // y generar el array como se necesite. Por ejemplo, vamos a buscar una entrada específica:
-        const searchString = "TuCadenaDeTextoAqui"; // Cambia esto por la cadena de texto que quieras buscar
-        const found = data.sections.some(section => section.name === searchString);
+          fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
+          .then(response => response.json())
+          .then(data => {
+              // Suponiendo que 'sections' es una clave en tu JSON
+              createSectionsTable(data.sections);
+              writeToDiv(data.sections); // Añade esta línea para escribir en el div
+          })
+          .catch(error => console.error('Error loading the JSON:', error));
+      });
 
-        console.log(found ? "YES" : "NO"); // Imprime "YES" si encuentra la entrada, "NO" si no la encuentra
+        function writeToDiv(sections) {
+          const sectionsDiv = document.getElementById('sections');
+          sectionsDiv.innerHTML = ''; // Limpiar contenido previo
 
-        // Si deseas hacer algo más con las secciones o necesitas el array para otro propósito,
-        // puedes procesar o almacenar 'data.sections' según sea necesario aquí.
-
-              })
-            .catch(error => console.error('Error loading the JSON:', error));
-        });
+          // Crear y añadir cada nombre de sección como un párrafo (o cualquier otro elemento) al div
+          sections.forEach(section => {
+              const paragraph = document.createElement('p');
+              paragraph.textContent = section.name; // Asume que cada sección tiene un atributo 'name'
+              sectionsDiv.appendChild(paragraph);
+          });
+}
     </script>
+
+<!-- script model 2-->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const markdownInput = document.getElementById('markdownFileInput');
+    const markdownLinesDiv = document.getElementById('markdown-lines');
+
+    markdownInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (!file) {
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const content = e.target.result;
+            const lines = content.split(/\r?\n/);
+            const processedLinesArray = []; // Array para almacenar líneas procesadas
+
+            // Procesa cada línea según las especificaciones
+            lines.forEach(line => {
+                // Elimina espacios en blanco y guiones iniciales para el campo title
+                let title = line.replace(/^[\s-]*/, '').replace(/#\S+/g, '').trim();
+
+                // Almacena tanto la línea original como el título procesado
+                processedLinesArray.push({line: line, title: title});
+            });
+
+            // Limpia el contenido previo del div
+            markdownLinesDiv.innerHTML = '';
+
+            // Escribe cada línea y título procesado en el div
+            processedLinesArray.forEach(item => {
+                const p = document.createElement('p');
+                p.innerHTML = `<strong>Line:</strong> ${item.line} <br> <strong>Title:</strong> ${item.title}`; // Muestra ambos campos
+                markdownLinesDiv.appendChild(p);
+            });
+        };
+        reader.readAsText(file);
+    });
+});
+
+</script>
 
 <!-- script model -->
 <script>
@@ -164,23 +230,18 @@
       }
   
       function updateTagsList(textarea, tagsContainer) {
-    // Captura el contenido del textarea
+    // Procesamiento del contenido del textarea
     let content = textarea.value;
-
-    // Elimina espacios en blanco y guiones previos al primer carácter o número
+    // Eliminar espacios en blanco y guiones previos al primer carácter o número
     content = content.replace(/^[\s-]*/, '');
 
-    // Elimina las etiquetas del contenido
-    const contentWithoutTags = content.replace(/#[^\s#]+/g, '').trim();
-
-    // Limpia tagsContainer antes de agregar contenido procesado
+    // Limpieza de tagsContainer antes de agregar contenido procesado o tags
     tagsContainer.innerHTML = ''; 
 
-    // Crear y agregar el contenido procesado sin etiquetas al tagsContainer
+    // Crear y agregar el contenido procesado al tagsContainer
     const processedContentDisplay = document.createElement('div');
     processedContentDisplay.className = 'processed-content';
-    processedContentDisplay.textContent = contentWithoutTags; // Usa el contenido sin etiquetas
-    processedContentDisplay.textContent = "ID: " + contentWithoutTags; // Prefijo "ID" seguido del contenido sin etiquetas
+    processedContentDisplay.textContent = content; // Asigna el contenido procesado
     tagsContainer.appendChild(processedContentDisplay);
 
     // Proceso existente para manejar las etiquetas (si es necesario)
