@@ -1,4 +1,5 @@
-Delorean Time Machines #github.com/plastilinn/bm-0-1-0
+Delorean Time Machines
+github.com/plastilinn/bm-0-1-0
 - ## [[business summary]]
   - Who are your clients?
     - Historians #** #??? #¡
