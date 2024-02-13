@@ -142,21 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error => console.error('Error al cargar los nombres de las secciones:', error));
 
-    // Función para procesar el título y determinar si coincide con alguna sección
-    function processModelTitle(line) {
-    // Elimina espacios en blanco y guiones iniciales, todas las etiquetas, cualquier cantidad de '#', y los caracteres '[[' y ']]'
-    let title = line.replace(/^[\s-]*/, '')
-                     .replace(/#\S+/g, '')
-                     .replace(/#+/g, '')
-                     .replace(/\[\[/g, '')
-                     .replace(/\]\]/g, '')
-                     .trim();
-    let isSection = sections.includes(title) ? "Yes" : "No";
-    return { title, isSection };
-    }
-
-
-
     markdownInput.addEventListener('change', function(event) {
         const file = event.target.files[0];
         if (!file) {
@@ -174,28 +159,78 @@ document.addEventListener('DOMContentLoaded', function() {
             markdownLinesDiv.style.gap = '10px';
 
             lines.forEach((line, index) => {
-                const result = processModelTitle(line); // Procesa cada línea usando la función
+                const result = processModelTitle(line, index); // Añade el índice como argumento
 
                 const titleDiv = document.createElement('div');
-                titleDiv.textContent = `Title: ${result.title}, Section: ${result.isSection}`;
+                titleDiv.innerHTML = `Title: ${result.title}, Section: ${result.isSection}`;
 
                 const lineTextarea = document.createElement('textarea');
                 lineTextarea.value = line;
                 lineTextarea.style.width = '100%';
                 lineTextarea.oninput = function() {
                     // Actualiza dinámicamente al editar
-                    const update = processModelTitle(this.value);
-                    titleDiv.textContent = `Title: ${update.title}, Section: ${update.isSection}`;
+                    const update = processModelTitle(this.value, index);
+                    titleDiv.innerHTML = `Title: ${update.title}, Section: ${update.isSection}`;
                 };
 
                 markdownLinesDiv.appendChild(titleDiv);
                 markdownLinesDiv.appendChild(lineTextarea);
+
+                if (result.modalId && result.sectionData) {
+                    // Crear y añadir el modal correspondiente
+                    const modal = createModal(result.modalId, result.sectionData);
+                    document.body.appendChild(modal); // Añade el modal al body
+                }
             });
         };
         reader.readAsText(file);
     });
-});
 
+    function processModelTitle(line, index) {
+        let title = line.replace(/^[\s-]*/, '')
+                        .replace(/#\S+/g, '')
+                        .replace(/#+/g, '')
+                        .replace(/\[\[/g, '')
+                        .replace(/\]\]/g, '')
+                        .trim();
+        let matchingSection = sections.find(section => section === title);
+        let isSection = matchingSection ? "Yes" : "No";
+        let modalId = `sectionModal-${index}`;
+
+        if (isSection === "Yes") {
+            // Encuentra los datos de la sección
+            let sectionData = sections.find(section => section === title);
+            return { title, isSection: `<a href="#" data-bs-toggle="modal" data-bs-target="#${modalId}">Section</a>`, modalId, sectionData: matchingSection };
+        } else {
+            return { title, isSection, modalId: null, sectionData: null };
+        }
+    }
+
+    function createModal(modalId, sectionData) {
+        const modalDiv = document.createElement('div');
+        modalDiv.id = modalId;
+        modalDiv.className = 'modal fade';
+        modalDiv.setAttribute('tabindex', '-1');
+        modalDiv.setAttribute('role', 'dialog');
+        modalDiv.innerHTML = `
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">${sectionData}</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Aquí puedes agregar más detalles de sectionData -->
+                        <p>${sectionData}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        return modalDiv;
+    }
+});
 
   </script>
   
