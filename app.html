@@ -154,27 +154,30 @@
       }
   
       function updateTagsList(textarea, tagsContainer) {
-    // Procesamiento del contenido del textarea
+    // Procesamiento del contenido del textarea para eliminar espacios iniciales y guiones
     let content = textarea.value;
-    // Eliminar espacios en blanco y guiones previos al primer carácter o número
     content = content.replace(/^[\s-]*/, '');
 
-    // Limpieza de tagsContainer antes de agregar contenido procesado o tags
-    tagsContainer.innerHTML = ''; 
+    // Eliminar etiquetas del contenido antes de mostrarlo
+    // Esto elimina palabras que comiencen con '#'
+    const contentWithoutTags = content.replace(/#\S+/g, '').trim();
 
-    // Crear y agregar el contenido procesado al tagsContainer
+    // Limpia el tagsContainer antes de agregar nuevo contenido
+    tagsContainer.innerHTML = '';
+
+    // Crear y agregar el contenido procesado (sin etiquetas) al tagsContainer
     const processedContentDisplay = document.createElement('div');
     processedContentDisplay.className = 'processed-content';
-    processedContentDisplay.textContent = content; // Asigna el contenido procesado
+    processedContentDisplay.textContent = contentWithoutTags; // Usa el contenido sin etiquetas
     tagsContainer.appendChild(processedContentDisplay);
 
-    // Proceso existente para manejar las etiquetas (si es necesario)
-    const tags = content.match(/(?<=\s)#([^\s#]+)/g) || [];
+    // Procesamiento de etiquetas (si es necesario mantener la funcionalidad de etiquetas)
+    const tags = content.match(/#\S+/g) || [];
     tags.forEach(tag => {
         const tagElement = document.createElement('span');
-        const tagClass = tag.substring(1); // Obtiene el texto de la etiqueta sin el '#'
+        const tagClass = tag.substring(1); // Elimina el '#' para obtener el texto de la etiqueta
         tagElement.classList.add(tagClass);
-        tagElement.textContent = tagClass; // Asigna el texto de la etiqueta
+        tagElement.textContent = tag; // Muestra la etiqueta con '#'
         tagsContainer.appendChild(tagElement); // Agrega la etiqueta al tagsContainer
     });
 }
