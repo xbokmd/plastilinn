@@ -195,10 +195,25 @@ fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
     lineTextarea.style.width = '33%'; // Ajuste para ocupar un tercio
     lineTextarea.style.resize = 'none'; // Para evitar el redimensionamiento
     lineTextarea.oninput = function() {
-        // Actualiza dinámicamente al editar
-        const update = processModelTitle(this.value, index);
-        titleDiv.innerHTML = `Title: ${update.title}, Section: ${update.isSection}`;
-    };
+    // Actualización dinámica al editar el textarea
+    const update = processModelTitle(this.value, index);
+    titleDiv.innerHTML = `Title: ${update.title}, Section: ${update.isSection}`;
+
+    // Implementa la actualización de la visualización de etiquetas aquí
+    updateTagsDisplay(this.value, tagsContainerDiv);
+};
+
+
+function updateTagsDisplay(text, container) {
+    const tags = text.match(/#\w+/g) || [];
+    container.innerHTML = ''; // Limpia el contenedor de etiquetas anterior
+    tags.forEach(tag => {
+        const tagElement = document.createElement('span');
+        tagElement.classList.add('tag');
+        tagElement.textContent = tag; // Muestra la etiqueta directamente
+        container.appendChild(tagElement);
+    });
+}
 
     // Crear la tercera columna como un div con clase 'tags-container'
     const tagsContainerDiv = document.createElement('div');
@@ -218,13 +233,12 @@ fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
         const modal = createModal(result.modalId, result.sectionData);
         document.body.appendChild(modal); // Añade el modal al body
     }
+
+
     // Extracción y actualización de etiquetas
     const tags = line.match(/#\w+/g) || []; // Ajusta esta expresión regular según sea necesario
     tags.forEach(tag => allTags.add(tag.substring(1))); // Añade la etiqueta sin el '#' al conjunto
 });
-// Luego de procesar todas las líneas y extracción de etiquetas:
-updateTagsDropdown(Array.from(allTags));
-displayTags();
         };
         reader.readAsText(file);
     });
@@ -232,9 +246,6 @@ displayTags();
     // Después de procesar todas las líneas, actualiza el dropdown de etiquetas
     updateTagsDropdown(Array.from(allTags));
     
-    // Muestra las etiquetas en el div
-    displayTags();
-
     function processModelTitle(line, index) {
     let title = line.replace(/^[\s-]*/, '')
                     .replace(/#\S+/g, '')
@@ -284,16 +295,6 @@ displayTags();
     return modalDiv;
   }
 
-  function displayTags() {
-    const tagsContainer = document.getElementById('tagsContainer'); // Asume que tienes este div en tu HTML
-    tagsContainer.innerHTML = ''; // Limpia el contenedor de etiquetas existente
-    allTags.forEach(tag => {
-        const tagElement = document.createElement('span');
-        tagElement.classList.add('tag');
-        tagElement.textContent = `#${tag}`; // Añade el prefijo # si es necesario
-        tagsContainer.appendChild(tagElement);
-    });
-}
 
 });
 </script>
