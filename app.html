@@ -132,15 +132,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const markdownLinesDiv = document.getElementById('markdown-lines');
     let sections = []; // Este array debe contener los nombres de las secciones
 
-    // Carga los nombres de las secciones desde el JSON
-    fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
-    .then(response => response.json())
-    .then(data => {
-        // Asume que data.sections contiene tus secciones y que cada sección tiene un atributo 'name'
-        sections = data.sections.map(section => section.name);
-        // Ahora sections contiene los nombres de todas tus secciones
-    })
-    .catch(error => console.error('Error al cargar los nombres de las secciones:', error));
+// Carga los nombres de las secciones desde el JSON
+fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
+.then(response => response.json())
+.then(data => {
+    // Almacena toda la información de las secciones, no solo los nombres
+    sections = data.sections; // Asume que data.sections contiene toda la información necesaria
+})
+.catch(error => console.error('Error al cargar los nombres de las secciones:', error));
 
     markdownInput.addEventListener('change', function(event) {
         const file = event.target.files[0];
@@ -187,52 +186,55 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function processModelTitle(line, index) {
-        let title = line.replace(/^[\s-]*/, '')
-                        .replace(/#\S+/g, '')
-                        .replace(/#+/g, '')
-                        .replace(/\[\[/g, '')
-                        .replace(/\]\]/g, '')
-                        .trim();
-        let matchingSection = sections.find(section => section === title);
-        let isSection = matchingSection ? "Yes" : "No";
-        let modalId = `sectionModal-${index}`;
+    let title = line.replace(/^[\s-]*/, '')
+                    .replace(/#\S+/g, '')
+                    .replace(/#+/g, '')
+                    .replace(/\[\[/g, '')
+                    .replace(/\]\]/g, '')
+                    .trim();
+    // Encuentra la sección que coincide por nombre
+    let matchingSection = sections.find(section => section.name === title); // Asume que 'name' es el campo a comparar
+    let isSection = matchingSection ? "Yes" : "No";
+    let modalId = `sectionModal-${index}`;
 
-        if (isSection === "Yes") {
-            // Encuentra los datos de la sección
-            let sectionData = sections.find(section => section === title);
-            return { title, isSection: `<a href="#" data-bs-toggle="modal" data-bs-target="#${modalId}">Section</a>`, modalId, sectionData: matchingSection };
-        } else {
-            return { title, isSection, modalId: null, sectionData: null };
-        }
+    if (isSection === "Yes") {
+        return {
+            title,
+            isSection: `<a href="#" data-bs-toggle="modal" data-bs-target="#${modalId}">Section</a>`,
+            modalId,
+            sectionData: matchingSection // Aquí ya tienes el objeto de sección correspondiente, no es necesario buscarlo de nuevo
+        };
+    } else {
+        return { title, isSection, modalId: null, sectionData: null };
     }
+}
+
 
     function createModal(modalId, sectionData) {
-        const modalDiv = document.createElement('div');
-        modalDiv.id = modalId;
-        modalDiv.className = 'modal fade';
-        modalDiv.setAttribute('tabindex', '-1');
-        modalDiv.setAttribute('role', 'dialog');
-        modalDiv.innerHTML = `
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">${sectionData}</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Aquí puedes agregar más detalles de sectionData -->
-                        <p>${sectionData}</p>
-                    </div>
+    const modalDiv = document.createElement('div');
+    modalDiv.id = modalId;
+    modalDiv.className = 'modal fade';
+    modalDiv.setAttribute('tabindex', '-1');
+    modalDiv.setAttribute('role', 'dialog');
+    modalDiv.innerHTML = `
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">${sectionData.name}</h5> <!-- Asume que cada sección tiene un 'name' -->
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ${Object.keys(sectionData).map(key => `<p><strong>${key}:</strong> ${sectionData[key]}</p>`).join('')}
                 </div>
             </div>
-        `;
-        return modalDiv;
-    }
+        </div>
+    `;
+    return modalDiv;
+  }
 });
-
-  </script>
+</script>
   
 
 <!-- script model -->
