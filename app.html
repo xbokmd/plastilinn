@@ -153,31 +153,32 @@
           textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`; // Ajusta altura
       }
   
-function updateTagsList(textarea, tagsContainer) {
-    // Procesamiento del contenido del textarea para eliminar espacios iniciales y guiones
+      function updateTagsList(textarea, tagsContainer) {
+    // Captura el contenido del textarea
     let content = textarea.value;
+
+    // Elimina espacios en blanco y guiones previos al primer carácter o número
     content = content.replace(/^[\s-]*/, '');
 
-    // Eliminar etiquetas del contenido antes de mostrarlo
-    // Esto elimina palabras que comiencen con '#'
-    const contentWithoutTags = content.replace(/#\S+/g, '').trim();
+    // Elimina las etiquetas del contenido
+    const contentWithoutTags = content.replace(/#[^\s#]+/g, '').trim();
 
-    // Limpia el tagsContainer antes de agregar nuevo contenido
-    tagsContainer.innerHTML = '';
+    // Limpia tagsContainer antes de agregar contenido procesado
+    tagsContainer.innerHTML = ''; 
 
-    // Crear y agregar el contenido procesado (sin etiquetas) al tagsContainer
+    // Crear y agregar el contenido procesado sin etiquetas al tagsContainer
     const processedContentDisplay = document.createElement('div');
     processedContentDisplay.className = 'processed-content';
     processedContentDisplay.textContent = contentWithoutTags; // Usa el contenido sin etiquetas
     tagsContainer.appendChild(processedContentDisplay);
 
-    // Procesamiento de etiquetas (si es necesario mantener la funcionalidad de etiquetas)
-    const tags = content.match(/#\S+/g) || [];
+    // Proceso existente para manejar las etiquetas (si es necesario)
+    const tags = content.match(/(?<=\s)#([^\s#]+)/g) || [];
     tags.forEach(tag => {
         const tagElement = document.createElement('span');
-        const tagClass = tag.substring(1); // Elimina el '#' para obtener el texto de la etiqueta
+        const tagClass = tag.substring(1); // Obtiene el texto de la etiqueta sin el '#'
         tagElement.classList.add(tagClass);
-        tagElement.textContent = tag; // Muestra la etiqueta con '#'
+        tagElement.textContent = tagClass; // Asigna el texto de la etiqueta
         tagsContainer.appendChild(tagElement); // Agrega la etiqueta al tagsContainer
     });
 }
