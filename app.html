@@ -166,6 +166,41 @@
     });
 }
 
+        document.getElementById('downloadBtn').addEventListener('click', downloadModel);
+
+        function downloadModel() {
+            const textareas = document.querySelectorAll('textarea');
+            let fileContent = '';
+            textareas.forEach(textarea => {
+                fileContent += textarea.value + '\n'; // Añade un salto de línea después de cada área de texto
+            });
+
+            const fileName = `Business model ${formatDate(new Date())}.md`;
+            downloadFile(fileName, fileContent);
+        }
+
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = (`0${date.getMonth() + 1}`).slice(-2);
+            const day = (`0${date.getDate()}`).slice(-2);
+            const hours = (`0${date.getHours()}`).slice(-2);
+            const minutes = (`0${date.getMinutes()}`).slice(-2);
+            const seconds = (`0${date.getSeconds()}`).slice(-2);
+            return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
+        }
+
+        function downloadFile(fileName, content) {
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+            element.setAttribute('download', fileName);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
   
       function updateTagsDropdown(tags) {
           tagsFilter.innerHTML = ''; // Limpia opciones existentes
@@ -221,6 +256,8 @@ reader.onload = function(e) {
     // Asegúrate de que esta llamada se ajuste para trabajar con las etiquetas modificadas
     updateTagsDropdown(Array.from(allTags));
 };
+
+
 
 function updateTagsDropdown(tags) {
     const tagsFilter = document.getElementById('tagsFilter');
