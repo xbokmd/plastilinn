@@ -1,6 +1,6 @@
 .line-container {
     display: grid;
-    grid-template-columns: 20% 80%; /* Distribución de columnas */
+    grid-template-columns: 20% 60% 20%; /* Distribución de columnas */
     gap: 10px; /* Espacio entre columnas */
     align-items: start; /* Alineación de elementos */
     margin-bottom: 10px;
