@@ -22,8 +22,8 @@
 }
 
 textarea {
-    width: 100%; /* Ocupa el espacio asignado */
-    min-height: 20px;
+    width: 80%; /* Ocupa el espacio asignado */
+    min-height: 1em;
     max-height: 400px;
     overflow-y: hidden;
     resize: vertical; /* Permite ajustar la altura */
