@@ -90,31 +90,35 @@
             const content = e.target.result;
             const lines = content.split(/\r?\n/);
             markdownLinesDiv.innerHTML = ''; 
-            markdownLinesDiv.style.display = 'grid';
+
             markdownLinesDiv.style.gap = '10px';
 
-    lines.forEach((line, index) => {
-        const result = processModelTitle(line, index);
-        // Extrae las etiquetas de la línea actual
-        // Al extraer etiquetas del texto de la línea
-        const tags = (line.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
+            lines.forEach((line, index) => {
+                const result = processModelTitle(line, index);
+                // Extrae las etiquetas de la línea actual
+                // Al extraer etiquetas del texto de la línea
+                const tags = (line.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
 
-        const rowDiv = document.createElement('div');
-        rowDiv.style.display = 'flex';
+                const rowDiv = document.createElement('div');
+                rowDiv.style.display = 'flex';
+                rowDiv.style.background = '#f2f2f2'; // Aquí aplicas el fondo gris claro a cada línea
+                rowDiv.style.padding = '10px'; // Opcional, añade un poco de padding para mejor visualización
+                rowDiv.style.marginBottom = '5px'; // Opcional, añade un margen inferior para separar las líneas
 
-        const titleDiv = createTitleDiv(result.title, result.isSection);
-        const tagsDiv = createTagsDiv(tags); // Usa las etiquetas extraídas para crear el div de etiquetas
-        const lineTextarea = createLineTextarea(line, index, result, titleDiv, tagsDiv);
 
-        rowDiv.appendChild(titleDiv);
-        rowDiv.appendChild(lineTextarea);
-        rowDiv.appendChild(tagsDiv); // Añade el div de etiquetas al contenedor
-        markdownLinesDiv.appendChild(rowDiv);
+                const titleDiv = createTitleDiv(result.title, result.isSection);
+                const tagsDiv = createTagsDiv(tags); // Usa las etiquetas extraídas para crear el div de etiquetas
+                const lineTextarea = createLineTextarea(line, index, result, titleDiv, tagsDiv);
 
-        if (result.modalId && result.sectionData) {
-            const modal = createModal(result.modalId, result.sectionData);
-            document.body.appendChild(modal);
-        }
+                rowDiv.appendChild(titleDiv);
+                rowDiv.appendChild(lineTextarea);
+                rowDiv.appendChild(tagsDiv); // Añade el div de etiquetas al contenedor
+                markdownLinesDiv.appendChild(rowDiv);
+
+                if (result.modalId && result.sectionData) {
+                    const modal = createModal(result.modalId, result.sectionData);
+                    document.body.appendChild(modal);
+                }
 
         // Añade las etiquetas al conjunto de todas las etiquetas sin intentar redefinir 'tags'
         tags.forEach(tag => allTags.add(tag));
@@ -147,12 +151,19 @@
             }
         }
     
-        function createTitleDiv(title, isSection) {
-            const div = document.createElement('div');
-            div.innerHTML = `🆔 ${isSection}</br><b>${title}</b>`;
-            div.style.width = '30%';
-            return div;
-        }
+            function createTitleDiv(title, isSection) {
+                const div = document.createElement('div');
+                // Comprueba si isSection contiene la palabra "Section" para determinar si es "Yes"
+                if (isSection.includes("Section")) {
+                    div.innerHTML = `🆔 ${isSection}</br><b>${title}</b>`;
+                    div.style.background = 'lightblue'; // Aplica fondo azul
+                    div.style.color = 'white'; // Ajusta el color del texto a blanco para mejor contraste
+                } else {
+                    div.innerHTML = `text`; // Solo muestra el título si el resultado es "No"
+                }
+                div.style.width = '30%';
+                return div;
+            }
     
         function createLineTextarea(line, index, result, titleDiv, tagsDiv) {
             const outerContainer = document.createElement('div'); // Contenedor exterior para manejar el ancho del 60%
@@ -171,7 +182,7 @@
             textarea.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
             textarea.style.resize = 'none';
             textarea.style.display = 'none'; // Oculta el textarea inicialmente
-
+            textarea.classList.add('textarea-editable'); // Aplica la clase para los estilos editables
             // Evento para cambiar a edición al hacer clic en el div
             displayDiv.addEventListener('click', function() {
                 displayDiv.style.display = 'none'; // Oculta el div
