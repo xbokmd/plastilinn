@@ -33,10 +33,6 @@
 -->
 
           <div class="mb-3">
-            <label for="tagsFilter" class="form-label">Filter by tags:</label>
-            <select class="form-select" id="tagsFilter" multiple>
-                <!-- Las opciones se llenarán dinámicamente con JavaScript -->
-            </select>
           </div>
           <div id="markdownContent"></div>
       </div>
@@ -48,11 +44,11 @@
         <input type="file" id="markdownFileInput" accept=".md">
         <!-- Botón de Descarga -->
         <button id="downloadBtn" class="btn btn-primary">Download</button>
+        <label for="tagsFilter" class="form-label">Filter by tags:</label>
+        <select class="form-select" id="tagsFilter" multiple>
+            <!-- Las opciones se llenarán dinámicamente con JavaScript -->
+        </select>
         <div class="mb-3">
-          <label for="tagsFilter" class="form-label">Filter by tags:</label>
-          <select class="form-select" id="tagsFilter" multiple>
-              <!-- Las opciones se llenarán dinámicamente con JavaScript -->
-          </select>
         </div>
         <div id="markdown-lines"></div>
         -------------------------------------
@@ -104,7 +100,8 @@
                 rowDiv.style.background = '#f2f2f2'; // Aquí aplicas el fondo gris claro a cada línea
                 rowDiv.style.padding = '10px'; // Opcional, añade un poco de padding para mejor visualización
                 rowDiv.style.marginBottom = '5px'; // Opcional, añade un margen inferior para separar las líneas
-
+                rowDiv.className += ' line-container'; // Añade la clase al div
+                rowDiv.dataset.tags = tags.join(','); // Almacena las etiquetas en el atributo data-tags
 
                 const titleDiv = createTitleDiv(result.title, result.isSection);
                 const tagsDiv = createTagsDiv(tags); // Usa las etiquetas extraídas para crear el div de etiquetas
@@ -122,6 +119,7 @@
 
         // Añade las etiquetas al conjunto de todas las etiquetas sin intentar redefinir 'tags'
         tags.forEach(tag => allTags.add(tag));
+        updateTagsDropdown(Array.from(allTags));
     });
 };
 
@@ -150,6 +148,26 @@
                 return { title, isSection, modalId: null, sectionData: null };
             }
         }
+
+        function updateTagsDropdown() {
+            const tagsFilter = document.getElementById('tagsFilter');
+            tagsFilter.innerHTML = ''; // Limpia las opciones existentes
+
+            // Opción para refrescar o mostrar todas las líneas
+            const refreshOption = document.createElement('option');
+            refreshOption.value = ''; // Un valor vacío puede indicar "sin filtro"
+            refreshOption.text = 'Refrescar';
+            tagsFilter.appendChild(refreshOption);
+
+            // Añadir opciones de etiquetas
+            allTags.forEach(tag => {
+                const option = document.createElement('option');
+                option.value = tag;
+                option.text = tag;
+                tagsFilter.appendChild(option);
+            });
+        }
+
     
             function createTitleDiv(title, isSection) {
                 const div = document.createElement('div');
@@ -250,9 +268,6 @@
             `;
             return modalDiv;
         }
-    
-        // Asumiendo que tienes una función updateTagsDropdown para actualizar el dropdown de etiquetas
-        // updateTagsDropdown(Array.from(allTags));
     });
 </script>
     
@@ -265,7 +280,17 @@
       const tagsFilter = document.getElementById('tagsFilter');
       let allTags = new Set(); // Almacena todas las etiquetas únicas
 
+      updateTagsDropdown();
+
+        // Ahora añade el evento change al selector de etiquetas.
+        document.getElementById('tagsFilter').addEventListener('change', function() {
+            const selectedTags = Array.from(this.selectedOptions).map(option => option.value);
+            filterLinesByTags(selectedTags);
+        });
+
+        downloadFile(fileName, fileContent);
         document.getElementById('downloadBtn').addEventListener('click', downloadModel);
+
 
         function downloadModel() {
             const textareas = document.querySelectorAll('textarea');
@@ -326,52 +351,27 @@
         }
     
         const reader = new FileReader();
-// Este fragmento es parte del evento 'change' del input de archivos Markdown
-reader.onload = function(e) {
-    const content = e.target.result;
-    const lines = content.split(/\r?\n/); // Divide el contenido en líneas
-    allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
+        // Este fragmento es parte del evento 'change' del input de archivos Markdown
+        reader.onload = function(e) {
+            const content = e.target.result;
+            const lines = content.split(/\r?\n/); // Divide el contenido en líneas
+            allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
 
-    lines.forEach((line, index) => {
-        // Cambia la expresión regular para capturar sin incluir '#'
-        const tags = line.match(/(?<=\s)#([^\s#]+)/g) || []; // Busca etiquetas en la línea actual
-        tags.forEach(tag => {
-            // Añade solo el texto de la etiqueta, sin el '#', al conjunto de todas las etiquetas
-            allTags.add(tag.substring(1)); // Elimina el símbolo '#' antes de añadir
-        });
-    });
+            lines.forEach((line, index) => {
+                // Cambia la expresión regular para capturar sin incluir '#'
+                const tags = line.match(/(?<=\s)#([^\s#]+)/g) || []; // Busca etiquetas en la línea actual
+                tags.forEach(tag => {
+                    // Añade solo el texto de la etiqueta, sin el '#', al conjunto de todas las etiquetas
+                    allTags.add(tag.substring(1)); // Elimina el símbolo '#' antes de añadir
+                });
+            });
 
     // Luego de procesar todas las líneas, actualiza el selector de etiquetas
     // Asegúrate de que esta llamada se ajuste para trabajar con las etiquetas modificadas
     updateTagsDropdown(Array.from(allTags));
 };
-
-
-
-function updateTagsDropdown(tags) {
-    const tagsFilter = document.getElementById('tagsFilter');
-    tagsFilter.innerHTML = ''; // Limpia opciones existentes
-    tags.forEach(tag => {
-        const option = document.createElement('option');
-        option.value = tag;
-        option.textContent = tag; // Ya no incluye el símbolo '#', ajustado previamente
-        tagsFilter.appendChild(option); // Añade la opción al selector
-    });
-}
-    tagsFilter.addEventListener('change', function() {
-        filterLinesBySelectedTags();
-    });
     
-    function filterLinesBySelectedTags() {
-        const selectedTags = Array.from(document.getElementById('tagsFilter').selectedOptions).map(option => option.value);
-        const lines = document.querySelectorAll('.line-container');
-        
-        lines.forEach(line => {
-            const lineTags = Array.from(line.querySelectorAll('.tags-container span')).map(span => span.textContent);
-            const isLineVisible = selectedTags.every(selectedTag => lineTags.includes(selectedTag));
-            line.style.display = isLineVisible ? '' : 'none';
-        });
-    }
+
     </script>
 
 
