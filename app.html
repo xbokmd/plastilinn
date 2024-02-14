@@ -91,36 +91,40 @@
     
             const reader = new FileReader();
             reader.onload = function(e) {
-                const content = e.target.result;
-                const lines = content.split(/\r?\n/);
-                markdownLinesDiv.innerHTML = ''; 
-                markdownLinesDiv.style.display = 'grid';
-                markdownLinesDiv.style.gap = '10px';
-    
-                lines.forEach((line, index) => {
-                    const result = processModelTitle(line, index);
-    
-                    const rowDiv = document.createElement('div');
-                    rowDiv.style.display = 'flex';
-    
-                    const titleDiv = createTitleDiv(result.title, result.isSection);
-                    const lineTextarea = createLineTextarea(line, index, result, titleDiv);
-                    const tagsDiv = createTagsDiv(); // Crea la tercera columna
-    
-                    rowDiv.appendChild(titleDiv);
-                    rowDiv.appendChild(lineTextarea);
-                    rowDiv.appendChild(tagsDiv); // Añade la nueva columna al contenedor
-                    markdownLinesDiv.appendChild(rowDiv);
-    
-                    if (result.modalId && result.sectionData) {
-                        const modal = createModal(result.modalId, result.sectionData);
-                        document.body.appendChild(modal);
-                    }
-    
-                    const tags = line.match(/#\w+/g) || [];
-                    tags.forEach(tag => allTags.add(tag.substring(1)));
-                });
-            };
+    const content = e.target.result;
+    const lines = content.split(/\r?\n/);
+    markdownLinesDiv.innerHTML = ''; 
+    markdownLinesDiv.style.display = 'grid';
+    markdownLinesDiv.style.gap = '10px';
+
+    lines.forEach((line, index) => {
+        const result = processModelTitle(line, index);
+        // Extrae las etiquetas de la línea actual
+        // Al extraer etiquetas del texto de la línea
+        const tags = (line.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
+
+        const rowDiv = document.createElement('div');
+        rowDiv.style.display = 'flex';
+
+        const titleDiv = createTitleDiv(result.title, result.isSection);
+        const tagsDiv = createTagsDiv(tags); // Usa las etiquetas extraídas para crear el div de etiquetas
+        const lineTextarea = createLineTextarea(line, index, result, titleDiv, tagsDiv);
+
+        rowDiv.appendChild(titleDiv);
+        rowDiv.appendChild(lineTextarea);
+        rowDiv.appendChild(tagsDiv); // Añade el div de etiquetas al contenedor
+        markdownLinesDiv.appendChild(rowDiv);
+
+        if (result.modalId && result.sectionData) {
+            const modal = createModal(result.modalId, result.sectionData);
+            document.body.appendChild(modal);
+        }
+
+        // Añade las etiquetas al conjunto de todas las etiquetas sin intentar redefinir 'tags'
+        tags.forEach(tag => allTags.add(tag));
+    });
+};
+
             reader.readAsText(file);
         });
     
@@ -154,7 +158,7 @@
             return div;
         }
     
-        function createLineTextarea(line, index, result, titleDiv) {
+        function createLineTextarea(line, index, result, titleDiv, tagsDiv) {
             const textarea = document.createElement('textarea');
             textarea.value = line;
             textarea.style.width = '33%';
@@ -162,15 +166,25 @@
             textarea.oninput = function() {
                 const update = processModelTitle(this.value, index);
                 titleDiv.innerHTML = `🆔 ${update.isSection}</br><b>${update.title}</b>`;
+                // Usa la nueva expresión regular para extraer etiquetas actualizadas
+                const updatedTags = (this.value.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
+                updateTagsDiv(updatedTags, tagsDiv);
             };
             return textarea;
         }
 
-        function createTagsDiv() {
+        function createTagsDiv(tags) {
             const div = document.createElement('div');
-            div.innerHTML = "XXX"; // Contenido de la columna
-            div.style.width = '33%'; // Asume que quieres mantener el mismo ancho que las otras columnas
+            div.className = 'tags-container'; // Asigna la clase .tags-container al div
+            div.style.width = '33%';
+            // Crea un span para cada etiqueta
+            div.innerHTML = tags.map(tag => `<span class="${tag}">${tag}</span>`).join('');
             return div;
+        }
+
+
+        function updateTagsDiv(updatedTags, tagsDiv) {
+            tagsDiv.innerHTML = updatedTags.map(tag => `<span class="${tag}">${tag}</span>`).join('');
         }
     
         function createModal(modalId, sectionData) {
@@ -200,7 +214,7 @@
         // Asumiendo que tienes una función updateTagsDropdown para actualizar el dropdown de etiquetas
         // updateTagsDropdown(Array.from(allTags));
     });
-    </script>
+</script>
     
 
 <!-- script model -->
