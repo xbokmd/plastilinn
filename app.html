@@ -105,9 +105,11 @@
     
                     const titleDiv = createTitleDiv(result.title, result.isSection);
                     const lineTextarea = createLineTextarea(line, index, result, titleDiv);
+                    const tagsDiv = createTagsDiv(); // Crea la tercera columna
     
                     rowDiv.appendChild(titleDiv);
                     rowDiv.appendChild(lineTextarea);
+                    rowDiv.appendChild(tagsDiv); // Añade la nueva columna al contenedor
                     markdownLinesDiv.appendChild(rowDiv);
     
                     if (result.modalId && result.sectionData) {
@@ -147,7 +149,7 @@
     
         function createTitleDiv(title, isSection) {
             const div = document.createElement('div');
-            div.innerHTML = `Title: ${title}, Section: ${isSection}`;
+            div.innerHTML = `<b>${title}</b>, 🆔 ${isSection}`;
             div.style.width = '33%';
             return div;
         }
@@ -162,6 +164,13 @@
                 titleDiv.innerHTML = `Title: ${update.title}, 🆔 info ${update.isSection}`;
             };
             return textarea;
+        }
+
+        function createTagsDiv() {
+            const div = document.createElement('div');
+            div.innerHTML = "XXX"; // Contenido de la columna
+            div.style.width = '33%'; // Asume que quieres mantener el mismo ancho que las otras columnas
+            return div;
         }
     
         function createModal(modalId, sectionData) {
