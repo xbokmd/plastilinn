@@ -6,9 +6,8 @@
     <title>Web App con Pestañas</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <!-- Bootstrap Icons para usar iconos si es necesario -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
 <body class="container py-5">
     <h2 class="mb-4">Model Information</h2>
@@ -64,7 +63,7 @@
   <!-- Bootstrap Bundle con Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- script metamodel -->
+<!-- script model -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const markdownInput = document.getElementById('markdownFileInput');
@@ -88,11 +87,11 @@
     
             const reader = new FileReader();
             reader.onload = function(e) {
-    const content = e.target.result;
-    const lines = content.split(/\r?\n/);
-    markdownLinesDiv.innerHTML = ''; 
-    markdownLinesDiv.style.display = 'grid';
-    markdownLinesDiv.style.gap = '10px';
+            const content = e.target.result;
+            const lines = content.split(/\r?\n/);
+            markdownLinesDiv.innerHTML = ''; 
+            markdownLinesDiv.style.display = 'grid';
+            markdownLinesDiv.style.gap = '10px';
 
     lines.forEach((line, index) => {
         const result = processModelTitle(line, index);
@@ -151,29 +150,62 @@
         function createTitleDiv(title, isSection) {
             const div = document.createElement('div');
             div.innerHTML = `🆔 ${isSection}</br><b>${title}</b>`;
-            div.style.width = '33%';
+            div.style.width = '30%';
             return div;
         }
     
         function createLineTextarea(line, index, result, titleDiv, tagsDiv) {
+            const outerContainer = document.createElement('div'); // Contenedor exterior para manejar el ancho del 60%
+            outerContainer.style.flex = '1'; // Permite que el contenedor crezca para ocupar el espacio
+            outerContainer.style.flexBasis = '60%'; // Establece la base del tamaño en el 60%
+            
+            // Crea un div para mostrar el contenido Markdown parseado
+            const displayDiv = document.createElement('div');
+            displayDiv.innerHTML = marked.parse(line); // Parsea el Markdown a HTML
+            displayDiv.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
+            displayDiv.classList.add('markdown-display');
+
+            // Crea un textarea para la edición del Markdown, inicialmente oculto
             const textarea = document.createElement('textarea');
             textarea.value = line;
-            textarea.style.width = '33%';
+            textarea.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
             textarea.style.resize = 'none';
-            textarea.oninput = function() {
+            textarea.style.display = 'none'; // Oculta el textarea inicialmente
+
+            // Evento para cambiar a edición al hacer clic en el div
+            displayDiv.addEventListener('click', function() {
+                displayDiv.style.display = 'none'; // Oculta el div
+                textarea.style.display = ''; // Muestra el textarea
+                textarea.focus(); // Enfoca el textarea para edición inmediata
+            });
+
+            // Evento para actualizar el div con el contenido del textarea al desenfocar
+            textarea.addEventListener('blur', function() {
+                displayDiv.innerHTML = marked.parse(textarea.value); // Actualiza el div con el nuevo contenido Markdown parseado
+                textarea.style.display = 'none'; // Oculta el textarea
+                displayDiv.style.display = ''; // Muestra el div
+            });
+
+            // Evento para actualizar el título y las etiquetas al modificar el contenido
+            textarea.addEventListener('input', function() {
                 const update = processModelTitle(this.value, index);
                 titleDiv.innerHTML = `🆔 ${update.isSection}</br><b>${update.title}</b>`;
-                // Usa la nueva expresión regular para extraer etiquetas actualizadas
                 const updatedTags = (this.value.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
                 updateTagsDiv(updatedTags, tagsDiv);
-            };
-            return textarea;
-        }
+            });
+
+    // Añade el displayDiv y el textarea al contenedor exterior
+    outerContainer.appendChild(displayDiv);
+    outerContainer.appendChild(textarea);
+
+    return outerContainer; // Retorna el contenedor exterior
+}
+
 
         function createTagsDiv(tags) {
             const div = document.createElement('div');
             div.className = 'tags-container'; // Asigna la clase .tags-container al div
-            div.style.width = '33%';
+            div.style.width = '10%';
             // Crea un span para cada etiqueta
             div.innerHTML = tags.map(tag => `<span class="${tag}">${tag}</span>`).join('');
             return div;
