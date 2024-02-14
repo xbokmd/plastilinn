@@ -68,237 +68,131 @@
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/lib/marked.umd.min.js"></script>
 
 <!-- script metamodel -->
-    <script>
-function createSectionsTable(sections) {
-    const table = document.createElement('table');
-    table.className = 'table';
-
-    // Crear cabecera de la tabla
-    const thead = document.createElement('thead');
-    const headerRow = document.createElement('tr');
-
-    // Suponiendo que todos los objetos tienen las mismas claves, usar el primer objeto para determinarlas
-    if (sections.length > 0) {
-        Object.keys(sections[0]).forEach(key => {
-            const headerCell = document.createElement('th');
-            headerCell.textContent = key; // Usar cada clave como nombre de columna
-            headerRow.appendChild(headerCell);
-        });
-    }
-
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-
-    // Crear cuerpo de la tabla
-    const tbody = document.createElement('tbody');
-
-    sections.forEach(section => {
-        const row = document.createElement('tr');
-        Object.values(section).forEach(value => {
-            const cell = document.createElement('td');
-            cell.textContent = value; // Usar cada valor como contenido de la celda
-            row.appendChild(cell);
-        });
-        tbody.appendChild(row);
-    });
-
-    table.appendChild(tbody);
-
-    // Agregar la tabla al contenedor
-    const container = document.getElementById('sectionsTableContainer');
-    container.innerHTML = ''; // Limpiar contenido previo
-    container.appendChild(table);
-}
-
-
-        document.addEventListener('DOMContentLoaded', () => {
-          fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
-          .then(response => response.json())
-          .then(data => {
-              // Suponiendo que 'sections' es una clave en tu JSON
-              createSectionsTable(data.sections);
-              writeToDiv(data.sections); // Añade esta línea para escribir en el div
-          })
-          .catch(error => console.error('Error loading the JSON:', error));
-      });
-
-        function writeToDiv(sections) {
-          const sectionsDiv = document.getElementById('sections');
-          sectionsDiv.innerHTML = ''; // Limpiar contenido previo
-
-          // Crear y añadir cada nombre de sección como un párrafo (o cualquier otro elemento) al div
-          sections.forEach(section => {
-              const paragraph = document.createElement('p');
-              paragraph.textContent = section.name; // Asume que cada sección tiene un atributo 'name'
-              sectionsDiv.appendChild(paragraph);
-          });
-}
-    </script>
-
-<!-- script model 2-->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const markdownInput = document.getElementById('markdownFileInput');
-    const markdownLinesDiv = document.getElementById('markdown-lines');
-    const tagsFilter = document.getElementById('tagsFilter');
-    let sections = [];
-    let allTags = new Set(); // Almacena todas las etiquetas únicas
-
-    function updateTagsDropdown(tags) {
-          tagsFilter.innerHTML = ''; // Limpia opciones existentes
-          tags.forEach(tag => {
-              const option = document.createElement('option');
-              option.value = tag;
-              option.textContent = tag; // Ya no incluye el símbolo '#'
-              tagsFilter.appendChild(option); // Añade la opción al selector
-          });
-      }
-
-
-// Carga los nombres de las secciones desde el JSON
-fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
-.then(response => response.json())
-.then(data => {
-    // Almacena toda la información de las secciones, no solo los nombres
-    sections = data.sections; // Asume que data.sections contiene toda la información necesaria
-})
-.catch(error => console.error('Error al cargar los nombres de las secciones:', error));
-
-    markdownInput.addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (!file) {
-            return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const content = e.target.result;
-            const lines = content.split(/\r?\n/);
-            markdownLinesDiv.innerHTML = ''; 
-
-            markdownLinesDiv.style.display = 'grid';
-            markdownLinesDiv.style.gap = '10px';
-
-            lines.forEach((line, index) => {
-    const result = processModelTitle(line, index); // Añade el índice como argumento
-
-    // Contenedor para las tres columnas
-    const rowDiv = document.createElement('div');
-    rowDiv.style.display = 'flex';
-
-    const titleDiv = document.createElement('div');
-    titleDiv.innerHTML = `Title: ${result.title}, Section: ${result.isSection}`;
-    titleDiv.style.width = '33%'; // Ajuste para ocupar un tercio
-
-    const lineTextarea = document.createElement('textarea');
-    lineTextarea.value = line;
-    lineTextarea.style.width = '33%'; // Ajuste para ocupar un tercio
-    lineTextarea.style.resize = 'none'; // Para evitar el redimensionamiento
-    lineTextarea.oninput = function() {
-    // Actualización dinámica al editar el textarea
-    const update = processModelTitle(this.value, index);
-    titleDiv.innerHTML = `Title: ${update.title}, Section: ${update.isSection}`;
-
-    // Implementa la actualización de la visualización de etiquetas aquí
-    updateTagsDisplay(this.value, tagsContainerDiv);
-};
-
-
-function updateTagsDisplay(text, container) {
-    const tags = text.match(/#\w+/g) || [];
-    container.innerHTML = ''; // Limpia el contenedor de etiquetas anterior
-    tags.forEach(tag => {
-        const tagElement = document.createElement('span');
-        tagElement.classList.add('tag');
-        tagElement.textContent = tag; // Muestra la etiqueta directamente
-        container.appendChild(tagElement);
-    });
-}
-
-    // Crear la tercera columna como un div con clase 'tags-container'
-    const tagsContainerDiv = document.createElement('div');
-    tagsContainerDiv.className = 'tags-container';
-    // Ajuste para ocupar un tercio
-    tagsContainerDiv.style.width = '33%';
-
-    // Añadir las columnas al contenedor rowDiv
-    rowDiv.appendChild(titleDiv);
-    rowDiv.appendChild(lineTextarea);
-    rowDiv.appendChild(tagsContainerDiv); // Añadir la tercera columna con la clase 'tags-container'
-
-    markdownLinesDiv.appendChild(rowDiv); // Añadir el contenedor de filas al contenedor principal
-
-    if (result.modalId && result.sectionData) {
-        // Crear y añadir el modal correspondiente
-        const modal = createModal(result.modalId, result.sectionData);
-        document.body.appendChild(modal); // Añade el modal al body
-    }
-
-
-    // Extracción y actualización de etiquetas
-    const tags = line.match(/#\w+/g) || []; // Ajusta esta expresión regular según sea necesario
-    tags.forEach(tag => allTags.add(tag.substring(1))); // Añade la etiqueta sin el '#' al conjunto
-});
-        };
-        reader.readAsText(file);
-    });
-
-    // Después de procesar todas las líneas, actualiza el dropdown de etiquetas
-    updateTagsDropdown(Array.from(allTags));
+    document.addEventListener('DOMContentLoaded', function() {
+        const markdownInput = document.getElementById('markdownFileInput');
+        const markdownLinesDiv = document.getElementById('markdown-lines');
+        const tagsFilter = document.getElementById('tagsFilter');
+        let sections = [];
+        let allTags = new Set();
     
-    function processModelTitle(line, index) {
-    let title = line.replace(/^[\s-]*/, '')
-                    .replace(/#\S+/g, '')
-                    .replace(/#+/g, '')
-                    .replace(/\[\[/g, '')
-                    .replace(/\]\]/g, '')
-                    .trim();
-    // Encuentra la sección que coincide por nombre
-    let matchingSection = sections.find(section => section.name === title); // Asume que 'name' es el campo a comparar
-    let isSection = matchingSection ? "Yes" : "No";
-    let modalId = `sectionModal-${index}`;
-
-    if (isSection === "Yes") {
-        return {
-            title,
-            isSection: `<a href="#" data-bs-toggle="modal" data-bs-target="#${modalId}">Section</a>`,
-            modalId,
-            sectionData: matchingSection // Aquí ya tienes el objeto de sección correspondiente, no es necesario buscarlo de nuevo
-        };
-    } else {
-        return { title, isSection, modalId: null, sectionData: null };
-    }
-}
-
-
-    function createModal(modalId, sectionData) {
-    const modalDiv = document.createElement('div');
-    modalDiv.id = modalId;
-    modalDiv.className = 'modal fade';
-    modalDiv.setAttribute('tabindex', '-1');
-    modalDiv.setAttribute('role', 'dialog');
-    modalDiv.innerHTML = `
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">${sectionData.name}</h5> <!-- Asume que cada sección tiene un 'name' -->
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+        fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
+        .then(response => response.json())
+        .then(data => {
+            sections = data.sections;
+        })
+        .catch(error => console.error('Error al cargar los nombres de las secciones:', error));
+    
+        markdownInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (!file) {
+                return;
+            }
+    
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const content = e.target.result;
+                const lines = content.split(/\r?\n/);
+                markdownLinesDiv.innerHTML = ''; 
+                markdownLinesDiv.style.display = 'grid';
+                markdownLinesDiv.style.gap = '10px';
+    
+                lines.forEach((line, index) => {
+                    const result = processModelTitle(line, index);
+    
+                    const rowDiv = document.createElement('div');
+                    rowDiv.style.display = 'flex';
+    
+                    const titleDiv = createTitleDiv(result.title, result.isSection);
+                    const lineTextarea = createLineTextarea(line, index, result, titleDiv);
+    
+                    rowDiv.appendChild(titleDiv);
+                    rowDiv.appendChild(lineTextarea);
+                    markdownLinesDiv.appendChild(rowDiv);
+    
+                    if (result.modalId && result.sectionData) {
+                        const modal = createModal(result.modalId, result.sectionData);
+                        document.body.appendChild(modal);
+                    }
+    
+                    const tags = line.match(/#\w+/g) || [];
+                    tags.forEach(tag => allTags.add(tag.substring(1)));
+                });
+            };
+            reader.readAsText(file);
+        });
+    
+        function processModelTitle(line, index) {
+            let title = line.replace(/^[\s-]*/, '')
+                            .replace(/#\S+/g, '')
+                            .replace(/#+/g, '')
+                            .replace(/\[\[/g, '')
+                            .replace(/\]\]/g, '')
+                            .trim();
+            let matchingSection = sections.find(section => section.name === title);
+            let isSection = matchingSection ? "Yes" : "No";
+            let modalId = `sectionModal-${index}`;
+    
+            if (isSection === "Yes") {
+                return {
+                    title,
+                    isSection: `<a href="#" data-bs-toggle="modal" data-bs-target="#${modalId}">Section</a>`,
+                    modalId,
+                    sectionData: matchingSection
+                };
+            } else {
+                return { title, isSection, modalId: null, sectionData: null };
+            }
+        }
+    
+        function createTitleDiv(title, isSection) {
+            const div = document.createElement('div');
+            div.innerHTML = `Title: ${title}, Section: ${isSection}`;
+            div.style.width = '33%';
+            return div;
+        }
+    
+        function createLineTextarea(line, index, result, titleDiv) {
+            const textarea = document.createElement('textarea');
+            textarea.value = line;
+            textarea.style.width = '33%';
+            textarea.style.resize = 'none';
+            textarea.oninput = function() {
+                const update = processModelTitle(this.value, index);
+                titleDiv.innerHTML = `Title: ${update.title}, 🆔 info ${update.isSection}`;
+            };
+            return textarea;
+        }
+    
+        function createModal(modalId, sectionData) {
+            const modalDiv = document.createElement('div');
+            modalDiv.id = modalId;
+            modalDiv.className = 'modal fade';
+            modalDiv.setAttribute('tabindex', '-1');
+            modalDiv.setAttribute('role', 'dialog');
+            modalDiv.innerHTML = `
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">${sectionData.name}</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ${Object.keys(sectionData).map(key => `<p><strong>${key}:</strong> ${sectionData[key]}</p>`).join('')}
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    ${Object.keys(sectionData).map(key => `<p><strong>${key}:</strong> ${sectionData[key]}</p>`).join('')}
-                </div>
-            </div>
-        </div>
-    `;
-    return modalDiv;
-  }
-
-
-});
-</script>
-  
+            `;
+            return modalDiv;
+        }
+    
+        // Asumiendo que tienes una función updateTagsDropdown para actualizar el dropdown de etiquetas
+        // updateTagsDropdown(Array.from(allTags));
+    });
+    </script>
+    
 
 <!-- script model -->
 <script>
@@ -416,5 +310,8 @@ function updateTagsDropdown(tags) {
         });
     }
     </script>
+
+
+
     </body>
     </html>
