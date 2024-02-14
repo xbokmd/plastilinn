@@ -33,6 +33,18 @@ textarea {
     padding: 4px; /* Espaciado interno para el texto */
 }
 
+/* Estilos para textarea */
+.textarea-editable {
+    border: 2px solid transparent; /* Borde transparente por defecto */
+    outline: none; /* Elimina el outline para evitar el aspecto predeterminado al enfocar */
+    transition: border-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+.textarea-editable:hover,
+.textarea-editable:focus {
+    border-color: #007bff; /* Cambia el color del borde a azul al pasar el cursor o enfocar */
+}
+
 span.key { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span.key::before { content: "🔑"; position: absolute; left: 0; top: 0; margin-right: 5px; }
 span.organization { position: relative; padding-left: 25px;  background-color: lightblue; } span.organization::before { content: "🏢"; position: absolute; left: 0; top: 0; margin-right: 5px; }
 span.journey { position: relative; padding-left: 25px;  background-color: lightblue; } span.journey::before { content: "✈️"; position: absolute; left: 0; top: 0; margin-right: 5px; }
