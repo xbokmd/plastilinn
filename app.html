@@ -113,7 +113,6 @@
                     const modal = createModal(result.modalId, result.sectionData);
                     document.body.appendChild(modal);
                 }
-
         // Añade las etiquetas al conjunto de todas las etiquetas sin intentar redefinir 'tags'
         tags.forEach(tag => allTags.add(tag));
     });
@@ -122,8 +121,6 @@
             reader.readAsText(file);
         });
 
-        
-    
         function processModelTitle(line, index) {
             let title = line.replace(/^[\s-]*/, '')
                             .replace(/#\S+/g, '')
@@ -208,12 +205,13 @@
                 updateTagsDiv(updatedTags, tagsDiv);
             });
 
-    // Añade el displayDiv y el textarea al contenedor exterior
-    outerContainer.appendChild(displayDiv);
-    outerContainer.appendChild(textarea);
+            // Añade el displayDiv y el textarea al contenedor exterior
+            outerContainer.appendChild(displayDiv);
+            outerContainer.appendChild(textarea);
 
-    return outerContainer; // Retorna el contenedor exterior
-}
+            return outerContainer; // Retorna el contenedor exterior
+        }
+
 
         // Función para analizar las etiquetas en el contenido de un textarea
         function parseTagsFromTextarea(content) {
@@ -222,14 +220,6 @@
             const tags = content.match(tagPattern) || [];
             return tags.map(tag => tag.substring(1)); // Elimina el símbolo '#' de cada etiqueta
         }
-
-// Función para analizar las etiquetas en el contenido de un textarea
-function parseTagsFromTextarea(content) {
-    // Usa una expresión regular para encontrar las etiquetas. Asume que las etiquetas son palabras que comienzan con '#'
-    const tagPattern = /#[^\s#]+/g;
-    const tags = content.match(tagPattern) || [];
-    return tags.map(tag => tag.substring(1)); // Elimina el símbolo '#' de cada etiqueta
-}
 
         function createTagsDiv(tags) {
             const div = document.createElement('div');
@@ -268,9 +258,6 @@ function parseTagsFromTextarea(content) {
             `;
             return modalDiv;
         }
-    
-        // Asumiendo que tienes una función updateTagsDropdown para actualizar el dropdown de etiquetas
-        // updateTagsDropdown(Array.from(allTags));
     });
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -312,11 +299,66 @@ function parseTagsFromTextarea(content) {
 
             document.body.removeChild(element);
         }
-  });
-  </script>
 
+        
+        function downloadAndRefresh(file) {
+            // Crea una URL temporal para la descarga
+            const url = URL.createObjectURL(file);
 
-<script>
+            // Crea un elemento `a` para la descarga
+            const downloadLink = document.createElement('a');
+            downloadLink.href = url;
+            downloadLink.download = file.name;
+            downloadLink.click();
+
+            // Simula la selección del archivo descargado
+            const hiddenFileInput = document.createElement('input');
+            hiddenFileInput.type = 'file';
+            hiddenFileInput.multiple = false;
+            hiddenFileInput.files = [file];
+
+            hiddenFileInput.addEventListener('change', () => {
+                // Recarga la página para actualizar el contenido
+                location.reload();
+            });
+
+            // Oculta el elemento input
+            hiddenFileInput.style.display = 'none';
+            document.body.appendChild(hiddenFileInput);
+            }
+
+                // Función auxiliar para extraer etiquetas de un div
+        function extractTagsFromDiv(div) {
+            const tagSpans = div.querySelectorAll('.tags-container span');
+            const tags = [];
+            tagSpans.forEach(span => tags.push(span.textContent)); 
+            return tags;
+        }
+
+        console.log(allTags)
+        // Actualiza el dropdown con las etiquetas encontradas
+        function updateTagsDropdown() {
+        const tagsFilter = document.getElementById('tagsFilter');
+        tagsFilter.innerHTML = ''; // Limpia el dropdown
+
+        // 1. Convierte el Set en un Array apto para ordenar
+        const tagsArray = Array.from(allTags);
+
+        console.log(tagsArray)
+
+        // 2. Ordena el array alfabéticamente 
+        tagsArray.sort(); 
+
+        // 3. Crea las opciones ya con el Array ordenado
+        tagsArray.forEach(tag => { 
+            const option = document.createElement('option');
+            option.value = tag;
+            option.textContent = tag;
+            tagsFilter.appendChild(option);
+        });
+        }
+        });
+
    const etiquetasEncontradas = new Set(); // Variable global a todo el script
 
 function extractTags() {
@@ -360,11 +402,7 @@ function extractTags() {
 
   // Asegúrate de ejecutar extractTags() en algún momento para actualizar "etiquetasEncontradas"
   tagsFilter.addEventListener('change', filterLinesBySelectedTags);
-</script>
-  
-  
 
-  <script>
     const reader = new FileReader();
 // Este fragmento es parte del evento 'change' del input de archivos Markdown
 reader.onload = function(e) {
