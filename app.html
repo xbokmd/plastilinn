@@ -31,12 +31,7 @@
 <!--          <input type="file" id="markdownFileInput" accept=".md">
           <button id="downloadBtn" class="btn btn-primary">Download</button>
 -->
-
           <div class="mb-3">
-            <label for="tagsFilter" class="form-label">Filter by tags:</label>
-            <select class="form-select" id="tagsFilter" multiple>
-                <!-- Las opciones se llenarán dinámicamente con JavaScript -->
-            </select>
           </div>
           <div id="markdownContent"></div>
       </div>
@@ -49,10 +44,9 @@
         <!-- Botón de Descarga -->
         <button id="downloadBtn" class="btn btn-primary">Download</button>
         <div class="mb-3">
-          <label for="tagsFilter" class="form-label">Filter by tags:</label>
-          <select class="form-select" id="tagsFilter" multiple>
-              <!-- Las opciones se llenarán dinámicamente con JavaScript -->
-          </select>
+            <button onclick="extractTags()">extraer etiquetas</button>
+            <select class="form-select" id="tagFilter" multiple onchange="filterLinesBySelectedTags()">
+            </select>
         </div>
         <div id="markdown-lines"></div>
         -------------------------------------
@@ -68,7 +62,6 @@
     document.addEventListener('DOMContentLoaded', function() {
         const markdownInput = document.getElementById('markdownFileInput');
         const markdownLinesDiv = document.getElementById('markdown-lines');
-        const tagsFilter = document.getElementById('tagsFilter');
         let sections = [];
         let allTags = new Set();
     
@@ -100,6 +93,7 @@
                 const tags = (line.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
 
                 const rowDiv = document.createElement('div');
+                rowDiv.classList.add('markdown-line');
                 rowDiv.style.display = 'flex';
                 rowDiv.style.background = '#f2f2f2'; // Aquí aplicas el fondo gris claro a cada línea
                 rowDiv.style.padding = '10px'; // Opcional, añade un poco de padding para mejor visualización
@@ -127,6 +121,8 @@
 
             reader.readAsText(file);
         });
+
+        
     
         function processModelTitle(line, index) {
             let title = line.replace(/^[\s-]*/, '')
@@ -165,6 +161,11 @@
                 return div;
             }
     
+            function highlightTextarea(textarea) {
+            const highlightedCode = hljs.highlight(textarea.value, {language: 'javascript'});
+            textarea.value = highlightedCode.value;
+            }
+
         function createLineTextarea(line, index, result, titleDiv, tagsDiv) {
             const outerContainer = document.createElement('div'); // Contenedor exterior para manejar el ancho del 60%
             outerContainer.style.flex = '1'; // Permite que el contenedor crezca para ocupar el espacio
@@ -188,6 +189,7 @@
                 displayDiv.style.display = 'none'; // Oculta el div
                 textarea.style.display = ''; // Muestra el textarea
                 textarea.focus(); // Enfoca el textarea para edición inmediata
+                
             });
 
             // Evento para actualizar el div con el contenido del textarea al desenfocar
@@ -195,6 +197,7 @@
                 displayDiv.innerHTML = marked.parse(textarea.value); // Actualiza el div con el nuevo contenido Markdown parseado
                 textarea.style.display = 'none'; // Oculta el textarea
                 displayDiv.style.display = ''; // Muestra el div
+                
             });
 
             // Evento para actualizar el título y las etiquetas al modificar el contenido
@@ -212,6 +215,21 @@
     return outerContainer; // Retorna el contenedor exterior
 }
 
+        // Función para analizar las etiquetas en el contenido de un textarea
+        function parseTagsFromTextarea(content) {
+            // Usa una expresión regular para encontrar las etiquetas. Asume que las etiquetas son palabras que comienzan con '#'
+            const tagPattern = /#[^\s#]+/g;
+            const tags = content.match(tagPattern) || [];
+            return tags.map(tag => tag.substring(1)); // Elimina el símbolo '#' de cada etiqueta
+        }
+
+// Función para analizar las etiquetas en el contenido de un textarea
+function parseTagsFromTextarea(content) {
+    // Usa una expresión regular para encontrar las etiquetas. Asume que las etiquetas son palabras que comienzan con '#'
+    const tagPattern = /#[^\s#]+/g;
+    const tags = content.match(tagPattern) || [];
+    return tags.map(tag => tag.substring(1)); // Elimina el símbolo '#' de cada etiqueta
+}
 
         function createTagsDiv(tags) {
             const div = document.createElement('div');
@@ -258,8 +276,6 @@
   document.addEventListener('DOMContentLoaded', function() {
       const markdownInput = document.getElementById('markdownFileInput');
       const markdownContent = document.getElementById('markdownContent');
-      const tagsFilter = document.getElementById('tagsFilter');
-      let allTags = new Set(); // Almacena todas las etiquetas únicas
 
         document.getElementById('downloadBtn').addEventListener('click', downloadModel);
 
@@ -296,19 +312,57 @@
 
             document.body.removeChild(element);
         }
-
-      // Función para filtrar líneas por etiquetas seleccionadas
-      tagsFilter.addEventListener('change', filterLinesBySelectedTags);
-  
-      function filterLinesBySelectedTags() {
-          const selectedTags = Array.from(tagsFilter.selectedOptions).map(option => option.value);
-          document.querySelectorAll('.line-container').forEach(line => {
-              const lineTags = Array.from(line.querySelectorAll('.tags-container span')).map(span => span.textContent);
-              line.style.display = selectedTags.every(tag => lineTags.includes(tag)) ? '' : 'none';
-          });
-      }
   });
   </script>
+
+
+<script>
+   const etiquetasEncontradas = new Set(); // Variable global a todo el script
+
+function extractTags() {
+  const textareas = document.querySelectorAll('.textarea-editable');
+
+  // Recorremos cada uno de los textareas
+  textareas.forEach(textarea => {
+    // Obtenemos su contenido
+    const text = textarea.value;
+
+    // Expresión regular para encontrar etiquetas
+    const regex = /\#\S+/g;
+    let matches;
+
+    // Buscamos coincidencias para la expresión regular 
+    while ((matches = regex.exec(text)) !== null) {
+      // Agregamos la etiqueta al Set
+      etiquetasEncontradas.add(matches[0]); 
+    }
+  });
+
+  // Mostramos la lista de etiquetas en el select
+  const select = document.getElementById('tagFilter');
+  select.innerHTML = ''; // Limpiamos el select antes de agregar nuevas opciones
+
+  etiquetasEncontradas.forEach(etiqueta => {
+    const option = document.createElement('option');
+    option.value = etiqueta;
+    option.textContent = etiqueta;
+    select.appendChild(option);
+  });
+}
+
+  function filterLinesBySelectedTags() {
+    const selectedTags = Array.from(tagsFilter.selectedOptions).map(option => option.value);
+    document.querySelectorAll('.markdown-line').forEach(line => { //Asumiendo que es markdown-line
+      const lineTags = Array.from(line.querySelectorAll('.tags-container span')).map(span => span.textContent);
+      line.style.display = selectedTags.every(tag => lineTags.includes(tag)) ? 'block' : 'none';
+    });
+  }
+
+  // Asegúrate de ejecutar extractTags() en algún momento para actualizar "etiquetasEncontradas"
+
+  tagsFilter.addEventListener('change', filterLinesBySelectedTags);
+</script>
+  
   
 
   <script>
@@ -329,5 +383,6 @@ reader.onload = function(e) {
     });
 };
 </script>
+
 </body>
 </html>
