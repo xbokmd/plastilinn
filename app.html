@@ -148,18 +148,22 @@
             }
 
             function createTitleDiv(title, isSection) {
-                const div = document.createElement('div');
-                // Comprueba si isSection contiene la palabra "Section" para determinar si es "Yes"
-                if (isSection.includes("Section")) {
-                    div.innerHTML = `🆔 ${isSection}</br><b>${title}</b>`;
-                    div.style.background = 'lightblue'; // Aplica fondo azul
-                    div.style.color = 'white'; // Ajusta el color del texto a blanco para mejor contraste
-                } else {
-                    div.innerHTML = `📄text`; // Solo muestra el título si el resultado es "No"
-                }
-                div.style.width = '30%';
-                return div;
-            }
+    const div = document.createElement('div');
+    if (isSection.includes("Section")) {
+        div.innerHTML = `🆔 ${isSection}</br><b>${title}</b> <a href="#" onclick="getSectionPrompt()">Open Popup</a>`;
+        div.style.background = 'lightblue';
+        div.style.color = 'white';
+    } else {
+        div.innerHTML = `📄text`;
+    }
+    div.style.width = '30%';
+    return div;
+}
+
+function getSectionPrompt() {
+    // Function to generate content for the popup
+    alert("XXX");
+}
 
             function createLineTextarea(line, index, result, titleDiv, tagsDiv) {
                 const outerContainer = document.createElement('div'); // Contenedor exterior para manejar el ancho del 60%
