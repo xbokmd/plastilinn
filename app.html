@@ -149,7 +149,7 @@
     
         function createTitleDiv(title, isSection) {
             const div = document.createElement('div');
-            div.innerHTML = `<b>${title}</b>, 🆔 ${isSection}`;
+            div.innerHTML = `🆔 ${isSection}</br><b>${title}</b>`;
             div.style.width = '33%';
             return div;
         }
@@ -161,7 +161,7 @@
             textarea.style.resize = 'none';
             textarea.oninput = function() {
                 const update = processModelTitle(this.value, index);
-                titleDiv.innerHTML = `Title: ${update.title}, 🆔 info ${update.isSection}`;
+                titleDiv.innerHTML = `🆔 ${update.isSection}</br><b>${update.title}</b>`;
             };
             return textarea;
         }
