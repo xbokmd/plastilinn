@@ -3,13 +3,6 @@
     align-items: start; /* Alineación de elementos */
     margin-bottom: 10px;
 }
-.tags-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    background-color: #f8f9fa; /* Fondo ligeramente gris para el contenedor de etiquetas */
-    padding: 5px; /* Añade un poco de relleno alrededor de las etiquetas */
-}
 
 .tags-container {
     /* Asegura que el contenido esté alineado a la izquierda */
@@ -24,6 +17,12 @@
     gap: 5px; /* Espacio entre etiquetas */
 }
 
+.tags-container span {
+    background-color: #e1e1e1; /* Color de fondo de las etiquetas */
+    padding: 2px 5px;
+    margin: 2px 0;
+    border-radius: 3px;
+}
 
 textarea {
     width: 80%; /* Ocupa el espacio asignado */
