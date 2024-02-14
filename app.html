@@ -1,149 +1,152 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web App con Pestañas</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  </head>
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
 <body class="container py-5">
     <h2 class="mb-4">Model Information</h2>
-
     <!-- Pestañas actualizadas para Bootstrap 5 -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="model-tab" data-bs-toggle="tab" data-bs-target="#model" type="button" role="tab" aria-controls="model" aria-selected="true">Model</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="metaModel-tab" data-bs-toggle="tab" data-bs-target="#metaModel" type="button" role="tab" aria-controls="metaModel" aria-selected="true">Metamodel</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="memory-tab" data-bs-toggle="tab" data-bs-target="#memory" type="button" role="tab" aria-controls="memory" aria-selected="false">Memory</button>
-  </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="model-tab" data-bs-toggle="tab" data-bs-target="#model" type="button"
+                role="tab" aria-controls="model" aria-selected="true">Model</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="metaModel-tab" data-bs-toggle="tab" data-bs-target="#metaModel" type="button"
+                role="tab" aria-controls="metaModel" aria-selected="true">Metamodel</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="memory-tab" data-bs-toggle="tab" data-bs-target="#memory" type="button"
+                role="tab" aria-controls="memory" aria-selected="false">Memory</button>
+        </li>
     </ul>
 
-  <!-- Contenido de las pestañas para Bootstrap 5 -->
-  <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade" id="model" role="tabpanel" aria-labelledby="model-tab">
-<!--          <input type="file" id="markdownFileInput" accept=".md">
+    <!-- Contenido de las pestañas para Bootstrap 5 -->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade" id="model" role="tabpanel" aria-labelledby="model-tab">
+            <!--          <input type="file" id="markdownFileInput" accept=".md">
           <button id="downloadBtn" class="btn btn-primary">Download</button>
 -->
-          <div class="mb-3">
-          </div>
-          <div id="markdownContent"></div>
-      </div>
-      <div class="tab-pane fade show active" id="metaModel" role="tabpanel" aria-labelledby="metaModel-tab">
-        <div id="sections"></div>
-      </div>
-
-      <div class="tab-pane fade" id="memory" role="tabpanel" aria-labelledby="memory-tab">
-        <input type="file" id="markdownFileInput" accept=".md">
-        <!-- Botón de Descarga -->
-        <button id="downloadBtn" class="btn btn-primary">Download</button>
-        <div class="mb-3">
-            <button onclick="extractTags()">extraer etiquetas</button>
-            <select class="form-select" id="tagsFilter" multiple onchange="filterLinesBySelectedTags()">
-            </select>
+            <div class="mb-3">
+            </div>
+            <div id="markdownContent"></div>
         </div>
-        <div id="markdown-lines"></div>
-        -------------------------------------
-        <div id="sectionsTableContainer"></div>
-      </div>
-  </div>
+        <div class="tab-pane fade show active" id="metaModel" role="tabpanel" aria-labelledby="metaModel-tab">
+            <div id="sections"></div>
+        </div>
 
-  <!-- Bootstrap Bundle con Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="tab-pane fade" id="memory" role="tabpanel" aria-labelledby="memory-tab">
+            <input type="file" id="markdownFileInput" accept=".md">
+            <!-- Botón de Descarga -->
+            <button id="downloadBtn" class="btn btn-primary">Download</button>
+            <div class="mb-3">
+                <button onclick="extractTags()">Refresh filter</button>
+                <select class="form-select" id="tagsFilter" multiple onchange="filterLinesBySelectedTags()">
+                </select>
+            </div>
+            <div id="markdown-lines"></div>
+            -------------------------------------
+            <div id="sectionsTableContainer"></div>
+        </div>
+    </div>
 
-<!-- script model -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const markdownInput = document.getElementById('markdownFileInput');
-        const markdownLinesDiv = document.getElementById('markdown-lines');
-        let sections = [];
-        let allTags = new Set();
-    
-        fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
-        .then(response => response.json())
-        .then(data => {
-            sections = data.sections;
-        })
-        .catch(error => console.error('Error al cargar los nombres de las secciones:', error));
-    
-        markdownInput.addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (!file) {
-                return;
-            }
-    
-            const reader = new FileReader();
-            reader.onload = function(e) {
-            const content = e.target.result;
-            const lines = content.split(/\r?\n/);
-            markdownLinesDiv.innerHTML = ''; 
+    <!-- script model -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const markdownInput = document.getElementById('markdownFileInput');
+            const markdownLinesDiv = document.getElementById('markdown-lines');
+            let sections = [];
+            let allTags = new Set();
 
-            markdownLinesDiv.style.gap = '10px';
+            fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
+                .then(response => response.json())
+                .then(data => {
+                    sections = data.sections;
+                })
+                .catch(error => console.error('Error al cargar los nombres de las secciones:', error));
 
-            lines.forEach((line, index) => {
-                const result = processModelTitle(line, index);
-                // Extrae las etiquetas de la línea actual
-                // Al extraer etiquetas del texto de la línea
-                const tags = (line.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
-
-                const rowDiv = document.createElement('div');
-                rowDiv.classList.add('markdown-line');
-                rowDiv.style.display = 'flex';
-                rowDiv.style.background = '#f2f2f2'; // Aquí aplicas el fondo gris claro a cada línea
-                rowDiv.style.padding = '10px'; // Opcional, añade un poco de padding para mejor visualización
-                rowDiv.style.marginBottom = '5px'; // Opcional, añade un margen inferior para separar las líneas
-
-
-                const titleDiv = createTitleDiv(result.title, result.isSection);
-                const tagsDiv = createTagsDiv(tags); // Usa las etiquetas extraídas para crear el div de etiquetas
-                const lineTextarea = createLineTextarea(line, index, result, titleDiv, tagsDiv);
-
-                rowDiv.appendChild(titleDiv);
-                rowDiv.appendChild(lineTextarea);
-                rowDiv.appendChild(tagsDiv); // Añade el div de etiquetas al contenedor
-                markdownLinesDiv.appendChild(rowDiv);
-
-                if (result.modalId && result.sectionData) {
-                    const modal = createModal(result.modalId, result.sectionData);
-                    document.body.appendChild(modal);
+            markdownInput.addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (!file) {
+                    return;
                 }
-        // Añade las etiquetas al conjunto de todas las etiquetas sin intentar redefinir 'tags'
-        tags.forEach(tag => allTags.add(tag));
-    });
-};
 
-            reader.readAsText(file);
-        });
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const content = e.target.result;
+                    const lines = content.split(/\r?\n/);
+                    markdownLinesDiv.innerHTML = '';
 
-        function processModelTitle(line, index) {
-            let title = line.replace(/^[\s-]*/, '')
-                            .replace(/#\S+/g, '')
-                            .replace(/#+/g, '')
-                            .replace(/\[\[/g, '')
-                            .replace(/\]\]/g, '')
-                            .trim();
-            let matchingSection = sections.find(section => section.name === title);
-            let isSection = matchingSection ? "Yes" : "No";
-            let modalId = `sectionModal-${index}`;
-    
-            if (isSection === "Yes") {
-                return {
-                    title,
-                    isSection: `<a href="#" data-bs-toggle="modal" data-bs-target="#${modalId}">Section</a>`,
-                    modalId,
-                    sectionData: matchingSection
+                    markdownLinesDiv.style.gap = '10px';
+
+                    lines.forEach((line, index) => {
+                        const result = processModelTitle(line, index);
+                        // Extrae las etiquetas de la línea actual
+                        // Al extraer etiquetas del texto de la línea
+                        const tags = (line.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
+
+                        const rowDiv = document.createElement('div');
+                        rowDiv.classList.add('markdown-line');
+                        rowDiv.style.display = 'flex';
+                        rowDiv.style.background = '#f2f2f2'; // Aquí aplicas el fondo gris claro a cada línea
+                        rowDiv.style.padding = '10px'; // Opcional, añade un poco de padding para mejor visualización
+                        rowDiv.style.marginBottom = '5px'; // Opcional, añade un margen inferior para separar las líneas
+
+
+                        const titleDiv = createTitleDiv(result.title, result.isSection);
+                        const tagsDiv = createTagsDiv(tags); // Usa las etiquetas extraídas para crear el div de etiquetas
+                        const lineTextarea = createLineTextarea(line, index, result, titleDiv, tagsDiv);
+
+                        rowDiv.appendChild(titleDiv);
+                        rowDiv.appendChild(lineTextarea);
+                        rowDiv.appendChild(tagsDiv); // Añade el div de etiquetas al contenedor
+                        markdownLinesDiv.appendChild(rowDiv);
+
+                        if (result.modalId && result.sectionData) {
+                            const modal = createModal(result.modalId, result.sectionData);
+                            document.body.appendChild(modal);
+                        }
+                        // Añade las etiquetas al conjunto de todas las etiquetas sin intentar redefinir 'tags'
+                        tags.forEach(tag => allTags.add(tag));
+                    });
                 };
-            } else {
-                return { title, isSection, modalId: null, sectionData: null };
+
+                reader.readAsText(file);
+            });
+
+            function processModelTitle(line, index) {
+                let title = line.replace(/^[\s-]*/, '')
+                    .replace(/#\S+/g, '')
+                    .replace(/#+/g, '')
+                    .replace(/\[\[/g, '')
+                    .replace(/\]\]/g, '')
+                    .trim();
+                let matchingSection = sections.find(section => section.name === title);
+                let isSection = matchingSection ? "Yes" : "No";
+                let modalId = `sectionModal-${index}`;
+
+                if (isSection === "Yes") {
+                    return {
+                        title,
+                        isSection: `<a href="#" data-bs-toggle="modal" data-bs-target="#${modalId}">Section</a>`,
+                        modalId,
+                        sectionData: matchingSection
+                    };
+                } else {
+                    return { title, isSection, modalId: null, sectionData: null };
+                }
             }
-        }
-    
+
             function createTitleDiv(title, isSection) {
                 const div = document.createElement('div');
                 // Comprueba si isSection contiene la palabra "Section" para determinar si es "Yes"
@@ -152,274 +155,269 @@
                     div.style.background = 'lightblue'; // Aplica fondo azul
                     div.style.color = 'white'; // Ajusta el color del texto a blanco para mejor contraste
                 } else {
-                    div.innerHTML = `text`; // Solo muestra el título si el resultado es "No"
+                    div.innerHTML = `📄text`; // Solo muestra el título si el resultado es "No"
                 }
                 div.style.width = '30%';
                 return div;
             }
-    
-            function highlightTextarea(textarea) {
-            const highlightedCode = hljs.highlight(textarea.value, {language: 'javascript'});
-            textarea.value = highlightedCode.value;
+
+            function createLineTextarea(line, index, result, titleDiv, tagsDiv) {
+                const outerContainer = document.createElement('div'); // Contenedor exterior para manejar el ancho del 60%
+                outerContainer.style.flex = '1'; // Permite que el contenedor crezca para ocupar el espacio
+                outerContainer.style.flexBasis = '60%'; // Establece la base del tamaño en el 60%
+
+                // Crea un div para mostrar el contenido Markdown parseado
+                const displayDiv = document.createElement('div');
+                displayDiv.innerHTML = marked.parse(line); // Parsea el Markdown a HTML
+                displayDiv.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
+                displayDiv.classList.add('markdown-display');
+
+                // Crea un textarea para la edición del Markdown, inicialmente oculto
+                const textarea = document.createElement('textarea');
+                textarea.value = line;
+                textarea.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
+                textarea.style.resize = 'none';
+                textarea.style.display = 'none'; // Oculta el textarea inicialmente
+                textarea.classList.add('textarea-editable'); // Aplica la clase para los estilos editables
+                // Evento para cambiar a edición al hacer clic en el div
+                displayDiv.addEventListener('click', function () {
+                    displayDiv.style.display = 'none'; // Oculta el div
+                    textarea.style.display = ''; // Muestra el textarea
+                    textarea.focus(); // Enfoca el textarea para edición inmediata
+
+                });
+
+                // Evento para actualizar el div con el contenido del textarea al desenfocar
+                textarea.addEventListener('blur', function () {
+                    displayDiv.innerHTML = marked.parse(textarea.value); // Actualiza el div con el nuevo contenido Markdown parseado
+                    textarea.style.display = 'none'; // Oculta el textarea
+                    displayDiv.style.display = ''; // Muestra el div
+
+                });
+
+                // Evento para actualizar el título y las etiquetas al modificar el contenido
+                textarea.addEventListener('input', function () {
+                    const update = processModelTitle(this.value, index);
+                    titleDiv.innerHTML = `🆔 ${update.isSection}</br><b>${update.title}</b>`;
+                    const updatedTags = (this.value.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
+                    updateTagsDiv(updatedTags, tagsDiv);
+                });
+
+                // Añade el displayDiv y el textarea al contenedor exterior
+                outerContainer.appendChild(displayDiv);
+                outerContainer.appendChild(textarea);
+
+                return outerContainer; // Retorna el contenedor exterior
             }
 
-        function createLineTextarea(line, index, result, titleDiv, tagsDiv) {
-            const outerContainer = document.createElement('div'); // Contenedor exterior para manejar el ancho del 60%
-            outerContainer.style.flex = '1'; // Permite que el contenedor crezca para ocupar el espacio
-            outerContainer.style.flexBasis = '60%'; // Establece la base del tamaño en el 60%
-            
-            // Crea un div para mostrar el contenido Markdown parseado
-            const displayDiv = document.createElement('div');
-            displayDiv.innerHTML = marked.parse(line); // Parsea el Markdown a HTML
-            displayDiv.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
-            displayDiv.classList.add('markdown-display');
 
-            // Crea un textarea para la edición del Markdown, inicialmente oculto
-            const textarea = document.createElement('textarea');
-            textarea.value = line;
-            textarea.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
-            textarea.style.resize = 'none';
-            textarea.style.display = 'none'; // Oculta el textarea inicialmente
-            textarea.classList.add('textarea-editable'); // Aplica la clase para los estilos editables
-            // Evento para cambiar a edición al hacer clic en el div
-            displayDiv.addEventListener('click', function() {
-                displayDiv.style.display = 'none'; // Oculta el div
-                textarea.style.display = ''; // Muestra el textarea
-                textarea.focus(); // Enfoca el textarea para edición inmediata
-                
-            });
+            // Función para analizar las etiquetas en el contenido de un textarea
+            function parseTagsFromTextarea(content) {
+                // Usa una expresión regular para encontrar las etiquetas. Asume que las etiquetas son palabras que comienzan con '#'
+                const tagPattern = /#[^\s#]+/g;
+                const tags = content.match(tagPattern) || [];
+                return tags.map(tag => tag.substring(1)); // Elimina el símbolo '#' de cada etiqueta
+            }
 
-            // Evento para actualizar el div con el contenido del textarea al desenfocar
-            textarea.addEventListener('blur', function() {
-                displayDiv.innerHTML = marked.parse(textarea.value); // Actualiza el div con el nuevo contenido Markdown parseado
-                textarea.style.display = 'none'; // Oculta el textarea
-                displayDiv.style.display = ''; // Muestra el div
-                
-            });
-
-            // Evento para actualizar el título y las etiquetas al modificar el contenido
-            textarea.addEventListener('input', function() {
-                const update = processModelTitle(this.value, index);
-                titleDiv.innerHTML = `🆔 ${update.isSection}</br><b>${update.title}</b>`;
-                const updatedTags = (this.value.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
-                updateTagsDiv(updatedTags, tagsDiv);
-            });
-
-            // Añade el displayDiv y el textarea al contenedor exterior
-            outerContainer.appendChild(displayDiv);
-            outerContainer.appendChild(textarea);
-
-            return outerContainer; // Retorna el contenedor exterior
-        }
+            function createTagsDiv(tags) {
+                const div = document.createElement('div');
+                div.className = 'tags-container'; // Asigna la clase .tags-container al div
+                div.style.width = '10%';
+                // Crea un span para cada etiqueta
+                div.innerHTML = tags.map(tag => `<span class="${tag}">${tag}</span>`).join('');
+                return div;
+            }
 
 
-        // Función para analizar las etiquetas en el contenido de un textarea
-        function parseTagsFromTextarea(content) {
-            // Usa una expresión regular para encontrar las etiquetas. Asume que las etiquetas son palabras que comienzan con '#'
-            const tagPattern = /#[^\s#]+/g;
-            const tags = content.match(tagPattern) || [];
-            return tags.map(tag => tag.substring(1)); // Elimina el símbolo '#' de cada etiqueta
-        }
+            function updateTagsDiv(updatedTags, tagsDiv) {
+                tagsDiv.innerHTML = updatedTags.map(tag => `<span class="${tag}">${tag}</span>`).join('');
+            }
 
-        function createTagsDiv(tags) {
-            const div = document.createElement('div');
-            div.className = 'tags-container'; // Asigna la clase .tags-container al div
-            div.style.width = '10%';
-            // Crea un span para cada etiqueta
-            div.innerHTML = tags.map(tag => `<span class="${tag}">${tag}</span>`).join('');
-            return div;
-        }
-
-
-        function updateTagsDiv(updatedTags, tagsDiv) {
-            tagsDiv.innerHTML = updatedTags.map(tag => `<span class="${tag}">${tag}</span>`).join('');
-        }
-    
-        function createModal(modalId, sectionData) {
-            const modalDiv = document.createElement('div');
-            modalDiv.id = modalId;
-            modalDiv.className = 'modal fade';
-            modalDiv.setAttribute('tabindex', '-1');
-            modalDiv.setAttribute('role', 'dialog');
-            modalDiv.innerHTML = `
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">${sectionData.name}</h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            ${Object.keys(sectionData).map(key => `<p><strong>${key}:</strong> ${sectionData[key]}</p>`).join('')}
-                        </div>
-                    </div>
+            function createModal(modalId, sectionData) {
+                const modalDiv = document.createElement('div');
+                modalDiv.id = modalId;
+                modalDiv.className = 'modal fade';
+                modalDiv.setAttribute('tabindex', '-1');
+                modalDiv.setAttribute('role', 'dialog');
+                modalDiv.innerHTML = `
+        <div class="modal-dialog modal-xl" role="document"> <!-- Añade la clase modal-xl para hacer la ventana modal más ancha -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">${sectionData.name}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Utiliza la clase btn-close para el botón de cierre -->
                 </div>
-            `;
-            return modalDiv;
-        }
-    });
+                <div class="modal-body">
+                    ${Object.keys(sectionData).map(key => `<p><strong>${key}:</strong> ${sectionData[key]}</p>`).join('')}
+                </div>
+            </div>
+        </div>`;
+                return modalDiv;
+            }
+        });
 
-  document.addEventListener('DOMContentLoaded', function() {
-      const markdownInput = document.getElementById('markdownFileInput');
-      const markdownContent = document.getElementById('markdownContent');
+        document.addEventListener('DOMContentLoaded', function () {
+            const markdownInput = document.getElementById('markdownFileInput');
+            const markdownContent = document.getElementById('markdownContent');
 
-        document.getElementById('downloadBtn').addEventListener('click', downloadModel);
+            document.getElementById('downloadBtn').addEventListener('click', downloadModel);
 
-        function downloadModel() {
-            const textareas = document.querySelectorAll('textarea');
-            let fileContent = '';
-            textareas.forEach(textarea => {
-                fileContent += textarea.value + '\n'; // Añade un salto de línea después de cada área de texto
-            });
+            function downloadModel() {
+                const textareas = document.querySelectorAll('textarea');
+                let fileContent = '';
+                textareas.forEach(textarea => {
+                    fileContent += textarea.value + '\n'; // Añade un salto de línea después de cada área de texto
+                });
 
-            const fileName = `Business model ${formatDate(new Date())}.md`;
-            downloadFile(fileName, fileContent);
-        }
-
-        function formatDate(date) {
-            const year = date.getFullYear();
-            const month = (`0${date.getMonth() + 1}`).slice(-2);
-            const day = (`0${date.getDate()}`).slice(-2);
-            const hours = (`0${date.getHours()}`).slice(-2);
-            const minutes = (`0${date.getMinutes()}`).slice(-2);
-            const seconds = (`0${date.getSeconds()}`).slice(-2);
-            return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
-        }
-
-        function downloadFile(fileName, content) {
-            const element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-            element.setAttribute('download', fileName);
-
-            element.style.display = 'none';
-            document.body.appendChild(element);
-
-            element.click();
-
-            document.body.removeChild(element);
-        }
-
-        
-        function downloadAndRefresh(file) {
-            // Crea una URL temporal para la descarga
-            const url = URL.createObjectURL(file);
-
-            // Crea un elemento `a` para la descarga
-            const downloadLink = document.createElement('a');
-            downloadLink.href = url;
-            downloadLink.download = file.name;
-            downloadLink.click();
-
-            // Simula la selección del archivo descargado
-            const hiddenFileInput = document.createElement('input');
-            hiddenFileInput.type = 'file';
-            hiddenFileInput.multiple = false;
-            hiddenFileInput.files = [file];
-
-            hiddenFileInput.addEventListener('change', () => {
-                // Recarga la página para actualizar el contenido
-                location.reload();
-            });
-
-            // Oculta el elemento input
-            hiddenFileInput.style.display = 'none';
-            document.body.appendChild(hiddenFileInput);
+                const fileName = `Business model ${formatDate(new Date())}.md`;
+                downloadFile(fileName, fileContent);
             }
 
-                // Función auxiliar para extraer etiquetas de un div
-        function extractTagsFromDiv(div) {
-            const tagSpans = div.querySelectorAll('.tags-container span');
-            const tags = [];
-            tagSpans.forEach(span => tags.push(span.textContent)); 
-            return tags;
+            function formatDate(date) {
+                const year = date.getFullYear();
+                const month = (`0${date.getMonth() + 1}`).slice(-2);
+                const day = (`0${date.getDate()}`).slice(-2);
+                const hours = (`0${date.getHours()}`).slice(-2);
+                const minutes = (`0${date.getMinutes()}`).slice(-2);
+                const seconds = (`0${date.getSeconds()}`).slice(-2);
+                return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
+            }
+
+            function downloadFile(fileName, content) {
+                const element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+                element.setAttribute('download', fileName);
+
+                element.style.display = 'none';
+                document.body.appendChild(element);
+
+                element.click();
+
+                document.body.removeChild(element);
+            }
+
+
+            function downloadAndRefresh(file) {
+                // Crea una URL temporal para la descarga
+                const url = URL.createObjectURL(file);
+
+                // Crea un elemento `a` para la descarga
+                const downloadLink = document.createElement('a');
+                downloadLink.href = url;
+                downloadLink.download = file.name;
+                downloadLink.click();
+
+                // Simula la selección del archivo descargado
+                const hiddenFileInput = document.createElement('input');
+                hiddenFileInput.type = 'file';
+                hiddenFileInput.multiple = false;
+                hiddenFileInput.files = [file];
+
+                hiddenFileInput.addEventListener('change', () => {
+                    // Recarga la página para actualizar el contenido
+                    location.reload();
+                });
+
+                // Oculta el elemento input
+                hiddenFileInput.style.display = 'none';
+                document.body.appendChild(hiddenFileInput);
+            }
+
+            // Función auxiliar para extraer etiquetas de un div
+            function extractTagsFromDiv(div) {
+                const tagSpans = div.querySelectorAll('.tags-container span');
+                const tags = [];
+                tagSpans.forEach(span => tags.push(span.textContent));
+                return tags;
+            }
+
+            console.log(allTags)
+            // Actualiza el dropdown con las etiquetas encontradas
+            function updateTagsDropdown() {
+                const tagsFilter = document.getElementById('tagsFilter');
+                tagsFilter.innerHTML = ''; // Limpia el dropdown
+
+                // 1. Convierte el Set en un Array apto para ordenar
+                const tagsArray = Array.from(allTags);
+
+                // 2. Ordena el array alfabéticamente 
+                tagsArray.sort((a, b) => a.localeCompare(b));
+                console.log(tagsArray)
+                // 3. Crea las opciones ya con el Array ordenado
+                tagsArray.forEach(tag => {
+                    const option = document.createElement('option');
+                    option.value = tag;
+                    option.textContent = tag;
+                    tagsFilter.appendChild(option);
+                });
+            }
+        });
+
+        const etiquetasEncontradas = new Set(); // Variable global a todo el script
+
+        function extractTags() {
+            const textareas = document.querySelectorAll('.textarea-editable');
+
+            // Recorremos cada uno de los textareas
+            textareas.forEach(textarea => {
+                // Obtenemos su contenido
+                const text = textarea.value;
+
+                // Expresión regular para encontrar etiquetas
+                const regex = /\#\S+/g;
+                let matches;
+
+                // Buscamos coincidencias para la expresión regular 
+                while ((matches = regex.exec(text)) !== null) {
+                    // Agregamos la etiqueta al Set
+                    etiquetasEncontradas.add(matches[0]);
+                }
+            });
+
+            // Mostramos la lista de etiquetas en el select
+            const select = document.getElementById('tagsFilter');
+            select.innerHTML = ''; // Limpiamos el select antes de agregar nuevas opciones
+
+            // Convertir el Set de etiquetas a un array y ordenarlo alfabéticamente
+            const etiquetasOrdenadas = Array.from(etiquetasEncontradas).sort();
+
+            // Agregar las opciones ordenadas al selector
+            etiquetasOrdenadas.forEach(etiqueta => {
+                const option = document.createElement('option');
+                option.value = etiqueta;
+                option.textContent = etiqueta;
+                select.appendChild(option);
+            });
         }
 
-        console.log(allTags)
-        // Actualiza el dropdown con las etiquetas encontradas
-        function updateTagsDropdown() {
-        const tagsFilter = document.getElementById('tagsFilter');
-        tagsFilter.innerHTML = ''; // Limpia el dropdown
-
-        // 1. Convierte el Set en un Array apto para ordenar
-        const tagsArray = Array.from(allTags);
-
-        console.log(tagsArray)
-
-        // 2. Ordena el array alfabéticamente 
-        tagsArray.sort(); 
-
-        // 3. Crea las opciones ya con el Array ordenado
-        tagsArray.forEach(tag => { 
-            const option = document.createElement('option');
-            option.value = tag;
-            option.textContent = tag;
-            tagsFilter.appendChild(option);
-        });
+        function filterLinesBySelectedTags() {
+            const selectedTags = Array.from(tagsFilter.selectedOptions).map(option => option.value);
+            document.querySelectorAll('.markdown-line').forEach(line => {
+                const lineTags = line.querySelector('textarea').value.match(/\B#\S+/g) || [];
+                line.style.display = selectedTags.some(tag => lineTags.includes(tag)) ? 'block' : 'none';
+            });
         }
-        });
 
-   const etiquetasEncontradas = new Set(); // Variable global a todo el script
+        // Asegúrate de ejecutar extractTags() en algún momento para actualizar "etiquetasEncontradas"
+        tagsFilter.addEventListener('change', filterLinesBySelectedTags);
 
-function extractTags() {
-  const textareas = document.querySelectorAll('.textarea-editable');
+        const reader = new FileReader();
+        // Este fragmento es parte del evento 'change' del input de archivos Markdown
+        reader.onload = function (e) {
+            const content = e.target.result;
+            const lines = content.split(/\r?\n/); // Divide el contenido en líneas
+            allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
 
-  // Recorremos cada uno de los textareas
-  textareas.forEach(textarea => {
-    // Obtenemos su contenido
-    const text = textarea.value;
-
-    // Expresión regular para encontrar etiquetas
-    const regex = /\#\S+/g;
-    let matches;
-
-    // Buscamos coincidencias para la expresión regular 
-    while ((matches = regex.exec(text)) !== null) {
-      // Agregamos la etiqueta al Set
-      etiquetasEncontradas.add(matches[0]); 
-    }
-  });
-
-  // Mostramos la lista de etiquetas en el select
-  const select = document.getElementById('tagsFilter');
-  select.innerHTML = ''; // Limpiamos el select antes de agregar nuevas opciones
-
-  etiquetasEncontradas.forEach(etiqueta => {
-    const option = document.createElement('option');
-    option.value = etiqueta;
-    option.textContent = etiqueta;
-    select.appendChild(option);
-  });
-}
-
-  function filterLinesBySelectedTags() {
-    const selectedTags = Array.from(tagsFilter.selectedOptions).map(option => option.value);
-    document.querySelectorAll('.markdown-line').forEach(line => {
-        const lineTags = line.querySelector('textarea').value.match(/\B#\S+/g) || [];
-      line.style.display = selectedTags.some(tag => lineTags.includes(tag)) ? 'block' : 'none';
-    });
-  }
-
-  // Asegúrate de ejecutar extractTags() en algún momento para actualizar "etiquetasEncontradas"
-  tagsFilter.addEventListener('change', filterLinesBySelectedTags);
-
-    const reader = new FileReader();
-// Este fragmento es parte del evento 'change' del input de archivos Markdown
-reader.onload = function(e) {
-    const content = e.target.result;
-    const lines = content.split(/\r?\n/); // Divide el contenido en líneas
-    allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
-
-    lines.forEach((line, index) => {
-        // Cambia la expresión regular para capturar sin incluir '#'
-        const tags = line.match(/(?<=\s)#([^\s#]+)/g) || []; // Busca etiquetas en la línea actual
-        tags.forEach(tag => {
-            // Añade solo el texto de la etiqueta, sin el '#', al conjunto de todas las etiquetas
-            allTags.add(tag.substring(1)); // Elimina el símbolo '#' antes de añadir
-        });
-    });
-};
-</script>
+            lines.forEach((line, index) => {
+                // Cambia la expresión regular para capturar sin incluir '#'
+                const tags = line.match(/(?<=\s)#([^\s#]+)/g) || []; // Busca etiquetas en la línea actual
+                tags.forEach(tag => {
+                    // Añade solo el texto de la etiqueta, sin el '#', al conjunto de todas las etiquetas
+                    allTags.add(tag.substring(1)); // Elimina el símbolo '#' antes de añadir
+                });
+            });
+        };
+    </script>
 
 </body>
+
 </html>
