@@ -45,7 +45,7 @@
         <button id="downloadBtn" class="btn btn-primary">Download</button>
         <div class="mb-3">
             <button onclick="extractTags()">extraer etiquetas</button>
-            <select class="form-select" id="tagFilter" multiple onchange="filterLinesBySelectedTags()">
+            <select class="form-select" id="tagsFilter" multiple onchange="filterLinesBySelectedTags()">
             </select>
         </div>
         <div id="markdown-lines"></div>
@@ -339,7 +339,7 @@ function extractTags() {
   });
 
   // Mostramos la lista de etiquetas en el select
-  const select = document.getElementById('tagFilter');
+  const select = document.getElementById('tagsFilter');
   select.innerHTML = ''; // Limpiamos el select antes de agregar nuevas opciones
 
   etiquetasEncontradas.forEach(etiqueta => {
@@ -352,14 +352,13 @@ function extractTags() {
 
   function filterLinesBySelectedTags() {
     const selectedTags = Array.from(tagsFilter.selectedOptions).map(option => option.value);
-    document.querySelectorAll('.markdown-line').forEach(line => { //Asumiendo que es markdown-line
-      const lineTags = Array.from(line.querySelectorAll('.tags-container span')).map(span => span.textContent);
-      line.style.display = selectedTags.every(tag => lineTags.includes(tag)) ? 'block' : 'none';
+    document.querySelectorAll('.markdown-line').forEach(line => {
+        const lineTags = line.querySelector('textarea').value.match(/\B#\S+/g) || [];
+      line.style.display = selectedTags.some(tag => lineTags.includes(tag)) ? 'block' : 'none';
     });
   }
 
   // Asegúrate de ejecutar extractTags() en algún momento para actualizar "etiquetasEncontradas"
-
   tagsFilter.addEventListener('change', filterLinesBySelectedTags);
 </script>
   
