@@ -144,10 +144,8 @@
 
                 if (isSection.includes("Section")) {
                     div.innerHTML = `🆔 ${isSection}</br><b>${title}</b> <a href="#" onclick="getSectionPrompt()">Open Popup</a>`;
-                    div.style.background = 'lightblue';
-                    div.style.color = 'white';
                 } else {
-                    div.innerHTML = `📄text`;
+                    div.innerHTML = ``;
                 }
                 div.style.width = '30%';
                 return div;
