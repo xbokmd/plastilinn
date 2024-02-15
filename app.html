@@ -34,8 +34,8 @@
             </div>
         </div>
 
-        <div class="md-lines"> 
-            <div class="md-line grid grid-cols-1 md:grid-cols-5 gap-6">  
+        <div id="md-lines" class="md-lines"> 
+            <div id="md-line" class="md-line grid grid-cols-1 md:grid-cols-5 gap-6">  
                 <div class="md-line-left p-4 md:col-span-1">
                     Line 1 Section 1
                 </div>
@@ -47,14 +47,14 @@
                 </div>
             </div>
         </div>
-        <div id="markdown-lines"></div>
+
     </main>
 
     <!-- script model -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const markdownInput = document.getElementById('markdownFileInput');
-            const markdownLinesDiv = document.getElementById('markdown-lines');
+            const markdownLinesDiv = document.getElementById('md-lines');
             let sections = [];
             let allTags = new Set();
 
@@ -86,7 +86,7 @@
                         const tags = (line.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
 
                         const rowDiv = document.createElement('div');
-                        rowDiv.classList.add('markdown-line');
+                        rowDiv.classList.add('md-line');
                         rowDiv.style.display = 'flex';
                         rowDiv.style.background = '#f2f2f2'; // Aquí aplicas el fondo gris claro a cada línea
                         rowDiv.style.padding = '10px'; // Opcional, añade un poco de padding para mejor visualización
@@ -385,7 +385,7 @@ function getSectionPrompt() {
 
         function filterLinesBySelectedTags() {
             const selectedTags = Array.from(tagsFilter.selectedOptions).map(option => option.value);
-            document.querySelectorAll('.markdown-line').forEach(line => {
+            document.querySelectorAll('.md-line').forEach(line => {
                 const lineTags = line.querySelector('textarea').value.match(/\B#\S+/g) || [];
                 line.style.display = selectedTags.some(tag => lineTags.includes(tag)) ? 'block' : 'none';
             });
