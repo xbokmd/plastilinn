@@ -1,7 +1,8 @@
 .line-container {
     display: grid;
     align-items: start; /* Alineación de elementos */
-    margin-bottom: 10px;
+    margin-bottom: 4px;
+    border: gainsboro 1px;
 }
 
 .md-line-left {
@@ -36,17 +37,17 @@ textarea {
     overflow-y: hidden;
     resize: vertical; /* Permite ajustar la altura */
     border: 1px solid #dcdcdc; /* Borde gris clarito */
-    padding: 4px; /* Espaciado interno para el texto */
+    padding: 2px; /* Espaciado interno para el texto */
 }
 
 /* Estilos para textarea */
-.textarea-editable {
+.markdown-display {
     outline: none; /* Elimina el outline para evitar el aspecto predeterminado al enfocar */
     transition: border-color 0.3s; /* Transición suave para el cambio de color */
 }
 
-.textarea-editable:hover,
-.textarea-editable:focus {
+.markdown-display:hover,
+.markdown-display:focus {
     border-color: #007bff; /* Cambia el color del borde a azul al pasar el cursor o enfocar */
 }
 
