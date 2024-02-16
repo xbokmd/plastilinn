@@ -5,6 +5,15 @@
     border: gainsboro 1px;
 }
 
+#document-controls {
+    position: fixed;
+    top: 0; /* Ajusta este valor al alto de tu navbar */
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Asegura que este elemento se mantenga por encima del contenido de la página pero debajo de la navbar si se superponen */
+    overflow-y: auto; /* Permite el desplazamiento dentro del elemento si es necesario */
+}
+
 .md-line-left {
 
 }
