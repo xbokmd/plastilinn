@@ -8,6 +8,10 @@
 
 }
 
+.chat-bubble {
+    background-color: white;
+}
+
 .tags-container {
     /* Asegura que el contenido esté alineado a la izquierda */
     text-align: left;
@@ -16,13 +20,11 @@
     align-items: flex-start; /* Alinea los ítems al inicio del contenedor */
     justify-content: flex-start; /* Alinea los ítems al inicio (izquierda) */
     padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
     gap: 5px; /* Espacio entre etiquetas */
 }
 
 .tags-container span {
-    background-color: #e1e1e1; /* Color de fondo de las etiquetas */
+    background-color: white; /* Color de fondo de las etiquetas */
     padding: 2px 5px;
     margin: 2px 0;
     border-radius: 3px;
@@ -39,7 +41,7 @@ textarea {
 
 /* Estilos para textarea */
 .textarea-editable {
-     outline: none; /* Elimina el outline para evitar el aspecto predeterminado al enfocar */
+    outline: none; /* Elimina el outline para evitar el aspecto predeterminado al enfocar */
     transition: border-color 0.3s; /* Transición suave para el cambio de color */
 }
 

@@ -49,17 +49,19 @@
         </div>
 
         <div id="md-lines" class="md-lines"> 
-            <div id="md-line" class="md-line grid grid-cols-1 md:grid-cols-5 gap-6">  
-                <div class="md-line-left p-4 md:col-span-1">
-                    Line 1 Section 1
+            <div class="hero min-h-screen bg-base-200">
+                <div class="hero-content text-center">
+                  <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
+                    <p class="py-6">Plastilinn offers guidance on completing your business model, including aspects such as market analysis, marketing strategies, financial planning, organizational structure, understanding market trends, analyzing customer demographics, and evaluating competitor behavior. It can help you make informed choices by evaluating different strategic options, and provides continuous support and instant feedback, crucial for iterative business development and improvement.</p>
+                    <ul class="steps">
+                        <li class="step step-primary">Design your Business Model</li>
+                        <li class="step">Analyze your Business Model</li>
+                        <li class="step">Validate your Business Model</li>
+                      </ul>
+                  </div>
                 </div>
-                <div class="md-line-content bg-white shadow-md p-4 md:col-span-3"> 
-                    Line 1 Section 2
-                </div>
-                <div class="md-line-right p-4 md:col-span-1">
-                    Line 1 Section 3
-                </div>
-            </div>
+              </div>
         </div>
 
     </main>
@@ -109,6 +111,7 @@
                         rowWrapperDiv.appendChild(rowDiv);
 
                         const titleDiv = createTitleDiv(result.title, result.isSection);
+
                         const tagsDiv = createTagsDiv(tags); // Usa las etiquetas extraídas para crear el div de etiquetas
                         const lineTextarea = createLineTextarea(line, index, result, titleDiv, tagsDiv);
 
@@ -157,12 +160,12 @@
                 div.classList.add('md-line-left', 'p-4', 'md:col-span-1');                
 
                 if (isSection.includes("Section")) {
-                    div.innerHTML = `🆔 ${isSection}</br><b>${title}</b> <a href="#" onclick="createSectionInfoModal('${title}')">Open Popup</a>`;
+                    div.innerHTML = `<div class="chat chat-end"><div class="chat-bubble">🆔 ${isSection}</br><b>${title}</b> <a href="#" onclick="createSectionInfoModal('${title}')">Open Popup</a></div></div>`;
                     createSectionInfoModal('title');
                 } else {
                     div.innerHTML = ``;
                 }
-                div.style.width = '30%';
+                div.style.width = '20%';
                 return div;
             }
 
@@ -229,9 +232,9 @@
 
             function createTagsDiv(tags) {
                 const div = document.createElement('div');
-                div.classList.add('md-line-right', 'p-4', 'md:col-span-1', 'toast', 'toast-end', 'toast-middle');
+                div.classList.add('md-line-right', 'p-4', 'md:col-span-1', 'toast', 'toast-end', 'toast-middle',);
                 div.className = 'tags-container'; // Asigna la clase .tags-container al div
-                div.style.width = '10%';
+                div.style.width = '20%';
                 // Crea un span para cada etiqueta
                 div.innerHTML = tags.map(tag => `<span class="${tag}">${tag}</span>`).join('');
                 return div;
