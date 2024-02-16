@@ -48,6 +48,10 @@ textarea {
     border-color: #007bff; /* Cambia el color del borde a azul al pasar el cursor o enfocar */
 }
 
+code {
+    white-space: pre-wrap;
+  }
+
 h1, h2, h3, h4, h5, h6 {
     font-size: revert; /* Esto restablecerá el tamaño de fuente al valor predeterminado del navegador */
     font-weight: bold; /* Esto hará que los encabezados sean más gruesos */
