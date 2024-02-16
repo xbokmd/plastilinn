@@ -1,35 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web App</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+code {
+  white-space: pre-wrap;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: revert; /* Esto restablecerá el tamaño de fuente al valor predeterminado del navegador */
+    font-weight: bold; /* Esto hará que los encabezados sean más gruesos */
+}
+h2 {
+    font-size: 2em !important;
+    font-weight: bold !important;
+}
+</style>
 </head>
 
 <body  class="bg-gray-100">
 
-    <nav class="bg-white shadow-md py-4 px-8 flex justify-between items-center"> 
-        <h1 class="text-xl font-semibold text-gray-800">Your App Name</h1> 
-        <div class="flex space-x-4"> 
-            <a href="#" class="hover:text-blue-500">Home</a>
-            <a href="#" class="hover:text-blue-500">Features</a>
-            <a href="#" class="hover:text-blue-500">Contact</a>
+    <div class="navbar bg-base-100">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-xl">daisyUI</a>
         </div>
-    </nav>
-
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>Link</a></li>
+            <li>
+              <details>
+                <summary>
+                  Parent
+                </summary>
+                <ul class="p-2 bg-base-100 rounded-t-none">
+                  <li><a>Link 1</a></li>
+                  <li><a>Link 2</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </div>
     <main class="container mx-auto mt-8"> 
         <div class="flex justify-between items-center mb-6"> 
             <div class="flex items-center space-x-3"> 
-                <input type="file" id="markdownFileInput" accept=".md">
+                <input type="file" id="markdownFileInput" accept=".md" class="file-input file-input-bordered file-input-primary w-full max-w-xs" />
             </div>
             <div class="flex space-x-3">
-                <select class="form-select bg-white border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:outline-none focus:ring focus:ring-blue-200" id="tagsFilter" multiple onchange="filterLinesBySelectedTags()">
+                <select class="select select-bordered w-full max-w-xs" id="tagsFilter" onchange="filterLinesBySelectedTags()">
                 </select>
-                <button  class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition" onclick="extractTags()">Refresh filter</button>
+                <button  class="btn btn-info" onclick="extractTags()">Refresh filter</button>
                 <button id="downloadBtn"  class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition btn btn-primary">Download</button>
             </div>
         </div>
@@ -143,17 +170,13 @@
                 div.classList.add('md-line-left', 'p-4', 'md:col-span-1');                
 
                 if (isSection.includes("Section")) {
-                    div.innerHTML = `🆔 ${isSection}</br><b>${title}</b> <a href="#" onclick="getSectionPrompt()">Open Popup</a>`;
+                    div.innerHTML = `🆔 ${isSection}</br><b>${title}</b> <a href="#" onclick="createSectionInfoModal('${title}')">Open Popup</a>`;
+                    createSectionInfoModal('title');
                 } else {
                     div.innerHTML = ``;
                 }
                 div.style.width = '30%';
                 return div;
-            }
-
-            function getSectionPrompt() {
-                // Function to generate content for the popup
-                alert("XXX");
             }
 
             function createLineTextarea(line, index, result, titleDiv, tagsDiv) {
@@ -162,7 +185,9 @@
                 outerContainer.style.flex = '1'; // Permite que el contenedor crezca para ocupar el espacio
                 outerContainer.style.flexBasis = '60%'; // Establece la base del tamaño en el 60%
 
-                // Crea un div para mostrar el contenido Markdown parseado
+                const parsedMarkdown = marked.parse(line);                // Crea un div para mostrar el contenido Markdown parseado
+                console.log(parsedMarkdown)
+
                 const displayDiv = document.createElement('div');
                 displayDiv.innerHTML = marked.parse(line); // Parsea el Markdown a HTML
                 displayDiv.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
@@ -174,7 +199,7 @@
                 textarea.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
                 textarea.style.resize = 'none';
                 textarea.style.display = 'none'; // Oculta el textarea inicialmente
-                textarea.classList.add('textarea-editable'); // Aplica la clase para los estilos editables
+                textarea.classList.add('textarea', 'textarea-primary'); // Aplica la clase para los estilos editables
                 // Evento para cambiar a edición al hacer clic en el div
                 displayDiv.addEventListener('click', function () {
                     displayDiv.style.display = 'none'; // Oculta el div
@@ -217,7 +242,7 @@
 
             function createTagsDiv(tags) {
                 const div = document.createElement('div');
-                div.classList.add('md-line-right', 'p-4', 'md:col-span-1');
+                div.classList.add('md-line-right', 'p-4', 'md:col-span-1', 'toast', 'toast-end', 'toast-middle');
                 div.className = 'tags-container'; // Asigna la clase .tags-container al div
                 div.style.width = '10%';
                 // Crea un span para cada etiqueta
@@ -352,7 +377,7 @@
         const etiquetasEncontradas = new Set(); // Variable global a todo el script
 
         function extractTags() {
-            const textareas = document.querySelectorAll('.textarea-editable');
+            const textareas = document.querySelectorAll('.textarea-primary');
 
             // Recorremos cada uno de los textareas
             textareas.forEach(textarea => {
@@ -394,6 +419,15 @@
             });
         }
 
+        function getSectionPrompt(section) {
+                const modalContent = document.createElement('div');
+                modalContent.innerHTML = `aaa`;
+
+
+                const modal = createModal('customModal', { name: 'Custom Modal', content: modalContent.innerHTML });
+                document.body.appendChild(modal);
+            }
+
         // Asegúrate de ejecutar extractTags() en algún momento para actualizar "etiquetasEncontradas"
         tagsFilter.addEventListener('change', filterLinesBySelectedTags);
 
@@ -413,6 +447,36 @@
                 });
             });
         };
+
+
+
+        function createSectionInfoModal(sectionId) {
+            const modalDiv = document.createElement('div');
+            modalDiv.id = sectionId;
+            modalDiv.className = 'modal';
+            modalDiv.innerHTML = `
+                <div class="modal-box">
+                    <h3 class="font-bold text-lg">Hello!</h3>
+                    <p class="py-4">Press ESC key or click the button below to close</p>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>`;
+            return modalDiv;
+        }
+
+        function createSectionInfoModalButton(sectionId) {
+            const button = document.createElement('button');
+            button.className = 'btn';
+            button.innerHTML = 'open modal';
+            button.onclick = function() {
+                document.getElementById(sectionId).showModal();
+            };
+            return button;
+        }
     </script>
 
 </body>

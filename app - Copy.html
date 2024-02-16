@@ -199,6 +199,7 @@
                 outerContainer.style.flex = '1'; // Permite que el contenedor crezca para ocupar el espacio
                 outerContainer.style.flexBasis = '60%'; // Establece la base del tamaño en el 60%
 
+                console.log(line)
                 // Crea un div para mostrar el contenido Markdown parseado
                 const displayDiv = document.createElement('div');
                 displayDiv.innerHTML = marked.parse(line); // Parsea el Markdown a HTML
@@ -207,7 +208,7 @@
 
                 // Crea un textarea para la edición del Markdown, inicialmente oculto
                 const textarea = document.createElement('textarea');
-                textarea.value = line;
+                textarea.value = marked.parse(line);
                 textarea.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
                 textarea.style.resize = 'none';
                 textarea.style.display = 'none'; // Oculta el textarea inicialmente
@@ -217,8 +218,10 @@
                     displayDiv.style.display = 'none'; // Oculta el div
                     textarea.style.display = ''; // Muestra el textarea
                     textarea.focus(); // Enfoca el textarea para edición inmediata
-
                 });
+
+alert(line)
+
 
                 // Evento para actualizar el div con el contenido del textarea al desenfocar
                 textarea.addEventListener('blur', function () {

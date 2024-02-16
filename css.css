@@ -4,6 +4,10 @@
     margin-bottom: 10px;
 }
 
+.md-line-left {
+
+}
+
 .tags-container {
     /* Asegura que el contenido esté alineado a la izquierda */
     text-align: left;
@@ -35,14 +39,49 @@ textarea {
 
 /* Estilos para textarea */
 .textarea-editable {
-    border: 2px solid transparent; /* Borde transparente por defecto */
-    outline: none; /* Elimina el outline para evitar el aspecto predeterminado al enfocar */
+     outline: none; /* Elimina el outline para evitar el aspecto predeterminado al enfocar */
     transition: border-color 0.3s; /* Transición suave para el cambio de color */
 }
 
 .textarea-editable:hover,
 .textarea-editable:focus {
     border-color: #007bff; /* Cambia el color del borde a azul al pasar el cursor o enfocar */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: revert; /* Esto restablecerá el tamaño de fuente al valor predeterminado del navegador */
+    font-weight: bold; /* Esto hará que los encabezados sean más gruesos */
+}
+
+
+h1 {
+    font-size: 2.5em !important; /* Ajusta según necesites */
+    font-weight: bold !important;
+}
+
+h2 {
+    font-size: 2em !important; /* Ya tienes este */
+    font-weight: bold !important;
+}
+
+h3 {
+    font-size: 1.75em !important; /* Ajusta según necesites */
+    font-weight: bold !important;
+}
+
+h4 {
+    font-size: 1.5em !important; /* Ajusta según necesites */
+    font-weight: bold !important;
+}
+
+h5 {
+    font-size: 1.25em !important; /* Ajusta según necesites */
+    font-weight: bold !important;
+}
+
+h6 {
+    font-size: 1em !important; /* Ajusta según necesites, igual a tamaño de texto normal */
+    font-weight: bold !important;
 }
 
 span.key { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span.key::before { content: "🔑"; position: absolute; left: 0; top: 0; margin-right: 5px; }
