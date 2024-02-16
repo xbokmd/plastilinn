@@ -5,7 +5,7 @@
     border: gainsboro 1px;
 }
 
-#document-controls {
+#top-container {
     position: fixed;
     top: 0; /* Ajusta este valor al alto de tu navbar */
     left: 0;
