@@ -7,48 +7,41 @@
     <title>Web App</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body  class="bg-gray-100">
-    <div id=""top-container">
+    <div id="top-container">
         <div class="navbar bg-base-100">
             <div class="flex-1">
-            <a class="btn btn-ghost text-xl">daisyUI</a>
+            <a class="btn btn-ghost text-xl">Plastilinn</a>
             </div>
             <div class="flex-none">
             <ul class="menu menu-horizontal px-1">
-                <li><a>Link</a></li>
-                <li>
-                <details>
-                    <summary>
-                    Parent
-                    </summary>
-                    <ul class="p-2 bg-base-100 rounded-t-none">
-                    <li><a>Link 1</a></li>
-                    <li><a>Link 2</a></li>
-                    </ul>
-                </details>
-                </li>
+                <li><a>App</a></li>
+                <li><a>Docs</a></li>
+                <li><a>About</a></li>
             </ul>
             </div>
         </div>
-    </div>
-    <main id="document-controls" class="container mx-auto mt-8"> 
-        <div class="flex justify-between items-center mb-6"> 
-            <div class="flex items-center space-x-3"> 
-                <input type="file" id="markdownFileInput" accept=".md" class="file-input file-input-bordered file-input-primary w-full max-w-xs" />
-            </div>
-            <div class="flex space-x-3">
-                <select class="select select-bordered w-full max-w-xs" id="tagsFilter" onchange="filterLinesBySelectedTags()">
-                </select>
-                <button  class="btn btn-info" onclick="extractTags()">Refresh filter</button>
-                <button id="downloadBtn"  class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition btn btn-primary">Download</button>
+        <main id="document-controls" class="container mx-auto mt-8">
+            <div class="flex justify-between items-center mb-6"> 
+                <div class="flex items-center space-x-3"> 
+                    <input type="file" id="markdownFileInput" accept=".md" class="file-input file-input-bordered file-input-primary w-full max-w-xs" />
+                </div>
+                <div class="flex space-x-3">
+                    <select class="select select-bordered w-full max-w-xs" id="tagsFilter" onchange="filterLinesBySelectedTags()">
+                    </select>
+                    <!-- Botón actualizado para usar colores primarios -->
+                    <button class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition" onclick="extractTags()">Refresh filter</button>
+                    <!-- Botón actualizado para usar colores primarios -->
+                    <button id="downloadBtn" class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
+                </div>
             </div>
         </div>
-
+    </div>
         <div id="md-lines" class="md-lines"> 
             <div class="hero min-h-screen bg-base-200">
                 <div class="hero-content text-center">
@@ -161,7 +154,7 @@
                 div.classList.add('md-line-left', 'p-4', 'md:col-span-1');                
 
                 if (isSection.includes("Section")) {
-                    div.innerHTML = `<div class="chat chat-end"><div class="chat-bubble">🆔 ${isSection}</br><b>${title}</b> <a href="#" onclick="createSectionInfoModal('${title}')">Open Popup</a></div></div>`;
+                    div.innerHTML = `<div class="chat chat-end"><div class="chat-bubble">🆔 ${isSection}</br><b>${title}</b> <button class="btn" onclick="createSectionInfoModal(${title})">Open Popup</button></div></div>`;
                     createSectionInfoModal('title');
                 } else {
                     div.innerHTML = ``;
