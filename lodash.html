@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div id="top-container">
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+                <a class="btn btn-ghost text-xl">Plastilinn</a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a>App</a></li>
+                    <li><a>Docs</a></li>
+                    <li><a>About</a></li>
+                </ul>
+            </div>
+        </div>
+        <main id="document-controls" class="container mx-auto mt-8">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center space-x-3">
+                    <input type="file" id="markdownFileInput" accept=".md">
+                </div>
+                <div class="flex space-x-3">
+                    <select class="select select-bordered w-full max-w-xs" id="tagsFilter"
+                        onchange="filterLinesBySelectedTags()">
+                    </select>
+                    <button
+                        class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition"
+                        onclick="extractTags()">Refresh filter</button>
+                    <button id="downloadBtn"
+                        class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
+                </div>
+            </div>
+    </div>
+    </div>
+    <div id="markdownContainer"></div>
+    <div id="md-lines" class="md-lines">
+        <div class="hero min-h-screen bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
+                    <p class="py-6">Plastilinn offers guidance on completing your business model, including aspects such
+                        as market analysis, marketing strategies, financial planning, organizational structure,
+                        understanding market trends, analyzing customer demographics, and evaluating competitor
+                        behavior. It can help you make informed choices by evaluating different strategic options, and
+                        provides continuous support and instant feedback, crucial for iterative business development and
+                        improvement.</p>
+                    <ul class="steps">
+                        <li class="step step-primary">Design your Business Model</li>
+                        <li class="step">Analyze your Business Model</li>
+                        <li class="step">Validate your Business Model</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+    <div id="markdownContainer"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let markdownDocument = [];
+            const markdownFileInput = document.getElementById('markdownFileInput');
+            const markdownContainer = document.getElementById('markdownContainer');
+
+            markdownFileInput.addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (!file) {
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        const content = e.target.result;
+        const lines = content.split(/\r?\n/);
+        markdownDocument = _.map(lines, (line, index) => {
+            const rawTags = line.match(/#[^\s#]+/g) || [];
+            const tags = rawTags.map(tag => tag.substring(1)); // Extraer y procesar etiquetas
+            return {
+                content: line,
+                tags: tags,
+                processedTags: rawTags, // Almacena las etiquetas originales procesadas
+                index: index
+            };
+        });
+        renderMarkdownDocument(); // Llama a renderMarkdownDocument para mostrar los datos
+    };
+
+    reader.readAsText(file);
+});
+
+
+
+            
+   function renderMarkdownDocument() {
+    markdownContainer.innerHTML = ''; // Clear the container
+
+
+
+    const mainContainer = document.createElement('div');
+    mainContainer.className = 'flex flex-col';
+
+    _.forEach(markdownDocument, (lineData, index) => {
+        const lineContainer = document.createElement('div');
+        lineContainer.className = 'flex flex-row items-center bg-gray-100 p-4 my-2 rounded shadow';
+
+        // Columna para el contenido procesado (1/4 del ancho disponible)
+        const processedContentElement = document.createElement('div');
+        processedContentElement.className = 'flex-1'; // Ocupa 1/4 del ancho disponible
+        const processedContent = lineData.content.toUpperCase(); // Ejemplo de procesamiento
+        processedContentElement.textContent = processedContent;
+        lineContainer.appendChild(processedContentElement);
+
+        // Contenedor para el contenido original (editable) - 2/4 del ancho disponible
+        const contentContainer = document.createElement('div');
+        contentContainer.className = 'flex-2'; // Ocupa la mitad del ancho disponible
+        const contentElement = document.createElement('div');
+        contentElement.className = 'w-full outline-none';
+        contentElement.setAttribute('contenteditable', 'true');
+        contentElement.textContent = lineData.content;
+        contentContainer.appendChild(contentElement);
+
+        setupEditableContent(contentElement); // Configura el contenido editable
+
+        // Columna para las etiquetas - 1/4 del ancho disponible
+        const tagsElement = document.createElement('div');
+        tagsElement.className = 'flex-1 text-gray-500 text-sm';
+        tagsElement.textContent = lineData.tags.join(', ');
+        lineContainer.appendChild(tagsElement);
+
+        // Añadir el contenedor de contenido editable en el medio
+        lineContainer.insertBefore(contentContainer, tagsElement);
+
+        // Añadir el contenedor de la línea al contenedor principal
+        mainContainer.appendChild(lineContainer);
+    });
+
+    // Añadir el contenedor principal al contenedor de Markdown
+    markdownContainer.appendChild(mainContainer);
+}
+
+            function setupEditableContent(contentElement) {
+                const editIndicator = document.createElement('span');
+                editIndicator.className = 'text-gray-400 text-xl cursor-pointer absolute right-0 mr-4 opacity-0';
+                editIndicator.textContent = '✏️';
+                contentElement.parentNode.appendChild(editIndicator);
+
+                contentElement.addEventListener('focus', function () {
+                    this.classList.add('border', 'border-blue-500', 'rounded', 'p-1');
+                });
+                contentElement.addEventListener('blur', function () {
+                    this.classList.remove('border', 'border-blue-500', 'rounded', 'p-1');
+                });
+                contentElement.addEventListener('mouseenter', function () {
+                    editIndicator.style.opacity = '1';
+                });
+                contentElement.addEventListener('mouseleave', function () {
+                    editIndicator.style.opacity = '0';
+                });
+            }
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>
