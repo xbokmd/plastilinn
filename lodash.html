@@ -133,9 +133,7 @@
         });
 
 
-        document.addEventListener('DOMContentLoaded', function () {
-            let model = []; // Continuamos usando el nombre de variable "model"
-            
+        document.addEventListener('DOMContentLoaded', function () {         
 
             const markdownFileInput = document.getElementById('markdownFileInput');
             const markdownContainer = document.getElementById('markdownContainer');
@@ -293,20 +291,16 @@
         });
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Suponiendo que model es tu array con el contenido
-            let model = []; // Asegúrate de que este array se actualiza con el contenido apropiado
 
             document.getElementById('downloadBtn').addEventListener('click', downloadModel);
 
             function downloadModel() {
-                let fileContent = '';
-                model.forEach(content => {
-                    fileContent += content + '\n'; // Añade un salto de línea después de cada elemento
-                });
+                let fileContent = model.map(obj => obj.content).join('\n'); // Concatena el contenido con saltos de línea
 
-                const fileName = `Business model ${formatDate(new Date())}.md`;
-                downloadFile(fileName, fileContent);
+                const fileName = `Business model ${formatDate(new Date())}.md`; // Usa la función formatDate para crear un nombre de archivo único
+                downloadFile(fileName, fileContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
             }
+
 
             function formatDate(date) {
                 const year = date.getFullYear();
