@@ -15,14 +15,16 @@
         .custom-flex-1 {
             flex: 0 0 20%;
         }
+
         .custom-flex-2 {
             flex: 0 0 60%;
         }
+
         .custom-flex-3 {
             flex: 0 0 20%;
         }
-        </style>
-        
+    </style>
+
 </head>
 
 <body class="bg-gray-100">
@@ -58,117 +60,175 @@
     </div>
     </div>
     <div id="markdownContainer">
-    <div id="md-lines" class="md-lines">
-        <div class="hero min-h-screen bg-base-200">
-            <div class="hero-content text-center">
-                <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
-                    <p class="py-6">Plastilinn offers guidance on completing your business model, including aspects such
-                        as market analysis, marketing strategies, financial planning, organizational structure,
-                        understanding market trends, analyzing customer demographics, and evaluating competitor
-                        behavior. It can help you make informed choices by evaluating different strategic options, and
-                        provides continuous support and instant feedback, crucial for iterative business development and
-                        improvement.</p>
-                    <ul class="steps">
-                        <li class="step step-primary">Design your Business Model</li>
-                        <li class="step">Analyze your Business Model</li>
-                        <li class="step">Validate your Business Model</li>
-                    </ul>
+        <div id="md-lines" class="md-lines">
+            <div class="hero min-h-screen bg-base-200">
+                <div class="hero-content text-center">
+                    <div class="max-w-md">
+                        <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
+                        <p class="py-6">Plastilinn offers guidance on completing your business model, including aspects
+                            such
+                            as market analysis, marketing strategies, financial planning, organizational structure,
+                            understanding market trends, analyzing customer demographics, and evaluating competitor
+                            behavior. It can help you make informed choices by evaluating different strategic options,
+                            and
+                            provides continuous support and instant feedback, crucial for iterative business development
+                            and
+                            improvement.</p>
+                        <ul class="steps">
+                            <li class="step step-primary">Design your Business Model</li>
+                            <li class="step">Analyze your Business Model</li>
+                            <li class="step">Validate your Business Model</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="flex flex-row items-center bg-gray-100 p-4 my-2 rounded-lg shadow space-x-2">
-        <div class="flex flex-1 text-center bg-gray-50 rounded p-2" style="flex: 0 0 20%;">CONTENIDO DE LA PRIMERA COLUMNA</div>
-        <div class="flex flex-1 text-center bg-gray-50 rounded p-2" style="flex: 0 0 60%;">CONTENIDO DE LA SEGUNDA COLUMNA</div>
-        <div class="flex flex-1 text-center bg-gray-50 rounded p-2 text-gray-500 text-sm" style="flex: 0 0 20%;">CONTENIDO DE LA TERCERA COLUMNA</div>
-      </div>
+        <div class="flex flex-row items-center bg-gray-100 p-4 my-2 rounded-lg shadow space-x-2">
+            <div class="flex flex-1 text-center bg-gray-50 rounded p-2" style="flex: 0 0 20%;">CONTENIDO DE LA PRIMERA
+                COLUMNA</div>
+            <div class="flex flex-1 text-center bg-gray-50 rounded p-2" style="flex: 0 0 60%;">CONTENIDO DE LA SEGUNDA
+                COLUMNA</div>
+            <div class="flex flex-1 text-center bg-gray-50 rounded p-2 text-gray-500 text-sm" style="flex: 0 0 20%;">
+                CONTENIDO DE LA TERCERA COLUMNA</div>
+        </div>
 
-    </main>
-    <div id="markdownContainer"></div>
+        </main>
+        <div id="markdownContainer"></div>
     </div>
-</div>
+    </div>
 
     <script>
+        let metamodel = [];
+        let model = []; // También aseguramos que `model` esté definido globalmente
         document.addEventListener('DOMContentLoaded', function () {
-            let markdownDocument = [];
+            let metamodel = [];
+
+            function downloadJSON() {
+                axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
+                    .then(function (response) {
+                        metamodel = response.data;
+                        console.log(metamodel); // Opcional: Mostrar los datos en la consola
+
+                        // Crear un elemento para mostrar los datos del array "metamodel"
+                        const container = document.createElement('div');
+                        container.id = 'metamodelContainer';
+                        container.className = 'mt-4 p-4 bg-gray-200'; // Añade estilos según necesites
+
+                        // Convertir el array "metamodel" a una cadena JSON para mostrarlo
+                        const content = document.createTextNode(JSON.stringify(metamodel, null, 2));
+                        container.appendChild(content);
+
+                        // Añadir el contenedor al final del cuerpo del documento
+                        document.body.appendChild(container);
+                    })
+                    .catch(function (error) {
+                        console.log(error); // Manejar el error
+                    });
+            }
+
+            downloadJSON();
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let model = []; // Continuamos usando el nombre de variable "model"
+
             const markdownFileInput = document.getElementById('markdownFileInput');
             const markdownContainer = document.getElementById('markdownContainer');
 
             markdownFileInput.addEventListener('change', function (event) {
-    const file = event.target.files[0];
-    if (!file) {
-        return;
-    }
+                const file = event.target.files[0];
+                if (!file) {
+                    return;
+                }
 
-    const reader = new FileReader();
-    reader.onload = function (e) {
-    const content = e.target.result;
-    const lines = content.split(/\r?\n/);
-    markdownDocument = _.map(lines, (line, index) => {
-        const rawTags = line.match(/#[^\s#]+/g) || [];
-        const tags = rawTags.map(tag => {
-            // Eliminar el símbolo '#' y crear un nombre de clase válido
-            const tagName = tag.substring(1).replace(/[^\w-]/g, '');
-            return { raw: tag, className: tagName };
-        });
-        return {
-            content: line,
-            tags: tags, // Almacena tanto la etiqueta original como el nombre de clase
-            index: index
-        };
-    });
-    
-    renderMarkdownDocument(); // Llama a renderMarkdownDocument para mostrar los datos
-};
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const content = e.target.result;
+                    const lines = content.split(/\r?\n/);
+                    model = _.map(lines, (line, index) => {
+                        // Extracción de etiquetas
+                        const rawTags = line.match(/#[^\s#]+/g) || [];
+                        const tags = rawTags.map(tag => {
+                            const tagName = tag.substring(1).replace(/[^\w-]/g, '');
+                            return { raw: tag, className: tagName };
+                        });
 
-    reader.readAsText(file);
-});
+                        // Intentar identificar y procesar títulos con nueva especificación
+                        let title = undefined;
+                        // La expresión regular ahora permite espacios/guiones al inicio y busca de 2 a 10 hashes
+                        const headingMatch = line.match(/^\s*-*\s*#{2,10}\s*(.*)/);
+                        if (headingMatch && headingMatch[1]) {
+                            // Limpiar el título: elimina hashes y espacios iniciales, mantiene texto después de los hashes
+                            title = headingMatch[1].trim();
+                            // Eliminar etiquetas del título si es necesario
+                            title = title.replace(/#[^\s#]+/g, '').trim();
+                        }
+
+                        return {
+                            content: line,
+                            tags: tags,
+                            index: index,
+                            title: title // Agregado condicionalmente, undefined si no es un título
+                        };
+                    });
+
+                    renderModel(); // Asegúrate de ajustar esta función para manejar "title"
+                };
+
+                reader.readAsText(file);
+            });
 
 
 
-function renderMarkdownDocument() {
-    markdownContainer.innerHTML = ''; // Limpiar el contenedor
+            function renderModel() {
+                markdownContainer.innerHTML = ''; // Limpiar el contenedor
 
-    const mainContainer = document.createElement('div');
-    mainContainer.className = 'flex flex-col';
+                const mainContainer = document.createElement('div');
+                mainContainer.className = 'flex flex-col';
 
-    _.forEach(markdownDocument, (lineData) => {
+                _.forEach(model, (lineData) => {
         const lineContainer = document.createElement('div');
         lineContainer.className = 'flex flex-row items-center bg-gray-100 p-4 my-2 rounded-lg shadow space-x-2';
 
-        // Columna para el contenido procesado
+        // Comprobar si el título de la línea coincide con algún nombre en metamodel
+        const matchingMeta = metamodel.find(meta => meta.name === lineData.title);
+
+        // Columna para el contenido basado en la coincidencia
         const processedContentElement = document.createElement('div');
         processedContentElement.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
-        processedContentElement.textContent = lineData.content.toUpperCase(); // Contenido procesado
+        
+        // Si hay coincidencia, mostrar el título, si no, dejar en blanco
+        processedContentElement.textContent = matchingMeta ? lineData.title.toUpperCase() : '';
         lineContainer.appendChild(processedContentElement);
 
-        // Contenedor para el contenido original (editable)
-        const contentContainer = document.createElement('div');
-        contentContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-2';
-        const contentElement = document.createElement('div');
-        contentElement.className = 'w-full outline-none';
-        contentElement.setAttribute('contenteditable', 'true');
-        contentElement.textContent = lineData.content;
-        contentContainer.appendChild(contentElement);
 
-        // Columna para las etiquetas
-        const tagsElement = document.createElement('div');
-        tagsElement.className = 'text-gray-500 text-sm text-center bg-gray-50 rounded p-2 custom-flex-3';
-        tagsElement.textContent = lineData.tags.map(tag => tag.raw).join(', ');
-        lineContainer.appendChild(tagsElement);
+                    // Contenedor para el contenido original (editable)
+                    const contentContainer = document.createElement('div');
+                    contentContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-2';
+                    const contentElement = document.createElement('div');
+                    contentElement.className = 'w-full outline-none';
+                    contentElement.setAttribute('contenteditable', 'true');
+                    contentElement.textContent = lineData.content;
+                    contentContainer.appendChild(contentElement);
 
-        // Añadir el contenedor de contenido editable en el medio
-        lineContainer.insertBefore(contentContainer, tagsElement);
+                    // Columna para las etiquetas
+                    const tagsElement = document.createElement('div');
+                    tagsElement.className = 'text-gray-500 text-sm text-center bg-gray-50 rounded p-2 custom-flex-3';
+                    tagsElement.textContent = lineData.tags.map(tag => tag.raw).join(', ');
+                    lineContainer.appendChild(tagsElement);
 
-        // Añadir el contenedor de la línea al contenedor principal
-        mainContainer.appendChild(lineContainer);
-    });
+                    // Añadir el contenedor de contenido editable en el medio
+                    lineContainer.insertBefore(contentContainer, tagsElement);
 
-    // Añadir el contenedor principal al contenedor de Markdown
-    markdownContainer.appendChild(mainContainer);
-}
+                    // Añadir el contenedor de la línea al contenedor principal
+                    mainContainer.appendChild(lineContainer);
+                });
+
+                // Añadir el contenedor principal al contenedor de Markdown
+                markdownContainer.appendChild(mainContainer);
+            }
             function setupEditableContent(contentElement) {
                 const editIndicator = document.createElement('span');
                 editIndicator.className = 'text-gray-400 text-xl cursor-pointer absolute right-0 mr-4 opacity-0';
