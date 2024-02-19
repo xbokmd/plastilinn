@@ -48,8 +48,7 @@
                     <input type="file" id="markdownFileInput" accept=".md">
                 </div>
                 <div class="flex space-x-3">
-                    <select class="select select-bordered w-full max-w-xs" id="tagsFilter"
-                        onchange="filterLinesBySelectedTags()">
+                    <select class="select select-bordered w-full max-w-xs" id="tagsFilter">
                     </select>
                     <button
                         class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition"
@@ -132,7 +131,6 @@
             downloadJSON();
         });
 
-
         document.addEventListener('DOMContentLoaded', function () {         
 
             const markdownFileInput = document.getElementById('markdownFileInput');
@@ -177,21 +175,21 @@
                         };
                     });
 
+                    updateTagsFilter();
                     renderModel(); // Asegúrate de ajustar esta función para manejar "title"
                 };
-
                 reader.readAsText(file);
             });
 
-
-
-            function renderModel() {
+            function renderModel(linesToRender = model) {
+                console.log("Líneas a renderizar:", linesToRender); // Esto debería mostrarte las líneas que se van a renderizar
+                const markdownContainer = document.getElementById('markdownContainer');
                 markdownContainer.innerHTML = ''; // Limpiar el contenedor
-
                 const mainContainer = document.createElement('div');
                 mainContainer.className = 'flex flex-col';
 
                 _.forEach(model, (lineData) => {
+
                     const lineContainer = document.createElement('div');
                     lineContainer.className = 'flex flex-row items-center bg-gray-100 p-4 my-2 rounded-lg shadow space-x-2';
 
@@ -236,8 +234,8 @@
                             tagsElement.appendChild(tagSpan);
                             tagsElement.appendChild(document.createTextNode(' ')); // Espacio entre etiquetas
                         });
+                        updateTagsFilter();
                     });
-
 
                     contentElement.textContent = lineData.content;
                     contentContainer.appendChild(contentElement);
@@ -287,7 +285,34 @@
                     editIndicator.style.opacity = '0';
                 });
             }
+            document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
 
+            function filterLinesBySelectedTags() {
+            const selectedTag = document.getElementById('tagsFilter').value;
+
+            console.log("Etiqueta seleccionada:", selectedTag); // Esto debería mostrarte la etiqueta seleccionada
+
+            // Renderizar todas las líneas si la selección es la opción predeterminada ('').
+            if (selectedTag === '') {
+                renderModel(model); // Asegúrate de que esta función acepte y maneje el array de líneas a renderizar.
+                return;
+            }
+
+            // Filtrar líneas que contienen la etiqueta seleccionada en sus tags.
+            const filteredModel = selectedTag === '' ? model : model.filter(item =>
+                item.tags.some(tag => tag.className === selectedTag)
+            );
+
+            console.log("Modelo filtrado:", filteredModel); // Esto debería mostrarte las líneas que cumplen con el criterio de filtrado
+
+            // Llamar a renderModel para actualizar la vista con las líneas filtradas.
+            renderModel(filteredModel); // Asegúrate de ajustar 'renderModel' para manejar este caso.
+        }
+
+           document.addEventListener('DOMContentLoaded', function () {
+
+                document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
+            });
         });
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -338,6 +363,38 @@
                 }
             }
         });
+
+        function updateTagsFilter() {
+            // Obtener todas las etiquetas únicas de `model`
+            const allTags = new Set(); // Usamos un Set para evitar etiquetas duplicadas
+            model.forEach(item => {
+                item.tags.forEach(tag => {
+                    allTags.add(tag.className); // Suponiendo que `className` contiene el nombre de la etiqueta sin '#'
+                });
+            });
+
+            // Convertir el Set a Array y ordenarlo alfabéticamente
+            const sortedTags = Array.from(allTags).sort();
+
+            // Obtener el elemento del selector
+            const tagsFilter = document.getElementById('tagsFilter');
+            // Limpiar opciones existentes
+            tagsFilter.innerHTML = '';
+
+            // Opción predeterminada
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = 'Select a tag...';
+            tagsFilter.appendChild(defaultOption);
+
+            // Crear una opción para cada etiqueta única
+            sortedTags.forEach(tag => {
+                const option = document.createElement('option');
+                option.value = tag;
+                option.textContent = tag;
+                tagsFilter.appendChild(option);
+            });
+        }
 
     </script>
 
