@@ -22,9 +22,9 @@
         }
 
         .flex.space-x-3 {
-        display: flex;
-        justify-content: center;
-    }
+            display: flex;
+            justify-content: center;
+        }
     </style>
 
 </head>
@@ -37,22 +37,24 @@
             </div>
             <div class="flex items-center space-x-3">
             </div>
-<div style="display: flex; justify-content: center;">
-    <div class="flex space-x-3">
-        <div class="grid grid-cols-3 gap-4">
-            <div class="flex items-center space-x-3" style="justify-content: flex-end;">
-                <input type="file" id="markdownFileInput" accept=".md" class="file-input file-input-bordered file-input-primary w-full max-w-xs">
+            <div style="display: flex; justify-content: center;">
+                <div class="flex space-x-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="flex items-center space-x-3" style="justify-content: flex-end;">
+                            <input type="file" id="markdownFileInput" accept=".md"
+                                class="file-input file-input-bordered file-input-primary w-full max-w-xs">
+                        </div>
+                        <div class="flex space-x-3" style="justify-content: center;">
+                            <select class="select select-bordered w-full max-w-xs" id="tagsFilter">
+                            </select>
+                        </div>
+                        <div class="flex items-center justify-end space-x-3" style="justify-content: flex-start;">
+                            <button id="downloadBtn"
+                                class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="flex space-x-3" style="justify-content: center;">
-                <select class="select select-bordered w-full max-w-xs" id="tagsFilter">
-                </select>
-            </div>
-            <div class="flex items-center justify-end space-x-3" style="justify-content: flex-start;">
-                <button id="downloadBtn" class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
-            </div>
-        </div>
-    </div>
-</div>
             <div class="flex-none">
                 <ul class="menu menu-horizontal px-1">
                     <li><a>App</a></li>
@@ -61,7 +63,7 @@
                 </ul>
             </div>
         </div>
-        </div>
+    </div>
     </div>
     </div>
     <div id="markdownContainer" class="mt-16">
@@ -191,37 +193,37 @@
                     const matchingMeta = metamodel.find(meta => meta.name === lineData.title);
 
                     if (lineData.title) {
-            // Creación y configuración del enlace del título (titleLink).
-            const titleLink = document.createElement('a');
-            titleLink.setAttribute('href', `https://go.plastilinn.com/#/page/${lineData.title.replace(/\s+/g, '_')}_info`);
-            titleLink.setAttribute('target', '_blank');
-            titleLink.textContent = lineData.title;
-            titleLink.className = 'text-blue-500 hover:text-blue-800';
+                        // Creación y configuración del enlace del título (titleLink).
+                        const titleLink = document.createElement('a');
+                        titleLink.setAttribute('href', `https://go.plastilinn.com/#/page/${lineData.title.replace(/\s+/g, '_')}_info`);
+                        titleLink.setAttribute('target', '_blank');
+                        titleLink.textContent = lineData.title;
+                        titleLink.className = 'text-blue-500 hover:text-blue-800';
 
-            // Crear un contenedor para el título y el botón.
-            const titleContainer = document.createElement('div');
-            titleContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
-            titleContainer.appendChild(titleLink); // Añadir el enlace al contenedor del título.
+                        // Crear un contenedor para el título y el botón.
+                        const titleContainer = document.createElement('div');
+                        titleContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
+                        titleContainer.appendChild(titleLink); // Añadir el enlace al contenedor del título.
 
-            // Creación del botón modalOpenButton y configuración del evento click.
-            const modalOpenButton = document.createElement('button');
-            modalOpenButton.textContent = 'Ver Detalles';
-            modalOpenButton.className = 'btn btn-primary';
-            modalOpenButton.addEventListener('click', function() {
-                openModalWithSectionName(lineData.title);
-            });
+                        // Creación del botón modalOpenButton y configuración del evento click.
+                        const modalOpenButton = document.createElement('button');
+                        modalOpenButton.textContent = 'Ver Detalles';
+                        modalOpenButton.className = 'btn btn-primary';
+                        modalOpenButton.addEventListener('click', function () {
+                            openModalWithSectionName(lineData.title);
+                        });
 
-            // Añadir el botón al contenedor del título.
-            titleContainer.appendChild(modalOpenButton);
+                        // Añadir el botón al contenedor del título.
+                        titleContainer.appendChild(modalOpenButton);
 
-            // Añadir el contenedor del título (que ahora incluye el botón) al contenedor de la línea.
-            lineContainer.appendChild(titleContainer);
-        } else {
-            // Manejo de líneas sin título.
-            const noTitleElement = document.createElement('div');
-            noTitleElement.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
-            lineContainer.appendChild(noTitleElement);
-        }
+                        // Añadir el contenedor del título (que ahora incluye el botón) al contenedor de la línea.
+                        lineContainer.appendChild(titleContainer);
+                    } else {
+                        // Manejo de líneas sin título.
+                        const noTitleElement = document.createElement('div');
+                        noTitleElement.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
+                        lineContainer.appendChild(noTitleElement);
+                    }
 
                     // Contenedor para el contenido original (editable)
                     const contentContainer = document.createElement('div');
@@ -367,6 +369,14 @@
                 return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
             }
 
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('downloadBtn').addEventListener('click', function () {
+                    const modelContent = generateModel(); // Usa la función generateModel para obtener el contenido
+                    const fileName = `Business model ${formatDate(new Date())}.md`;
+                    downloadFile(fileName, modelContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
+                });
+            });
+
             function downloadFile(fileName, content) {
                 const element = document.createElement('a');
                 element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
@@ -379,6 +389,7 @@
 
                 document.body.removeChild(element);
             }
+
         });
 
         document.addEventListener('input', function (e) {
@@ -393,6 +404,13 @@
                 }
             }
         });
+
+        function generateModel() {
+                // Recopila el contenido de todos los elementos editables
+                const contentElements = document.querySelectorAll('.md-line-content');
+                const modelContent = Array.from(contentElements).map(element => element.textContent).join('\n');
+                return modelContent;
+            }
 
         function updateTagsFilter() {
             // Obtener todas las etiquetas únicas de `model`
@@ -427,13 +445,28 @@
         }
 
         function openModalWithSectionName(sectionName) {
-            // Encuentra el elemento que contiene el título en la ventana modal
-            const modalTitleContent = document.getElementById('modalTitleContent');
-            // Actualiza el contenido de este elemento con el nombre de la sección recibido
-            modalTitleContent.textContent = sectionName;
-            // Abre la ventana modal añadiendo la clase 'modal-open'
-            document.getElementById('modalTitle').classList.add('modal-open');
-        }
+    // Encuentra el elemento que contiene el título en la ventana modal
+    const modalTitleContent = document.getElementById('modalTitleContent');
+    // Actualiza el contenido de este elemento con el nombre de la sección recibido
+    modalTitleContent.textContent = sectionName;
+
+    // Llama a generateModel para obtener el contenido actual del modelo
+    const modelContent = generateModel();
+
+    // Define el contenido deseado para el textarea usando plantillas literales
+    const customContent = `AAA
+${modelContent}
+BBB
+${sectionName}
+CCC`;
+
+    // Encuentra el textarea dentro del modal y actualiza su contenido
+    const generatedModelContent = document.getElementById('generatedModelContent');
+    generatedModelContent.value = customContent;
+
+    // Abre la ventana modal añadiendo la clase 'modal-open'
+    document.getElementById('modalTitle').classList.add('modal-open');
+}
 
         function closeModal() {
             document.getElementById('modalTitle').classList.remove('modal-open'); // Cierra el modal
@@ -444,6 +477,7 @@
 <div id="modalTitle" class="modal" tabindex="-1">
     <div class="modal-box">
         <h3 class="font-bold text-lg" id="modalTitleContent">Título del Modelo</h3>
+        <textarea id="generatedModelContent" class="textarea textarea-bordered w-full mt-4" placeholder="Aquí aparecerá el contenido del modelo generado..."></textarea>
         <p class="py-4">Aquí puedes poner más información si lo necesitas.</p>
         <div class="modal-action">
             <a href="#" class="btn" onclick="closeModal()">Cerrar</a>
