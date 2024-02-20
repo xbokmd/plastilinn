@@ -23,7 +23,6 @@
         .custom-flex-3 {
             flex: 0 0 20%;
         }
-
     </style>
 
 </head>
@@ -42,10 +41,11 @@
                 </ul>
             </div>
         </div>
-        <main id="document-controls" class="container mx-auto mt-8">
+        <div id="document-controls" class="container mx-auto mt-8">
             <div class="flex justify-between items-center mb-6">
                 <div class="flex items-center space-x-3">
-                    <input type="file" id="markdownFileInput" accept=".md">
+                    <input type="file" id="markdownFileInput" accept=".md"
+                        class="file-input file-input-bordered file-input-primary w-full max-w-xs">
                 </div>
                 <div class="flex space-x-3">
                     <select class="select select-bordered w-full max-w-xs" id="tagsFilter">
@@ -57,44 +57,31 @@
                         class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
                 </div>
             </div>
+        </div>
     </div>
     </div>
     <div id="markdownContainer">
-        <div id="md-lines" class="md-lines">
-            <div class="hero min-h-screen bg-base-200">
-                <div class="hero-content text-center">
-                    <div class="max-w-md">
-                        <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
-                        <p class="py-6">Plastilinn offers guidance on completing your business model, including aspects
-                            such
-                            as market analysis, marketing strategies, financial planning, organizational structure,
-                            understanding market trends, analyzing customer demographics, and evaluating competitor
-                            behavior. It can help you make informed choices by evaluating different strategic options,
-                            and
-                            provides continuous support and instant feedback, crucial for iterative business development
-                            and
-                            improvement.</p>
-                        <ul class="steps">
-                            <li class="step step-primary">Design your Business Model</li>
-                            <li class="step">Analyze your Business Model</li>
-                            <li class="step">Validate your Business Model</li>
-                        </ul>
-                    </div>
+        <div class="hero min-h-screen bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
+                    <p class="py-6">Plastilinn offers guidance on completing your business model, including aspects
+                        such
+                        as market analysis, marketing strategies, financial planning, organizational structure,
+                        understanding market trends, analyzing customer demographics, and evaluating competitor
+                        behavior. It can help you make informed choices by evaluating different strategic options,
+                        and
+                        provides continuous support and instant feedback, crucial for iterative business development
+                        and
+                        improvement.</p>
+                    <ul class="steps">
+                        <li class="step step-primary">Design your Business Model</li>
+                        <li class="step">Analyze your Business Model</li>
+                        <li class="step">Validate your Business Model</li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <div class="flex flex-row items-center bg-gray-100 p-4 my-2 rounded-lg shadow space-x-2">
-            <div class="flex flex-1 text-center bg-gray-50 rounded p-2" style="flex: 0 0 20%;">CONTENIDO DE LA PRIMERA
-                COLUMNA</div>
-            <div class="flex flex-1 text-center bg-gray-50 rounded p-2" style="flex: 0 0 60%;">CONTENIDO DE LA SEGUNDA
-                COLUMNA</div>
-            <div class="flex flex-1 text-center bg-gray-50 rounded p-2 text-gray-500 text-sm" style="flex: 0 0 20%;">
-                CONTENIDO DE LA TERCERA COLUMNA</div>
-        </div>
-
-        </main>
-        <div id="markdownContainer"></div>
     </div>
     </div>
 
@@ -131,7 +118,7 @@
             downloadJSON();
         });
 
-        document.addEventListener('DOMContentLoaded', function () {         
+        document.addEventListener('DOMContentLoaded', function () {
 
             const markdownFileInput = document.getElementById('markdownFileInput');
             const markdownContainer = document.getElementById('markdownContainer');
@@ -150,7 +137,7 @@
                         // Extracción de etiquetas
                         const rawTags = line.match(/#[^\s#]+/g) || [];
                         const tags = rawTags.map(tag => {
-                        const tagName = tag.substring(1); // Simplemente elimina el símbolo '#' al principio
+                            const tagName = tag.substring(1); // Simplemente elimina el símbolo '#' al principio
                             return { raw: tag, className: tagName };
                         });
 
@@ -191,7 +178,7 @@
                 _.forEach(model, (lineData) => {
 
                     const lineContainer = document.createElement('div');
-                    lineContainer.className = 'flex flex-row items-center bg-gray-100 p-4 my-2 rounded-lg shadow space-x-2';
+                    lineContainer.className = 'flex flex-row md-line';
 
                     // Comprobar si el título de la línea coincide con algún nombre en metamodel
                     const matchingMeta = metamodel.find(meta => meta.name === lineData.title);
@@ -210,13 +197,13 @@
                     const contentContainer = document.createElement('div');
                     contentContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-2';
                     const contentElement = document.createElement('div');
-                    contentElement.className = 'w-full outline-none';
+                    contentElement.className = 'md-line-content bg-white shadow-md p-4 md:col-span-3';
                     contentElement.setAttribute('contenteditable', 'true');
                     contentElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
                     contentElement.textContent = lineData.content;
                     contentContainer.appendChild(contentElement);
 
-                    contentElement.addEventListener('input', function() {
+                    contentElement.addEventListener('input', function () {
                         // Captura las etiquetas directamente del contenido, incluyendo el símbolo '#'
                         const newTags = this.textContent.match(/#[^\s#]+/g) || [];
                         // No necesitas limpiar los caracteres especiales para data-tag
@@ -260,11 +247,11 @@
 
                     // Añadir el contenedor de la línea al contenedor principal
                     mainContainer.appendChild(lineContainer);
-                    });
+                });
 
-                    // Añadir el contenedor principal al contenedor de Markdown
-                    markdownContainer.appendChild(mainContainer);
-                    }
+                // Añadir el contenedor principal al contenedor de Markdown
+                markdownContainer.appendChild(mainContainer);
+            }
 
             function setupEditableContent(contentElement) {
                 const editIndicator = document.createElement('span');
@@ -288,28 +275,28 @@
             document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
 
             function filterLinesBySelectedTags() {
-            const selectedTag = document.getElementById('tagsFilter').value;
+                const selectedTag = document.getElementById('tagsFilter').value;
 
-            console.log("Etiqueta seleccionada:", selectedTag); // Esto debería mostrarte la etiqueta seleccionada
+                console.log("Etiqueta seleccionada:", selectedTag); // Esto debería mostrarte la etiqueta seleccionada
 
-            // Renderizar todas las líneas si la selección es la opción predeterminada ('').
-            if (selectedTag === '') {
-                renderModel(model); // Asegúrate de que esta función acepte y maneje el array de líneas a renderizar.
-                return;
+                // Renderizar todas las líneas si la selección es la opción predeterminada ('').
+                if (selectedTag === '') {
+                    renderModel(model); // Asegúrate de que esta función acepte y maneje el array de líneas a renderizar.
+                    return;
+                }
+
+                // Filtrar líneas que contienen la etiqueta seleccionada en sus tags.
+                const filteredModel = selectedTag === '' ? model : model.filter(item =>
+                    item.tags.some(tag => tag.className === selectedTag)
+                );
+
+                console.log("Modelo filtrado:", filteredModel); // Esto debería mostrarte las líneas que cumplen con el criterio de filtrado
+
+                // Llamar a renderModel para actualizar la vista con las líneas filtradas.
+                renderModel(filteredModel); // Asegúrate de ajustar 'renderModel' para manejar este caso.
             }
 
-            // Filtrar líneas que contienen la etiqueta seleccionada en sus tags.
-            const filteredModel = selectedTag === '' ? model : model.filter(item =>
-                item.tags.some(tag => tag.className === selectedTag)
-            );
-
-            console.log("Modelo filtrado:", filteredModel); // Esto debería mostrarte las líneas que cumplen con el criterio de filtrado
-
-            // Llamar a renderModel para actualizar la vista con las líneas filtradas.
-            renderModel(filteredModel); // Asegúrate de ajustar 'renderModel' para manejar este caso.
-        }
-
-           document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('DOMContentLoaded', function () {
 
                 document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
             });
@@ -351,11 +338,11 @@
             }
         });
 
-        document.addEventListener('input', function(e) {
+        document.addEventListener('input', function (e) {
             if (e.target.getAttribute('contenteditable') === "true") {
                 const id = parseInt(e.target.getAttribute('data-id'), 10); // Obtiene el ID como número
                 const editedContent = e.target.textContent;
-                
+
                 // Busca y actualiza el objeto correspondiente en `model`
                 const lineObj = model.find(obj => obj.id === id);
                 if (lineObj) {
