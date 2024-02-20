@@ -12,7 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <style>
-
+.hidden {
+    display: none;
+}
     </style>
 
 </head>
@@ -190,7 +192,7 @@
                     const contentContainer = document.createElement('div');
                     contentContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-2';
                     const contentElement = document.createElement('div');
-                    contentElement.className = 'md-line-content bg-white shadow-md p-4 md:col-span-3';
+                    contentElement.className = 'md-line-content text-left bg-white shadow-md p-4 md:col-span-3';
                     contentElement.setAttribute('contenteditable', 'true');
                     contentElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
                     contentElement.textContent = lineData.content;
@@ -240,6 +242,12 @@
 
                     // Añadir el contenedor de la línea al contenedor principal
                     mainContainer.appendChild(lineContainer);
+
+                            // Asegurarse de envolver correctamente el lineContainer con rowWrapperDiv
+        rowWrapperDiv.appendChild(lineContainer); // Envolver lineContainer dentro de rowWrapperDiv
+
+// Añadir el contenedor de la línea (ahora correctamente envuelto) al contenedor principal
+mainContainer.appendChild(rowWrapperDiv);
                 });
 
                 // Añadir el contenedor principal al contenedor de Markdown
@@ -268,26 +276,28 @@
             document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
 
             function filterLinesBySelectedTags() {
-                const selectedTag = document.getElementById('tagsFilter').value;
+    const selectedTag = document.getElementById('tagsFilter').value;
+    console.log("Etiqueta seleccionada:", selectedTag);
 
-                console.log("Etiqueta seleccionada:", selectedTag); // Esto debería mostrarte la etiqueta seleccionada
+    // Obtener todos los elementos que representan las líneas de contenido
+    const lineContents = document.querySelectorAll('.md-line-content');
 
-                // Renderizar todas las líneas si la selección es la opción predeterminada ('').
-                if (selectedTag === '') {
-                    renderModel(model); // Asegúrate de que esta función acepte y maneje el array de líneas a renderizar.
-                    return;
-                }
-
-                // Filtrar líneas que contienen la etiqueta seleccionada en sus tags.
-                const filteredModel = selectedTag === '' ? model : model.filter(item =>
-                    item.tags.some(tag => tag.className === selectedTag)
-                );
-
-                console.log("Modelo filtrado:", filteredModel); // Esto debería mostrarte las líneas que cumplen con el criterio de filtrado
-
-                // Llamar a renderModel para actualizar la vista con las líneas filtradas.
-                renderModel(filteredModel); // Asegúrate de ajustar 'renderModel' para manejar este caso.
+    lineContents.forEach(contentElement => {
+        // Primero, encuentra el contenedor más cercano que se supone debe tener la clase '.md-line-wrapper'
+        const wrapper = contentElement.closest('.md-line-wrapper');
+        // Verifica si el wrapper existe antes de intentar acceder a `classList`
+        if (wrapper) {
+            if (selectedTag === '' || contentElement.textContent.includes(`#${selectedTag}`)) {
+                wrapper.classList.remove('hidden');
+            } else {
+                wrapper.classList.add('hidden');
             }
+        } else {
+            console.error('No se encontró el contenedor .md-line-wrapper para un elemento de contenido');
+        }
+    });
+}
+
 
             document.addEventListener('DOMContentLoaded', function () {
 
