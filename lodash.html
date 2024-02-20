@@ -445,28 +445,46 @@
         }
 
         function openModalWithSectionName(sectionName) {
-    // Encuentra el elemento que contiene el título en la ventana modal
-    const modalTitleContent = document.getElementById('modalTitleContent');
-    // Actualiza el contenido de este elemento con el nombre de la sección recibido
-    modalTitleContent.textContent = sectionName;
+            // Encuentra el elemento que contiene el título en la ventana modal
+            const modalTitleContent = document.getElementById('modalTitleContent');
+            // Actualiza el contenido de este elemento con el nombre de la sección recibido
+            modalTitleContent.textContent = sectionName;
 
-    // Llama a generateModel para obtener el contenido actual del modelo
-    const modelContent = generateModel();
+            // Llama a generateModel para obtener el contenido actual del modelo
+            const modelContent = generateModel();
 
-    // Define el contenido deseado para el textarea usando plantillas literales
-    const customContent = `AAA
-${modelContent}
-BBB
-${sectionName}
-CCC`;
+            // Define el contenido deseado para el textarea usando plantillas literales
+            const customContent = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
+            Listening closely to understand the specifics of the business.
+            Providing concise, targeted guidance without unnecessary repetition or formalities.
+            Offering step-by-step feedback to ensure the document effectively captures the business model.
+            You focus on the client's needs and how to best articulate their business model.
+            GOAL: Write a business model document describing the user's project business model. Here's some information about my Business:
+                ${modelContent}
+            MY QUESTION: Please suggest content for the "${sectionName}" section of the business model.
+            WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your responsse, each list component should begin with '#tag', followed by the name enclosed in double brackets '[[ ]]', and then a description on a new, indented line. For example:
+            - ## 🆔 [[{block id}]]
+            - #{block content class} [[list component n]]
+                - # description of the list component n
+            This is an example of a answer:
+            ---
+            - ## 🆔 stakeholders
+                - text
+                - #stakeholder [[Entrepreneurs and Startups in AI]]
+                - Emerging companies and entrepreneurs interested in artificial intelligence.
+                - #stakeholder [[Professionals and Experts in AI]]
+                - Individuals looking to expand their knowledge and network in AI.
+            ---
+            - You can copy/paste this answer to a document, write 'copy' to have the answer in a text box or write ⬇️ 'download' to save this answer to your computer"
+            `;
 
-    // Encuentra el textarea dentro del modal y actualiza su contenido
-    const generatedModelContent = document.getElementById('generatedModelContent');
-    generatedModelContent.value = customContent;
+            // Encuentra el textarea dentro del modal y actualiza su contenido
+            const generatedModelContent = document.getElementById('generatedModelContent');
+            generatedModelContent.value = customContent;
 
-    // Abre la ventana modal añadiendo la clase 'modal-open'
-    document.getElementById('modalTitle').classList.add('modal-open');
-}
+            // Abre la ventana modal añadiendo la clase 'modal-open'
+            document.getElementById('modalTitle').classList.add('modal-open');
+        }
 
         function closeModal() {
             document.getElementById('modalTitle').classList.remove('modal-open'); // Cierra el modal
@@ -478,7 +496,7 @@ CCC`;
     <div class="modal-box">
         <h3 class="font-bold text-lg" id="modalTitleContent">Título del Modelo</h3>
         <textarea id="generatedModelContent" class="textarea textarea-bordered w-full mt-4" placeholder="Aquí aparecerá el contenido del modelo generado..."></textarea>
-        <p class="py-4">Aquí puedes poner más información si lo necesitas.</p>
+        <p class="py-4">Paste in <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> or <a href="https://gemini.google.com/app" target="_blank">Gemini Pro</a></p>
         <div class="modal-action">
             <a href="#" class="btn" onclick="closeModal()">Cerrar</a>
         </div>
