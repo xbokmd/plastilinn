@@ -15,6 +15,10 @@
 .hidden {
     display: none;
 }
+
+#markdownContainer {
+        padding-top: 100px; /* Ajusta este valor según la altura de tus elementos fijos */
+    }
     </style>
 
 </head>
@@ -40,11 +44,9 @@
                         class="file-input file-input-bordered file-input-primary w-full max-w-xs">
                 </div>
                 <div class="flex space-x-3">
-                    <select class="select select-bordered w-full max-w-xs" id="tagsFilter">
+                    <select class="select select-bordered w-full max-w-xs" id="tagsFilter" multiple>
+                        <!-- Opciones aquí -->
                     </select>
-                    <button
-                        class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition"
-                        onclick="extractTags()">Refresh filter</button>
                     <button id="downloadBtn"
                         class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
                 </div>
@@ -52,7 +54,7 @@
         </div>
     </div>
     </div>
-    <div id="markdownContainer">
+    <div id="markdownContainer" class="mt-16">
         <div class="hero min-h-screen bg-base-200">
             <div class="hero-content text-center">
                 <div class="max-w-md">
@@ -243,11 +245,11 @@
                     // Añadir el contenedor de la línea al contenedor principal
                     mainContainer.appendChild(lineContainer);
 
-                            // Asegurarse de envolver correctamente el lineContainer con rowWrapperDiv
-        rowWrapperDiv.appendChild(lineContainer); // Envolver lineContainer dentro de rowWrapperDiv
+                    // Asegurarse de envolver correctamente el lineContainer con rowWrapperDiv
+                    rowWrapperDiv.appendChild(lineContainer); // Envolver lineContainer dentro de rowWrapperDiv
 
-// Añadir el contenedor de la línea (ahora correctamente envuelto) al contenedor principal
-mainContainer.appendChild(rowWrapperDiv);
+                    // Añadir el contenedor de la línea (ahora correctamente envuelto) al contenedor principal
+                    mainContainer.appendChild(rowWrapperDiv);
                 });
 
                 // Añadir el contenedor principal al contenedor de Markdown
@@ -280,20 +282,25 @@ mainContainer.appendChild(rowWrapperDiv);
     console.log("Etiqueta seleccionada:", selectedTag);
 
     // Obtener todos los elementos que representan las líneas de contenido
-    const lineContents = document.querySelectorAll('.md-line-content');
+    const wrappers = document.querySelectorAll('.md-line-wrapper');
 
-    lineContents.forEach(contentElement => {
-        // Primero, encuentra el contenedor más cercano que se supone debe tener la clase '.md-line-wrapper'
-        const wrapper = contentElement.closest('.md-line-wrapper');
-        // Verifica si el wrapper existe antes de intentar acceder a `classList`
-        if (wrapper) {
-            if (selectedTag === '' || contentElement.textContent.includes(`#${selectedTag}`)) {
-                wrapper.classList.remove('hidden');
-            } else {
-                wrapper.classList.add('hidden');
+    wrappers.forEach(wrapper => {
+        // Busca dentro del wrapper si existe alguna etiqueta que coincida con la seleccionada
+        const tags = wrapper.querySelectorAll('.tags-container span');
+        let tagFound = false; // Indicador si se encuentra la etiqueta dentro del wrapper
+
+        tags.forEach(tag => {
+            if (tag.textContent === selectedTag) {
+                tagFound = true;
             }
+        });
+
+        // Si se encuentra la etiqueta o si no se ha seleccionado ninguna (valor ''), muestra el wrapper
+        if (tagFound || selectedTag === '') {
+            wrapper.classList.remove('hidden');
         } else {
-            console.error('No se encontró el contenedor .md-line-wrapper para un elemento de contenido');
+            // En caso contrario, oculta el wrapper
+            wrapper.classList.add('hidden');
         }
     });
 }
