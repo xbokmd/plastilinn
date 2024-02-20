@@ -12,13 +12,14 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <style>
-.hidden {
-    display: none;
-}
+        .hidden {
+            display: none;
+        }
 
-#markdownContainer {
-        padding-top: 100px; /* Ajusta este valor según la altura de tus elementos fijos */
-    }
+        #markdownContainer {
+            padding-top: 100px;
+            /* Ajusta este valor según la altura de tus elementos fijos */
+        }
     </style>
 
 </head>
@@ -44,7 +45,8 @@
                         class="file-input file-input-bordered file-input-primary w-full max-w-xs">
                 </div>
                 <div class="flex space-x-3">
-                    <select class="select select-bordered w-full max-w-xs" id="tagsFilter">
+                    <select class="select select-bordered w-full max-w-xs" id="tagsFilter" multiple>
+                        <!-- Opciones aquí -->
                     </select>
                     <button id="downloadBtn"
                         class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
@@ -179,15 +181,27 @@
                     // Comprobar si el título de la línea coincide con algún nombre en metamodel
                     const matchingMeta = metamodel.find(meta => meta.name === lineData.title);
 
-                    // Columna para el título
-                    const processedContentElement = document.createElement('div');
-                    processedContentElement.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
-                    processedContentElement.textContent = lineData.title ? lineData.title : '';
-                    lineContainer.appendChild(processedContentElement);
+                    if (lineData.title) {
+                        const titleLink = document.createElement('a');
+                        const formattedTitle = lineData.title.replace(/\s+/g, '_'); // Reemplaza espacios con guiones bajos para la URL
+                        titleLink.setAttribute('href', `https://go.plastilinn.com/#/page/${formattedTitle}_info`);
+                        titleLink.setAttribute('target', '_blank'); // Asegura que el enlace se abra en una nueva pestaña
+                        titleLink.textContent = lineData.title;
+                        titleLink.className = 'text-blue-500 hover:text-blue-800'; // Clases de Tailwind para estilos
 
-                    // Mostrar el título de la línea si existe, de lo contrario dejar en blanco
-                    processedContentElement.textContent = lineData.title ? lineData.title : '';
-                    lineContainer.appendChild(processedContentElement);
+                        // Crear un contenedor para el enlace y añadir el enlace a este contenedor
+                        const titleContainer = document.createElement('div');
+                        titleContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
+                        titleContainer.appendChild(titleLink);
+                        lineContainer.appendChild(titleContainer);
+                    } else {
+                        const noTitleText = '';
+                        const noTitleElement = document.createElement('div');
+                        noTitleElement.textContent = noTitleText;
+                        noTitleElement.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
+                        lineContainer.appendChild(noTitleElement);
+                    }
+
 
                     // Contenedor para el contenido original (editable)
                     const contentContainer = document.createElement('div');
@@ -277,32 +291,32 @@
             document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
 
             function filterLinesBySelectedTags() {
-    const selectedTag = document.getElementById('tagsFilter').value;
-    console.log("Etiqueta seleccionada:", selectedTag);
+                const selectedTag = document.getElementById('tagsFilter').value;
+                console.log("Etiqueta seleccionada:", selectedTag);
 
-    // Obtener todos los elementos que representan las líneas de contenido
-    const wrappers = document.querySelectorAll('.md-line-wrapper');
+                // Obtener todos los elementos que representan las líneas de contenido
+                const wrappers = document.querySelectorAll('.md-line-wrapper');
 
-    wrappers.forEach(wrapper => {
-        // Busca dentro del wrapper si existe alguna etiqueta que coincida con la seleccionada
-        const tags = wrapper.querySelectorAll('.tags-container span');
-        let tagFound = false; // Indicador si se encuentra la etiqueta dentro del wrapper
+                wrappers.forEach(wrapper => {
+                    // Busca dentro del wrapper si existe alguna etiqueta que coincida con la seleccionada
+                    const tags = wrapper.querySelectorAll('.tags-container span');
+                    let tagFound = false; // Indicador si se encuentra la etiqueta dentro del wrapper
 
-        tags.forEach(tag => {
-            if (tag.textContent === selectedTag) {
-                tagFound = true;
+                    tags.forEach(tag => {
+                        if (tag.textContent === selectedTag) {
+                            tagFound = true;
+                        }
+                    });
+
+                    // Si se encuentra la etiqueta o si no se ha seleccionado ninguna (valor ''), muestra el wrapper
+                    if (tagFound || selectedTag === '') {
+                        wrapper.classList.remove('hidden');
+                    } else {
+                        // En caso contrario, oculta el wrapper
+                        wrapper.classList.add('hidden');
+                    }
+                });
             }
-        });
-
-        // Si se encuentra la etiqueta o si no se ha seleccionado ninguna (valor ''), muestra el wrapper
-        if (tagFound || selectedTag === '') {
-            wrapper.classList.remove('hidden');
-        } else {
-            // En caso contrario, oculta el wrapper
-            wrapper.classList.add('hidden');
-        }
-    });
-}
 
 
             document.addEventListener('DOMContentLoaded', function () {
