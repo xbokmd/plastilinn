@@ -5,6 +5,37 @@
     border: gainsboro 1px;
 }
 
+.custom-flex-1 {
+    flex: 0 0 20%;
+}
+
+.custom-flex-3 {
+    flex: 0 0 20%;
+}
+
+.custom-flex-2 {
+    flex: 0 0 60%;
+    background-color: white; /* Fondo blanco para la columna */
+    padding: 0; /* Eliminar padding interno si existe */
+}
+
+.md-line-content {
+    background-color: white; /* Asegurar que el fondo de cada elemento de contenido también sea blanco */
+    border: 0; /* Eliminar bordes o hacerlos blancos */
+    box-shadow: none; /* Eliminar sombras internas para evitar interrupciones en la continuidad */
+}
+
+.md-line-wrapper {
+    margin: 0; /* Eliminar margen entre elementos de línea si es necesario */
+    padding: 0; /* Ajustar el padding para eliminar espacios entre elementos */
+}
+
+/* Eliminar bordes y espaciados entre elementos de contenido */
+.md-line {
+    border-bottom: 1px solid white; /* Hacer el borde del mismo color que el fondo si se desea mantener una separación sutil */
+    padding: 0; /* Ajustar según sea necesario para alinear elementos sin espacios */
+}
+
 #top-container {
     position: fixed;
     top: 0; /* Ajusta este valor al alto de tu navbar */

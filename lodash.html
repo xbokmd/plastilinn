@@ -12,17 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <style>
-        .custom-flex-1 {
-            flex: 0 0 20%;
-        }
 
-        .custom-flex-2 {
-            flex: 0 0 60%;
-        }
-
-        .custom-flex-3 {
-            flex: 0 0 20%;
-        }
     </style>
 
 </head>
@@ -176,6 +166,9 @@
                 mainContainer.className = 'flex flex-col';
 
                 _.forEach(model, (lineData) => {
+
+                    const rowWrapperDiv = document.createElement('div');
+                    rowWrapperDiv.classList.add('md-line-wrapper');
 
                     const lineContainer = document.createElement('div');
                     lineContainer.className = 'flex flex-row md-line';
