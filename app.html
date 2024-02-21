@@ -17,7 +17,12 @@
         }
 
         #markdownContainer {
-            padding-top: 100px;
+            padding-top: 20px;
+            /* Ajusta este valor según la altura de tus elementos fijos */
+        }
+
+        #model-title {
+            padding-top: 80px;
             /* Ajusta este valor según la altura de tus elementos fijos */
         }
 
@@ -79,7 +84,8 @@
             </div>
         </div>
     </div>
-    </div>
+    <div id="model-title" class="text-center mt-4">
+        <!-- El nombre del modelo se mostrará aquí -->
     </div>
     <div id="markdownContainer" class="mt-16">
         <div class="hero min-h-screen bg-base-200">
@@ -104,27 +110,19 @@
             </div>
         </div>
     </div>
-    </div>
+
 
     <script>
         let metamodel = [];
         let model = []; // También aseguramos que `model` esté definido globalmente
+        
         let uniqueId = 0; // Al inicio de tu script o fuera de cualquier función para que sea global
-
+        let modelName = ''; // Esta variable almacenará el nombre del archivo cargado
         function downloadJSON() {
             axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
                 .then(function (response) {
                     metamodel = response.data;
                     console.log(metamodel); // Opcional: Mostrar los datos en la consola
-
-                    // Crear un elemento para mostrar los datos del array "metamodel"
-                    const container = document.createElement('div');
-                    container.id = 'metamodelContainer';
-                    container.className = 'mt-4 p-4 bg-gray-200'; // Añade estilos según necesites
-
-                    // Convertir el array "metamodel" a una cadena JSON para mostrarlo
-                    const content = document.createTextNode(JSON.stringify(metamodel, null, 2));
-                    container.appendChild(content);
 
                     // Añadir el contenedor al final del cuerpo del documento
                     document.body.appendChild(container);
@@ -148,6 +146,19 @@
 
                 const reader = new FileReader();
                 reader.onload = function (e) {
+                    // Extrae el nombre del archivo sin la extensión '.md'
+                    let baseName = file.name.replace('.md', '');
+
+                    // Busca la posición de " - saved" en el nombre del archivo
+                    let savedIndex = baseName.indexOf(' - saved');
+
+                    // Si " - saved" se encuentra en el nombre, recorta hasta ese punto
+                    if (savedIndex !== -1) {
+                        baseName = baseName.substring(0, savedIndex);
+                    }
+
+                    modelName = baseName; // Asigna el nombre modificado a modelName
+                    updateModelNameDisplay(); // Actualiza la visualización del nombre
                     const content = e.target.result;
                     const lines = content.split(/\r?\n/);
                     model = _.map(lines, (line, index) => {
@@ -430,10 +441,11 @@ updateTagsContainer(tagsElement, cleanedTags);
             }
 
             document.getElementById('downloadBtn').addEventListener('click', function () {
-                    const modelContent = generateModel(); // Usa la función generateModel para obtener el contenido
-                    const fileName = `Business model ${formatDate(new Date())}.md`;
-                    downloadFile(fileName, modelContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
-                });
+                const modelContent = generateModel(); // Esta función debería generar el contenido a descargar
+                // Genera el nombre del archivo usando modelName y la fecha actual para mantenerlo único
+                const fileName = `${modelName || 'Business model'} - saved ${formatDate(new Date())}.md`;
+                downloadFile(fileName, modelContent); // Llama a la función downloadFile con el nuevo nombre
+            });
 
             function downloadFile(fileName, content) {
                 const element = document.createElement('a');
@@ -449,10 +461,21 @@ updateTagsContainer(tagsElement, cleanedTags);
             }
         }
 
+        function updateModelNameDisplay() {
+            let modelNameDisplay = document.getElementById('modelNameDisplay');
+            if (!modelNameDisplay) {
+                modelNameDisplay = document.createElement('h1');
+                modelNameDisplay.id = 'modelNameDisplay';
+                // Encuentra el contenedor con id="model-title" para mostrar el nombre del modelo
+                const container = document.getElementById('model-title');
+                container.appendChild(modelNameDisplay); // Añade el h1 dentro del contenedor específico
+            }
+            modelNameDisplay.textContent = modelName; // Actualiza el contenido del h1 con el nombre del modelo
+        }
+
         function downloadModel() {
                 let fileContent = model.map(obj => obj.content).join('\n'); // Concatena el contenido con saltos de línea
-
-                const fileName = `Business model ${formatDate(new Date())}.md`; // Usa la función formatDate para crear un nombre de archivo único
+                const fileName = `Business model - saved ${formatDate(new Date())}.md`; // Usa la función formatDate para crear un nombre de archivo único
                 downloadFile(fileName, fileContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
             }
 
