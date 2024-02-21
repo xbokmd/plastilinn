@@ -60,8 +60,6 @@
                                 class="file-input file-input-bordered file-input-primary w-full max-w-xs">
                         </div>
                         <div class="flex space-x-3" style="justify-content: center;">
-                            <select class="select select-bordered w-full max-w-xs" id="tagsFilter">
-                            </select>
                         </div>
                         <div class="flex items-center justify-end space-x-3" style="justify-content: flex-start;">
                             <button id="downloadBtn"
@@ -81,6 +79,17 @@
     </div>
     <div id="model-title" class="text-center mt-4">
         <!-- El nombre del modelo se mostrará aquí -->
+    </div>
+    <div class="mt-4 w-4/5 mx-auto">
+        <button class="collapse-filter-button btn btn-block" type="button">
+            Filter
+        </button>
+        <div class="collapse-filter-content hidden ">
+            blah blah
+            <select class="select select-bordered w-full" id="tagsFilter" multiple>
+                <!-- Opciones del filtro serán generadas dinámicamente -->
+            </select>
+        </div>
     </div>
     <div id="markdownContainer" class="mt-16">
         <div class="hero min-h-screen bg-base-200">
@@ -118,9 +127,6 @@
                 .then(function (response) {
                     metamodel = response.data;
                     console.log(metamodel); // Opcional: Mostrar los datos en la consola
-
-                    // Añadir el contenedor al final del cuerpo del documento
-                    document.body.appendChild(container);
                 })
                 .catch(function (error) {
                     console.log(error); // Manejar el error
@@ -201,6 +207,12 @@
                     renderModel(); // Asegúrate de ajustar esta función para manejar "title"
                 };
                 reader.readAsText(file);
+            });
+
+            document.querySelector('.collapse-filter-button').addEventListener('click', function() {
+                const content = document.querySelector('.collapse-filter-content');
+                // Alternar la clase 'hidden' para mostrar/ocultar el contenido
+                content.classList.toggle('hidden');
             });
 
             function updateTagsContainer(tagsContainer, tags) {
@@ -375,25 +387,27 @@ updateTagsContainer(tagsElement, cleanedTags);
             }
 
             function filterLinesBySelectedTags() {
-                const selectedTag = document.getElementById('tagsFilter').value;
-                console.log("Etiqueta seleccionada:", selectedTag);
+                // Obtener todas las etiquetas seleccionadas del select múltiple
+                const selectedTags = Array.from(document.getElementById('tagsFilter').selectedOptions).map(option => option.value);
 
                 // Obtener todos los elementos que representan las líneas de contenido
                 const wrappers = document.querySelectorAll('.md-line-wrapper');
 
+                // Iterar sobre cada wrapper
                 wrappers.forEach(wrapper => {
-                    // Busca dentro del wrapper si existe alguna etiqueta que coincida con la seleccionada
-                    const tags = wrapper.querySelectorAll('.tags-container span');
-                    let tagFound = false; // Indicador si se encuentra la etiqueta dentro del wrapper
+                    // Busca dentro del wrapper si existe alguna etiqueta que coincida con las seleccionadas
+                    const tagsInLine = wrapper.querySelectorAll('.tags-container span');
+                    let tagFound = false;
 
-                    tags.forEach(tag => {
-                        if (tag.textContent === selectedTag) {
+                    // Verificar si alguna de las etiquetas de la línea coincide con las seleccionadas
+                    tagsInLine.forEach(tagElement => {
+                        if (selectedTags.includes(tagElement.textContent)) {
                             tagFound = true;
                         }
                     });
 
-                    // Si se encuentra la etiqueta o si no se ha seleccionado ninguna (valor ''), muestra el wrapper
-                    if (tagFound || selectedTag === '') {
+                    // Si se encuentra alguna etiqueta o si no se ha seleccionado ninguna (valor ''), muestra el wrapper
+                    if (tagFound || selectedTags.length === 0) {
                         wrapper.classList.remove('hidden');
                     } else {
                         // En caso contrario, oculta el wrapper
