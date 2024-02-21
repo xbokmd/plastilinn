@@ -228,17 +228,30 @@
                     // Contenedor para el contenido original (editable)
                     const contentContainer = document.createElement('div');
                     contentContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-2';
-                    const contentElement = document.createElement('div');
-                    contentElement.className = 'md-line-content text-left bg-white shadow-md p-4 md:col-span-3';
-                    contentElement.setAttribute('contenteditable', 'true');
-                    contentElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
-                    contentElement.textContent = lineData.content;
-                    contentContainer.appendChild(contentElement);
+                    const textareaElement = document.createElement('textarea');
+                    textareaElement.className = 'md-line-content text-left bg-white shadow-md p-4 md:col-span-3';
+                    textareaElement.rows = 4; // Establece el número de filas o altura inicial
+                    textareaElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
+                    textareaElement.textContent = lineData.content;
+                    contentContainer.appendChild(textareaElement);
 
-                    contentElement.addEventListener('input', function () {
-                        // Captura las etiquetas directamente del contenido, incluyendo el símbolo '#'
+                    textareaElement.addEventListener('input', function () {
+                        // Actualizar el modelo con el nuevo contenido
+                        const id = this.getAttribute('data-id');
+                        const updatedContent = this.value; // Usa 'value' para 'textarea'
+                        const lineObj = model.find(obj => obj.id.toString() === id);
+                        if (lineObj) {
+                            lineObj.content = updatedContent; // Actualiza el contenido en el modelo
+
+                            // Ahora, actualiza las etiquetas basadas en el contenido editado
+                            // Esta lógica depende de cómo estén estructuradas tus etiquetas
+                            // Aquí hay un ejemplo genérico de cómo podrías hacerlo
+                            const tagsContainer = document.querySelector(`#tags-container-${id}`); // Asumiendo que tienes un contenedor de etiquetas con un ID específico
+                            if (tagsContainer) {
+                                updateTagsForLine(tagsContainer, updatedContent); // Actualiza las etiquetas en la UI
+                            }
+                        }                      // Captura las etiquetas directamente del contenido, incluyendo el símbolo '#'
                         const newTags = this.textContent.match(/#[^\s#]+/g) || [];
-                        // No necesitas limpiar los caracteres especiales para data-tag
                         // Simplemente elimina el símbolo '#' al principio para el valor del data-tag
                         const cleanedTags = newTags.map(tag => tag.substring(1)); // Mantén los caracteres especiales
 
@@ -256,8 +269,8 @@
                         updateTagsFilter();
                     });
 
-                    contentElement.textContent = lineData.content;
-                    contentContainer.appendChild(contentElement);
+                    textareaElement.textContent = lineData.content;
+                    contentContainer.appendChild(textareaElement);
 
                     // Columna para las etiquetas
                     const tagsElement = document.createElement('div');
@@ -311,6 +324,23 @@
                 });
             }
             document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
+
+            function updateTagsForLine(tagsContainer, content) {
+                // Limpia el contenedor de etiquetas existente
+                tagsContainer.innerHTML = '';
+
+                // Extrae las etiquetas del contenido. Este paso depende de cómo identifiques las etiquetas en el texto.
+                // Por ejemplo, si las etiquetas son palabras precedidas por '#', podrías hacer algo como esto:
+                const tagRegex = /#\w+/g; // Encuentra todas las ocurrencias de '#palabra'
+                const tags = content.match(tagRegex) || [];
+
+                // Crea elementos visuales para cada etiqueta encontrada y los añade al contenedor
+                tags.forEach(tag => {
+                    const tagElement = document.createElement('span'); // O cualquier elemento que represente una etiqueta en tu UI
+                    tagElement.textContent = tag; // Establece el texto del elemento al tag encontrado
+                    tagsContainer.appendChild(tagElement); // Añade el elemento de etiqueta al contenedor
+                });
+            }
 
             function filterLinesBySelectedTags() {
                 const selectedTag = document.getElementById('tagsFilter').value;
@@ -406,11 +436,12 @@
         });
 
         function generateModel() {
-                // Recopila el contenido de todos los elementos editables
-                const contentElements = document.querySelectorAll('.md-line-content');
-                const modelContent = Array.from(contentElements).map(element => element.textContent).join('\n');
-                return modelContent;
-            }
+            const contentElements = document.querySelectorAll('.md-line-content');
+            let modelContent = Array.from(contentElements).map(element => element.value).join('\n\n');
+            // La siguiente línea es incorrecta y redundante, por lo que se ha eliminado
+            // modelContent += textContent + '\n';
+            return modelContent.trim();
+        }
 
         function updateTagsFilter() {
             // Obtener todas las etiquetas únicas de `model`
