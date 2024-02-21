@@ -33,8 +33,8 @@
     resize: vertical; /* Permite al usuario redimensionar el textarea solo verticalmente */
 }
 
-        .ai-magic-button {
-            padding: 1px 1px 1px 1px ;
+.ai-magic-button {
+    padding: 1px 1px 1px 1px ;
     display: block; /* Hace que el botón ocupe su propia línea */
     width: auto; /* O cualquier ancho específico que desees */
     margin: 0px auto; /* Añade margen arriba y abajo y centra horizontalmente */
@@ -110,37 +110,33 @@
         let metamodel = [];
         let model = []; // También aseguramos que `model` esté definido globalmente
         let uniqueId = 0; // Al inicio de tu script o fuera de cualquier función para que sea global
-        document.addEventListener('DOMContentLoaded', function () {
-            let metamodel = [];
 
-            function downloadJSON() {
-                axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
-                    .then(function (response) {
-                        metamodel = response.data;
-                        console.log(metamodel); // Opcional: Mostrar los datos en la consola
+        function downloadJSON() {
+            axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
+                .then(function (response) {
+                    metamodel = response.data;
+                    console.log(metamodel); // Opcional: Mostrar los datos en la consola
 
-                        // Crear un elemento para mostrar los datos del array "metamodel"
-                        const container = document.createElement('div');
-                        container.id = 'metamodelContainer';
-                        container.className = 'mt-4 p-4 bg-gray-200'; // Añade estilos según necesites
+                    // Crear un elemento para mostrar los datos del array "metamodel"
+                    const container = document.createElement('div');
+                    container.id = 'metamodelContainer';
+                    container.className = 'mt-4 p-4 bg-gray-200'; // Añade estilos según necesites
 
-                        // Convertir el array "metamodel" a una cadena JSON para mostrarlo
-                        const content = document.createTextNode(JSON.stringify(metamodel, null, 2));
-                        container.appendChild(content);
+                    // Convertir el array "metamodel" a una cadena JSON para mostrarlo
+                    const content = document.createTextNode(JSON.stringify(metamodel, null, 2));
+                    container.appendChild(content);
 
-                        // Añadir el contenedor al final del cuerpo del documento
-                        document.body.appendChild(container);
-                    })
-                    .catch(function (error) {
-                        console.log(error); // Manejar el error
-                    });
-            }
+                    // Añadir el contenedor al final del cuerpo del documento
+                    document.body.appendChild(container);
+                })
+                .catch(function (error) {
+                    console.log(error); // Manejar el error
+                });
+        }
 
-            downloadJSON();
-        });
+        downloadJSON();
 
-        document.addEventListener('DOMContentLoaded', function () {
-
+        function setupMarkdownFileInput() {
             const markdownFileInput = document.getElementById('markdownFileInput');
             const markdownContainer = document.getElementById('markdownContainer');
 
@@ -233,9 +229,6 @@
 
                     const lineContainer = document.createElement('div');
                     lineContainer.className = 'flex flex-row md-line';
-
-                    // Comprobar si el título de la línea coincide con algún nombre en metamodel
-                    const matchingMeta = metamodel.find(meta => meta.name === lineData.title);
 
                     if (lineData.title) {
                         // Creación y configuración del enlace del título (titleLink).
@@ -403,7 +396,6 @@ updateTagsContainer(tagsElement, cleanedTags);
                 });
             }
 
-
             document.addEventListener('DOMContentLoaded', function () {
 
                 document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
@@ -424,19 +416,8 @@ updateTagsContainer(tagsElement, cleanedTags);
                     }
                 }
             });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
 
             document.getElementById('downloadBtn').addEventListener('click', downloadModel);
-
-            function downloadModel() {
-                let fileContent = model.map(obj => obj.content).join('\n'); // Concatena el contenido con saltos de línea
-
-                const fileName = `Business model ${formatDate(new Date())}.md`; // Usa la función formatDate para crear un nombre de archivo único
-                downloadFile(fileName, fileContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
-            }
-
 
             function formatDate(date) {
                 const year = date.getFullYear();
@@ -448,13 +429,11 @@ updateTagsContainer(tagsElement, cleanedTags);
                 return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
             }
 
-            document.addEventListener('DOMContentLoaded', function () {
-                document.getElementById('downloadBtn').addEventListener('click', function () {
+            document.getElementById('downloadBtn').addEventListener('click', function () {
                     const modelContent = generateModel(); // Usa la función generateModel para obtener el contenido
                     const fileName = `Business model ${formatDate(new Date())}.md`;
                     downloadFile(fileName, modelContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
                 });
-            });
 
             function downloadFile(fileName, content) {
                 const element = document.createElement('a');
@@ -468,8 +447,22 @@ updateTagsContainer(tagsElement, cleanedTags);
 
                 document.body.removeChild(element);
             }
+        }
 
-        });
+        function downloadModel() {
+                let fileContent = model.map(obj => obj.content).join('\n'); // Concatena el contenido con saltos de línea
+
+                const fileName = `Business model ${formatDate(new Date())}.md`; // Usa la función formatDate para crear un nombre de archivo único
+                downloadFile(fileName, fileContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
+            }
+
+
+        function setupDownloadButton() {
+                const downloadBtn = document.getElementById('downloadBtn');
+                if (!downloadBtn) return; // Asegúrate de que el elemento existe
+
+                downloadBtn.addEventListener('click', downloadModel);
+            }
 
         document.addEventListener('input', function (e) {
             if (e.target.getAttribute('contenteditable') === "true") {
@@ -591,6 +584,12 @@ updateTagsContainer(tagsElement, cleanedTags);
                     lineObj.content = updatedContent;
                 }
             }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            downloadJSON();
+            setupMarkdownFileInput();
+            setupDownloadButton();
         });
     </script>
 
