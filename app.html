@@ -168,11 +168,43 @@
                         };
                     });
 
+                    // Luego de definir tu modelo, actualiza las etiquetas de cada línea
+                    model.forEach(lineData => {
+                        // Encuentra el tagsContainer correspondiente para esta línea
+                        // Esto puede requerir que ajustes cómo identificas o accedes a cada tagsContainer
+                        // Por ejemplo, si cada línea tiene un ID único y puedes usarlo para encontrar su tagsContainer
+                        const tagsContainer = document.querySelector(`#tags-container-${lineData.id}`);
+                        if (tagsContainer) {
+                            const cleanedTags = lineData.tags.map(tag => tag.className); // Asume que ya has limpiado las etiquetas
+                            updateTagsContainer(tagsContainer, cleanedTags);
+                        }
+                    });
+
                     updateTagsFilter();
                     renderModel(); // Asegúrate de ajustar esta función para manejar "title"
                 };
                 reader.readAsText(file);
             });
+
+            function updateTagsContainer(tagsContainer, tags) {
+                // Limpia el contenedor de etiquetas actual
+                tagsContainer.innerHTML = '';
+
+                // Añadir las nuevas etiquetas al contenedor
+                tags.forEach(tag => {
+                    const tagSpan = document.createElement('span');
+                    // Asigna el valor de la etiqueta al atributo 'data-tag', asumiendo que 'tag' ya no tiene el '#'
+                    tagSpan.setAttribute('data-tag', tag);
+                    // Establece el texto visible del span como el valor de la etiqueta
+                    tagSpan.textContent = tag;
+                    tagsContainer.appendChild(tagSpan);
+
+                    // Añadir un espacio después de cada etiqueta para separación visual
+                    tagsContainer.appendChild(document.createTextNode(' '));
+                });
+            }
+
+
 
             function renderModel(linesToRender = model) {
                 console.log("Líneas a renderizar:", linesToRender); // Esto debería mostrarte las líneas que se van a renderizar
@@ -235,6 +267,7 @@
                     textareaElement.textContent = lineData.content;
                     contentContainer.appendChild(textareaElement);
 
+
                     textareaElement.addEventListener('input', function () {
                         // Actualizar el modelo con el nuevo contenido
                         const id = this.getAttribute('data-id');
@@ -242,48 +275,35 @@
                         const lineObj = model.find(obj => obj.id.toString() === id);
                         if (lineObj) {
                             lineObj.content = updatedContent; // Actualiza el contenido en el modelo
+                        }
 
-                            // Ahora, actualiza las etiquetas basadas en el contenido editado
-                            // Esta lógica depende de cómo estén estructuradas tus etiquetas
-                            // Aquí hay un ejemplo genérico de cómo podrías hacerlo
-                            const tagsContainer = document.querySelector(`#tags-container-${id}`); // Asumiendo que tienes un contenedor de etiquetas con un ID específico
-                            if (tagsContainer) {
-                                updateTagsForLine(tagsContainer, updatedContent); // Actualiza las etiquetas en la UI
-                            }
-                        }                      // Captura las etiquetas directamente del contenido, incluyendo el símbolo '#'
-                        const newTags = this.textContent.match(/#[^\s#]+/g) || [];
-                        // Simplemente elimina el símbolo '#' al principio para el valor del data-tag
-                        const cleanedTags = newTags.map(tag => tag.substring(1)); // Mantén los caracteres especiales
+                        // Extrae las etiquetas del contenido actualizado
+                        const rawTags = updatedContent.match(/#[^\s#]+/g) || [];
+                        const cleanedTags = rawTags.map(tag => tag.substring(1)); // Limpia las etiquetas quitando '#'
 
-                        // Limpiar el contenedor de etiquetas actual antes de añadir las nuevas
-                        tagsElement.innerHTML = '';
+                        // Encuentra el contenedor de etiquetas correspondiente
+                        // Asegúrate de que tu estructura del DOM permita encontrar correctamente el `tagsContainer`
+                        // relacionado con este `textarea`
+                        const tagsContainer = this.closest('.md-line').querySelector('.tags-container');
+                        if (tagsContainer) {
+                            updateTagsContainer(tagsContainer, cleanedTags);
+                        }
 
-                        // Generar y añadir los nuevos elementos de etiquetas con data-tag
-                        cleanedTags.forEach(tag => {
-                            const tagSpan = document.createElement('span');
-                            tagSpan.setAttribute('data-tag', tag); // Asigna el valor de la etiqueta al atributo 'data-tag'
-                            tagSpan.textContent = tag; // Establece el texto visible del span como el valor de la etiqueta, sin '#'
-                            tagsElement.appendChild(tagSpan);
-                            tagsElement.appendChild(document.createTextNode(' ')); // Espacio entre etiquetas
-                        });
                         updateTagsFilter();
                     });
 
                     textareaElement.textContent = lineData.content;
                     contentContainer.appendChild(textareaElement);
 
-                    // Columna para las etiquetas
-                    const tagsElement = document.createElement('div');
-                    tagsElement.className = 'tags-container ext-gray-500 text-sm text-center bg-gray-50 rounded p-2 custom-flex-3';
-                    lineData.tags.forEach(tag => {
-                        const tagSpan = document.createElement('span');
-                        // Limpiar el texto de la etiqueta para usarlo como nombre de clase
-                        // Eliminamos el símbolo '#' y caracteres especiales, reemplazando con guiones si es necesario
-                        tagSpan.setAttribute('data-tag', tag.className); // Almacena el valor de la etiqueta
-                        tagSpan.textContent = tag.className; // Establece el texto visible del span
-                        tagsElement.appendChild(tagSpan);
-                        tagsElement.appendChild(document.createTextNode(' ')); // Espacio entre etiquetas
-                    });
+// Columna para las etiquetas
+const tagsElement = document.createElement('div');
+tagsElement.className = 'tags-container ext-gray-500 text-sm text-center bg-gray-50 rounded p-2 custom-flex-3';
+
+// Prepara un arreglo de etiquetas limpias basado en lineData.tags
+const cleanedTags = lineData.tags.map(tag => tag.className);
+
+// Llama a updateTagsContainer con el contenedor de etiquetas y el arreglo de etiquetas limpias
+updateTagsContainer(tagsElement, cleanedTags);
 
                     // Añadir el contenedor de contenido editable en el medio
                     lineContainer.insertBefore(contentContainer, null); // Asegúrate de que esto esté correctamente insertado
@@ -378,24 +398,16 @@
 
             document.addEventListener('input', function (e) {
                 if (e.target.classList.contains('md-line-content')) {
-                    // Extracción del contenido actualizado
                     const updatedContent = e.target.value;
 
                     // Extraer etiquetas usando una expresión regular
-                    const tags = updatedContent.match(/#[^\s#]+/g) || [];
+                    const rawTags = updatedContent.match(/#[^\s#]+/g) || [];
+                    const cleanedTags = rawTags.map(tag => tag.substring(1)); // Limpia las etiquetas quitando '#'
 
                     // Encuentra el contenedor de etiquetas correspondiente
                     const tagsContainer = e.target.closest('.md-line').querySelector('.tags-container');
                     if (tagsContainer) {
-                        // Limpia el contenedor de etiquetas actual
-                        tagsContainer.innerHTML = '';
-
-                        // Añadir las nuevas etiquetas al contenedor
-                        tags.forEach(tag => {
-                            const tagSpan = document.createElement('span');
-                            tagSpan.textContent = tag; // O cualquier formato que desees
-                            tagsContainer.appendChild(tagSpan);
-                        });
+                        updateTagsContainer(tagsContainer, cleanedTags);
                     }
                 }
             });
@@ -547,16 +559,18 @@
     </script>
 
 
-<div id="modalTitle" class="modal" tabindex="-1">
-    <div class="modal-box">
-        <h3 class="font-bold text-lg" id="modalTitleContent">Título del Modelo</h3>
-        <textarea id="generatedModelContent" class="textarea textarea-bordered w-full mt-4" placeholder="Aquí aparecerá el contenido del modelo generado..."></textarea>
-        <p class="py-4">Paste in <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> or <a href="https://gemini.google.com/app" target="_blank">Gemini Pro</a></p>
-        <div class="modal-action">
-            <a href="#" class="btn" onclick="closeModal()">Cerrar</a>
+    <div id="modalTitle" class="modal" tabindex="-1">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg" id="modalTitleContent">Título del Modelo</h3>
+            <textarea id="generatedModelContent" class="textarea textarea-bordered w-full mt-4"
+                placeholder="Aquí aparecerá el contenido del modelo generado..."></textarea>
+            <p class="py-4">Paste in <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> or <a
+                    href="https://gemini.google.com/app" target="_blank">Gemini Pro</a></p>
+            <div class="modal-action">
+                <a href="#" class="btn" onclick="closeModal()">Cerrar</a>
+            </div>
         </div>
     </div>
-</div>
 
 
 </body>
