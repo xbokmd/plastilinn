@@ -1,205 +1,139 @@
-Business name #github.com/plastilinn/bm-0-1-0
-## business summary
-  - write here
-## business idea
-  - write here
-## opportunity
-  - write here
-## business status
-  - write here
-## challenges
-  - write here
-## inspiration
-  - write here
-## unfair advantage
-  - write here
-## business objectives
-  - write here
-## mission
-  - write here
-## vision
-  - write here
-## strategy
-  - write here
-## organization values
-  - write here
-## organization goals
+# business summary #***** #%
+# business idea #*** #%
+## opportunity #** #%
+## business status #**** #%
+## challenges #**** #%
+## inspiration #** #%
+## unfair advantage #*** #%
+# business objectives #**** #%
+## mission #*** #%
+## vision #*** #%
+## strategy #*** #%
+## organization values #*** #%
+## organization goals #**** #%
   - #goal
-## stakeholders
+# stakeholders #**** #%
   - #stakeholder
-## segment list
+# segment list #**** #%
   - #segment
-## segment (id)
-  - write here
-## segment (id)/segmentation criteria
+## segment (id) #**** #%
+### segment (id)/segmentation criteria #*** #%
   - #segmentation
-## segment (id)/market size
-  - write here
-## segment (id)/market trends
-  - write here
-## segment (id)/partners
+### segment (id)/market size #*** #%
+### segment (id)/market trends #* #%
+### segment (id)/partners #* #%
   - #stakeholder
-## segment (id)/competition
+### segment (id)/competition #** #%
   - #stakeholder
-## segment (id)/roles
+### segment (id)/roles #** #%
   - #role
-## segment (id)/profiles
+### segment (id)/profiles #* #%
   - #profile
-## profile list
-  - write here
-## profile (id)
-  - write here
-## profile (id)/segmentation
+# profile list #*** #%
+## profile (id) #**** #%
+### profile (id)/segmentation #*** #%
   - #segmentation
-## profile (id)/persona
-  - write here
-## profile (id)/goals
+### profile (id)/persona #** #%
+### profile (id)/goals #**** #%
   - #goal
-## profile (id)/perceptions
+### profile (id)/perceptions #* #%
   - #perception
-## profile (id)/emotions
+### profile (id)/emotions #* #%
   - #emotion
-## profile (id)/value proposition
+### profile (id)/value proposition #*** #%
   - #value
-## profile (id)/quantified value proposition
-  - write here
-## profile (id)/relationship
+#### profile (id)/quantified value proposition #* #%
+### profile (id)/relationship #* #%
   - #relationship
-## profile (id)/messages
+### profile (id)/messages #** #%
   - #message
-## profile (id)/channels
+### profile (id)/channels #*** #%
   - #channel
-## profile (id)/assets
+### profile (id)/assets #** #%
   - #asset
-## profile (id)/transactions
+### profile (id)/transactions #* #%
   - #transaction
-## profile (id)/journey
-  - write here
-## profile (id)/funnel
-  - write here
-## profile (id)/sales strategy
-  - write here
-## solution list
+### profile (id)/journey #** #%
+### profile (id)/funnel #* #%
+### profile (id)/sales strategy #* #%
+# solution list #**** #%
   - #solution
-## solution (id)
-  - write here
-## solution (id)/category
-  - write here
-## solution (id)/components
-  - write here
-## solution (id)/features
+## solution (id) #*** #%
+### solution (id)/category #** #%
+### solution (id)/components #* #%
+### solution (id)/features #** #%
   - #feature
-## solution (id)/roadmap
-  - write here
-## solution (id)/offerings
+### solution (id)/roadmap #* #%
+### solution (id)/offerings #** #%
   - #offering
-## solution (id)/pricing
-  - write here
-## solution (id)/brochure
-  - write here
-## marketing
-  - write here
-## naming
-  - write here
-## branding
-  - write here
-## visual identity
-  - write here
-## logo
-  - write here
-## marketing plan
-  - write here
-## operations
-  - write here
-## activitiy list
+### solution (id)/pricing #** #%
+### solution (id)/brochure #* #%
+# marketing #** #%
+## naming #** #%
+## branding #* #%
+## visual identity #* #%
+## logo #* #%
+## marketing plan #* #%
+# operations #*** #%
+## activitiy list #** #%
   - #work
-## function list
+## function list #** #%
   - #function
-## resource list
+## resource list #** #%
   - #asset
-## metric list
+# metric list #*** #%
   - #metric
-## life time value
-  - write here
-## customer aquisition cost
-  - write here
-## team
-  - write here
-## people
+## life time value #*** #%
+## customer aquisition cost #*** #%
+# team #**** #%
+## people #**** #%
   - #person
-## person (id)
-  - write here
-## person (id)/skills
+### person (id) #**** #%
+#### person (id)/skills #*** #%
   - #skill
-## person (id)/functions
+#### person (id)/functions #*** #%
   - #function
-## person (id)/inputs
-  - write here
-## person (id)/outputs
-  - write here
-## founders
+#### person (id)/inputs #*** #%
+#### person (id)/outputs #*** #%
+## founders #**** #%
   - #person
-## position list
+## position list #** #%
   - #position
-## finance
-  - write here
-## revenue lines
+# finance #*** #%
+## revenue lines #*** #%
   - #revenue
-## cost lines
+## cost lines #** #%
   - #cost
-## unit economics
-  - write here
-## funding strategy
-  - write here
-## funding sources
-  - write here
-## capital structure
-  - write here
-## cap table
-  - write here
-## finantial projections
-  - write here
-## cashflow projections
-  - write here
-## legal
-  - write here
-## legal issues
-  - write here
-## contract list
-  - write here
-## project plan
-  - write here
-## phases
+## unit economics #** #%
+## funding strategy #** #%
+## funding sources #* #%
+## capital structure #** #%
+### cap table #* #%
+## finantial projections #* #%
+## cashflow projections #** #%
+# legal #** #%
+## legal issues #** #%
+## contract list #* #%
+# project plan #** #%
+## phases #* #%
   - #phase
-## milestones
+## milestones #** #%
   - #milestone
-## communication
-  - write here
-## pitch
-  - write here
-## business brochure
-  - write here
-## web
-  - write here
-## storytelling
-  - write here
-## presentations
-  - write here
-## analysis
-  - write here
-## key list
-  - write here
-## assumption list
+# communication #** #%
+## pitch #* #%
+## business brochure #* #%
+## web #* #%
+## storytelling #* #%
+## presentations #* #%
+# analysis #**** #%
+## key list #**** #%
+## assumption list #*** #%
   - #assumption
-## risk list
+## risk list #***** #%
   - #risk
-## business appraisals
-  - write here
-## validation
-  - write here
-## experiment list
+## business appraisals # #%
+# validation #***** #%
+## experiment list #*** #%
   - #experiment
-## experiment (id)
-  - write here
-## references
-  - write here
+### experiment (id) #*** #%
+# references # #%

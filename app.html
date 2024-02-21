@@ -25,6 +25,20 @@
             display: flex;
             justify-content: center;
         }
+
+        .md-line-content {
+    width: 100%; /* Hace que el textarea ocupe el 100% del ancho de su contenedor */
+    min-height: 2em; /* Establece la altura mínima para mostrar dos líneas de texto */
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en la altura y anchura total */
+    resize: vertical; /* Permite al usuario redimensionar el textarea solo verticalmente */
+}
+
+        .ai-magic-button {
+            padding: 1px 1px 1px 1px ;
+    display: block; /* Hace que el botón ocupe su propia línea */
+    width: auto; /* O cualquier ancho específico que desees */
+    margin: 0px auto; /* Añade margen arriba y abajo y centra horizontalmente */
+}
     </style>
 
 </head>
@@ -48,6 +62,7 @@
                             <select class="select select-bordered w-full max-w-xs" id="tagsFilter">
                             </select>
                         </div>
+                        <button id="reloadMarkdownBtn" class="btn btn-secondary bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition">Reload Markdown</button>
                         <div class="flex items-center justify-end space-x-3" style="justify-content: flex-start;">
                             <button id="downloadBtn"
                                 class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
@@ -237,8 +252,8 @@
 
                         // Creación del botón modalOpenButton y configuración del evento click.
                         const modalOpenButton = document.createElement('button');
-                        modalOpenButton.textContent = 'Ver Detalles';
-                        modalOpenButton.className = 'btn btn-primary';
+                        modalOpenButton.textContent = '🤖 AI magic';
+                        modalOpenButton.className = 'btn ai-magic-button p-1';
                         modalOpenButton.addEventListener('click', function () {
                             openModalWithSectionName(lineData.title);
                         });
@@ -259,8 +274,8 @@
                     const contentContainer = document.createElement('div');
                     contentContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-2';
                     const textareaElement = document.createElement('textarea');
-                    textareaElement.className = 'md-line-content text-left bg-white shadow-md p-4 md:col-span-3';
-                    textareaElement.rows = 4; // Establece el número de filas o altura inicial
+                    textareaElement.className = 'md-line-content text-left bg-white shadow-md p-1 md:col-span-3';
+                    textareaElement.rows = 2; // Establece el número de filas o altura inicial
                     textareaElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
                     textareaElement.textContent = lineData.content;
                     contentContainer.appendChild(textareaElement);
@@ -554,6 +569,29 @@ updateTagsContainer(tagsElement, cleanedTags);
         function closeModal() {
             document.getElementById('modalTitle').classList.remove('modal-open'); // Cierra el modal
         }
+
+        document.getElementById('reloadMarkdownBtn').addEventListener('click', function() {
+            // Define o recupera tu contenido Markdown
+            const markdownContent = `# Ejemplo de Markdown
+        Aquí va tu contenido Markdown. Puedes definirlo directamente
+        o cargarlo desde alguna parte.`;
+
+            // Simula la carga de este contenido como si fuera un archivo
+            loadMarkdownContent(markdownContent);
+        });
+
+        document.addEventListener('input', function(e) {
+            if (e.target.classList.contains('md-line-content')) {
+                const updatedContent = e.target.value;
+                const id = parseInt(e.target.getAttribute('data-id'), 10); // Obtiene el ID como número
+
+                // Encuentra el objeto en `model` con el ID correspondiente y actualiza su `content`
+                const lineObj = model.find(obj => obj.id === id);
+                if (lineObj) {
+                    lineObj.content = updatedContent;
+                }
+            }
+        });
     </script>
 
 
