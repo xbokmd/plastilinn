@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,72 +10,126 @@
     <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        #markdownContainer {
+            padding-top: 100px;
+            /* Ajusta este valor según la altura de tus elementos fijos */
+        }
+
+        .flex.space-x-3 {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
 </head>
 
-<body  class="bg-gray-100">
+<body class="bg-gray-100">
     <div id="top-container">
         <div class="navbar bg-base-100">
             <div class="flex-1">
-            <a class="btn btn-ghost text-xl">Plastilinn</a>
+                <a class="btn btn-ghost text-xl">Plastilinn</a>
+            </div>
+            <div class="flex items-center space-x-3">
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <div class="flex space-x-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="flex items-center space-x-3" style="justify-content: flex-end;">
+                            <input type="file" id="markdownFileInput" accept=".md"
+                                class="file-input file-input-bordered file-input-primary w-full max-w-xs">
+                        </div>
+                        <div class="flex space-x-3" style="justify-content: center;">
+                            <select class="select select-bordered w-full max-w-xs" id="tagsFilter">
+                            </select>
+                        </div>
+                        <div class="flex items-center justify-end space-x-3" style="justify-content: flex-start;">
+                            <button id="downloadBtn"
+                                class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="flex-none">
-            <ul class="menu menu-horizontal px-1">
-                <li><a>App</a></li>
-                <li><a>Docs</a></li>
-                <li><a>About</a></li>
-            </ul>
-            </div>
-        </div>
-        <main id="document-controls" class="container mx-auto mt-8">
-            <div class="flex justify-between items-center mb-6"> 
-                <div class="flex items-center space-x-3"> 
-                    <input type="file" id="markdownFileInput" accept=".md" class="file-input file-input-bordered file-input-primary w-full max-w-xs" />
-                </div>
-                <div class="flex space-x-3">
-                    <select class="select select-bordered w-full max-w-xs" id="tagsFilter" onchange="filterLinesBySelectedTags()">
-                    </select>
-                    <!-- Botón actualizado para usar colores primarios -->
-                    <button class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition" onclick="extractTags()">Refresh filter</button>
-                    <!-- Botón actualizado para usar colores primarios -->
-                    <button id="downloadBtn" class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
-                </div>
+                <ul class="menu menu-horizontal px-1">
+                    <li><a>App</a></li>
+                    <li><a>Docs</a></li>
+                    <li><a>About</a></li>
+                </ul>
             </div>
         </div>
     </div>
-        <div id="md-lines" class="md-lines"> 
-            <div class="hero min-h-screen bg-base-200">
-                <div class="hero-content text-center">
-                  <div class="max-w-md">
+    </div>
+    </div>
+    <div id="markdownContainer" class="mt-16">
+        <div class="hero min-h-screen bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
                     <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
-                    <p class="py-6">Plastilinn offers guidance on completing your business model, including aspects such as market analysis, marketing strategies, financial planning, organizational structure, understanding market trends, analyzing customer demographics, and evaluating competitor behavior. It can help you make informed choices by evaluating different strategic options, and provides continuous support and instant feedback, crucial for iterative business development and improvement.</p>
+                    <p class="py-6">Plastilinn offers guidance on completing your business model, including aspects
+                        such
+                        as market analysis, marketing strategies, financial planning, organizational structure,
+                        understanding market trends, analyzing customer demographics, and evaluating competitor
+                        behavior. It can help you make informed choices by evaluating different strategic options,
+                        and
+                        provides continuous support and instant feedback, crucial for iterative business development
+                        and
+                        improvement.</p>
                     <ul class="steps">
                         <li class="step step-primary">Design your Business Model</li>
                         <li class="step">Analyze your Business Model</li>
                         <li class="step">Validate your Business Model</li>
-                      </ul>
-                  </div>
+                    </ul>
                 </div>
-              </div>
+            </div>
         </div>
+    </div>
+    </div>
 
-    </main>
-
-    <!-- script model -->
     <script>
+        let metamodel = [];
+        let model = []; // También aseguramos que `model` esté definido globalmente
+        let uniqueId = 0; // Al inicio de tu script o fuera de cualquier función para que sea global
         document.addEventListener('DOMContentLoaded', function () {
-            const markdownInput = document.getElementById('markdownFileInput');
-            const markdownLinesDiv = document.getElementById('md-lines');
-            let sections = [];
-            let allTags = new Set();
+            let metamodel = [];
 
-            fetch('https://xbokmd.github.io/plastilinn/metamodel.json')
-                .then(response => response.json())
-                .then(data => {
-                    sections = data.sections;
-                })
-                .catch(error => console.error('Error al cargar los nombres de las secciones:', error));
+            function downloadJSON() {
+                axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
+                    .then(function (response) {
+                        metamodel = response.data;
+                        console.log(metamodel); // Opcional: Mostrar los datos en la consola
 
-            markdownInput.addEventListener('change', function (event) {
+                        // Crear un elemento para mostrar los datos del array "metamodel"
+                        const container = document.createElement('div');
+                        container.id = 'metamodelContainer';
+                        container.className = 'mt-4 p-4 bg-gray-200'; // Añade estilos según necesites
+
+                        // Convertir el array "metamodel" a una cadena JSON para mostrarlo
+                        const content = document.createTextNode(JSON.stringify(metamodel, null, 2));
+                        container.appendChild(content);
+
+                        // Añadir el contenedor al final del cuerpo del documento
+                        document.body.appendChild(container);
+                    })
+                    .catch(function (error) {
+                        console.log(error); // Manejar el error
+                    });
+            }
+
+            downloadJSON();
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const markdownFileInput = document.getElementById('markdownFileInput');
+            const markdownContainer = document.getElementById('markdownContainer');
+
+            markdownFileInput.addEventListener('change', function (event) {
                 const file = event.target.files[0];
                 if (!file) {
                     return;
@@ -85,198 +139,279 @@
                 reader.onload = function (e) {
                     const content = e.target.result;
                     const lines = content.split(/\r?\n/);
-                    markdownLinesDiv.innerHTML = '';
+                    model = _.map(lines, (line, index) => {
+                        // Extracción de etiquetas
+                        const rawTags = line.match(/#[^\s#]+/g) || [];
+                        const tags = rawTags.map(tag => {
+                            const tagName = tag.substring(1); // Simplemente elimina el símbolo '#' al principio
+                            return { raw: tag, className: tagName };
+                        });
 
-                    markdownLinesDiv.style.gap = '10px';
-
-                    lines.forEach((line, index) => {
-                        const result = processModelTitle(line, index);
-                        // Extrae las etiquetas de la línea actual
-                        // Al extraer etiquetas del texto de la línea
-                        const tags = (line.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
-
-                        
-                        const rowDiv = document.createElement('div');
-                        rowDiv.classList.add('md-line');
-                        rowDiv.style.display = 'flex';
-
-                        const rowWrapperDiv = document.createElement('div');
-                        rowWrapperDiv.classList.add('md-line-wrapper');
-                        rowWrapperDiv.appendChild(rowDiv);
-
-                        const titleDiv = createTitleDiv(result.title, result.isSection);
-
-                        const tagsDiv = createTagsDiv(tags); // Usa las etiquetas extraídas para crear el div de etiquetas
-                        const lineTextarea = createLineTextarea(line, index, result, titleDiv, tagsDiv);
-
-                        rowDiv.appendChild(titleDiv);
-                        rowDiv.appendChild(lineTextarea);
-                        rowDiv.appendChild(tagsDiv); // Añade el div de etiquetas al contenedor
-                        markdownLinesDiv.appendChild(rowWrapperDiv);
-
-                        if (result.modalId && result.sectionData) {
-                            const modal = createModal(result.modalId, result.sectionData);
-                            document.body.appendChild(modal);
+                        // Intentar identificar y procesar títulos con nueva especificación
+                        let title = undefined;
+                        // La expresión regular ahora permite espacios/guiones al inicio y busca de 2 a 10 hashes
+                        const headingMatch = line.match(/^\s*-*\s*#{2,10}\s*(.*)/);
+                        if (headingMatch && headingMatch[1]) {
+                            // Limpiar el título: elimina hashes y espacios iniciales, mantiene texto después de los hashes
+                            title = headingMatch[1].trim();
+                            // Eliminar etiquetas del título si es necesario
+                            title = title.replace(/#[^\s#]+/g, '').trim();
+                            title = title.replace(/\[\[|\]\]/g, '');
                         }
-                        // Añade las etiquetas al conjunto de todas las etiquetas sin intentar redefinir 'tags'
-                        tags.forEach(tag => allTags.add(tag));
-                    });
-                };
 
+                        return {
+                            id: uniqueId++, // Incrementa el ID único para cada objeto del modelo
+                            content: line,
+                            tags: tags,
+                            index: index,
+                            title: title // Agregado condicionalmente, undefined si no es un título
+                        };
+                    });
+
+                    updateTagsFilter();
+                    renderModel(); // Asegúrate de ajustar esta función para manejar "title"
+                };
                 reader.readAsText(file);
             });
 
-            function processModelTitle(line, index) {
-                let title = line.replace(/^[\s-]*/, '')
-                    .replace(/#\S+/g, '')
-                    .replace(/#+/g, '')
-                    .replace(/\[\[/g, '')
-                    .replace(/\]\]/g, '')
-                    .trim();
-                let matchingSection = sections.find(section => section.name === title);
-                let isSection = matchingSection ? "Yes" : "No";
-                let modalId = `sectionModal-${index}`;
+            function renderModel(linesToRender = model) {
+                console.log("Líneas a renderizar:", linesToRender); // Esto debería mostrarte las líneas que se van a renderizar
+                const markdownContainer = document.getElementById('markdownContainer');
+                markdownContainer.innerHTML = ''; // Limpiar el contenedor
+                const mainContainer = document.createElement('div');
+                mainContainer.className = 'flex flex-col';
 
-                if (isSection === "Yes") {
-                    return {
-                        title,
-                        isSection: `<a href="#" data-bs-toggle="modal" data-bs-target="#${modalId}">Section</a>`,
-                        modalId,
-                        sectionData: matchingSection
-                    };
-                } else {
-                    return { title, isSection, modalId: null, sectionData: null };
+                _.forEach(model, (lineData) => {
+
+                    const rowWrapperDiv = document.createElement('div');
+                    rowWrapperDiv.classList.add('md-line-wrapper');
+
+                    const lineContainer = document.createElement('div');
+                    lineContainer.className = 'flex flex-row md-line';
+
+                    // Comprobar si el título de la línea coincide con algún nombre en metamodel
+                    const matchingMeta = metamodel.find(meta => meta.name === lineData.title);
+
+                    if (lineData.title) {
+                        // Creación y configuración del enlace del título (titleLink).
+                        const titleLink = document.createElement('a');
+                        titleLink.setAttribute('href', `https://go.plastilinn.com/#/page/${lineData.title.replace(/\s+/g, '_')}_info`);
+                        titleLink.setAttribute('target', '_blank');
+                        titleLink.textContent = lineData.title;
+                        titleLink.className = 'text-blue-500 hover:text-blue-800';
+
+                        // Crear un contenedor para el título y el botón.
+                        const titleContainer = document.createElement('div');
+                        titleContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
+                        titleContainer.appendChild(titleLink); // Añadir el enlace al contenedor del título.
+
+                        // Creación del botón modalOpenButton y configuración del evento click.
+                        const modalOpenButton = document.createElement('button');
+                        modalOpenButton.textContent = 'Ver Detalles';
+                        modalOpenButton.className = 'btn btn-primary';
+                        modalOpenButton.addEventListener('click', function () {
+                            openModalWithSectionName(lineData.title);
+                        });
+
+                        // Añadir el botón al contenedor del título.
+                        titleContainer.appendChild(modalOpenButton);
+
+                        // Añadir el contenedor del título (que ahora incluye el botón) al contenedor de la línea.
+                        lineContainer.appendChild(titleContainer);
+                    } else {
+                        // Manejo de líneas sin título.
+                        const noTitleElement = document.createElement('div');
+                        noTitleElement.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
+                        lineContainer.appendChild(noTitleElement);
+                    }
+
+                    // Contenedor para el contenido original (editable)
+                    const contentContainer = document.createElement('div');
+                    contentContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-2';
+                    const textareaElement = document.createElement('textarea');
+                    textareaElement.className = 'md-line-content text-left bg-white shadow-md p-4 md:col-span-3';
+                    textareaElement.rows = 4; // Establece el número de filas o altura inicial
+                    textareaElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
+                    textareaElement.textContent = lineData.content;
+                    contentContainer.appendChild(textareaElement);
+
+                    textareaElement.addEventListener('input', function () {
+                        // Actualizar el modelo con el nuevo contenido
+                        const id = this.getAttribute('data-id');
+                        const updatedContent = this.value; // Usa 'value' para 'textarea'
+                        const lineObj = model.find(obj => obj.id.toString() === id);
+                        if (lineObj) {
+                            lineObj.content = updatedContent; // Actualiza el contenido en el modelo
+
+                            // Ahora, actualiza las etiquetas basadas en el contenido editado
+                            // Esta lógica depende de cómo estén estructuradas tus etiquetas
+                            // Aquí hay un ejemplo genérico de cómo podrías hacerlo
+                            const tagsContainer = document.querySelector(`#tags-container-${id}`); // Asumiendo que tienes un contenedor de etiquetas con un ID específico
+                            if (tagsContainer) {
+                                updateTagsForLine(tagsContainer, updatedContent); // Actualiza las etiquetas en la UI
+                            }
+                        }                      // Captura las etiquetas directamente del contenido, incluyendo el símbolo '#'
+                        const newTags = this.textContent.match(/#[^\s#]+/g) || [];
+                        // Simplemente elimina el símbolo '#' al principio para el valor del data-tag
+                        const cleanedTags = newTags.map(tag => tag.substring(1)); // Mantén los caracteres especiales
+
+                        // Limpiar el contenedor de etiquetas actual antes de añadir las nuevas
+                        tagsElement.innerHTML = '';
+
+                        // Generar y añadir los nuevos elementos de etiquetas con data-tag
+                        cleanedTags.forEach(tag => {
+                            const tagSpan = document.createElement('span');
+                            tagSpan.setAttribute('data-tag', tag); // Asigna el valor de la etiqueta al atributo 'data-tag'
+                            tagSpan.textContent = tag; // Establece el texto visible del span como el valor de la etiqueta, sin '#'
+                            tagsElement.appendChild(tagSpan);
+                            tagsElement.appendChild(document.createTextNode(' ')); // Espacio entre etiquetas
+                        });
+                        updateTagsFilter();
+                    });
+
+                    textareaElement.textContent = lineData.content;
+                    contentContainer.appendChild(textareaElement);
+
+                    // Columna para las etiquetas
+                    const tagsElement = document.createElement('div');
+                    tagsElement.className = 'tags-container ext-gray-500 text-sm text-center bg-gray-50 rounded p-2 custom-flex-3';
+                    lineData.tags.forEach(tag => {
+                        const tagSpan = document.createElement('span');
+                        // Limpiar el texto de la etiqueta para usarlo como nombre de clase
+                        // Eliminamos el símbolo '#' y caracteres especiales, reemplazando con guiones si es necesario
+                        tagSpan.setAttribute('data-tag', tag.className); // Almacena el valor de la etiqueta
+                        tagSpan.textContent = tag.className; // Establece el texto visible del span
+                        tagsElement.appendChild(tagSpan);
+                        tagsElement.appendChild(document.createTextNode(' ')); // Espacio entre etiquetas
+                    });
+
+                    // Añadir el contenedor de contenido editable en el medio
+                    lineContainer.insertBefore(contentContainer, null); // Asegúrate de que esto esté correctamente insertado
+
+                    lineContainer.appendChild(tagsElement);
+
+                    // Añadir el contenedor de la línea al contenedor principal
+                    mainContainer.appendChild(lineContainer);
+
+                    // Asegurarse de envolver correctamente el lineContainer con rowWrapperDiv
+                    rowWrapperDiv.appendChild(lineContainer); // Envolver lineContainer dentro de rowWrapperDiv
+
+                    // Añadir el contenedor de la línea (ahora correctamente envuelto) al contenedor principal
+                    mainContainer.appendChild(rowWrapperDiv);
+                });
+
+                // Añadir el contenedor principal al contenedor de Markdown
+                markdownContainer.appendChild(mainContainer);
+            }
+
+            function setupEditableContent(contentElement) {
+                const editIndicator = document.createElement('span');
+                editIndicator.className = 'text-gray-400 text-xl cursor-pointer absolute right-0 mr-4 opacity-0';
+                editIndicator.textContent = '✏️';
+                contentElement.parentNode.appendChild(editIndicator);
+
+                contentElement.addEventListener('focus', function () {
+                    this.classList.add('border', 'border-blue-500', 'rounded', 'p-1');
+                });
+                contentElement.addEventListener('blur', function () {
+                    this.classList.remove('border', 'border-blue-500', 'rounded', 'p-1');
+                });
+                contentElement.addEventListener('mouseenter', function () {
+                    editIndicator.style.opacity = '1';
+                });
+                contentElement.addEventListener('mouseleave', function () {
+                    editIndicator.style.opacity = '0';
+                });
+            }
+            document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
+
+            function updateTagsForLine(tagsContainer, content) {
+                // Limpia el contenedor de etiquetas existente
+                tagsContainer.innerHTML = '';
+
+                // Extrae las etiquetas del contenido. Este paso depende de cómo identifiques las etiquetas en el texto.
+                // Por ejemplo, si las etiquetas son palabras precedidas por '#', podrías hacer algo como esto:
+                const tagRegex = /#\w+/g; // Encuentra todas las ocurrencias de '#palabra'
+                const tags = content.match(tagRegex) || [];
+
+                // Crea elementos visuales para cada etiqueta encontrada y los añade al contenedor
+                tags.forEach(tag => {
+                    const tagElement = document.createElement('span'); // O cualquier elemento que represente una etiqueta en tu UI
+                    tagElement.textContent = tag; // Establece el texto del elemento al tag encontrado
+                    tagsContainer.appendChild(tagElement); // Añade el elemento de etiqueta al contenedor
+                });
+            }
+
+            function filterLinesBySelectedTags() {
+                const selectedTag = document.getElementById('tagsFilter').value;
+                console.log("Etiqueta seleccionada:", selectedTag);
+
+                // Obtener todos los elementos que representan las líneas de contenido
+                const wrappers = document.querySelectorAll('.md-line-wrapper');
+
+                wrappers.forEach(wrapper => {
+                    // Busca dentro del wrapper si existe alguna etiqueta que coincida con la seleccionada
+                    const tags = wrapper.querySelectorAll('.tags-container span');
+                    let tagFound = false; // Indicador si se encuentra la etiqueta dentro del wrapper
+
+                    tags.forEach(tag => {
+                        if (tag.textContent === selectedTag) {
+                            tagFound = true;
+                        }
+                    });
+
+                    // Si se encuentra la etiqueta o si no se ha seleccionado ninguna (valor ''), muestra el wrapper
+                    if (tagFound || selectedTag === '') {
+                        wrapper.classList.remove('hidden');
+                    } else {
+                        // En caso contrario, oculta el wrapper
+                        wrapper.classList.add('hidden');
+                    }
+                });
+            }
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+
+                document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
+            });
+
+            document.addEventListener('input', function (e) {
+                if (e.target.classList.contains('md-line-content')) {
+                    // Extracción del contenido actualizado
+                    const updatedContent = e.target.value;
+
+                    // Extraer etiquetas usando una expresión regular
+                    const tags = updatedContent.match(/#[^\s#]+/g) || [];
+
+                    // Encuentra el contenedor de etiquetas correspondiente
+                    const tagsContainer = e.target.closest('.md-line').querySelector('.tags-container');
+                    if (tagsContainer) {
+                        // Limpia el contenedor de etiquetas actual
+                        tagsContainer.innerHTML = '';
+
+                        // Añadir las nuevas etiquetas al contenedor
+                        tags.forEach(tag => {
+                            const tagSpan = document.createElement('span');
+                            tagSpan.textContent = tag; // O cualquier formato que desees
+                            tagsContainer.appendChild(tagSpan);
+                        });
+                    }
                 }
-            }
-
-            function createTitleDiv(title, isSection) {
-                const div = document.createElement('div');
-                div.classList.add('md-line-left', 'p-4', 'md:col-span-1');                
-
-                if (isSection.includes("Section")) {
-                    div.innerHTML = `<div class="chat chat-end"><div class="chat-bubble">🆔 ${isSection}</br><b>${title}</b> <button class="btn" onclick="createSectionInfoModal(${title})">Open Popup</button></div></div>`;
-                    createSectionInfoModal('title');
-                } else {
-                    div.innerHTML = ``;
-                }
-                div.style.width = '20%';
-                return div;
-            }
-
-            function createLineTextarea(line, index, result, titleDiv, tagsDiv) {
-                const outerContainer = document.createElement('div'); // Contenedor exterior para manejar el ancho del 60%
-                outerContainer.classList.add('md-line-content', 'bg-white', 'shadow-md', 'p-4', 'md:col-span-3');
-                outerContainer.style.flex = '1'; // Permite que el contenedor crezca para ocupar el espacio
-                outerContainer.style.flexBasis = '60%'; // Establece la base del tamaño en el 60%
-
-                const parsedMarkdown = marked.parse(line);                // Crea un div para mostrar el contenido Markdown parseado
-                console.log(parsedMarkdown)
-
-                const displayDiv = document.createElement('div');
-                displayDiv.innerHTML = marked.parse(line); // Parsea el Markdown a HTML
-                displayDiv.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
-                displayDiv.classList.add('markdown-display');
-
-                // Crea un textarea para la edición del Markdown, inicialmente oculto
-                const textarea = document.createElement('textarea');
-                textarea.value = line;
-                textarea.style.width = '100%'; // Ajusta el ancho al 100% del contenedor exterior
-                textarea.style.resize = 'none';
-                textarea.style.display = 'none'; // Oculta el textarea inicialmente
-                textarea.classList.add('textarea', 'textarea-primary'); // Aplica la clase para los estilos editables
-                // Evento para cambiar a edición al hacer clic en el div
-                displayDiv.addEventListener('click', function () {
-                    displayDiv.style.display = 'none'; // Oculta el div
-                    textarea.style.display = ''; // Muestra el textarea
-                    textarea.focus(); // Enfoca el textarea para edición inmediata
-
-                });
-
-                // Evento para actualizar el div con el contenido del textarea al desenfocar
-                textarea.addEventListener('blur', function () {
-                    displayDiv.innerHTML = marked.parse(textarea.value); // Actualiza el div con el nuevo contenido Markdown parseado
-                    textarea.style.display = 'none'; // Oculta el textarea
-                    displayDiv.style.display = ''; // Muestra el div
-
-                });
-
-                // Evento para actualizar el título y las etiquetas al modificar el contenido
-                textarea.addEventListener('input', function () {
-                    const update = processModelTitle(this.value, index);
-                    titleDiv.innerHTML = `🆔 ${update.isSection}</br><b>${update.title}</b>`;
-                    const updatedTags = (this.value.match(/#[^\s]+(?=\s|$)/g) || []).map(tag => tag.substring(1));
-                    updateTagsDiv(updatedTags, tagsDiv);
-                });
-
-                // Añade el displayDiv y el textarea al contenedor exterior
-                outerContainer.appendChild(displayDiv);
-                outerContainer.appendChild(textarea);
-
-                return outerContainer; // Retorna el contenedor exterior
-            }
-
-
-            // Función para analizar las etiquetas en el contenido de un textarea
-            function parseTagsFromTextarea(content) {
-                // Usa una expresión regular para encontrar las etiquetas. Asume que las etiquetas son palabras que comienzan con '#'
-                const tagPattern = /#[^\s#]+/g;
-                const tags = content.match(tagPattern) || [];
-                return tags.map(tag => tag.substring(1)); // Elimina el símbolo '#' de cada etiqueta
-            }
-
-            function createTagsDiv(tags) {
-                const div = document.createElement('div');
-                div.classList.add('md-line-right', 'p-4', 'md:col-span-1', 'toast', 'toast-end', 'toast-middle',);
-                div.className = 'tags-container'; // Asigna la clase .tags-container al div
-                div.style.width = '20%';
-                // Crea un span para cada etiqueta
-                div.innerHTML = tags.map(tag => `<span class="${tag}">${tag}</span>`).join('');
-                return div;
-            }
-
-
-            function updateTagsDiv(updatedTags, tagsDiv) {
-                tagsDiv.innerHTML = updatedTags.map(tag => `<span class="${tag}">${tag}</span>`).join('');
-            }
-
-            function createModal(modalId, sectionData) {
-                const modalDiv = document.createElement('div');
-                modalDiv.id = modalId;
-                modalDiv.className = 'modal fade';
-                modalDiv.setAttribute('tabindex', '-1');
-                modalDiv.setAttribute('role', 'dialog');
-                modalDiv.innerHTML = `
-        <div class="modal-dialog modal-xl" role="document"> <!-- Añade la clase modal-xl para hacer la ventana modal más ancha -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">${sectionData.name}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Utiliza la clase btn-close para el botón de cierre -->
-                </div>
-                <div class="modal-body">
-                    ${Object.keys(sectionData).map(key => `<p><strong>${key}:</strong> ${sectionData[key]}</p>`).join('')}
-                </div>
-            </div>
-        </div>`;
-                return modalDiv;
-            }
+            });
         });
 
         document.addEventListener('DOMContentLoaded', function () {
-            const markdownInput = document.getElementById('markdownFileInput');
-            const markdownContent = document.getElementById('markdownContent');
 
             document.getElementById('downloadBtn').addEventListener('click', downloadModel);
 
             function downloadModel() {
-                const textareas = document.querySelectorAll('textarea');
-                let fileContent = '';
-                textareas.forEach(textarea => {
-                    fileContent += textarea.value + '\n'; // Añade un salto de línea después de cada área de texto
-                });
+                let fileContent = model.map(obj => obj.content).join('\n'); // Concatena el contenido con saltos de línea
 
-                const fileName = `Business model ${formatDate(new Date())}.md`;
-                downloadFile(fileName, fileContent);
+                const fileName = `Business model ${formatDate(new Date())}.md`; // Usa la función formatDate para crear un nombre de archivo único
+                downloadFile(fileName, fileContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
             }
+
 
             function formatDate(date) {
                 const year = date.getFullYear();
@@ -287,6 +422,14 @@
                 const seconds = (`0${date.getSeconds()}`).slice(-2);
                 return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
             }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('downloadBtn').addEventListener('click', function () {
+                    const modelContent = generateModel(); // Usa la función generateModel para obtener el contenido
+                    const fileName = `Business model ${formatDate(new Date())}.md`;
+                    downloadFile(fileName, modelContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
+                });
+            });
 
             function downloadFile(fileName, content) {
                 const element = document.createElement('a');
@@ -301,167 +444,120 @@
                 document.body.removeChild(element);
             }
 
+        });
 
-            function downloadAndRefresh(file) {
-                // Crea una URL temporal para la descarga
-                const url = URL.createObjectURL(file);
+        document.addEventListener('input', function (e) {
+            if (e.target.getAttribute('contenteditable') === "true") {
+                const id = parseInt(e.target.getAttribute('data-id'), 10); // Obtiene el ID como número
+                const editedContent = e.target.textContent;
 
-                // Crea un elemento `a` para la descarga
-                const downloadLink = document.createElement('a');
-                downloadLink.href = url;
-                downloadLink.download = file.name;
-                downloadLink.click();
-
-                // Simula la selección del archivo descargado
-                const hiddenFileInput = document.createElement('input');
-                hiddenFileInput.type = 'file';
-                hiddenFileInput.multiple = false;
-                hiddenFileInput.files = [file];
-
-                hiddenFileInput.addEventListener('change', () => {
-                    // Recarga la página para actualizar el contenido
-                    location.reload();
-                });
-
-                // Oculta el elemento input
-                hiddenFileInput.style.display = 'none';
-                document.body.appendChild(hiddenFileInput);
-            }
-
-            // Función auxiliar para extraer etiquetas de un div
-            function extractTagsFromDiv(div) {
-                const tagSpans = div.querySelectorAll('.tags-container span');
-                const tags = [];
-                tagSpans.forEach(span => tags.push(span.textContent));
-                return tags;
-            }
-
-            console.log(allTags)
-            // Actualiza el dropdown con las etiquetas encontradas
-            function updateTagsDropdown() {
-                const tagsFilter = document.getElementById('tagsFilter');
-                tagsFilter.innerHTML = ''; // Limpia el dropdown
-
-                // 1. Convierte el Set en un Array apto para ordenar
-                const tagsArray = Array.from(allTags);
-
-                // 2. Ordena el array alfabéticamente 
-                tagsArray.sort((a, b) => a.localeCompare(b));
-                console.log(tagsArray)
-                // 3. Crea las opciones ya con el Array ordenado
-                tagsArray.forEach(tag => {
-                    const option = document.createElement('option');
-                    option.value = tag;
-                    option.textContent = tag;
-                    tagsFilter.appendChild(option);
-                });
+                // Busca y actualiza el objeto correspondiente en `model`
+                const lineObj = model.find(obj => obj.id === id);
+                if (lineObj) {
+                    lineObj.content = editedContent;
+                }
             }
         });
 
-        const etiquetasEncontradas = new Set(); // Variable global a todo el script
-
-        function extractTags() {
-            const textareas = document.querySelectorAll('.textarea-primary');
-
-            // Recorremos cada uno de los textareas
-            textareas.forEach(textarea => {
-                // Obtenemos su contenido
-                const text = textarea.value;
-
-                // Expresión regular para encontrar etiquetas
-                const regex = /\#\S+/g;
-                let matches;
-
-                // Buscamos coincidencias para la expresión regular 
-                while ((matches = regex.exec(text)) !== null) {
-                    // Agregamos la etiqueta al Set
-                    etiquetasEncontradas.add(matches[0]);
-                }
-            });
-
-            // Mostramos la lista de etiquetas en el select
-            const select = document.getElementById('tagsFilter');
-            select.innerHTML = ''; // Limpiamos el select antes de agregar nuevas opciones
-
-            // Convertir el Set de etiquetas a un array y ordenarlo alfabéticamente
-            const etiquetasOrdenadas = Array.from(etiquetasEncontradas).sort();
-
-            // Agregar las opciones ordenadas al selector
-            etiquetasOrdenadas.forEach(etiqueta => {
-                const option = document.createElement('option');
-                option.value = etiqueta;
-                option.textContent = etiqueta;
-                select.appendChild(option);
-            });
+        function generateModel() {
+            const contentElements = document.querySelectorAll('.md-line-content');
+            let modelContent = Array.from(contentElements).map(element => element.value).join('\n\n');
+            // La siguiente línea es incorrecta y redundante, por lo que se ha eliminado
+            // modelContent += textContent + '\n';
+            return modelContent.trim();
         }
 
-        function filterLinesBySelectedTags() {
-            const selectedTags = Array.from(tagsFilter.selectedOptions).map(option => option.value);
-            document.querySelectorAll('.md-line-wrapper').forEach(line => {
-                const lineTags = line.querySelector('textarea').value.match(/\B#\S+/g) || [];
-                line.style.display = selectedTags.some(tag => lineTags.includes(tag)) ? 'block' : 'none';
-            });
-        }
-
-        function getSectionPrompt(section) {
-                const modalContent = document.createElement('div');
-                modalContent.innerHTML = `aaa`;
-
-
-                const modal = createModal('customModal', { name: 'Custom Modal', content: modalContent.innerHTML });
-                document.body.appendChild(modal);
-            }
-
-        // Asegúrate de ejecutar extractTags() en algún momento para actualizar "etiquetasEncontradas"
-        tagsFilter.addEventListener('change', filterLinesBySelectedTags);
-
-        const reader = new FileReader();
-        // Este fragmento es parte del evento 'change' del input de archivos Markdown
-        reader.onload = function (e) {
-            const content = e.target.result;
-            const lines = content.split(/\r?\n/); // Divide el contenido en líneas
-            allTags.clear(); // Limpia el conjunto de etiquetas para la nueva selección de archivo
-
-            lines.forEach((line, index) => {
-                // Cambia la expresión regular para capturar sin incluir '#'
-                const tags = line.match(/(?<=\s)#([^\s#]+)/g) || []; // Busca etiquetas en la línea actual
-                tags.forEach(tag => {
-                    // Añade solo el texto de la etiqueta, sin el '#', al conjunto de todas las etiquetas
-                    allTags.add(tag.substring(1)); // Elimina el símbolo '#' antes de añadir
+        function updateTagsFilter() {
+            // Obtener todas las etiquetas únicas de `model`
+            const allTags = new Set(); // Usamos un Set para evitar etiquetas duplicadas
+            model.forEach(item => {
+                item.tags.forEach(tag => {
+                    allTags.add(tag.className); // Suponiendo que `className` contiene el nombre de la etiqueta sin '#'
                 });
             });
-        };
 
+            // Convertir el Set a Array y ordenarlo alfabéticamente
+            const sortedTags = Array.from(allTags).sort();
 
+            // Obtener el elemento del selector
+            const tagsFilter = document.getElementById('tagsFilter');
+            // Limpiar opciones existentes
+            tagsFilter.innerHTML = '';
 
-        function createSectionInfoModal(sectionId) {
-            const modalDiv = document.createElement('div');
-            modalDiv.id = sectionId;
-            modalDiv.className = 'modal';
-            modalDiv.innerHTML = `
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Hello!</h3>
-                    <p class="py-4">Press ESC key or click the button below to close</p>
-                    <div class="modal-action">
-                        <form method="dialog">
-                            <!-- if there is a button in form, it will close the modal -->
-                            <button class="btn">Close</button>
-                        </form>
-                    </div>
-                </div>`;
-            return modalDiv;
+            // Opción predeterminada
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = 'No filter';
+            tagsFilter.appendChild(defaultOption);
+
+            // Crear una opción para cada etiqueta única
+            sortedTags.forEach(tag => {
+                const option = document.createElement('option');
+                option.value = tag;
+                option.textContent = tag;
+                tagsFilter.appendChild(option);
+            });
         }
 
-        function createSectionInfoModalButton(sectionId) {
-            const button = document.createElement('button');
-            button.className = 'btn';
-            button.innerHTML = 'open modal';
-            button.onclick = function() {
-                document.getElementById(sectionId).showModal();
-            };
-            return button;
+        function openModalWithSectionName(sectionName) {
+            // Encuentra el elemento que contiene el título en la ventana modal
+            const modalTitleContent = document.getElementById('modalTitleContent');
+            // Actualiza el contenido de este elemento con el nombre de la sección recibido
+            modalTitleContent.textContent = sectionName;
+
+            // Llama a generateModel para obtener el contenido actual del modelo
+            const modelContent = generateModel();
+
+            // Define el contenido deseado para el textarea usando plantillas literales
+            const customContent = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
+            Listening closely to understand the specifics of the business.
+            Providing concise, targeted guidance without unnecessary repetition or formalities.
+            Offering step-by-step feedback to ensure the document effectively captures the business model.
+            You focus on the client's needs and how to best articulate their business model.
+            GOAL: Write a business model document describing the user's project business model. Here's some information about my Business:
+                ${modelContent}
+            MY QUESTION: Please suggest content for the "${sectionName}" section of the business model.
+            WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your responsse, each list component should begin with '#tag', followed by the name enclosed in double brackets '[[ ]]', and then a description on a new, indented line. For example:
+            - ## 🆔 [[{block id}]]
+            - #{block content class} [[list component n]]
+                - # description of the list component n
+            This is an example of a answer:
+            ---
+            - ## 🆔 stakeholders
+                - text
+                - #stakeholder [[Entrepreneurs and Startups in AI]]
+                - Emerging companies and entrepreneurs interested in artificial intelligence.
+                - #stakeholder [[Professionals and Experts in AI]]
+                - Individuals looking to expand their knowledge and network in AI.
+            ---
+            - You can copy/paste this answer to a document, write 'copy' to have the answer in a text box or write ⬇️ 'download' to save this answer to your computer"
+            `;
+
+            // Encuentra el textarea dentro del modal y actualiza su contenido
+            const generatedModelContent = document.getElementById('generatedModelContent');
+            generatedModelContent.value = customContent;
+
+            // Abre la ventana modal añadiendo la clase 'modal-open'
+            document.getElementById('modalTitle').classList.add('modal-open');
+        }
+
+        function closeModal() {
+            document.getElementById('modalTitle').classList.remove('modal-open'); // Cierra el modal
         }
     </script>
+
+
+<div id="modalTitle" class="modal" tabindex="-1">
+    <div class="modal-box">
+        <h3 class="font-bold text-lg" id="modalTitleContent">Título del Modelo</h3>
+        <textarea id="generatedModelContent" class="textarea textarea-bordered w-full mt-4" placeholder="Aquí aparecerá el contenido del modelo generado..."></textarea>
+        <p class="py-4">Paste in <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> or <a href="https://gemini.google.com/app" target="_blank">Gemini Pro</a></p>
+        <div class="modal-action">
+            <a href="#" class="btn" onclick="closeModal()">Cerrar</a>
+        </div>
+    </div>
+</div>
+
 
 </body>
 
