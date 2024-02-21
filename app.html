@@ -34,9 +34,10 @@
 }
 
 .ai-magic-button {
-    padding: 1px 1px 1px 1px ;
     display: block; /* Hace que el botón ocupe su propia línea */
     width: auto; /* O cualquier ancho específico que desees */
+    min-height: 1em !important;
+    height: 1.5em;
     margin: 0px auto; /* Añade margen arriba y abajo y centra horizontalmente */
 }
     </style>
@@ -62,7 +63,6 @@
                             <select class="select select-bordered w-full max-w-xs" id="tagsFilter">
                             </select>
                         </div>
-                        <button id="reloadMarkdownBtn" class="btn btn-secondary bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition">Reload Markdown</button>
                         <div class="flex items-center justify-end space-x-3" style="justify-content: flex-start;">
                             <button id="downloadBtn"
                                 class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
@@ -246,7 +246,7 @@
                         // Creación del botón modalOpenButton y configuración del evento click.
                         const modalOpenButton = document.createElement('button');
                         modalOpenButton.textContent = '🤖 AI magic';
-                        modalOpenButton.className = 'btn ai-magic-button p-1';
+                        modalOpenButton.className = 'btn ai-magic-button py-1';
                         modalOpenButton.addEventListener('click', function () {
                             openModalWithSectionName(lineData.title);
                         });
@@ -562,16 +562,6 @@ updateTagsContainer(tagsElement, cleanedTags);
         function closeModal() {
             document.getElementById('modalTitle').classList.remove('modal-open'); // Cierra el modal
         }
-
-        document.getElementById('reloadMarkdownBtn').addEventListener('click', function() {
-            // Define o recupera tu contenido Markdown
-            const markdownContent = `# Ejemplo de Markdown
-        Aquí va tu contenido Markdown. Puedes definirlo directamente
-        o cargarlo desde alguna parte.`;
-
-            // Simula la carga de este contenido como si fuera un archivo
-            loadMarkdownContent(markdownContent);
-        });
 
         document.addEventListener('input', function(e) {
             if (e.target.classList.contains('md-line-content')) {
