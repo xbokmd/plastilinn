@@ -131,6 +131,55 @@ h6 {
     font-weight: bold !important;
 }
 
+.hidden {
+    display: none;
+}
+
+#model-title {
+    padding-top: 40px;
+    /* Ajusta este valor según la altura de tus elementos fijos */
+}
+
+.flex.space-x-3 {
+    display: flex;
+    justify-content: center;
+}
+
+.md-line-content {
+    width: 100%; /* Hace que el textarea ocupe el 100% del ancho de su contenedor */
+    min-height: 2em; /* Establece la altura mínima para mostrar dos líneas de texto */
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en la altura y anchura total */
+    resize: vertical; /* Permite al usuario redimensionar el textarea solo verticalmente */
+}
+
+.ai-magic-button {
+display: block; /* Hace que el botón ocupe su propia línea */
+width: auto; /* O cualquier ancho específico que desees */
+min-height: 1em !important;
+height: 1.5em;
+margin: 0px auto; /* Añade margen arriba y abajo y centra horizontalmente */
+}
+
+.btn-primary {
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+background-color: #2563eb; /* Un azul más brillante */
+transform: translateY(-2px); /* Efecto de levitación ligera */
+}
+
+/* Mejoras en Inputs */
+.input, .select {
+transition: border-color 0.3s ease;
+border-radius: 0.5rem;
+}
+
+.input:focus, .select:focus {
+border-color: #4f46e5; /* Cambia el color del borde al enfocar */
+box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); /* Sombra suave alrededor */
+}
+
 span[data-tag="key"] { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span[data-tag="key"]::before { content: "🔑"; position: absolute; left: 0; top: 0; margin-right: 5px; }
 span[data-tag="organization"] { position: relative; padding-left: 25px;  background-color: lightblue; } span[data-tag="organization"]::before { content: "🏢"; position: absolute; left: 0; top: 0; margin-right: 5px; }
 span[data-tag="journey"] { position: relative; padding-left: 25px;  background-color: lightblue; } span[data-tag="journey"]::before { content: "✈️"; position: absolute; left: 0; top: 0; margin-right: 5px; }

@@ -40,6 +40,26 @@
     height: 1.5em;
     margin: 0px auto; /* Añade margen arriba y abajo y centra horizontalmente */
 }
+
+.btn-primary {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb; /* Un azul más brillante */
+    transform: translateY(-2px); /* Efecto de levitación ligera */
+}
+
+/* Mejoras en Inputs */
+.input, .select {
+    transition: border-color 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.input:focus, .select:focus {
+    border-color: #4f46e5; /* Cambia el color del borde al enfocar */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); /* Sombra suave alrededor */
+}
     </style>
 
 </head>
@@ -60,10 +80,13 @@
                                 class="file-input file-input-bordered file-input-primary w-full max-w-xs">
                         </div>
                         <div class="flex space-x-3" style="justify-content: center;">
+                            <button class="collapse-filter-button btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition" type="button">
+                                🔍 Filter
+                            </button>
                         </div>
                         <div class="flex items-center justify-end space-x-3" style="justify-content: flex-start;">
                             <button id="downloadBtn"
-                                class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">Download</button>
+                                class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">⬇️ Download</button>
                         </div>
                     </div>
                 </div>
@@ -77,21 +100,31 @@
             </div>
         </div>
     </div>
-    <div id="model-title" class="text-center mt-4">
+    <div id="model-title" class="text-center mt-6">
         <!-- El nombre del modelo se mostrará aquí -->
     </div>
     <div class="mt-4 w-4/5 mx-auto">
-        <button class="collapse-filter-button btn btn-block" type="button">
-            Filter
-        </button>
         <div class="collapse-filter-content hidden ">
-            blah blah
             <select class="select select-bordered w-full" id="tagsFilter" multiple>
                 <!-- Opciones del filtro serán generadas dinámicamente -->
             </select>
         </div>
     </div>
-    <div id="markdownContainer" class="mt-16">
+    <div id="markdownContainer" class="mt-4 text-gray-900 min-h-screen">
+        <div class="hero min-h-screen bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-md card bg-white shadow-xl hover:shadow-2xl transition-shadow">
+                    <div class="card-body">
+                        <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
+                        <p class="py-6">Plastilinn offers guidance on completing your business model...</p>
+                        <div class="card-actions justify-center">
+                            <button class="btn btn-primary">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="hero min-h-screen bg-base-200">
             <div class="hero-content text-center">
                 <div class="max-w-md">
@@ -215,24 +248,6 @@
                 content.classList.toggle('hidden');
             });
 
-            function updateTagsContainer(tagsContainer, tags) {
-                // Limpia el contenedor de etiquetas actual
-                tagsContainer.innerHTML = '';
-
-                // Añadir las nuevas etiquetas al contenedor
-                tags.forEach(tag => {
-                    const tagSpan = document.createElement('span');
-                    // Asigna el valor de la etiqueta al atributo 'data-tag', asumiendo que 'tag' ya no tiene el '#'
-                    tagSpan.setAttribute('data-tag', tag);
-                    // Establece el texto visible del span como el valor de la etiqueta
-                    tagSpan.textContent = tag;
-                    tagsContainer.appendChild(tagSpan);
-
-                    // Añadir un espacio después de cada etiqueta para separación visual
-                    tagsContainer.appendChild(document.createTextNode(' '));
-                });
-            }
-
             function renderModel(linesToRender = model) {
                 console.log("Líneas a renderizar:", linesToRender); // Esto debería mostrarte las líneas que se van a renderizar
                 const markdownContainer = document.getElementById('markdownContainer');
@@ -258,7 +273,7 @@
 
                         // Crear un contenedor para el título y el botón.
                         const titleContainer = document.createElement('div');
-                        titleContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
+                        titleContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1 chat chat-bubble chat-end';
                         titleContainer.appendChild(titleLink); // Añadir el enlace al contenedor del título.
 
                         // Creación del botón modalOpenButton y configuración del evento click.
@@ -283,14 +298,18 @@
 
                     // Contenedor para el contenido original (editable)
                     const contentContainer = document.createElement('div');
-                    contentContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-2';
+                    contentContainer.className = 'text-center bg-gray-50  shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2';
                     const textareaElement = document.createElement('textarea');
-                    textareaElement.className = 'md-line-content text-left bg-white shadow-md p-1 md:col-span-3';
-                    textareaElement.rows = 2; // Establece el número de filas o altura inicial
+                    textareaElement.className = 'md-line-content text-left bg-white md:col-span-3';
+                    textareaElement.rows = 1; // Establece el número de filas o altura inicial
                     textareaElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
                     textareaElement.textContent = lineData.content;
                     contentContainer.appendChild(textareaElement);
 
+                    // Asignación del evento click aquí, dentro del forEach, asegurando que textareaElement está definido
+                    textareaElement.addEventListener('click', function () {
+                        openModalWithTextareaContent(this.value, this);
+                    });
 
                     textareaElement.addEventListener('input', function () {
                         // Actualizar el modelo con el nuevo contenido
@@ -319,15 +338,15 @@
                     textareaElement.textContent = lineData.content;
                     contentContainer.appendChild(textareaElement);
 
-// Columna para las etiquetas
-const tagsElement = document.createElement('div');
-tagsElement.className = 'tags-container ext-gray-500 text-sm text-center bg-gray-50 rounded p-2 custom-flex-3';
+                    // Columna para las etiquetas
+                    const tagsElement = document.createElement('div');
+                    tagsElement.className = 'tags-container ext-gray-500 text-sm text-center bg-gray-50 rounded p-2 custom-flex-3';
 
-// Prepara un arreglo de etiquetas limpias basado en lineData.tags
-const cleanedTags = lineData.tags.map(tag => tag.className);
+                    // Prepara un arreglo de etiquetas limpias basado en lineData.tags
+                    const cleanedTags = lineData.tags.map(tag => tag.className);
 
-// Llama a updateTagsContainer con el contenedor de etiquetas y el arreglo de etiquetas limpias
-updateTagsContainer(tagsElement, cleanedTags);
+                    // Llama a updateTagsContainer con el contenedor de etiquetas y el arreglo de etiquetas limpias
+                    updateTagsContainer(tagsElement, cleanedTags);
 
                     // Añadir el contenedor de contenido editable en el medio
                     lineContainer.insertBefore(contentContainer, null); // Asegúrate de que esto esté correctamente insertado
@@ -488,7 +507,6 @@ updateTagsContainer(tagsElement, cleanedTags);
                 downloadFile(fileName, fileContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
             }
 
-
         function setupDownloadButton() {
                 const downloadBtn = document.getElementById('downloadBtn');
                 if (!downloadBtn) return; // Asegúrate de que el elemento existe
@@ -549,6 +567,76 @@ updateTagsContainer(tagsElement, cleanedTags);
             });
         }
 
+        function openModalWithTextareaContent(content, textareaElement) {
+            const modalContent = document.getElementById('textEditModalContent');
+            modalContent.value = content;
+            // Guarda una referencia al textarea en una propiedad global o en el mismo modal para usarla al cerrar la modal
+            window.currentTextarea = textareaElement; // Guarda el textarea actual como una propiedad global
+
+            // Muestra la ventana modal
+            document.getElementById('textEditModal').classList.add('modal-open');
+        }
+
+        function closeTextEditModal() {
+            const modalContent = document.getElementById('textEditModalContent');
+            if (window.currentTextarea) {
+                // Aplica el contenido modificado al textarea original
+                window.currentTextarea.value = modalContent.value;
+
+                // Extrae las etiquetas del contenido actualizado
+                const updatedTags = extractTags(modalContent.value);
+
+                // Encuentra el contenedor de etiquetas relacionado con el textarea
+                const tagsContainer = window.currentTextarea.closest('.md-line').querySelector('.tags-container');
+
+                // Actualiza el contenedor de etiquetas utilizando la función existente
+                if(tagsContainer) {
+                    updateTagsContainer(tagsContainer, updatedTags);
+                }
+            }
+            // Cierra la ventana modal
+            document.getElementById('textEditModal').classList.remove('modal-open');
+        }
+
+        function extractTags(content) {
+            // Utiliza una expresión regular para encontrar todas las coincidencias de etiquetas
+            const tagRegex = /#\w+/g;
+            const tags = content.match(tagRegex) || [];
+            return tags.map(tag => tag.substring(1)); // Elimina el hash del inicio de cada etiqueta
+        }
+
+            function closeModal() {
+                // Obtiene el textarea del modal y el textarea original
+                const modalContent = document.getElementById('generatedModelContent');
+                const originalTextarea = document.getElementById('modalTitle').textareaElement;
+
+                // Transfiere el contenido editado de vuelta al textarea original
+                if (originalTextarea) {
+                    originalTextarea.value = modalContent.value;
+                }
+
+                // Cierra la modal
+                document.getElementById('modalTitle').classList.remove('modal-open');
+            }
+
+            function updateTagsContainer(tagsContainer, tags) {
+                // Limpia el contenedor de etiquetas actual
+                tagsContainer.innerHTML = '';
+
+                // Añadir las nuevas etiquetas al contenedor
+                tags.forEach(tag => {
+                    const tagSpan = document.createElement('span');
+                    // Asigna el valor de la etiqueta al atributo 'data-tag', asumiendo que 'tag' ya no tiene el '#'
+                    tagSpan.setAttribute('data-tag', tag);
+                    // Establece el texto visible del span como el valor de la etiqueta
+                    tagSpan.textContent = tag;
+                    tagsContainer.appendChild(tagSpan);
+
+                    // Añadir un espacio después de cada etiqueta para separación visual
+                    tagsContainer.appendChild(document.createTextNode(' '));
+                });
+            }
+
         function openModalWithSectionName(sectionName) {
             // Encuentra el elemento que contiene el título en la ventana modal
             const modalTitleContent = document.getElementById('modalTitleContent');
@@ -604,9 +692,26 @@ updateTagsContainer(tagsElement, cleanedTags);
                 const lineObj = model.find(obj => obj.id === id);
                 if (lineObj) {
                     lineObj.content = updatedContent;
+                    // Extrae las etiquetas del contenido actualizado, incluyendo caracteres especiales
+                    const updatedTags = extractTagsFromContent(updatedContent);
+
+                    // Encuentra el contenedor de etiquetas correspondiente
+                    const tagsContainer = e.target.closest('.md-line').querySelector('.tags-container');
+                    if (tagsContainer) {
+                        // Actualiza el contenedor de etiquetas con las etiquetas extraídas
+                        updateTagsContainer(tagsContainer, updatedTags);
+                    }
                 }
             }
         });
+
+        // Esta función extrae etiquetas del contenido y elimina el símbolo '#'
+        function extractTagsFromContent(content) {
+            // Ajuste de la expresión regular para incluir caracteres especiales como * y %
+            const tagRegex = /#\w+/g;
+            const tags = content.match(tagRegex) || [];
+            return tags.map(tag => tag.substring(1)); // Elimina el '#' del inicio de cada etiqueta
+        }
 
         document.addEventListener('DOMContentLoaded', function () {
             downloadJSON();
@@ -615,6 +720,15 @@ updateTagsContainer(tagsElement, cleanedTags);
         });
     </script>
 
+<div id="textEditModal" class="modal" tabindex="-1">
+    <div class="modal-box">
+        <h3 class="font-bold text-lg">Editar Texto</h3>
+        <textarea id="textEditModalContent" class="textarea textarea-bordered w-full mt-4" placeholder="Edita el contenido aquí..."></textarea>
+        <div class="modal-action">
+            <a href="#" class="btn" onclick="closeTextEditModal()">Guardar</a>
+        </div>
+    </div>
+</div>
 
     <div id="modalTitle" class="modal" tabindex="-1">
         <div class="modal-box">
