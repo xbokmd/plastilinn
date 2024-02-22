@@ -12,54 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <style>
-        .hidden {
-            display: none;
-        }
 
-        #model-title {
-            padding-top: 40px;
-            /* Ajusta este valor según la altura de tus elementos fijos */
-        }
-
-        .flex.space-x-3 {
-            display: flex;
-            justify-content: center;
-        }
-
-        .md-line-content {
-    width: 100%; /* Hace que el textarea ocupe el 100% del ancho de su contenedor */
-    min-height: 2em; /* Establece la altura mínima para mostrar dos líneas de texto */
-    box-sizing: border-box; /* Asegura que el padding y border se incluyan en la altura y anchura total */
-    resize: vertical; /* Permite al usuario redimensionar el textarea solo verticalmente */
-}
-
-.ai-magic-button {
-    display: block; /* Hace que el botón ocupe su propia línea */
-    width: auto; /* O cualquier ancho específico que desees */
-    min-height: 1em !important;
-    height: 1.5em;
-    margin: 0px auto; /* Añade margen arriba y abajo y centra horizontalmente */
-}
-
-.btn-primary {
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-primary:hover {
-    background-color: #2563eb; /* Un azul más brillante */
-    transform: translateY(-2px); /* Efecto de levitación ligera */
-}
-
-/* Mejoras en Inputs */
-.input, .select {
-    transition: border-color 0.3s ease;
-    border-radius: 0.5rem;
-}
-
-.input:focus, .select:focus {
-    border-color: #4f46e5; /* Cambia el color del borde al enfocar */
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); /* Sombra suave alrededor */
-}
     </style>
 
 </head>
@@ -76,8 +29,6 @@
                 <div class="flex space-x-3">
                     <div class="grid grid-cols-3 gap-4">
                         <div class="flex items-center space-x-3" style="justify-content: flex-end;">
-                            <input type="file" id="markdownFileInput" accept=".md"
-                                class="file-input file-input-bordered file-input-primary w-full max-w-xs">
                         </div>
                         <div class="flex space-x-3" style="justify-content: center;">
                             <button class="collapse-filter-button btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition" type="button">
@@ -113,21 +64,9 @@
     <div id="markdownContainer" class="mt-4 text-gray-900 min-h-screen">
         <div class="hero min-h-screen bg-base-200">
             <div class="hero-content text-center">
-                <div class="max-w-md card bg-white shadow-xl hover:shadow-2xl transition-shadow">
-                    <div class="card-body">
-                        <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
-                        <p class="py-6">Plastilinn offers guidance on completing your business model...</p>
-                        <div class="card-actions justify-center">
-                            <button class="btn btn-primary">Get Started</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="hero min-h-screen bg-base-200">
-            <div class="hero-content text-center">
                 <div class="max-w-md">
+                    <input type="file" id="markdownFileInput" accept=".md"
+                    class="file-input file-input-bordered file-input-primary w-full max-w-xs">
                     <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
                     <p class="py-6">Plastilinn offers guidance on completing your business model, including aspects
                         such
