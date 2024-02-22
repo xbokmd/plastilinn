@@ -12,7 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <style>
-
+.md-line {
+    display: flex; /* o display: grid; dependiendo de tu estructura */
+    gap: 10px; /* Ajusta este valor según lo necesites */
+}
     </style>
 
 </head>
@@ -31,13 +34,13 @@
                         <div class="flex items-center space-x-3" style="justify-content: flex-end;">
                         </div>
                         <div class="flex space-x-3" style="justify-content: center;">
-                            <button class="collapse-filter-button btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition" type="button">
+                            <button class="collapse-filter-button btn border-blue-500 text-blue-500 bg-white hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md transition"" type="button">
                                 🔍 Filter
                             </button>
                         </div>
                         <div class="flex items-center justify-end space-x-3" style="justify-content: flex-start;">
                             <button id="downloadBtn"
-                                class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">⬇️ Download</button>
+                                class="btn border-blue-500 text-blue-500 bg-white hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md transition">⬇️ Download</button>
                         </div>
                     </div>
                 </div>
@@ -61,27 +64,13 @@
             </select>
         </div>
     </div>
-    <div id="markdownContainer" class="mt-4 text-gray-900 min-h-screen">
+    <div id="markdownContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
         <div class="hero min-h-screen bg-base-200">
             <div class="hero-content text-center">
                 <div class="max-w-md">
                     <input type="file" id="markdownFileInput" accept=".md"
-                    class="file-input file-input-bordered file-input-primary w-full max-w-xs">
-                    <h1 class="text-5xl font-bold">Your business plan powered by Artificial Intelligence</h1>
-                    <p class="py-6">Plastilinn offers guidance on completing your business model, including aspects
-                        such
-                        as market analysis, marketing strategies, financial planning, organizational structure,
-                        understanding market trends, analyzing customer demographics, and evaluating competitor
-                        behavior. It can help you make informed choices by evaluating different strategic options,
-                        and
-                        provides continuous support and instant feedback, crucial for iterative business development
-                        and
-                        improvement.</p>
-                    <ul class="steps">
-                        <li class="step step-primary">Design your Business Model</li>
-                        <li class="step">Analyze your Business Model</li>
-                        <li class="step">Validate your Business Model</li>
-                    </ul>
+                    class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
+                    <p>If you don't have a plastilinn document yet, download an empty <a href="plastilinn document template.md" download="Plastilinn document template.md" target="_blank">plastilinn document template</a></p>
                 </div>
             </div>
         </div>
@@ -91,7 +80,43 @@
     <script>
         let metamodel = [];
         let model = []; // También aseguramos que `model` esté definido globalmente
+
+        // Crea un manejador para el proxy
+        let handler = {
+            get: function(target, property, receiver) {
+                // Verificar si la propiedad es un método que queremos interceptar
+                if (['push', 'pop', 'shift', 'unshift', 'splice'].includes(property)) {
+                    return function(...args) {
+                        console.log(`Método ${property} llamado con argumentos`, args);
+                        // Lógica personalizada antes de la llamada original
+                        // Por ejemplo, podrías hacer algo antes de modificar el array
+
+                        // Llama al método original del array
+                        const result = Array.prototype[property].apply(target, args);
+
+                        // Lógica personalizada después de la llamada original
+                        // Por ejemplo, podrías actualizar la UI, enviar notificaciones, etc.
+                        console.log(`Array después de ${property}:`, target);
+
+                        return result; // Retorna el resultado del método original
+                    };
+                }
+
+                // Para propiedades que no son métodos que queremos interceptar, simplemente retorna el valor original
+                return Reflect.get(...arguments);
+            },
+
+            set: function(target, property, value, receiver) {
+                console.log(`Cambio detectado en model: propiedad ${property} actualizada con`, value);
+                target[property] = value; // Actualiza el array original
+                // Lógica adicional después de actualizar el array
+                return true; // Indica que la propiedad fue exitosamente establecida
+            }
+        };
         
+        // Envuelve el array model con el Proxy, pasando el array original y el manejador
+        model = new Proxy(model, handler);
+
         let uniqueId = 0; // Al inicio de tu script o fuera de cualquier función para que sea global
         let modelName = ''; // Esta variable almacenará el nombre del archivo cargado
         function downloadJSON() {
@@ -239,16 +264,11 @@
                     const contentContainer = document.createElement('div');
                     contentContainer.className = 'text-center bg-gray-50  shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2';
                     const textareaElement = document.createElement('textarea');
-                    textareaElement.className = 'md-line-content text-left bg-white md:col-span-3';
-                    textareaElement.rows = 1; // Establece el número de filas o altura inicial
-                    textareaElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
+                    textareaElement.className = 'md-line-content text-left bg-white shadow-2x1 md:col-span-3';
+                        textareaElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
                     textareaElement.textContent = lineData.content;
                     contentContainer.appendChild(textareaElement);
 
-                    // Asignación del evento click aquí, dentro del forEach, asegurando que textareaElement está definido
-                    textareaElement.addEventListener('click', function () {
-                        openModalWithTextareaContent(this.value, this);
-                    });
 
                     textareaElement.addEventListener('input', function () {
                         // Actualizar el modelo con el nuevo contenido
@@ -468,7 +488,7 @@
 
         function generateModel() {
             const contentElements = document.querySelectorAll('.md-line-content');
-            let modelContent = Array.from(contentElements).map(element => element.value).join('\n\n');
+            let modelContent = Array.from(contentElements).map(element => element.value).join('\n');
             // La siguiente línea es incorrecta y redundante, por lo que se ha eliminado
             // modelContent += textContent + '\n';
             return modelContent.trim();
@@ -506,15 +526,13 @@
             });
         }
 
-        function openModalWithTextareaContent(content, textareaElement) {
-            const modalContent = document.getElementById('textEditModalContent');
-            modalContent.value = content;
-            // Guarda una referencia al textarea en una propiedad global o en el mismo modal para usarla al cerrar la modal
-            window.currentTextarea = textareaElement; // Guarda el textarea actual como una propiedad global
+        function openModalWithTextarea(textareaElement) {
+        const modalBody = document.getElementById('textEditModalBody'); // Asegúrate de tener este contenedor en tu modal
+        window.originalTextareaParent = textareaElement.parentNode; // Guarda el contenedor original
+        modalBody.appendChild(textareaElement); // Mueve el textarea a la modal
 
-            // Muestra la ventana modal
-            document.getElementById('textEditModal').classList.add('modal-open');
-        }
+        document.getElementById('textEditModal').classList.add('modal-open'); // Abre la modal
+    }
 
         function closeTextEditModal() {
             const modalContent = document.getElementById('textEditModalContent');
@@ -585,6 +603,9 @@
             // Llama a generateModel para obtener el contenido actual del modelo
             const modelContent = generateModel();
 
+            // Buscar en metamodel el campo example para la sección especificada
+            const sectionExample = metamodel.find(section => section.name === sectionName)?.example || "No example found for this section.";
+
             // Define el contenido deseado para el textarea usando plantillas literales
             const customContent = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
             Listening closely to understand the specifics of the business.
@@ -600,6 +621,7 @@
                 - # description of the list component n
             This is an example of a answer:
             ---
+            ${sectionExample}
             - ## 🆔 stakeholders
                 - text
                 - #stakeholder [[Entrepreneurs and Startups in AI]]
@@ -625,21 +647,13 @@
         document.addEventListener('input', function(e) {
             if (e.target.classList.contains('md-line-content')) {
                 const updatedContent = e.target.value;
-                const id = parseInt(e.target.getAttribute('data-id'), 10); // Obtiene el ID como número
+                const id = parseInt(e.target.getAttribute('data-id'), 10); // Asegúrate de que este atributo esté correctamente asignado
 
                 // Encuentra el objeto en `model` con el ID correspondiente y actualiza su `content`
-                const lineObj = model.find(obj => obj.id === id);
-                if (lineObj) {
-                    lineObj.content = updatedContent;
-                    // Extrae las etiquetas del contenido actualizado, incluyendo caracteres especiales
-                    const updatedTags = extractTagsFromContent(updatedContent);
-
-                    // Encuentra el contenedor de etiquetas correspondiente
-                    const tagsContainer = e.target.closest('.md-line').querySelector('.tags-container');
-                    if (tagsContainer) {
-                        // Actualiza el contenedor de etiquetas con las etiquetas extraídas
-                        updateTagsContainer(tagsContainer, updatedTags);
-                    }
+                const index = model.findIndex(obj => obj.id === id);
+                if (index !== -1) {
+                    model[index].content = updatedContent; // Esta línea debería disparar el proxy si model es un proxy
+                    console.log(`Contenido actualizado para ID ${id}: `, updatedContent);
                 }
             }
         });
@@ -656,28 +670,50 @@
             downloadJSON();
             setupMarkdownFileInput();
             setupDownloadButton();
-        });
-    </script>
 
-<div id="textEditModal" class="modal" tabindex="-1">
-    <div class="modal-box">
-        <h3 class="font-bold text-lg">Editar Texto</h3>
-        <textarea id="textEditModalContent" class="textarea textarea-bordered w-full mt-4" placeholder="Edita el contenido aquí..."></textarea>
-        <div class="modal-action">
-            <a href="#" class="btn" onclick="closeTextEditModal()">Guardar</a>
-        </div>
-    </div>
-</div>
+            document.querySelectorAll('.md-line-content').forEach(textarea => {
+                console.log('Textarea encontrado:', textarea); // Confirma que los textareas están siendo seleccionados.
+
+                textarea.addEventListener('focus', function() {
+                    console.log('Focused'); // Confirma que el evento focus se dispara.
+                    this.style.height = "400px"; // Ajusta la altura a 400px al enfocar.
+                });
+
+                textarea.addEventListener('blur', function() {
+                    console.log('Blurred'); // Confirma que el evento blur se dispara.
+                    this.style.height = "2em"; // Vuelve a la altura mínima al perder el foco.
+                });
+            });
+        });
+
+        function copyToClipboard() {
+            // Obtén el elemento textarea
+            const textarea = document.getElementById('generatedModelContent');
+            // Selecciona el contenido del textarea
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+            // Copia el texto seleccionado al portapapeles
+            document.execCommand('copy');
+
+            // Opcional: mostrar una notificación o mensaje al usuario indicando que el texto ha sido copiado
+            alert('Contenido copiado al portapapeles.');
+        }
+
+    </script>
 
     <div id="modalTitle" class="modal" tabindex="-1">
         <div class="modal-box">
             <h3 class="font-bold text-lg" id="modalTitleContent">Título del Modelo</h3>
             <textarea id="generatedModelContent" class="textarea textarea-bordered w-full mt-4"
                 placeholder="Aquí aparecerá el contenido del modelo generado..."></textarea>
+                <div class="modal-action">
+                    <button class="btn" onclick="copyToClipboard()">Copiar</button>
+                </div>
             <p class="py-4">Paste in <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> or <a
                     href="https://gemini.google.com/app" target="_blank">Gemini Pro</a></p>
             <div class="modal-action">
-                <a href="#" class="btn" onclick="closeModal()">Cerrar</a>
+                <a href="#" class="btn" onclick="closeModal()">close</a>
             </div>
         </div>
     </div>
