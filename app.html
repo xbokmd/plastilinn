@@ -81,6 +81,33 @@
         let metamodel = [];
         let model = []; // También aseguramos que `model` esté definido globalmente
 
+        // Crea un handler para el proxy, similar al que ya tienes para `model`
+        let metamodelHandler = {
+            get: function(target, property, receiver) {
+                if (['push', 'pop', 'shift', 'unshift', 'splice'].includes(property)) {
+                    return function(...args) {
+                        console.log(`Metamodel: Método ${property} llamado con argumentos`, args);
+                        // Lógica personalizada antes de la llamada original
+                        const result = Array.prototype[property].apply(target, args);
+                        // Lógica personalizada después de la llamada original
+                        console.log(`Metamodel después de ${property}:`, target);
+                        return result; // Retorna el resultado del método original
+                    };
+                }
+                return Reflect.get(...arguments);
+            },
+
+            set: function(target, property, value, receiver) {
+                console.log(`Metamodel: Cambio detectado en propiedad ${property} actualizada con`, value);
+                target[property] = value; // Actualiza el array original
+                // Lógica adicional después de actualizar el array
+                return true; // Indica que la propiedad fue exitosamente establecida
+            }
+        };
+
+        // Envuelve el array metamodel con el Proxy, pasando el array original y el handler
+        metamodel = new Proxy(metamodel, metamodelHandler);
+
         // Crea un manejador para el proxy
         let handler = {
             get: function(target, property, receiver) {
@@ -119,17 +146,35 @@
 
         let uniqueId = 0; // Al inicio de tu script o fuera de cualquier función para que sea global
         let modelName = ''; // Esta variable almacenará el nombre del archivo cargado
+
         function downloadJSON() {
-            axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
-                .then(function (response) {
-                    metamodel = response.data;
-                    console.log(metamodel); // Opcional: Mostrar los datos en la consola
-                })
-                .catch(function (error) {
-                    console.log(error); // Manejar el error
-                });
+    axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
+        .then(function (response) {
+            // Asumiendo que response.data contiene tanto 'classes' como 'sections'
+            if (response.data && Array.isArray(response.data.classes) && Array.isArray(response.data.sections)) {
+                // Guarda las clases y las secciones en diferentes propiedades de metamodel
+                metamodel.classes = response.data.classes;
+                metamodel.sections = response.data.markers;
+                metamodel.sections = response.data.sections;
+                console.log(metamodel); // Muestra el metamodelo en la consola
+                initializeApp(); // Ejemplo de función de inicialización
+            } else {
+                console.error('Metamodel received does not have the expected structure');
+            }
+        })
+        .catch(function (error) {
+            console.log(error); // Maneja el error
+        });
+}
+
+        // Definir la función initializeApp o cualquier otra lógica que dependa de metamodel
+        function initializeApp() {
+            // Configuraciones o llamadas a funciones que dependen de que metamodel esté listo
+            setupMarkdownFileInput();
+            // Cualquier otra inicialización que necesite metamodel
         }
 
+        // Llamar a downloadJSON al inicio para cargar metamodel
         downloadJSON();
 
         function setupMarkdownFileInput() {
@@ -227,10 +272,25 @@
                     const lineContainer = document.createElement('div');
                     lineContainer.className = 'flex flex-row md-line';
 
+function getSectionInfo(sectionTitle) {
+    // Encuentra la entrada en metamodel que coincide con el título de la sección
+    const metamodelEntry = metamodel.sections.find(entry => entry.name === sectionTitle);
+
+
+    console.log("Entrada encontrada:", metamodelEntry); // Para verificar lo que se encontró
+
+    const infoUrl = metamodelEntry ? metamodelEntry.info : 'https://default.url';
+    return infoUrl;
+
+}
+
+
+
                     if (lineData.title) {
                         // Creación y configuración del enlace del título (titleLink).
                         const titleLink = document.createElement('a');
-                        titleLink.setAttribute('href', `https://go.plastilinn.com/#/page/${lineData.title.replace(/\s+/g, '_')}_info`);
+                        const infoUrl = getSectionInfo(lineData.title);
+                        titleLink.setAttribute('href', infoUrl);
                         titleLink.setAttribute('target', '_blank');
                         titleLink.textContent = lineData.title;
                         titleLink.className = 'text-blue-500 hover:text-blue-800';
