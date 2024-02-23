@@ -821,29 +821,22 @@
         }
 
         function saveChanges(lineData) {
-            // Actualiza el modelo como antes
-            if (!currentEditingLine) {
-                console.error('currentEditingLine is null');
-                return;
-            }
-            lineData.content = window.editor.getMarkdown();
+            // Suponemos que lineData ya ha sido actualizado con el nuevo contenido
+            // Encuentra el índice del objeto dentro del array model
+            const index = model.findIndex(obj => obj.id === lineData.id);
+            if (index !== -1) {
+                model[index].content = window.editor.getMarkdown(); // Suponiendo que esto captura el nuevo contenido
 
-            // Actualiza la UI
-            const contentElement = currentEditingLine.querySelector('.md-line-content');
-            if (contentElement) {
-                // Si decides usar marked para renderizar markdown a HTML:
-                try {
-                    const renderedContent = marked.parse(lineData.content);
-                    contentElement.innerHTML = renderedContent;
-                } catch (error) {
-                    console.error("Error al convertir Markdown a HTML:", error);
+                // Ahora, regenera solo la línea editada
+                const mainContainer = document.getElementById('markdownContainer'); // Asegúrate de que este es tu contenedor principal
+                const lineContainer = document.getElementById(`line-${lineData.id}`); // Asume que cada línea tiene un ID único
+
+                if (lineContainer) {
+                    lineContainer.innerHTML = ''; // Limpia el contenedor de la línea específica antes de volver a renderizar
+                    renderLine(model[index], mainContainer); // Renderiza la línea actualizada
                 }
-            } else {
-                console.error('.md-line-content not found within currentEditingLine');
             }
-            // Aquí asumimos que lineData ya ha sido actualizado con el nuevo contenido
-            renderLine(lineData);
-            closeEditModal(); // Asegúrate de cerrar el modal después de guardar
+            closeEditModal(); // Cierra la ventana modal
         }
 
     </script>
