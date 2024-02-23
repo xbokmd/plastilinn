@@ -12,10 +12,12 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <style>
-.md-line {
-    display: flex; /* o display: grid; dependiendo de tu estructura */
-    gap: 10px; /* Ajusta este valor según lo necesites */
-}
+        .md-line {
+            display: flex;
+            /* o display: grid; dependiendo de tu estructura */
+            gap: 10px;
+            /* Ajusta este valor según lo necesites */
+        }
     </style>
 
 </head>
@@ -34,13 +36,16 @@
                         <div class="flex items-center space-x-3" style="justify-content: flex-end;">
                         </div>
                         <div class="flex space-x-3" style="justify-content: center;">
-                            <button class="collapse-filter-button btn border-blue-500 text-blue-500 bg-white hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md transition"" type="button">
+                            <button
+                                class="collapse-filter-button btn border-blue-500 text-blue-500 bg-white hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md transition"" type="
+                                button">
                                 🔍 Filter
                             </button>
                         </div>
                         <div class="flex items-center justify-end space-x-3" style="justify-content: flex-start;">
                             <button id="downloadBtn"
-                                class="btn border-blue-500 text-blue-500 bg-white hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md transition">⬇️ Download</button>
+                                class="btn border-blue-500 text-blue-500 bg-white hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md transition">⬇️
+                                Download</button>
                         </div>
                     </div>
                 </div>
@@ -69,13 +74,14 @@
             <div class="hero-content text-center">
                 <div class="max-w-md">
                     <input type="file" id="markdownFileInput" accept=".md"
-                    class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
-                    <p>If you don't have a plastilinn document yet, download an empty <a href="plastilinn document template.md" download="Plastilinn document template.md" target="_blank">plastilinn document template</a></p>
+                        class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
+                    <p>If you don't have a plastilinn document yet, download an empty <a
+                            href="plastilinn document template.md" download="Plastilinn document template.md"
+                            target="_blank">plastilinn document template</a></p>
                 </div>
             </div>
         </div>
     </div>
-
 
     <script>
         let metamodel = [];
@@ -83,9 +89,9 @@
 
         // Crea un handler para el proxy, similar al que ya tienes para `model`
         let metamodelHandler = {
-            get: function(target, property, receiver) {
+            get: function (target, property, receiver) {
                 if (['push', 'pop', 'shift', 'unshift', 'splice'].includes(property)) {
-                    return function(...args) {
+                    return function (...args) {
                         console.log(`Metamodel: Método ${property} llamado con argumentos`, args);
                         // Lógica personalizada antes de la llamada original
                         const result = Array.prototype[property].apply(target, args);
@@ -97,7 +103,7 @@
                 return Reflect.get(...arguments);
             },
 
-            set: function(target, property, value, receiver) {
+            set: function (target, property, value, receiver) {
                 console.log(`Metamodel: Cambio detectado en propiedad ${property} actualizada con`, value);
                 target[property] = value; // Actualiza el array original
                 // Lógica adicional después de actualizar el array
@@ -110,10 +116,10 @@
 
         // Crea un manejador para el proxy
         let handler = {
-            get: function(target, property, receiver) {
+            get: function (target, property, receiver) {
                 // Verificar si la propiedad es un método que queremos interceptar
                 if (['push', 'pop', 'shift', 'unshift', 'splice'].includes(property)) {
-                    return function(...args) {
+                    return function (...args) {
                         console.log(`Método ${property} llamado con argumentos`, args);
                         // Lógica personalizada antes de la llamada original
                         // Por ejemplo, podrías hacer algo antes de modificar el array
@@ -133,14 +139,14 @@
                 return Reflect.get(...arguments);
             },
 
-            set: function(target, property, value, receiver) {
+            set: function (target, property, value, receiver) {
                 console.log(`Cambio detectado en model: propiedad ${property} actualizada con`, value);
                 target[property] = value; // Actualiza el array original
                 // Lógica adicional después de actualizar el array
                 return true; // Indica que la propiedad fue exitosamente establecida
             }
         };
-        
+
         // Envuelve el array model con el Proxy, pasando el array original y el manejador
         model = new Proxy(model, handler);
 
@@ -148,24 +154,24 @@
         let modelName = ''; // Esta variable almacenará el nombre del archivo cargado
 
         function downloadJSON() {
-    axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
-        .then(function (response) {
-            // Asumiendo que response.data contiene tanto 'classes' como 'sections'
-            if (response.data && Array.isArray(response.data.classes) && Array.isArray(response.data.sections)) {
-                // Guarda las clases y las secciones en diferentes propiedades de metamodel
-                metamodel.classes = response.data.classes;
-                metamodel.sections = response.data.markers;
-                metamodel.sections = response.data.sections;
-                console.log(metamodel); // Muestra el metamodelo en la consola
-                initializeApp(); // Ejemplo de función de inicialización
-            } else {
-                console.error('Metamodel received does not have the expected structure');
-            }
-        })
-        .catch(function (error) {
-            console.log(error); // Maneja el error
-        });
-}
+            axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
+                .then(function (response) {
+                    // Asumiendo que response.data contiene tanto 'classes' como 'sections'
+                    if (response.data && Array.isArray(response.data.classes) && Array.isArray(response.data.sections)) {
+                        // Guarda las clases y las secciones en diferentes propiedades de metamodel
+                        metamodel.classes = response.data.classes;
+                        metamodel.sections = response.data.markers;
+                        metamodel.sections = response.data.sections;
+                        console.log(metamodel); // Muestra el metamodelo en la consola
+                        initializeApp(); // Ejemplo de función de inicialización
+                    } else {
+                        console.error('Metamodel received does not have the expected structure');
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error); // Maneja el error
+                });
+        }
 
         // Definir la función initializeApp o cualquier otra lógica que dependa de metamodel
         function initializeApp() {
@@ -251,7 +257,7 @@
                 reader.readAsText(file);
             });
 
-            document.querySelector('.collapse-filter-button').addEventListener('click', function() {
+            document.querySelector('.collapse-filter-button').addEventListener('click', function () {
                 const content = document.querySelector('.collapse-filter-content');
                 // Alternar la clase 'hidden' para mostrar/ocultar el contenido
                 content.classList.toggle('hidden');
@@ -271,20 +277,6 @@
 
                     const lineContainer = document.createElement('div');
                     lineContainer.className = 'flex flex-row md-line';
-
-function getSectionInfo(sectionTitle) {
-    // Encuentra la entrada en metamodel que coincide con el título de la sección
-    const metamodelEntry = metamodel.sections.find(entry => entry.name === sectionTitle);
-
-
-    console.log("Entrada encontrada:", metamodelEntry); // Para verificar lo que se encontró
-
-    const infoUrl = metamodelEntry ? metamodelEntry.info : 'https://default.url';
-    return infoUrl;
-
-}
-
-
 
                     if (lineData.title) {
                         // Creación y configuración del enlace del título (titleLink).
@@ -325,7 +317,7 @@ function getSectionInfo(sectionTitle) {
                     contentContainer.className = 'text-center bg-gray-50  shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2';
                     const textareaElement = document.createElement('textarea');
                     textareaElement.className = 'md-line-content text-left bg-white shadow-2x1 md:col-span-3';
-                        textareaElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
+                    textareaElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
                     textareaElement.textContent = lineData.content;
                     contentContainer.appendChild(textareaElement);
 
@@ -521,17 +513,17 @@ function getSectionInfo(sectionTitle) {
         }
 
         function downloadModel() {
-                let fileContent = model.map(obj => obj.content).join('\n'); // Concatena el contenido con saltos de línea
-                const fileName = `Business model - saved ${formatDate(new Date())}.md`; // Usa la función formatDate para crear un nombre de archivo único
-                downloadFile(fileName, fileContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
-            }
+            let fileContent = model.map(obj => obj.content).join('\n'); // Concatena el contenido con saltos de línea
+            const fileName = `Business model - saved ${formatDate(new Date())}.md`; // Usa la función formatDate para crear un nombre de archivo único
+            downloadFile(fileName, fileContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
+        }
 
         function setupDownloadButton() {
-                const downloadBtn = document.getElementById('downloadBtn');
-                if (!downloadBtn) return; // Asegúrate de que el elemento existe
+            const downloadBtn = document.getElementById('downloadBtn');
+            if (!downloadBtn) return; // Asegúrate de que el elemento existe
 
-                downloadBtn.addEventListener('click', downloadModel);
-            }
+            downloadBtn.addEventListener('click', downloadModel);
+        }
 
         document.addEventListener('input', function (e) {
             if (e.target.getAttribute('contenteditable') === "true") {
@@ -587,12 +579,12 @@ function getSectionInfo(sectionTitle) {
         }
 
         function openModalWithTextarea(textareaElement) {
-        const modalBody = document.getElementById('textEditModalBody'); // Asegúrate de tener este contenedor en tu modal
-        window.originalTextareaParent = textareaElement.parentNode; // Guarda el contenedor original
-        modalBody.appendChild(textareaElement); // Mueve el textarea a la modal
+            const modalBody = document.getElementById('textEditModalBody'); // Asegúrate de tener este contenedor en tu modal
+            window.originalTextareaParent = textareaElement.parentNode; // Guarda el contenedor original
+            modalBody.appendChild(textareaElement); // Mueve el textarea a la modal
 
-        document.getElementById('textEditModal').classList.add('modal-open'); // Abre la modal
-    }
+            document.getElementById('textEditModal').classList.add('modal-open'); // Abre la modal
+        }
 
         function closeTextEditModal() {
             const modalContent = document.getElementById('textEditModalContent');
@@ -607,7 +599,7 @@ function getSectionInfo(sectionTitle) {
                 const tagsContainer = window.currentTextarea.closest('.md-line').querySelector('.tags-container');
 
                 // Actualiza el contenedor de etiquetas utilizando la función existente
-                if(tagsContainer) {
+                if (tagsContainer) {
                     updateTagsContainer(tagsContainer, updatedTags);
                 }
             }
@@ -622,37 +614,51 @@ function getSectionInfo(sectionTitle) {
             return tags.map(tag => tag.substring(1)); // Elimina el hash del inicio de cada etiqueta
         }
 
-            function closeModal() {
-                // Obtiene el textarea del modal y el textarea original
-                const modalContent = document.getElementById('generatedModelContent');
-                const originalTextarea = document.getElementById('modalTitle').textareaElement;
+        function closeModal() {
+            // Obtiene el textarea del modal y el textarea original
+            const modalContent = document.getElementById('generatedModelContent');
+            const originalTextarea = document.getElementById('modalTitle').textareaElement;
 
-                // Transfiere el contenido editado de vuelta al textarea original
-                if (originalTextarea) {
-                    originalTextarea.value = modalContent.value;
-                }
-
-                // Cierra la modal
-                document.getElementById('modalTitle').classList.remove('modal-open');
+            // Transfiere el contenido editado de vuelta al textarea original
+            if (originalTextarea) {
+                originalTextarea.value = modalContent.value;
             }
 
-            function updateTagsContainer(tagsContainer, tags) {
-                // Limpia el contenedor de etiquetas actual
-                tagsContainer.innerHTML = '';
+            // Cierra la modal
+            document.getElementById('modalTitle').classList.remove('modal-open');
+        }
 
-                // Añadir las nuevas etiquetas al contenedor
-                tags.forEach(tag => {
-                    const tagSpan = document.createElement('span');
-                    // Asigna el valor de la etiqueta al atributo 'data-tag', asumiendo que 'tag' ya no tiene el '#'
-                    tagSpan.setAttribute('data-tag', tag);
-                    // Establece el texto visible del span como el valor de la etiqueta
-                    tagSpan.textContent = tag;
-                    tagsContainer.appendChild(tagSpan);
+        function updateTagsContainer(tagsContainer, tags) {
+            // Limpia el contenedor de etiquetas actual
+            tagsContainer.innerHTML = '';
 
-                    // Añadir un espacio después de cada etiqueta para separación visual
-                    tagsContainer.appendChild(document.createTextNode(' '));
-                });
-            }
+            // Añadir las nuevas etiquetas al contenedor
+            tags.forEach(tag => {
+                const tagSpan = document.createElement('span');
+                // Asigna el valor de la etiqueta al atributo 'data-tag', asumiendo que 'tag' ya no tiene el '#'
+                tagSpan.setAttribute('data-tag', tag);
+                // Establece el texto visible del span como el valor de la etiqueta
+                tagSpan.textContent = tag;
+                tagsContainer.appendChild(tagSpan);
+
+                // Añadir un espacio después de cada etiqueta para separación visual
+                tagsContainer.appendChild(document.createTextNode(' '));
+            });
+        }
+
+        function getSectionInfo(sectionTitle) {
+            // Encuentra la entrada en metamodel que coincide con el título de la sección
+            const metamodelEntry = metamodel.sections.find(entry => entry.name === sectionTitle);
+            const infoUrl = metamodelEntry ? metamodelEntry.info : 'https://default.url';
+            return infoUrl;
+        }
+
+        function getSectionExample(sectionTitle) {
+            // Encuentra la entrada en metamodel que coincide con el título de la sección
+            const metamodelEntry = metamodel.sections.find(entry => entry.name === sectionTitle);
+            const infoUrl = metamodelEntry ? metamodelEntry.example : 'No example found';
+            return infoUrl;
+        }
 
         function openModalWithSectionName(sectionName) {
             // Encuentra el elemento que contiene el título en la ventana modal
@@ -664,7 +670,7 @@ function getSectionInfo(sectionTitle) {
             const modelContent = generateModel();
 
             // Buscar en metamodel el campo example para la sección especificada
-            const sectionExample = metamodel.find(section => section.name === sectionName)?.example || "No example found for this section.";
+            const sectionExample = getSectionExample(sectionName);
 
             // Define el contenido deseado para el textarea usando plantillas literales
             const customContent = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
@@ -675,19 +681,15 @@ function getSectionInfo(sectionTitle) {
             GOAL: Write a business model document describing the user's project business model. Here's some information about my Business:
                 ${modelContent}
             MY QUESTION: Please suggest content for the "${sectionName}" section of the business model.
-            WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your responsse, each list component should begin with '#tag', followed by the name enclosed in double brackets '[[ ]]', and then a description on a new, indented line. For example:
-            - ## 🆔 [[{block id}]]
-            - #{block content class} [[list component n]]
-                - # description of the list component n
-            This is an example of a answer:
+            WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your responsse, each list component should begin with '#tag', followed by the name enclosed in double brackets '[[ ]]', and then a description on a new, indented line. This is an example of a answer:
             ---
             ${sectionExample}
-            - ## 🆔 stakeholders
-                - text
-                - #stakeholder [[Entrepreneurs and Startups in AI]]
-                - Emerging companies and entrepreneurs interested in artificial intelligence.
-                - #stakeholder [[Professionals and Experts in AI]]
-                - Individuals looking to expand their knowledge and network in AI.
+            ---
+            Copy answer in the text box below:
+            ---
+            \`\`\`
+            ${sectionExample}
+            \`\`\`
             ---
             - You can copy/paste this answer to a document, write 'copy' to have the answer in a text box or write ⬇️ 'download' to save this answer to your computer"
             `;
@@ -704,7 +706,7 @@ function getSectionInfo(sectionTitle) {
             document.getElementById('modalTitle').classList.remove('modal-open'); // Cierra el modal
         }
 
-        document.addEventListener('input', function(e) {
+        document.addEventListener('input', function (e) {
             if (e.target.classList.contains('md-line-content')) {
                 const updatedContent = e.target.value;
                 const id = parseInt(e.target.getAttribute('data-id'), 10); // Asegúrate de que este atributo esté correctamente asignado
@@ -734,12 +736,12 @@ function getSectionInfo(sectionTitle) {
             document.querySelectorAll('.md-line-content').forEach(textarea => {
                 console.log('Textarea encontrado:', textarea); // Confirma que los textareas están siendo seleccionados.
 
-                textarea.addEventListener('focus', function() {
+                textarea.addEventListener('focus', function () {
                     console.log('Focused'); // Confirma que el evento focus se dispara.
                     this.style.height = "400px"; // Ajusta la altura a 400px al enfocar.
                 });
 
-                textarea.addEventListener('blur', function() {
+                textarea.addEventListener('blur', function () {
                     console.log('Blurred'); // Confirma que el evento blur se dispara.
                     this.style.height = "2em"; // Vuelve a la altura mínima al perder el foco.
                 });
@@ -757,7 +759,6 @@ function getSectionInfo(sectionTitle) {
             document.execCommand('copy');
 
             // Opcional: mostrar una notificación o mensaje al usuario indicando que el texto ha sido copiado
-            alert('Contenido copiado al portapapeles.');
         }
 
     </script>
@@ -767,9 +768,9 @@ function getSectionInfo(sectionTitle) {
             <h3 class="font-bold text-lg" id="modalTitleContent">Título del Modelo</h3>
             <textarea id="generatedModelContent" class="textarea textarea-bordered w-full mt-4"
                 placeholder="Aquí aparecerá el contenido del modelo generado..."></textarea>
-                <div class="modal-action">
-                    <button class="btn" onclick="copyToClipboard()">Copiar</button>
-                </div>
+            <div class="modal-action">
+                <button class="btn" onclick="copyToClipboard()">Copy content suggestion prompt</button>
+            </div>
             <p class="py-4">Paste in <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> or <a
                     href="https://gemini.google.com/app" target="_blank">Gemini Pro</a></p>
             <div class="modal-action">
@@ -777,8 +778,5 @@ function getSectionInfo(sectionTitle) {
             </div>
         </div>
     </div>
-
-
 </body>
-
 </html>
