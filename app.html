@@ -89,6 +89,7 @@
     <script>
         let metamodel = [];
         let model = []; // También aseguramos que `model` esté definido globalmente
+        const markdownContainer = document.getElementById('markdownContainer');
 
         // Crea un handler para el proxy, similar al que ya tienes para `model`
         let metamodelHandler = {
@@ -266,143 +267,59 @@
                 content.classList.toggle('hidden');
             });
 
+            function handleInputEvent(lineData) {
+                return function () {
+                    const updatedContent = this.value;
+                    lineData.content = updatedContent; // Update content in model directly
 
+                    const rawTags = updatedContent.match(/#[^\s#]+/g) || [];
+                    const cleanedTags = rawTags.map(tag => tag.substring(1));
 
+                    const tagsContainer = this.closest('.md-line').querySelector('.tags-container');
+                    if (tagsContainer) {
+                        updateTagsContainer(tagsContainer, cleanedTags);
+                    }
 
-function createAndAppend(elementType, attributes = {}, parent = null) {
-    const element = document.createElement(elementType);
-    Object.keys(attributes).forEach(attr => {
-        if (attr === 'className') {
-            element.className = attributes[attr];
-        } else if (attr === 'textContent') {
-            element.textContent = attributes[attr];
-        } else {
-            element.setAttribute(attr, attributes[attr]);
-        }
-    });
-    if (parent) {
-        parent.appendChild(element);
-    }
-    return element;
-}
+                    updateTagsFilter();
+                };
+            }
 
-function handleInputEvent(lineData) {
-    return function () {
-        const updatedContent = this.value;
-        lineData.content = updatedContent; // Update content in model directly
+            function renderModel(linesToRender = model) {
+                console.log("Líneas a renderizar:", linesToRender);
 
-        const rawTags = updatedContent.match(/#[^\s#]+/g) || [];
-        const cleanedTags = rawTags.map(tag => tag.substring(1));
+                markdownContainer.innerHTML = '';
 
-        const tagsContainer = this.closest('.md-line').querySelector('.tags-container');
-        if (tagsContainer) {
-            updateTagsContainer(tagsContainer, cleanedTags);
-        }
+                const mainContainer = createAndAppend('div', { className: 'flex flex-col' }, markdownContainer);
 
-        updateTagsFilter();
-    };
-}
+                linesToRender.forEach(lineData => {
+                    renderLine(lineData, mainContainer); // Modifica esta línea para pasar mainContainer
+                });
+            }
 
-function renderModel(linesToRender = model) {
-    console.log("Líneas a renderizar:", linesToRender);
+            function setupEditableContent(contentElement, lineData) {
+                const editIndicator = document.createElement('span');
+                editIndicator.className = 'text-gray-400 text-xl cursor-pointer absolute right-0 mr-4 opacity-0';
+                editIndicator.textContent = '✏️';
+                contentElement.parentNode.appendChild(editIndicator);
 
-    const markdownContainer = document.getElementById('markdownContainer');
-    markdownContainer.innerHTML = '';
+                contentElement.addEventListener('focus', function () {
+                    this.classList.add('border', 'border-blue-500', 'rounded', 'p-1');
+                });
+                contentElement.addEventListener('blur', function () {
+                    this.classList.remove('border', 'border-blue-500', 'rounded', 'p-1');
+                });
+                contentElement.addEventListener('mouseenter', function () {
+                    editIndicator.style.opacity = '1';
+                });
+                contentElement.addEventListener('mouseleave', function () {
+                    editIndicator.style.opacity = '0';
+                });
 
-    const mainContainer = createAndAppend('div', {className: 'flex flex-col'}, markdownContainer);
-
-    linesToRender.forEach(lineData => {
-        const rowWrapperDiv = createAndAppend('div', {className: 'md-line-wrapper'}, mainContainer);
-        const lineContainer = createAndAppend('div', {className: 'flex flex-row md-line'}, rowWrapperDiv);
-
-        if (lineData.title) {
-            const titleContainer = createAndAppend('div', {
-                className: 'text-center p-2 custom-flex-1 chat chat-bubble chat-end'
-            }, lineContainer);
-
-            const titleLink = createAndAppend('a', {
-                href: getSectionInfo(lineData.title),
-                target: '_blank',
-                textContent: lineData.title,
-                className: 'text-blue-500 hover:text-blue-800'
-            }, titleContainer);
-
-            const modalOpenButton = createAndAppend('button', {
-                textContent: '🤖 AI magic',
-                className: 'btn ai-magic-button py-1'
-            }, titleContainer);
-            modalOpenButton.addEventListener('click', () => openModalWithSectionName(lineData.title));
-        } else {
-            createAndAppend('div', {className: 'text-center p-2 custom-flex-1'}, lineContainer);
-        }
-
-        // Revisar si marked está definido y es una función
-        console.log("Marked:", marked);
-        let htmlContent;
-        try {
-            htmlContent = marked.parse(lineData.content);
-            console.log("Contenido HTML:", htmlContent);
-        } catch (error) {
-            console.error("Error al convertir Markdown a HTML:", error);
-            htmlContent = "<p>Error al procesar el contenido</p>";
-        }
-
-        // Crea el contenedor para el contenido
-        const contentContainer = createAndAppend('div', {
-            className: 'md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2'
-        }, lineContainer);
-
-        // Asigna el contenido HTML directamente
-        contentContainer.innerHTML = htmlContent;
-
-        // Botón Edit al lado del contenido
-        const editButton = createAndAppend('button', {
-            className: 'btn btn-primary',
-            textContent: '✏️',
-            onclick: () => openEditModal(lineData, contentContainer) // Asegúrate de ajustar esta llamada según tus necesidades
-        }, lineContainer);
-
-
-        const tagsElement = createAndAppend('div', {
-            className: 'tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3'
-        }, lineContainer);
-
-        const cleanedTags = lineData.tags.map(tag => tag.className.replace(/^#/, ''));
-        updateTagsContainer(tagsElement, cleanedTags);
-
-
-// Dentro de renderModel, al crear el botón "Edit"
-editButton.addEventListener('click', function() {
-    openEditModal(lineData, lineContainer); // Asegúrate de que lineContainer es la referencia correcta al div md-line
-});
-
-    });
-}
-
-function setupEditableContent(contentElement, lineData) {
-    const editIndicator = document.createElement('span');
-    editIndicator.className = 'text-gray-400 text-xl cursor-pointer absolute right-0 mr-4 opacity-0';
-    editIndicator.textContent = '✏️';
-    contentElement.parentNode.appendChild(editIndicator);
-
-    contentElement.addEventListener('focus', function () {
-        this.classList.add('border', 'border-blue-500', 'rounded', 'p-1');
-    });
-    contentElement.addEventListener('blur', function () {
-        this.classList.remove('border', 'border-blue-500', 'rounded', 'p-1');
-    });
-    contentElement.addEventListener('mouseenter', function () {
-        editIndicator.style.opacity = '1';
-    });
-    contentElement.addEventListener('mouseleave', function () {
-        editIndicator.style.opacity = '0';
-    });
-
-    // Agregar evento click al editIndicator para abrir la ventana modal de edición
-    editIndicator.addEventListener('click', function () {
-        openEditModal(lineData, contentElement);
-    });
-}
+                // Agregar evento click al editIndicator para abrir la ventana modal de edición
+                editIndicator.addEventListener('click', function () {
+                    openEditModal(lineData, contentElement);
+                });
+            }
 
             document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
 
@@ -509,11 +426,11 @@ function setupEditableContent(contentElement, lineData) {
         function downloadModel() {
             // Genera el contenido concatenando cada 'content' del array 'model'
             let fileContent = model.map(obj => obj.content).join('\n');
-            
+
             // Formatea la fecha actual para generar un nombre de archivo único
             const date = new Date();
             const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
-            
+
             // Genera el nombre del archivo usando el nombre del modelo y la fecha
             const fileName = `${modelName || 'model'}-${formattedDate}.md`;
 
@@ -522,13 +439,13 @@ function setupEditableContent(contentElement, lineData) {
         }
 
         function downloadFile(fileName, content) {
-                const element = document.createElement('a');
-                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-                element.setAttribute('download', fileName);
-                document.body.appendChild(element);
-                element.click();
-                document.body.removeChild(element);
-            }
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+            element.setAttribute('download', fileName);
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
 
         function setupDownloadButton() {
             const downloadBtn = document.getElementById('downloadBtn');
@@ -557,6 +474,100 @@ function setupEditableContent(contentElement, lineData) {
             // modelContent += textContent + '\n';
             return modelContent.trim();
         }
+
+        function createAndAppend(elementType, attributes = {}, parent = null) {
+            const element = document.createElement(elementType);
+            Object.keys(attributes).forEach(attr => {
+                if (attr === 'className') {
+                    element.className = attributes[attr];
+                } else if (attr === 'textContent') {
+                    element.textContent = attributes[attr];
+                } else {
+                    element.setAttribute(attr, attributes[attr]);
+                }
+            });
+            if (parent) {
+                parent.appendChild(element);
+            }
+            return element;
+        }
+
+        function renderLine(lineData, mainContainer) { // Añade mainContainer como argumento aquí
+                // Identifica o crea el contenedor para la línea específica
+                let lineContainer = document.getElementById(`line-${lineData.id}`);
+                if (!lineContainer) {
+                    lineContainer = document.createElement('div');
+                    lineContainer.id = `line-${lineData.id}`;
+                    document.getElementById('markdownContainer').appendChild(lineContainer);
+                }
+
+                // Limpia el contenedor existente para asegurarte de que no hay contenido previo
+                lineContainer.innerHTML = '';
+
+                const rowWrapperDiv = createAndAppend('div', { className: 'md-line-wrapper' }, mainContainer);
+                lineContainer = createAndAppend('div', { className: 'flex flex-row md-line' }, rowWrapperDiv);
+
+                    if (lineData.title) {
+                        const titleContainer = createAndAppend('div', {
+                            className: 'text-center p-2 custom-flex-1 chat chat-bubble chat-end'
+                        }, lineContainer);
+
+                        const titleLink = createAndAppend('a', {
+                            href: getSectionInfo(lineData.title),
+                            target: '_blank',
+                            textContent: lineData.title,
+                            className: 'text-blue-500 hover:text-blue-800'
+                        }, titleContainer);
+
+                        const modalOpenButton = createAndAppend('button', {
+                            textContent: '🤖 AI magic',
+                            className: 'btn ai-magic-button py-1'
+                        }, titleContainer);
+                        modalOpenButton.addEventListener('click', () => openModalWithSectionName(lineData.title));
+                    } else {
+                        createAndAppend('div', { className: 'text-center p-2 custom-flex-1' }, lineContainer);
+                    }
+
+                    // Revisar si marked está definido y es una función
+                    console.log("Marked:", marked);
+                    let htmlContent;
+                    try {
+                        htmlContent = marked.parse(lineData.content);
+                        console.log("Contenido HTML:", htmlContent);
+                    } catch (error) {
+                        console.error("Error al convertir Markdown a HTML:", error);
+                        htmlContent = "<p>Error al procesar el contenido</p>";
+                    }
+
+                    // Crea el contenedor para el contenido
+                    const contentContainer = createAndAppend('div', {
+                        className: 'md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2'
+                    }, lineContainer);
+
+                    // Asigna el contenido HTML directamente
+                    contentContainer.innerHTML = htmlContent;
+
+                    // Botón Edit al lado del contenido
+                    const editButton = createAndAppend('button', {
+                        className: 'btn btn-primary',
+                        textContent: '✏️',
+                        onclick: () => openEditModal(lineData, contentContainer) // Asegúrate de ajustar esta llamada según tus necesidades
+                    }, lineContainer);
+
+
+                    const tagsElement = createAndAppend('div', {
+                        className: 'tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3'
+                    }, lineContainer);
+
+                    const cleanedTags = lineData.tags.map(tag => tag.className.replace(/^#/, ''));
+                    updateTagsContainer(tagsElement, cleanedTags);
+
+
+                    // Dentro de renderModel, al crear el botón "Edit"
+                    editButton.addEventListener('click', function () {
+                        openEditModal(lineData, lineContainer); // Asegúrate de que lineContainer es la referencia correcta al div md-line
+                    });
+            }
 
         function updateTagsFilter() {
             // Obtener todas las etiquetas únicas de `model`
@@ -776,77 +787,78 @@ function setupEditableContent(contentElement, lineData) {
         let currentEditingLine = null; // Referencia global al div de línea actual
 
         function closeEditModal() {
-    // Suponiendo que tienes un modal con un ID específico
-    const modal = document.getElementById('editContentModal');
-    if (modal) {
-        // Aquí deberías implementar la lógica para ocultar el modal
-        modal.classList.remove('modal-open'); // Asume que 'modal-open' es la clase que hace visible al modal
-    } else {
-        console.error('Modal element not found');
-    }
-}
-
-function openEditModal(lineData, lineDiv) {
-    currentEditingLine = lineDiv; // Guarda el div actual que se está editando
-
-    // Configura y muestra la modal de edición
-    document.getElementById('editContentModal').classList.add('modal-open');
-
-    // Inicializa el editor Toast UI si aún no se ha hecho
-    if (!window.editor) {
-        window.editor = new toastui.Editor({
-            el: document.querySelector('#editorContainer'),
-            initialEditType: 'markdown',
-            previewStyle: 'vertical',
-            height: '400px'
-        });
-    }
-    window.editor.setMarkdown(lineData.content);
-
-    // Configura el botón para guardar los cambios
-    document.getElementById('saveEditBtn').onclick = function() {
-        saveChanges(lineData);
-    };
-}
-
-function saveChanges(lineData) {
-    // Actualiza el modelo como antes
-    if (!currentEditingLine) {
-        console.error('currentEditingLine is null');
-        return;
-    }
-    lineData.content = window.editor.getMarkdown();
-
-    // Actualiza la UI
-    const contentElement = currentEditingLine.querySelector('.md-line-content');
-    if (contentElement) {
-        // Si decides usar marked para renderizar markdown a HTML:
-        try {
-            const renderedContent = marked.parse(lineData.content);
-            contentElement.innerHTML = renderedContent;
-        } catch (error) {
-            console.error("Error al convertir Markdown a HTML:", error);
+            // Suponiendo que tienes un modal con un ID específico
+            const modal = document.getElementById('editContentModal');
+            if (modal) {
+                // Aquí deberías implementar la lógica para ocultar el modal
+                modal.classList.remove('modal-open'); // Asume que 'modal-open' es la clase que hace visible al modal
+            } else {
+                console.error('Modal element not found');
+            }
         }
-    } else {
-        console.error('.md-line-content not found within currentEditingLine');
-    }
 
-    closeEditModal(); // Cierra la modal de edición
-}
+        function openEditModal(lineData, lineDiv) {
+            currentEditingLine = lineDiv; // Guarda el div actual que se está editando
 
-</script>
+            // Configura y muestra la modal de edición
+            document.getElementById('editContentModal').classList.add('modal-open');
 
-<!-- Ventana Modal para Edición -->
-<div id="editContentModal" class="modal" tabindex="-1">
-    <div class="modal-box">
-        <h3 class="font-bold text-lg" id="editModalTitle">Editar Contenido</h3>
-        <div id="editorContainer"></div> <!-- Contenedor para el editor Toast UI -->
-        <div class="modal-action">
-            <button class="btn" id="saveEditBtn">Guardar Cambios</button>
-            <button class="btn" onclick="closeEditModal()">Cerrar</button>
+            // Inicializa el editor Toast UI si aún no se ha hecho
+            if (!window.editor) {
+                window.editor = new toastui.Editor({
+                    el: document.querySelector('#editorContainer'),
+                    initialEditType: 'markdown',
+                    previewStyle: 'vertical',
+                    height: '400px'
+                });
+            }
+            window.editor.setMarkdown(lineData.content);
+
+            // Configura el botón para guardar los cambios
+            document.getElementById('saveEditBtn').onclick = function () {
+                saveChanges(lineData);
+            };
+        }
+
+        function saveChanges(lineData) {
+            // Actualiza el modelo como antes
+            if (!currentEditingLine) {
+                console.error('currentEditingLine is null');
+                return;
+            }
+            lineData.content = window.editor.getMarkdown();
+
+            // Actualiza la UI
+            const contentElement = currentEditingLine.querySelector('.md-line-content');
+            if (contentElement) {
+                // Si decides usar marked para renderizar markdown a HTML:
+                try {
+                    const renderedContent = marked.parse(lineData.content);
+                    contentElement.innerHTML = renderedContent;
+                } catch (error) {
+                    console.error("Error al convertir Markdown a HTML:", error);
+                }
+            } else {
+                console.error('.md-line-content not found within currentEditingLine');
+            }
+            // Aquí asumimos que lineData ya ha sido actualizado con el nuevo contenido
+            renderLine(lineData);
+            closeEditModal(); // Asegúrate de cerrar el modal después de guardar
+        }
+
+    </script>
+
+    <!-- Ventana Modal para Edición -->
+    <div id="editContentModal" class="modal" tabindex="-1">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg" id="editModalTitle">Editar Contenido</h3>
+            <div id="editorContainer"></div> <!-- Contenedor para el editor Toast UI -->
+            <div class="modal-action">
+                <button class="btn" id="saveEditBtn">Guardar Cambios</button>
+                <button class="btn" onclick="closeEditModal()">Cerrar</button>
+            </div>
         </div>
     </div>
-</div>
 
     <div id="modalTitle" class="modal" tabindex="-1">
         <div class="modal-box">
@@ -864,4 +876,5 @@ function saveChanges(lineData) {
         </div>
     </div>
 </body>
+
 </html>
