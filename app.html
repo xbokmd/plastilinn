@@ -11,6 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <!-- Editor's Style -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <style>
         .md-line {
             display: flex;
@@ -310,7 +313,6 @@ function renderModel(linesToRender = model) {
 
     linesToRender.forEach(lineData => {
         const rowWrapperDiv = createAndAppend('div', {className: 'md-line-wrapper'}, mainContainer);
-
         const lineContainer = createAndAppend('div', {className: 'flex flex-row md-line'}, rowWrapperDiv);
 
         if (lineData.title) {
@@ -334,16 +336,32 @@ function renderModel(linesToRender = model) {
             createAndAppend('div', {className: 'text-center p-2 custom-flex-1'}, lineContainer);
         }
 
+        // Revisar si marked está definido y es una función
+        console.log("Marked:", marked);
+        let htmlContent;
+        try {
+            htmlContent = marked.parse(lineData.content);
+            console.log("Contenido HTML:", htmlContent);
+        } catch (error) {
+            console.error("Error al convertir Markdown a HTML:", error);
+            htmlContent = "<p>Error al procesar el contenido</p>";
+        }
+
+        // Crea el contenedor para el contenido
         const contentContainer = createAndAppend('div', {
-            className: 'text-center shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2'
+            className: 'shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2'
         }, lineContainer);
 
-        const textareaElement = createAndAppend('textarea', {
-            className: 'md-line-content text-left bg-white shadow-2x1 md:col-span-3',
-            'data-id': lineData.id,
-            textContent: lineData.content
-        }, contentContainer);
-        textareaElement.addEventListener('input', handleInputEvent(lineData));
+        // Asigna el contenido HTML directamente
+        contentContainer.innerHTML = htmlContent;
+
+        // Botón Edit al lado del contenido
+        const editButton = createAndAppend('button', {
+            className: 'btn btn-primary',
+            textContent: '✏️',
+            onclick: () => openEditModal(lineData, contentContainer) // Asegúrate de ajustar esta llamada según tus necesidades
+        }, lineContainer);
+
 
         const tagsElement = createAndAppend('div', {
             className: 'tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3'
@@ -351,31 +369,41 @@ function renderModel(linesToRender = model) {
 
         const cleanedTags = lineData.tags.map(tag => tag.className.replace(/^#/, ''));
         updateTagsContainer(tagsElement, cleanedTags);
+
+
+// Dentro de renderModel, al crear el botón "Edit"
+editButton.addEventListener('click', function() {
+    openEditModal(lineData, lineContainer); // Asegúrate de que lineContainer es la referencia correcta al div md-line
+});
+
     });
 }
 
+function setupEditableContent(contentElement, lineData) {
+    const editIndicator = document.createElement('span');
+    editIndicator.className = 'text-gray-400 text-xl cursor-pointer absolute right-0 mr-4 opacity-0';
+    editIndicator.textContent = '✏️';
+    contentElement.parentNode.appendChild(editIndicator);
 
+    contentElement.addEventListener('focus', function () {
+        this.classList.add('border', 'border-blue-500', 'rounded', 'p-1');
+    });
+    contentElement.addEventListener('blur', function () {
+        this.classList.remove('border', 'border-blue-500', 'rounded', 'p-1');
+    });
+    contentElement.addEventListener('mouseenter', function () {
+        editIndicator.style.opacity = '1';
+    });
+    contentElement.addEventListener('mouseleave', function () {
+        editIndicator.style.opacity = '0';
+    });
 
+    // Agregar evento click al editIndicator para abrir la ventana modal de edición
+    editIndicator.addEventListener('click', function () {
+        openEditModal(lineData, contentElement);
+    });
+}
 
-            function setupEditableContent(contentElement) {
-                const editIndicator = document.createElement('span');
-                editIndicator.className = 'text-gray-400 text-xl cursor-pointer absolute right-0 mr-4 opacity-0';
-                editIndicator.textContent = '✏️';
-                contentElement.parentNode.appendChild(editIndicator);
-
-                contentElement.addEventListener('focus', function () {
-                    this.classList.add('border', 'border-blue-500', 'rounded', 'p-1');
-                });
-                contentElement.addEventListener('blur', function () {
-                    this.classList.remove('border', 'border-blue-500', 'rounded', 'p-1');
-                });
-                contentElement.addEventListener('mouseenter', function () {
-                    editIndicator.style.opacity = '1';
-                });
-                contentElement.addEventListener('mouseleave', function () {
-                    editIndicator.style.opacity = '0';
-                });
-            }
             document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
 
             function updateTagsForLine(tagsContainer, content) {
@@ -464,19 +492,6 @@ function renderModel(linesToRender = model) {
                 const fileName = `${modelName || 'Business model'} - saved ${formatDate(new Date())}.md`;
                 downloadFile(fileName, modelContent); // Llama a la función downloadFile con el nuevo nombre
             });
-
-            function downloadFile(fileName, content) {
-                const element = document.createElement('a');
-                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-                element.setAttribute('download', fileName);
-
-                element.style.display = 'none';
-                document.body.appendChild(element);
-
-                element.click();
-
-                document.body.removeChild(element);
-            }
         }
 
         function updateModelNameDisplay() {
@@ -492,10 +507,28 @@ function renderModel(linesToRender = model) {
         }
 
         function downloadModel() {
-            let fileContent = model.map(obj => obj.content).join('\n'); // Concatena el contenido con saltos de línea
-            const fileName = `Business model - saved ${formatDate(new Date())}.md`; // Usa la función formatDate para crear un nombre de archivo único
-            downloadFile(fileName, fileContent); // Llama a la función downloadFile con el nombre del archivo y el contenido a descargar
+            // Genera el contenido concatenando cada 'content' del array 'model'
+            let fileContent = model.map(obj => obj.content).join('\n');
+            
+            // Formatea la fecha actual para generar un nombre de archivo único
+            const date = new Date();
+            const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+            
+            // Genera el nombre del archivo usando el nombre del modelo y la fecha
+            const fileName = `${modelName || 'model'}-${formattedDate}.md`;
+
+            // Utiliza la función existente para descargar el archivo
+            downloadFile(fileName, fileContent);
         }
+
+        function downloadFile(fileName, content) {
+                const element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+                element.setAttribute('download', fileName);
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            }
 
         function setupDownloadButton() {
             const downloadBtn = document.getElementById('downloadBtn');
@@ -740,7 +773,80 @@ function renderModel(linesToRender = model) {
             // Opcional: mostrar una notificación o mensaje al usuario indicando que el texto ha sido copiado
         }
 
-    </script>
+        let currentEditingLine = null; // Referencia global al div de línea actual
+
+        function closeEditModal() {
+    // Suponiendo que tienes un modal con un ID específico
+    const modal = document.getElementById('editContentModal');
+    if (modal) {
+        // Aquí deberías implementar la lógica para ocultar el modal
+        modal.classList.remove('modal-open'); // Asume que 'modal-open' es la clase que hace visible al modal
+    } else {
+        console.error('Modal element not found');
+    }
+}
+
+function openEditModal(lineData, lineDiv) {
+    currentEditingLine = lineDiv; // Guarda el div actual que se está editando
+
+    // Configura y muestra la modal de edición
+    document.getElementById('editContentModal').classList.add('modal-open');
+
+    // Inicializa el editor Toast UI si aún no se ha hecho
+    if (!window.editor) {
+        window.editor = new toastui.Editor({
+            el: document.querySelector('#editorContainer'),
+            initialEditType: 'markdown',
+            previewStyle: 'vertical',
+            height: '400px'
+        });
+    }
+    window.editor.setMarkdown(lineData.content);
+
+    // Configura el botón para guardar los cambios
+    document.getElementById('saveEditBtn').onclick = function() {
+        saveChanges(lineData);
+    };
+}
+
+function saveChanges(lineData) {
+    // Actualiza el modelo como antes
+    if (!currentEditingLine) {
+        console.error('currentEditingLine is null');
+        return;
+    }
+    lineData.content = window.editor.getMarkdown();
+
+    // Actualiza la UI
+    const contentElement = currentEditingLine.querySelector('.md-line-content');
+    if (contentElement) {
+        // Si decides usar marked para renderizar markdown a HTML:
+        try {
+            const renderedContent = marked.parse(lineData.content);
+            contentElement.innerHTML = renderedContent;
+        } catch (error) {
+            console.error("Error al convertir Markdown a HTML:", error);
+        }
+    } else {
+        console.error('.md-line-content not found within currentEditingLine');
+    }
+
+    closeEditModal(); // Cierra la modal de edición
+}
+
+</script>
+
+<!-- Ventana Modal para Edición -->
+<div id="editContentModal" class="modal" tabindex="-1">
+    <div class="modal-box">
+        <h3 class="font-bold text-lg" id="editModalTitle">Editar Contenido</h3>
+        <div id="editorContainer"></div> <!-- Contenedor para el editor Toast UI -->
+        <div class="modal-action">
+            <button class="btn" id="saveEditBtn">Guardar Cambios</button>
+            <button class="btn" onclick="closeEditModal()">Cerrar</button>
+        </div>
+    </div>
+</div>
 
     <div id="modalTitle" class="modal" tabindex="-1">
         <div class="modal-box">
