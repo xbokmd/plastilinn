@@ -32,7 +32,6 @@
 
 /* Eliminar bordes y espaciados entre elementos de contenido */
 .md-line {
-    border-bottom: 1px solid white; /* Hacer el borde del mismo color que el fondo si se desea mantener una separación sutil */
     padding: 0; /* Ajustar según sea necesario para alinear elementos sin espacios */
 }
 

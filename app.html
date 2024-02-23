@@ -263,120 +263,99 @@
                 content.classList.toggle('hidden');
             });
 
-            function renderModel(linesToRender = model) {
-                console.log("Líneas a renderizar:", linesToRender); // Esto debería mostrarte las líneas que se van a renderizar
-                const markdownContainer = document.getElementById('markdownContainer');
-                markdownContainer.innerHTML = ''; // Limpiar el contenedor
-                const mainContainer = document.createElement('div');
-                mainContainer.className = 'flex flex-col';
-
-                _.forEach(model, (lineData) => {
-
-                    const rowWrapperDiv = document.createElement('div');
-                    rowWrapperDiv.classList.add('md-line-wrapper');
-
-                    const lineContainer = document.createElement('div');
-                    lineContainer.className = 'flex flex-row md-line';
-
-                    if (lineData.title) {
-                        // Creación y configuración del enlace del título (titleLink).
-                        const titleLink = document.createElement('a');
-                        const infoUrl = getSectionInfo(lineData.title);
-                        titleLink.setAttribute('href', infoUrl);
-                        titleLink.setAttribute('target', '_blank');
-                        titleLink.textContent = lineData.title;
-                        titleLink.className = 'text-blue-500 hover:text-blue-800';
-
-                        // Crear un contenedor para el título y el botón.
-                        const titleContainer = document.createElement('div');
-                        titleContainer.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1 chat chat-bubble chat-end';
-                        titleContainer.appendChild(titleLink); // Añadir el enlace al contenedor del título.
-
-                        // Creación del botón modalOpenButton y configuración del evento click.
-                        const modalOpenButton = document.createElement('button');
-                        modalOpenButton.textContent = '🤖 AI magic';
-                        modalOpenButton.className = 'btn ai-magic-button py-1';
-                        modalOpenButton.addEventListener('click', function () {
-                            openModalWithSectionName(lineData.title);
-                        });
-
-                        // Añadir el botón al contenedor del título.
-                        titleContainer.appendChild(modalOpenButton);
-
-                        // Añadir el contenedor del título (que ahora incluye el botón) al contenedor de la línea.
-                        lineContainer.appendChild(titleContainer);
-                    } else {
-                        // Manejo de líneas sin título.
-                        const noTitleElement = document.createElement('div');
-                        noTitleElement.className = 'text-center bg-gray-50 rounded p-2 custom-flex-1';
-                        lineContainer.appendChild(noTitleElement);
-                    }
-
-                    // Contenedor para el contenido original (editable)
-                    const contentContainer = document.createElement('div');
-                    contentContainer.className = 'text-center bg-gray-50  shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2';
-                    const textareaElement = document.createElement('textarea');
-                    textareaElement.className = 'md-line-content text-left bg-white shadow-2x1 md:col-span-3';
-                    textareaElement.setAttribute('data-id', lineData.id); // Asignar el ID único aquí
-                    textareaElement.textContent = lineData.content;
-                    contentContainer.appendChild(textareaElement);
 
 
-                    textareaElement.addEventListener('input', function () {
-                        // Actualizar el modelo con el nuevo contenido
-                        const id = this.getAttribute('data-id');
-                        const updatedContent = this.value; // Usa 'value' para 'textarea'
-                        const lineObj = model.find(obj => obj.id.toString() === id);
-                        if (lineObj) {
-                            lineObj.content = updatedContent; // Actualiza el contenido en el modelo
-                        }
 
-                        // Extrae las etiquetas del contenido actualizado
-                        const rawTags = updatedContent.match(/#[^\s#]+/g) || [];
-                        const cleanedTags = rawTags.map(tag => tag.substring(1)); // Limpia las etiquetas quitando '#'
+function createAndAppend(elementType, attributes = {}, parent = null) {
+    const element = document.createElement(elementType);
+    Object.keys(attributes).forEach(attr => {
+        if (attr === 'className') {
+            element.className = attributes[attr];
+        } else if (attr === 'textContent') {
+            element.textContent = attributes[attr];
+        } else {
+            element.setAttribute(attr, attributes[attr]);
+        }
+    });
+    if (parent) {
+        parent.appendChild(element);
+    }
+    return element;
+}
 
-                        // Encuentra el contenedor de etiquetas correspondiente
-                        // Asegúrate de que tu estructura del DOM permita encontrar correctamente el `tagsContainer`
-                        // relacionado con este `textarea`
-                        const tagsContainer = this.closest('.md-line').querySelector('.tags-container');
-                        if (tagsContainer) {
-                            updateTagsContainer(tagsContainer, cleanedTags);
-                        }
+function handleInputEvent(lineData) {
+    return function () {
+        const updatedContent = this.value;
+        lineData.content = updatedContent; // Update content in model directly
 
-                        updateTagsFilter();
-                    });
+        const rawTags = updatedContent.match(/#[^\s#]+/g) || [];
+        const cleanedTags = rawTags.map(tag => tag.substring(1));
 
-                    textareaElement.textContent = lineData.content;
-                    contentContainer.appendChild(textareaElement);
+        const tagsContainer = this.closest('.md-line').querySelector('.tags-container');
+        if (tagsContainer) {
+            updateTagsContainer(tagsContainer, cleanedTags);
+        }
 
-                    // Columna para las etiquetas
-                    const tagsElement = document.createElement('div');
-                    tagsElement.className = 'tags-container ext-gray-500 text-sm text-center bg-gray-50 rounded p-2 custom-flex-3';
+        updateTagsFilter();
+    };
+}
 
-                    // Prepara un arreglo de etiquetas limpias basado en lineData.tags
-                    const cleanedTags = lineData.tags.map(tag => tag.className);
+function renderModel(linesToRender = model) {
+    console.log("Líneas a renderizar:", linesToRender);
 
-                    // Llama a updateTagsContainer con el contenedor de etiquetas y el arreglo de etiquetas limpias
-                    updateTagsContainer(tagsElement, cleanedTags);
+    const markdownContainer = document.getElementById('markdownContainer');
+    markdownContainer.innerHTML = '';
 
-                    // Añadir el contenedor de contenido editable en el medio
-                    lineContainer.insertBefore(contentContainer, null); // Asegúrate de que esto esté correctamente insertado
+    const mainContainer = createAndAppend('div', {className: 'flex flex-col'}, markdownContainer);
 
-                    lineContainer.appendChild(tagsElement);
+    linesToRender.forEach(lineData => {
+        const rowWrapperDiv = createAndAppend('div', {className: 'md-line-wrapper'}, mainContainer);
 
-                    // Añadir el contenedor de la línea al contenedor principal
-                    mainContainer.appendChild(lineContainer);
+        const lineContainer = createAndAppend('div', {className: 'flex flex-row md-line'}, rowWrapperDiv);
 
-                    // Asegurarse de envolver correctamente el lineContainer con rowWrapperDiv
-                    rowWrapperDiv.appendChild(lineContainer); // Envolver lineContainer dentro de rowWrapperDiv
+        if (lineData.title) {
+            const titleContainer = createAndAppend('div', {
+                className: 'text-center p-2 custom-flex-1 chat chat-bubble chat-end'
+            }, lineContainer);
 
-                    // Añadir el contenedor de la línea (ahora correctamente envuelto) al contenedor principal
-                    mainContainer.appendChild(rowWrapperDiv);
-                });
+            const titleLink = createAndAppend('a', {
+                href: getSectionInfo(lineData.title),
+                target: '_blank',
+                textContent: lineData.title,
+                className: 'text-blue-500 hover:text-blue-800'
+            }, titleContainer);
 
-                // Añadir el contenedor principal al contenedor de Markdown
-                markdownContainer.appendChild(mainContainer);
-            }
+            const modalOpenButton = createAndAppend('button', {
+                textContent: '🤖 AI magic',
+                className: 'btn ai-magic-button py-1'
+            }, titleContainer);
+            modalOpenButton.addEventListener('click', () => openModalWithSectionName(lineData.title));
+        } else {
+            createAndAppend('div', {className: 'text-center p-2 custom-flex-1'}, lineContainer);
+        }
+
+        const contentContainer = createAndAppend('div', {
+            className: 'text-center shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2'
+        }, lineContainer);
+
+        const textareaElement = createAndAppend('textarea', {
+            className: 'md-line-content text-left bg-white shadow-2x1 md:col-span-3',
+            'data-id': lineData.id,
+            textContent: lineData.content
+        }, contentContainer);
+        textareaElement.addEventListener('input', handleInputEvent(lineData));
+
+        const tagsElement = createAndAppend('div', {
+            className: 'tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3'
+        }, lineContainer);
+
+        const cleanedTags = lineData.tags.map(tag => tag.className.replace(/^#/, ''));
+        updateTagsContainer(tagsElement, cleanedTags);
+    });
+}
+
+
+
 
             function setupEditableContent(contentElement) {
                 const editIndicator = document.createElement('span');
