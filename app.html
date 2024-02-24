@@ -296,6 +296,8 @@
                 });
             }
 
+
+            
             function setupEditableContent(contentElement, lineData) {
                 const editIndicator = document.createElement('span');
                 editIndicator.className = 'text-gray-400 text-xl cursor-pointer absolute right-0 mr-4 opacity-0';
@@ -411,6 +413,17 @@
             });
         }
 
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('.edit-button')) { // Suponiendo que tus botones de edición tienen la clase 'edit-button'
+                const lineId = e.target.closest('.md-line').id.replace('line-', ''); // Obtiene el ID numérico
+                const lineData = model.find(item => item.id === parseInt(lineId));
+                if (lineData) {
+                    // Ahora puedes usar lineData para editar o realizar cualquier operación
+                    openEditModal(lineData); // Abre un modal de edición pasando el objeto encontrado
+                }
+            }
+        });
+
         function updateModelNameDisplay() {
             let modelNameDisplay = document.getElementById('modelNameDisplay');
             if (!modelNameDisplay) {
@@ -493,19 +506,18 @@
         }
 
         function renderLine(lineData, mainContainer) { // Añade mainContainer como argumento aquí
-                // Identifica o crea el contenedor para la línea específica
-                let lineContainer = document.getElementById(`line-${lineData.id}`);
-                if (!lineContainer) {
-                    lineContainer = document.createElement('div');
-                    lineContainer.id = `line-${lineData.id}`;
-                    document.getElementById('markdownContainer').appendChild(lineContainer);
-                }
+            // Crear el wrapper de la línea si no existe
+            let rowWrapperDiv = document.getElementById(`wrapper-line-${lineData.id}`);
+            if (!rowWrapperDiv) {
+                rowWrapperDiv = createAndAppend('div', { className: 'md-line-wrapper', id: `wrapper-line-${lineData.id}` }, mainContainer);
+            }
 
-                // Limpia el contenedor existente para asegurarte de que no hay contenido previo
-                lineContainer.innerHTML = '';
+            // Limpia el wrapper para asegurarte de que no hay contenido previo si ya existía
+            rowWrapperDiv.innerHTML = '';
 
-                const rowWrapperDiv = createAndAppend('div', { className: 'md-line-wrapper' }, mainContainer);
-                lineContainer = createAndAppend('div', { className: 'flex flex-row md-line' }, rowWrapperDiv);
+            // Crear el contenedor de la línea dentro del wrapper
+            const lineContainer = createAndAppend('div', { className: 'flex flex-row md-line', id: `line-${lineData.id}` }, rowWrapperDiv);
+
 
                     if (lineData.title) {
                         const titleContainer = createAndAppend('div', {
@@ -800,6 +812,10 @@
         function openEditModal(lineData, lineDiv) {
             currentEditingLine = lineDiv; // Guarda el div actual que se está editando
 
+            const modalContentInput = document.getElementById('modalContentInput'); // El campo donde el usuario editará el contenido
+            const modalLineIdInput = document.getElementById('modalLineId'); // Un campo oculto o elemento para almacenar el ID de la línea
+
+
             // Configura y muestra la modal de edición
             document.getElementById('editContentModal').classList.add('modal-open');
 
@@ -820,24 +836,23 @@
             };
         }
 
-        function saveChanges(lineData) {
-            // Suponemos que lineData ya ha sido actualizado con el nuevo contenido
-            // Encuentra el índice del objeto dentro del array model
-            const index = model.findIndex(obj => obj.id === lineData.id);
-            if (index !== -1) {
-                model[index].content = window.editor.getMarkdown(); // Suponiendo que esto captura el nuevo contenido
-
-                // Ahora, regenera solo la línea editada
-                const mainContainer = document.getElementById('markdownContainer'); // Asegúrate de que este es tu contenedor principal
-                const lineContainer = document.getElementById(`line-${lineData.id}`); // Asume que cada línea tiene un ID único
-
-                if (lineContainer) {
-                    lineContainer.innerHTML = ''; // Limpia el contenedor de la línea específica antes de volver a renderizar
-                    renderLine(model[index], mainContainer); // Renderiza la línea actualizada
-                }
-            }
-            closeEditModal(); // Cierra la ventana modal
+        function saveChanges(lineId, newContent) {
+    // Encuentra y actualiza el objeto en el array model
+    const index = model.findIndex(item => item.id === lineId);
+    if (index !== -1) {
+        model[index].content = newContent; // Actualiza el contenido
+        
+        // Encuentra y actualiza el elemento correspondiente en el DOM
+        const lineElement = document.querySelector(`#line-${lineId} .md-line-content`);
+        if (lineElement) {
+            lineElement.textContent = newContent; // Actualiza el contenido visible
+            // Si tu contenido incluye HTML, puedes querer usar innerHTML en lugar de textContent,
+            // pero sé consciente de los riesgos de seguridad relacionados con XSS.
         }
+    } else {
+        console.error("No se encontró la línea con el ID proporcionado.");
+    }
+}
 
     </script>
 
