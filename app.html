@@ -223,7 +223,7 @@
                         });
 
                         // Intentar identificar y procesar títulos con nueva especificación
-                        let title = undefined;
+                        let title;
                         // La expresión regular ahora permite espacios/guiones al inicio y busca de 2 a 10 hashes
                         const headingMatch = line.match(/^\s*-*\s*#{2,10}\s*(.*)/);
                         if (headingMatch && headingMatch[1]) {
@@ -267,23 +267,6 @@
                 content.classList.toggle('hidden');
             });
 
-            function handleInputEvent(lineData) {
-                return function () {
-                    const updatedContent = this.value;
-                    lineData.content = updatedContent; // Update content in model directly
-
-                    const rawTags = updatedContent.match(/#[^\s#]+/g) || [];
-                    const cleanedTags = rawTags.map(tag => tag.substring(1));
-
-                    const tagsContainer = this.closest('.md-line').querySelector('.tags-container');
-                    if (tagsContainer) {
-                        updateTagsContainer(tagsContainer, cleanedTags);
-                    }
-
-                    updateTagsFilter();
-                };
-            }
-
             function renderModel(linesToRender = model) {
                 console.log("Líneas a renderizar:", linesToRender);
 
@@ -296,51 +279,7 @@
                 });
             }
 
-
-            
-            function setupEditableContent(contentElement, lineData) {
-                const editIndicator = document.createElement('span');
-                editIndicator.className = 'text-gray-400 text-xl cursor-pointer absolute right-0 mr-4 opacity-0';
-                editIndicator.textContent = '✏️';
-                contentElement.parentNode.appendChild(editIndicator);
-
-                contentElement.addEventListener('focus', function () {
-                    this.classList.add('border', 'border-blue-500', 'rounded', 'p-1');
-                });
-                contentElement.addEventListener('blur', function () {
-                    this.classList.remove('border', 'border-blue-500', 'rounded', 'p-1');
-                });
-                contentElement.addEventListener('mouseenter', function () {
-                    editIndicator.style.opacity = '1';
-                });
-                contentElement.addEventListener('mouseleave', function () {
-                    editIndicator.style.opacity = '0';
-                });
-
-                // Agregar evento click al editIndicator para abrir la ventana modal de edición
-                editIndicator.addEventListener('click', function () {
-                    openEditModal(lineData, contentElement);
-                });
-            }
-
             document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
-
-            function updateTagsForLine(tagsContainer, content) {
-                // Limpia el contenedor de etiquetas existente
-                tagsContainer.innerHTML = '';
-
-                // Extrae las etiquetas del contenido. Este paso depende de cómo identifiques las etiquetas en el texto.
-                // Por ejemplo, si las etiquetas son palabras precedidas por '#', podrías hacer algo como esto:
-                const tagRegex = /#\w+/g; // Encuentra todas las ocurrencias de '#palabra'
-                const tags = content.match(tagRegex) || [];
-
-                // Crea elementos visuales para cada etiqueta encontrada y los añade al contenedor
-                tags.forEach(tag => {
-                    const tagElement = document.createElement('span'); // O cualquier elemento que represente una etiqueta en tu UI
-                    tagElement.textContent = tag; // Establece el texto del elemento al tag encontrado
-                    tagsContainer.appendChild(tagElement); // Añade el elemento de etiqueta al contenedor
-                });
-            }
 
             function filterLinesBySelectedTags() {
                 // Obtener todas las etiquetas seleccionadas del select múltiple
@@ -413,13 +352,13 @@
             });
         }
 
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (e.target.matches('.edit-button')) { // Suponiendo que tus botones de edición tienen la clase 'edit-button'
                 const lineId = e.target.closest('.md-line').id.replace('line-', ''); // Obtiene el ID numérico
                 const lineData = model.find(item => item.id === parseInt(lineId));
                 if (lineData) {
                     // Ahora puedes usar lineData para editar o realizar cualquier operación
-                    openEditModal(lineData); // Abre un modal de edición pasando el objeto encontrado
+                    openEditModal(lineId,lineData); // Abre un modal de edición pasando el objeto encontrado
                 }
             }
         });
@@ -519,67 +458,59 @@
             const lineContainer = createAndAppend('div', { className: 'flex flex-row md-line', id: `line-${lineData.id}` }, rowWrapperDiv);
 
 
-                    if (lineData.title) {
-                        const titleContainer = createAndAppend('div', {
-                            className: 'text-center p-2 custom-flex-1 chat chat-bubble chat-end'
-                        }, lineContainer);
+            if (lineData.title) {
+                const titleContainer = createAndAppend('div', {
+                    className: 'text-center p-2 custom-flex-1 chat chat-bubble chat-end'
+                }, lineContainer);
 
-                        const titleLink = createAndAppend('a', {
-                            href: getSectionInfo(lineData.title),
-                            target: '_blank',
-                            textContent: lineData.title,
-                            className: 'text-blue-500 hover:text-blue-800'
-                        }, titleContainer);
-
-                        const modalOpenButton = createAndAppend('button', {
-                            textContent: '🤖 AI magic',
-                            className: 'btn ai-magic-button py-1'
-                        }, titleContainer);
-                        modalOpenButton.addEventListener('click', () => openModalWithSectionName(lineData.title));
-                    } else {
-                        createAndAppend('div', { className: 'text-center p-2 custom-flex-1' }, lineContainer);
-                    }
-
-                    // Revisar si marked está definido y es una función
-                    console.log("Marked:", marked);
-                    let htmlContent;
-                    try {
-                        htmlContent = marked.parse(lineData.content);
-                        console.log("Contenido HTML:", htmlContent);
-                    } catch (error) {
-                        console.error("Error al convertir Markdown a HTML:", error);
-                        htmlContent = "<p>Error al procesar el contenido</p>";
-                    }
-
-                    // Crea el contenedor para el contenido
-                    const contentContainer = createAndAppend('div', {
-                        className: 'md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2'
-                    }, lineContainer);
-
-                    // Asigna el contenido HTML directamente
-                    contentContainer.innerHTML = htmlContent;
-
-                    // Botón Edit al lado del contenido
-                    const editButton = createAndAppend('button', {
-                        className: 'btn btn-primary',
-                        textContent: '✏️',
-                        onclick: () => openEditModal(lineData, contentContainer) // Asegúrate de ajustar esta llamada según tus necesidades
-                    }, lineContainer);
-
-
-                    const tagsElement = createAndAppend('div', {
-                        className: 'tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3'
-                    }, lineContainer);
-
-                    const cleanedTags = lineData.tags.map(tag => tag.className.replace(/^#/, ''));
-                    updateTagsContainer(tagsElement, cleanedTags);
-
-
-                    // Dentro de renderModel, al crear el botón "Edit"
-                    editButton.addEventListener('click', function () {
-                        openEditModal(lineData, lineContainer); // Asegúrate de que lineContainer es la referencia correcta al div md-line
-                    });
+                const modalOpenButton = createAndAppend('button', {
+                    textContent: '🤖 AI magic',
+                    className: 'btn ai-magic-button py-1'
+                }, titleContainer);
+                modalOpenButton.addEventListener('click', () => openModalWithSectionName(lineData.title));
+            } else {
+                createAndAppend('div', { className: 'text-center p-2 custom-flex-1' }, lineContainer);
             }
+
+            // Revisar si marked está definido y es una función
+            console.log("Marked:", marked);
+            let htmlContent;
+            try {
+                htmlContent = marked.parse(lineData.content);
+                console.log("Contenido HTML:", htmlContent);
+            } catch (error) {
+                console.error("Error al convertir Markdown a HTML:", error);
+                htmlContent = "<p>Error al procesar el contenido</p>";
+            }
+
+            // Crea el contenedor para el contenido
+            const contentContainer = createAndAppend('div', {
+                className: 'md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2'
+            }, lineContainer);
+
+            // Asigna el contenido HTML directamente
+            contentContainer.innerHTML = htmlContent;
+
+            // Botón Edit al lado del contenido
+            const editButton = createAndAppend('button', {
+                className: 'btn btn-primary',
+                textContent: '✏️',
+                onclick: () => openEditModal(lineData, contentContainer) // Asegúrate de ajustar esta llamada según tus necesidades
+            }, lineContainer);
+
+
+            const tagsElement = createAndAppend('div', {
+                className: 'tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3'
+            }, lineContainer);
+
+            const cleanedTags = lineData.tags.map(tag => tag.className.replace(/^#/, ''));
+            updateTagsContainer(tagsElement, cleanedTags);
+
+            // Dentro de renderModel, al crear el botón "Edit"
+            editButton.addEventListener('click', function () {
+                openEditModal(lineData, lineContainer); // Asegúrate de que lineContainer es la referencia correcta al div md-line
+            });
+        }
 
         function updateTagsFilter() {
             // Obtener todas las etiquetas únicas de `model`
@@ -737,10 +668,6 @@
             document.getElementById('modalTitle').classList.add('modal-open');
         }
 
-        function closeModal() {
-            document.getElementById('modalTitle').classList.remove('modal-open'); // Cierra el modal
-        }
-
         document.addEventListener('input', function (e) {
             if (e.target.classList.contains('md-line-content')) {
                 const updatedContent = e.target.value;
@@ -754,14 +681,6 @@
                 }
             }
         });
-
-        // Esta función extrae etiquetas del contenido y elimina el símbolo '#'
-        function extractTagsFromContent(content) {
-            // Ajuste de la expresión regular para incluir caracteres especiales como * y %
-            const tagRegex = /#\w+/g;
-            const tags = content.match(tagRegex) || [];
-            return tags.map(tag => tag.substring(1)); // Elimina el '#' del inicio de cada etiqueta
-        }
 
         document.addEventListener('DOMContentLoaded', function () {
             downloadJSON();
@@ -812,10 +731,6 @@
         function openEditModal(lineData, lineDiv) {
             currentEditingLine = lineDiv; // Guarda el div actual que se está editando
 
-            const modalContentInput = document.getElementById('modalContentInput'); // El campo donde el usuario editará el contenido
-            const modalLineIdInput = document.getElementById('modalLineId'); // Un campo oculto o elemento para almacenar el ID de la línea
-
-
             // Configura y muestra la modal de edición
             document.getElementById('editContentModal').classList.add('modal-open');
 
@@ -837,23 +752,22 @@
         }
 
         function saveChanges(lineId, newContent) {
-    // Encuentra y actualiza el objeto en el array model
-    const index = model.findIndex(item => item.id === lineId);
-    if (index !== -1) {
-        model[index].content = newContent; // Actualiza el contenido
-        
-        // Encuentra y actualiza el elemento correspondiente en el DOM
-        const lineElement = document.querySelector(`#line-${lineId} .md-line-content`);
-        if (lineElement) {
-            lineElement.textContent = newContent; // Actualiza el contenido visible
-            // Si tu contenido incluye HTML, puedes querer usar innerHTML en lugar de textContent,
-            // pero sé consciente de los riesgos de seguridad relacionados con XSS.
-        }
-    } else {
-        console.error("No se encontró la línea con el ID proporcionado.");
-    }
-}
+            // Encuentra y actualiza el objeto en el array model
+            const index = model.findIndex(item => item.id === lineId);
+            if (index !== -1) {
+                model[index].content = newContent; // Actualiza el contenido
 
+                // Encuentra y actualiza el elemento correspondiente en el DOM
+                const lineElement = document.querySelector(`#line-${lineId} .md-line-content`);
+                if (lineElement) {
+                    lineElement.textContent = newContent; // Actualiza el contenido visible
+                    // Si tu contenido incluye HTML, puedes querer usar innerHTML en lugar de textContent,
+                    // pero sé consciente de los riesgos de seguridad relacionados con XSS.
+                }
+            } else {
+                console.error("No se encontró la línea con el ID proporcionado.");
+            }
+        }
     </script>
 
     <!-- Ventana Modal para Edición -->
