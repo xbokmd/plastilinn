@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-    <!-- Editor's Style -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!-- Editor's Style -->
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <style>
         .md-line {
@@ -72,731 +72,159 @@
             </select>
         </div>
     </div>
-    <div id="markdownContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
-        <div class="hero min-h-screen bg-base-200">
-            <div class="hero-content text-center">
-                <div class="max-w-md">
-                    <input type="file" id="markdownFileInput" accept=".md"
-                        class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
-                    <p>If you don't have a plastilinn document yet, download an empty <a
-                            href="plastilinn document template.md" download="Plastilinn document template.md"
-                            target="_blank">plastilinn document template</a></p>
+    <button id="downloadBtn" @click="downloadMarkdown" class="btn ...">⬇️ Download</button>
+    <div id="vue-app">
+        <!-- El input de archivo Markdown se moverá aquí, gestionado por Vue -->
+        <input type="file" @change="loadAndParseMarkdown" accept=".md">
+        <!-- El resto de tu aplicación Vue -->
+        <div id="vue-app">
+            <div class="modelContainer">
+                <div v-for="line in parsedModel" :key="line.id" class="md-line">
+                    <div v-html="line.parsedContent"></div>
+                    <button @click="openModal(line)" class="btn btn-primary ml-4">Edit</button>
+                </div>
+            </div>
+            <!-- Modal para editar el contenido de la línea seleccionada -->
+            <div v-if="isModalOpen" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+                <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+                    <div class="mt-3 text-center">
+                        <div class="mt-2">
+                            <input v-model="selectedLineContent" type="text"
+                                class="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <button class="btn btn-primary mt-4" @click="saveChanges">Guardar Cambios</button>
+                        <button class="btn btn-secondary mt-4" @click="closeModal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+    <div id="markdownContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
+
+    </div>
+
     <script>
-        let metamodel = [];
-        let model = []; // También aseguramos que `model` esté definido globalmente
-        const markdownContainer = document.getElementById('markdownContainer');
-
-        // Crea un handler para el proxy, similar al que ya tienes para `model`
-        let metamodelHandler = {
-            get: function (target, property, receiver) {
-                if (['push', 'pop', 'shift', 'unshift', 'splice'].includes(property)) {
-                    return function (...args) {
-                        console.log(`Metamodel: Método ${property} llamado con argumentos`, args);
-                        // Lógica personalizada antes de la llamada original
-                        const result = Array.prototype[property].apply(target, args);
-                        // Lógica personalizada después de la llamada original
-                        console.log(`Metamodel después de ${property}:`, target);
-                        return result; // Retorna el resultado del método original
-                    };
-                }
-                return Reflect.get(...arguments);
-            },
-
-            set: function (target, property, value, receiver) {
-                console.log(`Metamodel: Cambio detectado en propiedad ${property} actualizada con`, value);
-                target[property] = value; // Actualiza el array original
-                // Lógica adicional después de actualizar el array
-                return true; // Indica que la propiedad fue exitosamente establecida
-            }
-        };
-
-        // Envuelve el array metamodel con el Proxy, pasando el array original y el handler
-        metamodel = new Proxy(metamodel, metamodelHandler);
-
-        // Crea un manejador para el proxy
-        let handler = {
-            get: function (target, property, receiver) {
-                // Verificar si la propiedad es un método que queremos interceptar
-                if (['push', 'pop', 'shift', 'unshift', 'splice'].includes(property)) {
-                    return function (...args) {
-                        console.log(`Método ${property} llamado con argumentos`, args);
-                        // Lógica personalizada antes de la llamada original
-                        // Por ejemplo, podrías hacer algo antes de modificar el array
-
-                        // Llama al método original del array
-                        const result = Array.prototype[property].apply(target, args);
-
-                        // Lógica personalizada después de la llamada original
-                        // Por ejemplo, podrías actualizar la UI, enviar notificaciones, etc.
-                        console.log(`Array después de ${property}:`, target);
-
-                        return result; // Retorna el resultado del método original
-                    };
-                }
-
-                // Para propiedades que no son métodos que queremos interceptar, simplemente retorna el valor original
-                return Reflect.get(...arguments);
-            },
-
-            set: function (target, property, value, receiver) {
-                console.log(`Cambio detectado en model: propiedad ${property} actualizada con`, value);
-                target[property] = value; // Actualiza el array original
-                // Lógica adicional después de actualizar el array
-                return true; // Indica que la propiedad fue exitosamente establecida
-            }
-        };
-
-        // Envuelve el array model con el Proxy, pasando el array original y el manejador
-        model = new Proxy(model, handler);
-
-        let uniqueId = 0; // Al inicio de tu script o fuera de cualquier función para que sea global
-        let modelName = ''; // Esta variable almacenará el nombre del archivo cargado
-
-        function downloadJSON() {
-            axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
-                .then(function (response) {
-                    // Asumiendo que response.data contiene tanto 'classes' como 'sections'
-                    if (response.data && Array.isArray(response.data.classes) && Array.isArray(response.data.sections)) {
-                        // Guarda las clases y las secciones en diferentes propiedades de metamodel
-                        metamodel.classes = response.data.classes;
-                        metamodel.sections = response.data.markers;
-                        metamodel.sections = response.data.sections;
-                        console.log(metamodel); // Muestra el metamodelo en la consola
-                        initializeApp(); // Ejemplo de función de inicialización
-                    } else {
-                        console.error('Metamodel received does not have the expected structure');
-                    }
-                })
-                .catch(function (error) {
-                    console.log(error); // Maneja el error
-                });
-        }
-
-        // Definir la función initializeApp o cualquier otra lógica que dependa de metamodel
-        function initializeApp() {
-            // Configuraciones o llamadas a funciones que dependen de que metamodel esté listo
-            setupMarkdownFileInput();
-            // Cualquier otra inicialización que necesite metamodel
-        }
-
-        // Llamar a downloadJSON al inicio para cargar metamodel
-        downloadJSON();
-
-        function setupMarkdownFileInput() {
-            const markdownFileInput = document.getElementById('markdownFileInput');
-            const markdownContainer = document.getElementById('markdownContainer');
-
-            markdownFileInput.addEventListener('change', function (event) {
-                const file = event.target.files[0];
-                if (!file) {
-                    return;
-                }
-
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    // Extrae el nombre del archivo sin la extensión '.md'
-                    let baseName = file.name.replace('.md', '');
-
-                    // Busca la posición de " - saved" en el nombre del archivo
-                    let savedIndex = baseName.indexOf(' - saved');
-
-                    // Si " - saved" se encuentra en el nombre, recorta hasta ese punto
-                    if (savedIndex !== -1) {
-                        baseName = baseName.substring(0, savedIndex);
-                    }
-
-                    modelName = baseName; // Asigna el nombre modificado a modelName
-                    updateModelNameDisplay(); // Actualiza la visualización del nombre
-                    const content = e.target.result;
-                    const lines = content.split(/\r?\n/);
-                    model = _.map(lines, (line, index) => {
-                        // Extracción de etiquetas
-                        const rawTags = line.match(/#[^\s#]+/g) || [];
-                        const tags = rawTags.map(tag => {
-                            const tagName = tag.substring(1); // Simplemente elimina el símbolo '#' al principio
-                            return { raw: tag, className: tagName };
-                        });
-
-                        // Intentar identificar y procesar títulos con nueva especificación
-                        let title;
-                        // La expresión regular ahora permite espacios/guiones al inicio y busca de 2 a 10 hashes
-                        const headingMatch = line.match(/^\s*-*\s*#{2,10}\s*(.*)/);
-                        if (headingMatch && headingMatch[1]) {
-                            // Limpiar el título: elimina hashes y espacios iniciales, mantiene texto después de los hashes
-                            title = headingMatch[1].trim();
-                            // Eliminar etiquetas del título si es necesario
-                            title = title.replace(/#[^\s#]+/g, '').trim();
-                            title = title.replace(/\[\[|\]\]/g, '');
-                        }
-
-                        return {
-                            id: uniqueId++, // Incrementa el ID único para cada objeto del modelo
-                            content: line,
-                            tags: tags,
-                            index: index,
-                            title: title // Agregado condicionalmente, undefined si no es un título
-                        };
-                    });
-
-                    // Luego de definir tu modelo, actualiza las etiquetas de cada línea
-                    model.forEach(lineData => {
-                        // Encuentra el tagsContainer correspondiente para esta línea
-                        // Esto puede requerir que ajustes cómo identificas o accedes a cada tagsContainer
-                        // Por ejemplo, si cada línea tiene un ID único y puedes usarlo para encontrar su tagsContainer
-                        const tagsContainer = document.querySelector(`#tags-container-${lineData.id}`);
-                        if (tagsContainer) {
-                            const cleanedTags = lineData.tags.map(tag => tag.className); // Asume que ya has limpiado las etiquetas
-                            updateTagsContainer(tagsContainer, cleanedTags);
-                        }
-                    });
-
-                    updateTagsFilter();
-                    renderModel(); // Asegúrate de ajustar esta función para manejar "title"
+        Vue.createApp({
+            data() {
+                return {
+                    metamodel: [],
+                    model: [], // Se utilizará para almacenar el modelo de datos creado a partir del Markdown
+                    modelName: '',
+                    isModalOpen: false,
+                    selectedLineContent: '',
+                    selectedLineIndex: null,
                 };
-                reader.readAsText(file);
-            });
-
-            document.querySelector('.collapse-filter-button').addEventListener('click', function () {
-                const content = document.querySelector('.collapse-filter-content');
-                // Alternar la clase 'hidden' para mostrar/ocultar el contenido
-                content.classList.toggle('hidden');
-            });
-
-            function renderModel(linesToRender = model) {
-                console.log("Líneas a renderizar:", linesToRender);
-
-                markdownContainer.innerHTML = '';
-
-                const mainContainer = createAndAppend('div', { className: 'flex flex-col' }, markdownContainer);
-
-                linesToRender.forEach(lineData => {
-                    renderLine(lineData, mainContainer); // Modifica esta línea para pasar mainContainer
-                });
-            }
-
-            document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
-
-            function filterLinesBySelectedTags() {
-                // Obtener todas las etiquetas seleccionadas del select múltiple
-                const selectedTags = Array.from(document.getElementById('tagsFilter').selectedOptions).map(option => option.value);
-
-                // Obtener todos los elementos que representan las líneas de contenido
-                const wrappers = document.querySelectorAll('.md-line-wrapper');
-
-                // Iterar sobre cada wrapper
-                wrappers.forEach(wrapper => {
-                    // Busca dentro del wrapper si existe alguna etiqueta que coincida con las seleccionadas
-                    const tagsInLine = wrapper.querySelectorAll('.tags-container span');
-                    let tagFound = false;
-
-                    // Verificar si alguna de las etiquetas de la línea coincide con las seleccionadas
-                    tagsInLine.forEach(tagElement => {
-                        if (selectedTags.includes(tagElement.textContent)) {
-                            tagFound = true;
+            },
+            watch: {
+                model: {
+                    deep: true,
+                    handler(newVal, oldVal) {
+                    newVal.forEach((item, index) => {
+                        const oldItem = oldVal[index];
+                        if (JSON.stringify(item) !== JSON.stringify(oldItem)) {
+                        console.log(`Índice ${index} ha cambiado.`);
+                        console.log(`Valor antiguo: ${JSON.stringify(oldItem)}`);
+                        console.log(`Valor nuevo: ${JSON.stringify(item)}`);
                         }
                     });
-
-                    // Si se encuentra alguna etiqueta o si no se ha seleccionado ninguna (valor ''), muestra el wrapper
-                    if (tagFound || selectedTags.length === 0) {
-                        wrapper.classList.remove('hidden');
-                    } else {
-                        // En caso contrario, oculta el wrapper
-                        wrapper.classList.add('hidden');
-                    }
-                });
-            }
-
-            document.addEventListener('DOMContentLoaded', function () {
-
-                document.getElementById('tagsFilter').addEventListener('change', filterLinesBySelectedTags);
-            });
-
-            document.addEventListener('input', function (e) {
-                if (e.target.classList.contains('md-line-content')) {
-                    const updatedContent = e.target.value;
-
-                    // Extraer etiquetas usando una expresión regular
-                    const rawTags = updatedContent.match(/#[^\s#]+/g) || [];
-                    const cleanedTags = rawTags.map(tag => tag.substring(1)); // Limpia las etiquetas quitando '#'
-
-                    // Encuentra el contenedor de etiquetas correspondiente
-                    const tagsContainer = e.target.closest('.md-line').querySelector('.tags-container');
-                    if (tagsContainer) {
-                        updateTagsContainer(tagsContainer, cleanedTags);
+                    this.regenerateLine(index);
                     }
                 }
-            });
-
-            document.getElementById('downloadBtn').addEventListener('click', downloadModel);
-
-            function formatDate(date) {
-                const year = date.getFullYear();
-                const month = (`0${date.getMonth() + 1}`).slice(-2);
-                const day = (`0${date.getDate()}`).slice(-2);
-                const hours = (`0${date.getHours()}`).slice(-2);
-                const minutes = (`0${date.getMinutes()}`).slice(-2);
-                const seconds = (`0${date.getSeconds()}`).slice(-2);
-                return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
-            }
-
-            document.getElementById('downloadBtn').addEventListener('click', function () {
-                const modelContent = generateModel(); // Esta función debería generar el contenido a descargar
-                // Genera el nombre del archivo usando modelName y la fecha actual para mantenerlo único
-                const fileName = `${modelName || 'Business model'} - saved ${formatDate(new Date())}.md`;
-                downloadFile(fileName, modelContent); // Llama a la función downloadFile con el nuevo nombre
-            });
-        }
-
-        document.addEventListener('click', function (e) {
-            if (e.target.matches('.edit-button')) { // Suponiendo que tus botones de edición tienen la clase 'edit-button'
-                const lineId = e.target.closest('.md-line').id.replace('line-', ''); // Obtiene el ID numérico
-                const lineData = model.find(item => item.id === parseInt(lineId));
-                if (lineData) {
-                    // Ahora puedes usar lineData para editar o realizar cualquier operación
-                    openEditModal(lineId,lineData); // Abre un modal de edición pasando el objeto encontrado
-                }
-            }
-        });
-
-        function updateModelNameDisplay() {
-            let modelNameDisplay = document.getElementById('modelNameDisplay');
-            if (!modelNameDisplay) {
-                modelNameDisplay = document.createElement('h1');
-                modelNameDisplay.id = 'modelNameDisplay';
-                // Encuentra el contenedor con id="model-title" para mostrar el nombre del modelo
-                const container = document.getElementById('model-title');
-                container.appendChild(modelNameDisplay); // Añade el h1 dentro del contenedor específico
-            }
-            modelNameDisplay.textContent = modelName; // Actualiza el contenido del h1 con el nombre del modelo
-        }
-
-        function downloadModel() {
-            // Genera el contenido concatenando cada 'content' del array 'model'
-            let fileContent = model.map(obj => obj.content).join('\n');
-
-            // Formatea la fecha actual para generar un nombre de archivo único
-            const date = new Date();
-            const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
-
-            // Genera el nombre del archivo usando el nombre del modelo y la fecha
-            const fileName = `${modelName || 'model'}-${formattedDate}.md`;
-
-            // Utiliza la función existente para descargar el archivo
-            downloadFile(fileName, fileContent);
-        }
-
-        function downloadFile(fileName, content) {
-            const element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
-            element.setAttribute('download', fileName);
-            document.body.appendChild(element);
-            element.click();
-            document.body.removeChild(element);
-        }
-
-        function setupDownloadButton() {
-            const downloadBtn = document.getElementById('downloadBtn');
-            if (!downloadBtn) return; // Asegúrate de que el elemento existe
-
-            downloadBtn.addEventListener('click', downloadModel);
-        }
-
-        document.addEventListener('input', function (e) {
-            if (e.target.getAttribute('contenteditable') === "true") {
-                const id = parseInt(e.target.getAttribute('data-id'), 10); // Obtiene el ID como número
-                const editedContent = e.target.textContent;
-
-                // Busca y actualiza el objeto correspondiente en `model`
-                const lineObj = model.find(obj => obj.id === id);
-                if (lineObj) {
-                    lineObj.content = editedContent;
-                }
-            }
-        });
-
-        function generateModel() {
-            const contentElements = document.querySelectorAll('.md-line-content');
-            let modelContent = Array.from(contentElements).map(element => element.value).join('\n');
-            // La siguiente línea es incorrecta y redundante, por lo que se ha eliminado
-            // modelContent += textContent + '\n';
-            return modelContent.trim();
-        }
-
-        function createAndAppend(elementType, attributes = {}, parent = null) {
-            const element = document.createElement(elementType);
-            Object.keys(attributes).forEach(attr => {
-                if (attr === 'className') {
-                    element.className = attributes[attr];
-                } else if (attr === 'textContent') {
-                    element.textContent = attributes[attr];
-                } else {
-                    element.setAttribute(attr, attributes[attr]);
-                }
-            });
-            if (parent) {
-                parent.appendChild(element);
-            }
-            return element;
-        }
-
-        function renderLine(lineData, mainContainer) { // Añade mainContainer como argumento aquí
-            // Crear el wrapper de la línea si no existe
-            let rowWrapperDiv = document.getElementById(`wrapper-line-${lineData.id}`);
-            if (!rowWrapperDiv) {
-                rowWrapperDiv = createAndAppend('div', { className: 'md-line-wrapper', id: `wrapper-line-${lineData.id}` }, mainContainer);
-            }
-
-            // Limpia el wrapper para asegurarte de que no hay contenido previo si ya existía
-            rowWrapperDiv.innerHTML = '';
-
-            // Crear el contenedor de la línea dentro del wrapper
-            const lineContainer = createAndAppend('div', { className: 'flex flex-row md-line', id: `line-${lineData.id}` }, rowWrapperDiv);
-
-
-            if (lineData.title) {
-                const titleContainer = createAndAppend('div', {
-                    className: 'text-center p-2 custom-flex-1 chat chat-bubble chat-end'
-                }, lineContainer);
-
-                const modalOpenButton = createAndAppend('button', {
-                    textContent: '🤖 AI magic',
-                    className: 'btn ai-magic-button py-1'
-                }, titleContainer);
-                modalOpenButton.addEventListener('click', () => openModalWithSectionName(lineData.title));
-            } else {
-                createAndAppend('div', { className: 'text-center p-2 custom-flex-1' }, lineContainer);
-            }
-
-            // Revisar si marked está definido y es una función
-            console.log("Marked:", marked);
-            let htmlContent;
-            try {
-                htmlContent = marked.parse(lineData.content);
-                console.log("Contenido HTML:", htmlContent);
-            } catch (error) {
-                console.error("Error al convertir Markdown a HTML:", error);
-                htmlContent = "<p>Error al procesar el contenido</p>";
-            }
-
-            // Crea el contenedor para el contenido
-            const contentContainer = createAndAppend('div', {
-                className: 'md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2'
-            }, lineContainer);
-
-            // Asigna el contenido HTML directamente
-            contentContainer.innerHTML = htmlContent;
-
-            // Botón Edit al lado del contenido
-            const editButton = createAndAppend('button', {
-                className: 'btn btn-primary',
-                textContent: '✏️',
-                onclick: () => openEditModal(lineData, contentContainer) // Asegúrate de ajustar esta llamada según tus necesidades
-            }, lineContainer);
-
-
-            const tagsElement = createAndAppend('div', {
-                className: 'tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3'
-            }, lineContainer);
-
-            const cleanedTags = lineData.tags.map(tag => tag.className.replace(/^#/, ''));
-            updateTagsContainer(tagsElement, cleanedTags);
-
-            // Dentro de renderModel, al crear el botón "Edit"
-            editButton.addEventListener('click', function () {
-                openEditModal(lineData, lineContainer); // Asegúrate de que lineContainer es la referencia correcta al div md-line
-            });
-        }
-
-        function updateTagsFilter() {
-            // Obtener todas las etiquetas únicas de `model`
-            const allTags = new Set(); // Usamos un Set para evitar etiquetas duplicadas
-            model.forEach(item => {
-                item.tags.forEach(tag => {
-                    allTags.add(tag.className); // Suponiendo que `className` contiene el nombre de la etiqueta sin '#'
+                },
+            computed: {
+                parsedModel() {
+                return this.model.map(line => {
+                    return { ...line, parsedContent: marked.parse(line.content) };
                 });
-            });
-
-            // Convertir el Set a Array y ordenarlo alfabéticamente
-            const sortedTags = Array.from(allTags).sort();
-
-            // Obtener el elemento del selector
-            const tagsFilter = document.getElementById('tagsFilter');
-            // Limpiar opciones existentes
-            tagsFilter.innerHTML = '';
-
-            // Opción predeterminada
-            const defaultOption = document.createElement('option');
-            defaultOption.value = '';
-            defaultOption.textContent = 'No filter';
-            tagsFilter.appendChild(defaultOption);
-
-            // Crear una opción para cada etiqueta única
-            sortedTags.forEach(tag => {
-                const option = document.createElement('option');
-                option.value = tag;
-                option.textContent = tag;
-                tagsFilter.appendChild(option);
-            });
-        }
-
-        function openModalWithTextarea(textareaElement) {
-            const modalBody = document.getElementById('textEditModalBody'); // Asegúrate de tener este contenedor en tu modal
-            window.originalTextareaParent = textareaElement.parentNode; // Guarda el contenedor original
-            modalBody.appendChild(textareaElement); // Mueve el textarea a la modal
-
-            document.getElementById('textEditModal').classList.add('modal-open'); // Abre la modal
-        }
-
-        function closeTextEditModal() {
-            const modalContent = document.getElementById('textEditModalContent');
-            if (window.currentTextarea) {
-                // Aplica el contenido modificado al textarea original
-                window.currentTextarea.value = modalContent.value;
-
-                // Extrae las etiquetas del contenido actualizado
-                const updatedTags = extractTags(modalContent.value);
-
-                // Encuentra el contenedor de etiquetas relacionado con el textarea
-                const tagsContainer = window.currentTextarea.closest('.md-line').querySelector('.tags-container');
-
-                // Actualiza el contenedor de etiquetas utilizando la función existente
-                if (tagsContainer) {
-                    updateTagsContainer(tagsContainer, updatedTags);
                 }
-            }
-            // Cierra la ventana modal
-            document.getElementById('textEditModal').classList.remove('modal-open');
-        }
+            },
+            methods: {
+                loadAndParseMarkdown(event) {
+                    const file = event.target.files[0];
+                    if (!file) {
+                        return;
+                    }
 
-        function extractTags(content) {
-            // Utiliza una expresión regular para encontrar todas las coincidencias de etiquetas
-            const tagRegex = /#\w+/g;
-            const tags = content.match(tagRegex) || [];
-            return tags.map(tag => tag.substring(1)); // Elimina el hash del inicio de cada etiqueta
-        }
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const content = e.target.result;
+                        this.parseMarkdown(content);
+                    };
+                    reader.readAsText(file);
+                },
+                parseMarkdown(content) {
+                    // Se utiliza una expresión regular para dividir el contenido en líneas
+                    const lines = content.split(/\r?\n/);
+                    this.model = lines.map(line => {
+                        // Aquí puedes ajustar cómo quieres transformar cada línea en un objeto de tu modelo
+                        return { content: line };
+                    });
+                    console.log(this.model); // Verificar la carga y transformación del contenido
+                },
+                regenerateLine(index) {
+                    // Asume que tienes una función que procesa el contenido, por ejemplo, `processContent`
+                    const processedContent = this.processContent(this.model[index].content);
+                    // Actualiza el elemento correspondiente en parsedModel
+                    this.$set(this.parsedModel, index, { ...this.parsedModel[index], parsedContent: processedContent });
+                },
 
-        function closeModal() {
-            // Obtiene el textarea del modal y el textarea original
-            const modalContent = document.getElementById('generatedModelContent');
-            const originalTextarea = document.getElementById('modalTitle').textareaElement;
-
-            // Transfiere el contenido editado de vuelta al textarea original
-            if (originalTextarea) {
-                originalTextarea.value = modalContent.value;
-            }
-
-            // Cierra la modal
-            document.getElementById('modalTitle').classList.remove('modal-open');
-        }
-
-        function updateTagsContainer(tagsContainer, tags) {
-            // Limpia el contenedor de etiquetas actual
-            tagsContainer.innerHTML = '';
-
-            // Añadir las nuevas etiquetas al contenedor
-            tags.forEach(tag => {
-                const tagSpan = document.createElement('span');
-                // Asigna el valor de la etiqueta al atributo 'data-tag', asumiendo que 'tag' ya no tiene el '#'
-                tagSpan.setAttribute('data-tag', tag);
-                // Establece el texto visible del span como el valor de la etiqueta
-                tagSpan.textContent = tag;
-                tagsContainer.appendChild(tagSpan);
-
-                // Añadir un espacio después de cada etiqueta para separación visual
-                tagsContainer.appendChild(document.createTextNode(' '));
-            });
-        }
-
-        function getSectionInfo(sectionTitle) {
-            // Encuentra la entrada en metamodel que coincide con el título de la sección
-            const metamodelEntry = metamodel.sections.find(entry => entry.name === sectionTitle);
-            const infoUrl = metamodelEntry ? metamodelEntry.info : 'https://default.url';
-            return infoUrl;
-        }
-
-        function getSectionExample(sectionTitle) {
-            // Encuentra la entrada en metamodel que coincide con el título de la sección
-            const metamodelEntry = metamodel.sections.find(entry => entry.name === sectionTitle);
-            const infoUrl = metamodelEntry ? metamodelEntry.example : 'No example found';
-            return infoUrl;
-        }
-
-        function openModalWithSectionName(sectionName) {
-            // Encuentra el elemento que contiene el título en la ventana modal
-            const modalTitleContent = document.getElementById('modalTitleContent');
-            // Actualiza el contenido de este elemento con el nombre de la sección recibido
-            modalTitleContent.textContent = sectionName;
-
-            // Llama a generateModel para obtener el contenido actual del modelo
-            const modelContent = generateModel();
-
-            // Buscar en metamodel el campo example para la sección especificada
-            const sectionExample = getSectionExample(sectionName);
-
-            // Define el contenido deseado para el textarea usando plantillas literales
-            const customContent = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
-            Listening closely to understand the specifics of the business.
-            Providing concise, targeted guidance without unnecessary repetition or formalities.
-            Offering step-by-step feedback to ensure the document effectively captures the business model.
-            You focus on the client's needs and how to best articulate their business model.
-            GOAL: Write a business model document describing the user's project business model. Here's some information about my Business:
-                ${modelContent}
-            MY QUESTION: Please suggest content for the "${sectionName}" section of the business model.
-            WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your responsse, each list component should begin with '#tag', followed by the name enclosed in double brackets '[[ ]]', and then a description on a new, indented line. This is an example of a answer:
-            ---
-            ${sectionExample}
-            ---
-            Copy answer in the text box below:
-            ---
-            \`\`\`
-            ${sectionExample}
-            \`\`\`
-            ---
-            - You can copy/paste this answer to a document, write 'copy' to have the answer in a text box or write ⬇️ 'download' to save this answer to your computer"
-            `;
-
-            // Encuentra el textarea dentro del modal y actualiza su contenido
-            const generatedModelContent = document.getElementById('generatedModelContent');
-            generatedModelContent.value = customContent;
-
-            // Abre la ventana modal añadiendo la clase 'modal-open'
-            document.getElementById('modalTitle').classList.add('modal-open');
-        }
-
-        document.addEventListener('input', function (e) {
-            if (e.target.classList.contains('md-line-content')) {
-                const updatedContent = e.target.value;
-                const id = parseInt(e.target.getAttribute('data-id'), 10); // Asegúrate de que este atributo esté correctamente asignado
-
-                // Encuentra el objeto en `model` con el ID correspondiente y actualiza su `content`
-                const index = model.findIndex(obj => obj.id === id);
-                if (index !== -1) {
-                    model[index].content = updatedContent; // Esta línea debería disparar el proxy si model es un proxy
-                    console.log(`Contenido actualizado para ID ${id}: `, updatedContent);
-                }
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            downloadJSON();
-            setupMarkdownFileInput();
-            setupDownloadButton();
-
-            document.querySelectorAll('.md-line-content').forEach(textarea => {
-                console.log('Textarea encontrado:', textarea); // Confirma que los textareas están siendo seleccionados.
-
-                textarea.addEventListener('focus', function () {
-                    console.log('Focused'); // Confirma que el evento focus se dispara.
-                    this.style.height = "400px"; // Ajusta la altura a 400px al enfocar.
-                });
-
-                textarea.addEventListener('blur', function () {
-                    console.log('Blurred'); // Confirma que el evento blur se dispara.
-                    this.style.height = "2em"; // Vuelve a la altura mínima al perder el foco.
-                });
-            });
-        });
-
-        function copyToClipboard() {
-            // Obtén el elemento textarea
-            const textarea = document.getElementById('generatedModelContent');
-            // Selecciona el contenido del textarea
-            textarea.select();
-            textarea.setSelectionRange(0, 99999); // Para dispositivos móviles
-
-            // Copia el texto seleccionado al portapapeles
-            document.execCommand('copy');
-
-            // Opcional: mostrar una notificación o mensaje al usuario indicando que el texto ha sido copiado
-        }
-
-        let currentEditingLine = null; // Referencia global al div de línea actual
-
-        function closeEditModal() {
-            // Suponiendo que tienes un modal con un ID específico
-            const modal = document.getElementById('editContentModal');
-            if (modal) {
-                // Aquí deberías implementar la lógica para ocultar el modal
-                modal.classList.remove('modal-open'); // Asume que 'modal-open' es la clase que hace visible al modal
-            } else {
-                console.error('Modal element not found');
-            }
-        }
-
-        function openEditModal(lineData, lineDiv) {
-            currentEditingLine = lineDiv; // Guarda el div actual que se está editando
-
-            // Configura y muestra la modal de edición
-            document.getElementById('editContentModal').classList.add('modal-open');
-
-            // Inicializa el editor Toast UI si aún no se ha hecho
-            if (!window.editor) {
-                window.editor = new toastui.Editor({
-                    el: document.querySelector('#editorContainer'),
-                    initialEditType: 'markdown',
-                    previewStyle: 'vertical',
-                    height: '400px'
-                });
-            }
-            window.editor.setMarkdown(lineData.content);
-
-            // Configura el botón para guardar los cambios
-            document.getElementById('saveEditBtn').onclick = function () {
-                saveChanges(lineData);
-            };
-        }
-
-        function saveChanges(lineId, newContent) {
-            // Encuentra y actualiza el objeto en el array model
-            const index = model.findIndex(item => item.id === lineId);
-            if (index !== -1) {
-                model[index].content = newContent; // Actualiza el contenido
-
-                // Encuentra y actualiza el elemento correspondiente en el DOM
-                const lineElement = document.querySelector(`#line-${lineId} .md-line-content`);
-                if (lineElement) {
-                    lineElement.textContent = newContent; // Actualiza el contenido visible
-                    // Si tu contenido incluye HTML, puedes querer usar innerHTML en lugar de textContent,
-                    // pero sé consciente de los riesgos de seguridad relacionados con XSS.
-                }
-            } else {
-                console.error("No se encontró la línea con el ID proporcionado.");
-            }
-        }
-    </script>
-
-    <!-- Ventana Modal para Edición -->
-    <div id="editContentModal" class="modal" tabindex="-1">
-        <div class="modal-box">
-            <h3 class="font-bold text-lg" id="editModalTitle">Editar Contenido</h3>
-            <div id="editorContainer"></div> <!-- Contenedor para el editor Toast UI -->
-            <div class="modal-action">
-                <button class="btn" id="saveEditBtn">Guardar Cambios</button>
-                <button class="btn" onclick="closeEditModal()">Cerrar</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalTitle" class="modal" tabindex="-1">
-        <div class="modal-box">
-            <h3 class="font-bold text-lg" id="modalTitleContent">Título del Modelo</h3>
-            <textarea id="generatedModelContent" class="textarea textarea-bordered w-full mt-4"
-                placeholder="Aquí aparecerá el contenido del modelo generado..."></textarea>
-            <div class="modal-action">
-                <button class="btn" onclick="copyToClipboard()">Copy content suggestion prompt</button>
-            </div>
-            <p class="py-4">Paste in <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> or <a
-                    href="https://gemini.google.com/app" target="_blank">Gemini Pro</a></p>
-            <div class="modal-action">
-                <a href="#" class="btn" onclick="closeModal()">close</a>
-            </div>
-        </div>
-    </div>
+                processContent(content) {
+                    // Aquí va tu lógica para procesar el contenido
+                    return processedContent;
+                },
+                downloadJSON() {
+                    axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
+                        .then(response => {
+                            if (response.data && response.data.classes && response.data.sections) {
+                                this.metamodel = response.data;
+                                console.log('Metamodel loaded:', this.metamodel);
+                            } else {
+                                console.error('Metamodel received does not have the expected structure');
+                            }
+                        })
+                        .catch(error => console.error('Error loading metamodel:', error));
+                },
+                updateModelNameDisplay() {
+                    this.modelName = 'Nuevo Nombre'; // Lógica para actualizar el nombre del modelo
+                },
+                openModal(line) {
+                    console.log("Línea clicada:", line);
+                    this.selectedLineContent = line.content;
+                    this.selectedLineIndex = this.model.indexOf(line);
+                    this.isModalOpen = true;
+                    console.log("Modal abierta con contenido:", this.selectedLineContent);
+                },
+                saveChanges() {
+                    if (this.selectedLineIndex !== null) {
+                        const updatedLine = { ...this.model[this.selectedLineIndex], content: this.selectedLineContent };
+                        console.log(`Cambios guardados para la línea ${this.selectedLineIndex}: ${this.selectedLineContent}`);
+                        this.model.splice(this.selectedLineIndex, 1, updatedLine);
+                        console.log(`Cambios guardados para la línea ${this.selectedLineIndex}: ${this.selectedLineContent}`);
+                    }
+                    this.closeModal();
+                },
+                closeModal() {
+                    this.isModalOpen = false;
+                },
+                downloadMarkdown() {
+                    console.log(`boton pulsado`);
+                    const markdownContent = this.model.map(item => item.content).join('\n\n');
+                    const blob = new Blob([markdownContent], { type: 'text/markdown' });
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'model-content.md';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                },
+            },
+            mounted() {
+                this.downloadJSON(); // Otras inicializaciones pueden ir aquí
+            },
+        }).mount('#vue-app');
+    </script>s
 </body>
 
 </html>
