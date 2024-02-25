@@ -78,12 +78,21 @@
         <input type="file" @change="loadAndParseMarkdown" accept=".md">
         <!-- El resto de tu aplicación Vue -->
         <div id="vue-app">
-            <div class="modelContainer">
-                <div v-for="line in parsedModel" :key="line.id" class="md-line">
-                    <!-- Muestra el contenido original de la línea aquí -->
-                    <div>{{ line.content }}</div>
-                    <div v-html="line.parsedContent"></div>
-                    <button @click="openModal(line)" class="btn btn-primary ml-4">Edit</button>
+            <div class="modelContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
+                <div class="flex flex-col">
+                    <div v-for="line in parsedModel" :key="line.id" class="md-line">
+                        <div class="md-line-wrapper" id="wrapper-line-299">
+                            <div class="flex flex-row md-line" id="line-299">
+                                <div class="text-center p-2 custom-flex-1 chat chat-bubble chat-end"><button class="btn ai-magic-button py-1">🤖
+                                        AI magic</button></div>
+                                <div class="md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2">
+                                    <div v-html="line.parsedContent"></div>
+                                </div><button @click="openModal(line)" class="btn btn-primary">✏️</button>
+                                <div class="tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3"><span data-tag="****">****</span>
+                                    <span data-tag="%">%</span> </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Modal para editar el contenido de la línea seleccionada -->
@@ -133,7 +142,6 @@
                     if (!file) {
                         return;
                     }
-
                     const reader = new FileReader();
                     reader.onload = (e) => {
                         const content = e.target.result;
@@ -156,7 +164,6 @@
                     // Actualiza el elemento correspondiente en parsedModel
                     this.$set(this.parsedModel, index, { ...this.parsedModel[index], parsedContent: processedContent });
                 },
-
                 processContent(content) {
                     // Aquí va tu lógica para procesar el contenido
                     return processedContent;
@@ -184,7 +191,6 @@
                     this.isModalOpen = true;
                     console.log("Modal abierta con contenido:", this.selectedLineContent, "ID:", line.id);
                 },
-
                 saveChanges() {
                     if (this.selectedLineIndex !== null) {
                         const updatedLine = { ...this.model[this.selectedLineIndex], content: this.selectedLineContent };
