@@ -82,14 +82,14 @@
                 <div class="flex flex-col">
                     <div class="md-line-wrapper">
                         <div v-for="line in parsedModel" :key="line.id" class="md-line">
-                            <div class="text-center p-2 custom-flex-1 chat chat-bubble chat-end"><button
+                            <div class="md-line-container-left text-center p-2 custom-flex-1 chat chat-bubble chat-end"><button
                                     class="btn ai-magic-button py-1">🤖
                                     AI magic</button></div>
                             <div
-                                class="md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2">
+                                class="md-line-container-middle md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2">
                                 <div v-html="line.parsedContent"></div>
                             </div><button @click="openModal(line)" class="btn btn-primary">✏️</button>
-                            <div class="tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3"
+                            <div class="md-line-container-right tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3"
                                 v-html="line.tagsParsed"></div>
                         </div>
                     </div>
