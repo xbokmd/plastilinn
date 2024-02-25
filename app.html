@@ -151,18 +151,37 @@
                     reader.readAsText(file);
                 },
                 parseMarkdown(content) {
-                    const lines = content.split(/\r?\n/);
-                    this.model = lines.map(line => {
-                        // Incrementa lastId para asegurar un identificador único
-                        this.lastId += 1;
-                        const { tags, tagsParsed } = this.processTags(line);
+                    const blocks = []; // Almacenará los bloques identificados
+                    let currentBlock = []; // Almacena las líneas del bloque actual
+                    const lines = content.split(/\r?\n/); // Divide el contenido en líneas
+
+                    lines.forEach(line => {
+                        // Verifica si la línea actual marca el inicio de un nuevo bloque
+                        if (/^\s*-*\s*#/.test(line)) {
+                            if (currentBlock.length > 0) {
+                                blocks.push(currentBlock.join('\n')); // Agrega el bloque actual a los bloques
+                                currentBlock = []; // Reinicia el bloque actual
+                            }
+                        }
+                        currentBlock.push(line); // Añade la línea al bloque actual
+                    });
+
+                    if (currentBlock.length > 0) {
+                        blocks.push(currentBlock.join('\n')); // Asegúrate de añadir el último bloque
+                    }
+
+                    // Actualiza this.model para que contenga bloques en lugar de líneas individuales
+                    this.model = blocks.map((blockContent, index) => {
+                        this.lastId += 1; // Incrementa el ID para cada bloque
+                        const { tags, tagsParsed } = this.processTags(blockContent);
                         return {
                             id: this.lastId,
-                            content: line,
+                            content: blockContent,
                             tags: tags,
                             tagsParsed: tagsParsed
                         };
                     });
+
                     console.log(this.model); // Verificar la carga y transformación del contenido
                 },
                 processTags(content) {
