@@ -98,7 +98,7 @@
             <!-- Modal para editar el contenido de la línea seleccionada -->
 
             <div v-if="isModalOpen" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
-                <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+                <div class="relative top-20 mx-auto p-5 border w-4/5 shadow-lg rounded-md bg-white">
                     <div class="mt-3 text-center">
                         <div class="mt-2">
                             <div id="editor-container"></div>
@@ -155,21 +155,23 @@
                     this.model = lines.map(line => {
                         // Incrementa lastId para asegurar un identificador único
                         this.lastId += 1;
-
-                        // Extraer todas las etiquetas del contenido usando una expresión regular
-                        const tags = line.match(/#[^\s]+/g) || [];
-
-                        // Crear el HTML para las etiquetas parseadas
-                        const tagsParsed = tags.map(tag => `<span data-tag="${tag.substring(1)}">${tag.substring(1)}</span>`).join('');
-
+                        const { tags, tagsParsed } = this.processTags(line);
                         return {
                             id: this.lastId,
                             content: line,
-                            tags: tags.map(tag => tag.substring(1)), // Eliminar el símbolo '#' de las etiquetas
+                            tags: tags,
                             tagsParsed: tagsParsed
                         };
                     });
                     console.log(this.model); // Verificar la carga y transformación del contenido
+                },
+                processTags(content) {
+                    const tags = content.match(/#[^\s]+/g) || [];
+                    const tagsParsed = tags.map(tag => `<span data-tag="${tag.substring(1)}">${tag}</span>`).join('');
+                    return {
+                        tags: tags.map(tag => tag.substring(1)), // Elimina el símbolo '#'
+                        tagsParsed: tagsParsed
+                    };
                 },
                 regenerateLine(index) {
                     // Asume que tienes una función que procesa el contenido, por ejemplo, `parseContent`
@@ -223,10 +225,13 @@
                 saveChanges() {
                     const editedContent = this.editor.getMarkdown();
                     if (this.selectedLineIndex !== null) {
-                        // Actualiza el contenido de la línea específica en el modelo de datos.
-                        this.model[this.selectedLineIndex].content = editedContent;
-                        // Opcional: Si estás usando `parsedModel` para mostrar el contenido, también deberías actualizarlo.
-                        this.parsedModel[this.selectedLineIndex].parsedContent = marked.parse(editedContent);
+                        const { tags, tagsParsed } = this.processTags(editedContent);
+                        this.model.splice(this.selectedLineIndex, 1, {
+                            ...this.model[this.selectedLineIndex],
+                            content: editedContent,
+                            tags: tags,
+                            tagsParsed: tagsParsed
+                        });
                     }
                     this.closeModal();
                 },
