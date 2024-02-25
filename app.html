@@ -165,7 +165,6 @@
                         }
                         currentBlock.push(line); // Añade la línea al bloque actual
                     });
-
                     if (currentBlock.length > 0) {
                         blocks.push(currentBlock.join('\n')); // Asegúrate de añadir el último bloque
                     }
@@ -174,15 +173,39 @@
                     this.model = blocks.map((blockContent, index) => {
                         this.lastId += 1; // Incrementa el ID para cada bloque
                         const { tags, tagsParsed } = this.processTags(blockContent);
+                        const blockTitle = this.extractBlockTitle(blockContent);
+                        console.log(blockTitle);
+                        const metamodel = this.importMetamodelData(blockTitle);
                         return {
                             id: this.lastId,
                             content: blockContent,
                             tags: tags,
-                            tagsParsed: tagsParsed
+                            tagsParsed: tagsParsed,
+                            blockTitle: blockTitle,
+                            metamodel: metamodel
                         };
                     });
-
                     console.log(this.model); // Verificar la carga y transformación del contenido
+                },
+                extractBlockTitle(blockContent) {
+                    const firstLine = blockContent.split(/\r?\n/)[0]; // Obtiene la primera línea
+                    const firstLineWithoutMarkdownHeaders = firstLine.replace(/^#+\s*/, ''); // Elimina los encabezados Markdown
+                    const blockTitle = firstLineWithoutMarkdownHeaders.replace(/#[^\s]+/g, '').trim(); // Elimina las etiquetas y espacios extras
+                    return blockTitle; // Retorna blockTitle después de haber llamado a importMetamodelData
+                    console.log(blockTitle);
+                },
+                importMetamodelData(blockTitle) {
+                    // Encuentra la sección en metamodel.sections que coincida con blockTitle
+                    const section = this.metamodel.sections.find(section => {
+                        console.log(`Buscando: ${blockTitle}, Encontrado: ${section.name}`);
+                        return section.name === blockTitle;
+                    });
+                    
+                    if (section) {
+                    // Si se encuentra la sección, añádela como array dentro del bloque
+                    // Asumiendo que tienes una estructura para almacenar los bloques, por ejemplo:
+                    this.model.push({ title: blockTitle, section: [section] });
+                    }
                 },
                 processTags(content) {
                     const tags = content.match(/#[^\s]+/g) || [];
@@ -242,18 +265,20 @@
                     });
                 },
                 saveChanges() {
-                    const editedContent = this.editor.getMarkdown();
-                    if (this.selectedLineIndex !== null) {
-                        const { tags, tagsParsed } = this.processTags(editedContent);
-                        this.model.splice(this.selectedLineIndex, 1, {
-                            ...this.model[this.selectedLineIndex],
-                            content: editedContent,
-                            tags: tags,
-                            tagsParsed: tagsParsed
-                        });
-                    }
-                    this.closeModal();
-                },
+    const editedContent = this.editor.getMarkdown();
+    if (this.selectedLineIndex !== null) {
+        const { tags, tagsParsed } = this.processTags(editedContent);
+        const blockTitle = this.extractBlockTitle(editedContent); // Asume que esta función devuelve el título del bloque
+        this.model.splice(this.selectedLineIndex, 1, {
+            ...this.model[this.selectedLineIndex],
+            content: editedContent,
+            tags: tags,
+            tagsParsed: tagsParsed,
+            blockTitle: blockTitle // Guarda el blockTitle extraído en la propiedad title del objeto
+        });
+    }
+    this.closeModal();
+},
                 closeModal() {
                     this.isModalOpen = false;
                 },
