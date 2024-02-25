@@ -80,28 +80,29 @@
         <div id="vue-app">
             <div class="modelContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
                 <div class="flex flex-col">
-                    <div v-for="line in parsedModel" :key="line.id" class="md-line">
-                        <div class="md-line-wrapper" id="wrapper-line-299">
-                            <div class="flex flex-row md-line" id="line-299">
-                                <div class="text-center p-2 custom-flex-1 chat chat-bubble chat-end"><button class="btn ai-magic-button py-1">🤖
-                                        AI magic</button></div>
-                                <div class="md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2">
-                                    <div v-html="line.parsedContent"></div>
-                                </div><button @click="openModal(line)" class="btn btn-primary">✏️</button>
-                                <div class="tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3"><span data-tag="****">****</span>
-                                    <span data-tag="%">%</span> </div>
-                            </div>
+                    <div class="md-line-wrapper">
+                        <div v-for="line in parsedModel" :key="line.id" class="md-line">
+                            <div class="text-center p-2 custom-flex-1 chat chat-bubble chat-end"><button
+                                    class="btn ai-magic-button py-1">🤖
+                                    AI magic</button></div>
+                            <div
+                                class="md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2">
+                                <div v-html="line.parsedContent"></div>
+                            </div><button @click="openModal(line)" class="btn btn-primary">✏️</button>
+                            <div class="tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3"
+                                v-html="line.tagsParsed"></div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Modal para editar el contenido de la línea seleccionada -->
+
             <div v-if="isModalOpen" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
                 <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
                     <div class="mt-3 text-center">
                         <div class="mt-2">
-                            <input v-model="selectedLineContent" type="text"
-                                class="input input-bordered w-full max-w-xs" />
+                            <div id="editor-container"></div>
+
                         </div>
                         <button class="btn btn-primary mt-4" @click="saveChanges">Guardar Cambios</button>
                         <button class="btn btn-secondary mt-4" @click="closeModal">Cerrar</button>
@@ -131,9 +132,9 @@
             },
             computed: {
                 parsedModel() {
-                return this.model.map(line => {
-                    return { ...line, parsedContent: marked.parse(line.content) };
-                });
+                    return this.model.map(line => {
+                        return { ...line, parsedContent: marked.parse(line.content) };
+                    });
                 }
             },
             methods: {
@@ -154,19 +155,31 @@
                     this.model = lines.map(line => {
                         // Incrementa lastId para asegurar un identificador único
                         this.lastId += 1;
-                        return { id: this.lastId, content: line };
+
+                        // Extraer todas las etiquetas del contenido usando una expresión regular
+                        const tags = line.match(/#[^\s]+/g) || [];
+
+                        // Crear el HTML para las etiquetas parseadas
+                        const tagsParsed = tags.map(tag => `<span data-tag="${tag.substring(1)}">${tag.substring(1)}</span>`).join('');
+
+                        return {
+                            id: this.lastId,
+                            content: line,
+                            tags: tags.map(tag => tag.substring(1)), // Eliminar el símbolo '#' de las etiquetas
+                            tagsParsed: tagsParsed
+                        };
                     });
                     console.log(this.model); // Verificar la carga y transformación del contenido
                 },
                 regenerateLine(index) {
-                    // Asume que tienes una función que procesa el contenido, por ejemplo, `processContent`
-                    const processedContent = this.processContent(this.model[index].content);
+                    // Asume que tienes una función que procesa el contenido, por ejemplo, `parseContent`
+                    const parsedContent = this.parseContent(this.model[index].content);
                     // Actualiza el elemento correspondiente en parsedModel
-                    this.$set(this.parsedModel, index, { ...this.parsedModel[index], parsedContent: processedContent });
+                    this.$set(this.parsedModel, index, { ...this.parsedModel[index], parsedContent: parsedContent });
                 },
-                processContent(content) {
+                parseContent(content) {
                     // Aquí va tu lógica para procesar el contenido
-                    return processedContent;
+                    return parsedContent;
                 },
                 downloadJSON() {
                     axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
@@ -190,18 +203,47 @@
                     this.selectedLineIndex = this.model.findIndex(item => item.id === line.id);
                     this.isModalOpen = true;
                     console.log("Modal abierta con contenido:", this.selectedLineContent, "ID:", line.id);
+                    this.$nextTick(() => {
+                        // Asegúrate de que el contenedor del editor esté disponible en el DOM
+                         this.initEditor();
+                    });
+                },
+                initEditor() {
+                    if (this.editor) {
+                        this.editor.destroy(); // Destruye la instancia anterior del editor
+                    }
+                    this.editor = new toastui.Editor({
+                            el: document.querySelector('#editor-container'),
+                            initialEditType: 'markdown',
+                            previewStyle: 'vertical',
+                            height: '400px',
+                            initialValue: this.selectedLineContent // Asume que `editingContent` es tu contenido actual que quieres editar
+                    });
                 },
                 saveChanges() {
+                    const editedContent = this.editor.getMarkdown();
                     if (this.selectedLineIndex !== null) {
-                        const updatedLine = { ...this.model[this.selectedLineIndex], content: this.selectedLineContent };
-                        console.log(`Cambios guardados para la línea ${this.selectedLineIndex}: ${this.selectedLineContent}`);
-                        this.model.splice(this.selectedLineIndex, 1, updatedLine);
-                        console.log(`Cambios guardados para la línea ${this.selectedLineIndex}: ${this.selectedLineContent}`);
+                        // Actualiza el contenido de la línea específica en el modelo de datos.
+                        this.model[this.selectedLineIndex].content = editedContent;
+                        // Opcional: Si estás usando `parsedModel` para mostrar el contenido, también deberías actualizarlo.
+                        this.parsedModel[this.selectedLineIndex].parsedContent = marked.parse(editedContent);
                     }
                     this.closeModal();
                 },
                 closeModal() {
                     this.isModalOpen = false;
+                },
+                updateLine(index, newContent) {
+                    const tags = newContent.match(/#[^\s]+/g) || [];
+                    const tagsParsed = tags.map(tag => `<span class="${tag.substring(1)}">${tag.substring(1)}</span>`).join('');
+                    const parsedContent = this.parseContent(newContent); // Asume la existencia de esta función
+                    Vue.set(this.model, index, {
+                        ...this.model[index],
+                        content: newContent,
+                        parsedContent: parsedContent,
+                        tags: tags.map(tag => tag.substring(1)),
+                        tagsParsed: tagsParsed
+                    });
                 },
                 downloadMarkdown() {
                     console.log(`boton pulsado`);
