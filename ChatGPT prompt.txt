@@ -1,4 +1,4 @@
-Estoy desarrollando una aplicación web . En el archivo adjunto encontrarás el código completo y actualizado . Luego te haré preguntas .
+Estoy desarrollando una aplicación web que se centra en la carga, edición y descarga de archivos Markdown sin necesidades complejas como bases de datos o manejo de múltiples usuarios, con un enfoque compacto y todo-en-uno efectivo que facilite la distribución y el uso de la aplicación. En el archivo adjunto encontrarás el código completo y actualizado . Luego te haré preguntas .
 
 Resumen del contexto y objetivos para tu aplicación Vue:
 
