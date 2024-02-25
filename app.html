@@ -117,22 +117,6 @@
                     selectedLineIndex: null,
                 };
             },
-            watch: {
-                model: {
-                    deep: true,
-                    handler(newVal, oldVal) {
-                    newVal.forEach((item, index) => {
-                        const oldItem = oldVal[index];
-                        if (JSON.stringify(item) !== JSON.stringify(oldItem)) {
-                        console.log(`Índice ${index} ha cambiado.`);
-                        console.log(`Valor antiguo: ${JSON.stringify(oldItem)}`);
-                        console.log(`Valor nuevo: ${JSON.stringify(item)}`);
-                        }
-                    });
-                    this.regenerateLine(index);
-                    }
-                }
-                },
             computed: {
                 parsedModel() {
                 return this.model.map(line => {
