@@ -15,13 +15,22 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!-- Editor's Style -->
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <style>
-        .md-line {
-            display: flex;
-            /* o display: grid; dependiendo de tu estructura */
-            gap: 10px;
-            /* Ajusta este valor según lo necesites */
-        }
-    </style>
+    .md-line {
+        display: flex;
+        /* o display: grid; dependiendo de tu estructura */
+        gap: 10px;
+        /* Ajusta este valor según lo necesites */
+    }
+    .md-line-container-middle > div {
+    /* Tus estilos aquí */
+    border-bottom: 1px solid #F5F5F5;
+    padding: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    .toastui-editor-defaultUI div[contenteditable="true"] {
+        text-align: left;
+    }
+        </style>
 
 </head>
 
@@ -75,7 +84,7 @@
     <button id="downloadBtn" @click="downloadMarkdown" class="btn ...">⬇️ Download</button>
     <div id="vue-app">
         <!-- El input de archivo Markdown se moverá aquí, gestionado por Vue -->
-        <input type="file" @change="loadAndParseMarkdown" accept=".md">
+        <input type="file" @change="loadAndParseMarkdown" accept=".md" class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
         <!-- El resto de tu aplicación Vue -->
         <div id="vue-app">
             <div class="modelContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
@@ -88,7 +97,7 @@
                             <div
                                 class="md-line-container-middle md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2">
                                 <div v-html="line.parsedContent"></div>
-                            </div><button @click="openModal(line)" class="btn btn-primary">✏️</button>
+                            </div><button @click="openModal(line)" class="btn inline-block rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-neutral-100 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 m-0 p-2">✏️</button>
                             <div class="md-line-container-right tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3"
                                 v-html="line.tagsParsed"></div>
                         </div>
@@ -104,17 +113,14 @@
                             <div id="editor-container"></div>
 
                         </div>
-                        <button class="btn btn-primary mt-4" @click="saveChanges">Guardar Cambios</button>
-                        <button class="btn btn-secondary mt-4" @click="closeModal">Cerrar</button>
+                        <button class="btn m-2" @click="saveChanges">Save changes</button>
+                        <button class="btn m-2" @click="closeModal">Close window</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
     <div id="markdownContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
-
     </div>
 
     <script>
@@ -195,18 +201,22 @@
                     console.log(blockTitle);
                 },
                 importMetamodelData(blockTitle) {
-                    // Encuentra la sección en metamodel.sections que coincida con blockTitle
-                    const section = this.metamodel.sections.find(section => {
-                        console.log(`Buscando: ${blockTitle}, Encontrado: ${section.name}`);
-                        return section.name === blockTitle;
-                    });
-                    
-                    if (section) {
-                    // Si se encuentra la sección, añádela como array dentro del bloque
-                    // Asumiendo que tienes una estructura para almacenar los bloques, por ejemplo:
-                    this.model.push({ title: blockTitle, section: [section] });
-                    }
-                },
+    // Encuentra la sección que coincide con blockTitle
+    const section = this.metamodel.sections.find(s => s.name === blockTitle);
+    if (section) {
+        // Suponiendo que quieras actualizar un bloque específico en this.model
+        // Necesitarás identificar cuál bloque actualizar basado en blockTitle o alguna otra lógica
+        const blockIndex = this.model.findIndex(block => block.title === blockTitle);
+        if (blockIndex !== -1) {
+            // Si encontramos un bloque correspondiente, actualizamos ese bloque
+            // Aquí es donde decides cómo quieres incorporar la sección al bloque
+            // Por ejemplo, podrías querer añadir la sección encontrada a un array de secciones en el bloque
+            this.$set(this.model[blockIndex], 'section', section);
+        }
+    }
+    // Opcionalmente, devuelve la sección para uso externo
+    return section;
+},
                 processTags(content) {
                     const tags = content.match(/#[^\s]+/g) || [];
                     const tagsParsed = tags.map(tag => `<span data-tag="${tag.substring(1)}">${tag}</span>`).join('');
@@ -249,7 +259,7 @@
                     console.log("Modal abierta con contenido:", this.selectedLineContent, "ID:", line.id);
                     this.$nextTick(() => {
                         // Asegúrate de que el contenedor del editor esté disponible en el DOM
-                         this.initEditor();
+                        this.initEditor();
                     });
                 },
                 initEditor() {
@@ -259,26 +269,27 @@
                     this.editor = new toastui.Editor({
                             el: document.querySelector('#editor-container'),
                             initialEditType: 'markdown',
-                            previewStyle: 'vertical',
-                            height: '400px',
+                            previewStyle: 'tab',
+                            height: '500px',
+                            hideModeSwitch:true,
                             initialValue: this.selectedLineContent // Asume que `editingContent` es tu contenido actual que quieres editar
                     });
                 },
                 saveChanges() {
-    const editedContent = this.editor.getMarkdown();
-    if (this.selectedLineIndex !== null) {
-        const { tags, tagsParsed } = this.processTags(editedContent);
-        const blockTitle = this.extractBlockTitle(editedContent); // Asume que esta función devuelve el título del bloque
-        this.model.splice(this.selectedLineIndex, 1, {
-            ...this.model[this.selectedLineIndex],
-            content: editedContent,
-            tags: tags,
-            tagsParsed: tagsParsed,
-            blockTitle: blockTitle // Guarda el blockTitle extraído en la propiedad title del objeto
-        });
-    }
-    this.closeModal();
-},
+                    const editedContent = this.editor.getMarkdown();
+                    if (this.selectedLineIndex !== null) {
+                        const { tags, tagsParsed } = this.processTags(editedContent);
+                        const blockTitle = this.extractBlockTitle(editedContent); // Asume que esta función devuelve el título del bloque
+                        this.model.splice(this.selectedLineIndex, 1, {
+                            ...this.model[this.selectedLineIndex],
+                            content: editedContent,
+                            tags: tags,
+                            tagsParsed: tagsParsed,
+                            blockTitle: blockTitle // Guarda el blockTitle extraído en la propiedad title del objeto
+                        });
+                    }
+                    this.closeModal();
+                },
                 closeModal() {
                     this.isModalOpen = false;
                 },
