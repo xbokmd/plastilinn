@@ -87,18 +87,20 @@
         <input type="file" @change="loadAndParseMarkdown" accept=".md" class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
         <!-- El resto de tu aplicación Vue -->
             <h1 v-if="modelName">{{ modelName }}</h1>
-            <div class="modelContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
-                <div class="flex flex-col">
-                    <div class="md-block-wrapper">
-                        <div v-for="block in parsedModel" :key="block.id" class="md-block">
-                            <div class="md-block-container-left text-center p-2 custom-flex-1 chat chat-bubble chat-end"><button
-                                    class="btn ai-magic-button py-1">🤖
-                                    AI magic</button></div>
-                            <div
-                                class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2">
+            <div class="modelContainer mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
+                <div class="flex flex-row w-full">
+                    <div class="md-block-wrapper w-full">
+                        <div v-for="block in parsedModel" :key="block.id" class="md-block flex">
+                            <div class="md-block-container-left w-1/4">
+                            <div class="block-metamodel" v-if="block.metamodel">
+                                <a :href="block.metamodel.info" target="_blank">{{ block.metamodel.name }}</a>
+                              </div>
+                            </div>
+                            <button class="btn ai-magic-button py-1">🤖 AI magic</button>
+                            <div class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
                                 <div v-html="block.parsedContent"></div>
                             </div><button @click="openModal(block)" class="btn inblock-block rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-neutral-100 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 m-0 p-2">✏️</button>
-                            <div class="md-block-container-right tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3"
+                            <div class="md-block-container-right tags-container text-gray-500 text-sm text-center p-2 w-1/4"
                                 v-html="block.tagsParsed"></div>
                         </div>
                     </div>
@@ -132,6 +134,7 @@
                     isModalOpen: false,
                     selectedBlockContent: '',
                     selectedBlockIndex: null,
+                    blocks: [], // Puedes inicializarlo como un array vacío o con valores iniciales
                 };
             },
             computed: {
