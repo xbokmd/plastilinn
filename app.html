@@ -15,13 +15,13 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!-- Editor's Style -->
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <style>
-    .md-line {
+    .md-block {
         display: flex;
         /* o display: grid; dependiendo de tu estructura */
         gap: 10px;
         /* Ajusta este valor según lo necesites */
     }
-    .md-line-container-middle > div {
+    .md-block-container-middle > div {
     /* Tus estilos aquí */
     border-bottom: 1px solid #F5F5F5;
     padding: 1rem;
@@ -89,17 +89,17 @@
             <h1 v-if="modelName">{{ modelName }}</h1>
             <div class="modelContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
                 <div class="flex flex-col">
-                    <div class="md-line-wrapper">
-                        <div v-for="line in parsedModel" :key="line.id" class="md-line">
-                            <div class="md-line-container-left text-center p-2 custom-flex-1 chat chat-bubble chat-end"><button
+                    <div class="md-block-wrapper">
+                        <div v-for="block in parsedModel" :key="block.id" class="md-block">
+                            <div class="md-block-container-left text-center p-2 custom-flex-1 chat chat-bubble chat-end"><button
                                     class="btn ai-magic-button py-1">🤖
                                     AI magic</button></div>
                             <div
-                                class="md-line-container-middle md-line-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2">
-                                <div v-html="line.parsedContent"></div>
-                            </div><button @click="openModal(line)" class="btn inline-block rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-neutral-100 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 m-0 p-2">✏️</button>
-                            <div class="md-line-container-right tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3"
-                                v-html="line.tagsParsed"></div>
+                                class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2">
+                                <div v-html="block.parsedContent"></div>
+                            </div><button @click="openModal(block)" class="btn inblock-block rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-neutral-100 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 m-0 p-2">✏️</button>
+                            <div class="md-block-container-right tags-container ext-gray-500 text-sm text-center p-2 custom-flex-3"
+                                v-html="block.tagsParsed"></div>
                         </div>
                     </div>
                 </div>
@@ -130,14 +130,14 @@
                     modelName: '',
                     modelMarkdown: '', // Campo para almacenar el contenido Markdown concatenado
                     isModalOpen: false,
-                    selectedLineContent: '',
-                    selectedLineIndex: null,
+                    selectedBlockContent: '',
+                    selectedBlockIndex: null,
                 };
             },
             computed: {
                 parsedModel() {
-                    return this.model.map(line => {
-                        return { ...line, parsedContent: marked.parse(line.content) };
+                    return this.model.map(block => {
+                        return { ...block, parsedContent: marked.parse(block.content) };
                     });
                 }
             },
@@ -200,9 +200,9 @@
                     console.log(this.model); // Verificar la carga y transformación del contenido
                 },
                 extractBlockTitle(blockContent) {
-                    const firstLine = blockContent.split(/\r?\n/)[0]; // Obtiene la primera línea
-                    const firstLineWithoutMarkdownHeaders = firstLine.replace(/^#+\s*/, ''); // Elimina los encabezados Markdown
-                    const blockTitle = firstLineWithoutMarkdownHeaders.replace(/#[^\s]+/g, '').trim(); // Elimina las etiquetas y espacios extras
+                    const firstBlock = blockContent.split(/\r?\n/)[0]; // Obtiene la primera línea
+                    const firstBlockWithoutMarkdownHeaders = firstBlock.replace(/^#+\s*/, ''); // Elimina los encabezados Markdown
+                    const blockTitle = firstBlockWithoutMarkdownHeaders.replace(/#[^\s]+/g, '').trim(); // Elimina las etiquetas y espacios extras
                     return blockTitle; // Retorna blockTitle después de haber llamado a importMetamodelData
                     console.log(blockTitle);
                 },
@@ -256,13 +256,13 @@
                         })
                         .catch(error => console.error('Error loading metamodel:', error));
                 },
-                openModal(line) {
-                    console.log("Línea clicada:", line);
-                    this.selectedLineContent = line.content;
+                openModal(block) {
+                    console.log("Línea clicada:", block);
+                    this.selectedBlockContent = block.content;
                     // Busca el índice de la línea basándose en el ID único
-                    this.selectedLineIndex = this.model.findIndex(item => item.id === line.id);
+                    this.selectedBlockIndex = this.model.findIndex(item => item.id === block.id);
                     this.isModalOpen = true;
-                    console.log("Modal abierta con contenido:", this.selectedLineContent, "ID:", line.id);
+                    console.log("Modal abierta con contenido:", this.selectedBlockContent, "ID:", block.id);
                     this.$nextTick(() => {
                         // Asegúrate de que el contenedor del editor esté disponible en el DOM
                         this.initEditor();
@@ -278,16 +278,16 @@
                             previewStyle: 'tab',
                             height: '500px',
                             hideModeSwitch:true,
-                            initialValue: this.selectedLineContent // Asume que `editingContent` es tu contenido actual que quieres editar
+                            initialValue: this.selectedBlockContent // Asume que `editingContent` es tu contenido actual que quieres editar
                     });
                 },
                 saveChanges() {
                     const editedContent = this.editor.getMarkdown();
-                    if (this.selectedLineIndex !== null) {
+                    if (this.selectedBlockIndex !== null) {
                         const { tags, tagsParsed } = this.processTags(editedContent);
                         const blockTitle = this.extractBlockTitle(editedContent); // Asume que esta función devuelve el título del bloque
-                        this.model.splice(this.selectedLineIndex, 1, {
-                            ...this.model[this.selectedLineIndex],
+                        this.model.splice(this.selectedBlockIndex, 1, {
+                            ...this.model[this.selectedBlockIndex],
                             content: editedContent,
                             tags: tags,
                             tagsParsed: tagsParsed,
@@ -300,7 +300,7 @@
                 closeModal() {
                     this.isModalOpen = false;
                 },
-                updateLine(index, newContent) {
+                updateBlock(index, newContent) {
                     const tags = newContent.match(/#[^\s]+/g) || [];
                     const tagsParsed = tags.map(tag => `<span class="${tag.substring(1)}">${tag.substring(1)}</span>`).join('');
                     const parsedContent = this.parseContent(newContent); // Asume la existencia de esta función
