@@ -35,6 +35,7 @@
 </head>
 
 <body class="bg-gray-100">
+    <div id="vue-app">
     <div id="top-container">
         <div class="navbar bg-base-100">
             <div class="flex-1">
@@ -49,7 +50,7 @@
                         </div>
                         <div class="flex space-x-3" style="justify-content: center;">
                             <button
-                                class="collapse-filter-button btn border-blue-500 text-blue-500 bg-white hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md transition"" type="
+                                class="collapse-filter-button btn border-blue-500 text-blue-500 bg-white hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md transition" type="
                                 button">
                                 🔍 Filter
                             </button>
@@ -82,11 +83,10 @@
         </div>
     </div>
     <button id="downloadBtn" @click="downloadMarkdown" class="btn ...">⬇️ Download</button>
-    <div id="vue-app">
         <!-- El input de archivo Markdown se moverá aquí, gestionado por Vue -->
         <input type="file" @change="loadAndParseMarkdown" accept=".md" class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
         <!-- El resto de tu aplicación Vue -->
-        <div id="vue-app">
+            <h1 v-if="modelName">{{ modelName }}</h1>
             <div class="modelContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
                 <div class="flex flex-col">
                     <div class="md-line-wrapper">
@@ -118,9 +118,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div id="markdownContainer" class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
     </div>
 
     <script>
@@ -131,6 +128,7 @@
                     model: [], // Se utilizará para almacenar el modelo de datos creado a partir del Markdown
                     lastId: 0, // Inicializa un contador para los IDs
                     modelName: '',
+                    modelMarkdown: '', // Campo para almacenar el contenido Markdown concatenado
                     isModalOpen: false,
                     selectedLineContent: '',
                     selectedLineIndex: null,
@@ -149,12 +147,19 @@
                     if (!file) {
                         return;
                     }
+                    const modelName = this.getModelNameFromFileName(file.name);
+                    this.modelName = modelName; // Actualiza modelName con el resultado de la función
                     const reader = new FileReader();
                     reader.onload = (e) => {
                         const content = e.target.result;
                         this.parseMarkdown(content);
                     };
                     reader.readAsText(file);
+                },
+                getModelNameFromFileName(fileName) {
+                    let name = fileName.replace(/\.md$/, ''); // Elimina la extensión ".md"
+                    name = name.replace(/ - saved.*$/, ''); // Elimina " - saved" y todo lo que sigue
+                    return name;
                 },
                 parseMarkdown(content) {
                     const blocks = []; // Almacenará los bloques identificados
@@ -191,6 +196,7 @@
                             metamodel: metamodel
                         };
                     });
+                    this.updateModelMarkdown();
                     console.log(this.model); // Verificar la carga y transformación del contenido
                 },
                 extractBlockTitle(blockContent) {
@@ -201,22 +207,22 @@
                     console.log(blockTitle);
                 },
                 importMetamodelData(blockTitle) {
-    // Encuentra la sección que coincide con blockTitle
-    const section = this.metamodel.sections.find(s => s.name === blockTitle);
-    if (section) {
-        // Suponiendo que quieras actualizar un bloque específico en this.model
-        // Necesitarás identificar cuál bloque actualizar basado en blockTitle o alguna otra lógica
-        const blockIndex = this.model.findIndex(block => block.title === blockTitle);
-        if (blockIndex !== -1) {
-            // Si encontramos un bloque correspondiente, actualizamos ese bloque
-            // Aquí es donde decides cómo quieres incorporar la sección al bloque
-            // Por ejemplo, podrías querer añadir la sección encontrada a un array de secciones en el bloque
-            this.$set(this.model[blockIndex], 'section', section);
-        }
-    }
-    // Opcionalmente, devuelve la sección para uso externo
-    return section;
-},
+                    // Encuentra la sección que coincide con blockTitle
+                    const section = this.metamodel.sections.find(s => s.name === blockTitle);
+                    if (section) {
+                        // Suponiendo que quieras actualizar un bloque específico en this.model
+                        // Necesitarás identificar cuál bloque actualizar basado en blockTitle o alguna otra lógica
+                        const blockIndex = this.model.findIndex(block => block.title === blockTitle);
+                        if (blockIndex !== -1) {
+                            // Si encontramos un bloque correspondiente, actualizamos ese bloque
+                            // Aquí es donde decides cómo quieres incorporar la sección al bloque
+                            // Por ejemplo, podrías querer añadir la sección encontrada a un array de secciones en el bloque
+                            this.$set(this.model[blockIndex], 'section', section);
+                        }
+                    }
+                    // Opcionalmente, devuelve la sección para uso externo
+                    return section;
+                },
                 processTags(content) {
                     const tags = content.match(/#[^\s]+/g) || [];
                     const tagsParsed = tags.map(tag => `<span data-tag="${tag.substring(1)}">${tag}</span>`).join('');
@@ -225,15 +231,18 @@
                         tagsParsed: tagsParsed
                     };
                 },
-                regenerateLine(index) {
-                    // Asume que tienes una función que procesa el contenido, por ejemplo, `parseContent`
-                    const parsedContent = this.parseContent(this.model[index].content);
-                    // Actualiza el elemento correspondiente en parsedModel
-                    this.$set(this.parsedModel, index, { ...this.parsedModel[index], parsedContent: parsedContent });
-                },
-                parseContent(content) {
-                    // Aquí va tu lógica para procesar el contenido
-                    return parsedContent;
+                updateModelMarkdown() {
+                    // Inicializa una variable para almacenar el contenido concatenado
+                    let concatenatedContent = '';
+
+                    // Recorre cada elemento del array model y concatena su contenido con saltos de línea
+                    this.model.forEach(item => {
+                    concatenatedContent += item.content + '\n';
+                    });
+
+                    // Guarda el contenido generado en el campo modelMarkdown del objeto model
+                    this.modelMarkdown = concatenatedContent;
+                    console.log(concatenatedContent);
                 },
                 downloadJSON() {
                     axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
@@ -246,9 +255,6 @@
                             }
                         })
                         .catch(error => console.error('Error loading metamodel:', error));
-                },
-                updateModelNameDisplay() {
-                    this.modelName = 'Nuevo Nombre'; // Lógica para actualizar el nombre del modelo
                 },
                 openModal(line) {
                     console.log("Línea clicada:", line);
@@ -288,6 +294,7 @@
                             blockTitle: blockTitle // Guarda el blockTitle extraído en la propiedad title del objeto
                         });
                     }
+                    this.updateModelMarkdown();
                     this.closeModal();
                 },
                 closeModal() {
@@ -306,16 +313,26 @@
                     });
                 },
                 downloadMarkdown() {
-                    console.log(`boton pulsado`);
-                    const markdownContent = this.model.map(item => item.content).join('\n\n');
+                    // Asume que modelMarkdown y modelName ya están actualizados
+                    const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
+                    const modelName = this.modelName; // Obtiene el nombre actual del modelo
+                    const timestamp = new Date().toISOString().replace(/[:\-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
+                    
+                    const fileName = `${modelName} - saved ${timestamp}.md`; // Construye el nombre del archivo
+
+                    // Crea un Blob con el contenido Markdown
                     const blob = new Blob([markdownContent], { type: 'text/markdown' });
+
+                    // Crea un enlace para descargar el archivo
                     const link = document.createElement('a');
                     link.href = URL.createObjectURL(blob);
-                    link.download = 'model-content.md';
+                    link.download = fileName;
+
+                    // Simula un clic en el enlace para iniciar la descarga y luego limpia
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
-                },
+                    },
             },
             mounted() {
                 this.downloadJSON(); // Otras inicializaciones pueden ir aquí
