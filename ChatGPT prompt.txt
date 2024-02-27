@@ -7,4 +7,4 @@ Uso de CDN: Prefieres importar librerías como Marked y Axios mediante CDN direc
 Distribución: A pesar del desarrollo modular, tu objetivo final es empaquetar y distribuir la aplicación como un único archivo HTML que sea autoejecutable en local, combinando HTML, CSS, y JavaScript en un solo fichero para simplificar la distribución.
 Preocupaciones: Estás consciente de las ventajas y desventajas de este enfoque, incluyendo cuestiones de rendimiento, mantenibilidad y depuración, pero consideras que es adecuado para el tamaño y las necesidades de tu proyecto.
 
-No respondas nada, solo espera a mis preguntas
+Examina el código de la aplicación y no respondas nada, solo espera a mis preguntas

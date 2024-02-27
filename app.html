@@ -14,8 +14,7 @@
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/vue-multiselect@2.1.6"></script>
-    <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.6/dist/vue-multiselect.min.css">
+    
     <style>
 a {
     color: blue;
@@ -100,6 +99,14 @@ a {
             class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
         <!-- El resto de tu aplicación Vue -->
         <h1 v-if="modelName">{{ modelName }}</h1>
+        <select v-model="selectedTags" multiple>
+            <option v-for="tag in tags" :value="tag">{{ tag }}</option>
+          </select>
+          <div class="model-container">
+            <div v-for="content in filteredContents" class="md-block">
+              {{ content.text }}
+            </div>
+          </div>
         <div class="modelContainer mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
             <div class="flex flex-row w-full">
                 <div class="md-block-wrapper w-full">
@@ -244,10 +251,18 @@ a {
                     return section;
                 },
                 processTags(content) {
-                    const tags = content.match(/(?:^|\s)(#[^\s]+)/g) || [];
-                    const tagsParsed = tags.map(tag => `<span data-tag="${tag.substring(1)}">${tag}</span>`).join('');
+                    // Usando matchAll para capturar el texto después del #
+                    const regex = /(?:^|\s)#([^\s]+)/g;
+                    const matches = Array.from(content.matchAll(regex));
+
+                    // Extraemos solo las etiquetas sin el símbolo # para tags
+                    const tags = matches.map(match => match[1]);
+
+                    // Generamos el HTML para tagsParsed
+                    const tagsParsed = tags.map(tag => `<span data-tag="${tag}">#${tag}</span>`).join('');
+
                     return {
-                        tags: tags.map(tag => tag.substring(1)), // Elimina el símbolo '#'
+                        tags: tags, // Ya no necesitamos eliminar el símbolo '#' aquí, porque ya lo hicimos arriba
                         tagsParsed: tagsParsed
                     };
                 },
@@ -410,7 +425,6 @@ a {
                 });
             },
         })
-        .component('vue-multiselect', window.VueMultiselect.default) // Registra vue-multiselect como un componente global
         .mount('#vue-app');
     </script>
     <script src='https://cdn.botpress.cloud/webchat/v1/inject.js'></script>
