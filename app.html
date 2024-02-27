@@ -96,12 +96,19 @@ a {
         <!-- El input de archivo Markdown se moverá aquí, gestionado por Vue -->
         <input type="file" @change="loadAndParseMarkdown" accept=".md"
             class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
-        <!-- El resto de tu aplicación Vue -->
+        <!-- El resto de tu aplicación Vue -->xxxx
+        <div class="mt-4 w-4/5 mx-auto">
+            <div class="collapse-filter-content">
+                <select v-model="selectedTags" class="select select-bordered w-full" multiple>
+                    <option v-for="tag in allTags" :key="tag" :value="tag">{{ tag }}</option>
+                </select>
+            </div>
+        </div>
         <h1 v-if="modelName">{{ modelName }}</h1>
         <div class="modelContainer mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
             <div class="flex flex-row w-full">
                 <div class="md-block-wrapper w-full">
-                    <div v-for="block in parsedModel" :key="block.id" class="md-block flex">
+                    <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
                         <div class="md-block-container-left w-1/4">
                             <div class="block-metamodel" v-if="block.metamodel">
                                 <a :href="block.metamodel.info" target="_blank">{{ block.metamodel.name }}</a>
@@ -149,15 +156,28 @@ a {
                     selectedBlockIndex: null,
                     blocks: [], // Puedes inicializarlo como un array vacío o con valores iniciales
                     currentBlockId: null,
+                    tags: [], // Inicializa tags aquí
+                    allTags: new Set(),
+                    selectedTags: [] // Almacena las etiquetas seleccionadas
                 };
             },
             computed: {
-                parsedModel() {
-                    return this.model.map(block => {
-                        return { ...block, parsedContent: marked.parse(block.content) };
+            parsedModel() {
+                return this.model.map(block => {
+                    return { ...block, parsedContent: marked.parse(block.content) };
+                });
+            },
+            filteredBlocks() {
+                if (this.selectedTags.length === 0) {
+                    return this.model; // Si no hay etiquetas seleccionadas, mostrar todos los bloques
+                } else {
+                    // Filtrar los bloques que contienen al menos una de las etiquetas seleccionadas
+                    return this.model.filter(block => {
+                        return this.selectedTags.some(tag => block.tags.includes(tag));
                     });
                 }
             },
+        },
             methods: {
                 loadAndParseMarkdown(event) {
                     const file = event.target.files[0];
@@ -200,18 +220,20 @@ a {
                     // Actualiza this.model para que contenga bloques en lugar de líneas individuales
                     this.model = blocks.map((blockContent, index) => {
                         this.lastId += 1; // Incrementa el ID para cada bloque
-                        const { tags, tagsParsed } = this.processTags(blockContent);
-                        const blockTitle = this.extractBlockTitle(blockContent);
-                        console.log(blockTitle);
-                        const metamodel = this.importMetamodelData(blockTitle);
-                        return {
-                            id: this.lastId,
-                            content: blockContent,
-                            tags: tags,
-                            tagsParsed: tagsParsed,
-                            blockTitle: blockTitle,
-                            metamodel: metamodel
-                        };
+    const { tags, tagsParsed } = this.processTags(blockContent);
+    const blockTitle = this.extractBlockTitle(blockContent);
+    const parsedContent = marked.parse(blockContent); // Parsea el contenido Markdown
+    console.log(blockTitle);
+    const metamodel = this.importMetamodelData(blockTitle);
+    return {
+        id: this.lastId,
+        content: blockContent,
+        tags: tags,
+        tagsParsed: tagsParsed,
+        blockTitle: blockTitle,
+        parsedContent: parsedContent, // Agrega la propiedad parsedContent al objeto block
+        metamodel: metamodel
+    };
                     });
                     this.updateModelMarkdown();
                     console.log(this.model); // Verificar la carga y transformación del contenido
@@ -268,7 +290,28 @@ a {
 
                     // Guarda el contenido generado en el campo modelMarkdown del objeto model
                     this.modelMarkdown = concatenatedContent;
+                    this.updateTagsArray();
                     console.log(concatenatedContent);
+                },
+                updateTagsArray() {
+                    // Cargar la lista de bloques
+                    this.blocks = this.model; // Cambia this.model.block a this.model
+                    this.blocks.forEach(block => block.tags.forEach(tag => this.allTags.add(tag)));
+                    this.tags = Array.from(this.allTags);
+                    console.log(this.tags);
+                    // Inicializar el filtrado
+                    this.filterBlocks([]);
+                },
+                filterBlocks(tags) {
+                    // Implementa la lógica para filtrar los bloques aquí
+                    // Utiliza la lista de bloques `this.model` y los tags seleccionados `tags`
+                    // para filtrar los bloques según los tags
+
+                    // Ejemplo de implementación:
+                    // Filtra los bloques que contienen al menos uno de los tags seleccionados
+                    this.filteredBlocks = this.model.filter(block => {
+                        return tags.some(tag => block.tags.includes(tag));
+                    });
                 },
                 downloadJSON() {
                     axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
@@ -314,13 +357,14 @@ a {
                     const editedContent = this.editor.getMarkdown();
                     if (this.selectedBlockIndex !== null) {
                         const { tags, tagsParsed } = this.processTags(editedContent);
-                        const blockTitle = this.extractBlockTitle(editedContent); // Asume que esta función devuelve el título del bloque
+                        const blockTitle = this.extractBlockTitle(editedContent);
                         this.model.splice(this.selectedBlockIndex, 1, {
                             ...this.model[this.selectedBlockIndex],
                             content: editedContent,
                             tags: tags,
                             tagsParsed: tagsParsed,
-                            blockTitle: blockTitle // Guarda el blockTitle extraído en la propiedad title del objeto
+                            blockTitle: blockTitle,
+                            parsedContent: marked.parse(editedContent) // Actualiza parsedContent con el nuevo contenido editado
                         });
                     }
                     this.updateModelMarkdown();
