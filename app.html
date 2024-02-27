@@ -12,9 +12,15 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!-- Editor's Style -->
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-multiselect@2.1.6"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.6/dist/vue-multiselect.min.css">
     <style>
+a {
+    color: blue;
+    text-decoration: underline;
+}
         .md-block {
             display: flex;
             /* o display: grid; dependiendo de tu estructura */
@@ -103,7 +109,6 @@
                                 <a :href="block.metamodel.info" target="_blank">{{ block.metamodel.name }}</a>
                             </div>
                         </div>
-                        <button class="btn ai-magic-button py-1">🤖 AI magic</button>
                         <div
                             class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
                             <div v-html="block.parsedContent"></div>
@@ -124,9 +129,9 @@
                         <div class="mt-2">
                             <div id="editor-container"></div>
                         </div>
-                        <button class="btn m-2" @click="sendMessageToBot()">Enviar Mensaje al Bot</button>
-                        <button class="btn m-2" @click="saveChanges">Save changes</button>
-                        <button class="btn m-2" @click="closeModal">Close window</button>
+                        <button class="btn m-2" @click="sendMessageToBot()">🤖 AI suggest content</button>
+                        <button class="btn m-2" @click="saveChanges">💾 Save changes</button>
+                        <button class="btn m-2" @click="closeModal">❌ Close window</button>
                     </div>
                 </div>
             </div>
@@ -239,7 +244,7 @@
                     return section;
                 },
                 processTags(content) {
-                    const tags = content.match(/#[^\s]+/g) || [];
+                    const tags = content.match(/(?:^|\s)(#[^\s]+)/g) || [];
                     const tagsParsed = tags.map(tag => `<span data-tag="${tag.substring(1)}">${tag}</span>`).join('');
                     return {
                         tags: tags.map(tag => tag.substring(1)), // Elimina el símbolo '#'
@@ -353,12 +358,12 @@
                 },
                 generateSuggestionPrompt() {
                     console.log("currentBlockId:", this.currentBlockId);
-    console.log("model:", this.model); // Ahora imprime el arreglo model para verificar
-    let suggestionPrompt = '';
-    let block = this.model.find(b => b.id === this.currentBlockId); // Cambia this.blocks por this.model
-    console.log("block: ", block);
-    let blockTitle = block ? block.blockTitle : 'Título no encontrado';
-    console.log("blockTitle: ", blockTitle);
+                    console.log("model:", this.model); // Ahora imprime el arreglo model para verificar
+                    let suggestionPrompt = '';
+                    let block = this.model.find(b => b.id === this.currentBlockId); // Cambia this.blocks por this.model
+                    console.log("block: ", block);
+                    let blockTitle = block ? block.blockTitle : 'Título no encontrado';
+                    console.log("blockTitle: ", blockTitle);
                     let modelMarkdown = this.modelMarkdown;
                     let blockExample = block ? block.metamodel.example : 'Example no encontrado';
                     console.log("blockExample: ", blockExample);
@@ -404,7 +409,9 @@
                     }
                 });
             },
-        }).mount('#vue-app');
+        })
+        .component('vue-multiselect', window.VueMultiselect.default) // Registra vue-multiselect como un componente global
+        .mount('#vue-app');
     </script>
     <script src='https://cdn.botpress.cloud/webchat/v1/inject.js'></script>
     <script src='https://mediafiles.botpress.cloud/b0e00411-1da8-4c0c-98ec-5b6c44a7fa7b/webchat/config.js' defer></script>
