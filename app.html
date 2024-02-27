@@ -14,7 +14,6 @@
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
     <style>
 a {
     color: blue;
@@ -99,14 +98,6 @@ a {
             class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
         <!-- El resto de tu aplicación Vue -->
         <h1 v-if="modelName">{{ modelName }}</h1>
-        <select v-model="selectedTags" multiple>
-            <option v-for="tag in tags" :value="tag">{{ tag }}</option>
-          </select>
-          <div class="model-container">
-            <div v-for="content in filteredContents" class="md-block">
-              {{ content.text }}
-            </div>
-          </div>
         <div class="modelContainer mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
             <div class="flex flex-row w-full">
                 <div class="md-block-wrapper w-full">
