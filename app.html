@@ -109,6 +109,26 @@
                 </div>
             </div>
         </div>
+
+        <!-- Botón del icono de hamburguesa para controlar la visibilidad de la columna -->
+<!-- Contenedor para el botón del icono de hamburguesa -->
+<div class="fixed top-1/2 right-0 transform -translate-y-1/2 z-50">
+    <button id="toggleSidebar" class="p-4 bg-blue-500 rounded-l-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <!-- Icono de hamburguesa -->
+        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+    </button>
+</div>
+
+        <!-- Columna lateral -->
+        <div id="sidebar" class="fixed top-0 right-0 z-50 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+            <!-- Contenido de la columna lateral -->
+            <div class="p-5">
+                <p>Contenido de la columna</p>
+                <!-- Agrega más contenido aquí según sea necesario -->
+            </div>
+        </div>
         <div id="model-title" class="text-center mt-6">
             <!-- El nombre del modelo se mostrará aquí -->
         </div>
@@ -133,28 +153,12 @@
         <div class="mt-4 w-4/5 mx-auto">
 
         </div>
-        <div class="mt-4 w-4/5 mx-auto">
+        <div class="grid grid-cols-4 gap-4">
+            <div class="justify-self-center">🆔 Plastilinn id</div>
+            <div class="col-span-2 justify-self-center"><h1 v-if="modelName">{{ modelName }}</h1></div>
+            <div class="justify-self-center">🏷️tags</div>
         </div>
-        <div class="mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
-            <div class="flex flex-row w-full">
-                <div class="md-block-wrapper w-full">
-                    <div class="md-block flex">
-                        <div class="md-block-container-left w-1/4">
-                            <div>
-                                🆔 Plastilinn id
-                            </div>
-                        </div>
-                        <div
-                            class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
-                            <h1 v-if="modelName">{{ modelName }}</h1>
-                        </div>
-                        <div
-                            class="md-block-container-right tags-container text-gray-500 text-sm text-center p-2 w-1/4">
-                            tags</div>
-                    </div>
-                </div>
-            </div>
-            <div class="modelContainer mt-4 ml-2 mr-2 text-gray-900 min-h-screen">
+            <div class="modelContainer mt-4 ml-2 mr-2">
                 <div class="flex flex-row w-full">
                     <div class="md-block-wrapper w-full">
                         <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
@@ -183,7 +187,7 @@
                         <!-- Reemplazado por la lista de enlaces generados dinámicamente -->
                         <ul>
                             <li v-for="block in model" :key="block.id">
-                                <a :href="'#'"{{ block.blockTitle }}>{{ block.blockTitle }}</a>
+                                <a :href="'#' + block.blockTitle">{{ block.blockTitle }}</a>
                             </li>
                         </ul>
                     </div>
@@ -437,7 +441,7 @@
                             initialEditType: 'markdown',
                             previewStyle: 'tab',
                             height: '340px',
-                            width: '400px',
+                            width: '500px',
                             hideModeSwitch: true,
                             initialValue: this.selectedBlockContent // Asume que `editingContent` es tu contenido actual que quieres editar
                         });
