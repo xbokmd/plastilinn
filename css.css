@@ -59,7 +59,6 @@
     flex-wrap: wrap;
     align-items: flex-start; /* Alinea los ítems al inicio del contenedor */
     justify-content: flex-start; /* Alinea los ítems al inicio (izquierda) */
-    padding: 10px;
     gap: 5px; /* Espacio entre etiquetas */
 }
 
