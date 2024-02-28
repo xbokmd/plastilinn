@@ -124,7 +124,7 @@
                 </div>
             </div>
             <!-- Filtrar los bloques según los blockTitles seleccionados -->
-            <div class="flex justify-between" v-if="filterVisible">
+            <div class="flex justify-between bg-white" v-if="filterVisible">
                 <div class="flex-1 p-2">
                     <div class="collapse-filter-content">
                         Filter blocks
@@ -133,13 +133,21 @@
                         </select>
                     </div>
                 </div>
-                <div class="flex-1 p-2">Div 2</div>
+                <div class="flex-1 p-2">
+                    <label class="input input-bordered flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70"><path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" /></svg>
+                    <input v-model="searchQuery" type="text" placeholder="Buscar en bloques..." class="input">
+                </label>
+                </div>
                 <div class="flex-1 p-2">
                     <div class="collapse-filter-content">
-                        Filter tags
+                        Filter tags <button @click="resetSelectedTags" class="btn">Reset</button>
                         <select v-model="selectedTags" class="select select-bordered w-full" multiple>
-                            <option v-for="tag in allTags" :key="tag" :value="tag">{{ tag }}</option>
+                            <option v-for="tag in allTags" :key="tag" :value="tag" :data-tag="tag">{{ tag }}</option>
                         </select>
+                        <div class="m-2">
+                            <span v-for="tag in selectedTags" :key="tag" class="badge" :data-tag="tag">{{ tag }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -188,7 +196,7 @@
         <div class="modelContainer mt-24 ml-2 mr-2">
             <div class="flex flex-row w-full">
                 <div class="md-block-wrapper w-full">
-                    <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
+                    <div v-for="block in searchFilteredBlocks" :key="block.id" class="md-block flex">
                         <div class="md-block-container-left w-1/4 w-full bg-gray-200 rounded-lg p-2 mt-1 mb-1">
                             <div :id="block.metamodel.name" class="block-metamodel section inline-flex" v-if="block.metamodel">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -298,6 +306,7 @@
                     filterVisible: false,
                     blockTitles: [], // Arreglo para almacenar todos los blockTitles únicos
                     selectedBlockTitles: [], // Arreglo para almacenar los blockTitles seleccionados
+                    searchQuery: '',
                 };
             },
             computed: {
@@ -313,6 +322,14 @@
                     return tagMatch && titleMatch;
                     });
                 },
+                searchFilteredBlocks() {
+                    if (!this.searchQuery) return this.filteredBlocks; // Utiliza filteredBlocks para mantener los filtros anteriores
+                    return this.filteredBlocks.filter(block => {
+                    // Verifica si el contenido del bloque incluye el texto de búsqueda
+                    // Asume que 'parsedContent' es el contenido que deseas buscar
+                    return block.parsedContent.toLowerCase().includes(this.searchQuery.toLowerCase());
+                    });
+                }
             },
             methods: {
                 loadAndParseMarkdown(event) {
@@ -460,6 +477,9 @@
                 },
                 toggleFilter() {
                     this.filterVisible = !this.filterVisible;
+                },
+                resetSelectedTags() {
+                    this.selectedTags = [];
                 },
                 downloadJSON() {
                     axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
