@@ -45,9 +45,16 @@
             position: relative;
         }
 
+        .section {
+            scroll-margin-top: 10rem; /* Asegúrate de que esto sea igual o más grande que la altura de tu navbar */
+        }
+        html {
+  scroll-behavior: smooth;
+}
+
 #top-container {
     position: fixed;
-    top: 20rem; /* Ajusta este valor al alto de tu navbar */
+    top: 0rem; /* Ajusta este valor al alto de tu navbar */
     left: 0;
     width: 100%;
     z-index: 999; /* Asegura que este elemento se mantenga por encima del contenido de la página pero debajo de la navbar si se superponen */
@@ -63,7 +70,7 @@
 
 <body class="bg-gray-100">
     <div id="vue-app">
-        <div id="top2-container" class="sticky top-0 z-50 shadow-xl">
+        <div id="top-container" class="sticky top-0 z-50 shadow-xl">
             <div class="navbar bg-base-100 shadow-xl">
                 <div class="navbar-start">
                     <a class="btn btn-ghost text-xl">Plastilinn</a>
@@ -116,8 +123,28 @@
                     blah
                 </div>
             </div>
-            <div class="flex justify-end bg-white opacity-80 w-full p-2">
-                <div class="flex justify-start">
+            <!-- Filtrar los bloques según los blockTitles seleccionados -->
+            <div class="flex justify-between" v-if="filterVisible">
+                <div class="flex-1 p-2">
+                    <div class="collapse-filter-content">
+                        Filter blocks
+                        <select v-model="selectedBlockTitles" class="select select-bordered w-full" multiple>
+                            <option v-for="block in model" :key="block.id" :value="block.blockTitle">{{ block.blockTitle }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex-1 p-2">Div 2</div>
+                <div class="flex-1 p-2">
+                    <div class="collapse-filter-content">
+                        Filter tags
+                        <select v-model="selectedTags" class="select select-bordered w-full" multiple>
+                            <option v-for="tag in allTags" :key="tag" :value="tag">{{ tag }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-end bg-white w-full p-2">
+                <div class="flex justify-start bg-gray-200 rounded-lg p-2 m-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                         fill="currentColor" class="w-6 h-6">
                         <path fill-rule="evenodd"
@@ -125,10 +152,10 @@
                             clip-rule="evenodd" />
                     </svg>Plastilinn id
                 </div>
-                <div class="flex-1 text-center">
+                <div class="flex-1 text-center bg-gray-200 rounded-lg p-2 m-2">
                     <h4 v-if="modelName">{{ modelName }}</h4>
                 </div>
-                <div class="flex justify-end">
+                <div class="flex justify-end bg-gray-200 rounded-lg p-2 m-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                         fill="currentColor" class="w-6 h-6">
                         <path fill-rule="evenodd"
@@ -139,9 +166,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- Filtrar los bloques según los blockTitles seleccionados -->
-        <div class="mt-4 ml-2 mr-2">
+        <div class="mt-48 ml-2 mr-2">
             <div class="flex flex-row w-full">
                 <div class="md-block-wrapper w-full">
                     <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
@@ -160,19 +185,18 @@
                 </div>
             </div>
         </div>
-
-        <div class="modelContainer mt-4 ml-2 mr-2">
+        <div class="modelContainer mt-24 ml-2 mr-2">
             <div class="flex flex-row w-full">
                 <div class="md-block-wrapper w-full">
                     <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
                         <div class="md-block-container-left w-1/4 w-full bg-gray-200 rounded-lg p-2 mt-1 mb-1">
-                            <div class="block-metamodel inline-flex" v-if="block.metamodel">
+                            <div :id="block.metamodel.name" class="block-metamodel section inline-flex" v-if="block.metamodel">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                     class="w-6 h-6">
                                     <path fill-rule="evenodd"
                                         d="M8.161 2.58a1.875 1.875 0 0 1 1.678 0l4.993 2.498c.106.052.23.052.336 0l3.869-1.935A1.875 1.875 0 0 1 21.75 4.82v12.485c0 .71-.401 1.36-1.037 1.677l-4.875 2.437a1.875 1.875 0 0 1-1.676 0l-4.994-2.497a.375.375 0 0 0-.336 0l-3.868 1.935A1.875 1.875 0 0 1 2.25 19.18V6.695c0-.71.401-1.36 1.036-1.677l4.875-2.437ZM9 6a.75.75 0 0 1 .75.75V15a.75.75 0 0 1-1.5 0V6.75A.75.75 0 0 1 9 6Zm6.75 3a.75.75 0 0 0-1.5 0v8.25a.75.75 0 0 0 1.5 0V9Z"
                                         clip-rule="evenodd" />
-                                </svg> <a :href="block.metamodel.info" :id="block.metamodel.name" target="_blank">{{
+                                </svg><a :href="block.metamodel.info" target="_blank">{{
                                     block.metamodel.name }}</a>
                             </div>
                         </div>
@@ -283,22 +307,11 @@
                     });
                 },
                 filteredBlocks() {
-                    if (this.selectedTags.length === 0) {
-                        return this.model; // Si no hay etiquetas seleccionadas, mostrar todos los bloques
-                    } else {
-                        // Filtrar los bloques que contienen al menos una de las etiquetas seleccionadas
-                        return this.model.filter(block => {
-                            return this.selectedTags.some(tag => block.tags.includes(tag));
-                        });
-                    }
-                },
-                filteredBlocks() {
-                    if (this.selectedBlockTitles.length === 0) {
-                        return this.model; // Si no hay blockTitles seleccionados, mostrar todos los bloques
-                    } else {
-                        // Filtrar los bloques cuyo blockTitle está en selectedBlockTitles
-                        return this.model.filter(block => this.selectedBlockTitles.includes(block.blockTitle));
-                    }
+                    return this.model.filter(block => {
+                    const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
+                    const titleMatch = this.selectedBlockTitles.length === 0 || this.selectedBlockTitles.includes(block.blockTitle);
+                    return tagMatch && titleMatch;
+                    });
                 },
             },
             methods: {
