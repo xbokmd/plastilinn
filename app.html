@@ -46,22 +46,17 @@
         }
 
         .section {
-            scroll-margin-top: 10rem; /* Asegúrate de que esto sea igual o más grande que la altura de tu navbar */
+            scroll-margin-top: 10rem;
+            /* Asegúrate de que esto sea igual o más grande que la altura de tu navbar */
         }
-        html {
-  scroll-behavior: smooth;
-}
 
-#top-container {
-    position: fixed;
-    top: 0rem; /* Ajusta este valor al alto de tu navbar */
-    left: 0;
-    width: 100%;
-    z-index: 999; /* Asegura que este elemento se mantenga por encima del contenido de la página pero debajo de la navbar si se superponen */
-    overflow-y: auto; /* Permite el desplazamiento dentro del elemento si es necesario */
-}
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         svg[xmlns="http://www.w3.org/2000/svg"] {
-            margin-right: 1rem;
+            margin-right: 0.2rem;
             /* Ajusta el margen derecho según tus necesidades */
         }
     </style>
@@ -70,185 +65,203 @@
 
 <body class="bg-gray-100">
     <div id="vue-app">
-        <div id="top-container" class="sticky top-0 z-50 shadow-xl">
-            <div class="navbar bg-base-100 shadow-xl">
-                <div class="navbar-start">
-                    <a class="btn btn-ghost text-xl">Plastilinn</a>
-                </div>
-                <div class="navbar-center">
-                    <div class="flex flex-row flex-wrap">
-                        <div class="drawer-content">
-                            <!-- Page content here -->
-                            <label for="my-drawer" class="btn drawer-button btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                    class="w-6 h-6">
-                                    <path fill-rule="evenodd"
-                                        d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                Index
-                            </label>
-                        </div>
-                        <div class="btn btn-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            Guide
+        <div class="grid grid-cols-12 grid-rows-5 gap-1 p-0 lg:p-1 h-screen">
+            <div class="col-span-4 row-span-5 lg:block p-1 rounded">
+                <div class="flex flex-row flex-wrap gap-2">
+                    <div class="btn btn-primary btn-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd"
+                                d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Guide
                         </label>
-                        </div>
-                        <button @click="toggleFilter" class="collapse-filter-button btn btn-sm">
+                    </div>
+                    <div class="drawer-content">
+                        <!-- Page content here -->
+                        <label for="my-drawer" class="btn btn-primary drawer-button btn-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                 class="w-6 h-6">
                                 <path fill-rule="evenodd"
-                                    d="M3.792 2.938A49.069 49.069 0 0 1 12 2.25c2.797 0 5.54.236 8.209.688a1.857 1.857 0 0 1 1.541 1.836v1.044a3 3 0 0 1-.879 2.121l-6.182 6.182a1.5 1.5 0 0 0-.439 1.061v2.927a3 3 0 0 1-1.658 2.684l-1.757.878A.75.75 0 0 1 9.75 21v-5.818a1.5 1.5 0 0 0-.44-1.06L3.13 7.938a3 3 0 0 1-.879-2.121V4.774c0-.897.64-1.683 1.542-1.836Z"
+                                    d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
                                     clip-rule="evenodd" />
-                            </svg>
-                            Filter
-                        </button>
-                        <button id="downloadBtn" @click="downloadMarkdown" class="btn btn-sm"><svg
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.5 3.75a6 6 0 0 0-5.98 6.496A5.25 5.25 0 0 0 6.75 20.25H18a4.5 4.5 0 0 0 2.206-8.423 3.75 3.75 0 0 0-4.133-4.303A6.001 6.001 0 0 0 10.5 3.75Zm2.25 6a.75.75 0 0 0-1.5 0v4.94l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V9.75Z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            Download
-                        </button>
-                    </div>
-                </div>
-                <div class="navbar-end">
-                    blah
-                </div>
-            </div>
-            <!-- Filtrar los bloques según los blockTitles seleccionados -->
-            <div class="flex justify-between bg-white" v-if="filterVisible">
-                <div class="flex-1 p-2">
-                    <div class="collapse-filter-content">
-                        Filter blocks
-                        <select v-model="selectedBlockTitles" class="select select-bordered w-full" multiple>
-                            <option v-for="block in model" :key="block.id" :value="block.blockTitle">{{ block.blockTitle }}</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="flex-1 p-2">
-                    <label class="input input-bordered flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70"><path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" /></svg>
-                    <input v-model="searchQuery" type="text" placeholder="Buscar en bloques..." class="input">
-                </label>
-                </div>
-                <div class="flex-1 p-2">
-                    <div class="collapse-filter-content">
-                        Filter tags <button @click="resetSelectedTags" class="btn">Reset</button>
-                        <select v-model="selectedTags" class="select select-bordered w-full" multiple>
-                            <option v-for="tag in allTags" :key="tag" :value="tag" :data-tag="tag">{{ tag }}</option>
-                        </select>
-                        <div class="m-2">
-                            <span v-for="tag in selectedTags" :key="tag" class="badge" :data-tag="tag">{{ tag }}</span>
+                            </svg>Index
+                        </label>
+                        <div class="drawer">
+                            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                            <div class="drawer-side">
+                                <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                                <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                                    <div id="sidebar">
+                                        <!-- Reemplazado por la lista de enlaces generados dinámicamente -->
+                                        <ul>
+                                            <li v-for="block in model.filter(b => b.blockType === 'section')" :key="block.id">
+                                                <a :href="'#' + block.blockTitle">{{ block.blockTitle }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="flex justify-end bg-white w-full p-2">
-                <div class="flex justify-start bg-gray-200 rounded-lg p-2 m-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                        fill="currentColor" class="w-6 h-6">
-                        <path fill-rule="evenodd"
-                            d="M8.161 2.58a1.875 1.875 0 0 1 1.678 0l4.993 2.498c.106.052.23.052.336 0l3.869-1.935A1.875 1.875 0 0 1 21.75 4.82v12.485c0 .71-.401 1.36-1.037 1.677l-4.875 2.437a1.875 1.875 0 0 1-1.676 0l-4.994-2.497a.375.375 0 0 0-.336 0l-3.868 1.935A1.875 1.875 0 0 1 2.25 19.18V6.695c0-.71.401-1.36 1.036-1.677l4.875-2.437ZM9 6a.75.75 0 0 1 .75.75V15a.75.75 0 0 1-1.5 0V6.75A.75.75 0 0 1 9 6Zm6.75 3a.75.75 0 0 0-1.5 0v8.25a.75.75 0 0 0 1.5 0V9Z"
-                            clip-rule="evenodd" />
-                    </svg>Plastilinn id
-                </div>
-                <div class="flex-1 text-center bg-gray-200 rounded-lg p-2 m-2">
-                    <h4 v-if="modelName">{{ modelName }}</h4>
-                </div>
-                <div class="flex justify-end bg-gray-200 rounded-lg p-2 m-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                        fill="currentColor" class="w-6 h-6">
-                        <path fill-rule="evenodd"
-                            d="M5.25 2.25a3 3 0 0 0-3 3v4.318a3 3 0 0 0 .879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 0 0 5.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 0 0-2.122-.879H5.25ZM6.375 7.5a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z"
-                            clip-rule="evenodd" />
-                    </svg>
-                    tags
-                </div>
-            </div>
-        </div>
-        <div class="mt-48 ml-2 mr-2">
-            <div class="flex flex-row w-full">
-                <div class="md-block-wrapper w-full">
-                    <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
-                        <!-- Renderizar los bloques -->
+                    <button @click="toggleFilter" class="collapse-filter-button btn btn-primary btn-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd"
+                                d="M3.792 2.938A49.069 49.069 0 0 1 12 2.25c2.797 0 5.54.236 8.209.688a1.857 1.857 0 0 1 1.541 1.836v1.044a3 3 0 0 1-.879 2.121l-6.182 6.182a1.5 1.5 0 0 0-.439 1.061v2.927a3 3 0 0 1-1.658 2.684l-1.757.878A.75.75 0 0 1 9.75 21v-5.818a1.5 1.5 0 0 0-.44-1.06L3.13 7.938a3 3 0 0 1-.879-2.121V4.774c0-.897.64-1.683 1.542-1.836Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Filter
+                    </button>
+                    <!-- Filtrar los bloques según los blockTitles seleccionados -->
+                    <div class="flex justify-between bg-white" v-if="filterVisible">
+                        <div class="card w-96 bg-base-100 shadow-xl">
+                            <div class="flex flex-col w-full">
+                                <div class="grid h-20 rounded-box place-items-center">
+                                    <label class="input input-bordered flex items-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-6 h-6">
+                                            <path fill-rule="evenodd"
+                                                d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <input v-model="searchQuery" type="text" placeholder="Buscar en bloques..." class="input">
+                                    </label>    
+                                </div> 
+                                <div class="divider"></div> 
+                                <div class="grid h-20 rounded-box place-items-center">
+                                    Filter tags <button @click="resetSelectedTags" class="btn btn btn-ghost">Reset</button>
+                                    <select v-model="selectedTags" class="select select-bordered w-full" multiple>
+                                        <option v-for="tag in tags" :key="tag" :value="tag">{{ tag }}</option>
+                                    </select>
+                                    <div class="m-2">
+                                        <span v-for="tag in selectedTags" :key="tag" class="badge" :data-tag="tag">{{ tag
+                                            }}</span>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="plastilinn-hero hero pt-48" v-if="!markdownLoaded">
-            <div class="hero-content text-center">
-                <div class="max-w-md">
-                    <h1 class="text-5xl font-bold mb-4">Business Model</h1>
-                    <input type="file" @change="loadAndParseMarkdown" accept=".md"
-                        class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
-                    <p class="py-6">Upload your document</p>
-                </div>
-            </div>
-        </div>
-        <div class="modelContainer mt-24 ml-2 mr-2">
-            <div class="flex flex-row w-full">
-                <div class="md-block-wrapper w-full">
-                    <div v-for="block in searchFilteredBlocks" :key="block.id" class="md-block flex">
-                        <div class="md-block-container-left w-1/4 w-full bg-gray-200 rounded-lg p-2 mt-1 mb-1">
-                            <div :id="block.metamodel.name" class="block-metamodel section inline-flex" v-if="block.metamodel">
+            <div class="col-span-8 lg:col-span-8 lg:col-start-5 bg-yellow-200 p-1 rounded">
+                <div id="top-container" class="sticky top-0 z-50 shadow-xl">
+                    <div class="navbar bg-base-100 shadow-xl">
+                        <div class="navbar-start">
+                            <a class="btn btn-ghost text-xl">Plastilinn</a>
+                        </div>
+                        <div class="navbar-center">
+
+                        </div>
+                        <div class="navbar-end">
+                            <button id="downloadBtn" @click="downloadMarkdown" class="btn btn-primary btn-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                     class="w-6 h-6">
                                     <path fill-rule="evenodd"
-                                        d="M8.161 2.58a1.875 1.875 0 0 1 1.678 0l4.993 2.498c.106.052.23.052.336 0l3.869-1.935A1.875 1.875 0 0 1 21.75 4.82v12.485c0 .71-.401 1.36-1.037 1.677l-4.875 2.437a1.875 1.875 0 0 1-1.676 0l-4.994-2.497a.375.375 0 0 0-.336 0l-3.868 1.935A1.875 1.875 0 0 1 2.25 19.18V6.695c0-.71.401-1.36 1.036-1.677l4.875-2.437ZM9 6a.75.75 0 0 1 .75.75V15a.75.75 0 0 1-1.5 0V6.75A.75.75 0 0 1 9 6Zm6.75 3a.75.75 0 0 0-1.5 0v8.25a.75.75 0 0 0 1.5 0V9Z"
+                                        d="M10.5 3.75a6 6 0 0 0-5.98 6.496A5.25 5.25 0 0 0 6.75 20.25H18a4.5 4.5 0 0 0 2.206-8.423 3.75 3.75 0 0 0-4.133-4.303A6.001 6.001 0 0 0 10.5 3.75Zm2.25 6a.75.75 0 0 0-1.5 0v4.94l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V9.75Z"
                                         clip-rule="evenodd" />
-                                </svg><a :href="block.metamodel.info" target="_blank">{{
-                                    block.metamodel.name }}</a>
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                    <div id="content-header" class="flex justify-end bg-white w-full items-center p-2">
+                        <div class="flex justify-start bg-gray-200 rounded-lg p-2 m-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-6 h-6">
+                                <path fill-rule="evenodd"
+                                    d="M8.161 2.58a1.875 1.875 0 0 1 1.678 0l4.993 2.498c.106.052.23.052.336 0l3.869-1.935A1.875 1.875 0 0 1 21.75 4.82v12.485c0 .71-.401 1.36-1.037 1.677l-4.875 2.437a1.875 1.875 0 0 1-1.676 0l-4.994-2.497a.375.375 0 0 0-.336 0l-3.868 1.935A1.875 1.875 0 0 1 2.25 19.18V6.695c0-.71.401-1.36 1.036-1.677l4.875-2.437ZM9 6a.75.75 0 0 1 .75.75V15a.75.75 0 0 1-1.5 0V6.75A.75.75 0 0 1 9 6Zm6.75 3a.75.75 0 0 0-1.5 0v8.25a.75.75 0 0 0 1.5 0V9Z"
+                                    clip-rule="evenodd" />
+                            </svg>Plastilinn id
+                        </div>
+                        <div class="flex-1 text-center bg-gray-200 rounded-lg p-2 m-2">
+                            <h4 v-if="modelName">{{ modelName }}</h4>
+                        </div>
+                        <div class="flex justify-end bg-gray-200 rounded-lg p-2 m-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-6 h-6">
+                                <path fill-rule="evenodd"
+                                    d="M5.25 2.25a3 3 0 0 0-3 3v4.318a3 3 0 0 0 .879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 0 0 5.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 0 0-2.122-.879H5.25ZM6.375 7.5a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            tags
+                        </div>
+                    </div>
+                    <button @click="toggleSidebar" class="btn btn-primary">
+                        Toggle Sidebar
+                    </button>
+                </div>
+            </div>
+            <div class="col-span-8 lg:col-span-8 row-span-4 lg:col-start-5 row-start-2 bg-gray-200 p-1 rounded">
+                <div class="plastilinn-hero hero pt-48" v-if="!markdownLoaded">
+                    <div class="hero-content text-center">
+                        <div class="max-w-md">
+                            <h1 class="text-5xl font-bold mb-4">Business Model</h1>
+                            <input type="file" @change="loadAndParseMarkdown" accept=".md"
+                                class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
+                            <p class="py-6">Upload your document</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modelContainer mt-24 ml-2 mr-2">
+                    <div class="flex flex-row w-full">
+                        <div class="md-block-wrapper w-full">
+                            <div v-for="block in searchFilteredBlocks" :key="block.id" class="md-block flex">
+                                <div class="md-block-container-left w-1/4 w-full bg-gray-200 rounded-lg p-2 mt-1 mb-1">
+                                    <div :id="block.metamodel.name" class="block-metamodel section inline-flex"
+                                        v-if="block.metamodel">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-6 h-6">
+                                            <path fill-rule="evenodd"
+                                                d="M8.161 2.58a1.875 1.875 0 0 1 1.678 0l4.993 2.498c.106.052.23.052.336 0l3.869-1.935A1.875 1.875 0 0 1 21.75 4.82v12.485c0 .71-.401 1.36-1.037 1.677l-4.875 2.437a1.875 1.875 0 0 1-1.676 0l-4.994-2.497a.375.375 0 0 0-.336 0l-3.868 1.935A1.875 1.875 0 0 1 2.25 19.18V6.695c0-.71.401-1.36 1.036-1.677l4.875-2.437ZM9 6a.75.75 0 0 1 .75.75V15a.75.75 0 0 1-1.5 0V6.75A.75.75 0 0 1 9 6Zm6.75 3a.75.75 0 0 0-1.5 0v8.25a.75.75 0 0 0 1.5 0V9Z"
+                                                clip-rule="evenodd" />
+                                        </svg><a :href="block.metamodel.info" target="_blank">{{
+                                            block.metamodel.name }}</a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
+                                    <div v-html="block.parsedContent"></div>
+                                </div>
+                                <div
+                                    class="md-block-container-right tags-container text-gray-500 w-full bg-gray-200 rounded-md text-sm text-center p-2 mt-1 mb-1 w-1/4">
+                                    <button @click="openModal(block)"
+                                        class="opacity-50 hover:opacity-100 focus:opacity-100"><svg
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-6 h-6">
+                                            <path
+                                                d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
+                                            <path
+                                                d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+                                        </svg>
+                                    </button>
+                                    <div class="md-block-container-right tags-container" v-html="block.tagsParsed">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div
-                            class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
-                            <div v-html="block.parsedContent"></div>
-                        </div>
-                        <div
-                            class="md-block-container-right tags-container text-gray-500 w-full bg-gray-200 rounded-md text-sm text-center p-2 mt-1 mb-1 w-1/4">
-                            <button @click="openModal(block)"
-                                class="opacity-50 hover:opacity-100 focus:opacity-100"><svg
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                    class="w-6 h-6">
-                                    <path
-                                        d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
-                                    <path
-                                        d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
-                                </svg>
-                            </button>
-                            <div class="md-block-container-right tags-container" v-html="block.tagsParsed">
+                    </div>
+                </div>
+                <div id="content" class="mt-48 ml-2 mr-2">
+                    <div class="flex flex-row w-full">
+                        <div class="md-block-wrapper w-full">
+                            <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
+                                <!-- Renderizar los bloques -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="drawer">
-            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-side">
-                <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-                <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-                    <div id="sidebar">
-                        <!-- Reemplazado por la lista de enlaces generados dinámicamente -->
-                        <ul>
-                            <li v-for="block in model" :key="block.id">
-                                <a :href="'#' + block.blockTitle">{{ block.blockTitle }}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </ul>
+        <!-- Contenedor principal que incluye la columna toggleable y el área de contenido -->
+        <div class="flex">
+            <!-- Contenido principal -->
+            <div id="content" class="flex-1">
+                <div class="navbar bg-base-100 shadow-xl">
+                </div>
+                <!-- El resto de tu contenido -->
             </div>
         </div>
         <!-- Modal para editar el contenido de la línea seleccionada -->
-
         <div v-if="isModalOpen" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
             <div class="relative top-20 mx-auto p-5 border w-4/5 shadow-lg rounded-md bg-white">
                 <div class="flex">
@@ -307,6 +320,7 @@
                     blockTitles: [], // Arreglo para almacenar todos los blockTitles únicos
                     selectedBlockTitles: [], // Arreglo para almacenar los blockTitles seleccionados
                     searchQuery: '',
+                    isSidebarVisible: false, // Controla la visibilidad de la sidebar
                 };
             },
             computed: {
@@ -317,21 +331,24 @@
                 },
                 filteredBlocks() {
                     return this.model.filter(block => {
-                    const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
-                    const titleMatch = this.selectedBlockTitles.length === 0 || this.selectedBlockTitles.includes(block.blockTitle);
-                    return tagMatch && titleMatch;
+                        const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
+                        const titleMatch = this.selectedBlockTitles.length === 0 || this.selectedBlockTitles.includes(block.blockTitle);
+                        return tagMatch && titleMatch;
                     });
                 },
                 searchFilteredBlocks() {
                     if (!this.searchQuery) return this.filteredBlocks; // Utiliza filteredBlocks para mantener los filtros anteriores
                     return this.filteredBlocks.filter(block => {
-                    // Verifica si el contenido del bloque incluye el texto de búsqueda
-                    // Asume que 'parsedContent' es el contenido que deseas buscar
-                    return block.parsedContent.toLowerCase().includes(this.searchQuery.toLowerCase());
+                        // Verifica si el contenido del bloque incluye el texto de búsqueda
+                        // Asume que 'parsedContent' es el contenido que deseas buscar
+                        return block.parsedContent.toLowerCase().includes(this.searchQuery.toLowerCase());
                     });
-                }
+                },
             },
             methods: {
+                toggleSidebar() {
+                    this.isSidebarVisible = !this.isSidebarVisible;
+                },
                 loadAndParseMarkdown(event) {
                     const file = event.target.files[0];
                     if (!file) {
@@ -374,6 +391,14 @@
                     // Actualiza this.model para que contenga bloques en lugar de líneas individuales
                     this.model = blocks.map((blockContent, index) => {
                         this.lastId += 1; // Incrementa el ID para cada bloque
+                        const firstLine = blockContent.split('\n')[0];
+                        let blockType = 'other';
+                        // Actualiza la expresión regular para reflejar la nueva condición
+                        if (/^\s*(-\s+)?#(\s|#)/.test(firstLine)) {
+                            blockType = 'section';
+                        } else if (firstLine.match(/^\s*[\-\*] /) || firstLine.match(/^\s*\d+\. /)) {
+                            blockType = 'item';
+                        }
                         const { tags, tagsParsed } = this.processTags(blockContent);
                         const blockTitle = this.extractBlockTitle(blockContent);
                         const parsedContent = marked.parse(blockContent); // Parsea el contenido Markdown
@@ -382,6 +407,7 @@
                         return {
                             id: this.lastId,
                             content: blockContent,
+                            blockType: blockType,
                             tags: tags,
                             tagsParsed: tagsParsed,
                             blockTitle: blockTitle,
@@ -457,11 +483,12 @@
                 },
                 updateTagsArray() {
                     // Cargar la lista de bloques
-                    this.blocks = this.model; // Cambia this.model.block a this.model
+                    this.blocks = this.model; // Asume que this.model contiene tus bloques
                     this.blocks.forEach(block => block.tags.forEach(tag => this.allTags.add(tag)));
-                    this.tags = Array.from(this.allTags);
+                    // Convertir allTags a un array, ordenarlo alfabéticamente y luego asignar a this.tags
+                    this.tags = Array.from(this.allTags).sort((a, b) => a.localeCompare(b));
                     console.log(this.tags);
-                    // Inicializar el filtrado
+                    // Inicializar el filtrado (si necesario)
                     this.filterBlocks([]);
                 },
                 filterBlocks(tags) {
