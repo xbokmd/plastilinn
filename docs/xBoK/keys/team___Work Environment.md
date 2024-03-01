@@ -1,6 +1,6 @@
 alias:: Work Environment
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Creating a positive work environment is essential for employee productivity and morale. This includes culture, workspace, and policies.
 - #questions
   - #question Does the startup provide a positive work environment?

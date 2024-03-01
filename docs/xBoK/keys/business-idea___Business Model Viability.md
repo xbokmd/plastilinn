@@ -1,6 +1,6 @@
 alias:: Business Model Viability
 page-type:: [[key]]
-innbok-key-rating:: 95
+xBoK-key-rating:: 95
 - #### The business model must be viable and sustainable. It should demonstrate how the startup will create and deliver value while generating profits.
 - #questions
   - #question Does the business model show how the company will make money?

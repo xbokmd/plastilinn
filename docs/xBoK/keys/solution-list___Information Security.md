@@ -1,6 +1,6 @@
 alias:: Information Security
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Protecting customer data and sensitive_information is crucial._information security practices help in building trust with customers and partners.
 - #questions
   - #question Are there_information security policies in place?

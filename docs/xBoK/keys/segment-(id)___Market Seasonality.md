@@ -1,6 +1,6 @@
 alias:: Market Seasonality
 page-type:: [[key]]
-innbok-key-rating:: 10
+xBoK-key-rating:: 10
 - #### Evaluate the impact of market seasonality on the business.
 - #questions
   - #question How does market seasonality affect the business?

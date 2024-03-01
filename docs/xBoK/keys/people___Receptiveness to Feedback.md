@@ -1,6 +1,6 @@
 alias:: Receptiveness to Feedback
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Being open to feedback and criticism is essential for continuous improvement. It helps in making necessary adjustments to the product or strategy.
 - #questions
   - #question Is the startup open to receiving feedback?

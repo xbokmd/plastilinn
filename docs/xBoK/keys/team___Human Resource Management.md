@@ -1,6 +1,6 @@
 alias:: Human Resource Management
 page-type:: [[key]]
-innbok-key-rating:: 45
+xBoK-key-rating:: 45
 - #### Effective management of human resources is crucial for hiring and retaining skilled employees, which in turn contributes to business success.
 - #questions
   - #question Are there HR policies and procedures in place?

@@ -1,6 +1,6 @@
 alias:: Segment Homogeneity
 page-type:: [[key]]
-innbok-key-rating:: 25
+xBoK-key-rating:: 25
 - #### Evaluate the homogeneity of the target market segment and assess its potential for effective targeting and marketing strategies.
 - #questions
   - #question How homogeneous is the target market segment?

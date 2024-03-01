@@ -1,6 +1,6 @@
 alias:: Team alignment
 page-type:: [[key]]
-innbok-key-rating:: 50
+xBoK-key-rating:: 50
 - #### Alignment in team goals, values, and strategies promotes internal harmony, increased productivity, and facilitates the achievement of business objectives.
 - #questions
   - #question Is the team aligned in terms of goals, values, and strategies?

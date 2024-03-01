@@ -1,6 +1,6 @@
 alias:: Risk Management
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### Managing legal risks by understanding and complying with laws and regulations is essential to avoid legal issues and protect the business.
 - #questions
   - #question Is the startup compliant with relevant laws and regulations?

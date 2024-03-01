@@ -1,6 +1,6 @@
 alias:: Protectability
 page-type:: [[key]]
-innbok-key-rating:: 45
+xBoK-key-rating:: 45
 - #### how easy is it to protect the idea? can I obtain a patent?
 - #questions
   - #question Does the idea have potential for evolution?

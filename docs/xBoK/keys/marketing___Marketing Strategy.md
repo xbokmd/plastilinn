@@ -1,6 +1,6 @@
 alias:: Marketing Strategy
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### An effective marketing strategy is essential for creating market awareness and driving sales. It should be aligned with the startup’s goals and target market.
 - #questions
   - #question What is the marketing strategy?

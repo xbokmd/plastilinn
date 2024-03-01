@@ -1,6 +1,6 @@
 alias:: Realism - Ambition
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Evaluate the realism and ambition of the mission statement.
 - #questions
   - #question Is the mission statement realistic and ambitious?

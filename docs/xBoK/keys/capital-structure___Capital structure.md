@@ -1,6 +1,6 @@
 alias:: Capital structure
 page-type:: [[key]]
-innbok-key-rating:: 50
+xBoK-key-rating:: 50
 - #### what is the capital structure of the business? How is it funded and what is the financial leverage?
 - #questions
   - #question What

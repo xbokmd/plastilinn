@@ -1,6 +1,6 @@
 alias:: Adecuate pricing
 page-type:: [[key]]
-innbok-key-rating:: 55
+xBoK-key-rating:: 55
 - #### Having a well-thought-out pricing strategy is essential. It should take into account customer demand, competitor pricing, and cost structures;Determine if the pricing scheme is coherent, consistent with the value generated for the customer, and allows for flexibility and recurring revenue.
 - #questions
   - #question Is there a well-defined pricing strategy in place?

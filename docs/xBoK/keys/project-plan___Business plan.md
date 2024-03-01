@@ -1,6 +1,6 @@
 alias:: Business plan
 page-type:: [[key]]
-innbok-key-rating:: 35
+xBoK-key-rating:: 35
 - #### is it coherent?
 - #questions
   - #question Is the business plan coherent and well-structured?

@@ -1,6 +1,6 @@
 alias:: Business Brochure Quality
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Evaluate the quality of the business brochure, including its ability to effectively communicate relevant_information, convey the company's image, and generate a call to action.
 - #questions
   - #question Does it describe the company adequately? Does it contain a call to action? Does it convey relevant_information clearly and effectively? Is the design appropriate? Does it use visual components (photos, graphics, etc.)? Is the tone of the communication appropriate?

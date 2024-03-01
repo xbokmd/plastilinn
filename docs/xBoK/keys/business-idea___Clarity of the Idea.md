@@ -1,6 +1,6 @@
 alias:: Clarity of the Idea
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### The business idea must be clear and well-defined, ensuring that there is no ambiguity about what the startup aims to achieve.
 - #questions
   - #question Is the business idea clearly articulated?

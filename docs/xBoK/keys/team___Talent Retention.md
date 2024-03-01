@@ -1,6 +1,6 @@
 alias:: Talent Retention
 page-type:: [[key]]
-innbok-key-rating:: 35
+xBoK-key-rating:: 35
 - #### Implementing strategies to retain talented employees is essential. High employee turnover can be costly and disruptive.
 - #questions
   - #question Are there retention strategies in place?

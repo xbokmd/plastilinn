@@ -1,6 +1,6 @@
 alias:: Regulatory compliance
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Ensuring compliance with laws and regulations minimizes the risk of legal penalties, operational disruptions, and damage to reputation, ensuring the viability of the business.
 - #questions
   - #question Does the startup ensure regulatory compliance?

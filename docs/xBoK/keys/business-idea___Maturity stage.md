@@ -1,6 +1,6 @@
 alias:: Maturity stage
 page-type:: [[key]]
-innbok-key-rating:: 85
+xBoK-key-rating:: 85
 - #### Growth potential: how far can it go? how many users can it reach? how much money can be made?
 - #questions
   - #question What is the maturity stage of the startup?

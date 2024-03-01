@@ -1,6 +1,6 @@
 alias:: Effective distribution and marketing channels
 page-type:: [[key]]
-innbok-key-rating:: 70
+xBoK-key-rating:: 70
 - #### Access to suitable distribution and marketing channels enables reach and acquisition of customers, positively impacting sales and business growth.
 - #questions
   - #question Does the startup have effective distribution and marketing channels?

@@ -1,6 +1,6 @@
 alias:: Proactive tax planning and compliance
 page-type:: [[key]]
-innbok-key-rating:: 15
+xBoK-key-rating:: 15
 - #### Implementing proactive tax planning strategies and ensuring compliance with tax regulations can help avoid unanticipated tax obligations, reducing financial strain and legal complications.
 - #questions
   - #question Does the startup engage in proactive tax planning and compliance?

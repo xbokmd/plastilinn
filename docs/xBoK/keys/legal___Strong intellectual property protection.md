@@ -1,6 +1,6 @@
 alias:: Strong intellectual property protection
 page-type:: [[key]]
-innbok-key-rating:: 70
+xBoK-key-rating:: 70
 - #### Having strong measures in place to protect intellectual property helps maintain a competitive advantage and reduces the risk of theft and legal disputes.
 - #questions
   - #question Does the startup have strong measures to protect intellectual property?

@@ -1,6 +1,6 @@
 alias:: Solution roadmap quality
 page-type:: [[key]]
-innbok-key-rating:: 10
+xBoK-key-rating:: 10
 - #### Assess the quality of the solution roadmap, including the incorporation of features, feasibility, and release planning.
 - #questions
   - #question Is the incorporation of features into the solution well planned? Is it too optimistic? Does it allow for frequent incremental releases?

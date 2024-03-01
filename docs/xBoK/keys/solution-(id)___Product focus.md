@@ -1,6 +1,6 @@
 alias:: Product focus
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Determine if the product or service focuses on solving a specific problem or if it is scattered.
 - #questions
   - #question Does the product focus on solving a specific problem, or is it scattered?

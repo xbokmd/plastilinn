@@ -1,6 +1,6 @@
 alias:: Product-Market Fit
 page-type:: [[key]]
-innbok-key-rating:: 70
+xBoK-key-rating:: 70
 - #### The product should satisfy a significant need in the market. Achieving product-market fit is a critical milestone for startups.
 - #questions
   - #question Does the product meet the needs and preferences of the target market?

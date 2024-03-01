@@ -1,6 +1,6 @@
 alias:: Currency risk management
 page-type:: [[key]]
-innbok-key-rating:: 10
+xBoK-key-rating:: 10
 - #### Implementing strategies to manage currency exchange fluctuations in order to mitigate the impact on international business and profitability.
 - #questions
   - #question Does the startup have strategies in place to manage currency risk?

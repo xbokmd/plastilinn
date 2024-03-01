@@ -1,6 +1,6 @@
 alias:: Production Capability
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### The ability to meet production demands is essential. This includes having the necessary resources and processes in place.
 - #questions
   - #question Does the startup have the capability to meet production demands?

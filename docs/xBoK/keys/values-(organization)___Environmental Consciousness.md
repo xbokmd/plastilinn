@@ -1,6 +1,6 @@
 alias:: Environmental Consciousness
 page-type:: [[key]]
-innbok-key-rating:: 25
+xBoK-key-rating:: 25
 - #### Implementing environmentally friendly practices is important for sustainability and can be appealing to environmentally-conscious consumers.
 - #questions
   - #question Does the startup prioritize environmental consciousness?

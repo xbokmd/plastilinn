@@ -1,6 +1,6 @@
 alias:: Leadership Skills
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Strong leadership is essential for guiding the team, making strategic decisions, and navigating challenges.
 - #questions
   - #question Does the team demonstrate strong leadership skills?

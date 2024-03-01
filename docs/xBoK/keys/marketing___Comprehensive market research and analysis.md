@@ -1,6 +1,6 @@
 alias:: Comprehensive market research and analysis
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Thorough understanding of market dynamics, customer needs, and competition enables_informed business decisions, product alignment, and market share growth.
 - #questions
   - #question Does the startup conduct comprehensive market research and analysis?

@@ -1,6 +1,6 @@
 alias:: Use of Technology
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Leveraging technology can lead to innovations, improve efficiency, and give a competitive edge over others in the market.
 - #questions
   - #question Is the startup leveraging technology effectively?

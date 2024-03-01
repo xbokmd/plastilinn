@@ -1,6 +1,6 @@
 alias:: Potential value
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Assess the potential value that the business can ultimately deliver.
 - #questions
   - #question How much value can it ultimately deliver?

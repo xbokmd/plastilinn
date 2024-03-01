@@ -1,6 +1,6 @@
 alias:: Market Adaptability
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### The ability to adapt to market changes is crucial. This includes responding to customer preferences, trends, and competitive forces.
 - #questions
   - #question Is the startup adaptable to changes in the market?

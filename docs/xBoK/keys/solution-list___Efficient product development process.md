@@ -1,6 +1,6 @@
 alias:: Efficient product development process
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### An efficient product development process minimizes delays, allowing the company to seize market opportunities and reduce development costs.
 - #questions
   - #question Is the product development process efficient?

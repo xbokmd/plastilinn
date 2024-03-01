@@ -1,6 +1,6 @@
 alias:: Diversified customer base
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### A diverse customer base helps mitigate the impact of fluctuating market demand, reducing inventory issues and revenue instability.
 - #questions
   - #question Does the startup have a diversified customer base?

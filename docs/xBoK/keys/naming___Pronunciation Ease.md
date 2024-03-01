@@ -1,6 +1,6 @@
 alias:: Pronunciation Ease
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Is the name easy to pronounce in different languages?
 - #questions
   - #question Is the name easy to pronounce in different languages?

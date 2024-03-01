@@ -1,6 +1,6 @@
 alias:: Market wideness
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### How many people may ultimately use it?
 - #questions
   - #question How many people can potentially use the product or service?

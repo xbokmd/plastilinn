@@ -1,6 +1,6 @@
 alias:: Supplier Relationships
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Building and maintaining good relationships with suppliers can ensure the timely availability of quality materials or products.
 - #questions
   - #question Are there strong relationships with suppliers?

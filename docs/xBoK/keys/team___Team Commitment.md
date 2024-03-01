@@ -1,6 +1,6 @@
 alias:: Team Commitment
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### The commitment and dedication of the team are essential. A committed team is more likely to overcome challenges and stay focused on the goals.
 - #questions
   - #question Is the team fully committed to the startup?

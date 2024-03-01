@@ -1,6 +1,6 @@
 alias:: Access to Capital
 page-type:: [[key]]
-innbok-key-rating:: 45
+xBoK-key-rating:: 45
 - #### Startups need capital to grow. Having access to financial resources, whether through investors, loans, or other means, is essential.
 - #questions
   - #question What are the sources of capital for the startup?

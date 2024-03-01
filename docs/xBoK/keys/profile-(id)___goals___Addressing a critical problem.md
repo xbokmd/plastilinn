@@ -1,6 +1,6 @@
 alias:: Addressing a critical problem
 page-type:: [[key]]
-innbok-key-rating:: 80
+xBoK-key-rating:: 80
 - #### Addressing a problem that is critical and important for potential customers increases their willingness to pay for the solution, ensuring revenue and sustainability for the business.
 - #questions
   - #question Does the startup address a critical problem?

@@ -1,6 +1,6 @@
 alias:: Contracts and Agreements
 page-type:: [[key]]
-innbok-key-rating:: 35
+xBoK-key-rating:: 35
 - #### Proper legal handling of contracts and agreements is essential to protect the interests of the business and avoid disputes.
 - #questions
   - #question Are contracts and agreements legally sound?

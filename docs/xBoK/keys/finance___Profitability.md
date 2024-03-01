@@ -1,6 +1,6 @@
 alias:: Profitability
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### The ability to generate sustainable profits is crucial. It reflects the financial health and long-term viability of the business.
 - #questions
   - #question Is the startup profitable or on a clear path to profitability?

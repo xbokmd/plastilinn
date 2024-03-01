@@ -1,6 +1,6 @@
 alias:: Space
 page-type:: [[key]]
-innbok-key-rating:: 55
+xBoK-key-rating:: 55
 - #### Growth potential: how far can it go? how many users can it reach? how much money can be made?
 - #questions
   - #question How original is the business idea?

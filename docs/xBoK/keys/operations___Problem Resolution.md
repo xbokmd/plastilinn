@@ -1,6 +1,6 @@
 alias:: Problem Resolution
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Effective problem resolution is essential for customer satisfaction. It involves addressing customer issues promptly and efficiently.
 - #questions
   - #question Is there a process for effective problem resolution?

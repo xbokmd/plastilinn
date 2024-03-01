@@ -1,6 +1,6 @@
 alias:: Strong reputation management
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### Effective management of reputation helps to prevent negative publicity, maintain customer trust, and maximize business opportunities.
 - #questions
   - #question Does the startup have strong reputation management practices?

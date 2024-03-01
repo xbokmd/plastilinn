@@ -1,6 +1,6 @@
 alias:: Cultural Adaptability
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### The ability to adapt to different cultures is essential when expanding internationally. Understanding cultural nuances can impact marketing and operations.
 - #questions
   - #question Is the startup culturally adaptable?

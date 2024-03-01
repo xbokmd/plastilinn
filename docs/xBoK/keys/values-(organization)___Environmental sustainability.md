@@ -1,6 +1,6 @@
 alias:: Environmental sustainability
 page-type:: [[key]]
-innbok-key-rating:: 25
+xBoK-key-rating:: 25
 - #### Implementing sustainable practices and minimizing environmental damage can help avoid legal penalties and protect the company's reputation.
 - #questions
   - #question Does the startup prioritize environmental sustainability?

@@ -1,6 +1,6 @@
 alias:: Paying Capacity
 page-type:: [[key]]
-innbok-key-rating:: 35
+xBoK-key-rating:: 35
 - #### Evaluate the paying capacity of the target market segment and assess its potential for generating revenue and profitability.
 - #questions
   - #question What is the paying capacity of the target market segment?

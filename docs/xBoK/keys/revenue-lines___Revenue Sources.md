@@ -1,6 +1,6 @@
 alias:: Revenue Sources
 page-type:: [[key]]
-innbok-key-rating:: 65
+xBoK-key-rating:: 65
 - #### Clear and diversified sources of revenue are essential. The startup should have a well-thought-out revenue model.
 - #questions
   - #question What are the sources of revenue for the startup?

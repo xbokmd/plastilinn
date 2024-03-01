@@ -1,6 +1,6 @@
 alias:: Business Model Innovation 
 page-type:: [[key]]
-innbok-key-rating:: 35
+xBoK-key-rating:: 35
 - #### Determine the level of innovation in the business model and assess its potential for differentiation and competitive advantage.
 - #questions
   - #question How innovative is the business model?

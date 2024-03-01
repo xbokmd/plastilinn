@@ -1,6 +1,6 @@
 alias:: Relevance of the Advantage
 page-type:: [[key]]
-innbok-key-rating:: 55
+xBoK-key-rating:: 55
 - #### Assess the relevance and significance of the unfair advantage in the market and its potential for creating a competitive edge.
 - #questions
   - #question What is the relevance of the unfair advantage?

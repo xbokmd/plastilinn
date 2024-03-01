@@ -1,6 +1,6 @@
 alias:: International Logistics
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Managing logistics for international expansion is essential. This includes shipping, customs, and compliance with local regulations.
 - #questions
   - #question Does the startup have the capability to manage international logistics?

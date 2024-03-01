@@ -1,6 +1,6 @@
 alias:: Monitoring Key Metrics
 page-type:: [[key]]
-innbok-key-rating:: 50
+xBoK-key-rating:: 50
 - #### Keeping track of key performance indicators and metrics is essential for assessing the health and progress of the business.
 - #questions
   - #question What key metrics are being monitored?

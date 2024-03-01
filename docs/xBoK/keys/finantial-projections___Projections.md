@@ -1,6 +1,6 @@
 alias:: Projections
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### do they seem mature?  are they coherent?
 - #questions
   - #question Are the financial projections mature and coherent?

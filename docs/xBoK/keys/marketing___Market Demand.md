@@ -1,6 +1,6 @@
 alias:: Market Demand
 page-type:: [[key]]
-innbok-key-rating:: 65
+xBoK-key-rating:: 65
 - #### There should be a genuine demand in the market for the product or service. This demand is what will drive sales and revenue.
 - #questions
   - #question Is there a demonstrated demand for the product or service?

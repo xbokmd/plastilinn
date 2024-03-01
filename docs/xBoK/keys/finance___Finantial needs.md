@@ -1,6 +1,6 @@
 alias:: Finantial needs
 page-type:: [[key]]
-innbok-key-rating:: 45
+xBoK-key-rating:: 45
 - #### how much money will be needed?
 - #questions
   - #question How much financial investment will be needed for the startup?

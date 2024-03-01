@@ -1,6 +1,6 @@
 alias:: Cultural Sensitivity
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Being sensitive to cultural differences is essential when operating in international markets. It affects communication, marketing, and operations.
 - #questions
   - #question Is the startup culturally sensitive in its international operations?

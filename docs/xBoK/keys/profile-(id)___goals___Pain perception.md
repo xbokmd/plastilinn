@@ -1,6 +1,6 @@
 alias:: Pain perception
 page-type:: [[key]]
-innbok-key-rating:: 70
+xBoK-key-rating:: 70
 - #### does the problem really hurt?
 - #questions
   - #question Is the problem perceived as urgent by customers?

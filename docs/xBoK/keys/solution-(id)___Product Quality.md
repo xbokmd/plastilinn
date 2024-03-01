@@ -1,6 +1,6 @@
 alias:: Product Quality
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### The product or service must be of high quality to meet or exceed customer expectations and to build a positive brand reputation.
 - #questions
   - #question Does the product meet industry standards for quality?

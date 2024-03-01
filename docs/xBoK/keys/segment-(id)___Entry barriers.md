@@ -1,6 +1,6 @@
 alias:: Entry barriers
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### how difficult is it to entry the market?
 - #questions
   - #question Are there barriers to entry in the market?

@@ -1,6 +1,6 @@
 alias:: Monetizability
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### How hard will it be to extract the money?
 - #questions
   - #question How monetizable is the business model?

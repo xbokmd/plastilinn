@@ -1,6 +1,6 @@
 alias:: Competitive Advantage
 page-type:: [[key]]
-innbok-key-rating:: 65
+xBoK-key-rating:: 65
 - #### Establishing a unique selling proposition or competitive advantage is essential for standing out in the market.
 - #questions
   - #question Does the startup have a competitive advantage over rivals?

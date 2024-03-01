@@ -1,6 +1,6 @@
 alias:: Market expansion opportunities
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### Identifying and pursuing opportunities to expand the market can help overcome the limitation of a small market, allowing for increased demand, sales, and growth potential.
 - #questions
   - #question Are there opportunities for market expansion?

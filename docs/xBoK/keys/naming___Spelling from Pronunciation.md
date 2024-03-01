@@ -1,6 +1,6 @@
 alias:: Spelling from Pronunciation
 page-type:: [[key]]
-innbok-key-rating:: 10
+xBoK-key-rating:: 10
 - #### If someone hears it, can they easily write it correctly in different languages?
 - #questions
   - #question Can the name be easily written correctly in different languages?

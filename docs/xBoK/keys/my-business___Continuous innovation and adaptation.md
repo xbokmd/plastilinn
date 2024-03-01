@@ -1,6 +1,6 @@
 alias:: Continuous innovation and adaptation
 page-type:: [[key]]
-innbok-key-rating:: 50
+xBoK-key-rating:: 50
 - #### Constantly staying updated with technological advancements and adapting the product or service to meet changing market needs.
 - #questions
   - #question Does the startup prioritize continuous innovation and adaptation?

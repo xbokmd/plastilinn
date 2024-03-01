@@ -1,6 +1,6 @@
 alias:: Diversified revenue streams
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Having multiple sources of revenue can help mitigate the impact of economic downturns by reducing reliance on a single market or customer segment.
 - #questions
   - #question Does the startup have diversified revenue streams?

@@ -1,6 +1,6 @@
 alias:: Finantial damage
 page-type:: [[key]]
-innbok-key-rating:: 35
+xBoK-key-rating:: 35
 - #### does the problem make the customer loose money?
 - #questions
   - #question Does the problem cause financial damage to customers?

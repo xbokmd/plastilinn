@@ -1,6 +1,6 @@
 alias:: Environment
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### are the economic conditions favorable?
 - #questions
   - #question Are the economic conditions favorable for the startup?

@@ -1,6 +1,6 @@
 alias:: Competency scope
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### are the skills necessary to successfully build the company present in the team members?
 - #questions
   - #question Do team members possess the necessary skills and expertise?

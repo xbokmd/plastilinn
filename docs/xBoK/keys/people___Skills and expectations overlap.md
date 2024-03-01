@@ -1,6 +1,6 @@
 alias:: Skills and expectations overlap
 page-type:: [[key]]
-innbok-key-rating:: 25
+xBoK-key-rating:: 25
 - #### how well are roles defined? do different team members aspire to managing the company?
 - #questions
   - #question Are the roles and expectations of team members well-defined?

@@ -1,6 +1,6 @@
 alias:: Scalability
 page-type:: [[key]]
-innbok-key-rating:: 55
+xBoK-key-rating:: 55
 - #### will the business scale? is it replicable in different markets, niches, industries?
 - #questions
   - #question Is the business model scalable?

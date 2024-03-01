@@ -1,6 +1,6 @@
 alias:: Vertical experience
 page-type:: [[key]]
-innbok-key-rating:: 15
+xBoK-key-rating:: 15
 - #### do founders have industry-specific knowledge and expertise?
 - #questions
   - #question Does the entrepreneur have industry-specific knowledge and expertise?

@@ -1,6 +1,6 @@
 alias:: Founder's commitment
 page-type:: [[key]]
-innbok-key-rating:: 55
+xBoK-key-rating:: 55
 - #### is the entrepreneur comitted to the project? did s___he put his___her own money in the venture? is he dedicated on a full time basis?
 - #questions
   - #question Is the entrepreneur fully committed to the startup?

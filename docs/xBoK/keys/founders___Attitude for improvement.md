@@ -1,6 +1,6 @@
 alias:: Attitude for improvement
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Determine if the founders are receptive to feedback and open to improvement.
 - #questions
   - #question Are they receptive to receiving feedback on the project?

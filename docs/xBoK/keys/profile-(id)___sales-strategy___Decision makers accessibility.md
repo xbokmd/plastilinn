@@ -1,6 +1,6 @@
 alias:: Decision makers accessibility
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### how difficult is it to talk to the decision makers?
 - #questions
   - #question How accessible are the decision makers in the market?

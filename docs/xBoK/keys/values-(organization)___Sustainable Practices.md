@@ -1,6 +1,6 @@
 alias:: Sustainable Practices
 page-type:: [[key]]
-innbok-key-rating:: 35
+xBoK-key-rating:: 35
 - #### Implementing sustainable business practices is important for environmental responsibility and can also be appealing to modern consumers.
 - #questions
   - #question Does the startup implement sustainable practices?

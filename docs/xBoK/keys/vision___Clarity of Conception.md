@@ -1,6 +1,6 @@
 alias:: Clarity of Conception
 page-type:: [[key]]
-innbok-key-rating:: 10
+xBoK-key-rating:: 10
 - #### Evaluate the clarity and conception of the vision statement.
 - #questions
   - #question Is the vision statement clear and well-conceived?

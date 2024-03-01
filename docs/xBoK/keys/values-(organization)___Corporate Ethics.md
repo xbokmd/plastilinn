@@ -1,6 +1,6 @@
 alias:: Corporate Ethics
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Upholding high ethical standards is essential for building trust with customers, partners, and stakeholders.
 - #questions
   - #question Are there corporate ethics policies in place?

@@ -1,6 +1,6 @@
 alias:: Effective solution
 page-type:: [[key]]
-innbok-key-rating:: 50
+xBoK-key-rating:: 50
 - #### Providing a solution that fully meets the needs and expectations of customers leads to high adoption rates, strong customer satisfaction, and business success.
 - #questions
   - #question Does the solution effectively meet customer needs?

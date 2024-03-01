@@ -1,6 +1,6 @@
 alias:: Sufficient funding
 page-type:: [[key]]
-innbok-key-rating:: 90
+xBoK-key-rating:: 90
 - #### Adequate funding is necessary to support business operations, development, and growth.
 - #questions
   - #question Does the startup have sufficient funding?

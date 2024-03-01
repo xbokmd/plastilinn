@@ -1,6 +1,6 @@
 alias:: Networking
 page-type:: [[key]]
-innbok-key-rating:: 25
+xBoK-key-rating:: 25
 - #### Building a strong network of contacts can provide access to resources, partnerships, and opportunities that can contribute to business growth.
 - #questions
   - #question Does the startup actively network and build relationships with key stakeholders?

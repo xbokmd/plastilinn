@@ -1,6 +1,6 @@
 alias:: Precisely Defined Objectives
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Evaluate if the organization's goals are precisely defined and clear.
 - #questions
   - #question Are the organization's goals precisely defined and clear?

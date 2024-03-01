@@ -1,6 +1,6 @@
 alias:: Gross margins
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### Gross margins
 - #questions
   - #question What are the gross margins of the business model?

@@ -1,6 +1,6 @@
 alias:: Customer Understanding
 page-type:: [[key]]
-innbok-key-rating:: 75
+xBoK-key-rating:: 75
 - #### Deep understanding of customer needs and preferences is essential for product development and marketing strategies.
 - #questions
   - #question Does the startup have a deep understanding of its target customers?

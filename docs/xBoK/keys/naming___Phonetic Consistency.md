@@ -1,6 +1,6 @@
 alias:: Phonetic Consistency
 page-type:: [[key]]
-innbok-key-rating:: 10
+xBoK-key-rating:: 10
 - #### Does it sound similar when pronounced in different languages (like "Kodak")?
 - #questions
   - #question Does the name sound similar when pronounced in different languages?

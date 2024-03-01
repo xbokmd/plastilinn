@@ -1,6 +1,6 @@
 alias:: Coachability
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### is the entrepreneur open to feedback and willing to learn and adapt?
 - #questions
   - #question Is the entrepreneur open to feedback and willing to learn and adapt?

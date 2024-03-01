@@ -1,6 +1,6 @@
 alias:: Realism - Ambition
 page-type:: [[key]]
-innbok-key-rating:: 10
+xBoK-key-rating:: 10
 - #### Evaluate the realism and ambition of the vision statement.
 - #questions
   - #question Is the vision statement realistic and ambitious?

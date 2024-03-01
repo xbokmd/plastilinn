@@ -1,6 +1,6 @@
 alias:: Cost Structure
 page-type:: [[key]]
-innbok-key-rating:: 35
+xBoK-key-rating:: 35
 - #### Having an efficient cost structure is essential for profitability. It involves optimizing costs while maintaining quality.
 - #questions
   - #question Are costs optimized and aligned with the business model?

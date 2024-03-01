@@ -1,6 +1,6 @@
 alias:: Innovative approach
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### The value proposition should be innovative, offering something new or significantly improved compared to existing solutions.
 - #questions
   - #question Is the product or service innovative?

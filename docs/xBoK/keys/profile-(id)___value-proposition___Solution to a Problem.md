@@ -1,6 +1,6 @@
 alias:: Solution to a Problem
 page-type:: [[key]]
-innbok-key-rating:: 70
+xBoK-key-rating:: 70
 - #### The startup should offer a solution that addresses a real and significant problem faced by a target market.
 - #questions
   - #question Does the solution effectively address a significant problem?

@@ -1,6 +1,6 @@
 alias:: Financial needs
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Determine the financial needs of the business and the amount of money required.
 - #questions
   - #question How much money will be needed?

@@ -1,6 +1,6 @@
 alias:: Positive Cash Flow
 page-type:: [[key]]
-innbok-key-rating:: 55
+xBoK-key-rating:: 55
 - #### Maintaining a positive cash flow is essential for the sustainability of the business. It ensures that the business can cover its expenses.
 - #questions
   - #question Is the startup generating positive cash flow?

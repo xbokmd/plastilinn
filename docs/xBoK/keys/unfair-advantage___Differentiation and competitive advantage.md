@@ -1,6 +1,6 @@
 alias:: Differentiation and competitive advantage
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### Having a unique value proposition and competitive advantage helps to differentiate the business from competitors, maintain market share, and ensure profitability.
 - #questions
   - #question Does the startup have a unique differentiation and competitive advantage?

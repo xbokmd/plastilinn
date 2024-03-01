@@ -1,6 +1,6 @@
 alias:: Robust fraud prevention measures
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Implementing strong fraud prevention measures helps to minimize the risk of financial losses and damage to reputation.
 - #questions
   - #question Does the startup have robust fraud prevention measures in place?

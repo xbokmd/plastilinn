@@ -1,6 +1,6 @@
 alias:: Competitor Analysis
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Understanding competitors and their offerings is crucial. This knowledge can help in differentiating the product and finding a unique selling proposition.
 - #questions
   - #question Who are the main competitors?

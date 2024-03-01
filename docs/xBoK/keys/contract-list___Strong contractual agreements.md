@@ -1,6 +1,6 @@
 alias:: Strong contractual agreements
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Having strong contractual agreements and effective dispute resolution mechanisms in place can help mitigate the risk of contractual disputes, minimizing legal complications and maintaining positive business relationships.
 - #questions
   - #question Does the startup have strong contractual agreements in place?

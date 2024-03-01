@@ -1,6 +1,6 @@
 alias:: Robust cybersecurity measures
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Implementing robust cybersecurity measures helps prevent data loss, legal issues, and damage to reputation.
 - #questions
   - #question Does the startup have robust cybersecurity measures in place?

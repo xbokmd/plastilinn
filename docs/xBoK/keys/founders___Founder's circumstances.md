@@ -1,6 +1,6 @@
 alias:: Founder's circumstances
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### what is his___her personal situation? is s___he married? is s___he young? does s___he have kids?
 - #questions
   - #question What is the personal situation of the entrepreneur?

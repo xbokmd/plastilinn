@@ -1,6 +1,6 @@
 alias:: Ease of Use
 page-type:: [[key]]
-innbok-key-rating:: 45
+xBoK-key-rating:: 45
 - #### The product should be user-friendly. Ease of use can enhance customer experience and contribute to product adoption.
 - #questions
   - #question Is the product or service easy for customers to use?

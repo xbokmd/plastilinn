@@ -1,6 +1,6 @@
 alias:: Licenses and Permits
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### Obtaining necessary licenses and permits is essential for legal operation. This is especially important in regulated industries.
 - #questions
   - #question Does the startup have the necessary licenses and permits to operate legally?

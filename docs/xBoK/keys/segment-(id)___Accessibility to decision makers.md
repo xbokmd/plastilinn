@@ -1,6 +1,6 @@
 alias:: Accessibility to decision makers
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Assess the accessibility to decision-makers in the target market.
 - #questions
   - #question How difficult is it to speak with decision-makers?

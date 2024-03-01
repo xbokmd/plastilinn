@@ -1,6 +1,6 @@
 alias:: Resilient supply chain management
 page-type:: [[key]]
-innbok-key-rating:: 50
+xBoK-key-rating:: 50
 - #### An effective supply chain management system that can withstand disruptions, minimizing delays, costs, and potential loss of business.
 - #questions
   - #question Does the startup have a resilient supply chain management system?

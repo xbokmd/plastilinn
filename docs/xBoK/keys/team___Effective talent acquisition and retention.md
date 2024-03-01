@@ -1,6 +1,6 @@
 alias:: Effective talent acquisition and retention
 page-type:: [[key]]
-innbok-key-rating:: 50
+xBoK-key-rating:: 50
 - #### The ability to attract and retain skilled employees is crucial for maintaining productivity and fostering innovation.
 - #questions
   - #question Does the startup have effective talent acquisition and retention strategies?

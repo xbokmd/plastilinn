@@ -1,6 +1,6 @@
 alias:: Agility
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Understanding and managing the product life cycle is essential for adapting to changes in market demand and technology. How difficult will it be to launch a worthwhile version 1.0?
 - #questions
   - #question How difficult will it be to launch a version 1.0 of the product?

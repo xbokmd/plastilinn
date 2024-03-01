@@ -1,6 +1,6 @@
 alias:: Legal complexity
 page-type:: [[key]]
-innbok-key-rating:: 25
+xBoK-key-rating:: 25
 - #### does it involve legal issues in any form?
 - #questions
   - #question Does the product involve any legal complexities?

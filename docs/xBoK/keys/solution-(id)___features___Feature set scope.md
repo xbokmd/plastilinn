@@ -1,6 +1,6 @@
 alias:: Feature set scope
 page-type:: [[key]]
-innbok-key-rating:: 35
+xBoK-key-rating:: 35
 - #### Determine if all the necessary features for the solution have been identified and if there is an appropriate balance between too many or too few features.
 - #questions
   - #question Have all the features been clearly identified? Are there too many? Too few?

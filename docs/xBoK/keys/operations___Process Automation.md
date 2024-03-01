@@ -1,6 +1,6 @@
 alias:: Process Automation
 page-type:: [[key]]
-innbok-key-rating:: 25
+xBoK-key-rating:: 25
 - #### Implementing automation in operations can improve efficiency and reduce costs, especially for repetitive and time-consuming tasks.
 - #questions
   - #question Is the startup leveraging process automation effectively?

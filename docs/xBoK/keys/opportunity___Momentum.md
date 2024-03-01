@@ -1,6 +1,6 @@
 alias:: Momentum
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### is it a good time to launch? is it too early? is it too late?
 - #questions
   - #question Is it the right time to launch the startup?

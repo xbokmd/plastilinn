@@ -1,6 +1,6 @@
 alias:: Data Analysis Tools
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Utilizing data analysis tools to make_informed decisions is crucial. Data analysis can provide insights into customer behavior, market trends, and business performance.
 - #questions
   - #question Are data analysis tools used to_inform decision-making?

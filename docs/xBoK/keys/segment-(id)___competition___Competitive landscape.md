@@ -1,6 +1,6 @@
 alias:: Competitive landscape
 page-type:: [[key]]
-innbok-key-rating:: 50
+xBoK-key-rating:: 50
 - #### how many competitors exist? how big are they? how will they react?
 - #questions
   - #question How many competitors exist in the market?

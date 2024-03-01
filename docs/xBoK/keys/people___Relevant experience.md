@@ -1,6 +1,6 @@
 alias:: Relevant experience
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Evaluate the experience of the team in business management and leadership. Assess the experience of the team in startups and their track record.
 - #questions
   - #question Do they have experience in business management?

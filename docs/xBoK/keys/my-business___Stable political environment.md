@@ -1,6 +1,6 @@
 alias:: Stable political environment
 page-type:: [[key]]
-innbok-key-rating:: 10
+xBoK-key-rating:: 10
 - #### A stable political environment minimizes operational disruptions and provides a predictable business environment.
 - #questions
   - #question Does the startup operate in a stable political environment?

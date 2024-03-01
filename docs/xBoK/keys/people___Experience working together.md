@@ -1,6 +1,6 @@
 alias:: Experience working together
 page-type:: [[key]]
-innbok-key-rating:: 10
+xBoK-key-rating:: 10
 - #### 
 - #questions
   - #question How well does the team work together?

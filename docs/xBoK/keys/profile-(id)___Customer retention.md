@@ -1,6 +1,6 @@
 alias:: Customer retention
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### Retaining customers at a high rate is crucial to maintaining revenue and maximizing growth potential.
 - #questions
   - #question Does the startup prioritize customer retention?

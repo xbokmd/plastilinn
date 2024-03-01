@@ -1,6 +1,6 @@
 alias:: Financial benefits
 page-type:: [[key]]
-innbok-key-rating:: 45
+xBoK-key-rating:: 45
 - #### does the solution help the customer earn more money? does the solution make the customer save money?
 - #questions
   - #question Does the solution help customers earn more money?

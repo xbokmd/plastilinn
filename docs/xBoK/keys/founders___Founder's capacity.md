@@ -1,6 +1,6 @@
 alias:: Founder's capacity
 page-type:: [[key]]
-innbok-key-rating:: 65
+xBoK-key-rating:: 65
 - #### does the entrepreneur have enough knowledge, skills and experience? does he speak languages?
 - #questions
   - #question Does the entrepreneur have the necessary knowledge, skills, and experience?

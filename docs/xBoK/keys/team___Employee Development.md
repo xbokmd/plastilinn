@@ -1,6 +1,6 @@
 alias:: Employee Development
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Investing in the development of employees through training and opportunities is essential for keeping a skilled and motivated workforce.
 - #questions
   - #question Are there opportunities for employee development?

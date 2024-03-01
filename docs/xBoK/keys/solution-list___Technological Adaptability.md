@@ -1,6 +1,6 @@
 alias:: Technological Adaptability
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### The ability to adapt to new technologies is essential for staying competitive and innovative in a rapidly evolving market.
 - #questions
   - #question Is the startup adaptable to new technologies?

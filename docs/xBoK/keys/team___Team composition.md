@@ -1,6 +1,6 @@
 alias:: Team composition
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### how do team members complement each other? are their profiles complementary?
 - #questions
   - #question How do team members complement each other?

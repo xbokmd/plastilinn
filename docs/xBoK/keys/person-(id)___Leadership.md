@@ -1,6 +1,6 @@
 alias:: Leadership
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### does the entrepreneur possess strong leadership qualities and the ability to inspire and motivate others?
 - #questions
   - #question Does the entrepreneur possess strong leadership qualities?

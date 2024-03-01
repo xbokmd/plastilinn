@@ -1,6 +1,6 @@
 alias:: Team Skills
 page-type:: [[key]]
-innbok-key-rating:: 70
+xBoK-key-rating:: 70
 - #### The skills and expertise of the founding team and employees are critical. A skilled team can execute the business plan effectively.
 - #questions
   - #question Does the team have the necessary skills and expertise?

@@ -1,6 +1,6 @@
 alias:: Market maturity
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### how mature is the market? Is it ready for customers?
 - #questions
   - #question How mature is the market?

@@ -1,6 +1,6 @@
 alias:: Robust product quality control
 page-type:: [[key]]
-innbok-key-rating:: 35
+xBoK-key-rating:: 35
 - #### Implementing rigorous quality control measures ensures that the product is free from defects, reducing the risk of legal claims, financial losses, and damage to reputation.
 - #questions
   - #question Does the startup have robust product quality control measures?

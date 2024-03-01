@@ -1,6 +1,6 @@
 alias:: Intellectual Property
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Protecting intellectual property (IP) is crucial. IP can be a valuable asset for startups, especially in technology sectors.
 - #questions
   - #question Is the startup protecting its intellectual property?

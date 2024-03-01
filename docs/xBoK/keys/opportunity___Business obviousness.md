@@ -1,6 +1,6 @@
 alias:: Business obviousness
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Is it clear why people should use it?
 - #questions
   - #question How much value can the startup ultimately deliver?

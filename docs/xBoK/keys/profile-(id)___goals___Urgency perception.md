@@ -1,6 +1,6 @@
 alias:: Urgency perception
 page-type:: [[key]]
-innbok-key-rating:: 45
+xBoK-key-rating:: 45
 - #### is the problem perceived by the customer as urgent?
 - #questions
   - #question Is the problem perceived as urgent by customers?

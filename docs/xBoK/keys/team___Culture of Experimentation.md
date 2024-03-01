@@ -1,6 +1,6 @@
 alias:: Culture of Experimentation
 page-type:: [[key]]
-innbok-key-rating:: 50
+xBoK-key-rating:: 50
 - #### Fostering a culture of experimentation can drive innovation. It involves testing new ideas and learning from successes and failures.
 - #questions
   - #question Is there a culture of experimentation within the startup?

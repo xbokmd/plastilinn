@@ -1,6 +1,6 @@
 alias:: Benefits and Compensation
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Offering competitive benefits and compensation is essential for attracting and retaining talented employees.
 - #questions
   - #question Does the startup offer competitive benefits and compensation packages?

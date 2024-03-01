@@ -1,6 +1,6 @@
 alias:: Discoverability
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### How will people learn about your product? is it viral?
 - #questions
   - #question How much does the problem hurt customers?

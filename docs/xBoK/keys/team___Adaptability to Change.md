@@ -1,6 +1,6 @@
 alias:: Adaptability to Change
 page-type:: [[key]]
-innbok-key-rating:: 55
+xBoK-key-rating:: 55
 - #### The ability to adapt to change is essential for business survival and growth. This includes market trends, customer preferences, and technological advancements.
 - #questions
   - #question Is the startup adaptable to change?

@@ -1,6 +1,6 @@
 alias:: Market Size
 page-type:: [[key]]
-innbok-key-rating:: 65
+xBoK-key-rating:: 65
 - #### The target market should be sufficiently large to allow for scalable growth. Understanding market size is crucial for assessing potential revenues.
 - #questions
   - #question Is the market size large enough to support scalable growth?

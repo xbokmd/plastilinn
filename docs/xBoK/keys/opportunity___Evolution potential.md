@@ -1,6 +1,6 @@
 alias:: Evolution potential
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### can it evolve into a different idea?
 - #questions
   - #question Does the idea make use of new and affordable technologies?

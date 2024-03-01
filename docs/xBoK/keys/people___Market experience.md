@@ -1,6 +1,6 @@
 alias:: Market experience
 page-type:: [[key]]
-innbok-key-rating:: 25
+xBoK-key-rating:: 25
 - #### does the team have experience in the market?
 - #questions
   - #question Does the team have experience in the target market?

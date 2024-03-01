@@ -1,6 +1,6 @@
 alias:: Contingency Plans
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Having contingency plans in place is essential to deal with unexpected events or crises that could negatively impact the business.
 - #questions
   - #question Are there contingency plans in place for various scenarios?

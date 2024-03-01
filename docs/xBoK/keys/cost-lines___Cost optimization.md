@@ -1,6 +1,6 @@
 alias:: Cost optimization
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### Optimizing operational or production costs is crucial to maintain profit margins, ensuring financial stability and enabling investment in business growth and development.
 - #questions
   - #question Is the operational or production cost optimized?

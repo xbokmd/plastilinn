@@ -1,6 +1,6 @@
 alias:: Customer satisfaction
 page-type:: [[key]]
-innbok-key-rating:: 70
+xBoK-key-rating:: 70
 - #### Ensuring customer satisfaction is crucial to avoid negative reviews and retain business.
 - #questions
   - #question Does the startup prioritize customer satisfaction?

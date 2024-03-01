@@ -1,6 +1,6 @@
 alias:: Efficiency and Continuous Improvement
 page-type:: [[key]]
-innbok-key-rating:: 30
+xBoK-key-rating:: 30
 - #### A culture of continuous improvement is essential for evolving and adapting to changes. It involves constantly evaluating and optimizing processes.
 - #questions
   - #question Is continuous improvement part of the company culture?

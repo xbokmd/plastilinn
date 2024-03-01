@@ -1,6 +1,6 @@
 alias:: Community Contribution
 page-type:: [[key]]
-innbok-key-rating:: 20
+xBoK-key-rating:: 20
 - #### Contributing positively to the community can enhance the brand image and build goodwill. This includes social responsibility initiatives.
 - #questions
   - #question Does the startup contribute positively to the community?

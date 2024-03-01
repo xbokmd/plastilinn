@@ -1,6 +1,6 @@
 alias:: Market growth potential
 page-type:: [[key]]
-innbok-key-rating:: 60
+xBoK-key-rating:: 60
 - #### how big can the potential market be?
 - #questions
   - #question How big is the potential market for the startup?

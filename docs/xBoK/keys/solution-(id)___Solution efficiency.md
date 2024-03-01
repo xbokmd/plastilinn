@@ -1,6 +1,6 @@
 alias:: Solution efficiency
 page-type:: [[key]]
-innbok-key-rating:: 55
+xBoK-key-rating:: 55
 - #### does the solution solve the problem?
 - #questions
   - #question Does the solution effectively solve the problem?

@@ -1,6 +1,6 @@
 alias:: Strategic Alliances
 page-type:: [[key]]
-innbok-key-rating:: 40
+xBoK-key-rating:: 40
 - #### Building strategic alliances and partnerships can provide access to resources, markets, and expertise, accelerating growth.
 - #questions
   - #question Has the startup formed any strategic alliances or partnerships?

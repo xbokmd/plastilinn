@@ -1,6 +1,6 @@
 alias:: Growth Potential
 page-type:: [[key]]
-innbok-key-rating:: 50
+xBoK-key-rating:: 50
 - #### Demonstrating the potential for scalable growth is essential for attracting investment and achieving long-term success.
 - #questions
   - #question Does the startup have the potential for significant growth?
