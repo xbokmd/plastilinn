@@ -1,2 +1,5 @@
 - [Read Me](README)
 - [Example Second Page](second-page)
+- [channel](xBoK/classes/channel.md)
+- [Ver el tutorial](guias/tutorial.md)
+    - [Ver el tutorial](guias/tutorial.md)
