@@ -121,6 +121,7 @@
                             </svg>
                             Guide
                             </label>
+                            https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/
                         </div>
                         <button @click="toggleIndex" class="collapse-filter-button btn btn-primary btn-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -189,6 +190,28 @@
                                         <button @click="setFilterTags(['*****', '?????'])" class="btn btn-error btn-outline">High importance or uncertainty(<span data-tag="*****">*****</span> #***** or <span data-tag="?????">?????</span>  #?????)</button>
                                         <button @click="setFilterTags(['*****', '?????'])" class="btn btn-error btn-outline">High importance or uncertainty(<span data-tag="*****">*****</span> #***** or <span data-tag="?????">?????</span>  #?????)</button>
                                     <!-- Agrega más botones según tus tags -->
+                                    <div class="space-y-2">
+                                        <!-- Botón con sombra y transición -->
+                                        <button @click="setFilterTags(['*****', '?????'])" class="btn btn-error btn-outline shadow-lg transition duration-150 ease-in-out hover:shadow-xl rounded-lg hover:bg-red-500 hover:text-white flex items-center gap-2 p-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                                <!-- Aquí iría el path del SVG de tu icono -->
+                                            </svg>
+                                            High importance or uncertainty
+                                        </button>
+                                    
+                                        </button>
+                                    
+                                        <!-- Botón con animación -->
+                                        <button @click="setFilterTags(['*****', '?????'])" class="btn btn-error btn-outline animate-pulse rounded-lg p-2">
+                                            High importance or uncertainty
+                                        </button>
+                                    
+                                        <!-- Botón con efectos de fondo y textura -->
+                                        <button @click="setFilterTags(['*****', '?????'])" class="btn btn-error btn-outline bg-gradient-to-r from-red-400 to-red-600 text-white rounded-lg p-2">
+                                            High importance or uncertainty
+                                        </button>
+                                    </div>
+                                    
                                   </div>
                             </div>
                         </div>
@@ -448,7 +471,8 @@
                         }
                         const { tags, tagsParsed } = this.processTags(blockContent);
                         const blockTitle = this.extractBlockTitle(blockContent);
-                        const parsedContent = marked.parse(blockContent); // Parsea el contenido Markdown
+                        const blockContentWithTagsParsed = this.parseTags(blockContent);
+                        const parsedContent = marked.parse(blockContentWithTagsParsed); // Parsea el contenido Markdown
                         console.log(blockTitle);
                         const metamodel = this.importMetamodelData(blockTitle);
                         return {
@@ -497,6 +521,19 @@
                     }
                     // Opcionalmente, devuelve la sección para uso externo
                     return section;
+                },
+                parseTags(content) {
+                    // Define un regex que busca etiquetas precedidas por # y posiblemente espacio en blanco al inicio
+                    const regex = /(^|\s)#([^\s]+)/g;
+
+                    // Reemplaza cada coincidencia en el texto con la etiqueta envuelta en un span directamente en el contenido
+                    const modifiedContent = content.replace(regex, (match, p1, p2) => {
+                        // Envuelve la etiqueta en un span con data-tag
+                        return `${p1}<span data-tag="${p2}">#${p2}</span>`;
+                    });
+
+                    // Devuelve el contenido modificado como una cadena de texto HTML
+                    return modifiedContent;
                 },
                 processTags(content) {
                     // Usando matchAll para capturar el texto después del #
@@ -598,20 +635,26 @@
                 },
                 saveChanges() {
                     const editedContent = this.editor.getMarkdown();
-                    if (this.selectedBlockIndex !== null) {
-                        const { tags, tagsParsed } = this.processTags(editedContent);
-                        const blockTitle = this.extractBlockTitle(editedContent);
-                        this.model.splice(this.selectedBlockIndex, 1, {
-                            ...this.model[this.selectedBlockIndex],
-                            content: editedContent,
-                            tags: tags,
-                            tagsParsed: tagsParsed,
-                            blockTitle: blockTitle,
-                            parsedContent: marked.parse(editedContent) // Actualiza parsedContent con el nuevo contenido editado
-                        });
-                    }
-                    this.updateModelMarkdown();
-                    this.closeModal();
+    if (this.selectedBlockIndex !== null) {
+        // Primero, procesa el contenido editado para obtener las tags y el contenido procesado
+        const { tags, tagsParsed } = this.processTags(editedContent);
+        // Asume que parseTags es una función que deseas usar aquí
+        const blockContentWithTagsParsed = this.parseTags(editedContent);
+        const blockTitle = this.extractBlockTitle(editedContent);
+        
+        // Luego, actualiza el bloque seleccionado con el nuevo contenido y metadatos
+        this.model.splice(this.selectedBlockIndex, 1, {
+            ...this.model[this.selectedBlockIndex],
+            content: editedContent,
+            tags: tags,
+            tagsParsed: tagsParsed,
+            blockTitle: blockTitle,
+            // Usa el contenido procesado para establecer parsedContent
+            parsedContent: marked.parse(blockContentWithTagsParsed)
+        });
+    }
+    this.updateModelMarkdown();
+    this.closeModal();
                 },
                 closeModal() {
                     this.isModalOpen = false;
