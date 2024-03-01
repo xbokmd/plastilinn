@@ -262,13 +262,11 @@
                                         <div :id="block.metamodel.name" class="block-metamodel section inline-flex"
                                             v-if="block.metamodel">
                                             <span data-tag="section" class="flex items-center gap-2" >
-                                                <button @click="openInfoModal(block.metamodel.name)" class="opacity-50 hover:opacity-100 focus:opacity-100">
+                                                <button @click="openRemoteModal(block.metamodel.name)" class="opacity-50 hover:opacity-100 focus:opacity-100">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                                                   </svg>                  
                                             </button>
-                                            <a :href="block.metamodel.info" target="_blank">{{
-                                                block.metamodel.name }}</a></span>
                                         </div>
                                         <div class="md-block-container-right tags-container" v-html="block.tagsParsed">
                                         </div>
@@ -290,35 +288,6 @@
             </div>
         </div>
     </div>
-    
-    <div v-if="isInfoModalOpen" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full items-center z-50">
-        <div class="modal-background absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative top-20 mx-auto p-5 border w-4/5 shadow-lg rounded-md bg-white flex flex-col justify-center items-center" style="z-index: 100;">
-            <div class="flex">
-                <div class="mt-3 text-center">
-                    <div class="mt-2">
-                        <iframe  :src="currentBlockInfoURL"></iframe>
-                        Nombre del bloque: <span>{{ currentBlockInfoURL }}</span>
-                    </div>
-                    <button class="btn m-2 btn-primary btn-sm" @click="closeInfoModal"><svg xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd"
-                                d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        Close window</button>
-                </div>
-            </div>
-        </div>
-        <div class="modal-background" @click="closeInfoModal"></div>
- 
-          <div class="modal-content">
-            Nombre del bloque: <span>{{ currentBlockInfoURL }}</span>
-            <!-- Otros contenidos de la modal -->
-
-        </div>
-        <button @click="closeInfoModal">Cerrar</button>
-      </div>
     <!-- Modal para editar el contenido de la línea seleccionada -->
     <div v-if="isModalOpen" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full items-center z-50">
         <div class="modal-background absolute inset-0 bg-black opacity-50"></div>
@@ -659,14 +628,13 @@
                         tagsParsed: tagsParsed
                     });
                 },
-                openInfoModal(block) {
+                openRemoteModal(block) {
                     this.selectedInfoBlock = block;
-                    this.isInfoModalOpen = true;
                     console.log(block);
                     console.log(this.isInfoModalOpen);
                     console.log("Línea clicada:", block);
                     this.currentBlockId = block.id; // Asegúrate de tener currentBlockId definido en tu data()
-                    this.currentBlockInfoURL = 'https://xbokmd.github.io/plastilinn/index.html#/' + block.replace(/ /g, "_") + '';
+                    this.currentBlockInfoURL = 'https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/' + block.replace(/ /g, "_") + '';
                     console.log(this.currentBlockInfoURL);
                     console.log("URL:" , this.currentBlockInfoURL);
                     // Busca el índice de la línea basándose en el ID único
@@ -678,9 +646,16 @@
                         this.currentBlockInfoURL;
                     });
                     console.log("currentBlockId:", this.currentBlockId);
-                },
-                closeInfoModal() {
-                    this.isInfoModalOpen = false;
+
+                    // Definir dimensiones y posición de la ventana
+                    const ancho = 900; // Ancho de la ventana
+                    const alto = 600; // Alto de la ventana
+                    // Calcular posición central
+                    const y = window.top.outerHeight / 2 + window.top.screenY - (alto / 2);
+                    const x = window.top.outerWidth / 2 + window.top.screenX - (ancho / 2);
+
+                    // Abrir nueva ventana
+                    window.open(this.currentBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
                 },
                 downloadMarkdown() {
                     // Asume que modelMarkdown y modelName ya están actualizados
