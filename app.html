@@ -123,7 +123,10 @@
                                 </svg>
                                 Export
                             </button>
-                            <button @click="toggleAutoDownload" :class="{ 'btn-selected': autoDownloadEnabled }" class="btn btn-primary btn-sm">Auto Download</button>
+                            <button @click="toggleAutoDownload" :class="{'bg-green-500': autoDownloadEnabled, 'bg-gray-500': !autoDownloadEnabled}" class="btn">
+                                Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
+                            </button>
+                            
                         </div>
                     </div>
     
