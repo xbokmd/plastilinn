@@ -79,27 +79,12 @@
             /* Asegúrate de que tiene un z-index alto si hay otros elementos flotantes */
         }
 
-        /* Estilos personalizados para la barra de desplazamiento */
-#sidebar::-webkit-scrollbar {
-    width: 8px; /* Reduce el ancho de la scrollbar */
+        #sidebar {
+    flex-shrink: 0; /* Esto evita que la sidebar se encoja si hay mucho contenido */
 }
-
-#sidebar::-webkit-scrollbar-track {
-    background: #f0f0f0; /* Color de fondo más claro para la track */
-}
-
-#sidebar::-webkit-scrollbar-thumb {
-    background: #dcdcdc; /* Color más claro para la scrollbar */
-    border-radius: 4px; /* Bordes redondeados para la scrollbar */
-}
-
-#sidebar::-webkit-scrollbar-thumb:hover {
-    background: #bcbcbc; /* Color al pasar el mouse sobre la scrollbar */
-}
-
-.flex-container {
-    display: flex;
-    flex-direction: column;
+ 
+  .marker {
+  border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;  position: absolute; left: 0; top: 0; transform: translate(-50%, -50%);
   }
     </style>
 
@@ -201,9 +186,9 @@
                     </div>
                 </div>
               </main>
-          
-              <nav class="order-first w-1/4 p-2">
-                <div id="sidebar" class="flex flex-col w-1/4 bg-white border-gray-200 fixed inset-y-0 left-0  p-4 shadow-2xl">
+              <nav class="order-first w-1/4 p-2 overflow-y-auto" style="min-width: 500px">
+
+
                     <div class="flex flex-row flex-wrap gap-2 sticky top-0">
                         <div class="flex flex-row justify-between mb-4 gap-2">
                             <div class="btn btn-primary btn-sm">
@@ -236,7 +221,6 @@
                         </div>
                         <div class="w-full"></div>
                         <div>
-                            https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/
                         <div class="index" v-if="isIndexOpen">
                             <ul class="menu p-4 w-80 bg-base-100">
                                 <li v-for="block in model.filter(b => b.blockType === 'section')" :key="block.id">
@@ -254,7 +238,7 @@
                                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-gray-400">
                                             <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
                                           </svg>
-                                          <input v-model="searchQuery" type="text" placeholder="Buscar en bloques..." class="input ml-2 bg-gray-50 w-full">
+                                          <input v-model="searchQuery" type="text" placeholder="Search..." class="input ml-2 bg-gray-50 w-full">
                                         </div>
                                         <!-- Filtro de etiquetas -->
                                         <div class="flex flex-wrap gap-2 mt-2">
@@ -272,29 +256,59 @@
                                       </div>
                                       <div class="">
                                           <!-- Botones para aplicar filtros directamente -->
-                                        <div class="flex items-center rounded-lg shadow-md overflow-hidden border-1 border-red-500 m-2">
-                                            <button @click="setFilterTags(['*****', '?????'])" class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+                                          <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
+                                            <button @click="setFilterTags(['*****', '?????'])" class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
                                                 High importance or uncertainty
                                             </button>
-                                            <div class="flex flex-grow items-center bg-gray-100 px-4 py-2">
-                                                <span data-tag="*****" class="font-semibold">*****</span> #***** or <span data-tag="?????" class="font-semibold">?????</span>  #?????
+                                            <div class="flex items-center bg-gray-100 px-4 py-2">
+                                                <span class="font-semibold" data-tag="*****">*****</span> #***** or <span class="font-semibold" data-tag="?????">?????</span> #?????
                                             </div>
-                                        </div>                                                               
-                                        <div class="flex items-center rounded-lg shadow-md overflow-hidden border-1 border-red-500 m-1">
-                                            <button @click="setFilterTags(['*****', '?????'])" class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
-                                                High importance or uncertainty
-                                            </button>
-                                            <div class="flex flex-grow items-center bg-white px-4 py-2">
-                                                <span data-tag="*****" class="font-semibold">*****</span> #***** or <span data-tag="?????" class="font-semibold">?????</span>  #?????
-                                            </div>
-                                        </div>  
+                                        </div>
+<div class="flex flex-col lg:flex-row justify-between bg-white p-4 rounded-lg shadow-sm gap-4" v-if="filterVisible">
+    <!-- Búsqueda -->
+    <div class="flex flex-col lg:flex-row gap-4 w-full">
+        <div class="flex items-center p-2 bg-gray-100 rounded-lg shadow-inner w-full">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-gray-400">
+            <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+          </svg>
+          <input v-model="searchQuery" type="text" placeholder="Search..." class="input ml-2 bg-gray-100 w-full">
+        </div>
+        
+        <!-- Filtro de etiquetas -->
+        <div class="flex flex-col gap-2 w-full">
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span v-for="tag in selectedTags" :key="tag" class="badge badge-ghost" :data-tag="tag">{{ tag }}</span>
+            </div>
+            <div class="flex justify-between items-center mb-2">
+                <span>Filter tags</span>
+                <button @click="resetSelectedTags" class="btn btn-ghost btn-sm">Reset</button>
+            </div>
+            <select v-model="selectedTags" class="select select-bordered w-full p-2 bg-white rounded-lg shadow">
+                <option v-for="tag in tags" :key="tag" :value="tag">{{ tag }}</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Botones para aplicar filtros directamente -->
+    <div class="flex flex-col gap-2 w-full">
+        <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
+            <button @click="setFilterTags(['*****', '?????'])" class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
+                High importance or uncertainty
+            </button>
+            <div class="flex items-center bg-gray-100 px-4 py-2">
+                <span class="font-semibold" data-tag="*****">*****</span> #***** or <span class="font-semibold" data-tag="?????">?????</span> #?????
+            </div>
+        </div>
+    </div>
+</div>
+         
                                     </div> 
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-               </div>
+
               </nav>
           
             </div>
