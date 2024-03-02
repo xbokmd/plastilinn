@@ -123,6 +123,7 @@
                                 </svg>
                                 Export
                             </button>
+                            <button @click="toggleAutoDownload" :class="{ 'btn-selected': autoDownloadEnabled }" class="btn btn-primary btn-sm">Auto Download</button>
                         </div>
                     </div>
     
@@ -390,6 +391,7 @@
                     selectedInfoBlock: null, // Para almacenar la información del bloque seleccionado
                     currentBlockInfoURL: null,
                     components: [],
+                    autoDownloadEnabled: true,
                 };
             },
             computed: {
@@ -648,27 +650,31 @@
                     });
                 },
                 saveChanges() {
-                    const editedContent = this.editor.getMarkdown();
-    if (this.selectedBlockIndex !== null) {
-        // Primero, procesa el contenido editado para obtener las tags y el contenido procesado
-        const { tags, tagsParsed } = this.processTags(editedContent);
-        // Asume que parseTags es una función que deseas usar aquí
-        const blockContentWithTagsParsed = this.parseTags(editedContent);
-        const blockTitle = this.extractBlockTitle(editedContent);
-        
-        // Luego, actualiza el bloque seleccionado con el nuevo contenido y metadatos
-        this.model.splice(this.selectedBlockIndex, 1, {
-            ...this.model[this.selectedBlockIndex],
-            content: editedContent,
-            tags: tags,
-            tagsParsed: tagsParsed,
-            blockTitle: blockTitle,
-            // Usa el contenido procesado para establecer parsedContent
-            parsedContent: marked.parse(blockContentWithTagsParsed)
-        });
-    }
-    this.updateModelMarkdown();
-    this.closeModal();
+                const editedContent = this.editor.getMarkdown();
+                if (this.selectedBlockIndex !== null) {
+                    // Primero, procesa el contenido editado para obtener las tags y el contenido procesado
+                    const { tags, tagsParsed } = this.processTags(editedContent);
+                    // Asume que parseTags es una función que deseas usar aquí
+                    const blockContentWithTagsParsed = this.parseTags(editedContent);
+                    const blockTitle = this.extractBlockTitle(editedContent);
+                    
+                    // Luego, actualiza el bloque seleccionado con el nuevo contenido y metadatos
+                    this.model.splice(this.selectedBlockIndex, 1, {
+                        ...this.model[this.selectedBlockIndex],
+                        content: editedContent,
+                        tags: tags,
+                        tagsParsed: tagsParsed,
+                        blockTitle: blockTitle,
+                        // Usa el contenido procesado para establecer parsedContent
+                        parsedContent: marked.parse(blockContentWithTagsParsed)
+                    });
+                }
+                this.updateModelMarkdown();
+                this.closeModal();
+                        // Después de guardar, verifica si autoDownload está habilitado
+                if (this.autoDownloadEnabled) {
+                    this.downloadMarkdown(); // Asume que este es tu método de descarga existente
+                }
                 },
                 closeModal() {
                     this.isModalOpen = false;
@@ -755,6 +761,9 @@
                     link.click();
                     document.body.removeChild(link);
                 },
+                toggleAutoDownload() {
+        this.autoDownloadEnabled = !this.autoDownloadEnabled;
+    },
                 generateSuggestionPrompt() {
                     console.log("currentBlockId:", this.currentBlockId);
                     console.log("model:", this.model); // Ahora imprime el arreglo model para verificar
