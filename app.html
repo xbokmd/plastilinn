@@ -114,6 +114,15 @@
                                 </svg>
                                 Download
                             </button>
+                            <button id="downloadBtn" @click="downloadHTML" class="btn btn-primary btn-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="w-6 h-6">
+                                    <path fill-rule="evenodd"
+                                        d="M10.5 3.75a6 6 0 0 0-5.98 6.496A5.25 5.25 0 0 0 6.75 20.25H18a4.5 4.5 0 0 0 2.206-8.423 3.75 3.75 0 0 0-4.133-4.303A6.001 6.001 0 0 0 10.5 3.75Zm2.25 6a.75.75 0 0 0-1.5 0v4.94l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V9.75Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                Export
+                            </button>
                         </div>
                     </div>
     
@@ -187,8 +196,6 @@
                 </div>
               </main>
               <nav class="order-first w-1/4 p-2 overflow-y-auto" style="min-width: 500px">
-
-
                     <div class="flex flex-row flex-wrap gap-2 sticky top-0">
                         <div class="flex flex-row justify-between mb-4 gap-2">
                             <div class="btn btn-primary btn-sm">
@@ -531,7 +538,7 @@
                 },
                 parseTags(content) {
                     // Define un regex que busca etiquetas precedidas por # y posiblemente espacio en blanco al inicio
-                    const regex = /(^|\s)#([^\s]+)/g;
+                    const regex = /(^|\s)#([^#\s][^\s]*)/g;
 
                     // Reemplaza cada coincidencia en el texto con la etiqueta envuelta en un span directamente en el contenido
                     const modifiedContent = content.replace(regex, (match, p1, p2) => {
@@ -722,6 +729,26 @@
                     const link = document.createElement('a');
                     link.href = URL.createObjectURL(blob);
                     link.download = fileName;
+
+                    // Simula un clic en el enlace para iniciar la descarga y luego limpia
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                },
+                downloadHTML() {
+                    // Convierte el Markdown a HTML
+                    const htmlContent = marked.parse(this.modelMarkdown);
+
+                    // Opcional: Si quieres incluir un estilo básico en tu HTML exportado, puedes agregarlo aquí
+                    const htmlWithStyle = `${htmlContent}`;
+
+                    // Crea un Blob con el contenido HTML
+                    const blob = new Blob([htmlWithStyle], {type: 'text/html'});
+
+                    // Crea un enlace para descargar el archivo
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = "exported-content.html"; // Puedes personalizar el nombre del archivo
 
                     // Simula un clic en el enlace para iniciar la descarga y luego limpia
                     document.body.appendChild(link);
