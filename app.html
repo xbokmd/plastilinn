@@ -113,7 +113,6 @@
     font-family: 'Arial', sans-serif; /* Cambia la fuente del texto */
 }
     </style>
-
 </head>
 
 <body class="">
@@ -184,7 +183,8 @@
                                         <h1 class="text-5xl font-bold mb-4">Business Model</h1>
                                         <input type="file" @change="loadAndParseMarkdown" accept=".md"
                                             class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
-                                        <p class="py-6">Upload your document</p>
+                                            <p>Download your <a href="https://xbokmd.github.io/plastilinn/">plastilinn document template</a></p>
+                                            <p class="py-6">Upload your document</p>
                                     </div>
                                 </div>
                             </div>
@@ -247,15 +247,26 @@
                 <nav class="order-first w-1/4 p-2 overflow-y-auto" style="min-width: 500px">
                     <div class="flex flex-row flex-wrap gap-2 sticky top-0">
                         <div class="flex flex-row justify-between mb-4 gap-2">
-                            <div class="btn btn-primary btn-sm">
+                            <button @click="toggleGuidesSelect" class="collapse-filter-button btn btn-primary btn-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                     class="w-6 h-6">
                                     <path fill-rule="evenodd"
                                         d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
                                         clip-rule="evenodd" />
                                 </svg>
-                                Guide
-                                </label>
+                                Guides
+                            </button>
+                            <div class="w-full"></div>
+                                <!-- Select que se muestra u oculta según showSelect -->
+                                <select v-if="showGuidesSelect" @change="loadMarkdownContent($event.target.value)">
+                                    <option value="">Seleccione una guía</option>
+                                    <option value="url_del_fichero_markdown_1.md">Guía 1</option>
+                                    <option value="url_del_fichero_markdown_2.md">Guía 2</option>
+                                    <option value="https://xBoK.github.io/plastilinn/guides/quick_start.md">Guía 3</option>
+                                </select>
+                                <!-- Div que muestra el contenido del Markdown seleccionado -->
+                            <div v-if="markdownGuideContent">
+                                <div v-html="markdownGuideContent"></div>
                             </div>
                             <button @click="toggleIndex" class="collapse-filter-button btn btn-primary btn-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -424,6 +435,8 @@
                         currentBlockInfoURL: null,
                         components: [],
                         autoDownloadEnabled: true,
+                        showGuidesSelect: false, // Controla la visibilidad del select
+                        markdownGuideContent: '', // Almacena el contenido del Markdown cargado
                     };
                 },
                 computed: {
@@ -467,6 +480,25 @@
                             this.isIndexOpen = false;
                         }
                     },
+                    toggleGuidesSelect() {
+        this.showGuidesSelect = !this.showGuidesSelect;
+    },
+                    async loadMarkdownContent(url) {
+                    if (url) {
+                        try {
+                            const response = await fetch(url);
+                            const markdown = await response.text();
+                            // Aquí convertirías el Markdown a HTML
+                            // Puedes usar la librería marked.js como antes mencioné
+                            this.markdownGuideContent = marked.parse(markdown);
+                        } catch (error) {
+                            console.error("Error cargando el archivo Markdown:", error);
+                            this.markdownContent = '';
+                        }
+                    } else {
+                        this.markdownGuideContent = '';
+                    }
+                },
                     loadAndParseMarkdown(event) {
                         const file = event.target.files[0];
                         if (!file) {
