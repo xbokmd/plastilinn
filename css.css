@@ -42,15 +42,15 @@
     flex-wrap: wrap;
     align-items: flex-start; /* Alinea los ítems al inicio del contenedor */
     justify-content: flex-start; /* Alinea los ítems al inicio (izquierda) */
-    gap: 5px; /* Espacio entre etiquetas */
+    gap: 4px; /* Espacio entre etiquetas */
 }
 
 .tags-container span {
     background-color: white; /* Color de fondo de las etiquetas */
-    padding: 2px 5px;
+    padding: 2px;
     margin: 2px 0;
     border-radius: 3px;
-    height: 2rem;
+    height: 1.6rem;
 }
 
 textarea {
