@@ -1,4 +1,5 @@
 # blah
 blah blah
 
-[opportunity](#opportunity)
+- [opportunity](#opportunity)
+- [vision](#vision)
