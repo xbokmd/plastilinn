@@ -58,7 +58,7 @@
         }
 
         .section {
-            scroll-margin-top: 4rem;
+            scroll-margin-top: 2rem;
             /* Asegúrate de que esto sea igual o más grande que la altura de tu navbar */
         }
 
@@ -164,7 +164,7 @@
 
             <!-- main container -->
             <div class="flex-1 flex flex-row overflow-y-hidden">
-                <main class="flex-auto  border-l border-r border-gray-200 text-xs p-2 overflow-y-auto">
+                <main class="flex-auto  border-l border-r border-gray-200 text-xs p-2 overflow-y-auto" style="scroll-behavior: smooth;">
                     <div class="leading-10">
                         <div id="content" class="bg-gray-200 p-1 rounded">
                             <div class="plastilinn-hero hero pt-48" v-if="!markdownLoaded">
@@ -920,6 +920,10 @@
                         if (event.type === 'message' && event.message_type === 'text') {
                             alert(`Respuesta del bot: ${event.text}`);
                         }
+                    });
+                        // Configura marked.js para este componente
+                    marked.setOptions({
+                    breaks: true
                     });
                 },
             })
