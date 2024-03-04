@@ -17,57 +17,57 @@
 # segment list #**** #>
   - #segment
 ## segment (id) #**** #>
-### segment (id)/segmentation criteria #*** #>
+### segmentation criteria #*** #>
   - #segmentation
-### segment (id)/market size #*** #>
-### segment (id)/market trends #* #>
-### segment (id)/partners #* #>
+### market size #*** #>
+### market trends #* #>
+### partners #* #>
   - #stakeholder
-### segment (id)/competition #** #>
+### competition #** #>
   - #stakeholder
-### segment (id)/roles #** #>
+### roles #** #>
   - #role
-### segment (id)/profiles #* #>
+### profiles #* #>
   - #profile
 # profile list #*** #>
 ## profile (id) #**** #>
-### profile (id)/segmentation #*** #>
+### segmentation #*** #>
   - #segmentation
-### profile (id)/persona #** #>
-### profile (id)/goals #**** #>
+### persona #** #>
+### goals #**** #>
   - #goal
-### profile (id)/perceptions #* #>
+### perceptions #* #>
   - #perception
-### profile (id)/emotions #* #>
+### emotions #* #>
   - #emotion
-### profile (id)/value proposition #*** #>
+### value proposition #*** #>
   - #value
-#### profile (id)/quantified value proposition #* #>
-### profile (id)/relationship #* #>
+#### quantified value proposition #* #>
+### relationship #* #>
   - #relationship
-### profile (id)/messages #** #>
+### messages #** #>
   - #message
-### profile (id)/channels #*** #>
+### channels #*** #>
   - #channel
-### profile (id)/assets #** #>
+### assets #** #>
   - #asset
-### profile (id)/transactions #* #>
+### transactions #* #>
   - #transaction
-### profile (id)/journey #** #>
-### profile (id)/funnel #* #>
-### profile (id)/sales strategy #* #>
+### journey #** #>
+### funnel #* #>
+### sales strategy #* #>
 # solution list #**** #>
   - #solution
 ## solution (id) #*** #>
-### solution (id)/category #** #>
-### solution (id)/components #* #>
-### solution (id)/features #** #>
+### category #** #>
+### components #* #>
+### features #** #>
   - #feature
-### solution (id)/roadmap #* #>
-### solution (id)/offerings #** #>
+### roadmap #* #>
+### offerings #** #>
   - #offering
-### solution (id)/pricing #** #>
-### solution (id)/brochure #* #>
+### pricing #** #>
+### brochure #* #>
 # marketing #** #>
 ## naming #** #>
 ## branding #* #>
@@ -89,12 +89,12 @@
 ## people #**** #>
   - #person
 ### person (id) #**** #>
-#### person (id)/skills #*** #>
+#### skills #*** #>
   - #skill
-#### person (id)/functions #*** #>
+#### functions #*** #>
   - #function
-#### person (id)/inputs #*** #>
-#### person (id)/outputs #*** #>
+#### inputs #*** #>
+#### outputs #*** #>
 ## founders #**** #>
   - #person
 ## position list #** #>
