@@ -279,8 +279,8 @@
                         <!-- Select que se muestra u oculta según showSelect -->
                         <select v-if="showGuidesSelect" @change="loadMarkdownContent($event.target.value)">
                             <option value="">Seleccione una guía</option>
-                            <option value="url_del_fichero_markdown_1.md">Guía 1</option>
-                            <option value="url_del_fichero_markdown_2.md">Guía 2</option>
+                            <option value="https://xbokmd.github.io/plastilinn/guides/quick_start.md">Quick start</option>
+                            <option value="https://xbokmd.github.io/plastilinn/guides/lean_canvas.md">Lean Canvas</option>
                             <option value="https://xbokmd.github.io/plastilinn/guides/quick_start.md">Quick start</option>
                         </select>
                         <!-- Div que muestra el contenido del Markdown seleccionado -->
@@ -537,7 +537,6 @@
                         if (currentBlock.length > 0) {
                             blocks.push(currentBlock.join('\n')); // Asegúrate de añadir el último bloque
                         }
-
                         // Actualiza this.model para que contenga bloques en lugar de líneas individuales
                         this.model = blocks.map((blockContent, index) => {
                             this.lastId += 1; // Incrementa el ID para cada bloque
