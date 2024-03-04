@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[opportunity]]
-relations:: [[]]
-weight:: 40
-
 - ## 🔍 Definition
   - An opportunity is a potential area for a business to generate revenue or create value for customers within its business model.
 - ## 📰 Content type 
@@ -38,17 +31,29 @@ weight:: 40
   
   In essence, the concept of "opportunity" in business modeling is about identifying and capitalizing on the potential for growth and value creation. It is a critical element in business design, driving strategic decision-making, innovation, and competitive positioning. It shapes the business's strategies for product development, market entry, customer engagement, and revenue generation.
 - ## 👉 Examples
-  - ### opportunity/examples/Space X
-    {{embed [[opportunity/examples/Space X]]}}
-  - ### opportunity/examples/vein visualizer
-    {{embed [[opportunity/examples/vein visualizer]]}}
-  - ### opportunity/examples/extinguished animals meat
-    {{embed [[opportunity/examples/extinguished animals meat]]}}
-  - ### opportunity/examples/Exotic Pet Rental
-    {{embed [[opportunity/examples/Exotic Pet Rental]]}}
-  - ### opportunity/examples/Underwater restaurant
-    {{embed [[opportunity/examples/Underwater restaurant]]}}
-  
+  ### Space X
+  - The opportunity for Space X lies in the growing demand for space exploration, satellite deployment, and commercial space travel.
+  - By developing innovative and cost-effective solutions, Space X aims to disrupt the traditional space industry.
+  - Space X aims to capture a significant market share.
+  ### vein visualizer
+  - An opportunity for the company could be the increasing demand for non-invasive medical procedures and the need for accurate vein visualization.
+  - By offering a device that improves the precision and efficiency of intravenous injections and other medical procedures, the company can tap into this growing market and capture a significant market share.
+  - Additionally, the company can explore partnerships with pharmaceutical companies or research institutions to further expand its reach and create value for customers.
+  ### extinguished animals meat
+  - An opportunity for the company lies in the growing demand for sustainable and ethically sourced luxury food products.
+  - By offering meat from revived extinct animals, the company can cater to a niche market of consumers seeking unique gastronomic experiences and supporting innovative approaches to food production.
+  - The company can differentiate itself by emphasizing the scientific research and technological development behind its products, as well as its commitment to sustainability and ethical practices.
+  - By targeting high-end restaurants and specialized stores, the company can capture a significant market share and establish itself as a leader in the luxury food market.
+  ### Exotic Pet Rental
+  - An opportunity for the Exotic Pet Rental Service lies in the growing interest in exotic pets and the desire for unique experiences without long-term commitments.
+  - By providing a convenient and temporary solution, the company can tap into this market and attract customers who are interested in experiencing the wonder of exotic pets without the responsibilities.
+  - The company can also explore collaborations with local pet stores or participate in events related to exotic animals to increase visibility and attract more potential customers.
+  ### Underwater restaurant
+  - An opportunity for the Submarine Themed Restaurant lies in the growing demand for unique and immersive dining experiences.
+  - By offering a one-of-a-kind underwater dining experience, the restaurant can attract customers seeking novelty and create a niche market.
+  - The restaurant can differentiate itself by focusing on high-quality cuisine and attention to detail in its submarine-themed decor.
+  - Collaborations with local tourist agencies can help attract both local residents and tourists looking for a memorable dining adventure.
+  - The restaurant can explore partnerships with marine conservation organizations to further enhance its environmental sustainability and attract customers who value eco-friendly experiences.
 - ## 🗄️ Topics
     - ### TODO #topic topic/What is a business?
       plastilinn-type:: [[topic]] [[guide-item]]

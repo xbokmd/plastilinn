@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[team]]
-relations:: [[]]
-weight:: 70
-
 - ## 🔍 Definition
   - A group of individuals working together towards a common goal within a business model.
 - ## 📰 Content type 
@@ -66,17 +59,68 @@ weight:: 70
   
   In conclusion, the "Team" concept in business modeling is a critical element that contributes to the effective execution of the business activities and the achievement of the business goals. It emphasizes the importance of teamwork and collaboration in driving business success.
 - ## 👉 Examples
-  - ### team/examples/Space X
-    {{embed [[team/examples/Space X]]}}
-  - ### team/examples/vein visualizer
-    {{embed [[team/examples/vein visualizer]]}}
-  - ### team/examples/extinguished animals meat
-    {{embed [[team/examples/extinguished animals meat]]}}
-  - ### team/examples/Exotic Pet Rental
-    {{embed [[team/examples/Exotic Pet Rental]]}}
-  - ### team/examples/Underwater restaurant
-    {{embed [[team/examples/Underwater restaurant]]}}
-  
+  ### Space X
+  - [[Engineers]]
+    - Responsible for designing and developing the rocket and spacecraft technologies, avionics systems, propulsion systems, and other components of the solutions.
+  - [[Scientists]]
+    - Involved in research and development activities related to space exploration, colonization, and satellite communication systems.
+  - [[Astronauts]]
+    - For crewed missions, astronauts would be part of the team, undergoing training and preparing for space missions.
+  - [[Project Managers]]
+    - Responsible for overseeing the development, testing, and implementation of the solutions, ensuring that the projects are delivered on time and within budget.
+  - [[Marketing and Sales Professionals]]
+    - Responsible for promoting and selling Space X's solutions to potential customers and clients, developing marketing strategies, and managing customer relationships.
+  - [[Operations and Logistics Professionals]]
+    - Responsible for managing the supply chain, logistics, and operations related to the distribution and delivery of the solutions.
+  - [[Legal and Regulatory Experts]]
+    - Responsible for ensuring compliance with legal and regulatory requirements related to space exploration, satellite deployment, and other activities.
+  - [[Finance and Accounting Professionals]]
+    - Responsible for managing the financial aspects of the projects, including budgeting, financial analysis, and reporting.
+  - [[Human Resources Professionals]]
+    - Responsible for recruiting, training, and managing the team members, ensuring a productive and positive work environment.
+  - [[IT and Technology Specialists]]
+    - Responsible for managing the IT infrastructure, software systems, and communication networks required for the development and operation of the solutions.
+  - [[Customer Support and Service Representatives]]
+    - Responsible for providing technical support, training, and assistance to customers using Space X's solutions.
+  - [[Quality Assurance and Safety Experts]]
+    - Responsible for ensuring the quality and safety of the solutions, conducting tests, inspections, and certifications.
+  - [[Public Relations and Communication Professionals]]
+    - Responsible for managing the public image of Space X, handling media relations, and communicating with stakeholders and the general public.
+  ### vein visualizer
+  - Product Development Team: Responsible for designing and improving the infrared vein visualization device, conducting research, and implementing new features.
+  - Sales and Distribution Team: Handles the sales and distribution of the device, establishing partnerships with medical distributors and managing customer relationships.
+  - Technical Support Team: Provides technical assistance, installation, and maintenance support to users of the device, ensuring customer satisfaction.
+  - Training and Education Team: Offers training programs and educational resources to healthcare professionals, promoting proper use of the device.
+  - Customer Service Team: Ensures excellent customer service, addressing inquiries, resolving issues, and maintaining strong relationships with clients.
+  - Research and Development Team: Continuously explores new technologies and innovations to enhance the device's capabilities and expand its applications.
+  - Marketing and Communications Team: Develops marketing strategies, creates promotional materials, and communicates the benefits of the device to the medical community.
+  - Quality Control Team: Ensures the device meets high-quality standards through rigorous testing, inspections, and certifications.
+  - Finance and Accounting Team: Manages financial aspects, including budgeting, financial analysis, and revenue tracking.
+  - Regulatory Affairs Team: Ensures compliance with medical device regulations and obtains necessary certifications and approvals.
+  - IT and Data Management Team: Oversees the IT infrastructure, data security, and software systems supporting the device's operation and user interface.
+  ### extinguished animals meat
+  - Biologists and Geneticists: Responsible for conducting research and development activities related to understanding and manipulating the DNA of extinct animals, as well as overseeing the cloning and reproduction processes.
+  - Veterinarians: Ensure the well-being and health of the revived extinct animals, providing medical care and expertise in their care and maintenance.
+  - Facility Managers: Responsible for managing the facilities and care centers where the revived extinct animals are housed, ensuring they have an appropriate environment for their development.
+  - Meat Production Specialists: Handle the production, processing, and packaging of the luxury meat, ensuring high-quality standards are met.
+  - Marketing and Sales Team: Develops marketing strategies to promote the unique gastronomic experience offered by the luxury meat, targeting high-end restaurants and specialized stores.
+  - Sustainability and Compliance Experts: Collaborate with experts in biodiversity conservation and regulatory authorities to ensure compliance with ethical and legal regulations related to biotechnology and genetic engineering.
+  ### Exotic Pet Rental
+  - Exotic Pet Care Specialists: Responsible for the overall well-being and care of the exotic pets, including feeding, cleaning, and monitoring their health.
+  - Rental Coordinators: Handle customer inquiries, bookings, and scheduling of the exotic pet rentals, ensuring a smooth and efficient process.
+  - Veterinary Experts: Provide medical care and check-ups for the exotic pets, ensuring their health and addressing any concerns or issues.
+  - Pet Trainers: Assist customers in handling and interacting with the exotic pets, providing guidance on proper handling techniques and behavior training.
+  - Logistics and Inventory Managers: Oversee the transportation and storage of the exotic pets, ensuring they are safely transported and available for rental.
+  - Customer Support Representatives: Assist customers with any questions or concerns they may have during the rental period, providing guidance and troubleshooting.
+  - Marketing and Social Media Specialists: Promote the exotic pet rental service through online advertising, social media campaigns, and collaborations with local pet stores.
+  - Administrative Staff: Handle administrative tasks such as record-keeping, invoicing, and managing customer contracts.
+  - Safety and Compliance Officers: Ensure that all safety protocols and regulations are followed, conducting regular inspections and audits to maintain a safe environment for the pets and customers.
+  ### Underwater restaurant
+  - Marine Biologists: Responsible for studying and understanding the marine life in the surrounding area, ensuring their well-being.
+  - Chefs and Culinary Team: Responsible for creating and preparing the diverse menu offerings, ensuring high-quality cuisine.
+  - Divers and Marine Experts: Responsible for maintaining and caring for the marine life in the surrounding area, ensuring their safety.
+  - Event Coordinators: Responsible for organizing and executing events and activities that enhance the dining experience.
+  - Marketing and Advertising Team: Responsible for promoting the restaurant, attracting customers, and increasing brand awareness.
 - ## 🗄️ Topics
   
 - ## 🧰 Tools

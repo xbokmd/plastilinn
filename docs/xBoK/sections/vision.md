@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[vision]]
-relations:: [[business objectives]]
-weight:: 50
-
 - ## 🔍 Definition
   - Vision is a statement that outlines the long-term aspirations and goals of a business model.
 - ## 📰 Content type 
@@ -32,17 +25,20 @@ weight:: 50
   
   In essence, the concept of "vision" in business modeling is about defining and articulating the long-term goals of a business. It is a critical element in business design, providing strategic direction, inspiration, and a framework for decision-making, and shaping the business's growth and development strategies.
 - ## 👉 Examples
-  - ### vision/examples/Space X
-    {{embed [[vision/examples/Space X]]}}
-  - ### vision/examples/vein visualizer
-    {{embed [[vision/examples/vein visualizer]]}}
-  - ### vision/examples/extinguished animals meat
-    {{embed [[vision/examples/extinguished animals meat]]}}
-  - ### vision/examples/Exotic Pet Rental
-    {{embed [[vision/examples/Exotic Pet Rental]]}}
-  - ### vision/examples/Underwater restaurant
-    {{embed [[vision/examples/Underwater restaurant]]}}
-  
+  ### Space X
+  - Space X envisions a future where humans can live and thrive on multiple planets, ensuring the long-term survival of the human species.
+  ### vein visualizer
+  - The company envisions a future where healthcare professionals worldwide have access to advanced vein visualization technology.
+  - This technology aims to improve patient care and safety in medical procedures.
+  ### extinguished animals meat
+  - The company envisions a future where humanity can experience the unique tastes and flavors of extinct animals, while promoting ethical and sustainable practices in biotechnology and genetic engineering.
+  - They strive to redefine the luxury food market by offering exclusive and exceptional gastronomic experiences, while contributing to the conservation of biodiversity and respecting animal life.
+  ### Exotic Pet Rental
+  - Our vision is to create a world where people can experience the joy and wonder of having an exotic pet, while also promoting responsible pet ownership and animal welfare.
+  - We aim to provide a safe and convenient solution for individuals who want to enjoy the companionship of exotic pets without the long-term commitments, while ensuring the well-being and proper care of the animals.
+  - Through our service, we strive to educate and inspire people to appreciate and respect the beauty and diversity of exotic species.
+  ### Underwater restaurant
+  - Our vision is to create a future where diners can experience the wonders of the underwater world while enjoying delicious cuisine in a unique and immersive environment.
 - ## 🗄️ Topics
   
 - ## 🧰 Tools

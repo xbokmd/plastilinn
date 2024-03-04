@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[pitch]]
-relations:: [[]]
-weight:: 20
-
 - ## 🔍 Definition
   - A pitch is a concise and compelling presentation of a business idea or model to potential investors or customers.
 - ## 📰 Content type 
@@ -29,16 +22,15 @@ weight:: 20
   
   In essence, the concept of "Pitch" in business modeling is about selling a business idea or model. It is a vital aspect of business design, as it directly impacts the ability of a business to secure funding and customers, and ultimately, its ability to succeed.
 - ## 👉 Examples
-  - ### pitch/examples/Space X
-    {{embed [[pitch/examples/Space X]]}}
-  - ### pitch/examples/vein visualizer
-    {{embed [[pitch/examples/vein visualizer]]}}
-  - ### pitch/examples/extinguished animals meat
-    {{embed [[pitch/examples/extinguished animals meat]]}}
-  - ### pitch/examples/Exotic Pet Rental
-    {{embed [[pitch/examples/Exotic Pet Rental]]}}
-  - ### pitch/examples/Underwater restaurant
-    {{embed [[pitch/examples/Underwater restaurant]]}}
+  ### Space X
+  Space X is a pioneering aerospace company founded by Elon Musk with the mission to reduce space travel costs and make life on other planets possible. We've revolutionized the industry with reusable rockets, successful launches, and the ambition to take humans to Mars. Our goal isn't just to explore space, but to secure humanity's future within it.
+  ### vein visualizer
+  
+  ### extinguished animals meat
+  
+  ### Exotic Pet Rental
+  
+  ### Underwater restaurant
   
 - ## 🗄️ Topics
   

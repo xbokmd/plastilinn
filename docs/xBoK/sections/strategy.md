@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[strategy]]
-relations:: [[organization goals]] [[mission]] [[vision]]
-weight:: 50
-
 - ## 🔍 Definition
   - the plan of action or approach taken by a business model to achieve its goals and objectives.
 - ## 📰 Content type 
@@ -44,17 +37,36 @@ weight:: 50
   
   For example, a company's strategy might be to become the market leader in its industry by offering innovative, high-quality products, investing heavily in research and development, building a strong brand, and providing exceptional customer service. This strategy would guide the company's decisions about product development, marketing, sales, customer service, and other key areas.
 - ## 👉 Examples
-  - ### strategy/examples/Space X
-    {{embed [[strategy/examples/Space X]]}}
-  - ### strategy/examples/vein visualizer
-    {{embed [[strategy/examples/vein visualizer]]}}
-  - ### strategy/examples/extinguished animals meat
-    {{embed [[strategy/examples/extinguished animals meat]]}}
-  - ### strategy/examples/Exotic Pet Rental
-    {{embed [[strategy/examples/Exotic Pet Rental]]}}
-  - ### strategy/examples/Underwater restaurant
-    {{embed [[strategy/examples/Underwater restaurant]]}}
-  
+  ### Space X
+  - Developing reusable rocket technology to reduce the cost of space missions.
+  - Leveraging partnerships with government and commercial entities for funding and collaboration.
+  - Investing in research and development to advance space technology.
+  - Focusing on innovation and continuous improvement in all aspects of the business.
+  ### vein visualizer
+  - Expanding the target market by exploring international distribution partnerships.
+  - Collaborating with medical research institutions to gather data and evidence of the device's effectiveness.
+  - Offering customized training programs for different medical specialties to enhance customer satisfaction.
+  - Implementing a customer referral program to incentivize existing customers to recommend the device to colleagues.
+  - Developing a mobile application to provide real-time support and troubleshooting for device users.
+  - Establishing strategic alliances with pharmaceutical companies to bundle the device with relevant products or medications.
+  - Implementing a proactive marketing strategy to raise awareness about the benefits of using the device in medical procedures.
+  ### extinguished animals meat
+  - Establishing strategic partnerships with conservation organizations and scientific institutions to enhance credibility and gain access to expertise in biodiversity conservation and genetic research.
+  - Investing in ongoing research and development to improve efficiency and effectiveness of the biotechnology and genetic engineering techniques used.
+  - Collaborating with regulatory authorities to ensure compliance with ethical and legal regulations, and actively participating in discussions and initiatives related to the ethical implications of reviving extinct species.
+  - Engaging with the public through educational campaigns and transparency initiatives to address concerns and promote understanding of the company's approach.
+  - Targeting high-end restaurants and luxury food markets, emphasizing the unique and exclusive gastronomic experience offered by the revived extinct animal meat.
+  - Continuously monitoring and assessing the environmental impact of the company's activities, and implementing sustainable practices to minimize negative effects.
+  - Constantly innovating and adapting to changes in consumer preferences and market trends to maintain a competitive edge in the luxury food market.
+  ### Exotic Pet Rental
+  - One strategy for the Exotic Pet Rental Service could be to establish partnerships with local animal shelters and rescue organizations to source exotic pets for rental. This would not only provide a steady supply of pets but also contribute to animal welfare by promoting adoption and finding temporary homes for rescued animals.
+  - Additionally, collaborating with veterinarians and animal behaviorists to offer educational workshops and training sessions for customers can help ensure responsible pet ownership and enhance the overall customer experience.
+  ### Underwater restaurant
+  - Collaborating with marine conservation organizations to promote sustainable practices and raise awareness.
+  - Implementing a reservation system to manage customer demand and provide a seamless dining experience.
+  - Creating partnerships with local hotels and tourist attractions to offer package deals and attract tourists.
+  - Offering themed events and promotions to attract repeat customers and create buzz.
+  - Utilizing customer feedback and reviews to continuously improve the dining experience.
 - ## 🗄️ Topics
   
 - ## 🧰 Tools

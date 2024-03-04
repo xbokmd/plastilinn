@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[inspiration]]
-relations:: [[]]
-weight:: 40
-
 - ## 🔍 Definition
   - Inspiration in the context of a business model refers to the creative spark that drives innovative ideas and solutions.
 - ## 📰 Content type 
@@ -25,16 +18,15 @@ weight:: 40
   
   In essence, inspiration is the catalyst for business innovation and growth. It is what drives entrepreneurs to take risks, push boundaries, and create value for their customers, stakeholders, and society at large.
 - ## 👉 Examples
-  - ### inspiration/examples/Space X
-    {{embed [[inspiration/examples/Space X]]}}
-  - ### inspiration/examples/vein visualizer
-    {{embed [[inspiration/examples/vein visualizer]]}}
-  - ### inspiration/examples/extinguished animals meat
-    {{embed [[inspiration/examples/extinguished animals meat]]}}
-  - ### inspiration/examples/Exotic Pet Rental
-    {{embed [[inspiration/examples/Exotic Pet Rental]]}}
-  - ### inspiration/examples/Underwater restaurant
-    {{embed [[inspiration/examples/Underwater restaurant]]}}
+  ### Space X
+  
+  ### vein visualizer
+  
+  ### extinguished animals meat
+  
+  ### Exotic Pet Rental
+  
+  ### Underwater restaurant
   
 - ## 🗄️ Topics
   

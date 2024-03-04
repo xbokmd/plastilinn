@@ -1,5 +1,5 @@
 alias:: completion
-icon:: 👍
+icon:: ▶️
 - #question Is the block completed?
 - ### Extreme completion (>>>>>)
   - #minimal-query

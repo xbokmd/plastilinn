@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[mission]]
-relations:: [[business objectives]]
-weight:: 60
-
 - ## 🔍 Definition
   - the purpose or reason for the existence of a business, including its goals and values.
 - ## 📰 Content type 
@@ -32,17 +25,28 @@ weight:: 60
   
   In essence, the concept of "mission" in business modeling is about defining and articulating the fundamental purpose of a business. It is a crucial element in business design, providing direction, focus, and motivation, and shaping the business's strategies and operations.
 - ## 👉 Examples
-  - ### mission/examples/Space X
-    {{embed [[mission/examples/Space X]]}}
-  - ### mission/examples/vein visualizer
-    {{embed [[mission/examples/vein visualizer]]}}
-  - ### mission/examples/extinguished animals meat
-    {{embed [[mission/examples/extinguished animals meat]]}}
-  - ### mission/examples/Exotic Pet Rental
-    {{embed [[mission/examples/Exotic Pet Rental]]}}
-  - ### mission/examples/Underwater restaurant
-    {{embed [[mission/examples/Underwater restaurant]]}}
-  
+  ### Space X
+  - Space X's mission is to make life multiplanetary by developing the technologies necessary for space exploration and colonization
+  ### vein visualizer
+  - The mission of the company is to enhance healthcare practices by providing medical professionals with innovative devices that utilize infrared technology to visualize veins.
+  - We aim to improve the accuracy and efficiency of intravenous procedures, ultimately contributing to better patient outcomes and experiences.
+  - Through continuous research and development, we strive to advance the capabilities of our devices and maintain strong customer relationships.
+  - We prioritize the values of excellence, reliability, and customer satisfaction.
+  ### extinguished animals meat
+  - Our mission is to revive extinct species through biotechnology and genetic engineering, providing a unique gastronomic experience while promoting biodiversity conservation.
+  - We aim to combine scientific research and technological development to recreate the distinctive characteristics of extinct animals, ensuring their well-being through specialized care.
+  - By ethically producing and marketing luxury meat, we offer consumers an exclusive and sustainable culinary option.
+  - We are committed to operating in compliance with all legal and ethical regulations, collaborating with experts and regulatory authorities to ensure the preservation of biodiversity and respect for animal life.
+  ### Exotic Pet Rental
+  - Our mission is to provide individuals with the opportunity to experience the wonder of having an exotic pet without the long-term commitments.
+  - We aim to offer a wide variety of healthy and well-cared-for exotic pets, along with complete care kits and expert guidance, ensuring our customers have a unique and enjoyable experience.
+  - We prioritize the values of animal welfare, customer satisfaction, and promoting responsible pet ownership.
+  ### Underwater restaurant
+  - Our mission is to create a unique dining experience that immerses guests in an underwater world, surrounded by marine life.
+  - We strive to provide exceptional cuisine using fresh, high-quality ingredients to ensure a memorable dining adventure.
+  - Our goal is to preserve and protect the underwater ecosystem through strict environmental guidelines and the expertise of our marine experts.
+  - We aim to offer educational and interactive experiences that enhance our guests' understanding and appreciation of marine life.
+  - Through comprehensive marketing strategies, we seek to attract both local residents and tourists seeking an unforgettable dining experience.
 - ## 🗄️ Topics
   
 - ## 🧰 Tools

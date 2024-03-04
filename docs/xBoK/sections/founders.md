@@ -1,11 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[founders]]
-item-classes:: #[[person]]
-relations:: [[]]
-weight:: 70
-
 - ## 🔍 Definition
   - Founders refer to the individuals who establish and initiate a business venture, taking on the role of its originators.
 - ## 📰 Content type (person)
@@ -44,16 +36,15 @@ weight:: 70
   
   In conclusion, the concept of "Founders" is a key element in business design and modeling. It highlights the role of the individuals who initiate and drive the business venture, and it provides a framework for understanding their influence on the business model, the resources, and the culture of the business.
 - ## 👉 Examples
-  - ### founders/examples/Space X
-    {{embed [[founders/examples/Space X]]}}
-  - ### founders/examples/vein visualizer
-    {{embed [[founders/examples/vein visualizer]]}}
-  - ### founders/examples/extinguished animals meat
-    {{embed [[founders/examples/extinguished animals meat]]}}
-  - ### founders/examples/Exotic Pet Rental
-    {{embed [[founders/examples/Exotic Pet Rental]]}}
-  - ### founders/examples/Underwater restaurant
-    {{embed [[founders/examples/Underwater restaurant]]}}
+  ### Space X
+  
+  ### vein visualizer
+  
+  ### extinguished animals meat
+  
+  ### Exotic Pet Rental
+  
+  ### Underwater restaurant
   
 - ## 🗄️ Topics
   

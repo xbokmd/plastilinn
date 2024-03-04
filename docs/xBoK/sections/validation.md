@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[validation]]
-relations:: [[]]
-weight:: 90
-
 - ## 🔍 Definition
   - the process of testing and verifying the assumptions and hypotheses underlying a business model.
 - ## 📰 Content type 
@@ -29,16 +22,15 @@ weight:: 90
   
   In essence, the concept of "Validation" in business modeling is about ensuring that a business model is grounded in reality and capable of delivering success. It is a critical aspect of business design, as it directly impacts the ability of a business to survive, thrive, and grow in a competitive market.
 - ## 👉 Examples
-  - ### validation/examples/Space X
-    {{embed [[validation/examples/Space X]]}}
-  - ### validation/examples/vein visualizer
-    {{embed [[validation/examples/vein visualizer]]}}
-  - ### validation/examples/extinguished animals meat
-    {{embed [[validation/examples/extinguished animals meat]]}}
-  - ### validation/examples/Exotic Pet Rental
-    {{embed [[validation/examples/Exotic Pet Rental]]}}
-  - ### validation/examples/Underwater restaurant
-    {{embed [[validation/examples/Underwater restaurant]]}}
+  ### Space X
+  
+  ### vein visualizer
+  
+  ### extinguished animals meat
+  
+  ### Exotic Pet Rental
+  
+  ### Underwater restaurant
   
 - ## 🗄️ Topics
   - ### TODO #topic topic/Modelo de negocio/Ciclo de modelado de negocio/Validación

@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[web]]
-relations:: [[]]
-weight:: 20
-
 - ## 🔍 Definition
   - the online platform or digital presence of a business model, which includes websites, social media, and other online channels.
 - ## 📰 Content type 
@@ -35,16 +28,24 @@ weight:: 20
   
   For instance, a retail business might use the "Web" concept in its business model as follows: They develop an e-commerce website to sell their products (Website Development), establish a presence on Instagram and Facebook to engage with their customers (Social Media Presence), use SEO and PPC to drive traffic to their website (Online Marketing), sell products through their website (E-commerce), and use Google Analytics to track their website performance and optimize their online marketing efforts (Analytics and Optimization). This demonstrates the importance of the "Web" concept in reaching and engaging with customers in the digital age.
 - ## 👉 Examples
-  - ### web/examples/Space X
-    {{embed [[web/examples/Space X]]}}
-  - ### web/examples/vein visualizer
-    {{embed [[web/examples/vein visualizer]]}}
-  - ### web/examples/extinguished animals meat
-    {{embed [[web/examples/extinguished animals meat]]}}
-  - ### web/examples/Exotic Pet Rental
-    {{embed [[web/examples/Exotic Pet Rental]]}}
-  - ### web/examples/Underwater restaurant
-    {{embed [[web/examples/Underwater restaurant]]}}
+  ### Space X
+  - [### Space X](https://www.Space X.com/)
+  	- Space X designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, ...
+  	- ### [Launches](https://www.Space X.com/launches/)
+  		- Space X designs, manufactures and launches advanced rockets ...|
+  	- ### [Mission](https://www.Space X.com/mission/)
+  		- Space X designs, manufactures and launches advanced rockets ...
+  	- ### [Careers](https://www.Space X.com/careers/)
+  		- Space X designs, manufactures and launches advanced rockets ...
+  	- ### [Starship](https://www.Space X.com/vehicles/starship/)
+  		- Space X designs, manufactures and launches advanced rockets ...
+  ### vein visualizer
+  
+  ### extinguished animals meat
+  
+  ### Exotic Pet Rental
+  
+  ### Underwater restaurant
   
 - ## 🗄️ Topics
   

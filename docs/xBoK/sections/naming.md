@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[naming]]
-relations:: [[]]
-weight:: 30
-
 - ## 🔍 Definition
   - the process of choosing and defining the name of a business, product, or service within a business model.
 - ## 📰 Content type 
@@ -46,17 +39,80 @@ weight:: 30
   
   By carefully considering these aspects in the "Naming" process, a business can create a strong and effective name that supports its business model and contributes to its success in the market. For instance, the organic food company might use its name to communicate its commitment to natural ingredients, differentiate itself from competitors, and create a memorable brand for consumers. This would demonstrate the company's ability to leverage "Naming" to drive its business model and create value.
 - ## 👉 Examples
-  - ### naming/examples/Space X
-    {{embed [[naming/examples/Space X]]}}
-  - ### naming/examples/vein visualizer
-    {{embed [[naming/examples/vein visualizer]]}}
-  - ### naming/examples/extinguished animals meat
-    {{embed [[naming/examples/extinguished animals meat]]}}
-  - ### naming/examples/Exotic Pet Rental
-    {{embed [[naming/examples/Exotic Pet Rental]]}}
-  - ### naming/examples/Underwater restaurant
-    {{embed [[naming/examples/Underwater restaurant]]}}
-  
+  ### Space X
+  - [[Company name]]
+    - Choosing a name for the overall business entity, such as Space X. The name should reflect the company's mission, vision, and values, and be memorable and distinct.
+  - [[Product or service names]]
+    - Naming individual products or services offered by Space X, such as Falcon rockets, Dragon spacecraft, or Starlink satellite internet service. The names should align with the brand identity, be descriptive or evocative of the product or service, and resonate with the target customers.
+  - [[Project names]]
+    - Naming specific projects or initiatives undertaken by Space X, such as the Starlink project or the Crew Dragon mission. The names should capture the essence and purpose of the project, and be easily recognizable and memorable.
+  - [[Brand names]]
+    - Developing a brand name for a specific line of products or services within Space X's portfolio, such as a sub-brand for satellite communication services or space tourism. The brand names should align with the overall brand identity, differentiate the offerings, and appeal to the target market.
+  - [[Trademark and domain names]]
+    - Ensuring that the chosen names are available for trademark registration and securing the corresponding domain names for online presence. This involves conducting searches and legal research to avoid trademark conflicts and secure the necessary intellectual property rights.
+  ### vein visualizer
+  - Company name: VeinVision
+  - Product or service names: VeinScope, VeinView, VeinSense
+  - Project names: VeinTech, VeinXpress
+  - Brand names: VeinCare, VeinPro
+  - Trademark and domain names: Ensure availability and secure trademarks and domains for VeinVision, VeinScope, VeinView, VeinSense, VeinTech, VeinXpress, VeinCare, and VeinPro.
+  ### extinguished animals meat
+  - Company name: ReviveMeat
+  - Product or service names: 
+  	- ReviveSteak
+  	- ReviveBurger
+  	- ReviveDeluxe
+  - Project names: 
+  	- ReviveGenesis
+  	- ReviveResurrection
+  - Brand names: 
+  	- ReviveGourmet
+  	- ReviveLuxury
+  - Trademark and domain names: Ensure availability and secure trademarks and domains for 
+  	- ReviveMeat
+  	- ReviveSteak
+  	- ReviveBurger
+  	- ReviveDeluxe
+  	- ReviveGenesis
+  	- ReviveResurrection
+  	- ReviveGourmet
+  	- ReviveLuxury.
+  ### Exotic Pet Rental
+  - Company name: ExoticPetRentals
+  - Product or service names: 
+  	- Rent-a-Snake
+  	- Rent-a-Ferret
+  	- Rent-a-Tarantula
+  - Project names: 
+  	- PetRentalPlus
+  	- PetExperience
+  - Brand names: 
+  	- ExoticCompanions
+  	- Rent-a-Pet
+  - Trademark and domain names: 
+  	- Ensure availability and secure trademarks and domains for:
+    	- ExoticPetRentals
+    	- Rent-a-Snake
+    	- Rent-a-Ferret
+    	- Rent-a-Tarantula
+    	- PetRentalPlus
+    	- PetExperience
+    	- ExoticCompanions
+    	- Rent-a-Pet
+  ### Underwater restaurant
+  - Company name: VeinVision
+  - Product or service names: 
+  	- VeinScope
+  	- VeinView
+  	- VeinSense
+  - Project names: 
+  	- VeinTech
+  	- VeinXpress
+  - Brand names: 
+  	- VeinCare
+  	- VeinPro
+  - Trademark and domain names: 
+  	- Secure trademarks and domains for VeinVision, VeinScope, VeinView, VeinSense, VeinTech, VeinXpress, VeinCare, and VeinPro.
 - ## 🗄️ Topics
   
 - ## 🧰 Tools

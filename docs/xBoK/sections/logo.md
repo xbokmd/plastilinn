@@ -1,10 +1,3 @@
-icon:: 🧿
-page-type:: [[artifact info]]
-xBoK-type:: internal
-metamodel-id:: [[logo]]
-relations:: [[]]
-weight:: 10
-
 - ## 🔍 Definition
   - A logo is a visual symbol or design that represents a company or brand and is used to promote recognition and awareness.
 - ## 📰 Content type 
@@ -29,17 +22,31 @@ weight:: 10
   
   In essence, the concept of "logo" in business modeling is about creating a powerful visual symbol that can effectively communicate a company's brand identity and resonate with its target audience. It's a critical aspect of business design, as it can significantly impact a company's brand recognition, customer loyalty, and overall market success.
 - ## 👉 Examples
-  - ### logo/examples/Space X
-    {{embed [[logo/examples/Space X]]}}
-  - ### logo/examples/vein visualizer
-    {{embed [[logo/examples/vein visualizer]]}}
-  - ### logo/examples/extinguished animals meat
-    {{embed [[logo/examples/extinguished animals meat]]}}
-  - ### logo/examples/Exotic Pet Rental
-    {{embed [[logo/examples/Exotic Pet Rental]]}}
-  - ### logo/examples/Underwater restaurant
-    {{embed [[logo/examples/Underwater restaurant]]}}
-  
+  ### Space X
+  - https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Space X_logo_black.svg/512px-Space X_logo_black.svg.png?20200531051103
+  - For Space X, the logo is a stylized representation of the company's name, featuring a sleek and modern design.
+  - It incorporates the letter "X" in a unique way, symbolizing the company's focus on space exploration and innovation.
+  - The logo is typically used on Space X's marketing materials, website, products, and other brand touchpoints to create a visual identity and promote brand recognition.
+  - The logo plays a crucial role in establishing the Space X brand and conveying the company's values and mission to customers and stakeholders.
+  ### vein visualizer
+  - Considering the company's focus on medical devices and vein visualization, a potential logo could incorporate elements related to veins, such as a stylized representation of veins or a visual representation of infrared technology.
+  - It should be simple, memorable, and easily recognizable, conveying the company's expertise and innovation in the field.
+  - The colors used in the logo could be related to the medical field, such as shades of blue or green, to create a sense of trust and professionalism.
+  ### extinguished animals meat
+  - For the company specializing in reviving extinct animals and selling luxury meat, a potential logo could incorporate elements such as:
+  	- DNA strands forming a silhouette of an extinct animal, symbolizing the company's focus on genetic engineering and biotechnology.
+  	- Visually striking design, conveying the company's innovation and unique offerings.
+  	- Earthy tones used to reflect the natural world and emphasize the company's commitment to sustainability.
+  ### Exotic Pet Rental
+  - For the Exotic Pet Rental Service, a potential logo could feature a combination of animal silhouettes, showcasing the variety of exotic pets available.
+  - It should be colorful and eye-catching, capturing the sense of wonder and excitement associated with having an exotic pet.
+  - The logo should also convey a sense of trust and professionalism, reflecting the high-quality care provided by the business.
+  ### Underwater restaurant
+  - A potential logo for the Submarine Themed Restaurant could feature a stylized submarine silhouette, emphasizing the unique dining experience.
+  - The logo could incorporate elements of the ocean, such as waves or marine life, to create visual interest and convey the underwater theme.
+  - It should be colorful and eye-catching, capturing the imagination and curiosity of potential customers.
+  - The font used in the logo should be bold and playful, reflecting the adventurous and immersive nature of the restaurant.
+  - The logo should be versatile and easily adaptable for use on various marketing materials, signage, and online platforms.
 - ## 🗄️ Topics
   
 - ## 🧰 Tools
