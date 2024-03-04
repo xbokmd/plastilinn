@@ -446,12 +446,36 @@
                         });
                     },
                     filteredBlocks() {
-                        return this.model.filter(block => {
-                            const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
-                            const titleMatch = this.selectedBlockTitles.length === 0 || this.selectedBlockTitles.includes(block.blockTitle);
-                            return tagMatch && titleMatch;
-                        });
-                    },
+        const blocksWithSections = [];
+        const addedSectionIds = new Set(); // Almacena los IDs de secciones ya añadidas
+
+        this.model.filter(block => {
+            const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
+            const titleMatch = this.selectedBlockTitles.length === 0 || this.selectedBlockTitles.includes(block.blockTitle);
+            return tagMatch && titleMatch;
+        }).forEach(block => {
+            if (block.blockType === 'item') {
+                const sectionUid = String(block.id).split('.')[0];
+                // Verificar si la sección ya fue añadida, si no, encontrar y añadir la sección
+                if (!addedSectionIds.has(sectionUid)) {
+                    const sectionBlock = this.model.find(b => String(b.id) === sectionUid && b.blockType === 'section');
+                    if (sectionBlock && !blocksWithSections.includes(sectionBlock)) {
+                        blocksWithSections.push(sectionBlock);
+                        addedSectionIds.add(sectionUid);
+                    }
+                }
+            }
+            // Añadir el bloque si es un ítem o si es una sección que no ha sido añadida previamente
+            if (block.blockType === 'section' && !addedSectionIds.has(String(block.id))) {
+                addedSectionIds.add(String(block.id));
+                blocksWithSections.push(block);
+            } else if (block.blockType === 'item') {
+                blocksWithSections.push(block);
+            }
+        });
+
+        return blocksWithSections;
+    },
                     searchFilteredBlocks() {
                         if (!this.searchQuery) return this.filteredBlocks; // Utiliza filteredBlocks para mantener los filtros anteriores
                         return this.filteredBlocks.filter(block => {
@@ -499,6 +523,21 @@
                         this.markdownGuideContent = '';
                     }
                 },
+                    assignUids() {
+                        let sectionUid = 0; // Contador para uid de sección
+                        let itemUidCounter = 0; // Contador para uid de ítem dentro de la sección
+                        
+                        this.model.forEach((block, index) => {
+                            if (block.blockType === 'section') {
+                                sectionUid++;
+                                itemUidCounter = 0; // Reinicia el contador de ítems para la nueva sección
+                                block.id = `${sectionUid}`; // Asigna el uid de la sección
+                            } else if (block.blockType === 'item') {
+                                itemUidCounter++;
+                                block.id = `${sectionUid}.${itemUidCounter}`; // Asigna el uid compuesto a los ítems
+                            }
+                        });
+                    },
                     loadAndParseMarkdown(event) {
                         const file = event.target.files[0];
                         if (!file) {
@@ -537,6 +576,7 @@
                         if (currentBlock.length > 0) {
                             blocks.push(currentBlock.join('\n')); // Asegúrate de añadir el último bloque
                         }
+
                         // Actualiza this.model para que contenga bloques en lugar de líneas individuales
                         this.model = blocks.map((blockContent, index) => {
                             this.lastId += 1; // Incrementa el ID para cada bloque
@@ -567,7 +607,8 @@
                         });
                         this.updateModelMarkdown();
                         console.log(this.model); // Verificar la carga y transformación del contenido
-                        window.botpressWebChat.sendEvent({ type: 'hide' })
+                        window.botpressWebChat.sendEvent({ type: 'hide' });
+                        this.assignUids();
                     },
                     extractBlockTitle(blockContent) {
                         const firstBlock = blockContent.split(/\r?\n/)[0]; // Obtiene la primera línea
