@@ -33,7 +33,7 @@
 
 	Identify the ways your business will generate revenue.
 
-    #id [revenue lines](#revenue-lines)
+    #id [revenue lines](<#revenue lines>)
 
 6. ## Cost Structure
 
