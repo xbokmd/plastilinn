@@ -1,54 +1,55 @@
+## Lean Canvas
 
-1. ## Customer Segments
+1. #### Customer Segments
 
     Define the target customer segments you want to serve.
 
-	#id [profile (id)/Main customer](profile (id)/Main customer)
+	#id [profile/Main profile](<#profile/Main profile>)
     
-1. ## Problem
+2. #### Problem
 
 	List the top three problems your target customers face.
 
-	#id [goals](#goals)
+	#id [goals](<#goals>)
 
-2. ## Unique Value Proposition
+3. #### Unique Value Proposition
 
 	Describe the unique and compelling value you offer to your customers that sets you apart from the competition.
 
-    #id [value proposition](#value-proposition)
+    #id [value proposition](<#value-proposition>)
 
-3. ## Solution
+4. #### Solution
 
 	Outline the proposed solutions to the top problems you've identified
     
-    #id [solution](#solution)
+    #id [solution](<#solution>)
 
-4. ## Channels
+5. #### Channels
 
 	List the channels you'll use to reach your target customers.
 
-    #id [channels](#channels)
+    #id [channels](<#channels>)
 
-5. ## Revenue Streams
+6. #### Revenue Streams
 
 	Identify the ways your business will generate revenue.
 
-    #id [revenue lines](<#revenue lines>)
+    #id [revenue lines](<#revenue lines>>)
 
-6. ## Cost Structure
+7. #### Cost Structure
 
 	Enumerate the main costs associated with your business model.
 
-    #id [cost lines](#cost-lines)
+    #id [cost lines](<#cost-lines>)
 
-7. ## Key Metrics
+8. #### Key Metrics
 
 	Define the key metrics that will help you track your business's success.
 
-    #id [metric list](#metric-list)
+    #id [metric list](<#metric-list>)
 
-8. ## Unfair Advantage
+9. #### Unfair Advantage
 
 	Describe any unfair advantage you may have that cannot be easily copied or bought by competitors.
 
-    #id [unfair advantage](#unfair-advantage)
+    #id [unfair advantage](<#unfair-advantage>)

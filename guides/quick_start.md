@@ -1,54 +1,22 @@
+## Quick start
 
-1. ## Customer Segments
+1. #### Explore a sample plastilinn doc and play with it
 
-    Define the target customer segments you want to serve.
+    - Descarga el documento sample en este enlace [plastilinn sample doc](https://xbokmd.github.io/plastilinn/plastilinn%20sample%20doc.md)
+    - Guárdala en una carpeta llamada plastilinn
+    - Abre la aplicación [plastilinn](https://xbokmd.github.io/plastilinn/app.html){:target="_blank"} 
+    - Carga el plastilinn sample doc que acabas de descargar pulsando en el botón "choose file"
+    - Ya tienes cargado un documento plastilinn. Explora las diferentes opciones que ofrece la aplicación.
 
-	#id [profile (id)/Main customer](profile (id)/Main customer)
+2. #### Download your own plastilinn doc template
+
+    - Descarga la plantilla en este enlace [plastilinn doc template](https://xbokmd.github.io/plastilinn/plastilinn%20doc.md)
+    - Guárdala en una carpeta llamada plastilinn
     
-1. ## Problem
+3. #### Load your plastilinn doc
 
-	List the top three problems your target customers face.
+	Carga la plantilla de plastilinn doc que acabas de descargar pulsando en el botón "choose file"
 
-	#id [profile (id)/Main customer/goals](#profile (id)/Main customer/goals)
+4. #### Open the idea definition guide
 
-1. ## Unique Value Proposition
-
-	Describe the unique and compelling value you offer to your customers that sets you apart from the competition.
-
-    #id [profile (id)/Main customer/value proposition](#profile (id)/Main customer/value proposition)
-
-2. ## Solution
-
-	Outline the proposed solutions to the top problems you've identified
-    
-    #id [solution (id)/Your solution]
-
-3. ## Channels
-
-	List the channels you'll use to reach your target customers.
-
-    #id [profile (id)/Main customer/channels](#profile (id)/Main customer/channels)
-
-4. ## Revenue Streams
-
-	Identify the ways your business will generate revenue.
-
-    #id [revenue lines](#revenue lines)
-
-5. ## Cost Structure
-
-	Enumerate the main costs associated with your business model.
-
-    #id [cost lines](#cost lines)
-
-6. ## Key Metrics
-
-	Define the key metrics that will help you track your business's success.
-
-    #id [metric list](#metric list)
-
-7. ## Unfair Advantage
-
-	Describe any unfair advantage you may have that cannot be easily copied or bought by competitors.
-
-    #id [unfair advantage](#unfair advantage)
+	Pulsa en el botón "guides" que hay en la barra lateral de la aplicación, selecciona la guía "idea definition" y sigue las instrucciones
