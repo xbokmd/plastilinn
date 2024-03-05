@@ -48,9 +48,8 @@
 .tags-container span {
     background-color: white; /* Color de fondo de las etiquetas */
     padding: 2px;
-    margin: 2px 0;
-    border-radius: 3px;
-    height: 1.6rem;
+    margin: 2px;
+    border-radius: 4px;
 }
 
 textarea {
