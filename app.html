@@ -210,71 +210,6 @@
                                     <h5>🔍 Filter</h5>
                                     <p>Allows you to carry out smart queries by filtering the content of your plastilin
                                         doc.</p>
-                                    <!DOCTYPE html>
-                                    <html>
-
-                                    <head>
-                                        <meta charset="utf-8">
-                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                        <title>Welcome file</title>
-                                        <link rel="stylesheet" href="https://stackedit.io/style.css" />
-                                    </head>
-
-                                    <body class="stackedit">
-                                        <div class="stackedit__html">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th>marker</th>
-                                                        <th>low</th>
-                                                        <th>high</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>weight<span>*</span></td>
-                                                        <td><kbd class="kbd kbd-xs">#*</kbd></td>
-                                                        <td><kbd
-                                                                class="kbd kbd-xs">#<em><strong><strong></strong></strong></em></kbd>
-                                                            <span></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>completion<span>&gt;</span></td>
-                                                        <td><kbd class="kbd kbd-xs">#&gt;</kbd></td>
-                                                        <td><kbd class="kbd kbd-xs">#&gt;&gt;&gt;&gt;&gt;</kbd>
-                                                            <span>&gt;&gt;&gt;&gt;&gt;</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>priority<span>!</span></td>
-                                                        <td><kbd class="kbd kbd-xs">#!</kbd></td>
-                                                        <td><kbd class="kbd kbd-xs">#!!!</kbd> <span>!!!</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>uncertainty<span>?</span></td>
-                                                        <td><kbd class="kbd kbd-xs">#?</kbd></td>
-                                                        <td><kbd class="kbd kbd-xs">#???</kbd> <span>???</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>risk<span>¡</span></td>
-                                                        <td><kbd class="kbd kbd-xs">#¡</kbd></td>
-                                                        <td><kbd class="kbd kbd-xs">#¡¡¡¡¡</kbd> <span>¡¡¡¡¡</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>validation<span>=</span></td>
-                                                        <td><kbd class="kbd kbd-xs">#=</kbd></td>
-                                                        <td><kbd class="kbd kbd-xs">#=<mark><mark></mark></mark></kbd>
-                                                            <span>=</span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </body>
-
-                                    </html>
-
                                 </div>
                                 <div role="alert" class="alert mt-10">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -654,7 +589,7 @@
                                 sectionUid++;
                                 itemUidCounter = 0; // Reinicia el contador de ítems para la nueva sección
                                 block.id = `${sectionUid}`; // Asigna el uid de la sección
-                            } else if (block.blockType === 'item') {
+                            } else if (block.blockType !== 'section') { // Cambio aquí para incluir cualquier tipo que no sea 'section'
                                 itemUidCounter++;
                                 block.id = `${sectionUid}.${itemUidCounter}`; // Asigna el uid compuesto a los ítems
                             }
@@ -687,7 +622,7 @@
 
                         lines.forEach(line => {
                             // Verifica si la línea actual marca el inicio de un nuevo bloque
-                            if (/^\s*-*\s*#/.test(line)) {
+                            if (/^\s*([-*\d.]*)*\s*#/.test(line)) {
                                 if (currentBlock.length > 0) {
                                     blocks.push(currentBlock.join('\n')); // Agrega el bloque actual a los bloques
                                     currentBlock = []; // Reinicia el bloque actual
@@ -703,7 +638,7 @@
                         this.model = blocks.map((blockContent, index) => {
                             this.lastId += 1; // Incrementa el ID para cada bloque
                             const firstLine = blockContent.split('\n')[0];
-                            let blockType = 'other';
+                            let blockType = 'item';
                             // Actualiza la expresión regular para reflejar la nueva condición
                             if (/^\s*(-\s+)?#(\s|#)/.test(firstLine)) {
                                 blockType = 'section';
