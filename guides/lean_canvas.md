@@ -16,7 +16,7 @@
 
 	Describe the unique and compelling value you offer to your customers that sets you apart from the competition.
 
-    #id [value proposition](<#value-proposition>)
+    #id [value proposition](<#value proposition>)
 
 4. #### Solution
 
@@ -34,22 +34,22 @@
 
 	Identify the ways your business will generate revenue.
 
-    #id [revenue lines](<#revenue lines>>)
+    #id [revenue lines](<#revenue lines>)
 
 7. #### Cost Structure
 
 	Enumerate the main costs associated with your business model.
 
-    #id [cost lines](<#cost-lines>)
+    #id [cost lines](<#cost lines>)
 
 8. #### Key Metrics
 
 	Define the key metrics that will help you track your business's success.
 
-    #id [metric list](<#metric-list>)
+    #id [metric list](<#metric list>)
 
 9. #### Unfair Advantage
 
 	Describe any unfair advantage you may have that cannot be easily copied or bought by competitors.
 
-    #id [unfair advantage](<#unfair-advantage>)
+    #id [unfair advantage](<#unfair advantage>)
