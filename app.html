@@ -118,6 +118,21 @@
             font-family: 'Arial', sans-serif;
             /* Cambia la fuente del texto */
         }
+
+        .bpw-message-big-container code {
+            background-color: #f0f0f0;
+            /* Cambia el color de fondo */
+            padding: 5px;
+            /* Agrega padding */
+            border-radius: 4px;
+            /* Redondea los bordes */
+            white-space: pre-wrap;
+            /* Asegura que el contenido se envuelva correctamente */
+            word-wrap: break-word;
+            /* Permite la ruptura de palabras para evitar el desbordamiento horizontal */
+            max-width: 100%;
+            /* Limita el ancho máximo para prevenir desbordamiento fuera del contenedor */
+        }
     </style>
 </head>
 
@@ -980,14 +995,15 @@
                     });
                     // Configura marked.js para este componente
                     marked.setOptions({
-                        breaks: true
+                        gfm: true, // Habilita GitHub Flavored Markdown (GFM)
+                        breaks: true, // Convierte los saltos de línea simples en <br>
                     });
                 },
             })
                 .mount('#vue-app');
         </script>
-        <script src='https://cdn.botpress.cloud/webchat/v1/inject.js'></script>
-        <script src='https://mediafiles.botpress.cloud/b0e00411-1da8-4c0c-98ec-5b6c44a7fa7b/webchat/config.js'
+        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+        <script src="https://mediafiles.botpress.cloud/2aa639ac-f805-454c-b5da-6fcc527f8d70/webchat/config.js"
             defer></script>
 </body>
 
