@@ -305,7 +305,8 @@
                                                 <span>Filter tags</span>
                                                 <div class="flex flex-wrap gap-2 mt-2">
                                                     <span v-for="tag in selectedTags" :key="tag"
-                                                        class="badge badge-ghost" :data-tag="tag">{{ tag }}</span>
+                                                        class="flex items-center justify-center h-8 px-2 bg-gray-200 text-sm"
+                                                        :data-tag="tag">{{ tag }}</span>
                                                 </div>
                                                 <button @click="resetSelectedTags" class="btn btn-ghost btn-sm">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -375,54 +376,52 @@
                                         </div>
                                         <input type="file" @change="loadAndParseMarkdown" accept=".md"
                                             class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
-                                        << </div>
                                     </div>
                                 </div>
-                                <div class="modelContainer m-2 p-0">
-                                    <div class="flex flex-row w-full">
-                                        <div class="md-block-wrapper w-full">
-                                            <div v-for="block in searchFilteredBlocks" :key="block.id"
-                                                class="md-block flex">
+                            </div>
+                            <div class="modelContainer m-2 p-0">
+                                <div class="flex flex-row w-full">
+                                    <div class="md-block-wrapper w-full">
+                                        <div v-for="block in searchFilteredBlocks" :key="block.id"
+                                            class="md-block flex">
+                                            <div
+                                                class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
+                                                <div v-html="block.parsedContent"></div>
+                                            </div>
+                                            <div
+                                                class="md-block-container-right tags-container text-gray-500 w-full rounded-md text-sm text-center p-2 mt-1 mb-1 w-1/4">
                                                 <div
-                                                    class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
-                                                    <div v-html="block.parsedContent"></div>
-                                                </div>
-                                                <div
-                                                    class="md-block-container-right tags-container text-gray-500 w-full rounded-md text-sm text-center p-2 mt-1 mb-1 w-1/4">
-                                                    <div
-                                                        class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500 p-2 mt-1 mb-1 w-1/4">
-                                                        <div class="xbok-block-tags flex items-center gap-2">
-                                                            <span data-tag="edit">
-                                                                <button @click="openModal(block)"
-                                                                    class="opacity-50 hover:opacity-100 focus:opacity-100"><svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        viewBox="0 0 24 24" fill="blue" class="w-4 h-4">
-                                                                        <path
-                                                                            d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
+                                                    class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500 p-2 mt-1 mb-1 w-1/4">
+                                                    <div class="xbok-block-tags flex items-center gap-2">
+                                                        <span data-tag="edit"
+                                                            class="flex items-center justify-center h-8 px-2 bg-gray-200 text-sm">
+                                                            <button @click="openModal(block)"
+                                                                class="opacity-50 hover:opacity-100 focus:opacity-100"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 24 24" fill="blue" class="w-4 h-4">
+                                                                    <path
+                                                                        d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
+                                                                </svg>
+                                                            </button>
+                                                        </span>
+                                                        <div :id="block.metamodel.name"
+                                                            class="block-metamodel section inline-flex"
+                                                            v-if="block.metamodel">
+                                                            <span data-tag="section"
+                                                                class="flex items-center justify-center h-8 px-2 bg-gray-200 text-sm">
+                                                                <button @click="openRemoteModal(block.metamodel.name)"
+                                                                    class="opacity-50 hover:opacity-100 focus:opacity-100">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                        viewBox="0 0 24 24" stroke-width="1.5"
+                                                                        stroke="blue" class="w-6 h-6">
+                                                                        <path stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                                                                     </svg>
                                                                 </button>
-                                                            </span>
-                                                            <div :id="block.metamodel.name"
-                                                                class="block-metamodel section inline-flex"
-                                                                v-if="block.metamodel">
-                                                                <span data-tag="section"
-                                                                    class="flex items-center gap-2">
-                                                                    <button
-                                                                        @click="openRemoteModal(block.metamodel.name)"
-                                                                        class="opacity-50 hover:opacity-100 focus:opacity-100">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                                            fill="none" viewBox="0 0 24 24"
-                                                                            stroke-width="1.5" stroke="blue"
-                                                                            class="w-6 h-6">
-                                                                            <path stroke-linecap="round"
-                                                                                stroke-linejoin="round"
-                                                                                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-                                                                        </svg>
-                                                                    </button>
-                                                            </div>
-                                                            <div class="md-block-container-right tags-container"
-                                                                v-html="block.tagsParsed">
-                                                            </div>
+                                                        </div>
+                                                        <div class="md-block-container-right tags-container"
+                                                            v-html="block.tagsParsed">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -430,17 +429,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="content" class="mt-48 ml-2 mr-2">
-                                    <div class="flex flex-row w-full">
-                                        <div class="md-block-wrapper w-full">
-                                            <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
-                                                <!-- Renderizar los bloques -->
-                                            </div>
+                            </div>
+                            <div id="content" class="mt-48 ml-2 mr-2">
+                                <div class="flex flex-row w-full">
+                                    <div class="md-block-wrapper w-full">
+                                        <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
+                                            <!-- Renderizar los bloques -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </main>
 
 
@@ -721,7 +721,7 @@
                         // Reemplaza cada coincidencia en el texto con la etiqueta envuelta en un span directamente en el contenido
                         const modifiedContent = content.replace(regex, (match, p1, p2) => {
                             // Envuelve la etiqueta en un span con data-tag
-                            return `${p1}<span data-tag="${p2}">#${p2}</span>`;
+                            return `${p1}<span data-tag="${p2}" class="flex items-center justify-center h-8 px-2 bg-gray-200 text-sm">#${p2}</span>`;
                         });
 
                         // Devuelve el contenido modificado como una cadena de texto HTML
@@ -736,7 +736,7 @@
                         const tags = matches.map(match => match[1]);
 
                         // Generamos el HTML para tagsParsed
-                        const tagsParsed = tags.map(tag => `<span data-tag="${tag}">#${tag}</span>`).join('');
+                        const tagsParsed = tags.map(tag => `<span data-tag="${tag}" class="flex items-center justify-center h-8 px-2 bg-gray-200 text-sm">#${tag}</span>`).join('');
 
                         return {
                             tags: tags, // Ya no necesitamos eliminar el símbolo '#' aquí, porque ya lo hicimos arriba
@@ -956,9 +956,11 @@
                     Providing concise, targeted guidance without unnecessary repetition or formalities.
                     Offering step-by-step feedback to ensure the document effectively captures the business model.
                     You focus on the client's needs and how to best articulate their business model.
-                    GOAL: Write a business model document describing the user's project business model. Here's some information about my Business:
-                        ${modelMarkdown}
-                    MY QUESTION: Please suggest content for the "${blockTitle}" section of the business model.
+                    GOAL: Write a business model document describing the user's project business model. Here's some information about my Business:\n` +
+
+                            `${modelMarkdown}\n` +
+
+                            `MY QUESTION: Please suggest content for the "${blockTitle}" section of the business model.
                     WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name enclosed in double brackets '[[ ]]', and then a description on a new, indented line. This is an example of an answer:
                     ---
                     ${blockExample}
@@ -969,7 +971,7 @@
                     ${blockExample}
                     \`\`\`
                     ---
-                    - You can copy/paste this answer to a document, write 'copy' to have the answer in a text box or write ⬇️ 'download' to save this answer to your computer`;
+                    - You can copy/paste this answer to your plastilinn doc`;
 
                         return suggestionPrompt;
                     },
