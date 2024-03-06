@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <style>
         * {
             -webkit-text-size-adjust: 100%;
@@ -174,7 +176,7 @@
             <!-- main container -->
             <div class="flex-1 flex flex-row overflow-y-hidden">
 
-                <nav class="order-first w-1/4 p-2 overflow-y-auto" style="min-width: 500px">
+                <nav class="order-first w-1/4 m-4 p-2 overflow-y-auto" style="min-width: 500px">
 
 
                     <div class="flex flex-row flex-wrap gap-2 sticky top-0">
@@ -193,7 +195,99 @@
                     <!-- Secciones con visibilidad condicional -->
                     <div
                         v-bind:class="{ block: currentSidebarSection === 'home', hidden: currentSidebarSection !== 'home' }">
-                        Para empezar a usar plastilinn escoge una guía pulsando en el botón "guides"
+                        <div id="sidebar-home">
+                            <div>
+                                <p>Plastilin allows you to create a business model and evolve it to make it better and
+                                    better. </p>
+                                <div>
+                                    <h5>📋 Guides</h5>
+                                    <p>Includes help guides that will make it easier for you to create your business
+                                        model, offering you step by step all the information you need and precise
+                                        instructions.</p>
+                                    <h5>🗂️ Index</h5>
+                                    <p>Allows you to quickly navigate to the section of your plastilin doc that you want
+                                        to consult.</p>
+                                    <h5>🔍 Filter</h5>
+                                    <p>Allows you to carry out smart queries by filtering the content of your plastilin
+                                        doc.</p>
+                                    <!DOCTYPE html>
+                                    <html>
+
+                                    <head>
+                                        <meta charset="utf-8">
+                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                        <title>Welcome file</title>
+                                        <link rel="stylesheet" href="https://stackedit.io/style.css" />
+                                    </head>
+
+                                    <body class="stackedit">
+                                        <div class="stackedit__html">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>marker</th>
+                                                        <th>low</th>
+                                                        <th>high</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>weight<span>*</span></td>
+                                                        <td><kbd class="kbd kbd-xs">#*</kbd></td>
+                                                        <td><kbd
+                                                                class="kbd kbd-xs">#<em><strong><strong></strong></strong></em></kbd>
+                                                            <span></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>completion<span>&gt;</span></td>
+                                                        <td><kbd class="kbd kbd-xs">#&gt;</kbd></td>
+                                                        <td><kbd class="kbd kbd-xs">#&gt;&gt;&gt;&gt;&gt;</kbd>
+                                                            <span>&gt;&gt;&gt;&gt;&gt;</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>priority<span>!</span></td>
+                                                        <td><kbd class="kbd kbd-xs">#!</kbd></td>
+                                                        <td><kbd class="kbd kbd-xs">#!!!</kbd> <span>!!!</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>uncertainty<span>?</span></td>
+                                                        <td><kbd class="kbd kbd-xs">#?</kbd></td>
+                                                        <td><kbd class="kbd kbd-xs">#???</kbd> <span>???</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>risk<span>¡</span></td>
+                                                        <td><kbd class="kbd kbd-xs">#¡</kbd></td>
+                                                        <td><kbd class="kbd kbd-xs">#¡¡¡¡¡</kbd> <span>¡¡¡¡¡</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>validation<span>=</span></td>
+                                                        <td><kbd class="kbd kbd-xs">#=</kbd></td>
+                                                        <td><kbd class="kbd kbd-xs">#=<mark><mark></mark></mark></kbd>
+                                                            <span>=</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </body>
+
+                                    </html>
+
+                                </div>
+                                <div role="alert" class="alert mt-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        class="stroke-info shrink-0 w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <h3 class="font-bold">New to plastilin?</h3>
+                                    <div class="text-xs">Simply click on the guides button in this sidebar and select
+                                        the quickstart guide.</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div
                         v-bind:class="{ block: currentSidebarSection === 'guides', hidden: currentSidebarSection !== 'guides' }">
@@ -201,6 +295,9 @@
                         <select @change="loadMarkdownContent($event.target.value)"
                             class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-150 ease-in-out">
                             <option value="">Select a guide</option>
+                            <option value="https://xbokmd.github.io/plastilinn/guides/plastilinn_cheatsheet.md">
+                                Plastilinn cheatsheet
+                            </option>
                             <option value="https://xbokmd.github.io/plastilinn/guides/quick_start.md">Quick start
                             </option>
                             <option value="https://xbokmd.github.io/plastilinn/guides/using_plastilinn.md">Using
@@ -209,7 +306,15 @@
                             <option value="https://xbokmd.github.io/plastilinn/guides/idea_definition.md">Idea
                                 definition
                             </option>
+                            <option value="https://xbokmd.github.io/plastilinn/guides/business_model_canvas.md">Business
+                                Model Canvas
+                            </option>
                             <option value="https://xbokmd.github.io/plastilinn/guides/lean_canvas.md">Lean Canvas
+                            </option>
+                            <option value="https://xbokmd.github.io/plastilinn/guides/value_proposition_canvas.md">Value
+                                Proposition Canvas
+                            </option>
+                            <option value="https://xbokmd.github.io/plastilinn/guides/empathy_map.md">Empathy map
                             </option>
                         </select>
                         <!-- Div que muestra el contenido del Markdown seleccionado -->
@@ -309,56 +414,65 @@
                                             AI</div>
                                         <div class="text-xl mt-4">Design, analyze and validate your business model.
                                         </div>
-                                        <h1 class="text-5xl font-bold mb-4">Business Model</h1>
+                                        <div role="alert" class="alert m-8">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                class="stroke-info shrink-0 w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                                </path>
+                                            </svg>
+                                            <span>Upload your plastilinn doc</span>
+                                        </div>
                                         <input type="file" @change="loadAndParseMarkdown" accept=".md"
                                             class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
-                                        <p>Download your <a href="https://xbokmd.github.io/plastilinn/">plastilinn
-                                                document template</a></p>
-                                        <p class="py-6">Upload your document</p>
+                                        << </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modelContainer m-2 p-0">
-                                <div class="flex flex-row w-full">
-                                    <div class="md-block-wrapper w-full">
-                                        <div v-for="block in searchFilteredBlocks" :key="block.id"
-                                            class="md-block flex">
-                                            <div
-                                                class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
-                                                <div v-html="block.parsedContent"></div>
-                                            </div>
-                                            <div
-                                                class="md-block-container-right tags-container text-gray-500 w-full rounded-md text-sm text-center p-2 mt-1 mb-1 w-1/4">
+                                <div class="modelContainer m-2 p-0">
+                                    <div class="flex flex-row w-full">
+                                        <div class="md-block-wrapper w-full">
+                                            <div v-for="block in searchFilteredBlocks" :key="block.id"
+                                                class="md-block flex">
                                                 <div
-                                                    class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500 p-2 mt-1 mb-1 w-1/4">
-                                                    <div class="xbok-block-tags flex items-center gap-2">
-                                                        <span data-tag="edit">
-                                                            <button @click="openModal(block)"
-                                                                class="opacity-50 hover:opacity-100 focus:opacity-100"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    viewBox="0 0 24 24" fill="blue" class="w-4 h-4">
-                                                                    <path
-                                                                        d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
-                                                                </svg>
-                                                            </button>
-                                                        </span>
-                                                        <div :id="block.metamodel.name"
-                                                            class="block-metamodel section inline-flex"
-                                                            v-if="block.metamodel">
-                                                            <span data-tag="section" class="flex items-center gap-2">
-                                                                <button @click="openRemoteModal(block.metamodel.name)"
-                                                                    class="opacity-50 hover:opacity-100 focus:opacity-100">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                                        viewBox="0 0 24 24" stroke-width="1.5"
-                                                                        stroke="blue" class="w-6 h-6">
-                                                                        <path stroke-linecap="round"
-                                                                            stroke-linejoin="round"
-                                                                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                                    class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
+                                                    <div v-html="block.parsedContent"></div>
+                                                </div>
+                                                <div
+                                                    class="md-block-container-right tags-container text-gray-500 w-full rounded-md text-sm text-center p-2 mt-1 mb-1 w-1/4">
+                                                    <div
+                                                        class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500 p-2 mt-1 mb-1 w-1/4">
+                                                        <div class="xbok-block-tags flex items-center gap-2">
+                                                            <span data-tag="edit">
+                                                                <button @click="openModal(block)"
+                                                                    class="opacity-50 hover:opacity-100 focus:opacity-100"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        viewBox="0 0 24 24" fill="blue" class="w-4 h-4">
+                                                                        <path
+                                                                            d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
                                                                     </svg>
                                                                 </button>
-                                                        </div>
-                                                        <div class="md-block-container-right tags-container"
-                                                            v-html="block.tagsParsed">
+                                                            </span>
+                                                            <div :id="block.metamodel.name"
+                                                                class="block-metamodel section inline-flex"
+                                                                v-if="block.metamodel">
+                                                                <span data-tag="section"
+                                                                    class="flex items-center gap-2">
+                                                                    <button
+                                                                        @click="openRemoteModal(block.metamodel.name)"
+                                                                        class="opacity-50 hover:opacity-100 focus:opacity-100">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            fill="none" viewBox="0 0 24 24"
+                                                                            stroke-width="1.5" stroke="blue"
+                                                                            class="w-6 h-6">
+                                                                            <path stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                                                        </svg>
+                                                                    </button>
+                                                            </div>
+                                                            <div class="md-block-container-right tags-container"
+                                                                v-html="block.tagsParsed">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -366,18 +480,17 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="content" class="mt-48 ml-2 mr-2">
-                                <div class="flex flex-row w-full">
-                                    <div class="md-block-wrapper w-full">
-                                        <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
-                                            <!-- Renderizar los bloques -->
+                                <div id="content" class="mt-48 ml-2 mr-2">
+                                    <div class="flex flex-row w-full">
+                                        <div class="md-block-wrapper w-full">
+                                            <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
+                                                <!-- Renderizar los bloques -->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </main>
 
 
