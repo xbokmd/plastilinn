@@ -323,7 +323,7 @@
                                                 <span>Filter tags</span>
                                                 <div class="flex flex-wrap gap-2 mt-2">
                                                     <span v-for="tag in selectedTags" :key="tag"
-                                                        class="flex items-center justify-center h-8 px-2 bg-gray-200 text-sm"
+                                                        class="flex items-center justify-center h-8 px-2 text-sm"
                                                         :data-tag="tag">{{ tag }}</span>
                                                 </div>
                                                 <button @click="resetSelectedTags" class="btn btn-ghost btn-sm">
@@ -348,12 +348,28 @@
                                         <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
                                             <button @click="setFilterTags(['*****', '?????'])"
                                                 class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
+                                                High priority
+                                            </button>
+                                            <div class="flex items-center bg-gray-100 px-4 py-2">
+                                                <p>
+                                                    <span data-tag="!!!!!">!!!!!</span> <kbd
+                                                        class="kbd kbd-xs">#!!!!!</kbd> or
+                                                    <span data-tag="!!!!">!!!!</span> <kbd
+                                                        class="kbd kbd-xs">#!!!!</kbd>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
+                                            <button @click="setFilterTags(['*****', '?????'])"
+                                                class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
                                                 High importance or uncertainty
                                             </button>
                                             <div class="flex items-center bg-gray-100 px-4 py-2">
                                                 <p>
-                                                    <span data-tag="*****">*****</span> <code>#*****</code> or
-                                                    <span data-tag="?????">?????</span> <code>#?????</code>
+                                                    <span data-tag="*****">*****</span> <kbd
+                                                        class="kbd kbd-xs">#*****</kbd> or
+                                                    <span data-tag="?????">?????</span> <kbd
+                                                        class="kbd kbd-xs">#?????</kbd>
                                                 </p>
                                             </div>
                                         </div>
@@ -412,7 +428,7 @@
                                                     class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500 p-2 mt-1 mb-1 w-1/4">
                                                     <div class="xbok-block-tags flex items-center gap-2">
                                                         <span data-tag="edit"
-                                                            class="flex items-center justify-center h-8 px-2 bg-gray-200 text-sm">
+                                                            class="flex items-center justify-center h-8 px-2 text-sm">
                                                             <button @click="openModal(block)"
                                                                 class="opacity-50 hover:opacity-100 focus:opacity-100"><svg
                                                                     xmlns="http://www.w3.org/2000/svg"
@@ -426,7 +442,7 @@
                                                             class="block-metamodel section inline-flex"
                                                             v-if="block.metamodel">
                                                             <span data-tag="section"
-                                                                class="flex items-center justify-center h-8 px-2 bg-gray-200 text-sm">
+                                                                class="flex items-center justify-center h-8 px-2 text-sm">
                                                                 <button @click="openRemoteModal(block.metamodel.name)"
                                                                     class="opacity-50 hover:opacity-100 focus:opacity-100">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -739,7 +755,7 @@
                         // Reemplaza cada coincidencia en el texto con la etiqueta envuelta en un span directamente en el contenido
                         const modifiedContent = content.replace(regex, (match, p1, p2) => {
                             // Envuelve la etiqueta en un span con data-tag
-                            return `${p1}<span data-tag="${p2}" class="flex items-center justify-center h-8 px-2 bg-gray-200 text-sm">#${p2}</span>`;
+                            return `${p1}<span data-tag="${p2}" class="flex items-center justify-center h-8 px-2 text-sm">#${p2}</span>`;
                         });
 
                         // Devuelve el contenido modificado como una cadena de texto HTML
@@ -754,7 +770,7 @@
                         const tags = matches.map(match => match[1]);
 
                         // Generamos el HTML para tagsParsed
-                        const tagsParsed = tags.map(tag => `<span data-tag="${tag}" class="flex items-center justify-center h-8 px-2 bg-gray-200 text-sm">#${tag}</span>`).join('');
+                        const tagsParsed = tags.map(tag => `<span data-tag="${tag}" class="flex items-center justify-center h-8 px-2 text-sm">#${tag}</span>`).join('');
 
                         return {
                             tags: tags, // Ya no necesitamos eliminar el símbolo '#' aquí, porque ya lo hicimos arriba
