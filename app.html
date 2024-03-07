@@ -119,6 +119,24 @@
             /* Cambia la fuente del texto */
         }
 
+        /* styles.css */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        table {
+            @apply min-w-full divide-y divide-gray-200;
+        }
+
+        th,
+        td {
+            @apply px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900;
+        }
+
+        tr {
+            @apply bg-white;
+        }
+
         .bpw-message-big-container code {
             background-color: #f0f0f0;
             /* Cambia el color de fondo */
