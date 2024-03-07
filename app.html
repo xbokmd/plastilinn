@@ -75,6 +75,21 @@
             /* Asegúrate de que tiene un z-index alto si hay otros elementos flotantes */
         }
 
+        @keyframes highlightFade {
+            from {
+                background-color: blue;
+            }
+
+            to {
+                background-color: transparent;
+                /* Asume que el color de fondo original es transparente */
+            }
+        }
+
+        .highlight {
+            animation: highlightFade 3s ease forwards;
+        }
+
         #top-container {
             position: -webkit-sticky;
             /* Para soporte en Safari */
@@ -1013,10 +1028,27 @@
                             text: suggestionPrompt
                         });
                     },
+                    highlightOnLoad() {
+                        this.$nextTick(() => {
+                            if (window.location.hash) {
+                                const hash = decodeURIComponent(window.location.hash.substring(1)); // Decodifica el hash.
+                                this.highlightBlock(hash);
+                            }
+                        });
+                    },
+                    highlightBlock(id) {
+                        const element = document.getElementById(id);
+                        if (element) {
+                            element.classList.add('highlight');
+                            setTimeout(() => element.classList.remove('highlight'), 3000);
+                        }
+                    },
                 },
                 mounted() {
                     this.downloadJSON(); // Otras inicializaciones pueden ir aquí
                     this.updateBlockTitles(); // Actualiza el arreglo blockTitles al cargar la página
+                    this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
+                    window.addEventListener('hashchange', this.highlightOnLoad);
                     window.botpressWebChat.onEvent(event => {
                         if (event.type === 'message' && event.message_type === 'text') {
                             alert(`Respuesta del bot: ${event.text}`);
