@@ -65,7 +65,6 @@
             scroll-behavior: smooth;
         }
 
-
         #sidebar {
             position: -webkit-sticky;
             /* Para soporte en Safari */
@@ -104,6 +103,17 @@
             transform: translate(-50%, -50%);
         }
 
+        p {
+            color: #4a5568;
+            /* Gris oscuro */
+            font-size: 1rem;
+            /* Tamaño de letra */
+            line-height: 1.2;
+            /* Espacio de interlineado compacto */
+            margin-bottom: 0.5rem;
+            /* Espacio después del párrafo para separarlo del siguiente elemento */
+        }
+
         h1,
         h2,
         h3,
@@ -117,24 +127,6 @@
             /* Cambia el color del texto */
             font-family: 'Arial', sans-serif;
             /* Cambia la fuente del texto */
-        }
-
-        /* styles.css */
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
-
-        table {
-            @apply min-w-full divide-y divide-gray-200;
-        }
-
-        th,
-        td {
-            @apply px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900;
-        }
-
-        tr {
-            @apply bg-white;
         }
 
         .bpw-message-big-container code {
@@ -417,7 +409,7 @@
                                 <div class="flex flex-row w-full">
                                     <div class="md-block-wrapper w-full">
                                         <div v-for="block in searchFilteredBlocks" :key="block.id"
-                                            class="md-block flex">
+                                            :id="block.blockTitle" class="md-block flex">
                                             <div
                                                 class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
                                                 <div v-html="block.parsedContent"></div>
@@ -467,7 +459,8 @@
                             <div id="content" class="mt-48 ml-2 mr-2">
                                 <div class="flex flex-row w-full">
                                     <div class="md-block-wrapper w-full">
-                                        <div v-for="block in filteredBlocks" :key="block.id" class="md-block flex">
+                                        <div v-for="block in filteredBlocks" :key="block.id" :id="block.blockTitle"
+                                            class="md-block flex">
                                             <!-- Renderizar los bloques -->
                                         </div>
                                     </div>
@@ -755,7 +748,7 @@
                         // Reemplaza cada coincidencia en el texto con la etiqueta envuelta en un span directamente en el contenido
                         const modifiedContent = content.replace(regex, (match, p1, p2) => {
                             // Envuelve la etiqueta en un span con data-tag
-                            return `${p1}<span data-tag="${p2}" class="flex items-center justify-center h-8 px-2 text-sm">#${p2}</span>`;
+                            return `${p1}<span data-tag="${p2}" class="items-center justify-start rounded p-2">#${p2}</span>`;
                         });
 
                         // Devuelve el contenido modificado como una cadena de texto HTML
@@ -770,7 +763,7 @@
                         const tags = matches.map(match => match[1]);
 
                         // Generamos el HTML para tagsParsed
-                        const tagsParsed = tags.map(tag => `<span data-tag="${tag}" class="flex items-center justify-center h-8 px-2 text-sm">#${tag}</span>`).join('');
+                        const tagsParsed = tags.map(tag => `<span data-tag="${tag}" class="items-center justify-start rounded p-2">#${tag}</span>`).join('');
 
                         return {
                             tags: tags, // Ya no necesitamos eliminar el símbolo '#' aquí, porque ya lo hicimos arriba
