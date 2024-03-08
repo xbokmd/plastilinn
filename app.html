@@ -15,149 +15,7 @@
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <style>
-        * {
-            -webkit-text-size-adjust: 100%;
-            -moz-tab-size: 4;
-            -o-tab-size: 4;
-            tab-size: 4;
-            font-family: Inter var, ui-sans-serif, system-ui, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-            font-variation-settings: normal;
-            -webkit-tap-highlight-color: transparent;
-        }
 
-        a {
-            color: blue;
-            text-decoration: underline;
-        }
-
-        .md-block {
-            display: flex;
-            /* o display: grid; dependiendo de tu estructura */
-            gap: 10px;
-            /* Ajusta este valor según lo necesites */
-        }
-
-        .md-block-container-middle>div {
-            /* Tus estilos aquí */
-            border-bottom: 1px solid #F5F5F5;
-            padding: 1rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        .toastui-editor-defaultUI div[contenteditable="true"] {
-            text-align: left;
-        }
-
-        #bp-web-widget-container {
-            width: 50%;
-            height: 80%;
-            z-index: 100;
-            position: relative;
-        }
-
-        .section {
-            scroll-margin-top: 2rem;
-            /* Asegúrate de que esto sea igual o más grande que la altura de tu navbar */
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        #sidebar {
-            position: -webkit-sticky;
-            /* Para soporte en Safari */
-            position: sticky;
-            top: 0;
-            /* Ajusta este valor según sea necesario para tu diseño */
-            z-index: 10;
-            /* Asegúrate de que tiene un z-index alto si hay otros elementos flotantes */
-        }
-
-        @keyframes highlightFade {
-            from {
-                background-color: blue;
-            }
-
-            to {
-                background-color: transparent;
-                /* Asume que el color de fondo original es transparente */
-            }
-        }
-
-        .highlight {
-            animation: highlightFade 3s ease forwards;
-        }
-
-        #top-container {
-            position: -webkit-sticky;
-            /* Para soporte en Safari */
-            position: sticky;
-            top: 0;
-            /* Este valor se ajusta para que se quede fijo en la parte superior cuando hagas scroll */
-            z-index: 10;
-            /* Asegúrate de que tiene un z-index alto si hay otros elementos flotantes */
-        }
-
-        #sidebar {
-            flex-shrink: 0;
-            /* Esto evita que la sidebar se encoja si hay mucho contenido */
-        }
-
-        .marker {
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            left: 0;
-            top: 0;
-            transform: translate(-50%, -50%);
-        }
-
-        p {
-            color: #4a5568;
-            /* Gris oscuro */
-            font-size: 1rem;
-            /* Tamaño de letra */
-            line-height: 1.2;
-            /* Espacio de interlineado compacto */
-            margin-bottom: 0.5rem;
-            /* Espacio después del párrafo para separarlo del siguiente elemento */
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: Inter var, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-            font-weight: 700;
-            -webkit-font-smoothing: antialiased;
-            color: #333;
-            /* Cambia el color del texto */
-            font-family: 'Arial', sans-serif;
-            /* Cambia la fuente del texto */
-        }
-
-        .bpw-message-big-container code {
-            background-color: #f0f0f0;
-            /* Cambia el color de fondo */
-            padding: 5px;
-            /* Agrega padding */
-            border-radius: 4px;
-            /* Redondea los bordes */
-            white-space: pre-wrap;
-            /* Asegura que el contenido se envuelva correctamente */
-            word-wrap: break-word;
-            /* Permite la ruptura de palabras para evitar el desbordamiento horizontal */
-            max-width: 100%;
-            /* Limita el ancho máximo para prevenir desbordamiento fuera del contenedor */
-        }
     </style>
 </head>
 
@@ -301,7 +159,8 @@
                         v-bind:class="{ block: currentSidebarSection === 'index', hidden: currentSidebarSection !== 'index' }">
                         <div class="index">
                             <ul class="menu p-4 w-80 bg-base-100">
-                                <li v-for="block in model.filter(b => b.blockType === 'section')" :key="block.id">
+                                <li v-for="block in model.filter(b => b.blockType === 'section')" :key="block.id"
+                                    :class="`pl-${block.depthLevel * 4} p-0`">
                                     <a :href="'#' + block.blockTitle">{{ block.blockTitle }}</a>
                                 </li>
                             </ul>
@@ -696,6 +555,9 @@
                             this.lastId += 1; // Incrementa el ID para cada bloque
                             const firstLine = blockContent.split('\n')[0];
                             let blockType = 'item';
+                            // Use a simpler approach to count '#' at the start of the line for depth level
+                            const depthLevel = firstLine.startsWith('#') ? firstLine.match(/^#+/)[0].length : 0;
+
                             // Actualiza la expresión regular para reflejar la nueva condición
                             if (/^\s*(-\s+)?#(\s|#)/.test(firstLine)) {
                                 blockType = 'section';
@@ -716,7 +578,8 @@
                                 tagsParsed: tagsParsed,
                                 blockTitle: blockTitle,
                                 parsedContent: parsedContent, // Agrega la propiedad parsedContent al objeto block
-                                metamodel: metamodel
+                                metamodel: metamodel,
+                                depthLevel: depthLevel, // Include the depth level here
                             };
                         });
                         this.updateModelMarkdown();
