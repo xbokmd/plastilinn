@@ -118,12 +118,6 @@ textarea:focus, select:focus {
     gap: 4px; /* Espacio entre etiquetas */
 }
 
-.tags-container span {
-    background-color: white; /* Color de fondo de las etiquetas */
-    padding: 2px;
-    border-radius: 4px;
-}
-
 textarea {
     min-height: 1em;
     max-height: 400px;
@@ -231,6 +225,13 @@ border-radius: 0.5rem;
 .input:focus, .select:focus {
 border-color: #4f46e5; /* Cambia el color del borde al enfocar */
 box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); /* Sombra suave alrededor */
+}
+
+
+span[data-tag] {
+background-color: white; /* Color de fondo de las etiquetas */
+padding: 2px;
+border-radius: 4px;
 }
 
 span[data-tag="key"] { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span[data-tag="key"]::before { content: "🔑"; position: absolute; left: 0;}
