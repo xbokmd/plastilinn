@@ -72,12 +72,10 @@
             </header>
 
             <!-- main container -->
+
             <div class="flex-1 flex flex-row overflow-y-hidden">
-
-                <nav class="order-first w-1/4 m-4 p-2 overflow-y-auto" style="min-width: 500px">
-
-
-                    <div class="flex flex-row flex-wrap gap-2 sticky top-0">
+                <nav class="order-first w-1/4 m-4 p-2 overflow-y-auto" style="min-width: 440px">
+                    <div class="flex flex-row flex-wrap gap-2 bg-white sticky top-0">
                         <div class="flex flex-row justify-between mb-4 gap-2">
                             <button @click="changeSection('home')"
                                 class="collapse-filter-button btn btn-primary btn-sm">🏠 Home</button>
@@ -95,7 +93,7 @@
                         v-bind:class="{ block: currentSidebarSection === 'home', hidden: currentSidebarSection !== 'home' }">
                         <div id="sidebar-home">
                             <div>
-                                <p>Plastilin allows you to create a business model and evolve it to make it better and
+                                <p>Plastilinn allows you to create a business model and evolve it to make it better and
                                     better. </p>
                                 <div>
                                     <h5>📋 Guides</h5>

@@ -4,7 +4,7 @@
 
     Define the target customer segments you want to serve.
 
-	#id [profile/Main profile](<#profile/Main profile>)
+	#id [profile/Main profile](<#Main profile>)
     
 2. #### Problem
 
@@ -22,7 +22,7 @@
 
 	Outline the proposed solutions to the top problems you've identified
     
-    #id [solution](<#solution>)
+    #id [solution](<#Main solution>)
 
 5. #### Channels
 

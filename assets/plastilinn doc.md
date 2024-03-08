@@ -34,7 +34,9 @@
 
   - #segment
 
-## # Main segment #**** #>
+## #segment Main segment #**** #>
+
+  - #segment
 
 ### segmentation criteria #*** #>
 
@@ -58,7 +60,11 @@
 
 # profile list #*** #>
 
-## # Main profile #**** #>
+  - #profile
+
+## #profile Main profile #**** #>
+
+  - #profile
 
 ### segmentation #*** #>
 
@@ -114,7 +120,9 @@
 
   - #solution
 
-## # Main solution #*** #>
+## #solution Main solution #*** #>
+
+  - #solution
 
 ### category #** #>
 
@@ -174,7 +182,9 @@
 
   - #person
 
-### # Main person #**** #>
+### #person Main person #**** #>
+
+  - #person
 
 #### skills #*** #>
 
@@ -262,6 +272,9 @@
 
   - #experiment
 
-### # Main experiment #*** #>
+### #experiment Main experiment #*** #>
+
+  - #experiment
 
 # references # #>
+
