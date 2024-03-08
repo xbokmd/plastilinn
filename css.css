@@ -50,7 +50,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.index ul li {
+.index ul li a {
     padding-top: 0rem !important;
     padding-bottom: 0rem !important;
 }

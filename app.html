@@ -183,6 +183,9 @@
                                             <input v-model="searchQuery" type="text" placeholder="Search..."
                                                 class="input ml-2 bg-gray-50 w-full">
                                         </div>
+                                        <!-- Botón para abrir el modal de búsqueda y reemplazo -->
+                                        <button @click="showSearchReplaceModal = true" class="btn btn-primary">Abrir
+                                            búsqueda y reemplazo</button>
                                         <!-- Filtro de etiquetas -->
                                         <div class="flex flex-col">
                                             <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
@@ -351,7 +354,30 @@
             <footer class="border-t border-gray-200 p-2">Footer</footer>
         </div>
 
-        <!-- Modal para editar el contenido de la línea seleccionada -->
+        <!-- MODAL WINDOWS -->
+
+        <!-- Modal de búsqueda y reemplazo -->
+        <div v-if="showSearchReplaceModal"
+            class="fixed inset-0 bg-gray-600 bg-opacity-75 flex justify-center items-center">
+            <div class="bg-white p-4 rounded-lg shadow-lg flex flex-col">
+                <div class="mb-2">
+                    <label for="searchText" class="block text-sm font-medium text-gray-700">Texto a buscar</label>
+                    <input v-model="searchText" id="searchText" type="text"
+                        class="mt-1 p-2 border border-gray-300 rounded-md shadow-sm">
+                </div>
+                <div class="mb-4">
+                    <label for="replaceText" class="block text-sm font-medium text-gray-700">Texto de reemplazo</label>
+                    <input v-model="replaceText" id="replaceText" type="text"
+                        class="mt-1 p-2 border border-gray-300 rounded-md shadow-sm">
+                </div>
+                <div class="flex justify-end gap-2">
+                    <button @click="showSearchReplaceModal = false" class="btn btn-secondary">Cancelar</button>
+                    <button @click="performSearchReplace(searchText)" class="btn mb-2 btn-primary">Reemplazar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para editar el contenido del bloqur seleccionada -->
         <div v-if="isModalOpen"
             class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full items-center z-50">
             <div class="modal-background absolute inset-0 bg-black opacity-50"></div>
@@ -426,6 +452,9 @@
                         autoDownloadEnabled: true,
                         showGuidesSelect: false, // Controla la visibilidad del select
                         markdownGuideContent: '', // Almacena el contenido del Markdown cargado
+                        searchText: '',
+                        replaceText: '',
+                        showSearchReplaceModal: false,
                     };
                 },
                 computed: {
@@ -479,6 +508,22 @@
                         this.currentSidebarSection = section;
                         console.log("Sección actual del sidebar:", this.currentSidebarSection);
                         // Aquí puedes agregar cualquier otra lógica que necesites ejecutar cuando cambies de sección
+                    },
+                    performSearchReplace(originalText) {
+                        // Asegúrate de que searchText no esté vacío y que realmente quieras usar el argumento originalText
+                        if (!originalText) return; // Sale si originalText está vacío
+
+                        this.model.forEach(block => {
+                            // Usa la variable originalText en lugar de searchText para el reemplazo
+                            block.content = block.content.replaceAll(originalText, this.replaceText);
+                            // Actualiza el contenido parseado después del reemplazo para reflejar los cambios
+                            block.parsedContent = marked.parse(block.content);
+                        });
+
+                        // Restablece searchText y replaceText a cadenas vacías después del reemplazo
+                        this.searchText = '';
+                        this.replaceText = '';
+                        this.showSearchReplaceModal = false; // Cierra el modal después de realizar el reemplazo
                     },
                     async loadMarkdownContent(url) {
                         if (url) {
