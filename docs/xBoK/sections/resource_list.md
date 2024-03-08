@@ -8,10 +8,10 @@
       - {{embed [[asset]]}}
   
 - ## 🔑 Keys
-  - #block [[resource-list]] > #key 💰50 [Resilient supply chain management](https://go.plastilinn.com/#/page/resource-list%2FResilient%20supply%20chain%20management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[resource-list]] > #key 💰50 [Resilient supply chain management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/resource-list%2FResilient%20supply%20chain%20management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50
     value:: 50
-  - #block [[resource-list]] > #key 💰40 [Financial needs](https://go.plastilinn.com/#/page/resource-list%2FFinancial%20needs) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[resource-list]] > #key 💰40 [Financial needs](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/resource-list%2FFinancial%20needs) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 40
     value:: 50
 - ## 🤖 innCoPilot
@@ -34,30 +34,41 @@
   In essence, the concept of "resource list" in business modeling is about identifying and understanding the key resources that a company needs to operate and succeed. It's a crucial aspect of business design, as it can significantly impact a company's operational efficiency, competitive advantage, and overall business performance.
 - ## 👉 Examples
   ### Space X
-  - #asset [[Manufacturing facilities]]
-  	- Facilities equipped with the necessary tools and equipment for rocket and spacecraft manufacturing.
-  - #asset [[Research and development capabilities]]
-  	- Capabilities to innovate and improve rockets, spacecraft, and other technologies.
-  - #asset [[Testing facilities]]
-  	- Facilities for conducting tests and simulations to ensure performance and safety.
-  - #asset [[Launch sites]]
-  	- Access to launch pads and associated infrastructure for launching rockets and spacecraft.
-  - #asset [[Satellites]]
-  	- Fleet of satellites for the Starlink project, providing global internet coverage.
-  - #asset [[IT infrastructure]]
-  	- Robust IT infrastructure to support operations, communication networks, data storage, and software systems.
-  - #asset [[Supply chain]]
-  	- Reliable supply chain for sourcing components, materials, and equipment.
-  - #asset [[Human capital]]
-  	- Skilled workforce with expertise in engineering, science, operations, and management.
-  - #asset [[Financial resources]]
-  	- Resources to fund operations, research and development, manufacturing, and other activities.
-  - #asset [[Intellectual property]]
-  	- Intellectual property, including patents, trademarks, and trade secrets.
-  - #asset [[Partnerships and collaborations]]
-  	- Partnerships and collaborations with other organizations for additional resources and expertise.
-  - #asset [[Brand and reputation]]
-  	- Brand and reputation for attracting customers, investors, and talent.
+  #resource Manufacturing facilities
+  Facilities equipped with the necessary tools and equipment for rocket and spacecraft manufacturing.
+  
+  #resource Research and development capabilities
+  Capabilities to innovate and improve rockets, spacecraft, and other technologies.
+  
+  #resource Testing facilities
+  Facilities for conducting tests and simulations to ensure performance and safety.
+  
+  #resource Launch sites
+  Access to launch pads and associated infrastructure for launching rockets and spacecraft.
+  
+  #resource Satellites
+  Fleet of satellites for the Starlink project, providing global internet coverage.
+  
+  #resource IT infrastructure
+  Robust IT infrastructure to support operations, communication networks, data storage, and software systems.
+  
+  #resource Supply chain
+  Reliable supply chain for sourcing components, materials, and equipment.
+  
+  #resource Human capital
+  Skilled workforce with expertise in engineering, science, operations, and management.
+  
+  #resource Financial resources
+  Resources to fund operations, research and development, manufacturing, and other activities.
+  
+  #resource Intellectual property
+  Intellectual property, including patents, trademarks, and trade secrets.
+  
+  #resource Partnerships and collaborations
+  Partnerships and collaborations with other organizations for additional resources and expertise.
+  
+  #resource Brand and reputation
+  Brand and reputation for attracting customers, investors, and talent.
   ### vein visualizer
   - #asset [[Manufacturing facilities]]
   	- Facilities equipped with state-of-the-art machinery and technology for efficient and high-quality production of goods.

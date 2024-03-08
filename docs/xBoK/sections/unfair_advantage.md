@@ -4,10 +4,10 @@
   - Content is of type text.
   
 - ## 🔑 Keys
-  - #block [[unfair-advantage]] > #key 💰60 [Differentiation and competitive advantage](https://go.plastilinn.com/#/page/unfair-advantage%2FDifferentiation%20and%20competitive%20advantage) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[unfair-advantage]] > #key 💰60 [Differentiation and competitive advantage](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/unfair-advantage%2FDifferentiation%20and%20competitive%20advantage) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 60
     value:: 50
-  - #block [[unfair-advantage]] > #key 💰55 [Relevance of the Advantage](https://go.plastilinn.com/#/page/unfair-advantage%2FRelevance%20of%20the%20Advantage) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[unfair-advantage]] > #key 💰55 [Relevance of the Advantage](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/unfair-advantage%2FRelevance%20of%20the%20Advantage) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 55
     value:: 50
 - ## 🤖 innCoPilot
@@ -24,7 +24,7 @@
   The "Unfair Advantage" concept in business modeling is crucial because it emphasizes the importance of leveraging unique benefits to achieve competitive superiority. It encourages businesses to identify, cultivate, and exploit their unique advantages to outperform their competitors and achieve greater success.
 - ## 👉 Examples
   ### Space X
-  
+  SpaceX's "unfair advantage," lies primarily in its ability to rapidly innovate and iterate on rocket technology, driven by its vertical integration and in-house manufacturing capabilities. Unlike traditional aerospace companies that rely on a complex web of suppliers for parts and components, SpaceX designs, manufactures, and tests the majority of its rocket components within its own facilities. This approach enables SpaceX to significantly reduce costs, improve quality control, and accelerate the development cycle of its rockets and spacecraft. The ability to quickly adapt and implement changes based on flight data and experiences gives SpaceX a significant edge over competitors, allowing for rapid advancements in technology and the achievement of milestones at a pace unprecedented in the space industry.
   ### vein visualizer
   
   ### extinguished animals meat

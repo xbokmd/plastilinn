@@ -27,22 +27,22 @@
   In summary, the Funding Sources model provides a framework for identifying, evaluating, and managing the various ways a business generates revenue or acquires capital. It is a critical component of business design, influencing the business's financial sustainability, growth potential, and overall business strategy.
 - ## 👉 Examples
   ### Space X
-  - Venture capital
-          - Space X may attract venture capitalists interested in investing in high-growth and innovative companies. Venture capital firms provide funding in exchange for equity in the company, betting on its future success and potential returns.
-  - Debt financing  
-          - Space X may secure loans or issue bonds to raise capital through debt financing. This involves borrowing money from lenders or issuing debt securities that promise repayment with interest over a specific period.
-  - Government funding
-          - Space X has received government contracts and grants from agencies such as NASA and the Department of Defense. These contracts provide funding for specific projects or services and are often awarded through competitive bidding processes.
-  - Grants and subsidies
-          - Space X may qualify for grants or subsidies from government agencies or non-profit organizations that support space exploration or technology development. These funds can help offset costs and provide additional funding.
-  - Strategic partnerships and collaborations
-          - Space X may form partnerships or collaborations with other companies or organizations in the space industry. These partnerships can provide funding through joint ventures, revenue-sharing agreements, or co-investment opportunities.
-  - Initial public offering (IPO)
-          - Space X may consider going public through an IPO, where the company's shares are listed on a stock exchange and sold to public investors. This can provide a significant influx of capital and liquidity for the company.
-  - Revenue-based financing
-          - Space X may explore revenue-based financing options, where investors provide capital in exchange for a percentage of future revenue. This allows the company to secure funding without diluting equity or taking on additional debt.
-  - Customer revenue
-          - Space X generates revenue through its various offerings, such as launch services, satellite communication services, and spacecraft manufacturing. Customer payments for these services contribute to the company's funding.
+  SpaceX, founded by Elon Musk in 2002, has utilized a mix of private investments, government contracts, and public funding to finance its operations and ambitious space exploration goals. Here's a breakdown of the key funding sources and investors:
+  
+  #funding_source Private Equity and Venture Capital
+  SpaceX has raised significant amounts of funding through private equity rounds from venture capital firms and individual investors. Notable investors include Founders Fund, Sequoia Capital, and Draper Fisher Jurvetson. Google and Fidelity Investments made a large investment in 2015, putting in about $1 billion for a nearly 10% stake in the company.
+  
+  #funding_source Government Contracts
+  A substantial portion of SpaceX's funding comes from government contracts, particularly from NASA and the U.S. Department of Defense. NASA's Commercial Orbital Transportation Services (COTS) program awarded SpaceX contracts worth several billion dollars over the years for cargo transportation to the International Space Station (ISS). Additionally, SpaceX has secured contracts for national security missions from the U.S. Air Force and Space Force.
+  
+  #funding_source Public Funding
+  Though SpaceX remains a privately held company and hasn't gone public through an IPO, it has received public funding in the form of government grants and incentives for specific projects and facilities.
+  
+  #funding_source Debt Financing
+  SpaceX has also used debt financing to fund its operations. For example, in 2020, SpaceX raised $1.9 billion in one of the largest funding rounds, and later, it was reported that the company raised an additional $850 million through equity and debt.
+  
+  #funding_source Direct Investment from Elon Musk
+  Elon Musk, the founder and CEO, has invested a significant amount of his own money into SpaceX, especially in the early days to get the company off the ground. His continued investment demonstrates his commitment to the company's long-term vision.
   ### vein visualizer
   - Angel investors: The company can seek funding from angel investors who provide capital in exchange for equity or convertible debt. These investors often have industry expertise and can provide valuable guidance and connections.
   - Bank loans: The company can secure loans from banks or financial institutions to fund its operations. These loans can be used for various purposes, such as purchasing equipment or expanding production capacity.

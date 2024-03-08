@@ -4,31 +4,31 @@
   - Content is of type text.
   
 - ## 🔑 Keys
-  - #block [[legal]] > #key 💰70 [Strong intellectual property protection](https://go.plastilinn.com/#/page/legal%2FStrong%20intellectual%20property%20protection) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[legal]] > #key 💰70 [Strong intellectual property protection](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FStrong%20intellectual%20property%20protection) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 70
     value:: 50
-  - #block [[legal]] > #key 💰60 [Risk Management](https://go.plastilinn.com/#/page/legal%2FRisk%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[legal]] > #key 💰60 [Risk Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FRisk%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 60
     value:: 50
-  - #block [[legal]] > #key 💰60 [Legal Compliance](https://go.plastilinn.com/#/page/legal%2FLegal%20Compliance) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[legal]] > #key 💰60 [Legal Compliance](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FLegal%20Compliance) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 60
     value:: 50
-  - #block [[legal]] > #key 💰60 [Licenses and Permits](https://go.plastilinn.com/#/page/legal%2FLicenses%20and%20Permits) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[legal]] > #key 💰60 [Licenses and Permits](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FLicenses%20and%20Permits) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 60
     value:: 50
-  - #block [[legal]] > #key 💰45 [Protectability](https://go.plastilinn.com/#/page/legal%2FProtectability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[legal]] > #key 💰45 [Protectability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FProtectability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 45
     value:: 50
-  - #block [[legal]] > #key 💰35 [Contracts and Agreements](https://go.plastilinn.com/#/page/legal%2FContracts%20and%20Agreements) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[legal]] > #key 💰35 [Contracts and Agreements](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FContracts%20and%20Agreements) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 35
     value:: 50
-  - #block [[legal]] > #key 💰25 [Legal complexity](https://go.plastilinn.com/#/page/legal%2FLegal%20complexity) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[legal]] > #key 💰25 [Legal complexity](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FLegal%20complexity) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 25
     value:: 50
-  - #block [[legal]] > #key 💰20 [Regulatory compliance](https://go.plastilinn.com/#/page/legal%2FRegulatory%20compliance) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[legal]] > #key 💰20 [Regulatory compliance](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FRegulatory%20compliance) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 20
     value:: 50
-  - #block [[legal]] > #key 💰20 [Intellectual Property](https://go.plastilinn.com/#/page/legal%2FIntellectual%20Property) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[legal]] > #key 💰20 [Intellectual Property](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FIntellectual%20Property) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 20
     value:: 50
 - ## 🤖 innCoPilot
@@ -53,26 +53,35 @@
   In summary, the Legal model in business design provides a framework for ensuring that a business operates in accordance with relevant laws and regulations. It is a critical component of business design, influencing the business's reputation, operational efficiency, risk management, and overall sustainability.
 - ## 👉 Examples
   ### Space X
-  - [[Ensuring compliance]]
-    - This involves ensuring that the company's operations and interactions adhere to all applicable laws and regulations. It includes staying up-to-date with changes in legislation, implementing necessary policies and procedures, and conducting regular audits to ensure compliance.
-  - [[Risk management]]
-    - Legal can provide expertise in identifying and mitigating potential legal risks that the company may face. This involves assessing the legal implications of business decisions and actions, and developing strategies to minimize legal exposure.
-  - [[Contract management]]
-    - Legal can play a crucial role in drafting, reviewing, and negotiating contracts with various stakeholders such as clients, suppliers, and partners. They can ensure that contracts are legally sound, protect the company's interests, and help in resolving any contractual disputes that may arise.
-  - [[Intellectual property protection]]
-    - Legal can assist in protecting the company's intellectual property rights, such as trademarks, copyrights, and patents. They can help in registering and enforcing these rights, as well as advising on any potential infringement issues.
-  - [[Legal support for business transactions]]
-    - Legal can provide guidance and support during mergers, acquisitions, partnerships, and other business transactions. They can conduct due diligence, review legal documents, and ensure that the company's interests are protected throughout the process.
-  - [[Dispute resolution]]
-    - Legal can assist in resolving legal disputes that may arise, whether it's through negotiation, mediation, or litigation. They can represent the company's interests and work towards achieving the most favorable outcome.
-  - [[Data protection and privacy]]
-    - With the increasing importance of data protection and privacy, legal can help in ensuring compliance with relevant regulations, such as GDPR or CCPA. They can develop and implement policies and procedures to safeguard customer data and handle any data breaches or privacy-related issues.
-  - [[Ethics and corporate governance]]
-    - Legal can contribute to establishing and maintaining ethical standards within the company. They can provide guidance on corporate governance practices, whistleblower protection, and ensuring transparency and accountability in business operations.
-  - [[Regulatory compliance]]
-    - Legal can assist in navigating complex regulatory frameworks specific to the industry in which the company operates. They can help in understanding and complying with regulatory requirements, obtaining necessary licenses and permits, and representing the company in regulatory matters.
-  - [[Employment law and HR support]]
-    - Legal can provide guidance on employment law matters, such as hiring practices, employment contracts, workplace policies, and employee rights. They can also support the HR department in handling disciplinary actions, terminations, and addressing any legal issues related to employees.
+  #legal Ensuring compliance
+  This involves ensuring that the company's operations and interactions adhere to all applicable laws and regulations. It includes staying up-to-date with changes in legislation, implementing necessary policies and procedures, and conducting regular audits to ensure compliance.
+  
+  #legal Risk management
+  Legal can provide expertise in identifying and mitigating potential legal risks that the company may face. This involves assessing the legal implications of business decisions and actions, and developing strategies to minimize legal exposure.
+  
+  #legal Contract management
+    Legal can play a crucial role in drafting, reviewing, and negotiating contracts with various stakeholders such as clients, suppliers, and partners. They can ensure that contracts are legally sound, protect the company's interests, and help in resolving any contractual disputes that may arise.
+  
+  #legal Intellectual property protection
+  Legal can assist in protecting the company's intellectual property rights, such as trademarks, copyrights, and patents. They can help in registering and enforcing these rights, as well as advising on any potential infringement issues.
+  
+  #legal Legal support for business transactions
+  Legal can provide guidance and support during mergers, acquisitions, partnerships, and other business transactions. They can conduct due diligence, review legal documents, and ensure that the company's interests are protected throughout the process.
+  
+  #legal Dispute resolution
+  Legal can assist in resolving legal disputes that may arise, whether it's through negotiation, mediation, or litigation. They can represent the company's interests and work towards achieving the most favorable outcome.
+  
+  #legal Data protection and privacy
+  With the increasing importance of data protection and privacy, legal can help in ensuring compliance with relevant regulations, such as GDPR or CCPA. They can develop and implement policies and procedures to safeguard customer data and handle any data breaches or privacy-related issues.
+  
+  #legal Ethics and corporate governance
+  Legal can contribute to establishing and maintaining ethical standards within the company. They can provide guidance on corporate governance practices, whistleblower protection, and ensuring transparency and accountability in business operations.
+  
+  #legal Regulatory compliance
+  Legal can assist in navigating complex regulatory frameworks specific to the industry in which the company operates. They can help in understanding and complying with regulatory requirements, obtaining necessary licenses and permits, and representing the company in regulatory matters.
+  
+  #legal Employment law and HR support
+  Legal can provide guidance on employment law matters, such as hiring practices, employment contracts, workplace policies, and employee rights. They can also support the HR department in handling disciplinary actions, terminations, and addressing any legal issues related to employees.
   ### vein visualizer
   - Privacy and data protection: Legal can ensure compliance with data protection laws and regulations, such as obtaining_informed consent for data collection and processing, implementing data security measures, and handling data breaches appropriately.
   - Consumer protection: Legal can ensure that the company's products and services comply with consumer protection laws, such as providing accurate and transparent_information, honoring warranties, and addressing customer complaints.

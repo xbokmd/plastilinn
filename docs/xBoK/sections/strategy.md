@@ -4,16 +4,16 @@
   - Content is of type text.
   
 - ## 🔑 Keys
-  - #block [[strategy]] > #key 💰45 [Expansion Capability](https://go.plastilinn.com/#/page/strategy%2FExpansion%20Capability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[strategy]] > #key 💰45 [Expansion Capability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/strategy%2FExpansion%20Capability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 45
     value:: 50
-  - #block [[strategy]] > #key 💰40 [Cultural Adaptability](https://go.plastilinn.com/#/page/strategy%2FCultural%20Adaptability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[strategy]] > #key 💰40 [Cultural Adaptability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/strategy%2FCultural%20Adaptability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 40
     value:: 50
-  - #block [[strategy]] > #key 💰30 [Cultural Sensitivity](https://go.plastilinn.com/#/page/strategy%2FCultural%20Sensitivity) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[strategy]] > #key 💰30 [Cultural Sensitivity](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/strategy%2FCultural%20Sensitivity) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
-  - #block [[strategy]] > #key 💰20 [International Logistics](https://go.plastilinn.com/#/page/strategy%2FInternational%20Logistics) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[strategy]] > #key 💰20 [International Logistics](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/strategy%2FInternational%20Logistics) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 20
     value:: 50
 - ## 🤖 innCoPilot
@@ -38,10 +38,10 @@
   For example, a company's strategy might be to become the market leader in its industry by offering innovative, high-quality products, investing heavily in research and development, building a strong brand, and providing exceptional customer service. This strategy would guide the company's decisions about product development, marketing, sales, customer service, and other key areas.
 - ## 👉 Examples
   ### Space X
-  - Developing reusable rocket technology to reduce the cost of space missions.
-  - Leveraging partnerships with government and commercial entities for funding and collaboration.
-  - Investing in research and development to advance space technology.
-  - Focusing on innovation and continuous improvement in all aspects of the business.
+  Developing reusable rocket technology to reduce the cost of space missions.
+  Leveraging partnerships with government and commercial entities for funding and collaboration.
+  Investing in research and development to advance space technology.
+  Focusing on innovation and continuous improvement in all aspects of the business.
   ### vein visualizer
   - Expanding the target market by exploring international distribution partnerships.
   - Collaborating with medical research institutions to gather data and evidence of the device's effectiveness.

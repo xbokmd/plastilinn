@@ -4,19 +4,19 @@
   - Content is of type text.
   
 - ## 🔑 Keys
-  - #block [[operations]] > #key 💰30 [Robust cybersecurity measures](https://go.plastilinn.com/#/page/operations%2FRobust%20cybersecurity%20measures) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[operations]] > #key 💰30 [Robust cybersecurity measures](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/operations%2FRobust%20cybersecurity%20measures) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
-  - #block [[operations]] > #key 💰30 [Problem Resolution](https://go.plastilinn.com/#/page/operations%2FProblem%20Resolution) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[operations]] > #key 💰30 [Problem Resolution](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/operations%2FProblem%20Resolution) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
-  - #block [[operations]] > #key 💰30 [Efficiency and Continuous Improvement](https://go.plastilinn.com/#/page/operations%2FEfficiency%20and%20Continuous%20Improvement) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[operations]] > #key 💰30 [Efficiency and Continuous Improvement](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/operations%2FEfficiency%20and%20Continuous%20Improvement) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
-  - #block [[operations]] > #key 💰25 [Process Automation](https://go.plastilinn.com/#/page/operations%2FProcess%20Automation) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[operations]] > #key 💰25 [Process Automation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/operations%2FProcess%20Automation) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 25
     value:: 50
-  - #block [[operations]] > #key 💰20 [Production Capability](https://go.plastilinn.com/#/page/operations%2FProduction%20Capability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[operations]] > #key 💰20 [Production Capability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/operations%2FProduction%20Capability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 20
     value:: 50
 - ## 🤖 innCoPilot
@@ -43,28 +43,7 @@
   By carefully managing these aspects of "Operations", a business can ensure that it delivers its product or service in a timely, efficient, and high-quality manner. This not only contributes to customer satisfaction but also enhances the business's competitive advantage and profitability. For instance, the e-commerce company might streamline its delivery process to reduce shipping times, improve customer satisfaction, and increase repeat purchases. This would demonstrate the company's ability to leverage "Operations" to drive its business model and create value.
 - ## 👉 Examples
   ### Space X
-  - [[Rocket manufacturing]]
-    - Space X would need to manufacture their rockets, including the Falcon 9 and Falcon Heavy, which involves sourcing components, assembly, and testing to ensure they meet the required specifications and safety standards.
-  - [[Spacecraft development]]
-    - Space X would also need to develop and manufacture their spacecraft, such as the Dragon spacecraft and Starship, which involves designing and building the necessary systems and components for space travel and exploration.
-  - [[Launch operations]]
-    - Space X would need to plan and execute launch operations for their rockets and spacecraft. This includes coordinating with launch sites, obtaining necessary permits and clearances, and ensuring the safety and success of each launch.
-  - [[Satellite deployment]]
-    - Space X's Starlink project involves deploying thousands of satellites into orbit to provide global internet coverage. This operation would require careful planning and coordination to deploy and maintain the satellite network.
-  - [[Mission control]]
-    - Space X would need to establish and operate mission control centers to monitor and control their rockets and spacecraft during launches and missions. This involves real-time communication and coordination with the crew, ground stations, and other stakeholders.
-  - [[Supply chain management]]
-    - Space X would need to manage their supply chain to ensure the timely delivery of components, materials, and equipment required for rocket and spacecraft manufacturing. This involves sourcing from suppliers, managing inventory, and logistics.
-  - [[Testing and quality assurance]]
-    - Space X would need to conduct extensive testing and quality assurance to ensure the reliability and safety of their rockets and spacecraft. This includes testing various systems, components, and conducting simulations to identify and address any issues.
-  - [[Ground support equipment]]
-    - Space X would need to develop and maintain the necessary ground support equipment, such as launch pads, fueling systems, and recovery systems, to support their launch and landing operations.
-  - [[Recovery and reusability]]
-    - Space X's focus on reusability involves developing and implementing systems for the recovery and refurbishment of their rockets and spacecraft. This includes landing rockets back on Earth, recovering and refurbishing Dragon spacecraft, and developing technologies for reusable interplanetary travel.
-  - [[Customer support and service]]
-    - Space X would need to provide customer support and service to their clients and customers, including addressing inquiries, providing technical assistance, and ensuring customer satisfaction.
-  - [[Research and development]]
-    - Space X would need to continuously invest in research and development to improve their existing solutions and develop new technologies. This involves exploring new materials, propulsion systems, and other innovations to enhance the performance and capabilities of their rockets and spacecraft.
+  SpaceX manages its operations through a highly integrated, innovative, and efficient approach, emphasizing vertical integration, rapid iteration, and continuous improvement. By designing, manufacturing, testing, and launching its rockets and spacecraft in-house, SpaceX maintains tight control over quality, costs, and timelines. This vertical integration strategy allows for swift adjustments based on testing outcomes and mission requirements, facilitating a fast-paced environment of innovation. The company's operational model also leverages advanced technologies, such as state-of-the-art manufacturing techniques and software-driven automation, to enhance efficiency and scalability. Furthermore, SpaceX fosters a culture of cross-functional collaboration among its engineering, manufacturing, and launch teams, ensuring a cohesive approach to problem-solving and project management. This operational ethos is underpinned by a relentless pursuit of SpaceX's visionary goals, such as reducing space travel costs and making life multi-planetary, driving the company to constantly push the boundaries of what's possible in aerospace operations.
   ### vein visualizer
   - Manufacturing and assembly: The company would need to manufacture and assemble the infrared vein visualization device, ensuring quality control and adherence to safety standards.
   - Supply chain management: Managing the procurement of components and materials required for the device, ensuring timely delivery and efficient inventory management.

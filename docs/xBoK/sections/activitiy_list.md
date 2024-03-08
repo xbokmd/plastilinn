@@ -25,16 +25,20 @@
   In essence, an activity list is not just a to-do list for a business. It is a strategic tool that helps a business to understand and manage its operations, focus on its core competencies, and create a unique and compelling value proposition for its customers. It is a critical aspect of business design, as it directly impacts the business's ability to meet its objectives and satisfy its customers.
 - ## 👉 Examples
   ### Space X
-  - #work [[Rocket design and manufacturing]]
-  	- Space X must design and manufacture rockets that are safe, reliable, and cost-effective for space transportation.
-  - #work [[Launch and mission management]]
-  	- Space X must provide launch and mission management services to ensure successful placement of payloads in space.
-  - #work [[Satellite design and manufacturing]]
-  	- Space X must design and manufacture satellites capable of providing communication services to clients in space.
-  - #work [[Satellite deployment and management]]
-  	- Space X must provide satellite deployment and management services to ensure successful operation of satellites in space.
-  - #work [[Research and development]]
-  	- Space X must invest in research and development to improve its rockets and satellites and stay ahead of the competition.
+  #work Rocket design and manufacturing
+  Space X must design and manufacture rockets that are safe, reliable, and cost-effective for space transportation.
+  
+  #work Launch and mission management
+  Space X must provide launch and mission management services to ensure successful placement of payloads in space.
+  
+  #work Satellite design and manufacturing
+  Space X must design and manufacture satellites capable of providing communication services to clients in space.
+  
+  #work Satellite deployment and management
+  Space X must provide satellite deployment and management services to ensure successful operation of satellites in space.
+  
+  #work Research and development
+  Space X must invest in research and development to improve its rockets and satellites and stay ahead of the competition.
   ### vein visualizer
   - #work [[Device production and assembly]]
   	- The company must manufacture and assemble the infrared vein visualization device to meet customer demand.

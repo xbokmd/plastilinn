@@ -23,7 +23,7 @@
   In conclusion, a business brochure is a versatile tool in business design and modeling. It serves as a marketing tool, a representation of the company's brand, and a source of insights for business modeling. It is a critical component of a successful business model, helping to attract and inform potential customers, and contributing to the company's overall marketing strategy.
 - ## 👉 Examples
   ### Space X
-  https://www.Space X.com/media/Capabilities&Services.pdf
+  [Space X brochure](https://www.Space X.com/media/Capabilities&Services.pdf)
   ### vein visualizer
   
   ### extinguished animals meat

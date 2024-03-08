@@ -8,13 +8,13 @@
       - {{embed [[risk]]}}
   
 - ## 🔑 Keys
-  - #block [[risk-list]] > #key 💰50 [Risk Identification](https://go.plastilinn.com/#/page/risk-list%2FRisk%20Identification) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[risk-list]] > #key 💰50 [Risk Identification](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/risk-list%2FRisk%20Identification) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50
     value:: 50
-  - #block [[risk-list]] > #key 💰30 [Crisis Management](https://go.plastilinn.com/#/page/risk-list%2FCrisis%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[risk-list]] > #key 💰30 [Crisis Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/risk-list%2FCrisis%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
-  - #block [[risk-list]] > #key 💰20 [Contingency Plans](https://go.plastilinn.com/#/page/risk-list%2FContingency%20Plans) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[risk-list]] > #key 💰20 [Contingency Plans](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/risk-list%2FContingency%20Plans) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 20
     value:: 50
 - ## 🤖 innCoPilot
@@ -39,20 +39,26 @@
   In summary, the Risk List model in business design is a strategic approach that involves identifying, documenting, and managing potential negative outcomes or uncertainties that may affect the success and sustainability of a business model. It is a crucial tool for enhancing business resilience, strategic planning, stakeholder communication, and overall business performance.
 - ## 👉 Examples
   ### Space X
-  - #risk [[Technical Challenges]]
-  	- Developing and operating advanced rocket technology is inherently complex and carries technical risks. Space X must overcome challenges related to propulsion systems, reusability, landing accuracy, and payload integration. Failures or setbacks in these areas can impact mission success and the company's reputation.
-  - #risk [[Launch Failures]]
-  	- Launching rockets into space is a high-stakes endeavor, and failures can occur. Space X faces the risk of launch failures that can result in the loss of payloads and damage their reputation. Failure investigations, corrective actions, and ensuring reliable performance are ongoing challenges.
-  - #risk [[Regulatory and Compliance]]
-  	- Operating in the space industry requires compliance with various regulations and governmental approvals. Space X must navigate complex regulatory frameworks and obtain necessary licenses, permits, and certifications for launch operations. Compliance challenges or delays can impact their ability to conduct launches and generate revenue.
-  - #risk [[Safety and Crewed Missions]]
-  	- Space X's involvement in crewed missions introduces additional risks related to astronaut safety and mission success. Ensuring the reliability and safety of crewed spacecraft, conducting rigorous testing, and managing risks associated with human spaceflight are critical concerns for Space X.
-  - #risk [[Market Competition]]
-  	- The commercial space industry is becoming increasingly competitive, with several companies vying for contracts and market share. Space X faces competition from established players, emerging startups, and international space agencies. Increased competition can impact pricing, market access, and the ability to secure contracts.
-  - #risk [[Supply Chain and Dependencies]]
-  	- Space X relies on a complex supply chain to source components, materials, and services necessary for rocket production and operations. Disruptions or delays in the supply chain, such as shortages, quality issues, or geopolitical factors, can impact production timelines and mission schedules.
-  - #risk [[Financial Viability]]
-  	- The space industry requires significant financial investments in research, development, infrastructure, and operations. Space X faces financial risks, including securing adequate funding, managing costs, profitability challenges, and potential economic downturns that may affect demand for space services.
+  #risk Technical Challenges
+  Developing and operating advanced rocket technology is inherently complex and carries technical risks. Space X must overcome challenges related to propulsion systems, reusability, landing accuracy, and payload integration. Failures or setbacks in these areas can impact mission success and the company's reputation.
+  
+  #risk Launch Failures
+  Launching rockets into space is a high-stakes endeavor, and failures can occur. Space X faces the risk of launch failures that can result in the loss of payloads and damage their reputation. Failure investigations, corrective actions, and ensuring reliable performance are ongoing challenges.
+  
+  #risk Regulatory and Compliance
+  Operating in the space industry requires compliance with various regulations and governmental approvals. Space X must navigate complex regulatory frameworks and obtain necessary licenses, permits, and certifications for launch operations. Compliance challenges or delays can impact their ability to conduct launches and generate revenue.
+  
+  #risk Safety and Crewed Missions
+  Space X's involvement in crewed missions introduces additional risks related to astronaut safety and mission success. Ensuring the reliability and safety of crewed spacecraft, conducting rigorous testing, and managing risks associated with human spaceflight are critical concerns for Space X.
+  
+  #risk Market Competition
+  The commercial space industry is becoming increasingly competitive, with several companies vying for contracts and market share. Space X faces competition from established players, emerging startups, and international space agencies. Increased competition can impact pricing, market access, and the ability to secure contracts.
+  
+  #risk Supply Chain and Dependencies
+  Space X relies on a complex supply chain to source components, materials, and services necessary for rocket production and operations. Disruptions or delays in the supply chain, such as shortages, quality issues, or geopolitical factors, can impact production timelines and mission schedules.
+  
+  #risk Financial Viability
+  The space industry requires significant financial investments in research, development, infrastructure, and operations. Space X faces financial risks, including securing adequate funding, managing costs, profitability challenges, and potential economic downturns that may affect demand for space services.
   ### vein visualizer
   - #risk [[Technological Obsolescence]]
   	- The company's device may become outdated as new technologies emerge, reducing its demand and market competitiveness.

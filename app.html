@@ -607,12 +607,23 @@
                             } else if (firstLine.match(/^\s*[\-\*] /) || firstLine.match(/^\s*\d+\. /)) {
                                 blockType = 'item';
                             }
+
+                            let instanceClass = null; // Inicializa instanceClass como null
+
+                            // Verifica si el bloque es de tipo 'section' y busca una etiqueta justo después del encabezado
+                            if (blockType === 'section' && /^\s*#*\s*#([^\s]+)/.test(blockContent)) {
+                                const match = blockContent.match(/^\s*#*\s*#([^\s]+)/);
+                                if (match && match[1]) {
+                                    instanceClass = match[1]; // Asigna el nombre de la etiqueta a instanceClass
+                                }
+                            }
+
                             const { tags, tagsParsed } = this.processTags(blockContent);
                             const blockTitle = this.extractBlockTitle(blockContent);
                             const blockContentWithTagsParsed = this.parseTags(blockContent);
                             const parsedContent = marked.parse(blockContentWithTagsParsed); // Parsea el contenido Markdown
                             console.log(blockTitle);
-                            const metamodel = this.importMetamodelData(blockTitle);
+                            const metamodel = this.importMetamodelData(blockTitle, instanceClass);
                             return {
                                 id: this.lastId,
                                 content: blockContent,
@@ -623,6 +634,7 @@
                                 parsedContent: parsedContent, // Agrega la propiedad parsedContent al objeto block
                                 metamodel: metamodel,
                                 depthLevel: depthLevel, // Include the depth level here
+                                instanceClass: instanceClass, // Agrega instanceClass al objeto
                             };
                         });
                         this.updateModelMarkdown();
@@ -645,23 +657,41 @@
                             }
                         });
                     },
-                    importMetamodelData(blockTitle) {
-                        // Encuentra la sección que coincide con blockTitle
-                        const section = this.metamodel.sections.find(s => s.name === blockTitle);
-                        if (section) {
-                            // Suponiendo que quieras actualizar un bloque específico en this.model
-                            // Necesitarás identificar cuál bloque actualizar basado en blockTitle o alguna otra lógica
-                            const blockIndex = this.model.findIndex(block => block.title === blockTitle);
-                            if (blockIndex !== -1) {
-                                // Si encontramos un bloque correspondiente, actualizamos ese bloque
-                                // Aquí es donde decides cómo quieres incorporar la sección al bloque
-                                // Por ejemplo, podrías querer añadir la sección encontrada a un array de secciones en el bloque
-                                this.$set(this.model[blockIndex], 'section', section);
-                            }
+                    importMetamodelData(blockTitle, instanceClass) {
+                        console.log("importMetamodelData called with blockTitle:", blockTitle, "and instanceClass:", instanceClass);
+
+                        // Intenta encontrar una coincidencia usando el blockTitle
+                        let section = this.metamodel.sections.find(s => s.name === blockTitle);
+                        console.log("After trying to match with blockTitle, section is:", section);
+
+                        // Si no encuentra una coincidencia con blockTitle, intenta con instanceClass
+                        if (!section && instanceClass) {
+                            console.log("No match found with blockTitle, trying with instanceClass:", instanceClass);
+                            section = this.metamodel.sections.find(s => s.name === instanceClass);
+                            console.log("After trying to match with instanceClass, section is:", section);
                         }
-                        // Opcionalmente, devuelve la sección para uso externo
+
+                        // Si se encuentra una coincidencia
+                        if (section) {
+                            console.log("Match found, section:", section);
+                            const blockIndex = this.model.findIndex(block => block.blockTitle === blockTitle || block.instanceClass === instanceClass);
+                            console.log("Block index found for update:", blockIndex);
+
+                            if (blockIndex !== -1) {
+                                // Actualiza el bloque encontrado con la sección del metamodelo encontrada
+                                this.$set(this.model[blockIndex], 'metamodel', section);
+                                console.log("Model updated at index:", blockIndex, "with section:", section);
+                            } else {
+                                console.log("No matching block found in model for given blockTitle or instanceClass.");
+                            }
+                        } else {
+                            console.log("No matching section found in metamodel for given blockTitle or instanceClass.");
+                        }
+
+                        // Devuelve la sección encontrada (o undefined si no se encontró ninguna coincidencia)
                         return section;
                     },
+
                     parseTags(content) {
                         // Define un regex que busca etiquetas precedidas por # y posiblemente espacio en blanco al inicio
                         const regex = /(^|\s)#([^#\s][^\s]*)/g;

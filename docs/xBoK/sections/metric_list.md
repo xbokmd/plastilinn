@@ -8,10 +8,10 @@
       - {{embed [[metric]]}}
   
 - ## 🔑 Keys
-  - #block [[metric-list]] > #key 💰50 [Monitoring Key Metrics](https://go.plastilinn.com/#/page/metric-list%2FMonitoring%20Key%20Metrics) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[metric-list]] > #key 💰50 [Monitoring Key Metrics](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/metric-list%2FMonitoring%20Key%20Metrics) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50
     value:: 50
-  - #block [[metric-list]] > #key 💰20 [Data Analysis Tools](https://go.plastilinn.com/#/page/metric-list%2FData%20Analysis%20Tools) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[metric-list]] > #key 💰20 [Data Analysis Tools](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/metric-list%2FData%20Analysis%20Tools) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 20
     value:: 50
 - ## 🤖 innCoPilot
@@ -36,30 +36,41 @@
   In conclusion, a Metric List is a vital tool in business design that enables businesses to measure the performance and effectiveness of their business model. It provides a structured approach to tracking progress, identifying areas for improvement, and driving business growth and success.
 - ## 👉 Examples
   ### Space X
-  - #metric [[Revenue growth]]
-  	- Tracking the company's revenue growth over time can indicate the success of its products and services in the market.
-  - #metric [[Profitability]]
-  	- Analyzing the company's profitability, including gross profit margin and net profit margin, can provide insights into its financial performance and efficiency.
-  - #metric [[Customer acquisition cost]]
-  	- Calculating the cost of acquiring new customers can help determine the effectiveness of Space X's marketing and sales efforts.
-  - #metric [[Customer retention rate]]
-  	- Monitoring the percentage of customers who continue to use Space X's services over time can indicate customer satisfaction and loyalty.
-  - #metric [[Launch success rate]]
-  	- Tracking the success rate of Space X's rocket launches can demonstrate the reliability and performance of its launch vehicles.
-  - #metric [[Satellite deployment rate]]
-  	- Monitoring the rate at which Space X deploys satellites for its Starlink project can indicate the progress and scalability of its satellite network.
-  - #metric [[Research and development investment]]
-  	- Assessing the company's investment in research and development can indicate its commitment to innovation and technological advancement.
-  - #metric [[Market share]]
-  	- Analyzing Space X's market share in the space industry can provide insights into its competitiveness and growth potential.
-  - #metric [[Employee satisfaction and retention]]
-  	- Monitoring employee satisfaction and retention rates can indicate the company's ability to attract and retain top talent.
-  - #metric [[Environmental impact]]
-  	- Assessing the company's environmental impact, such as carbon emissions and waste generation, can demonstrate its commitment to sustainability.
-  - #metric [[Regulatory compliance]]
-  	- Ensuring compliance with relevant laws and regulations in the space industry is important for Space X's operations and reputation.
-  - #metric [[Investor confidence]]
-  	- Monitoring investor sentiment and the company's ability to attract funding and investment can indicate confidence in its business model and growth prospects.
+  #metric Revenue growth
+  Tracking the company's revenue growth over time can indicate the success of its products and services in the market.
+  
+  #metric Profitability
+  Analyzing the company's profitability, including gross profit margin and net profit margin, can provide insights into its financial performance and efficiency.
+  
+  #metric Customer acquisition cost
+  Calculating the cost of acquiring new customers can help determine the effectiveness of Space X's marketing and sales efforts.
+  
+  #metric Customer retention rate
+  Monitoring the percentage of customers who continue to use Space X's services over time can indicate customer satisfaction and loyalty.
+  
+  #metric Launch success rate
+  Tracking the success rate of Space X's rocket launches can demonstrate the reliability and performance of its launch vehicles.
+  
+  #metric Satellite deployment rate
+  Monitoring the rate at which Space X deploys satellites for its Starlink project can indicate the progress and scalability of its satellite network.
+  
+  #metric Research and development investment
+  Assessing the company's investment in research and development can indicate its commitment to innovation and technological advancement.
+  
+  #metric Market share
+  Analyzing Space X's market share in the space industry can provide insights into its competitiveness and growth potential.
+  
+  #metric Employee satisfaction and retention
+  Monitoring employee satisfaction and retention rates can indicate the company's ability to attract and retain top talent.
+  
+  #metric Environmental impact
+  Assessing the company's environmental impact, such as carbon emissions and waste generation, can demonstrate its commitment to sustainability.
+  
+  #metric Regulatory compliance
+  Ensuring compliance with relevant laws and regulations in the space industry is important for Space X's operations and reputation.
+  
+  #metric Investor confidence
+  Monitoring investor sentiment and the company's ability to attract funding and investment can indicate confidence in its business model and growth prospects.
   ### vein visualizer
   - #metric [[Device sales growth]]
   	- Tracking the growth in sales of the device can indicate the demand and market acceptance of the product.

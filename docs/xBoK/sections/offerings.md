@@ -29,18 +29,23 @@
   In summary, the solution (id) model is a potent tool for businesses to create value for their customers, differentiate themselves from their competitors, and drive their growth. It is a key component of business design and a critical driver of business success.
 - ## 👉 Examples
   ### Space X
-  - #offering [[Servicios de lanzamiento espacial]]
-  	- Servicios de lanzamiento al espacio para satélites y naves espaciales.
-  - #offering [[Despliegue de satélites]]
-  	- Despliegue de satélites en órbita.
-  - #offering [[Misiones de abastecimiento a la Estación Espacial Internacional]]
-  	- Misiones de abastecimiento de suministros a la Estación Espacial Internacional.
-  - #offering [[Misiones tripuladas a la Estación Espacial Internacional]]
-  	- Misiones con tripulación humana a la Estación Espacial Internacional.
-  - #offering [[Tecnologías avanzadas de cohetes y naves espaciales]]
-  	- Desarrollo de tecnologías avanzadas en cohetes y naves espaciales.
-  - #offering [[Colonización futura de Marte]]
-  	- Objetivo a largo plazo de Space X de habilitar la colonización de Marte.
+  #offering Space Launch Services
+  Space launch services for satellites and spacecraft.
+  
+  #offering Satellite Deployment
+  Deployment of satellites into orbit.
+  
+  #offering International Space Station Resupply Missions
+  Supply resupply missions to the International Space Station.
+  
+  #offering Manned Missions to the International Space Station
+  Human-crewed missions to the International Space Station.
+  
+  #offering Advanced Rocket and Spacecraft Technologies
+  Development of advanced technologies in rockets and spacecraft.
+  
+  #offering Future Colonization of Mars
+  SpaceX's long-term goal of enabling the colonization of Mars.
   ### vein visualizer
   - #offering [[Training services in the use of the device]]
   	- Providing training services to teach individuals how to use the device effectively.

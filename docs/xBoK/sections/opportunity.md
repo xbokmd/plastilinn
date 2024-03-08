@@ -4,16 +4,16 @@
   - Content is of type text.
   
 - ## 🔑 Keys
-  - #block [[opportunity]] > #key 💰60 [Momentum](https://go.plastilinn.com/#/page/opportunity%2FMomentum) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[opportunity]] > #key 💰60 [Momentum](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/opportunity%2FMomentum) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 60
     value:: 50
-  - #block [[opportunity]] > #key 💰40 [Innovative approach](https://go.plastilinn.com/#/page/opportunity%2FInnovative%20approach) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[opportunity]] > #key 💰40 [Innovative approach](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/opportunity%2FInnovative%20approach) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 40
     value:: 50
-  - #block [[opportunity]] > #key 💰30 [Evolution potential](https://go.plastilinn.com/#/page/opportunity%2FEvolution%20potential) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[opportunity]] > #key 💰30 [Evolution potential](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/opportunity%2FEvolution%20potential) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
-  - #block [[opportunity]] > #key 💰20 [Business obviousness](https://go.plastilinn.com/#/page/opportunity%2FBusiness%20obviousness) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[opportunity]] > #key 💰20 [Business obviousness](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/opportunity%2FBusiness%20obviousness) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 20
     value:: 50
 - ## 🤖 innCoPilot
@@ -32,9 +32,11 @@
   In essence, the concept of "opportunity" in business modeling is about identifying and capitalizing on the potential for growth and value creation. It is a critical element in business design, driving strategic decision-making, innovation, and competitive positioning. It shapes the business's strategies for product development, market entry, customer engagement, and revenue generation.
 - ## 👉 Examples
   ### Space X
-  - The opportunity for Space X lies in the growing demand for space exploration, satellite deployment, and commercial space travel.
-  - By developing innovative and cost-effective solutions, Space X aims to disrupt the traditional space industry.
-  - Space X aims to capture a significant market share.
+  The opportunity for Space X lies in the growing demand for space exploration, satellite deployment, and commercial space travel.
+  
+  By developing innovative and cost-effective solutions, Space X aims to disrupt the traditional space industry.
+  
+  Space X aims to capture a significant market share.
   ### vein visualizer
   - An opportunity for the company could be the increasing demand for non-invasive medical procedures and the need for accurate vein visualization.
   - By offering a device that improves the precision and efficiency of intravenous injections and other medical procedures, the company can tap into this growing market and capture a significant market share.

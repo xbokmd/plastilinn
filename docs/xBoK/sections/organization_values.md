@@ -21,12 +21,20 @@
   In essence, the concept of "organization values" in business modeling is about defining and embodying the principles that drive a company's actions and decisions. It is a fundamental element in business design, shaping the company's culture, strategy, and brand identity. It influences how the company is perceived by its stakeholders and how it contributes to society at large.
 - ## 👉 Examples
   ### Space X
-  - [[innovation]]
-          - The development and implementation of new ideas, products, or processes that bring about positive change and improvement.
-  - [[sustainability]]
-          - The practice of using resources in a way that meets the needs of the present generation without compromising the ability of future generations to meet their own needs.
-  - [[the pursuit of knowledge]]
-          - The act of seeking and acquiring_information, understanding, or skills through study, research, or exploration.
+  #organization_value Innovation
+  Continuously pushing the boundaries of space technology to develop more efficient, reliable, and cost-effective spacecraft and rockets.
+  
+  #organization_value Reliability
+  Ensuring the highest standards of safety and dependability in every mission to protect crew, cargo, and spacecraft integrity.
+  
+  #organization_value
+  EfficiencyStreamlining processes and leveraging vertical integration to reduce costs and improve the accessibility of space travel and exploration.
+  
+  #organization_value Sustainability
+  Committing to sustainable space exploration practices, including the development of reusable rocket technology to minimize environmental impact.
+  
+  #organization_value Visionary Leadership
+  Fostering a culture of bold ambitions and visionary goals, aiming to make life multi-planetary and ensure the long-term survival of humanity.
   ### vein visualizer
   -  [[integrity]]
   	- Upholding honesty, transparency, and ethical behavior in all business dealings.

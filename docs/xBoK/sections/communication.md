@@ -25,16 +25,7 @@
   In conclusion, the "Communication" concept in business modeling is a critical element that contributes to the relational and reputational success of the business. It emphasizes the importance of understanding and strategically managing the exchange of information and ideas in a business model.
 - ## 👉 Examples
   ### Space X
-  - [[Transparency]]
-  	- Transparency in communication allows the company to build trust and credibility with its stakeholders. By providing clear and honest_information, the company can foster strong relationships and ensure that all parties have a comprehensive understanding of its operations and decisions.
-  - [[Efficiency]]
-  	- Efficient communication enables the company to streamline its processes and operations. By effectively conveying_information, ideas, and instructions, the company can minimize misunderstandings and errors, leading to improved productivity and cost-effectiveness.
-  - [[Engagement]]
-  	- Communication that promotes engagement encourages active participation and involvement from stakeholders. By creating opportunities for feedback, discussion, and collaboration, the company can gather valuable insights, enhance innovation, and strengthen relationships with its stakeholders.
-  - [[Alignment]]
-  	- Communication that ensures alignment helps the company to convey its vision, mission, and goals to stakeholders. By clearly articulating its objectives and strategies, the company can inspire and motivate stakeholders to work towards a shared purpose, fostering unity and coherence within the organization.
-  - [[Adaptability]]
-  	- Communication that facilitates adaptability allows the company to respond effectively to changing circumstances and market dynamics. By keeping stakeholders_informed and involved in decision-making processes, the company can quickly adapt its strategies, products, and services to meet evolving needs and stay competitive in the market.
+  SpaceX's communication policy and style are characterized by openness, innovation, and engagement, largely driven by the personal brand of its founder, Elon Musk. The company leverages a mix of traditional and new media platforms to disseminate information about its missions, achievements, and future plans. Notably, SpaceX utilizes social media extensively, particularly Twitter, where Elon Musk frequently shares updates, insights, and interacts with the public and stakeholders. This direct communication method has allowed SpaceX to build a strong and engaged community of space enthusiasts and supporters. SpaceX's approach to communication is also marked by its use of live broadcasts of its launches and tests, making space exploration more accessible and transparent to the public. This strategy not only fosters excitement and support for space missions but also underscores SpaceX's commitment to transparency and public participation in space exploration. The overall communication style is forward-looking, focusing on the company's ambitious goals, such as Mars colonization and making life multi-planetary, while also highlighting its technological advancements and contributions to the aerospace industry.
   ### vein visualizer
   - [[Accountability]]
   	- Communication that promotes accountability ensures that the company takes responsibility for its actions and decisions. By openly discussing successes and challenges, the company can demonstrate its commitment to transparency and learn from past experiences.

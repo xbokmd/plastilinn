@@ -31,16 +31,20 @@
   By understanding and leveraging these "Profile (ID)/Assets", a company can enhance its business model, create more value, and achieve greater success. For instance, a software company might identify that its clients have significant technical skills. The company might then develop more advanced software that these skilled clients can use, thereby enhancing its product offering, customer satisfaction, and competitive advantage. This would demonstrate the company's ability to leverage its understanding of "Profile (ID)/Assets" to drive its business model and create value.
 - ## 👉 Examples
   ### Space X
-  - #asset [[Contracts and budget]]
-  	- Space agencies have contracts and budgets allocated to carry out their space missions. Space X can seek to obtain contracts for satellite launches, cargo resupply missions, or even contracts to transport astronauts to space.
-  - #asset [[Access to launchers and launch platforms]]
-  	- Space agencies have access to launch platforms, such as launch bases and space centers, which are vital for carrying out space missions. Space X could seek to use these facilities to launch their rockets and carry out their missions.
-  - #asset [[Experience and technical knowledge]]
-  	- Space agencies have experts and scientists with experience in space missions and space technology. Space X can seek to collaborate with these experts and acquire specialized technical knowledge to improve their own capabilities and technologies.
-  - #asset [[Data and scientific_information]]
-  	- During space missions, agencies collect a large amount of scientific and research data. Space X can seek to access this data and scientific_information for their own analysis and development of space technology.
-  - #asset [[International relations and collaborations]]
-  	- Space agencies often have established relationships with other national and international space agencies. Space X can seek to collaborate with these agencies and leverage these relationships to access international markets and expand their global reach.
+  #asset Contracts and budget
+  Space agencies have contracts and budgets allocated to carry out their space missions. Space X can seek to obtain contracts for satellite launches, cargo resupply missions, or even contracts to transport astronauts to space.
+  
+  #asset Access to launchers and launch platforms
+  Space agencies have access to launch platforms, such as launch bases and space centers, which are vital for carrying out space missions. Space X could seek to use these facilities to launch their rockets and carry out their missions.
+  
+  #asset Experience and technical knowledge
+  Space agencies have experts and scientists with experience in space missions and space technology. Space X can seek to collaborate with these experts and acquire specialized technical knowledge to improve their own capabilities and technologies.
+  
+  #asset Data and scientific information
+  During space missions, agencies collect a large amount of scientific and research data. Space X can seek to access this data and scientific_information for their own analysis and development of space technology.
+  
+  #asset International relations and collaborations
+  Space agencies often have established relationships with other national and international space agencies. Space X can seek to collaborate with these agencies and leverage these relationships to access international markets and expand their global reach.
   ### vein visualizer
   - #asset [[Industry partnerships and collaborations]]
   	- Nuestra empresa puede formar asociaciones y colaboraciones con otras empresas en la industria de la salud, como compañías farmacéuticas o fabricantes de dispositivos médicos. Esto puede llevar al desarrollo conjunto de productos, recursos compartidos y ampliar el alcance del mercado.

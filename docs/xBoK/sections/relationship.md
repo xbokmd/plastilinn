@@ -25,18 +25,14 @@
   In essence, the concept of "profile (id)/relationship" in business modeling is about understanding who a company's stakeholders are, how they prefer to interact with the company, and managing these relationships effectively to meet both the stakeholders' needs and the company's objectives. This is a crucial aspect of business design, as it informs the development of a company's customer engagement strategies, communication channels, and service delivery methods.
 - ## 👉 Examples
   ### Space X
-  - #relationship [[Falcon 9]]
-  	- A two-stage rocket designed for reliable and cost-effective transportation of satellites and spacecraft to orbit. It is capable of carrying payloads of up to 22,800 kilograms to low Earth orbit and 8,300 kilograms to geostationary transfer orbit.
-  - #relationship [[Falcon Heavy]]
-  	- A heavy-lift launch vehicle that is currently the most powerful operational rocket in the world. It is capable of carrying payloads of up to 63,800 kilograms to low Earth orbit and 26,700 kilograms to geostationary transfer orbit.
-  - #relationship [[Starlink]]
-  	- A constellation of satellites being constructed by Space X to provide global broadband internet coverage. Its goal is to provide high-speed, low-latency internet access to users worldwide, particularly in underserved areas.
-  - #relationship [[Dragon spacecraft]]
-  	- A reusable spacecraft designed for cargo and crew missions. It is capable of carrying up to 7 passengers to and from the International Space Station and can also deliver cargo to other destinations in space.
-  - #relationship [[Colonization of Mars]]
-  	- Space X's long-term goal is to enable the colonization of Mars. They are developing the Starship spacecraft, which is intended to transport humans and cargo to Mars to establish a sustainable presence on the planet.
-  - #relationship [[Starship]]
-  	- A fully reusable spacecraft currently under development by Space X. It is designed to be capable of transporting both crew and cargo to various destinations in space, including the Moon, Mars, and beyond.
+  - Long-term Partnerships
+  Building sustained relationships through ongoing projects and contracts.
+  
+  - Collaborative Development
+  Engaging in joint research and development efforts to push the boundaries of space exploration.
+  
+  - Customer Support and Consultation
+  Offering expert guidance and support throughout the mission planning and execution phases.
   ### vein visualizer
   - #relationship [[Customer Support Portal]]
   	- A self-service online platform where customers can access resources, FAQs, and submit support tickets.

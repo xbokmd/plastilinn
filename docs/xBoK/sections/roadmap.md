@@ -27,16 +27,20 @@
   By developing a "Solution (ID)/Roadmap", a business can ensure that it is moving in the right direction, making progress towards its vision, and creating value for its stakeholders. For instance, the retail business might use its roadmap to guide its transition to sustainable fashion, track its progress, and communicate its achievements to its customers, employees, and investors. This would demonstrate the business's ability to leverage its "Solution (ID)/Roadmap" to drive its business model and create value.
 - ## 👉 Examples
   ### Space X
-  - #phase [[Phase 1]]
-    - Development and testing of reusable rocket technology.
-  - #phase [[Phase 2]]
-    - Launching and deploying satellites for commercial and government customers.
-  - #phase [[Phase 3]]
-    - Conducting resupply missions to the International Space Station.
-  - #phase [[Phase 4]]
-    - Developing and launching crewed missions to the International Space Station.
-  - #phase [[Phase 5]]
-    - Establishing a sustainable presence on Mars.
+  #roadmap Phase 1
+    Development and testing of reusable rocket technology.
+  
+  #roadmap Phase 2
+    Launching and deploying satellites for commercial and government customers.
+  
+  #roadmap Phase 3
+    Conducting resupply missions to the International Space Station.
+  
+  #roadmap Phase 4
+    Developing and launching crewed missions to the International Space Station.
+  
+  #roadmap Phase 5
+    Establishing a sustainable presence on Mars.
   ### vein visualizer
   - #phase [[Phase 1]] Research and development of the infrared vein visualization device, ensuring accuracy and usability.
   - #phase [[Phase 2]] Manufacturing and quality control of the device, establishing partnerships with medical institutions for testing and feedback.

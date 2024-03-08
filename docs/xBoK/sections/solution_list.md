@@ -8,16 +8,16 @@
       - {{embed [[solution]]}}
   
 - ## 🔑 Keys
-  - #block [[solution-list]] > #key 💰40 [Efficient product development process](https://go.plastilinn.com/#/page/solution-list%2FEfficient%20product%20development%20process) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[solution-list]] > #key 💰40 [Efficient product development process](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/solution-list%2FEfficient%20product%20development%20process) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 40
     value:: 50
-  - #block [[solution-list]] > #key 💰40 [Use of Technology](https://go.plastilinn.com/#/page/solution-list%2FUse%20of%20Technology) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[solution-list]] > #key 💰40 [Use of Technology](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/solution-list%2FUse%20of%20Technology) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 40
     value:: 50
-  - #block [[solution-list]] > #key 💰40 [Information Security](https://go.plastilinn.com/#/page/solution-list%2FInformation%20Security) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[solution-list]] > #key 💰40 [Information Security](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/solution-list%2FInformation%20Security) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 40
     value:: 50
-  - #block [[solution-list]] > #key 💰30 [Technological Adaptability](https://go.plastilinn.com/#/page/solution-list%2FTechnological%20Adaptability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[solution-list]] > #key 💰30 [Technological Adaptability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/solution-list%2FTechnological%20Adaptability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
 - ## 🤖 innCoPilot
@@ -40,24 +40,18 @@
   By carefully crafting its "Solution List", a business can ensure that it is effectively addressing the needs or problems of its customers, thereby enhancing its value proposition, customer satisfaction, and competitive advantage. For instance, a healthcare company might identify that its customers need more accessible and affordable healthcare services. The company might then develop a telehealth service that allows customers to consult with healthcare professionals remotely, thereby addressing the customers' needs and differentiating the company from its competitors. This would demonstrate the company's ability to leverage its "Solution List" to drive its business model and create value.
 - ## 👉 Examples
   ### Space X
-  - #solution [[Space X services]]
-  	- Launch services for satellites and spacecraft.
-  	- Resupply missions to the International Space Station.
-  	- Crewed missions to the International Space Station.
-  	- Development of advanced rocket and spacecraft technologies.
-  	- Future colonization of Mars.
-  - #solution [[Falcon 9]]
-  	- A two-stage rocket designed for the reliable and cost-effective transport of satellites and spacecraft to orbit. It is capable of carrying payloads of up to 22,800 kilograms to low Earth orbit and 8,300 kilograms to geostationary transfer orbit.
-  - #solution [[Falcon Heavy]]
-  	- A heavy-lift launch vehicle that is currently the most powerful operational rocket in the world. It is capable of carrying payloads of up to 63,800 kilograms to low Earth orbit and 26,700 kilograms to geostationary transfer orbit.
-  - #solution [[Starlink]]
-  	- A satellite constellation being constructed by Space X to provide global broadband internet coverage. It aims to deliver high-speed, low-latency internet access to users around the world, especially in underserved areas.
-  - #solution [[Dragon spacecraft]]
-  	- A reusable spacecraft designed for both cargo and crewed missions. It is capable of carrying up to 7 passengers to and from the International Space Station and can also deliver cargo to other destinations in space.
-  - #solution [[Mars colonization]]
-  	- Space X's long-term goal is to enable the colonization of Mars. They are developing the Starship spacecraft, which is intended to transport humans and cargo to Mars for the establishment of a sustainable presence on the planet.
-  - #solution [[Starship]]
-  	- A fully reusable spacecraft currently under development by Space X. It is designed to be capable of carrying both crew and cargo to various destinations in space, including the Moon, Mars, and beyond.
+  #solution Space X services
+  Launch services for satellites and spacecraft.
+  Resupply missions to the International Space Station.
+  Crewed missions to the International Space Station.
+  Development of advanced rocket and spacecraft technologies.
+  
+  #solution Starlink
+  A satellite constellation being constructed by Space X to provide global broadband internet coverage. It aims to deliver high-speed, low-latency internet access to users around the world, especially in underserved areas.
+  
+  #solution Mars colonization
+  Space X's long-term goal is to enable the colonization of Mars. They are developing the Starship spacecraft, which is intended to transport humans and cargo to Mars for the establishment of a sustainable presence on the planet.
+  
   ### vein visualizer
   - #solution [[Vein visualization device]]
   	- A device that uses infrared technology to visualize veins in medical procedures.

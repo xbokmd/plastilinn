@@ -1,10 +1,10 @@
 
 
 - ### [[weight]]
+- ### [[completion]]
+- ### [[priority]]
 - ### [[uncertainty]]
 - ### [[risk]]
-- ### [[priority]]
 - ### [[validation]]
-- ### [[completion]]
 
 

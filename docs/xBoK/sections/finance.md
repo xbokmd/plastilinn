@@ -4,22 +4,22 @@
   - Content is of type text.
   
 - ## 🔑 Keys
-  - #block [[finance]] > #key 💰60 [Profitability](https://go.plastilinn.com/#/page/finance%2FProfitability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[finance]] > #key 💰60 [Profitability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FProfitability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 60
     value:: 50
-  - #block [[finance]] > #key 💰60 [Gross margins](https://go.plastilinn.com/#/page/finance%2FGross%20margins) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[finance]] > #key 💰60 [Gross margins](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FGross%20margins) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 60
     value:: 50
-  - #block [[finance]] > #key 💰50 [Financial Management](https://go.plastilinn.com/#/page/finance%2FFinancial%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[finance]] > #key 💰50 [Financial Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FFinancial%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50
     value:: 50
-  - #block [[finance]] > #key 💰45 [Finantial needs](https://go.plastilinn.com/#/page/finance%2FFinantial%20needs) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[finance]] > #key 💰45 [Finantial needs](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FFinantial%20needs) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 45
     value:: 50
-  - #block [[finance]] > #key 💰15 [Proactive tax planning and compliance](https://go.plastilinn.com/#/page/finance%2FProactive%20tax%20planning%20and%20compliance) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[finance]] > #key 💰15 [Proactive tax planning and compliance](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FProactive%20tax%20planning%20and%20compliance) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 15
     value:: 50
-  - #block [[finance]] > #key 💰10 [Currency risk management](https://go.plastilinn.com/#/page/finance%2FCurrency%20risk%20management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[finance]] > #key 💰10 [Currency risk management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FCurrency%20risk%20management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 10
     value:: 50
 - ## 🤖 innCoPilot
@@ -40,30 +40,7 @@
   In essence, the Finance model is a critical aspect of business design. It provides a framework for making strategic financial decisions, managing financial risks, and ensuring the financial health and success of the business. It also interacts with other business modeling concepts, such as the Person (ID)/Functions model, by determining the financial resources available for each function and role within the business.
 - ## 👉 Examples
   ### Space X
-  - [[Financial planning and budgeting]]
-    - Creating a financial plan and budget to guide the allocation of funds and resources within the company.
-  - [[Fundraising and capital allocation]]
-    - Identifying and securing sources of funding, such as venture capital, government grants, or loans, to support the company's operations and growth.
-  - [[Financial analysis and reporting]]
-    - Analyzing financial data, preparing financial statements, and reporting on the company's financial performance to stakeholders, including investors, lenders, and regulatory agencies.
-  - [[Cash flow management]]
-    - Monitoring and managing the company's cash flow to ensure sufficient liquidity for day-to-day operations, investments, and debt obligations.
-  - [[Risk management]]
-    - Identifying and managing financial risks, such as market volatility, currency fluctuations, and regulatory changes, to protect the company's financial stability and mitigate potential losses.
-  - [[Tax planning and compliance]]
-    - Ensuring compliance with tax laws and regulations, optimizing tax strategies, and managing tax liabilities to minimize the company's tax burden.
-  - [[Financial forecasting and modeling]]
-    - Developing financial forecasts and models to project future revenue, expenses, and cash flows, and_inform strategic decision-making.
-  - [[Cost management]]
-    - Analyzing and managing costs, including manufacturing costs, overhead expenses, and operating expenses, to improve profitability and efficiency.
-  - [[Capital expenditure management]]
-    - Evaluating and prioritizing capital expenditure projects, such as the acquisition of new equipment or facilities, to support the company's growth and innovation.
-  - [[Investor relations]]
-    - Managing relationships with investors, communicating financial performance and strategy, and addressing investor inquiries and concerns.
-  - [[Compliance and regulatory reporting]]
-    - Ensuring compliance with financial regulations and reporting requirements, such as the Securities and Exchange Commission (SEC) filings, to maintain transparency and accountability.
-  - [[Financial controls and audit]]
-    - Implementing internal controls and conducting regular audits to ensure the accuracy and integrity of financial data and prevent fraud or mismanagement.
+  SpaceX's financial strategy is characterized by its aggressive reinvestment of revenues into research, development, and expansion projects, underpinning its mission to reduce space travel costs and enable Mars colonization. Central to this strategy is the development of innovative, reusable rocket technology, which significantly lowers the cost per launch compared to traditional expendable rockets, thereby enhancing financial sustainability and enabling more frequent space missions. SpaceX also diversifies its revenue streams through contracts with NASA and other space agencies for cargo and crew missions to the International Space Station, satellite launches for commercial and government customers, and the development of the Starlink satellite internet service aimed at generating substantial revenue to fund future exploration projects. Additionally, SpaceX has been successful in attracting investment from various sources, further bolstering its financial position to support its ambitious long-term goals. This blend of revenue generation, strategic reinvestment, and fundraising has positioned SpaceX as a financially robust entity in the aerospace sector, capable of pursuing its vision of space exploration and interplanetary colonization.
   ### vein visualizer
   - Working capital management: Optimizing the company's working capital, including managing inventory levels, accounts receivable, and accounts payable, to maintain liquidity and minimize financing costs.
   - Cost of capital analysis: Assessing the cost of capital for the company, including the cost of debt and equity, to determine the most efficient financing options for investments and expansion.

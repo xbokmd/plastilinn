@@ -25,18 +25,23 @@
   The concept of "profile (id)/perceptions" is crucial in business modeling as it provides insights into the target audience's mindset, which can guide the development of products, services, and marketing strategies. By understanding their customers' perceptions, companies can address any misconceptions, align their offerings with customer expectations, and build a strong, positive brand image. This can enhance customer satisfaction, loyalty, and ultimately, business performance.
 - ## 👉 Examples
   ### Space X
-  - #perception [[Cutting-edge technology and innovation in rocket design and space exploration]]
-  	- Space X has been recognized for its cutting-edge technology and innovative approach to rocket design and space exploration.
-  - #perception [[Successful track record of Space X in satellite launches and cargo missions]]
-  	- Space X has demonstrated a successful track record in satellite launches and cargo missions, showcasing its ability to meet the objectives and requirements of its clients.
-  - #perception [[Reusable rocket systems that can reduce launch costs and increase operational efficiency]]
-  	- Space X has developed reusable rocket systems, such as the Falcon 9 and Falcon Heavy, which have the potential to significantly reduce launch costs and improve operational efficiency.
-  - #perception [[Positive feedback and reviews from other space agencies or clients who have worked with Space X]]
-  	- Space X has received positive feedback and reviews from other space agencies and clients it has collaborated with, demonstrating its reputation and quality in the industry.
-  - #perception [[Industry news and expectations surrounding Space X's achievements]]
-  	- Space X has generated significant interest in the space industry due to its achievements, such as successful landings and advancements in space technology.
-  - #perception [[Updates on Space X's partnerships and collaborations with other space agencies or organizations]]
-  	- Space X has established partnerships and collaborations with other space agencies and organizations, showcasing its commitment to cooperation and the advancement of space exploration.
+  #perception Cutting-edge technology and innovation in rocket design and space exploration
+  Space X has been recognized for its cutting-edge technology and innovative approach to rocket design and space exploration.
+  
+  #perception Successful track record of Space X in satellite launches and cargo missions
+  Space X has demonstrated a successful track record in satellite launches and cargo missions, showcasing its ability to meet the objectives and requirements of its clients.
+  
+  #perception Reusable rocket systems that can reduce launch costs and increase operational efficiency
+  Space X has developed reusable rocket systems, such as the Falcon 9 and Falcon Heavy, which have the potential to significantly reduce launch costs and improve operational efficiency.
+  
+  #perception Positive feedback and reviews from other space agencies or clients who have worked with Space X
+  Space X has received positive feedback and reviews from other space agencies and clients it has collaborated with, demonstrating its reputation and quality in the industry.
+  
+  #perception Industry news and expectations surrounding Space X's achievements
+  Space X has generated significant interest in the space industry due to its achievements, such as successful landings and advancements in space technology.
+  
+  #perception Updates on Space X's partnerships and collaborations with other space agencies or organizations
+  Space X has established partnerships and collaborations with other space agencies and organizations, showcasing its commitment to cooperation and the advancement of space exploration.
   ### vein visualizer
   - #perception [[Reliable and accurate vein visualization technology for medical professionals]]
   	- The company's device offers vein visualization technology that is reliable and accurate, improving the abilities of medical professionals.

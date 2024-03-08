@@ -4,10 +4,10 @@
   - Content is of type text.
   
 - ## 🔑 Keys
-  - #block [[mission]] > #key 💰30 [Realism - Ambition](https://go.plastilinn.com/#/page/mission%2FRealism%20-%20Ambition) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[mission]] > #key 💰30 [Realism - Ambition](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/mission%2FRealism%20-%20Ambition) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
-  - #block [[mission]] > #key 💰20 [Clarity of Conception](https://go.plastilinn.com/#/page/mission%2FClarity%20of%20Conception) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[mission]] > #key 💰20 [Clarity of Conception](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/mission%2FClarity%20of%20Conception) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 20
     value:: 50
 - ## 🤖 innCoPilot
@@ -26,7 +26,7 @@
   In essence, the concept of "mission" in business modeling is about defining and articulating the fundamental purpose of a business. It is a crucial element in business design, providing direction, focus, and motivation, and shaping the business's strategies and operations.
 - ## 👉 Examples
   ### Space X
-  - Space X's mission is to make life multiplanetary by developing the technologies necessary for space exploration and colonization
+  Space X's mission is to make life multiplanetary by developing the technologies necessary for space exploration and colonization
   ### vein visualizer
   - The mission of the company is to enhance healthcare practices by providing medical professionals with innovative devices that utilize infrared technology to visualize veins.
   - We aim to improve the accuracy and efficiency of intravenous procedures, ultimately contributing to better patient outcomes and experiences.

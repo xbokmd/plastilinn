@@ -4,10 +4,10 @@
   - Content is of type text.
   
 - ## 🔑 Keys
-  - #block [[vision]] > #key 💰10 [Realism - Ambition](https://go.plastilinn.com/#/page/vision%2FRealism%20-%20Ambition) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[vision]] > #key 💰10 [Realism - Ambition](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/vision%2FRealism%20-%20Ambition) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 10
     value:: 50
-  - #block [[vision]] > #key 💰10 [Clarity of Conception](https://go.plastilinn.com/#/page/vision%2FClarity%20of%20Conception) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[vision]] > #key 💰10 [Clarity of Conception](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/vision%2FClarity%20of%20Conception) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 10
     value:: 50
 - ## 🤖 innCoPilot
@@ -26,7 +26,7 @@
   In essence, the concept of "vision" in business modeling is about defining and articulating the long-term goals of a business. It is a critical element in business design, providing strategic direction, inspiration, and a framework for decision-making, and shaping the business's growth and development strategies.
 - ## 👉 Examples
   ### Space X
-  - Space X envisions a future where humans can live and thrive on multiple planets, ensuring the long-term survival of the human species.
+  Space X envisions a future where humans can live and thrive on multiple planets, ensuring the long-term survival of the human species.
   ### vein visualizer
   - The company envisions a future where healthcare professionals worldwide have access to advanced vein visualization technology.
   - This technology aims to improve patient care and safety in medical procedures.

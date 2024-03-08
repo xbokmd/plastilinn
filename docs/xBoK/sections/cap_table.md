@@ -23,9 +23,19 @@
   In essence, the concept of "Cap Table" in business modeling is about understanding and managing the equity ownership of a company. This is a vital aspect of business design, as it directly impacts the company's financial resources, its ability to attract and retain key talent, and its attractiveness to potential investors.
 - ## 👉 Examples
   ### Space X
-  Elon Musk: He is the primary shareholder and owner of SpaceX, holding 42% equity and having 79% voting control.
-  Private Investors: Over the years, SpaceX has raised capital through various funding rounds, with investors contributing to the company's valuation. Notable investors include Google and Fidelity, who, in January 2015, invested $1 billion in exchange for 8.33% of the company.
-  Employees: It's common for tech companies, including SpaceX, to offer stock options to employees. However, specific details about individual employee ownership or other minor shareholders were not provided in the content.
+  Cap table (fictional)
+  
+  | Shareholder Type            | Name/Group            | Shares Owned | Ownership % |
+  |-----------------------------|-----------------------|--------------|-------------|
+  | Founders                    | Elon Musk             | 150,000,000  | 54%         |
+  | Venture Capital             | Google & Fidelity     | 30,000,000   | 11%         |
+  | Venture Capital             | Founders Fund         | 20,000,000   | 7%          |
+  | Venture Capital             | Sequoia Capital       | 10,000,000   | 3.6%        |
+  | Other Investors             | Various (Angel & VC)  | 25,000,000   | 9%          |
+  | Government Contracts (Note) | Reserved for future   | 0            | 0%          |
+  | Employee Stock Options Pool | Reserved for employees| 40,000,000   | 14.4%       |
+  | **Total**                   |                       | **275,000,000** | **100%** |
+  
   ### vein visualizer
   - Crowdfunding: The company can raise capital by soliciting small investments from a large number of individuals through online platforms.
   - Angel investors: High-net-worth individuals who provide capital in exchange for equity in the company.

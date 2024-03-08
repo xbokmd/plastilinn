@@ -8,10 +8,10 @@
       - {{embed [[cost]]}}
   
 - ## 🔑 Keys
-  - #block [[cost-lines]] > #key 💰35 [Cost Structure](https://go.plastilinn.com/#/page/cost-lines%2FCost%20Structure) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[cost-lines]] > #key 💰35 [Cost Structure](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/cost-lines%2FCost%20Structure) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 35
     value:: 50
-  - #block [[cost-lines]] > #key 💰30 [Cost optimization](https://go.plastilinn.com/#/page/cost-lines%2FCost%20optimization) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[cost-lines]] > #key 💰30 [Cost optimization](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/cost-lines%2FCost%20optimization) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
 - ## 🤖 innCoPilot
@@ -32,28 +32,38 @@
   In essence, the concept of "Cost Lines" in business modeling is about identifying, categorizing, and managing the various costs involved in running a business. This is a critical aspect of business design, as it directly impacts the business's bottom line and its ability to achieve financial sustainability and growth.
 - ## 👉 Examples
   ### Space X
-  - #cost [[Research and development costs]]
-          - Space X invests heavily in research and development to innovate and improve their rockets, spacecraft, and other technologies. This includes costs associated with materials, equipment, testing, and personnel.
-  - #cost [[Manufacturing costs]]
-          - Space X incurs costs in manufacturing their rockets, spacecraft, and other components. This includes costs for sourcing materials, assembly, quality control, and production facilities.
-  - #cost [[Launch operation costs]]
-          - Space X bears costs related to planning and executing launch operations. This includes costs for launch site rentals, permits, fuel, ground support equipment, and personnel.
-  - #cost [[Satellite deployment costs]]
-          - Space X incurs costs for deploying and maintaining its satellite network for the Starlink project. This includes costs for manufacturing satellites, launching them into space, and ground control operations.
-  - #cost [[Supply chain costs]]
-          - Space X manages a complex supply chain to source components, materials, and equipment for rocket and spacecraft manufacturing. This includes costs for procurement, inventory management, logistics, and supplier relationships.
-  - #cost [[Operations and maintenance costs]]
-          - Space X incurs ongoing costs for operating and maintaining their rockets, spacecraft, and other infrastructure. This includes costs for inspections, repairs, upgrades, and personnel.
-  - #cost [[Marketing and sales costs]]
-          - Space X invests in marketing and sales activities to attract customers and promote their solutions. This includes costs for advertising, promotional events, sales team salaries, and marketing campaigns.
-  - #cost [[Employee salaries and benefits]]
-          - Space X has a skilled workforce that requires competitive salaries and benefits. This includes costs for salaries, bonuses, healthcare, retirement plans, and other employee benefits.
-  - #cost [[IT infrastructure costs]]
-          - Space X invests in IT infrastructure to support their operations, including communication networks, data storage, and software systems. This includes costs for hardware, software licenses, maintenance, and IT personnel.
-  - #cost [[Regulatory compliance costs]]
-          - Space X must comply with legal and regulatory requirements in the space industry. This includes costs for permits, licenses, certifications, and compliance activities.
-  - #cost [[Insurance costs]]
-          - Space X incurs costs for insurance coverage to protect against risks and liabilities associated with their operations, including launch failures, accidents, and property damage.
+  #cost Research and development costs
+  Space X invests heavily in research and development to innovate and improve their rockets, spacecraft, and other technologies. This includes costs associated with materials, equipment, testing, and personnel.
+  
+  #cost Manufacturing costs
+  Space X incurs costs in manufacturing their rockets, spacecraft, and other components. This includes costs for sourcing materials, assembly, quality control, and production facilities.
+  
+  #cost Launch operation costs
+  Space X bears costs related to planning and executing launch operations. This includes costs for launch site rentals, permits, fuel, ground support equipment, and personnel.
+  
+  #cost Satellite deployment costs
+  Space X incurs costs for deploying and maintaining its satellite network for the Starlink project. This includes costs for manufacturing satellites, launching them into space, and ground control operations.
+  
+  #cost Supply chain costs
+  Space X manages a complex supply chain to source components, materials, and equipment for rocket and spacecraft manufacturing. This includes costs for procurement, inventory management, logistics, and supplier relationships.
+  
+  #cost Operations and maintenance costs
+  Space X incurs ongoing costs for operating and maintaining their rockets, spacecraft, and other infrastructure. This includes costs for inspections, repairs, upgrades, and personnel.
+  
+  #cost Marketing and sales costs
+  Space X invests in marketing and sales activities to attract customers and promote their solutions. This includes costs for advertising, promotional events, sales team salaries, and marketing campaigns.
+  
+  #cost Employee salaries and benefits
+  Space X has a skilled workforce that requires competitive salaries and benefits. This includes costs for salaries, bonuses, healthcare, retirement plans, and other employee benefits.
+  
+  #cost IT infrastructure costs
+  Space X invests in IT infrastructure to support their operations, including communication networks, data storage, and software systems. This includes costs for hardware, software licenses, maintenance, and IT personnel.
+  
+  #cost Regulatory compliance costs
+  Space X must comply with legal and regulatory requirements in the space industry. This includes costs for permits, licenses, certifications, and compliance activities.
+  
+  #cost Insurance costs
+  Space X incurs costs for insurance coverage to protect against risks and liabilities associated with their operations, including launch failures, accidents, and property damage.
   ### vein visualizer
   - #cost [[Device manufacturing costs]]
   	- The company incurs expenses for manufacturing the vein visualization device, including materials, labor, and equipment.

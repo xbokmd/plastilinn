@@ -4,40 +4,40 @@
   - Content is of type text.
   
 - ## 🔑 Keys
-  - #block [[team]] > #key 💰70 [Team Skills](https://go.plastilinn.com/#/page/team%2FTeam%20Skills) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰70 [Team Skills](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FTeam%20Skills) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 70
     value:: 50
-  - #block [[team]] > #key 💰60 [Team Commitment](https://go.plastilinn.com/#/page/team%2FTeam%20Commitment) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰60 [Team Commitment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FTeam%20Commitment) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 60
     value:: 50
-  - #block [[team]] > #key 💰55 [Adaptability to Change](https://go.plastilinn.com/#/page/team%2FAdaptability%20to%20Change) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰55 [Adaptability to Change](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FAdaptability%20to%20Change) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 55
     value:: 50
-  - #block [[team]] > #key 💰50 [Team alignment](https://go.plastilinn.com/#/page/team%2FTeam%20alignment) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰50 [Team alignment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FTeam%20alignment) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50
     value:: 50
-  - #block [[team]] > #key 💰50 [Effective talent acquisition and retention](https://go.plastilinn.com/#/page/team%2FEffective%20talent%20acquisition%20and%20retention) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰50 [Effective talent acquisition and retention](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FEffective%20talent%20acquisition%20and%20retention) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50
     value:: 50
-  - #block [[team]] > #key 💰50 [Culture of Experimentation](https://go.plastilinn.com/#/page/team%2FCulture%20of%20Experimentation) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰50 [Culture of Experimentation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FCulture%20of%20Experimentation) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50
     value:: 50
-  - #block [[team]] > #key 💰45 [Human Resource Management](https://go.plastilinn.com/#/page/team%2FHuman%20Resource%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰45 [Human Resource Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FHuman%20Resource%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 45
     value:: 50
-  - #block [[team]] > #key 💰35 [Talent Retention](https://go.plastilinn.com/#/page/team%2FTalent%20Retention) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰35 [Talent Retention](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FTalent%20Retention) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 35
     value:: 50
-  - #block [[team]] > #key 💰30 [Work Environment](https://go.plastilinn.com/#/page/team%2FWork%20Environment) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰30 [Work Environment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FWork%20Environment) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
-  - #block [[team]] > #key 💰30 [Team composition](https://go.plastilinn.com/#/page/team%2FTeam%20composition) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰30 [Team composition](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FTeam%20composition) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 30
     value:: 50
-  - #block [[team]] > #key 💰20 [Benefits and Compensation](https://go.plastilinn.com/#/page/team%2FBenefits%20and%20Compensation) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰20 [Benefits and Compensation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FBenefits%20and%20Compensation) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 20
     value:: 50
-  - #block [[team]] > #key 💰20 [Employee Development](https://go.plastilinn.com/#/page/team%2FEmployee%20Development) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[team]] > #key 💰20 [Employee Development](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FEmployee%20Development) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 20
     value:: 50
 - ## 🤖 innCoPilot
@@ -60,32 +60,7 @@
   In conclusion, the "Team" concept in business modeling is a critical element that contributes to the effective execution of the business activities and the achievement of the business goals. It emphasizes the importance of teamwork and collaboration in driving business success.
 - ## 👉 Examples
   ### Space X
-  - [[Engineers]]
-    - Responsible for designing and developing the rocket and spacecraft technologies, avionics systems, propulsion systems, and other components of the solutions.
-  - [[Scientists]]
-    - Involved in research and development activities related to space exploration, colonization, and satellite communication systems.
-  - [[Astronauts]]
-    - For crewed missions, astronauts would be part of the team, undergoing training and preparing for space missions.
-  - [[Project Managers]]
-    - Responsible for overseeing the development, testing, and implementation of the solutions, ensuring that the projects are delivered on time and within budget.
-  - [[Marketing and Sales Professionals]]
-    - Responsible for promoting and selling Space X's solutions to potential customers and clients, developing marketing strategies, and managing customer relationships.
-  - [[Operations and Logistics Professionals]]
-    - Responsible for managing the supply chain, logistics, and operations related to the distribution and delivery of the solutions.
-  - [[Legal and Regulatory Experts]]
-    - Responsible for ensuring compliance with legal and regulatory requirements related to space exploration, satellite deployment, and other activities.
-  - [[Finance and Accounting Professionals]]
-    - Responsible for managing the financial aspects of the projects, including budgeting, financial analysis, and reporting.
-  - [[Human Resources Professionals]]
-    - Responsible for recruiting, training, and managing the team members, ensuring a productive and positive work environment.
-  - [[IT and Technology Specialists]]
-    - Responsible for managing the IT infrastructure, software systems, and communication networks required for the development and operation of the solutions.
-  - [[Customer Support and Service Representatives]]
-    - Responsible for providing technical support, training, and assistance to customers using Space X's solutions.
-  - [[Quality Assurance and Safety Experts]]
-    - Responsible for ensuring the quality and safety of the solutions, conducting tests, inspections, and certifications.
-  - [[Public Relations and Communication Professionals]]
-    - Responsible for managing the public image of Space X, handling media relations, and communicating with stakeholders and the general public.
+  SpaceX's human resources strategy is centered around attracting, retaining, and developing top-tier talent with a passion for space exploration and a commitment to the company's ambitious goals of making life multi-planetary. Recognizing the importance of innovative and highly skilled professionals in driving its pioneering space technology, SpaceX focuses on creating a dynamic work environment that fosters creativity, collaboration, and continuous learning. The company emphasizes the significance of each employee's contribution to its mission, offering competitive compensation, comprehensive benefits, and unique opportunities for personal and professional growth. By investing in employee development programs and promoting a culture of inclusivity and excellence, SpaceX ensures that its workforce remains motivated and equipped to tackle the complex challenges of space exploration. This strategic approach to human resources is integral to maintaining SpaceX's position as a leader in the aerospace industry, capable of achieving breakthroughs in technology and exploration.
   ### vein visualizer
   - Product Development Team: Responsible for designing and improving the infrared vein visualization device, conducting research, and implementing new features.
   - Sales and Distribution Team: Handles the sales and distribution of the device, establishing partnerships with medical distributors and managing customer relationships.

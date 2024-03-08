@@ -1,7 +1,11 @@
 - ## 🔍 Definition
   - A profile list in the context of a business model refers to a comprehensive collection of customer or user profiles.
-- ## 📰 Content type 
+- ## 📰 Content type (profile)
   - Content is of type text.
+  
+  - Content uses the following classes:
+    - [[profile]]
+      - {{embed [[profile]]}}
   
 - ## 🔑 Keys
   
@@ -17,7 +21,20 @@
   The concept of "profile list" is essential in business modeling as it allows a company to segment its market, tailor its products or services to meet the specific needs of different customer groups, and develop targeted marketing strategies. It provides valuable insights that can drive product development, customer service, sales, and other key business functions. By understanding who their customers are and what they want, companies can design and deliver offerings that meet their customers' needs and expectations, thereby enhancing customer satisfaction, loyalty, and business performance.
 - ## 👉 Examples
   ### Space X
+  #profile Governmental Space Agencies
+  Agencies seeking reliable and cost-effective launch services for their space missions.
   
+  #profile Commercial Satellite Operators
+  Operators requiring orbital deployment of satellites for communication, television, and navigation services.
+  
+  #profile Scientific Research Institutions
+  Institutions that need to conduct experiments in space or require transport to the International Space Station for research purposes.
+  
+  #profile Global Internet Service Providers
+  Companies aiming to expand their internet coverage globally using satellite technology.
+  
+  #profile Mars Colonization Enthusiasts
+  Entities focused on the development and realization of interplanetary travel and habitation projects.
   ### vein visualizer
   
   ### extinguished animals meat

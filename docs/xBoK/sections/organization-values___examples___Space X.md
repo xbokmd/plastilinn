@@ -1,7 +1,15 @@
-    - [[innovation]]
-     The development and implementation of new ideas, products, or processes that bring about positive change and improvement.
-     [[sustainability]]
-     The practice of using resources in a way that meets the needs of the present generation without compromising the ability of future generations to meet their own needs.
-     [[the pursuit of knowledge]]
-     The act of seeking and acquiring_information, understanding, or skills through study, research, or exploration.
+    #organization_value Innovation
+Continuously pushing the boundaries of space technology to develop more efficient, reliable, and cost-effective spacecraft and rockets.
+
+#organization_value Reliability
+Ensuring the highest standards of safety and dependability in every mission to protect crew, cargo, and spacecraft integrity.
+
+#organization_value
+EfficiencyStreamlining processes and leveraging vertical integration to reduce costs and improve the accessibility of space travel and exploration.
+
+#organization_value Sustainability
+Committing to sustainable space exploration practices, including the development of reusable rocket technology to minimize environmental impact.
+
+#organization_value Visionary Leadership
+Fostering a culture of bold ambitions and visionary goals, aiming to make life multi-planetary and ensure the long-term survival of humanity.
 

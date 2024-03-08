@@ -4,7 +4,7 @@
   - Content is of type text.
   
 - ## 🔑 Keys
-  - #block [[project-plan]] > #key 💰35 [Business plan](https://go.plastilinn.com/#/page/project-plan%2FBusiness%20plan) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[project-plan]] > #key 💰35 [Business plan](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/project-plan%2FBusiness%20plan) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 35
     value:: 50
 - ## 🤖 innCoPilot
@@ -31,26 +31,7 @@
   In conclusion, a project plan is a comprehensive guide for managing a project. It outlines the project's objectives, tasks, resources, timeline, and risk management strategies. It is a critical tool in business design and modeling, helping to ensure that projects are completed on time, within budget, and meet their objectives.
 - ## 👉 Examples
   ### Space X
-  - [[Rocket development projects]]
-    - Space X undertakes projects to design, develop, and test new rockets or improve existing rocket models. These projects involve research, engineering, manufacturing, and testing activities to ensure the safety, reliability, and performance of the rockets.
-  - [[Satellite deployment projects]]
-    - Space X has a project called Starlink, which aims to deploy a constellation of satellites to provide global internet coverage. This project involves designing, manufacturing, launching, and operating thousands of satellites to create a satellite network.
-  - [[Mission-specific projects]]
-    - Space X undertakes projects to fulfill specific missions or contracts, such as launching satellites for customers or delivering cargo to the International Space Station (ISS). These projects involve planning, logistics, launch operations, and mission execution.
-  - [[Research and development projects]]
-    - Space X invests in research and development projects to explore new technologies, materials, or solutions for space exploration or other applications. These projects involve experimentation, prototyping, testing, and evaluation of new ideas or concepts.
-  - [[Infrastructure projects]]
-    - Space X may undertake projects to develop or expand its manufacturing facilities, launch sites, or other infrastructure. These projects involve construction, equipment installation, and facility management to support the company's operations and growth.
-  - [[Collaborative projects]]
-    - Space X may collaborate with other organizations or agencies on joint projects, such as research initiatives, technology development, or space exploration missions. These projects involve coordination, resource sharing, and joint decision-making.
-  - [[Innovation projects]]
-    - Space X may undertake projects to foster innovation and creativity within the company. These projects may involve hackathons, design challenges, or brainstorming sessions to generate new ideas, solutions, or products.
-  - [[Cost optimization projects]]
-    - Space X may initiate projects to identify and implement cost-saving measures, improve operational efficiency, or optimize resource allocation. These projects involve analyzing processes, identifying areas for improvement, and implementing changes to reduce costs and increase profitability.
-  - [[Sustainability projects]]
-    - Space X may undertake projects to promote sustainability and reduce the environmental impact of its operations. These projects may involve implementing renewable energy solutions, waste reduction initiatives, or eco-friendly practices.
-  - [[Safety and quality projects]]
-    - Space X may undertake projects to enhance safety measures, quality control processes, and regulatory compliance. These projects involve conducting audits, implementing safety protocols, and ensuring adherence to industry standards.
+  SpaceX's project strategy is designed to establish its technological capabilities, operational reliability, and market leadership in the space industry through key milestones. Initial achievements, like successful rocket launches and satellite deployments, showcase SpaceX's engineering strengths and mark its entry into space communication. Advancing to manned missions and achieving rocket reusability underscores the company's innovation in reducing space exploration costs. Milestones such as completing significant contracts and reaching profitability confirm SpaceX's business model and efficiency, earning trust among clients and investors. Expansion into new markets and technological innovations demonstrate SpaceX's ambition to lead in space exploration, while strategic partnerships and recognitions bolster its industry standing. This condensed approach aims to progressively solidify SpaceX's reputation and financial stability, driving its long-term influence in advancing space travel.
   ### vein visualizer
   - Device enhancement project: The company can undertake a project to enhance the capabilities of the vein visualization device. This project can involve research and development to improve accuracy, portability, and integration with other medical devices.
   - Expansion into new markets project: The company can initiate a project to expand its market reach by targeting new geographical regions or healthcare sectors. This project can involve market research, strategic planning, and implementation of marketing and distribution strategies.

@@ -1,16 +1,39 @@
-    - [[Revenue projections]]
-     Estimating the expected revenue from various sources, such as launch services, satellite communication services, spacecraft manufacturing, and other revenue lines. This includes considering factors such as market demand, pricing strategies, customer acquisition, and market share.
-     [[Cost projections]]
-     Estimating the expected costs associated with manufacturing, launch operations, research and development, marketing and sales, employee salaries and benefits, IT infrastructure, and other operating expenses. This includes considering factors such as inflation, cost optimization efforts, and economies of scale.
-     [[Profit projections]]
-     Calculating the expected profitability of Space X by subtracting the projected costs from the projected revenue. This includes considering factors such as gross profit margin, net profit margin, and operating profit margin.
-     [[Cashflow projections]]
-     Estimating the expected inflows and outflows of cash in a business model over a specific period, as discussed in the previous point. This includes considering factors such as revenue inflows, operating expenses, capital expenditures, financing activities, tax payments, working capital, and cash reserves.
-     [[Balance sheet projections]]
-     Estimating the expected assets, liabilities, and equity of Space X at a specific point in the future. This includes considering factors such as cash and cash equivalents, accounts receivable, inventory, property and equipment, accounts payable, debt obligations, and shareholders' equity.
-     [[Return on investment projections]]
-     Calculating the expected return on investment for Space X's shareholders and investors. This includes considering factors such as the company's valuation, dividend payments, capital appreciation, and exit strategies.
-     [[Growth projections]]
-     Estimating the expected growth rate of Space X's revenue, profit, and market share over a specific period. This includes considering factors such as market trends, competitive landscape, technological advancements, and industry forecasts.
+    - **Project Phases**:
+     Phase 1: Initial Commercial Operations (Early satellite launches, initial ISS missions)
+     Phase 2: Expansion of Services (Introduction of Starlink, expansion of ISS missions, initial space tourism missions)
+     Phase 3: Interplanetary Mission Development (Development of Mars colonization technology, advanced space tourism missions)
+     **Revenue Lines**:
+  1. Commercial Satellite Launches
+  2. Crewed Missions to the ISS (International Space Station)
+  3. Starlink Satellite Internet Service
+  4. Space Tourism and Private Lunar Missions
+  5. Mars Colonization Initiatives
+     **Cost Lines**
+     **R&D (Research and Development)**: Costs associated with developing rockets, spacecraft, and other technologies.
+     **Manufacturing and Operations**: Costs of producing rockets, spacecraft, and managing launches.
+     **Administrative and General**: Overhead costs including staff salaries, facilities, and other corporate expenses.
+     **Marketing and Sales**: Expenses related to promoting services, securing contracts, and customer acquisition.
+
+### Financial Projections Table (in $ millions)
+
+| Category                    | Phase 1 | Phase 2 | Phase 3 |
+|-----------------------------|---------|---------|---------|
+| **Revenue**                 |         |         |         |
+| Commercial Satellite Launches| 2000   | 2500    | 3000    |
+| Crewed Missions to the ISS  | 500    | 600     | 700     |
+| Starlink Internet           | 100    | 1500    | 3000    |
+| Space Tourism & Private Missions| 0   | 200     | 500     |
+| Mars Colonization Initiatives| 0     | 100     | 2000    |
+| **Total Revenue**           | 2600   | 4900    | 8200    |
+| **Costs**                   |        |         |         |
+| R&D                         | -800   | -1000   | -1200   |
+| Manufacturing and Operations| -1000  | -1500   | -2000   |
+| Administrative and General  | -300   | -400    | -500    |
+| Marketing and Sales         | -100   | -200    | -300    |
+| **Total Costs**             | -2200  | -3100   | -4000   |
+| **Profit/Loss**             | 400    | 1800    | 4200    |
+
+
+
 
 

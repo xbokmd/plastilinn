@@ -21,8 +21,8 @@
   The "Solution (ID)/Category" concept in business modeling is crucial because it helps businesses to organize their solutions in a way that is easy for consumers to understand and navigate. By categorizing their solutions, businesses can improve the customer's buying journey, enhance customer satisfaction, and ultimately drive sales and business growth.
 - ## 👉 Examples
   ### Space X
-  - [[Space Launch Services]]
-          - A company that provides launch services for satellites and spacecraft. They offer reliable and cost-effective transport to orbit for various payloads.
+  Space Launch Services
+  A company that provides launch services for satellites and spacecraft. They offer reliable and cost-effective transport to orbit for various payloads.
   ### vein visualizer
   -  [[Medical Imaging Devices]]
   	- A company that develops and sells medical imaging devices for hospitals and clinics. These devices help in diagnosing and monitoring various medical conditions.

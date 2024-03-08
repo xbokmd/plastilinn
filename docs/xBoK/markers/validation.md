@@ -1,5 +1,5 @@
 alias:: validation
-icon:: ✅
+icon:: 🟰
 - #question Have I verified this in the real world?
 - #question Is this a fact I have experimentally verified?
 - #question Is this a statement I can prove with objective facts and data?

@@ -4,7 +4,7 @@
   - Content is of type template.
   
 - ## 🔑 Keys
-  - #block [[capital-structure]] > #key 💰50 [Capital structure](https://go.plastilinn.com/#/page/capital-structure%2FCapital%20structure) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
+  - #block [[capital-structure]] > #key 💰50 [Capital structure](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/capital-structure%2FCapital%20structure) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50
     value:: 50
 - ## 🤖 innCoPilot
@@ -27,9 +27,14 @@
   In conclusion, the "Capital Structure" concept in business modeling is a critical element that contributes to the financial success and sustainability of the business. It emphasizes the importance of strategically managing the financial resources, assets, and investments in a business model.
 - ## 👉 Examples
   ### Space X
-  Elon Musk: He is the primary shareholder and owner of SpaceX, holding 42% equity and having 79% voting control.
-  Private Investors: Over the years, SpaceX has raised capital through various funding rounds, with investors contributing to the company's valuation. Notable investors include Google and Fidelity, who, in January 2015, invested $1 billion in exchange for 8.33% of the company.
-  Employees: It's common for tech companies, including SpaceX, to offer stock options to employees. However, specific details about individual employee ownership or other minor shareholders were not provided in the content.
+  Elon Musk
+  He is the primary shareholder and owner of SpaceX, holding 42% equity and having 79% voting control.
+  
+  Private Investors
+  Over the years, SpaceX has raised capital through various funding rounds, with investors contributing to the company's valuation. Notable investors include Google and Fidelity, who, in January 2015, invested $1 billion in exchange for 8.33% of the company.
+  
+  Employees
+  It's common for tech companies, including SpaceX, to offer stock options to employees. However, specific details about individual employee ownership or other minor shareholders were not provided in the content.
   ### vein visualizer
   - Crowdfunding: The company can raise capital by soliciting small investments from a large number of individuals through online platforms.
   - Angel investors: High-net-worth individuals who provide capital in exchange for equity in the company.

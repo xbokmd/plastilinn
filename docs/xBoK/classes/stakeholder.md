@@ -1,5 +1,5 @@
 color:: blue
-icon:: 👀
+icon:: 🤔
 page-type:: [[class]]
 alias:: roles
 
