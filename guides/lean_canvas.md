@@ -4,7 +4,7 @@
 
     Define the target customer segments you want to serve.
 
-	#id [profile/Main profile](<#Main profile>)
+	#id [Main profile](<#Main profile>)
     
 2. #### Problem
 

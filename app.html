@@ -15,7 +15,18 @@
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <style>
-
+        /* Ajustar el estilo para etiquetas dentro de cualquier encabezado */
+        h1 span[data-tag],
+        h2 span[data-tag],
+        h3 span[data-tag],
+        h4 span[data-tag],
+        h5 span[data-tag],
+        h6 span[data-tag] {
+            padding-left: 2.8rem;
+            /* Ajusta según sea necesario */
+            vertical-align: middle;
+            /* Asegura que el ícono y el texto estén alineados verticalmente */
+        }
     </style>
 </head>
 
@@ -489,7 +500,6 @@
                                 blocksWithSections.push(block);
                             }
                         });
-
                         return blocksWithSections;
                     },
                     searchFilteredBlocks() {
@@ -620,7 +630,7 @@
 
                             const { tags, tagsParsed } = this.processTags(blockContent);
                             const blockTitle = this.extractBlockTitle(blockContent);
-                            const blockContentWithTagsParsed = this.parseTags(blockContent);
+                            const blockContentWithTagsParsed = this.parseMDToHTML(blockContent);
                             const parsedContent = marked.parse(blockContentWithTagsParsed); // Parsea el contenido Markdown
                             console.log(blockTitle);
                             const metamodel = this.importMetamodelData(blockTitle, instanceClass);
@@ -692,18 +702,29 @@
                         return section;
                     },
 
-                    parseTags(content) {
-                        // Define un regex que busca etiquetas precedidas por # y posiblemente espacio en blanco al inicio
-                        const regex = /(^|\s)#([^#\s][^\s]*)/g;
-
-                        // Reemplaza cada coincidencia en el texto con la etiqueta envuelta en un span directamente en el contenido
-                        const modifiedContent = content.replace(regex, (match, p1, p2) => {
-                            // Envuelve la etiqueta en un span con data-tag
+                    parseMDToHTML(content) {
+                        // Procesa etiquetas como antes
+                        const processedTagsContent = content.replace(/(^|\s)#([^#\s][^\s]*)/g, (match, p1, p2) => {
                             return `${p1}<span data-tag="${p2}" class="items-center justify-start rounded p-2">#${p2}</span>`;
                         });
 
-                        // Devuelve el contenido modificado como una cadena de texto HTML
-                        return modifiedContent;
+                        // Procesa los saltos de línea, excepto en bloques de código
+                        const processedContent = processedTagsContent.split('\n').map((line, index, lines) => {
+                            // Detecta bloques de código para evitar añadir <br> dentro de ellos
+                            if (line.startsWith('```')) {
+                                // Busca el siguiente bloque de cierre de código y salta al índice correspondiente
+                                const findClosingTagIndex = lines.slice(index + 1).findIndex(line => line.startsWith('```'));
+                                if (findClosingTagIndex !== -1) {
+                                    index += findClosingTagIndex + 1;
+                                }
+                                return line; // No modifica los bloques de código
+                            } else {
+                                // Añade <br> al final de las líneas que no son parte de un bloque de código
+                                return line + '<br>';
+                            }
+                        }).join('\n');
+
+                        return processedContent;
                     },
                     processTags(content) {
                         // Usando matchAll para capturar el texto después del #
@@ -808,8 +829,8 @@
                         if (this.selectedBlockIndex !== null) {
                             // Primero, procesa el contenido editado para obtener las tags y el contenido procesado
                             const { tags, tagsParsed } = this.processTags(editedContent);
-                            // Asume que parseTags es una función que deseas usar aquí
-                            const blockContentWithTagsParsed = this.parseTags(editedContent);
+                            // Asume que parseMDToHTML es una función que deseas usar aquí
+                            const blockContentWithTagsParsed = this.parseMDToHTML(editedContent);
                             const blockTitle = this.extractBlockTitle(editedContent);
 
                             // Luego, actualiza el bloque seleccionado con el nuevo contenido y metadatos
