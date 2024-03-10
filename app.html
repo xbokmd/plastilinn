@@ -163,100 +163,148 @@
                         <div v-if="markdownGuideContent">
                             <div v-html="markdownGuideContent"></div>
                         </div>
-                    </div>
-                    <div
-                        v-bind:class="{ block: currentSidebarSection === 'index', hidden: currentSidebarSection !== 'index' }">
-                        <div class="index">
-                            <ul class="menu p-4 w-80 bg-base-100">
-                                <li v-for="block in model.filter(b => b.blockType === 'section')" :key="block.id"
-                                    :class="`pl-${block.depthLevel * 4} p-0`">
-                                    <a :href="'#' + block.blockTitle">{{ block.blockTitle }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div
-                        v-bind:class="{ block: currentSidebarSection === 'filter', hidden: currentSidebarSection !== 'filter' }">
-                        <div class=" flex justify-between bg-white" v-if="filterVisible">
-                            <div class="flex flex-col gap-4">
-                                <div class="flex flex-col w-full">
-                                    <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
-                                        <!-- Búsqueda -->
-                                        <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor" class="w-5 h-5 text-gray-400">
-                                                <path fill-rule="evenodd"
-                                                    d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                            <input v-model="searchQuery" type="text" placeholder="Search..."
-                                                class="input ml-2 bg-gray-50 w-full">
-                                        </div>
-                                        <!-- Botón para abrir el modal de búsqueda y reemplazo -->
-                                        <button @click="showSearchReplaceModal = true" class="btn btn-primary">Abrir
-                                            búsqueda y reemplazo</button>
-                                        <!-- Filtro de etiquetas -->
-                                        <div class="flex flex-col">
-                                            <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                <span>Filter tags</span>
-                                                <div class="flex flex-wrap gap-2 mt-2">
-                                                    <span v-for="tag in selectedTags" :key="tag"
-                                                        class="flex items-center justify-center h-8 px-2 text-sm"
-                                                        :data-tag="tag">{{ tag }}</span>
-                                                </div>
-                                                <button @click="resetSelectedTags" class="btn btn-ghost btn-sm">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="currentColor" class="w-6 h-6">
-                                                        <path fill-rule="evenodd"
-                                                            d="M4.755 10.059a7.5 7.5 0 0 1 12.548-3.364l1.903 1.903h-3.183a.75.75 0 1 0 0 1.5h4.992a.75.75 0 0 0 .75-.75V4.356a.75.75 0 0 0-1.5 0v3.18l-1.9-1.9A9 9 0 0 0 3.306 9.67a.75.75 0 1 0 1.45.388Zm15.408 3.352a.75.75 0 0 0-.919.53 7.5 7.5 0 0 1-12.548 3.364l-1.902-1.903h3.183a.75.75 0 0 0 0-1.5H2.984a.75.75 0 0 0-.75.75v4.992a.75.75 0 0 0 1.5 0v-3.18l1.9 1.9a9 9 0 0 0 15.059-4.035.75.75 0 0 0-.53-.918Z"
-                                                            clip-rule="evenodd" />
-                                                    </svg>Reset</button>
-                                            </div>
-                                            <select v-model="selectedTags"
-                                                class="select select-bordered w-full p-2 bg-white rounded-lg shadow"
-                                                multiple>
-                                                <option v-for="tag in tags" :key="tag" :value="tag">{{ tag }}
-                                                </option>
-                                            </select>
-                                        </div>
+
+                        <button
+                            @click="setArtifactBusinessModelCanvas('partners', 'activities', 'valuePropositions', 'relationships', 'profile', 'resources', 'channels', 'costLines', 'revenueLines'); isArtifactModalOpen = true">Business
+                            Model Canvas</button>
+
+                        <div id="artifact-modal" v-if="isArtifactModalOpen"
+                            style="position: fixed; top: 5%; left: 5%; width: 90%; height: 90%; z-index: 100; background-color: white; overflow: auto; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+                            <!-- Usa v-html para insertar el contenido de artifactModalContent como HTML -->
+                            <button @click="isArtifactModalOpen = false">Cerrar</button>
+                            <div v-html="artifactModalContent"></div>
+                            <div id="business-model-canvas" class="bg-gray-100 -black h-screen p-5">
+                                <div class="row-span-2 grid h-3/5 grid-cols-5 bg-white  shadow-lg">
+                                    <div class="row-span-2 border pl-2">
+                                        <h3>Key Partners</h2>
                                     </div>
-                                    <div class="">
-
-                                        <!-- Botones para aplicar filtros directamente -->
-                                        <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
-                                            <button @click="setFilterTags(['*****', '?????'])"
-                                                class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
-                                                High priority
-                                            </button>
-                                            <div class="flex items-center bg-gray-100 px-4 py-2">
-                                                <p>
-                                                    <span data-tag="!!!!!">!!!!!</span> <kbd
-                                                        class="kbd kbd-xs">#!!!!!</kbd> or
-                                                    <span data-tag="!!!!">!!!!</span> <kbd
-                                                        class="kbd kbd-xs">#!!!!</kbd>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
-                                            <button @click="setFilterTags(['*****', '?????'])"
-                                                class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
-                                                High importance or uncertainty
-                                            </button>
-                                            <div class="flex items-center bg-gray-100 px-4 py-2">
-                                                <p>
-                                                    <span data-tag="*****">*****</span> <kbd
-                                                        class="kbd kbd-xs">#*****</kbd> or
-                                                    <span data-tag="?????">?????</span> <kbd
-                                                        class="kbd kbd-xs">#?????</kbd>
-                                                </p>
-                                            </div>
-                                        </div>
-
+                                    <div class="row-span-1 border pl-2">
+                                        <h3>Key activities</h3>
+                                        <div v-html="buildTagsQueryList(['work'])"></div>
+                                    </div>
+                                    <div class="row-span-2 border pl-2">
+                                        <h3>Value propositions</h3>
+                                    </div>
+                                    <div class="border pl-2">
+                                        <h3>
+                                            Customer relationships</h3>
+                                    </div>
+                                    <div class="row-span-2 border< pl-2>">
+                                        <h3>Customer segments</h3>
+                                    </div>
+                                    <div class="border pl-2">
+                                        <h3>Key resources</h3>
+                                    </div>
+                                    <div class="border pl-2">
+                                        <h3>Channels</h3>
+                                        <div v-html="buildTagsQueryList(['tag1', 'tag2'])"></div>
+                                    </div>
+                                </div>
+                                <div class="grid h-52 grid-cols-2 bg-white shadow-lg">
+                                    <div class="border pl-2">
+                                        <h3>Cost lines</h3>
+                                    </div>
+                                    <div class="border pl-2">
+                                        <h3>
+                                            Revenue lines</h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+
+                        <div
+                            v-bind:class="{ block: currentSidebarSection === 'index', hidden: currentSidebarSection !== 'index' }">
+                            <div class="index">
+                                <ul class="menu p-4 w-80 bg-base-100">
+                                    <li v-for="block in model.filter(b => b.blockType === 'section')" :key="block.id"
+                                        :class="`pl-${block.depthLevel * 4} p-0`">
+                                        <a :href="'#' + block.blockTitle">{{ block.blockTitle }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div
+                            v-bind:class="{ block: currentSidebarSection === 'filter', hidden: currentSidebarSection !== 'filter' }">
+                            <div class=" flex justify-between bg-white" v-if="filterVisible">
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex flex-col w-full">
+                                        <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
+                                            <!-- Búsqueda -->
+                                            <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-5 h-5 text-gray-400">
+                                                    <path fill-rule="evenodd"
+                                                        d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                                <input v-model="searchQuery" type="text" placeholder="Search..."
+                                                    class="input ml-2 bg-gray-50 w-full">
+                                            </div>
+                                            <!-- Botón para abrir el modal de búsqueda y reemplazo -->
+                                            <button @click="showSearchReplaceModal = true" class="btn btn-primary">Abrir
+                                                búsqueda y reemplazo</button>
+                                            <!-- Filtro de etiquetas -->
+                                            <div class="flex flex-col">
+                                                <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
+                                                    <span>Filter tags</span>
+                                                    <div class="flex flex-wrap gap-2 mt-2">
+                                                        <span v-for="tag in selectedTags" :key="tag"
+                                                            class="flex items-center justify-center h-8 px-2 text-sm"
+                                                            :data-tag="tag">{{ tag }}</span>
+                                                    </div>
+                                                    <button @click="resetSelectedTags" class="btn btn-ghost btn-sm">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="currentColor" class="w-6 h-6">
+                                                            <path fill-rule="evenodd"
+                                                                d="M4.755 10.059a7.5 7.5 0 0 1 12.548-3.364l1.903 1.903h-3.183a.75.75 0 1 0 0 1.5h4.992a.75.75 0 0 0 .75-.75V4.356a.75.75 0 0 0-1.5 0v3.18l-1.9-1.9A9 9 0 0 0 3.306 9.67a.75.75 0 1 0 1.45.388Zm15.408 3.352a.75.75 0 0 0-.919.53 7.5 7.5 0 0 1-12.548 3.364l-1.902-1.903h3.183a.75.75 0 0 0 0-1.5H2.984a.75.75 0 0 0-.75.75v4.992a.75.75 0 0 0 1.5 0v-3.18l1.9 1.9a9 9 0 0 0 15.059-4.035.75.75 0 0 0-.53-.918Z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>Reset</button>
+                                                </div>
+                                                <select v-model="selectedTags"
+                                                    class="select select-bordered w-full p-2 bg-white rounded-lg shadow"
+                                                    multiple>
+                                                    <option v-for="tag in tags" :key="tag" :value="tag">{{ tag }}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="">
+
+                                            <!-- Botones para aplicar filtros directamente -->
+                                            <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
+                                                <button @click="setFilterTags(['*****', '?????'])"
+                                                    class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
+                                                    High priority
+                                                </button>
+                                                <div class="flex items-center bg-gray-100 px-4 py-2">
+                                                    <p>
+                                                        <span data-tag="!!!!!">!!!!!</span> <kbd
+                                                            class="kbd kbd-xs">#!!!!!</kbd> or
+                                                        <span data-tag="!!!!">!!!!</span> <kbd
+                                                            class="kbd kbd-xs">#!!!!</kbd>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
+                                                <button @click="setFilterTags(['*****', '?????'])"
+                                                    class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
+                                                    High importance or uncertainty
+                                                </button>
+                                                <div class="flex items-center bg-gray-100 px-4 py-2">
+                                                    <p>
+                                                        <span data-tag="*****">*****</span> <kbd
+                                                            class="kbd kbd-xs">#*****</kbd> or
+                                                        <span data-tag="?????">?????</span> <kbd
+                                                            class="kbd kbd-xs">#?????</kbd>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </nav>
 
                 <main class="flex-auto  border-l border-r border-gray-200 p-2 overflow-y-auto"
@@ -464,6 +512,8 @@
                         searchText: '',
                         replaceText: '',
                         showSearchReplaceModal: false,
+                        isArtifactModalOpen: false,
+                        artifactModalContent: '', // Almacenará el contenido HTML generado
                     };
                 },
                 computed: {
@@ -512,6 +562,100 @@
                     },
                 },
                 methods: {
+                    filteredBlocksByTags(tags) {
+                        return this.model.filter(block =>
+                            block.tags.some(tag => tags.includes(tag))
+                        );
+                    },
+                    setArtifactTest(placeholder1, placeholder2) {
+                        this.artifactModalContent = `
+                        <div>
+                            <h3>1</h3>
+                            ${placeholder1}
+                        </div>
+                        <div>
+                            <h3>2</h3>
+                            ${placeholder2}
+                        </div>
+                    `;
+                        this.isArtifactModalOpen = true;
+                    },
+                    buildTagsQueryList(tags) {
+                        // Filtra los bloques que contienen todas las etiquetas especificadas
+                        const filteredBlocks = this.model.filter(block =>
+                            // Comprueba si cada etiqueta especificada está presente en las etiquetas del bloque
+                            tags.every(tag => block.tags.includes(tag))
+                        );
+
+                        // Construye una lista de HTML con los blockTitles de los bloques filtrados
+                        let htmlList = '<ul>';
+                        filteredBlocks.forEach(block => {
+                            htmlList += `<li>${block.blockTitle}</li>`;
+                        });
+                        htmlList += '</ul>';
+
+                        // Devuelve la lista HTML
+                        return htmlList;
+                    },
+                    buildArtifactBusinessModelCanvas() {
+                        let partners
+                        let activities
+                        let valuePropositions
+                        let relationships
+                        let profile
+                        let resources
+                        let channels
+                        let costLines
+                        let revenueLines
+                        setArtifactBusinessModelCanvas(partners, activities, valuePropositions, relationships, profile, resources, channels, costLines, revenueLines);
+                    },
+                    setArtifactBusinessModelCanvas(partners, activities, valuePropositions, relationships, profile, resources, channels, costLines, revenueLines) {
+                        this.artifactModalContent = `
+                        <div id="business-model-canvas" class="bg-gray-100 -black h-screen p-5">
+                            <div class="row-span-2 grid h-3/5 grid-cols-5 bg-white  shadow-lg">
+                                <div class="row-span-2 border pl-2">
+                                    <h3>Key Partners</h2>
+                                    ${partners}
+                                </div>
+                                <div class="row-span-1 border pl-2">
+                                    <h3>Key activities</h3>
+                                    ${activities}
+                                </div>
+                                <div class="row-span-2 border pl-2">
+                                    <h3>Value propositions</h3>
+                                    ${valuePropositions}
+                                </div>
+                                <div class="border pl-2">
+                                    <h3>Customer relationships</h3>
+                                    ${relationships}
+                                </div>
+                                <div class="row-span-2 border pl-2">
+                                    <h3>Customer segments</h3>
+                                    ${profile}
+                                </div>
+                                <div class="border pl-2">
+                                    <h3>Key resources</h3>
+                                    ${resources}
+                                </div>
+                                <div class="border pl-2">
+                                    <h3>Channels</h3>
+                                    ${channels}
+                                </div>
+                            </div>
+                            <div class="grid h-52 grid-cols-2 bg-white shadow-lg">
+                                <div class="border pl-2">
+                                    <h3>Cost lines</h3>
+                                    ${costLines}
+                                </div>
+                                <div class="border pl-2">
+                                    <h3>Revenue lines</h3>
+                                    ${revenueLines}
+                                </div>
+                            </div>
+                        </div>
+                `;
+                        this.isArtifactModalOpen = true;
+                    },
                     changeSection(section) {
                         this.currentSidebarSection = section;
                         console.log("Sección actual del sidebar:", this.currentSidebarSection);
@@ -584,6 +728,41 @@
                         name = name.replace(/ - saved.*$/, ''); // Elimina " - saved" y todo lo que sigue
                         return name;
                     },
+                    setInstanceValue() {
+                        this.model.forEach(block => {
+                            // Verifica si blockTitle comienza con una etiqueta
+                            if (/^#\w+/.test(block.blockTitle)) {
+                                // Si blockTitle comienza con una etiqueta, asigna blockTitle a instanceValue
+                                block.instanceValue = block.blockTitle;
+                            }
+                            // Continúa con la lógica original de división y asignación
+                            // Extrae el componente del título que sigue inmediatamente después de la etiqueta inicial
+                            const titleParts = block.blockTitle.match(/^#\w+\s+(.*?)\s*(\/|$)/);
+
+                            if (titleParts && titleParts[1]) {
+                                // Asigna el componente extraído a instanceValue, eliminando etiquetas adicionales si las hay
+                                block.instanceValue = titleParts[1].replace(/#\w+/g, '').trim();
+                            } else {
+                                // Si no se encuentra el patrón esperado, asigna null o maneja según sea necesario
+                                block.instanceValue = null;
+                            }
+
+                            // Añadir lógica para manejar instanceSection
+                            const sectionParts = block.blockTitle.split(" / ");
+                            if (sectionParts.length > 1) {
+                                // Asume que el texto después del " / " debe ser asignado a instanceSection
+                                block.instanceSection = sectionParts[1].trim();
+                            } else {
+                                // Si no hay un " / " en el blockTitle, se decide dejar instanceSection como null
+                                block.instanceSection = null;
+                            }
+
+                            // Generar y asignar metamodelID directamente aquí
+                            // Se añade "/ ${block.instanceSection}" solo si instanceSection existe y tiene un valor
+                            let blockMetamodelID = `#${block.instanceClass} ${block.instanceValue}` + (block.instanceSection ? ` / ${block.instanceSection}` : '');
+                            block.metamodelID = blockMetamodelID;
+                        });
+                    },
                     parseMarkdown(content) {
                         const blocks = []; // Almacenará los bloques identificados
                         let currentBlock = []; // Almacena las líneas del bloque actual
@@ -607,11 +786,11 @@
                         this.model = blocks.map((blockContent, index) => {
                             this.lastId += 1; // Incrementa el ID para cada bloque
                             const firstLine = blockContent.split('\n')[0];
+
                             let blockType = 'item';
                             // Use a simpler approach to count '#' at the start of the line for depth level
                             const depthLevel = firstLine.startsWith('#') ? firstLine.match(/^#+/)[0].length : 0;
 
-                            // Actualiza la expresión regular para reflejar la nueva condición
                             if (/^\s*(-\s+)?#(\s|#)/.test(firstLine)) {
                                 blockType = 'section';
                             } else if (firstLine.match(/^\s*[\-\*] /) || firstLine.match(/^\s*\d+\. /)) {
@@ -629,11 +808,34 @@
                             }
 
                             const { tags, tagsParsed } = this.processTags(blockContent);
-                            const blockTitle = this.extractBlockTitle(blockContent);
+                            let blockTitle = this.extractBlockTitle(blockContent);
                             const blockContentWithTagsParsed = this.parseMDToHTML(blockContent);
                             const parsedContent = marked.parse(blockContentWithTagsParsed); // Parsea el contenido Markdown
                             console.log(blockTitle);
-                            const metamodel = this.importMetamodelData(blockTitle, instanceClass);
+                            let metamodelID = "";
+                            let metamodel = this.importMetamodelData(blockTitle, instanceClass);
+
+                            if (instanceClass && blockTitle) {
+                                // Actualiza el blockTitle concatenando el valor de instanceClass y el valor original de blockTitle.
+                                // Asegúrate de incluir el '#' si es necesario y un espacio para separar los valores.
+                                blockTitle = `#${instanceClass} ${blockTitle}`;
+                            }
+
+
+                            // Suponiendo que importMetamodelData devuelve un objeto metamodelo con la estructura esperada
+                            if (metamodel && metamodel.name) {
+                                // Aquí asumimos que quieres usar el valor de `name` del metamodelo
+                                // como el `metamodelID` del bloque actual en el modelo.
+                                metamodelID = metamodel.name;
+                            }
+
+                            if (blockTitle.includes("/")) {
+                                const parts = blockTitle.split("/");
+                                instanceValue = parts[0].trim(); // La parte antes del "/" es el instanceValue
+                                // Reemplazar instanceValue por "Id" en metamodelID
+                                metamodelID = metamodelID.replace(instanceValue, "Id").trim();
+                            }
+
                             return {
                                 id: this.lastId,
                                 content: blockContent,
@@ -645,19 +847,33 @@
                                 metamodel: metamodel,
                                 depthLevel: depthLevel, // Include the depth level here
                                 instanceClass: instanceClass, // Agrega instanceClass al objeto
+                                metamodelID: metamodelID,
                             };
                         });
                         this.updateModelMarkdown();
                         console.log(this.model); // Verificar la carga y transformación del contenido
                         window.botpressWebChat.sendEvent({ type: 'hide' });
                         this.assignUids();
+                        this.setInstanceValue();
                     },
                     extractBlockTitle(blockContent) {
-                        const firstBlock = blockContent.split(/\r?\n/)[0]; // Obtiene la primera línea
-                        const firstBlockWithoutMarkdownHeaders = firstBlock.replace(/^#+\s*/, ''); // Elimina los encabezados Markdown
-                        const blockTitle = firstBlockWithoutMarkdownHeaders.replace(/#[^\s]+/g, '').trim(); // Elimina las etiquetas y espacios extras
-                        return blockTitle; // Retorna blockTitle después de haber llamado a importMetamodelData
-                        console.log(blockTitle);
+                        const firstLine = blockContent.split(/\r?\n/)[0]; // Obtiene la primera línea
+
+                        // Extrae el encabezado Markdown y la primera etiqueta (si existe) que esté directamente después del encabezado
+                        const matches = firstLine.match(/^(#+\s*)(#[^\s]+)?\s*(.*)/);
+                        if (matches) {
+                            const markdownHeader = matches[1]; // Encabezado Markdown (p.ej., '###')
+                            const directTag = matches[2] ? matches[2] + ' ' : ''; // La etiqueta directa después del encabezado, si existe
+                            const restOfTheTitle = matches[3]; // El resto del título después del encabezado y la etiqueta directa
+
+                            // Combina la etiqueta directa (si existe) y el resto del título, eliminando otras etiquetas
+                            const blockTitle = (directTag + restOfTheTitle).replace(/#[^\s]+/g, '').trim();
+
+                            return blockTitle;
+                        }
+
+                        // En caso de que no haya coincidencia (lo cual sería inusual), retorna la línea completa
+                        return firstLine;
                     },
                     updateBlockTitles() {
                         // Recorre todos los bloques y agrega sus blockTitles al arreglo blockTitles
