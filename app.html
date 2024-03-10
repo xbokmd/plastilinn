@@ -167,147 +167,105 @@
                         <button
                             @click="setArtifactBusinessModelCanvas('partners', 'activities', 'valuePropositions', 'relationships', 'profile', 'resources', 'channels', 'costLines', 'revenueLines'); isArtifactModalOpen = true">Business
                             Model Canvas</button>
+                    </div>
 
-                        <div id="artifact-modal" v-if="isArtifactModalOpen"
-                            style="position: fixed; top: 5%; left: 5%; width: 90%; height: 90%; z-index: 100; background-color: white; overflow: auto; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
-                            <!-- Usa v-html para insertar el contenido de artifactModalContent como HTML -->
-                            <button @click="isArtifactModalOpen = false">Cerrar</button>
-                            <div v-html="artifactModalContent"></div>
-                            <div id="business-model-canvas" class="bg-gray-100 -black h-screen p-5">
-                                <div class="row-span-2 grid h-3/5 grid-cols-5 bg-white  shadow-lg">
-                                    <div class="row-span-2 border pl-2">
-                                        <h3>Key Partners</h2>
-                                    </div>
-                                    <div class="row-span-1 border pl-2">
-                                        <h3>Key activities</h3>
-                                        <div v-html="buildTagsQueryList(['work'])"></div>
-                                    </div>
-                                    <div class="row-span-2 border pl-2">
-                                        <h3>Value propositions</h3>
-                                    </div>
-                                    <div class="border pl-2">
-                                        <h3>
-                                            Customer relationships</h3>
-                                    </div>
-                                    <div class="row-span-2 border< pl-2>">
-                                        <h3>Customer segments</h3>
-                                    </div>
-                                    <div class="border pl-2">
-                                        <h3>Key resources</h3>
-                                    </div>
-                                    <div class="border pl-2">
-                                        <h3>Channels</h3>
-                                        <div v-html="buildTagsQueryList(['tag1', 'tag2'])"></div>
-                                    </div>
-                                </div>
-                                <div class="grid h-52 grid-cols-2 bg-white shadow-lg">
-                                    <div class="border pl-2">
-                                        <h3>Cost lines</h3>
-                                    </div>
-                                    <div class="border pl-2">
-                                        <h3>
-                                            Revenue lines</h3>
-                                    </div>
-                                </div>
-                            </div>
+                    <div
+                        v-bind:class="{ block: currentSidebarSection === 'index', hidden: currentSidebarSection !== 'index' }">
+                        <div class="index">
+                            <ul class="menu p-4 w-80 bg-base-100">
+                                <li v-for="block in model.filter(b => b.blockType === 'section')" :key="block.id"
+                                    :class="`pl-${block.depthLevel * 4} p-0`">
+                                    <a :href="'#' + block.blockTitle">{{ block.blockTitle }}</a>
+                                </li>
+                            </ul>
                         </div>
+                    </div>
 
-                        <div
-                            v-bind:class="{ block: currentSidebarSection === 'index', hidden: currentSidebarSection !== 'index' }">
-                            <div class="index">
-                                <ul class="menu p-4 w-80 bg-base-100">
-                                    <li v-for="block in model.filter(b => b.blockType === 'section')" :key="block.id"
-                                        :class="`pl-${block.depthLevel * 4} p-0`">
-                                        <a :href="'#' + block.blockTitle">{{ block.blockTitle }}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div
-                            v-bind:class="{ block: currentSidebarSection === 'filter', hidden: currentSidebarSection !== 'filter' }">
-                            <div class=" flex justify-between bg-white" v-if="filterVisible">
-                                <div class="flex flex-col gap-4">
-                                    <div class="flex flex-col w-full">
-                                        <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
-                                            <!-- Búsqueda -->
+                    <div
+                        v-bind:class="{ block: currentSidebarSection === 'filter', hidden: currentSidebarSection !== 'filter' }">
+                        <div class=" flex justify-between bg-white" v-if="filterVisible">
+                            <div class="flex flex-col gap-4">
+                                <div class="flex flex-col w-full">
+                                    <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
+                                        <!-- Búsqueda -->
+                                        <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="w-5 h-5 text-gray-400">
+                                                <path fill-rule="evenodd"
+                                                    d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            <input v-model="searchQuery" type="text" placeholder="Search..."
+                                                class="input ml-2 bg-gray-50 w-full">
+                                        </div>
+                                        <!-- Botón para abrir el modal de búsqueda y reemplazo -->
+                                        <button @click="showSearchReplaceModal = true" class="btn btn-primary">Abrir
+                                            búsqueda y reemplazo</button>
+                                        <!-- Filtro de etiquetas -->
+                                        <div class="flex flex-col">
                                             <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                    fill="currentColor" class="w-5 h-5 text-gray-400">
-                                                    <path fill-rule="evenodd"
-                                                        d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                                                        clip-rule="evenodd" />
-                                                </svg>
-                                                <input v-model="searchQuery" type="text" placeholder="Search..."
-                                                    class="input ml-2 bg-gray-50 w-full">
-                                            </div>
-                                            <!-- Botón para abrir el modal de búsqueda y reemplazo -->
-                                            <button @click="showSearchReplaceModal = true" class="btn btn-primary">Abrir
-                                                búsqueda y reemplazo</button>
-                                            <!-- Filtro de etiquetas -->
-                                            <div class="flex flex-col">
-                                                <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                    <span>Filter tags</span>
-                                                    <div class="flex flex-wrap gap-2 mt-2">
-                                                        <span v-for="tag in selectedTags" :key="tag"
-                                                            class="flex items-center justify-center h-8 px-2 text-sm"
-                                                            :data-tag="tag">{{ tag }}</span>
-                                                    </div>
-                                                    <button @click="resetSelectedTags" class="btn btn-ghost btn-sm">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-6 h-6">
-                                                            <path fill-rule="evenodd"
-                                                                d="M4.755 10.059a7.5 7.5 0 0 1 12.548-3.364l1.903 1.903h-3.183a.75.75 0 1 0 0 1.5h4.992a.75.75 0 0 0 .75-.75V4.356a.75.75 0 0 0-1.5 0v3.18l-1.9-1.9A9 9 0 0 0 3.306 9.67a.75.75 0 1 0 1.45.388Zm15.408 3.352a.75.75 0 0 0-.919.53 7.5 7.5 0 0 1-12.548 3.364l-1.902-1.903h3.183a.75.75 0 0 0 0-1.5H2.984a.75.75 0 0 0-.75.75v4.992a.75.75 0 0 0 1.5 0v-3.18l1.9 1.9a9 9 0 0 0 15.059-4.035.75.75 0 0 0-.53-.918Z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>Reset</button>
+                                                <span>Filter tags</span>
+                                                <div class="flex flex-wrap gap-2 mt-2">
+                                                    <span v-for="tag in selectedTags" :key="tag"
+                                                        class="flex items-center justify-center h-8 px-2 text-sm"
+                                                        :data-tag="tag">{{ tag }}</span>
                                                 </div>
-                                                <select v-model="selectedTags"
-                                                    class="select select-bordered w-full p-2 bg-white rounded-lg shadow"
-                                                    multiple>
-                                                    <option v-for="tag in tags" :key="tag" :value="tag">{{ tag }}
-                                                    </option>
-                                                </select>
+                                                <button @click="resetSelectedTags" class="btn btn-ghost btn-sm">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor" class="w-6 h-6">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.755 10.059a7.5 7.5 0 0 1 12.548-3.364l1.903 1.903h-3.183a.75.75 0 1 0 0 1.5h4.992a.75.75 0 0 0 .75-.75V4.356a.75.75 0 0 0-1.5 0v3.18l-1.9-1.9A9 9 0 0 0 3.306 9.67a.75.75 0 1 0 1.45.388Zm15.408 3.352a.75.75 0 0 0-.919.53 7.5 7.5 0 0 1-12.548 3.364l-1.902-1.903h3.183a.75.75 0 0 0 0-1.5H2.984a.75.75 0 0 0-.75.75v4.992a.75.75 0 0 0 1.5 0v-3.18l1.9 1.9a9 9 0 0 0 15.059-4.035.75.75 0 0 0-.53-.918Z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>Reset</button>
+                                            </div>
+                                            <select v-model="selectedTags"
+                                                class="select select-bordered w-full p-2 bg-white rounded-lg shadow"
+                                                multiple>
+                                                <option v-for="tag in tags" :key="tag" :value="tag">{{ tag }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="">
+
+                                        <!-- Botones para aplicar filtros directamente -->
+                                        <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
+                                            <button @click="setFilterTags(['*****', '?????'])"
+                                                class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
+                                                High priority
+                                            </button>
+                                            <div class="flex items-center bg-gray-100 px-4 py-2">
+                                                <p>
+                                                    <span data-tag="!!!!!">!!!!!</span> <kbd
+                                                        class="kbd kbd-xs">#!!!!!</kbd> or
+                                                    <span data-tag="!!!!">!!!!</span> <kbd
+                                                        class="kbd kbd-xs">#!!!!</kbd>
+                                                </p>
                                             </div>
                                         </div>
-                                        <div class="">
-
-                                            <!-- Botones para aplicar filtros directamente -->
-                                            <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
-                                                <button @click="setFilterTags(['*****', '?????'])"
-                                                    class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
-                                                    High priority
-                                                </button>
-                                                <div class="flex items-center bg-gray-100 px-4 py-2">
-                                                    <p>
-                                                        <span data-tag="!!!!!">!!!!!</span> <kbd
-                                                            class="kbd kbd-xs">#!!!!!</kbd> or
-                                                        <span data-tag="!!!!">!!!!</span> <kbd
-                                                            class="kbd kbd-xs">#!!!!</kbd>
-                                                    </p>
-                                                </div>
+                                        <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
+                                            <button @click="setFilterTags(['*****', '?????'])"
+                                                class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
+                                                High importance or uncertainty
+                                            </button>
+                                            <div class="flex items-center bg-gray-100 px-4 py-2">
+                                                <p>
+                                                    <span data-tag="*****">*****</span> <kbd
+                                                        class="kbd kbd-xs">#*****</kbd> or
+                                                    <span data-tag="?????">?????</span> <kbd
+                                                        class="kbd kbd-xs">#?????</kbd>
+                                                </p>
                                             </div>
-                                            <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
-                                                <button @click="setFilterTags(['*****', '?????'])"
-                                                    class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
-                                                    High importance or uncertainty
-                                                </button>
-                                                <div class="flex items-center bg-gray-100 px-4 py-2">
-                                                    <p>
-                                                        <span data-tag="*****">*****</span> <kbd
-                                                            class="kbd kbd-xs">#*****</kbd> or
-                                                        <span data-tag="?????">?????</span> <kbd
-                                                            class="kbd kbd-xs">#?????</kbd>
-                                                    </p>
-                                                </div>
-                                            </div>
-
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </nav>
 
-                <main class="flex-auto  border-l border-r border-gray-200 p-2 overflow-y-auto"
+                <main class="flex-auto border-l border-r border-gray-200 p-2 overflow-y-auto"
                     style="scroll-behavior: smooth;">
                     <div class="leading-10">
                         <div id="content" class="bg-gray-200 p-1 rounded">
@@ -412,6 +370,55 @@
         </div>
 
         <!-- MODAL WINDOWS -->
+
+        <div id="artifact-modal" v-if="isArtifactModalOpen"
+            style="position: fixed; top: 5%; left: 5%; width: 90%; height: 90%; z-index: 100; background-color: white; overflow: auto; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+            <!-- Usa v-html para insertar el contenido de artifactModalContent como HTML -->
+            <button @click="isArtifactModalOpen = false">Cerrar</button>
+            <div v-html="artifactModalContent"></div>
+            <div id="business-model-canvas" class="bg-gray-100 -black h-screen p-5">
+                <div class="row-span-2 grid h-3/5 grid-cols-5 bg-white  shadow-lg">
+                    <div class="row-span-2 border pl-2">
+                        <h3>Key Partners</h2>
+                    </div>
+                    <div class="row-span-1 border pl-2">
+                        <h3>Key activities</h3>
+                        <div v-html="buildTagsQueryList(['work'])"></div>
+                    </div>
+                    <div class="row-span-2 border pl-2">
+                        <h3>Value propositions</h3>
+                        <div v-html="buildTagsQueryList(['value'])"></div>
+                    </div>
+                    <div class="border pl-2">
+                        <h3>Customer relationships</h3>
+                        <div v-html="buildTagsQueryList(['relation'])"></div>
+                    </div>
+                    <div class="row-span-2 border pl-2>">
+                        <h3>Customer segments</h3>
+                        <div v-html="buildTagsQueryList(['profile'])"></div>
+                    </div>
+                    <div class="border pl-2">
+                        <h3>Key resources</h3>
+                        <div v-html="buildTagsQueryList(['resource'])"></div>
+                    </div>
+                    <div class="border pl-2">
+                        <h3>Channels</h3>
+                        <div v-html="buildTagsQueryList(['channel'])"></div>
+                    </div>
+                </div>
+                <div class="grid h-52 grid-cols-2 bg-white shadow-lg">
+                    <div class="border pl-2">
+                        <h3>Cost lines</h3>
+                        <div v-html="buildTagsQueryList(['cost'])"></div>
+                    </div>
+                    <div class="border pl-2">
+                        <h3>Revenue lines</h3>
+                        <div v-html="buildTagsQueryList(['revenue'])"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Modal de búsqueda y reemplazo -->
         <div v-if="showSearchReplaceModal"
@@ -597,63 +604,7 @@
                         // Devuelve la lista HTML
                         return htmlList;
                     },
-                    buildArtifactBusinessModelCanvas() {
-                        let partners
-                        let activities
-                        let valuePropositions
-                        let relationships
-                        let profile
-                        let resources
-                        let channels
-                        let costLines
-                        let revenueLines
-                        setArtifactBusinessModelCanvas(partners, activities, valuePropositions, relationships, profile, resources, channels, costLines, revenueLines);
-                    },
-                    setArtifactBusinessModelCanvas(partners, activities, valuePropositions, relationships, profile, resources, channels, costLines, revenueLines) {
-                        this.artifactModalContent = `
-                        <div id="business-model-canvas" class="bg-gray-100 -black h-screen p-5">
-                            <div class="row-span-2 grid h-3/5 grid-cols-5 bg-white  shadow-lg">
-                                <div class="row-span-2 border pl-2">
-                                    <h3>Key Partners</h2>
-                                    ${partners}
-                                </div>
-                                <div class="row-span-1 border pl-2">
-                                    <h3>Key activities</h3>
-                                    ${activities}
-                                </div>
-                                <div class="row-span-2 border pl-2">
-                                    <h3>Value propositions</h3>
-                                    ${valuePropositions}
-                                </div>
-                                <div class="border pl-2">
-                                    <h3>Customer relationships</h3>
-                                    ${relationships}
-                                </div>
-                                <div class="row-span-2 border pl-2">
-                                    <h3>Customer segments</h3>
-                                    ${profile}
-                                </div>
-                                <div class="border pl-2">
-                                    <h3>Key resources</h3>
-                                    ${resources}
-                                </div>
-                                <div class="border pl-2">
-                                    <h3>Channels</h3>
-                                    ${channels}
-                                </div>
-                            </div>
-                            <div class="grid h-52 grid-cols-2 bg-white shadow-lg">
-                                <div class="border pl-2">
-                                    <h3>Cost lines</h3>
-                                    ${costLines}
-                                </div>
-                                <div class="border pl-2">
-                                    <h3>Revenue lines</h3>
-                                    ${revenueLines}
-                                </div>
-                            </div>
-                        </div>
-                `;
+                    setArtifactBusinessModelCanvas() {
                         this.isArtifactModalOpen = true;
                     },
                     changeSection(section) {
