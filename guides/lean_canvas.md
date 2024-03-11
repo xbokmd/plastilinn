@@ -4,19 +4,19 @@
 
     Define the target customer segments you want to serve.
 
-	#id [Main profile](<#Main profile>)
+	#id [Main profile](<#profile Main profile>)
     
 2. #### Problem
 
 	List the top three problems your target customers face.
 
-	#id [goals](<#goals>)
+	#id [goals](<#Main profile - goals>)
 
 3. #### Unique Value Proposition
 
 	Describe the unique and compelling value you offer to your customers that sets you apart from the competition.
 
-    #id [value proposition](<#value proposition>)
+    #id [value proposition](<#profile Main profile - value proposition>)
 
 4. #### Solution
 
