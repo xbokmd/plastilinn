@@ -5,9 +5,8 @@
   - Content is of type tree.
   
   - Content uses the following classes:
-    - [[goal]]
-      - {{embed [[goal]]}}
-  
+    - goal
+
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

@@ -5,9 +5,8 @@
   - Content is of type list.
   
   - Content uses the following classes:
-    - [[cost]]
-      - {{embed [[cost]]}}
-  
+    - cost
+
 - ## 🔑 Keys
   - #block [[cost-lines]] > #key 💰35 [Cost Structure](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/cost-lines%2FCost%20Structure) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 35

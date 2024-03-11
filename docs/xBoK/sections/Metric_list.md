@@ -5,9 +5,8 @@
   - Content is of type list.
   
   - Content uses the following classes:
-    - [[metric]]
-      - {{embed [[metric]]}}
-  
+    - metric
+
 - ## 🔑 Keys
   - #block [[metric-list]] > #key 💰50 [Monitoring Key Metrics](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/metric-list%2FMonitoring%20Key%20Metrics) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50

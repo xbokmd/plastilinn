@@ -5,9 +5,8 @@
   - Content is of type list.
   
   - Content uses the following classes:
-    - [[solution]]
-      - {{embed [[solution]]}}
-  
+    - solution
+
 - ## 🔑 Keys
   - #block [[solution-list]] > #key 💰40 [Efficient product development process](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/solution-list%2FEfficient%20product%20development%20process) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 40

@@ -5,9 +5,8 @@
   - Content is of type list.
   
   - Content uses the following classes:
-    - [[function]]
-      - {{embed [[function]]}}
-  
+    - function
+
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

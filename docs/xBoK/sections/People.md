@@ -5,9 +5,8 @@
   - Content is of type list.
   
   - Content uses the following classes:
-    - [[person]]
-      - {{embed [[person]]}}
-  
+    - person
+
 - ## 🔑 Keys
   - #block [[people]] > #key 💰40 [Receptiveness to Feedback](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/people%2FReceptiveness%20to%20Feedback) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 40

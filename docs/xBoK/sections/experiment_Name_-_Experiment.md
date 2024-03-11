@@ -5,9 +5,8 @@
   - Content is of type text.
   
   - Content uses the following classes:
-    - [[experiment]]
-      - {{embed [[experiment]]}}
-  
+    - experiment
+
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

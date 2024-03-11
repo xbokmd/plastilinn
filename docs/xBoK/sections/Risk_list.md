@@ -5,9 +5,8 @@
   - Content is of type list.
   
   - Content uses the following classes:
-    - [[risk]]
-      - {{embed [[risk]]}}
-  
+    - risk
+
 - ## 🔑 Keys
   - #block [[risk-list]] > #key 💰50 [Risk Identification](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/risk-list%2FRisk%20Identification) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50

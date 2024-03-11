@@ -5,9 +5,8 @@
   - Content is of type text.
   
   - Content uses the following classes:
-    - [[profile]]
-      - {{embed [[profile]]}}
-  
+    - profile
+
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

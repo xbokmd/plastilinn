@@ -5,9 +5,8 @@
   - Content is of type list.
   
   - Content uses the following classes:
-    - [[asset]]
-      - {{embed [[asset]]}}
-  
+    - asset
+
 - ## 🔑 Keys
   - #block [[resource-list]] > #key 💰50 [Resilient supply chain management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/resource-list%2FResilient%20supply%20chain%20management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 50

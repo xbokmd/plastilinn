@@ -5,9 +5,8 @@
   - Content is of type list.
   
   - Content uses the following classes:
-    - [[segment]]
-      - {{embed [[segment]]}}
-  
+    - segment
+
 - ## 🔑 Keys
   - #block [[segment-list]] > #key 💰60 [Market expansion opportunities](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/segment-list%2FMarket%20expansion%20opportunities) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 60

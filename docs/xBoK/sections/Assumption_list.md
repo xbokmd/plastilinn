@@ -5,9 +5,8 @@
   - Content is of type list.
   
   - Content uses the following classes:
-    - [[assumption]]
-      - {{embed [[assumption]]}}
-  
+    - assumption
+
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

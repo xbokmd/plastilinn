@@ -5,9 +5,8 @@
   - Content is of type list.
   
   - Content uses the following classes:
-    - [[revenue]]
-      - {{embed [[revenue]]}}
-  
+    - revenue
+
 - ## 🔑 Keys
   - #block [[revenue-lines]] > #key 💰65 [Revenue Sources](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/revenue-lines%2FRevenue%20Sources) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
     key-weight:: 65
