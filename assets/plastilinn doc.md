@@ -34,27 +34,27 @@
 
   - #segment
 
-## #segment Main segment #**** #>
+## #segment Main segment / segment #**** #>
 
   - #segment
 
-### segmentation criteria #*** #>
+### #segment Main segment / segmentation criteria #*** #>
 
   - #segmentation
 
-### market size #*** #>
+### #segment Main segment / market size #*** #>
 
-### market trends #* #>
+### #segment Main segment / market trends #* #>
 
-### partners #* #>
-
-  - #stakeholder
-
-### competition #** #>
+### #segment Main segment / partners #* #>
 
   - #stakeholder
 
-### roles #** #>
+### #segment Main segment / competition #** #>
+
+  - #stakeholder
+
+### #segment Main segment / roles #** #>
 
   - #role
 
@@ -62,85 +62,85 @@
 
   - #profile
 
-## #profile Main profile #**** #>
+## #profile Main profile / profile #***** #>
 
   - #profile
 
-### segmentation #*** #>
+### #profile Main profile / segmentation #*** #>
 
   - #segmentation
 
-### persona #** #>
+### #profile Main profile / persona #** #>
 
-### goals #**** #>
+### #profile Main profile / goals #***** #>
 
   - #goal
 
-### perceptions #* #>
+### #profile Main profile / perceptions #* #>
 
   - #perception
 
-### emotions #* #>
+### #profile Main profile / emotions #* #>
 
   - #emotion
 
-### value proposition #*** #>
+### #profile Main profile / value proposition #*** #>
 
   - #value
 
-#### quantified value proposition #* #>
+#### #profile Main profile / quantified value proposition #* #>
 
-### relationship #* #>
+### #profile Main profile / relationship #* #>
 
   - #relationship
 
-### messages #** #>
+### #profile Main profile / messages #** #>
 
   - #message
 
-### channels #*** #>
+### #profile Main profile / channels #*** #>
 
   - #channel
 
-### assets #** #>
+### #profile Main profile / assets #** #>
 
   - #asset
 
-### transactions #* #>
+### #profile Main profile / transactions #* #>
 
   - #transaction
 
-### journey #** #>
+### #profile Main profile / journey #** #>
 
-### funnel #* #>
+### #profile Main profile / funnel #* #>
 
-### sales strategy #* #>
+### #profile Main profile / sales strategy #* #>
 
 # solution list #**** #>
 
   - #solution
 
-## #solution Main solution #*** #>
+## #solution Main solution / solution #***** #>
 
   - #solution
 
-### category #** #>
+### #solution Main solution / category #** #>
 
-### components #* #>
+### #solution Main solution / components #* #>
 
-### features #** #>
+### #solution Main solution / features #** #>
 
   - #feature
 
-### roadmap #* #>
+### #solution Main solution / roadmap #* #>
 
-### offerings #** #>
+### #solution Main solution / offerings #** #>
 
   - #offering
 
-### pricing #** #>
+### #solution Main solution / pricing #** #>
 
-### brochure #* #>
+### #solution Main solution / brochure #* #>
 
 # marketing #** #>
 
@@ -182,21 +182,21 @@
 
   - #person
 
-### #person Main person #**** #>
+### #person Main person / person #**** #>
 
   - #person
 
-#### skills #*** #>
+#### #person Main person / skills #*** #>
 
   - #skill
 
-#### functions #*** #>
+#### #person Main person / functions #*** #>
 
   - #function
 
-#### contributions #*** #>
+#### #person Main person / contributions #*** #>
 
-#### compensations #*** #>
+#### #person Main person / compensations #*** #>
 
 ## position list #** #>
 
@@ -272,7 +272,7 @@
 
   - #experiment
 
-### #experiment Main experiment #*** #>
+### #experiment Main experiment / experiment #*** #>
 
   - #experiment
 

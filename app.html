@@ -165,7 +165,8 @@
                         </div>
 
                         <button
-                            @click="setArtifactBusinessModelCanvas('partners', 'activities', 'valuePropositions', 'relationships', 'profile', 'resources', 'channels', 'costLines', 'revenueLines'); isArtifactModalOpen = true">Business
+                            @click="setArtifactBusinessModelCanvas('partners', 'activities', 'valuePropositions', 'relationships', 'profile', 'resources', 'channels', 'costLines', 'revenueLines'); isArtifactModalOpen = true"
+                            class="btn btn-primary">Business
                             Model Canvas</button>
                     </div>
 
@@ -374,7 +375,7 @@
         <div id="artifact-modal" v-if="isArtifactModalOpen"
             style="position: fixed; top: 5%; left: 5%; width: 90%; height: 90%; z-index: 100; background-color: white; overflow: auto; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
             <!-- Usa v-html para insertar el contenido de artifactModalContent como HTML -->
-            <button @click="isArtifactModalOpen = false">Cerrar</button>
+            <button @click="isArtifactModalOpen = false" class="btn">Cerrar</button>
             <div v-html="artifactModalContent"></div>
             <div id="business-model-canvas" class="bg-gray-100 -black h-screen p-5">
                 <div class="row-span-2 grid h-3/5 grid-cols-5 bg-white  shadow-lg">
