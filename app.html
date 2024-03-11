@@ -713,7 +713,7 @@
                             }
                             // Continúa con la lógica original de división y asignación
                             // Extrae el componente del título que sigue inmediatamente después de la etiqueta inicial
-                            const titleParts = block.blockTitle.match(/^#\w+\s+(.*?)\s*(\/|$)/);
+                            const titleParts = block.blockTitle.match(/^#\w+\s+(.*?)\s*(-|$)/);
 
                             if (titleParts && titleParts[1]) {
                                 // Asigna el componente extraído a instanceValue, eliminando etiquetas adicionales si las hay
@@ -742,7 +742,6 @@
                                 blockMetamodelID = `#${block.instanceClass} Name` + (block.instanceSection ? ` - ${block.instanceSection}` : '');
                             }
 
-                            block.metamodelID = blockMetamodelID;
 
                         });
                     },
@@ -806,16 +805,23 @@
                             let blockTitle = this.extractBlockTitle(blockContent);
                             const blockContentWithTagsParsed = this.parseMDToHTML(blockContent);
                             const parsedContent = marked.parse(blockContentWithTagsParsed); // Parsea el contenido Markdown
-                            console.log(blockTitle);
                             let metamodelID = "";
-                            let metamodel = this.importMetamodelData(blockTitle, instanceClass);
+
 
                             if (instanceClass && blockTitle) {
-                                // Actualiza el blockTitle concatenando el valor de instanceClass y el valor original de blockTitle.
+                                // Si instanceClass no es null, concatena instanceClass y blockTitle para formar metamodelID
                                 // Asegúrate de incluir el '#' si es necesario y un espacio para separar los valores.
-                                blockTitle = `#${instanceClass} ${blockTitle}`;
+                                metamodelID = `#${instanceClass} ${blockTitle}`;
+                            } else if (!instanceClass) {
+                                // Si instanceClass es null, usa directamente blockTitle como metamodelID
+                                metamodelID = blockTitle;
                             }
 
+                            let metamodel = '';
+
+                            // Luego, usa metamodelID como el primer argumento en la llamada a importMetamodelData
+                            metamodel = this.importMetamodelData(metamodelID);
+                            console.log("Metamodel imported:", metamodel, "using metamodelID:", metamodelID);
 
                             // Suponiendo que importMetamodelData devuelve un objeto metamodelo con la estructura esperada
                             if (metamodel && metamodel.name) {
@@ -830,6 +836,8 @@
                                 // Reemplazar instanceValue por "Id" en metamodelID
                                 metamodelID = metamodelID.replace(instanceValue, "Name").trim();
                             }
+
+                            metamodelID = metamodelID.replace(/#/g, '');
 
                             return {
                                 id: this.lastId,
@@ -885,24 +893,26 @@
                             }
                         });
                     },
-                    importMetamodelData(blockTitle, instanceClass) {
-                        console.log("importMetamodelData called with blockTitle:", blockTitle, "and instanceClass:", instanceClass);
+                    importMetamodelData(metamodelID) {
+                        console.log("importMetamodelData called with metamodelID:", metamodelID);
 
-                        // Intenta encontrar una coincidencia usando el blockTitle
-                        let section = this.metamodel.sections.find(s => s.name === blockTitle);
-                        console.log("After trying to match with blockTitle, section is:", section);
+                        // Intenta encontrar una coincidencia usando el metamodelID
+                        let section = this.metamodel.sections.find(s => s.name === metamodelID);
 
-                        // Si no encuentra una coincidencia con blockTitle, intenta con instanceClass
-                        if (!section && instanceClass) {
-                            console.log("No match found with blockTitle, trying with instanceClass:", instanceClass);
-                            section = this.metamodel.sections.find(s => s.name === instanceClass);
-                            console.log("After trying to match with instanceClass, section is:", section);
+                        // Incluye más información en el log para una depuración detallada
+                        console.log("Searching for a metamodel section with metamodelID:", metamodelID,
+                            "\nMetamodel Sections Length:", this.metamodel.sections.length,
+                            "\nFound Section:", section ? `Yes, named ${section.name}` : "No matching section found.");
+
+                        // Si es útil, también puedes considerar mostrar la estructura de 'section' si se encuentra alguna
+                        if (section) {
+                            console.log("Details of the found section:", section);
                         }
 
                         // Si se encuentra una coincidencia
                         if (section) {
                             console.log("Match found, section:", section);
-                            const blockIndex = this.model.findIndex(block => block.blockTitle === blockTitle || block.instanceClass === instanceClass);
+                            const blockIndex = this.model.findIndex(block => block.metamodelID === metamodelID || block.instanceClass === instanceClass);
                             console.log("Block index found for update:", blockIndex);
 
                             if (blockIndex !== -1) {
@@ -910,10 +920,10 @@
                                 this.$set(this.model[blockIndex], 'metamodel', section);
                                 console.log("Model updated at index:", blockIndex, "with section:", section);
                             } else {
-                                console.log("No matching block found in model for given blockTitle or instanceClass.");
+                                console.log("No matching block found in model for given metamodelID.");
                             }
                         } else {
-                            console.log("No matching section found in metamodel for given blockTitle or instanceClass.");
+                            console.log("No matching section found in metamodel for given metamodelID");
                         }
 
                         // Devuelve la sección encontrada (o undefined si no se encontró ninguna coincidencia)
