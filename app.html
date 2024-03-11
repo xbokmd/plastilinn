@@ -118,27 +118,30 @@
                                     <p>Allows you to carry out smart queries by filtering the content of your plastilin
                                         doc.</p>
                                 </div>
-                                <div class="card w-96 bg-base-100 shadow-xl">
-                                    <div class="card-body">
 
-
-                                        <div class="card-actions justify-end">
-                                            <p>Click on the info icon <span
-                                                    style="display: inline-block; vertical-align: middle;"><svg
-                                                        xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                        class="w-6 h-6">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-                                                    </svg></span> at the right of any section of your document</p>
-                                            <p>Click here to access the <a
-                                                    href="https://xbokmd.github.io/plastilinn/index.html"
-                                                    target="_blank">plastilinn documentation page</a> (Work in Progress)
-                                            </p>
-                                        </div>
+                                <div tabindex="0" class="collapse bg-base-200">
+                                    <div class="collapse-title text-xl font-medium">
+                                        <span style="display: inline-block; vertical-align: middle;"><svg
+                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                            </svg></span>
+                                        Help
+                                    </div>
+                                    <div class="collapse-content">
+                                        <p>Click on the info icon <span
+                                                style="display: inline-block; vertical-align: middle;"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                                </svg></span> at the right of any section of your document</p>
+                                        <p>Click here to access the <a
+                                                href="https://xbokmd.github.io/plastilinn/index.html"
+                                                target="_blank">plastilinn documentation page</a> (Work in Progress)</p>
                                     </div>
                                 </div>
-
                                 <div role="alert" class="alert mt-10">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         class="stroke-info shrink-0 w-6 h-6">
@@ -721,19 +724,26 @@
                             }
 
                             // Añadir lógica para manejar instanceSection
-                            const sectionParts = block.blockTitle.split(" / ");
+                            const sectionParts = block.blockTitle.split(" - ");
                             if (sectionParts.length > 1) {
-                                // Asume que el texto después del " / " debe ser asignado a instanceSection
+                                // Asume que el texto después del " - " debe ser asignado a instanceSection
                                 block.instanceSection = sectionParts[1].trim();
                             } else {
-                                // Si no hay un " / " en el blockTitle, se decide dejar instanceSection como null
+                                // Si no hay un " - " en el blockTitle, se decide dejar instanceSection como null
                                 block.instanceSection = null;
                             }
 
-                            // Generar y asignar metamodelID directamente aquí
-                            // Se añade "/ ${block.instanceSection}" solo si instanceSection existe y tiene un valor
-                            let blockMetamodelID = `#${block.instanceClass} ${block.instanceValue}` + (block.instanceSection ? ` - ${block.instanceSection}` : '');
+                            // Verifica si instanceClass es null y, en ese caso, usa blockTitle como metamodelID.
+                            // De lo contrario, construye metamodelID usando instanceClass, instanceValue y, opcionalmente, instanceSection.
+                            let blockMetamodelID;
+                            if (block.instanceClass === null) {
+                                blockMetamodelID = block.blockTitle;
+                            } else {
+                                blockMetamodelID = `#${block.instanceClass} Name` + (block.instanceSection ? ` - ${block.instanceSection}` : '');
+                            }
+
                             block.metamodelID = blockMetamodelID;
+
                         });
                     },
                     parseMarkdown(content) {
