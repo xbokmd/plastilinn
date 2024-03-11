@@ -118,6 +118,29 @@
                                     <p>Allows you to carry out smart queries by filtering the content of your plastilin
                                         doc.</p>
                                 </div>
+                                <div tabindex="0" class="collapse bg-base-200">
+                                    <div class="collapse-title text-xl font-medium">
+                                        <span style="display: inline-block; vertical-align: middle;"><svg
+                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                            </svg></span>
+                                        Help
+                                    </div>
+                                    <div class="collapse-content">
+                                        <p>Click on the info icon <span
+                                                style="display: inline-block; vertical-align: middle;"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                                </svg></span> at the right of any section of your document</p>
+                                        <p>Click here to access the <a
+                                                href="https://xbokmd.github.io/plastilinn/index.html"
+                                                target="_blank">plastilinn documentation page</a> (Work in Progress)</p>
+                                    </div>
+                                </div>
                                 <div role="alert" class="alert mt-10">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         class="stroke-info shrink-0 w-6 h-6">
@@ -826,308 +849,309 @@
 
                         // En caso de que no haya coincidencia (lo cual sería inusual), retorna la línea completa
                         return firstLine;
-                    },
-                    updateBlockTitles() {
-                        // Recorre todos los bloques y agrega sus blockTitles al arreglo blockTitles
-                        this.model.forEach(block => {
-                            if (!this.blockTitles.includes(block.blockTitle)) {
-                                this.blockTitles.push(block.blockTitle);
-                            }
-                        });
-                    },
-                    importMetamodelData(blockTitle, instanceClass) {
-                        console.log("importMetamodelData called with blockTitle:", blockTitle, "and instanceClass:", instanceClass);
-
-                        // Intenta encontrar una coincidencia usando el blockTitle
-                        let section = this.metamodel.sections.find(s => s.name === blockTitle);
-                        console.log("After trying to match with blockTitle, section is:", section);
-
-                        // Si no encuentra una coincidencia con blockTitle, intenta con instanceClass
-                        if (!section && instanceClass) {
-                            console.log("No match found with blockTitle, trying with instanceClass:", instanceClass);
-                            section = this.metamodel.sections.find(s => s.name === instanceClass);
-                            console.log("After trying to match with instanceClass, section is:", section);
+                    }
+                },
+                updateBlockTitles() {
+                    // Recorre todos los bloques y agrega sus blockTitles al arreglo blockTitles
+                    this.model.forEach(block => {
+                        if (!this.blockTitles.includes(block.blockTitle)) {
+                            this.blockTitles.push(block.blockTitle);
                         }
+                    });
+                },
+                importMetamodelData(blockTitle, instanceClass) {
+                    console.log("importMetamodelData called with blockTitle:", blockTitle, "and instanceClass:", instanceClass);
 
-                        // Si se encuentra una coincidencia
-                        if (section) {
-                            console.log("Match found, section:", section);
-                            const blockIndex = this.model.findIndex(block => block.blockTitle === blockTitle || block.instanceClass === instanceClass);
-                            console.log("Block index found for update:", blockIndex);
+                    // Intenta encontrar una coincidencia usando el blockTitle
+                    let section = this.metamodel.sections.find(s => s.name === blockTitle);
+                    console.log("After trying to match with blockTitle, section is:", section);
 
-                            if (blockIndex !== -1) {
-                                // Actualiza el bloque encontrado con la sección del metamodelo encontrada
-                                this.$set(this.model[blockIndex], 'metamodel', section);
-                                console.log("Model updated at index:", blockIndex, "with section:", section);
-                            } else {
-                                console.log("No matching block found in model for given blockTitle or instanceClass.");
-                            }
+                    // Si no encuentra una coincidencia con blockTitle, intenta con instanceClass
+                    if (!section && instanceClass) {
+                        console.log("No match found with blockTitle, trying with instanceClass:", instanceClass);
+                        section = this.metamodel.sections.find(s => s.name === instanceClass);
+                        console.log("After trying to match with instanceClass, section is:", section);
+                    }
+
+                    // Si se encuentra una coincidencia
+                    if (section) {
+                        console.log("Match found, section:", section);
+                        const blockIndex = this.model.findIndex(block => block.blockTitle === blockTitle || block.instanceClass === instanceClass);
+                        console.log("Block index found for update:", blockIndex);
+
+                        if (blockIndex !== -1) {
+                            // Actualiza el bloque encontrado con la sección del metamodelo encontrada
+                            this.$set(this.model[blockIndex], 'metamodel', section);
+                            console.log("Model updated at index:", blockIndex, "with section:", section);
                         } else {
-                            console.log("No matching section found in metamodel for given blockTitle or instanceClass.");
+                            console.log("No matching block found in model for given blockTitle or instanceClass.");
                         }
+                    } else {
+                        console.log("No matching section found in metamodel for given blockTitle or instanceClass.");
+                    }
 
-                        // Devuelve la sección encontrada (o undefined si no se encontró ninguna coincidencia)
-                        return section;
-                    },
+                    // Devuelve la sección encontrada (o undefined si no se encontró ninguna coincidencia)
+                    return section;
+                },
 
-                    parseMDToHTML(content) {
-                        // Procesa etiquetas como antes
-                        const processedTagsContent = content.replace(/(^|\s)#([^#\s][^\s]*)/g, (match, p1, p2) => {
-                            return `${p1}<span data-tag="${p2}" class="items-center justify-start rounded p-2">#${p2}</span>`;
-                        });
+                parseMDToHTML(content) {
+                    // Procesa etiquetas como antes
+                    const processedTagsContent = content.replace(/(^|\s)#([^#\s][^\s]*)/g, (match, p1, p2) => {
+                        return `${p1}<span data-tag="${p2}" class="items-center justify-start rounded p-2">#${p2}</span>`;
+                    });
 
-                        // Procesa los saltos de línea, excepto en bloques de código
-                        const processedContent = processedTagsContent.split('\n').map((line, index, lines) => {
-                            // Detecta bloques de código para evitar añadir <br> dentro de ellos
-                            if (line.startsWith('```')) {
-                                // Busca el siguiente bloque de cierre de código y salta al índice correspondiente
-                                const findClosingTagIndex = lines.slice(index + 1).findIndex(line => line.startsWith('```'));
-                                if (findClosingTagIndex !== -1) {
-                                    index += findClosingTagIndex + 1;
-                                }
-                                return line; // No modifica los bloques de código
-                            } else {
-                                // Añade <br> al final de las líneas que no son parte de un bloque de código
-                                return line + '<br>';
+                    // Procesa los saltos de línea, excepto en bloques de código
+                    const processedContent = processedTagsContent.split('\n').map((line, index, lines) => {
+                        // Detecta bloques de código para evitar añadir <br> dentro de ellos
+                        if (line.startsWith('```')) {
+                            // Busca el siguiente bloque de cierre de código y salta al índice correspondiente
+                            const findClosingTagIndex = lines.slice(index + 1).findIndex(line => line.startsWith('```'));
+                            if (findClosingTagIndex !== -1) {
+                                index += findClosingTagIndex + 1;
                             }
-                        }).join('\n');
-
-                        return processedContent;
-                    },
-                    processTags(content) {
-                        // Usando matchAll para capturar el texto después del #
-                        const regex = /(?:^|\s)#([^\s]+)/g;
-                        const matches = Array.from(content.matchAll(regex));
-
-                        // Extraemos solo las etiquetas sin el símbolo # para tags
-                        const tags = matches.map(match => match[1]);
-
-                        // Generamos el HTML para tagsParsed
-                        const tagsParsed = tags.map(tag => `<span data-tag="${tag}" class="items-center justify-start rounded p-2">#${tag}</span>`).join('');
-
-                        return {
-                            tags: tags, // Ya no necesitamos eliminar el símbolo '#' aquí, porque ya lo hicimos arriba
-                            tagsParsed: tagsParsed
-                        };
-                    },
-                    updateModelMarkdown() {
-                        // Inicializa una variable para almacenar el contenido concatenado
-                        let concatenatedContent = '';
-
-                        // Recorre cada elemento del array model y concatena su contenido con saltos de línea
-                        this.model.forEach(item => {
-                            concatenatedContent += item.content + '\n';
-                        });
-
-                        // Guarda el contenido generado en el campo modelMarkdown del objeto model
-                        this.modelMarkdown = concatenatedContent;
-                        this.updateTagsArray();
-                        console.log(concatenatedContent);
-                    },
-                    updateTagsArray() {
-                        // Cargar la lista de bloques
-                        this.blocks = this.model; // Asume que this.model contiene tus bloques
-                        this.blocks.forEach(block => block.tags.forEach(tag => this.allTags.add(tag)));
-                        // Convertir allTags a un array, ordenarlo alfabéticamente y luego asignar a this.tags
-                        this.tags = Array.from(this.allTags).sort((a, b) => a.localeCompare(b));
-                        console.log(this.tags);
-                        // Inicializar el filtrado (si necesario)
-                        this.filterBlocks([]);
-                    },
-                    filterBlocks(tags) {
-                        // Implementa la lógica para filtrar los bloques aquí
-                        // Utiliza la lista de bloques `this.model` y los tags seleccionados `tags`
-                        // para filtrar los bloques según los tags
-
-                        // Ejemplo de implementación:
-                        // Filtra los bloques que contienen al menos uno de los tags seleccionados
-                        this.filteredBlocks = this.model.filter(block => {
-                            return tags.some(tag => block.tags.includes(tag));
-                        });
-                    },
-                    resetSelectedTags() {
-                        this.selectedTags = [];
-                    },
-                    setFilterTags(tags) {
-                        // Establece las etiquetas seleccionadas directamente
-                        this.selectedTags = tags;
-                    },
-                    downloadJSON() {
-                        axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
-                            .then(response => {
-                                if (response.data && response.data.classes && response.data.sections) {
-                                    this.metamodel = response.data;
-                                    console.log('Metamodel loaded:', this.metamodel);
-                                } else {
-                                    console.error('Metamodel received does not have the expected structure');
-                                }
-                            })
-                            .catch(error => console.error('Error loading metamodel:', error));
-                    },
-                    openModal(block) {
-                        console.log("Línea clicada:", block);
-                        this.currentBlockId = block.id; // Asegúrate de tener currentBlockId definido en tu data()
-                        this.selectedBlockContent = block.content;
-                        // Busca el índice de la línea basándose en el ID único
-                        this.selectedBlockIndex = this.model.findIndex(item => item.id === block.id);
-                        this.isModalOpen = true;
-                        console.log("Modal abierta con contenido:", this.selectedBlockContent, "ID:", block.id);
-                        this.$nextTick(() => {
-                            // Asegúrate de que el contenedor del editor esté disponible en el DOM
-                            this.initEditor();
-                        });
-                        console.log("currentBlockId:", this.currentBlockId);
-                    },
-                    initEditor() {
-                        if (this.editor) {
-                            this.editor.destroy(); // Destruye la instancia anterior del editor
+                            return line; // No modifica los bloques de código
+                        } else {
+                            // Añade <br> al final de las líneas que no son parte de un bloque de código
+                            return line + '<br>';
                         }
-                        this.editor = new toastui.Editor({
-                            el: document.querySelector('#editor-container'),
-                            initialEditType: 'markdown',
-                            previewStyle: 'tab',
-                            height: '340px',
-                            width: '500px',
-                            hideModeSwitch: true,
-                            initialValue: this.selectedBlockContent // Asume que `editingContent` es tu contenido actual que quieres editar
+                    }).join('\n');
+
+                    return processedContent;
+                },
+                processTags(content) {
+                    // Usando matchAll para capturar el texto después del #
+                    const regex = /(?:^|\s)#([^\s]+)/g;
+                    const matches = Array.from(content.matchAll(regex));
+
+                    // Extraemos solo las etiquetas sin el símbolo # para tags
+                    const tags = matches.map(match => match[1]);
+
+                    // Generamos el HTML para tagsParsed
+                    const tagsParsed = tags.map(tag => `<span data-tag="${tag}" class="items-center justify-start rounded p-2">#${tag}</span>`).join('');
+
+                    return {
+                        tags: tags, // Ya no necesitamos eliminar el símbolo '#' aquí, porque ya lo hicimos arriba
+                        tagsParsed: tagsParsed
+                    };
+                },
+                updateModelMarkdown() {
+                    // Inicializa una variable para almacenar el contenido concatenado
+                    let concatenatedContent = '';
+
+                    // Recorre cada elemento del array model y concatena su contenido con saltos de línea
+                    this.model.forEach(item => {
+                        concatenatedContent += item.content + '\n';
+                    });
+
+                    // Guarda el contenido generado en el campo modelMarkdown del objeto model
+                    this.modelMarkdown = concatenatedContent;
+                    this.updateTagsArray();
+                    console.log(concatenatedContent);
+                },
+                updateTagsArray() {
+                    // Cargar la lista de bloques
+                    this.blocks = this.model; // Asume que this.model contiene tus bloques
+                    this.blocks.forEach(block => block.tags.forEach(tag => this.allTags.add(tag)));
+                    // Convertir allTags a un array, ordenarlo alfabéticamente y luego asignar a this.tags
+                    this.tags = Array.from(this.allTags).sort((a, b) => a.localeCompare(b));
+                    console.log(this.tags);
+                    // Inicializar el filtrado (si necesario)
+                    this.filterBlocks([]);
+                },
+                filterBlocks(tags) {
+                    // Implementa la lógica para filtrar los bloques aquí
+                    // Utiliza la lista de bloques `this.model` y los tags seleccionados `tags`
+                    // para filtrar los bloques según los tags
+
+                    // Ejemplo de implementación:
+                    // Filtra los bloques que contienen al menos uno de los tags seleccionados
+                    this.filteredBlocks = this.model.filter(block => {
+                        return tags.some(tag => block.tags.includes(tag));
+                    });
+                },
+                resetSelectedTags() {
+                    this.selectedTags = [];
+                },
+                setFilterTags(tags) {
+                    // Establece las etiquetas seleccionadas directamente
+                    this.selectedTags = tags;
+                },
+                downloadJSON() {
+                    axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
+                        .then(response => {
+                            if (response.data && response.data.classes && response.data.sections) {
+                                this.metamodel = response.data;
+                                console.log('Metamodel loaded:', this.metamodel);
+                            } else {
+                                console.error('Metamodel received does not have the expected structure');
+                            }
+                        })
+                        .catch(error => console.error('Error loading metamodel:', error));
+                },
+                openModal(block) {
+                    console.log("Línea clicada:", block);
+                    this.currentBlockId = block.id; // Asegúrate de tener currentBlockId definido en tu data()
+                    this.selectedBlockContent = block.content;
+                    // Busca el índice de la línea basándose en el ID único
+                    this.selectedBlockIndex = this.model.findIndex(item => item.id === block.id);
+                    this.isModalOpen = true;
+                    console.log("Modal abierta con contenido:", this.selectedBlockContent, "ID:", block.id);
+                    this.$nextTick(() => {
+                        // Asegúrate de que el contenedor del editor esté disponible en el DOM
+                        this.initEditor();
+                    });
+                    console.log("currentBlockId:", this.currentBlockId);
+                },
+                initEditor() {
+                    if (this.editor) {
+                        this.editor.destroy(); // Destruye la instancia anterior del editor
+                    }
+                    this.editor = new toastui.Editor({
+                        el: document.querySelector('#editor-container'),
+                        initialEditType: 'markdown',
+                        previewStyle: 'tab',
+                        height: '340px',
+                        width: '500px',
+                        hideModeSwitch: true,
+                        initialValue: this.selectedBlockContent // Asume que `editingContent` es tu contenido actual que quieres editar
+                    });
+                },
+                saveChanges() {
+                    const editedContent = this.editor.getMarkdown();
+                    if (this.selectedBlockIndex !== null) {
+                        // Primero, procesa el contenido editado para obtener las tags y el contenido procesado
+                        const { tags, tagsParsed } = this.processTags(editedContent);
+                        // Asume que parseMDToHTML es una función que deseas usar aquí
+                        const blockContentWithTagsParsed = this.parseMDToHTML(editedContent);
+                        const blockTitle = this.extractBlockTitle(editedContent);
+
+                        // Luego, actualiza el bloque seleccionado con el nuevo contenido y metadatos
+                        this.model.splice(this.selectedBlockIndex, 1, {
+                            ...this.model[this.selectedBlockIndex],
+                            content: editedContent,
+                            tags: tags,
+                            tagsParsed: tagsParsed,
+                            blockTitle: blockTitle,
+                            // Usa el contenido procesado para establecer parsedContent
+                            parsedContent: marked.parse(blockContentWithTagsParsed)
                         });
-                    },
-                    saveChanges() {
-                        const editedContent = this.editor.getMarkdown();
-                        if (this.selectedBlockIndex !== null) {
-                            // Primero, procesa el contenido editado para obtener las tags y el contenido procesado
-                            const { tags, tagsParsed } = this.processTags(editedContent);
-                            // Asume que parseMDToHTML es una función que deseas usar aquí
-                            const blockContentWithTagsParsed = this.parseMDToHTML(editedContent);
-                            const blockTitle = this.extractBlockTitle(editedContent);
+                    }
+                    this.updateModelMarkdown();
+                    this.closeModal();
+                    // Después de guardar, verifica si autoDownload está habilitado
+                    if (this.autoDownloadEnabled) {
+                        this.downloadMarkdown(); // Asume que este es tu método de descarga existente
+                    }
+                },
+                closeModal() {
+                    this.isModalOpen = false;
+                },
+                updateBlock(index, newContent) {
+                    const tags = newContent.match(/#[^\s]+/g) || [];
+                    const tagsParsed = tags.map(tag => `<span class="${tag.substring(1)}">${tag.substring(1)}</span>`).join('');
+                    const parsedContent = this.parseContent(newContent); // Asume la existencia de esta función
+                    Vue.set(this.model, index, {
+                        ...this.model[index],
+                        content: newContent,
+                        parsedContent: parsedContent,
+                        tags: tags.map(tag => tag.substring(1)),
+                        tagsParsed: tagsParsed
+                    });
+                },
+                openRemoteModal(block) {
+                    this.selectedInfoBlock = block;
+                    console.log(block);
+                    console.log(this.isInfoModalOpen);
+                    console.log("Línea clicada:", block);
+                    this.currentBlockId = block.id; // Asegúrate de tener currentBlockId definido en tu data()
+                    this.currentBlockInfoURL = 'https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/' + block.replace(/ /g, "_") + '';
+                    console.log(this.currentBlockInfoURL);
+                    console.log("URL:", this.currentBlockInfoURL);
+                    // Busca el índice de la línea basándose en el ID único
+                    this.selectedBlockIndex = this.model.findIndex(item => item.id === block.id);
+                    this.isInfoModalOpen = true;
+                    console.log("Modal abierta con contenido:", this.currentBlockInfoURL, "ID:", block.id);
+                    this.$nextTick(() => {
+                        // Asegúrate de que el contenedor del editor esté disponible en el DOM
+                        this.currentBlockInfoURL;
+                    });
+                    console.log("currentBlockId:", this.currentBlockId);
 
-                            // Luego, actualiza el bloque seleccionado con el nuevo contenido y metadatos
-                            this.model.splice(this.selectedBlockIndex, 1, {
-                                ...this.model[this.selectedBlockIndex],
-                                content: editedContent,
-                                tags: tags,
-                                tagsParsed: tagsParsed,
-                                blockTitle: blockTitle,
-                                // Usa el contenido procesado para establecer parsedContent
-                                parsedContent: marked.parse(blockContentWithTagsParsed)
-                            });
-                        }
-                        this.updateModelMarkdown();
-                        this.closeModal();
-                        // Después de guardar, verifica si autoDownload está habilitado
-                        if (this.autoDownloadEnabled) {
-                            this.downloadMarkdown(); // Asume que este es tu método de descarga existente
-                        }
-                    },
-                    closeModal() {
-                        this.isModalOpen = false;
-                    },
-                    updateBlock(index, newContent) {
-                        const tags = newContent.match(/#[^\s]+/g) || [];
-                        const tagsParsed = tags.map(tag => `<span class="${tag.substring(1)}">${tag.substring(1)}</span>`).join('');
-                        const parsedContent = this.parseContent(newContent); // Asume la existencia de esta función
-                        Vue.set(this.model, index, {
-                            ...this.model[index],
-                            content: newContent,
-                            parsedContent: parsedContent,
-                            tags: tags.map(tag => tag.substring(1)),
-                            tagsParsed: tagsParsed
-                        });
-                    },
-                    openRemoteModal(block) {
-                        this.selectedInfoBlock = block;
-                        console.log(block);
-                        console.log(this.isInfoModalOpen);
-                        console.log("Línea clicada:", block);
-                        this.currentBlockId = block.id; // Asegúrate de tener currentBlockId definido en tu data()
-                        this.currentBlockInfoURL = 'https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/' + block.replace(/ /g, "_") + '';
-                        console.log(this.currentBlockInfoURL);
-                        console.log("URL:", this.currentBlockInfoURL);
-                        // Busca el índice de la línea basándose en el ID único
-                        this.selectedBlockIndex = this.model.findIndex(item => item.id === block.id);
-                        this.isInfoModalOpen = true;
-                        console.log("Modal abierta con contenido:", this.currentBlockInfoURL, "ID:", block.id);
-                        this.$nextTick(() => {
-                            // Asegúrate de que el contenedor del editor esté disponible en el DOM
-                            this.currentBlockInfoURL;
-                        });
-                        console.log("currentBlockId:", this.currentBlockId);
+                    // Definir dimensiones y posición de la ventana
+                    const ancho = 900; // Ancho de la ventana
+                    const alto = 600; // Alto de la ventana
+                    // Calcular posición central
+                    const y = window.top.outerHeight / 2 + window.top.screenY - (alto / 2);
+                    const x = window.top.outerWidth / 2 + window.top.screenX - (ancho / 2);
 
-                        // Definir dimensiones y posición de la ventana
-                        const ancho = 900; // Ancho de la ventana
-                        const alto = 600; // Alto de la ventana
-                        // Calcular posición central
-                        const y = window.top.outerHeight / 2 + window.top.screenY - (alto / 2);
-                        const x = window.top.outerWidth / 2 + window.top.screenX - (ancho / 2);
+                    // Abrir nueva ventana
+                    window.open(this.currentBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
+                },
+                downloadMarkdown() {
+                    // Asume que modelMarkdown y modelName ya están actualizados
+                    const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
+                    const modelName = this.modelName; // Obtiene el nombre actual del modelo
+                    const timestamp = new Date().toISOString().replace(/[:\-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
 
-                        // Abrir nueva ventana
-                        window.open(this.currentBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
-                    },
-                    downloadMarkdown() {
-                        // Asume que modelMarkdown y modelName ya están actualizados
-                        const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
-                        const modelName = this.modelName; // Obtiene el nombre actual del modelo
-                        const timestamp = new Date().toISOString().replace(/[:\-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
+                    const fileName = `${modelName} - saved ${timestamp}.md`; // Construye el nombre del archivo
 
-                        const fileName = `${modelName} - saved ${timestamp}.md`; // Construye el nombre del archivo
+                    // Crea un Blob con el contenido Markdown
+                    const blob = new Blob([markdownContent], { type: 'text/markdown' });
 
-                        // Crea un Blob con el contenido Markdown
-                        const blob = new Blob([markdownContent], { type: 'text/markdown' });
+                    // Crea un enlace para descargar el archivo
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = fileName;
 
-                        // Crea un enlace para descargar el archivo
-                        const link = document.createElement('a');
-                        link.href = URL.createObjectURL(blob);
-                        link.download = fileName;
+                    // Simula un clic en el enlace para iniciar la descarga y luego limpia
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                },
+                downloadHTML() {
+                    // Convierte el Markdown a HTML
+                    const htmlContent = marked.parse(this.modelMarkdown);
 
-                        // Simula un clic en el enlace para iniciar la descarga y luego limpia
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    },
-                    downloadHTML() {
-                        // Convierte el Markdown a HTML
-                        const htmlContent = marked.parse(this.modelMarkdown);
+                    // Opcional: Si quieres incluir un estilo básico en tu HTML exportado, puedes agregarlo aquí
+                    const htmlWithStyle = `${htmlContent}`;
 
-                        // Opcional: Si quieres incluir un estilo básico en tu HTML exportado, puedes agregarlo aquí
-                        const htmlWithStyle = `${htmlContent}`;
+                    // Crea un Blob con el contenido HTML
+                    const blob = new Blob([htmlWithStyle], { type: 'text/html' });
 
-                        // Crea un Blob con el contenido HTML
-                        const blob = new Blob([htmlWithStyle], { type: 'text/html' });
+                    // Crea un enlace para descargar el archivo
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = "exported-content.html"; // Puedes personalizar el nombre del archivo
 
-                        // Crea un enlace para descargar el archivo
-                        const link = document.createElement('a');
-                        link.href = URL.createObjectURL(blob);
-                        link.download = "exported-content.html"; // Puedes personalizar el nombre del archivo
-
-                        // Simula un clic en el enlace para iniciar la descarga y luego limpia
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    },
-                    toggleAutoDownload() {
-                        this.autoDownloadEnabled = !this.autoDownloadEnabled;
-                    },
-                    generateSuggestionPrompt() {
-                        console.log("currentBlockId:", this.currentBlockId);
-                        console.log("model:", this.model); // Ahora imprime el arreglo model para verificar
-                        let suggestionPrompt = '';
-                        let block = this.model.find(b => b.id === this.currentBlockId); // Cambia this.blocks por this.model
-                        console.log("block: ", block);
-                        let blockTitle = block ? block.blockTitle : 'Título no encontrado';
-                        console.log("blockTitle: ", blockTitle);
-                        let modelMarkdown = this.modelMarkdown;
-                        let blockExample = block ? block.metamodel.example : 'Example no encontrado';
-                        console.log("blockExample: ", blockExample);
-                        suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
+                    // Simula un clic en el enlace para iniciar la descarga y luego limpia
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                },
+                toggleAutoDownload() {
+                    this.autoDownloadEnabled = !this.autoDownloadEnabled;
+                },
+                generateSuggestionPrompt() {
+                    console.log("currentBlockId:", this.currentBlockId);
+                    console.log("model:", this.model); // Ahora imprime el arreglo model para verificar
+                    let suggestionPrompt = '';
+                    let block = this.model.find(b => b.id === this.currentBlockId); // Cambia this.blocks por this.model
+                    console.log("block: ", block);
+                    let blockTitle = block ? block.blockTitle : 'Título no encontrado';
+                    console.log("blockTitle: ", blockTitle);
+                    let modelMarkdown = this.modelMarkdown;
+                    let blockExample = block ? block.metamodel.example : 'Example no encontrado';
+                    console.log("blockExample: ", blockExample);
+                    suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
                     Listening closely to understand the specifics of the business.
                     Providing concise, targeted guidance without unnecessary repetition or formalities.
                     Offering step-by-step feedback to ensure the document effectively captures the business model.
                     You focus on the client's needs and how to best articulate their business model.
                     GOAL: Write a business model document describing the user's project business model. Here's some information about my Business:\n` +
 
-                            `${modelMarkdown}\n` +
+                        `${modelMarkdown}\n` +
 
-                            `MY QUESTION: Please suggest content for the "${blockTitle}" section of the business model.
+                        `MY QUESTION: Please suggest content for the "${blockTitle}" section of the business model.
                     WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name enclosed in double brackets '[[ ]]', and then a description on a new, indented line. This is an example of an answer:
                     ---
                     ${blockExample}
@@ -1140,51 +1164,51 @@
                     ---
                     - You can copy/paste this answer to your plastilinn doc`;
 
-                        return suggestionPrompt;
-                    },
-                    sendMessageToBot() {
-                        console.log(this.currentBlockId);
-                        let suggestionPrompt = this.generateSuggestionPrompt();
-                        console.log(suggestionPrompt);
-                        window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true })
-                        window.botpressWebChat.sendEvent({ type: 'show' })
-                        window.botpressWebChat.sendPayload({
-                            type: 'text',
-                            text: suggestionPrompt
-                        });
-                    },
-                    highlightOnLoad() {
-                        this.$nextTick(() => {
-                            if (window.location.hash) {
-                                const hash = decodeURIComponent(window.location.hash.substring(1)); // Decodifica el hash.
-                                this.highlightBlock(hash);
-                            }
-                        });
-                    },
-                    highlightBlock(id) {
-                        const element = document.getElementById(id);
-                        if (element) {
-                            element.classList.add('highlight');
-                            setTimeout(() => element.classList.remove('highlight'), 3000);
-                        }
-                    },
+                    return suggestionPrompt;
                 },
+                sendMessageToBot() {
+                    console.log(this.currentBlockId);
+                    let suggestionPrompt = this.generateSuggestionPrompt();
+                    console.log(suggestionPrompt);
+                    window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true })
+                    window.botpressWebChat.sendEvent({ type: 'show' })
+                    window.botpressWebChat.sendPayload({
+                        type: 'text',
+                        text: suggestionPrompt
+                    });
+                },
+                highlightOnLoad() {
+                    this.$nextTick(() => {
+                        if (window.location.hash) {
+                            const hash = decodeURIComponent(window.location.hash.substring(1)); // Decodifica el hash.
+                            this.highlightBlock(hash);
+                        }
+                    });
+                },
+                highlightBlock(id) {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.classList.add('highlight');
+                        setTimeout(() => element.classList.remove('highlight'), 3000);
+                    }
+                },
+            },
                 mounted() {
-                    this.downloadJSON(); // Otras inicializaciones pueden ir aquí
-                    this.updateBlockTitles(); // Actualiza el arreglo blockTitles al cargar la página
-                    this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
-                    window.addEventListener('hashchange', this.highlightOnLoad);
-                    window.botpressWebChat.onEvent(event => {
-                        if (event.type === 'message' && event.message_type === 'text') {
-                            alert(`Respuesta del bot: ${event.text}`);
-                        }
-                    });
-                    // Configura marked.js para este componente
-                    marked.setOptions({
-                        gfm: true, // Habilita GitHub Flavored Markdown (GFM)
-                        breaks: true, // Convierte los saltos de línea simples en <br>
-                    });
-                },
+                this.downloadJSON(); // Otras inicializaciones pueden ir aquí
+                this.updateBlockTitles(); // Actualiza el arreglo blockTitles al cargar la página
+                this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
+                window.addEventListener('hashchange', this.highlightOnLoad);
+                window.botpressWebChat.onEvent(event => {
+                    if (event.type === 'message' && event.message_type === 'text') {
+                        alert(`Respuesta del bot: ${event.text}`);
+                    }
+                });
+                // Configura marked.js para este componente
+                marked.setOptions({
+                    gfm: true, // Habilita GitHub Flavored Markdown (GFM)
+                    breaks: true, // Convierte los saltos de línea simples en <br>
+                });
+            },
             })
                 .mount('#vue-app');
         </script>
