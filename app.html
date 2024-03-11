@@ -739,11 +739,8 @@
                             if (block.instanceClass === null) {
                                 blockMetamodelID = block.blockTitle;
                             } else {
-                                blockMetamodelID = `#${block.instanceClass} Name` + (block.instanceSection ? ` - ${block.instanceSection}` : '');
+                                blockMetamodelID = `${block.instanceClass} Name` + (block.instanceSection ? ` - ${block.instanceSection}` : '');
                             }
-
-                            block.metamodelID = blockMetamodelID;
-
                         });
                     },
                     parseMarkdown(content) {
@@ -808,27 +805,13 @@
                             const parsedContent = marked.parse(blockContentWithTagsParsed); // Parsea el contenido Markdown
                             let metamodelID = "";
 
-
                             if (instanceClass && blockTitle) {
                                 // Si instanceClass no es null, concatena instanceClass y blockTitle para formar metamodelID
                                 // Asegúrate de incluir el '#' si es necesario y un espacio para separar los valores.
-                                metamodelID = `#${instanceClass} ${blockTitle}`;
+                                metamodelID = `${instanceClass} ${blockTitle}`;
                             } else if (!instanceClass) {
                                 // Si instanceClass es null, usa directamente blockTitle como metamodelID
                                 metamodelID = blockTitle;
-                            }
-
-                            let metamodel = '';
-
-                            // Luego, usa metamodelID como el primer argumento en la llamada a importMetamodelData
-                            metamodel = this.importMetamodelData(metamodelID);
-                            console.log("Metamodel imported:", metamodel, "using metamodelID:", metamodelID);
-
-                            // Suponiendo que importMetamodelData devuelve un objeto metamodelo con la estructura esperada
-                            if (metamodel && metamodel.name) {
-                                // Aquí asumimos que quieres usar el valor de `name` del metamodelo
-                                // como el `metamodelID` del bloque actual en el modelo.
-                                metamodelID = metamodel.name;
                             }
 
                             if (blockTitle.includes(" - ")) {
@@ -838,7 +821,18 @@
                                 metamodelID = metamodelID.replace(instanceValue, "Name").trim();
                             }
 
-                            metamodelID = metamodelID.replace(/#/g, '');
+                            let metamodel = '';
+
+                            // Luego, usa metamodelID como el primer argumento en la llamada a importMetamodelData
+                            metamodel = this.importMetamodelData(metamodelID);
+                            console.log("Metamodel imported:", metamodel, "using metamodelID:", metamodelID, "blockTitle: ", blockTitle);
+
+                            // Suponiendo que importMetamodelData devuelve un objeto metamodelo con la estructura esperada
+                            if (metamodel && metamodel.name) {
+                                // Aquí asumimos que quieres usar el valor de `name` del metamodelo
+                                // como el `metamodelID` del bloque actual en el modelo.
+                                metamodelID = metamodel.name;
+                            }
 
                             return {
                                 id: this.lastId,
