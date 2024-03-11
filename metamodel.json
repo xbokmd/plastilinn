@@ -608,7 +608,7 @@
       "example": "The #stakeholder Satellite Launch Customers has these segments:\n\n#segment Government Agencies\nThe government agencies segment includes national space agencies that require space transportation and communication services for their missions.\n\n#segment Commercial Companies\nThe commercial companies segment includes private companies that require space transportation and communication services for their business operations.\n\n#segment ISS Cargo Transport Customers\n This segment includes space agencies and scientific organizations that require transportation of cargo to the International Space Station (ISS). They need a partner to deliver supplies, equipment, and scientific experiments to the astronauts on board the space station.\n\n#segment Third-Party Launch and Cargo Customers\nThis segment comprises companies and organizations in the space industry that require launch and cargo services for their own satellite deployments or space missions. They are seeking a reliable and efficient partner to handle their launch and cargo needs, providing Space X with additional revenue streams and increased utilization of their rockets and resources."
     },
     {
-      "segment Name - Segment",
+      "name": "segment Name - Segment",
       "weight": "****",
       "format": "text",
       "id": "Segment",
@@ -619,7 +619,7 @@
       "example": "The #stakeholder Satellite Launch Customers / #segment Government Agencies\nThe government agencies segment includes national space agencies that require space transportation and communication services for their missions."
     },
     {
-      "segment Name - Segmentation criteria",
+      "name": "segment Name - Segmentation criteria",
       "weight": "***",
       "format": "list",
       "id": "Segmentation-criteria",
@@ -630,7 +630,7 @@
       "example": "#segmentation Demographic segmentation\nThis segmentation criterion divides the market based on demographic factors such as age, gender, income, occupation, education, and marital status. It helps identify target customers based on their specific needs and preferences related to these factors.\n\n#segmentation Psychographic segmentation\nThis segmentation criterion focuses on customers' lifestyle, interests, attitudes, values, and personality traits. By understanding their psychographic characteristics, companies can tailor their products and marketing messages to connect with the unique preferences and motivations of their target customers.\n\n#segmentation Behavioral segmentation\nThis segmentation criterion categorizes customers based on their purchasing behavior, product usage patterns, brand loyalty, and desired benefits. It helps companies identify different customer groups with distinct behaviors and develop targeted strategies to attract and retain them.\n\n#segmentation Geographic segmentation\nThis segmentation criterion divides the market based on geographic factors such as location, climate, population density, and cultural differences. It allows companies to customize their offerings according to the specific needs and preferences of customers in different regions or countries.\n\n#segmentation Technographic segmentation\nThis segmentation criterion focuses on customers' technology adoption, usage patterns, and preferences. It helps companies understand the technological needs and preferences of their target customers, enabling them to develop artificial intelligence solutions that align with their customers' technological capabilities and interests.\n\n#segmentation Firmographic segmentation\nThis segmentation criterion is applicable in B2B markets and categorizes companies based on factors such as industry type, company size, income, location, and purchasing power. It helps artificial intelligence companies identify target companies that are likely to benefit most from their solutions and tailor their offerings to meet their specific needs."
     },
     {
-      "segment Name - Market size",
+      "name": "segment Name - Market size",
       "weight": "***",
       "format": "text",
       "id": "Market-size",
@@ -641,7 +641,7 @@
       "example": "Relevant Government Agencies\nFocus on agencies with significant space budgets, such as NASA (USA), ESA (European Space Agency), Roscosmos (Russia), CNSA (China National Space Administration), and ISRO (Indian Space Research Organisation).\n\nAggregated Budget Data\n- Annual Budgets for Space Missions: Collect data on annual space budgets dedicated to satellite launches from these agencies' public budget documents or financial reports.\n- Specific Allocation for Satellite Launches: From the total space budget, identify the portion allocated specifically for satellite launches, which might include satellite development, launch services, and related operations.\n\nMulti-Year Contracts and Commitments\nMany government satellite launches are planned years in advance, with contracts awarded to launch providers like SpaceX, ULA, Arianespace, etc.\n\nCompile and Analyze Data\n- Aggregate Data: Sum the allocations for satellite launches across all identified government agencies to get a total market size.\n- Analyze Trends: Look at historical data to identify growth trends in government spending on satellite launches, which can help project future market sizes.\n\nCalculation\nAssuming:\n- NASA's budget for satellite launches in the upcoming year is $2 billion.\n- ESA allocates $1 billion.\n- Roscosmos, CNSA, and ISRO combined allocate another $2 billion.\n\nThe total market size for government satellite launch customers would then be approximately $5 billion for that year. Adjustments for inflation and long-term contracts might refine this estimate further.\n\nSources and References:\n- Government Publications: Annual budget documents and press releases from relevant space agencies.\n- Industry Reports: Analyses from the Satellite Industry Association or aerospace industry consultants.\n- Financial News: Reports on contract awards and partnerships with private launch providers."
     },
     {
-      "segment Name - Market trends",
+      "name": "segment Name - Market trends",
       "weight": "*",
       "format": "text",
       "id": "Market-trends",
@@ -652,7 +652,7 @@
       "example": "#trend Growing demand for satellite launches\nThere is an increasing need for satellite launches to support various applications such as communication, Earth observation, navigation, and scientific research.\n\n#trend Rapidly expanding satellite internet services\nSpace X's Starlink initiative aims to provide global broadband internet coverage through a constellation of thousands of satellites. This venture represents a significant trend in the market as other companies are also exploring satellite-based internet services.\n\n#trend Emergence of reusable rocket technology\nSpace X's development of reusable rockets, particularly the Falcon 9 and Falcon Heavy, has revolutionized the industry by significantly reducing the cost of access to space. This trend is prompting other companies to explore reusability in their rocket designs.\n#trend Increasing commercialization of space activities\nThe market is witnessing a rise in commercial space activities, including commercial satellite launches, space tourism, and the potential for asteroid mining. Space X's focus on cost-effective launch services aligns with this trend.\n\n#trend Competition and collaboration with other space companies\nThe market is becoming increasingly competitive, with other players like Blue Origin and United Launch Alliance vying for contracts and market share. Additionally, collaborations and partnerships between companies are also emerging to leverage each other's expertise and resources."
     },
     {
-      "segment Name - Partners",
+      "name": "segment Name - Partners",
       "weight": "*",
       "format": "list",
       "id": "Partners",
@@ -663,7 +663,7 @@
       "example": "#partner Commercial Satellite Operators\nSpace X partners with commercial satellite operators to launch their satellites into orbit. Companies like SES, Iridium, and HughesNet have utilized Space X's launch services to deploy their satellite constellations.\n\n#partner International Space Agencies\nSpace X has collaborated with international space agencies, such as the European Space Agency (ESA) and the Japanese Aerospace Exploration Agency (JAXA), to launch scientific payloads or engage in cooperative space exploration missions.\n\n#partner Research Institutions\nSpace X partners with research institutions to conduct scientific experiments or deploy research satellites into space. For example, Space X has worked with academic institutions and organizations like the National Oceanic and Atmospheric Administration (NOAA) for Earth observation missions.\n\n#partner Contractors and Suppliers\nSpace X partners with contractors and suppliers for various aspects of their operations, including manufacturing rocket components, avionics systems, and ground support equipment. These partnerships ensure the supply chain and smooth operation of the company.\n\n#partner Ground Station Operators\nSpace X may collaborate with ground station operators to establish and maintain communication links with their satellites and spacecraft. These partners help ensure reliable data transmission and tracking capabilities.\n\n#partner Customers and Payload Owners\nSpace X partners with a diverse range of customers, including commercial entities, government agencies, and research institutions that require satellite launches or cargo transportation services."
     },
     {
-      "segment Name - Competition",
+      "name": "segment Name - Competition",
       "weight": "**",
       "format": "list",
       "id": "Competition",
@@ -674,7 +674,7 @@
       "example": "#competitor Blue Origin\nFounded by Jeff Bezos, Blue Origin focuses on developing reusable rockets and spacecraft for various missions, including satellite launches and human spaceflight. They are also working on the New Glenn rocket and the lunar lander program.\n\n#competitor United Launch Alliance (ULA)\nULA is a joint venture between Boeing and Lockheed Martin, offering launch services using their Atlas V and Delta IV rockets. They have a strong presence in government and military contracts, including launching national security satellites.\n\n#competitor Arianespace\nArianespace is a European space company that provides launch services using the Ariane family of rockets. They have a significant market share in launching commercial satellites, particularly for European customers.\n\n#competitor Roscosmos\nThe Russian space agency, Roscosmos, competes in various segments of the space industry. They offer launch services using their Soyuz rockets, have their own crewed space program, and provide services to international partners.\n\n#competitor Boeing\nBoeing, a major aerospace company, is a competitor in the space industry. They are involved in satellite manufacturing, providing space transportation services, and have been a long-standing NASA contractor.\n\n#competitor Northrop Grumman\nNorthrop Grumman is an American aerospace and defense company that offers satellite manufacturing, space systems, and launch services. They are known for their Antares rocket and the Cygnus spacecraft for cargo resupply missions to the ISS.\n\n#competitor China Aerospace Science and Technology Corporation (CASC)\nCASC is the main space contractor in China, responsible for various space missions, including satellite launches, lunar exploration, and space station development.\n\n#competitor Rocket Lab\nAn emerging private space company challenging the traditional space industry with innovative approaches and technologies.\n\n#competitor Virgin Orbit\nAn emerging private space company challenging the traditional space industry with innovative approaches and technologies.\n\n#competitor Relativity Space\nAn emerging private space company challenging the traditional space industry with innovative approaches and technologies."
     },
     {
-      "segment Name - Roles",
+      "name": "segment Name - Roles",
       "weight": "**",
       "format": "list",
       "id": "Roles",
@@ -696,7 +696,7 @@
       "example": "#profile Governmental Space Agencies\r\nAgencies seeking reliable and cost-effective launch services for their space missions.\n\r\n#profile Commercial Satellite Operators\r\nOperators requiring orbital deployment of satellites for communication, television, and navigation services.\r\n\n#profile Scientific Research Institutions\r\nInstitutions that need to conduct experiments in space or require transport to the International Space Station for research purposes.\r\n\n#profile Global Internet Service Providers\r\nCompanies aiming to expand their internet coverage globally using satellite technology.\r\n\n#profile Mars Colonization Enthusiasts\r\nEntities focused on the development and realization of interplanetary travel and habitation projects."
     },
     {
-      "profile Name - Profile",
+      "name": "profile Name - Profile",
       "weight": "*****",
       "format": "text",
       "id": "Profile",
@@ -707,7 +707,7 @@
       "example": "The #stakeholder Satellite Launch Customers / #segment Government Agencies / #role Procurement Manager\nThe procurement manager is responsible for managing the acquisition process, including identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts."
     },
     {
-      "profile Name - Segmentation",
+      "name": "profile Name - Segmentation",
       "weight": "***",
       "format": "list",
       "id": "Segmentation",
@@ -718,7 +718,7 @@
       "example": "#segmentation Demographic segmentation\nThis segmentation criterion divides the market based on demographic factors such as age, gender, income, occupation, education, and marital status. It helps identify target customers based on their specific needs and preferences related to these factors.\n#segmentation Psychographic segmentation\nThis segmentation criterion focuses on customers' lifestyle, interests, attitudes, values, and personality traits. By understanding their psychographic characteristics, companies can tailor their products and marketing messages to connect with the unique preferences and motivations of their target customers.\n#segmentation Behavioral segmentation\nThis segmentation criterion categorizes customers based on their purchasing behavior, product usage patterns, brand loyalty, and desired benefits. It helps companies identify different customer groups with distinct behaviors and develop targeted strategies to attract and retain them.\n#segmentation Geographic segmentation\nThis segmentation criterion divides the market based on geographic factors such as location, climate, population density, and cultural differences. It allows companies to customize their offerings according to the specific needs and preferences of customers in different regions or countries.\n#segmentation Technographic segmentation\nThis segmentation criterion focuses on customers' technology adoption, usage patterns, and preferences. It helps companies understand the technological needs and preferences of their target customers, enabling them to develop artificial intelligence solutions that align with their customers' technological capabilities and interests.\n#segmentation Firmographic segmentation\nThis segmentation criterion is applicable in B2B markets and categorizes companies based on factors such as industry type, company size, income, location, and purchasing power. It helps artificial intelligence companies identify target companies that are likely to benefit most from their solutions and tailor their offerings to meet their specific needs."
     },
     {
-      "profile Name - Persona",
+      "name": "profile Name - Persona",
       "weight": "**",
       "format": "template",
       "id": "Persona",
@@ -729,7 +729,7 @@
       "example": "Name: Sarah Johnson\nDemographic_information:\nRole: #stakeholder Satellite Launch Customers / #segment Government Agencies / #role Procurement Manager\nAge: 40\nGender: Female\nLocation: Washington, D.C., United States\nEducation: Bachelor's degree in Business Administration\nBackground and Goals:\nSarah Johnson is an experienced procurement professional working for a space agency.\nShe has been with the agency for over 10 years and has a strong background in contract management and acquisition processes.\nHer primary goal is to ensure that the agency procures the necessary services and equipment to support its space missions efficiently and within budget.\nSarah is responsible for identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts.\nMotivations and Pain Points:\nSarah is motivated by a passion for space exploration and a desire to contribute to the success of the agency's missions.\nShe strives to find suppliers that offer innovative solutions, reliable performance, and competitive pricing.\nSarah's pain points include the complexity of the procurement process, navigating government regulations and compliance requirements, and managing stakeholder expectations while ensuring value for money.\nInformation and Decision-Making Preferences:\nSarah stays updated on industry trends and advancements in space technology through industry publications, conferences, and professional networks.\nShe relies on comprehensive proposals, technical specifications, and pricing details to evaluate supplier offerings.\nSarah values clear communication, transparency, and responsive support from suppliers during the evaluation and negotiation process.\nKey Challenges:\nIdentifying suppliers with a track record of successful space missions and expertise in the specific services required by the agency.\nBalancing the agency's budget constraints with the need for high-quality services and equipment.\nNavigating the complex government procurement regulations, compliance requirements, and ensuring fairness and transparency in the acquisition process.\nManaging stakeholder expectations and addressing any concerns or questions related to the selection of suppliers.\nPreferred Solutions:\nSarah looks for suppliers that can offer reliable and cost-effective solutions, demonstrate technical expertise, and have a proven track record of successful collaborations with space agencies.\nShe values suppliers that understand the agency's mission objectives and can provide innovative approaches to meet the specific requirements."
     },
     {
-      "profile Name - Goals",
+      "name": "profile Name - Goals",
       "weight": "*****",
       "format": "list",
       "id": "Goals",
@@ -740,7 +740,7 @@
       "example": "#profile_goal Satellite Deployment\nClients needing to put a satellite into orbit face challenges with launch infrastructure, orbital placement accuracy, and costs. \n\n#profile_goal Cost-effective Space Missions\nClients seek to minimize expenses for sending cargo or crew to space, demanding reliable yet affordable space transportation options.\n\n#profile_goal Rapid Launch Scheduling\nSpace missions often face scheduling constraints due to limited launch windows and availability of launch vehicles. SpaceX's rapid turnaround times for launches and a growing fleet of reusable rockets could provide more flexible and frequent launch opportunities, thus meeting tight mission timelines.\n\n#profile_goal Enhanced Payload Capabilities\nAgencies may require launching heavier or more complex payloads into orbit. SpaceX's development of heavy-lift rockets like the Falcon Heavy, and the forthcoming Starship, offers enhanced payload capabilities, enabling the deployment of larger satellites, space telescopes, or deep space probes.\n\n#profile_goal Ride-share Opportunities\nSmaller satellites or missions with limited budgets could benefit from ride-share opportunities, where multiple payloads share a single launch to reduce costs. SpaceX's ride-share program addresses this need, offering a more accessible entry into orbit for a wide range of missions.\n\n#profile_goal Long-duration Missions and Deep Space Exploration\nBeyond Earth orbit, agencies might aim for missions to the Moon, Mars, or other celestial bodies. SpaceX's Starship is being designed with deep space exploration in mind, offering capabilities for long-duration missions and the potential for crewed missions beyond low Earth orbit.\n\n#profile_goal In-orbit Services and Space Infrastructure\nAs space missions become more complex, the need for in-orbit services such as satellite servicing, refueling, or assembly grows. SpaceX's advancements in spacecraft technology could support the development of space infrastructure to facilitate these in-orbit services, expanding mission capabilities and lifespan.\n\n#profile_goal Technological Innovation and R&D Collaboration\nSpace agencies often pursue cutting-edge research and development. Collaborating with SpaceX on technological innovations, such as advanced propulsion systems, life support for long-duration missions, or habitat construction for Mars, could align with the goals of pushing the boundaries of space technology.\n\n#profile_goal Sustainability and Environmental Considerations\nWith increasing awareness of space debris and the environmental impact of space launches, a procurement manager may prioritize sustainability. SpaceX's focus on reusable rockets and efforts to minimize space debris align with these environmental goals."
     },
     {
-      "profile Name - Perceptions",
+      "name": "profile Name - Perceptions",
       "weight": "*",
       "format": "list",
       "id": "Perceptions",
@@ -751,7 +751,7 @@
       "example": "#perception Cutting-edge technology and innovation in rocket design and space exploration\nSpace X has been recognized for its cutting-edge technology and innovative approach to rocket design and space exploration.\n\n#perception Successful track record of Space X in satellite launches and cargo missions\nSpace X has demonstrated a successful track record in satellite launches and cargo missions, showcasing its ability to meet the objectives and requirements of its clients.\n\n#perception Reusable rocket systems that can reduce launch costs and increase operational efficiency\nSpace X has developed reusable rocket systems, such as the Falcon 9 and Falcon Heavy, which have the potential to significantly reduce launch costs and improve operational efficiency.\n\n#perception Positive feedback and reviews from other space agencies or clients who have worked with Space X\nSpace X has received positive feedback and reviews from other space agencies and clients it has collaborated with, demonstrating its reputation and quality in the industry.\n\n#perception Industry news and expectations surrounding Space X's achievements\nSpace X has generated significant interest in the space industry due to its achievements, such as successful landings and advancements in space technology.\n\n#perception Updates on Space X's partnerships and collaborations with other space agencies or organizations\nSpace X has established partnerships and collaborations with other space agencies and organizations, showcasing its commitment to cooperation and the advancement of space exploration."
     },
     {
-      "profile Name - Emotions",
+      "name": "profile Name - Emotions",
       "weight": "*",
       "format": "list",
       "id": "Emotions",
@@ -762,7 +762,7 @@
       "example": "#emotion excitement\nThe opportunity to work with Space X, a recognized and innovative space company, can generate a feeling of excitement and anticipation.\n\n#emotion Confidence\nThe positive reputation and successful track record of Space X can instill confidence in the procurement manager regarding the potential success of the partnership.\n\n#emotion Inspiration\nWorking with Space X, known for its cutting-edge technology and advancements in space exploration, can inspire the procurement manager to contribute to the agency's goals.\n\n#emotion Pride\nCollaborating with Space X, a leading player in the space industry, can evoke a sense of pride and prestige for the procurement manager and the agency.\n\n#emotion Uncertainty\nThe complexity of the acquisition process and the potential risks associated with selecting a new provider can generate a certain level of uncertainty for the procurement manager.\n\n#emotion Budget concerns\nBalancing the agency's budget constraints while ensuring high-quality services and equipment can generate concerns about financial viability.\n\n#emotion Pressure\nThe responsibility of selecting a provider for critical space missions can create a sense of pressure and the need to make the right decision.\n\n#emotion Frustration\nAny challenges or delays in the acquisition process, such as navigating government regulations, can generate frustration for the procurement manager."
     },
     {
-      "profile Name - Value proposition",
+      "name": "profile Name - Value proposition",
       "weight": "***",
       "format": "list",
       "id": "Value-proposition",
@@ -773,7 +773,7 @@
       "example": "#value Cost Reduction through Reusability\nSpaceX's pioneering development of reusable rocket technology dramatically reduces the cost of access to space. This reusability factor allows space agencies to allocate their budgets more efficiently, potentially enabling more missions or greater scope within existing financial constraints.\r\n\r\n#value Increased Launch Flexibility and Frequency\nWith a fleet of reusable rockets and a streamlined launch process, SpaceX can offer more frequent and flexible launch windows. This responsiveness to client scheduling needs ensures that space agencies can launch missions in a timely manner, essential for time-sensitive scientific research or satellite deployments.\r\n\r\n#value Advanced Payload Capabilities\nSpaceX's Falcon Heavy and the forthcoming Starship are designed to carry heavy payloads to orbit, offering space agencies the ability to launch larger, more complex satellites or deep-space probes. This capability supports a wide range of missions, from Earth observation to interplanetary exploration.\r\n\r\n#value Ride-Share Programs\nFor agencies looking to deploy smaller satellites at a lower cost, SpaceX's ride-share programs provide an economical solution. These programs allow multiple payloads to share the costs of a single launch, making space access more affordable and accessible.\r\n\r\n#value Innovation and Collaboration\nSpaceX is at the forefront of space technology innovation, with developments in rocket design, spacecraft, and even plans for Mars colonization. Working with SpaceX offers space agencies the opportunity to leverage these advancements and potentially collaborate on research and development, pushing the boundaries of what's possible in space exploration.\r\n\r\n#value Sustainability and Environmental Responsibility\nSpaceX's commitment to reusability not only reduces costs but also minimizes environmental impact, aligning with the increasing emphasis on sustainable practices within the aerospace industry. This approach helps space agencies meet their environmental and sustainability goals.\r\n\r\n#value End-to-End Service\nSpaceX provides comprehensive service offerings, including launch services, satellite deployment, mission planning, and even potential participation in groundbreaking projects like Mars colonization. This end-to-end service model simplifies the procurement process and provides a single point of accountability for space agencies."
     },
     {
-      "profile Name - Quantified value proposition",
+      "name": "profile Name - Quantified value proposition",
       "weight": "*",
       "format": "text",
       "id": "Quantified-value-proposition",
@@ -784,7 +784,7 @@
       "example": "Cost Savings from Reusability\nSpaceX's reusable rocket technology can reduce launch costs by a significant margin compared to traditional single-use rockets. If, for example, the average cost of launching a traditional rocket is around $150 million, SpaceX's Falcon 9 launches can cost significantly less, around $62 million or even lower for customers willing to fly on a reused booster. This represents a potential cost reduction of over 50%.\r\n\r\nIncreased Payload Efficiency\nWith the Falcon Heavy and the upcoming Starship, SpaceX can deliver payloads to orbit at a cost of approximately $1,500 to $2,000 per kilogram, a substantial reduction from the historical average of $10,000 to $20,000 per kilogram with traditional launch providers. This improvement in cost per kilogram makes larger or multiple satellite deployments more financially accessible.\r\n\r\nRide-Share Program Savings\nBy opting for a ride-share mission, space agencies can launch small satellites for as low as $1 million, depending on the payload size and orbit, compared to the tens of millions it would typically cost for a dedicated launch. This offers a cost-effective solution for deploying small satellites."
     },
     {
-      "profile Name - Relationship",
+      "name": "profile Name - Relationship",
       "weight": "*",
       "format": "text",
       "id": "Relationship",
@@ -795,7 +795,7 @@
       "example": "- Long-term Partnerships\nBuilding sustained relationships through ongoing projects and contracts.\n\n- Collaborative Development\nEngaging in joint research and development efforts to push the boundaries of space exploration.\n\n- Customer Support and Consultation\nOffering expert guidance and support throughout the mission planning and execution phases."
     },
     {
-      "profile Name - Messages",
+      "name": "profile Name - Messages",
       "weight": "**",
       "format": "list",
       "id": "Messages",
@@ -817,7 +817,7 @@
       "example": "#channel Direct sales\nSpace X can directly sell its services to clients, such as satellite launch services, cargo transportation to the ISS, and space exploration___tourism packages. This can be done through direct communication with potential clients, negotiations, and contract agreements.\n\n#channel Online platforms\nSpace X can utilize online platforms, such as a company website, to provide_information about its services, allow clients to request quotes, and facilitate the booking process for space exploration___tourism packages. Online platforms can also be used to provide updates on mission schedules and progress.\n\n#channel Partnerships with space agencies and organizations\nSpace X can establish partnerships with space agencies and organizations, such as NASA or international space agencies, to collaborate on projects and gain access to their existing channels. This can include leveraging their existing relationships with clients and utilizing their communication channels to reach a wider audience.\n\n#channel Collaborations with travel agencies and tour operators\nFor space tourism services, Space X can partner with travel agencies and tour operators to promote and sell their packages. These partnerships can provide access to established distribution channels and allow Space X to tap into the existing customer base of these agencies.\n\n#channel Social media and online advertising\nSpace X can use social media platforms, such as Facebook, Twitter, and Instagram, to engage with potential clients, share updates on missions, and promote their services. Online advertising can also be utilized to reach a broader audience and generate leads.\n\n#channel Industry events and conferences\nSpace X can participate in industry events and conferences, such as space industry exhibitions and scientific conferences, to showcase their services and establish connections with potential clients. These events can serve as a platform for networking and building relationships with key stakeholders in the space industry.\n\n#channel Customer referrals and word-of-mouth\nSatisfied clients can become advocates for Space X and refer the company to others. Space X can encourage and incentivize customer referrals to generate new leads and expand its client base. Word-of-mouth marketing can also play a significant role in building trust and credibility in the industry.\n\n#channel Direct mail and physical marketing materials\nSpace X can utilize direct mail campaigns and physical marketing materials, such as brochures, flyers, and catalogs, to reach potential clients. These materials can be distributed at industry events, sent directly to targeted clients, or made available at partner locations, such as travel agencies or science centers.\n\n#channel Customer support and communication channels\nSpace X should establish effective customer support and communication channels to address client inquiries, provide assistance, and ensure a smooth experience throughout the customer lifecycle. This can include email support, phone support, and live chat services on their website."
     },
     {
-      "profile Name - Assets",
+      "name": "profile Name - Assets",
       "weight": "**",
       "format": "list",
       "id": "Assets",
@@ -828,7 +828,7 @@
       "example": "#asset Contracts and budget\nSpace agencies have contracts and budgets allocated to carry out their space missions. Space X can seek to obtain contracts for satellite launches, cargo resupply missions, or even contracts to transport astronauts to space.\n\n#asset Access to launchers and launch platforms\nSpace agencies have access to launch platforms, such as launch bases and space centers, which are vital for carrying out space missions. Space X could seek to use these facilities to launch their rockets and carry out their missions.\n\n#asset Experience and technical knowledge\nSpace agencies have experts and scientists with experience in space missions and space technology. Space X can seek to collaborate with these experts and acquire specialized technical knowledge to improve their own capabilities and technologies.\n\n#asset Data and scientific information\nDuring space missions, agencies collect a large amount of scientific and research data. Space X can seek to access this data and scientific_information for their own analysis and development of space technology.\n\n#asset International relations and collaborations\nSpace agencies often have established relationships with other national and international space agencies. Space X can seek to collaborate with these agencies and leverage these relationships to access international markets and expand their global reach."
     },
     {
-      "profile Name - Transactions",
+      "name": "profile Name - Transactions",
       "weight": "*",
       "format": "list",
       "id": "Transactions",
@@ -839,7 +839,7 @@
       "example": "#transaction Contractual Agreements\nSpace X engages in contractual agreements with space agencies for the provision of launch services, including the negotiation of terms, pricing, and other contractual obligations. These agreements outline the scope of work, performance requirements, and other relevant terms and conditions."
     },
     {
-      "profile Name - Journey",
+      "name": "profile Name - Journey",
       "weight": "**",
       "format": "template",
       "id": "Journey",
@@ -850,7 +850,7 @@
       "example": "#journey Awareness\nThe procurement manager becomes aware of Space X as a potential supplier through various channels, such as industry events, recommendations, or marketing materials.\n\n#journey Research and Exploration\nThe procurement manager conducts research to gather more_information about Space X's services, capabilities, and track record. They explore Space X's website, review case studies, and seek out testimonials or references from other space agencies.\n\n#journey Initial Contact\nThe procurement manager establishes initial contact with Space X, reaching out through email or phone to express interest and request more_information. They may also attend conferences or industry events where they can meet Space X representatives.\n\n#journey Requirements Definition\nThe procurement manager works internally with stakeholders to define the specific requirements for their space mission, considering factors such as payload specifications, launch window, budget constraints, and mission objectives.\n\n#journey Proposal Evaluation\nSpace X submits a proposal to the procurement manager, detailing their launch services, technical capabilities, pricing, and any additional value-added offerings. The procurement manager evaluates the proposal, comparing it with other potential suppliers and considering factors such as cost, reliability, and alignment with agency objectives.\n\n#journey Negotiation and Contracting\nThe procurement manager engages in negotiations with Space X to finalize the terms of the contract, including pricing, launch schedule, service level agreements, and any specific contractual obligations. They may seek input from legal counsel and finance teams during this stage.\n\n#journey Execution and Delivery\nOnce the contract is signed, Space X works closely with the procurement manager to execute the launch mission, providing regular updates, addressing any technical or operational queries, and ensuring a smooth delivery of services.\n\n#journey Post-Mission Evaluation\nAfter the successful completion of the mission, the procurement manager evaluates Space X's performance based on factors such as launch success, adherence to schedule, and overall satisfaction. They may provide feedback and recommendations for future collaborations.\n\n#journey Relationship Building\nOver time, the procurement manager and Space X may continue to build a long-term relationship, exploring opportunities for future missions, discussing new technologies or services, and identifying areas of collaboration to further enhance the agency's space exploration capabilities."
     },
     {
-      "profile Name - Funnel",
+      "name": "profile Name - Funnel",
       "weight": "*",
       "format": "template",
       "id": "Funnel",
@@ -861,7 +861,7 @@
       "example": "#funnel Awareness\nThis is the top of the funnel, where space agencies become aware of Space X as a potential supplier through various channels such as industry events, referrals, marketing efforts, or media coverage.\n\n#funnel Lead Generation\nSpace X generates leads by actively reaching out to space agencies, participating in industry conferences, or engaging in targeted marketing campaigns. This involves identifying potential opportunities and initiating contact with the relevant procurement managers or decision-makers.\n\n#funnel Qualification\nIn this stage, Space X qualifies the leads to determine their suitability and alignment with their capabilities and services. They assess factors such as the agency's requirements, budget, timeline, and mission objectives to determine if there is a good fit for a potential collaboration.\n\n#funnel Proposal and Presentation\nSpace X prepares and presents a tailored proposal to the space agency, highlighting their value proposition, technical expertise, launch capabilities, and past performance. This stage involves addressing the specific needs and requirements of the agency, often through detailed presentations, demonstrations, or site visits.\n\n#funnel Negotiation and Contracting\nOnce the proposal is accepted, Space X enters into negotiations with the space agency to finalize the terms of the contract. This includes discussions around pricing, launch schedule, performance guarantees, contractual obligations, and any specific mission requirements.\n\n#funnel Closing the Deal\nThe space agency and Space X reach a mutual agreement and sign the contract, formalizing the business relationship. This stage involves administrative tasks such as paperwork, legal reviews, and financial arrangements.\n\n#funnel Launch and Delivery\nAfter the deal is closed, Space X executes the launch mission as per the agreed terms. They ensure the successful delivery of the payload to the designated orbit, meeting the agency's requirements and objectives.Post-Launch Support and \n\n#funnel Relationship Building\nSpace X provides post-launch support, addressing any operational or technical queries, and maintaining open communication with the space agency. They aim to build a long-term relationship, seeking feedback, and exploring opportunities for future collaborations or additional services."
     },
     {
-      "profile Name - Sales strategy",
+      "name": "profile Name - Sales strategy",
       "weight": "*",
       "format": "text",
       "id": "Sales-strategy",
@@ -883,7 +883,7 @@
       "example": "#solution Space X services\nLaunch services for satellites and spacecraft.\nResupply missions to the International Space Station.\nCrewed missions to the International Space Station.\nDevelopment of advanced rocket and spacecraft technologies.\n\n#solution Starlink\nA satellite constellation being constructed by Space X to provide global broadband internet coverage. It aims to deliver high-speed, low-latency internet access to users around the world, especially in underserved areas.\n\n#solution Mars colonization\nSpace X's long-term goal is to enable the colonization of Mars. They are developing the Starship spacecraft, which is intended to transport humans and cargo to Mars for the establishment of a sustainable presence on the planet.\n"
     },
     {
-      "solution Name - Solution",
+      "name": "solution Name - Solution",
       "weight": "*****",
       "format": "text",
       "id": "Solution",
@@ -894,7 +894,7 @@
       "example": "#solution Space X services\n  #solution Falcon 9\n  A two-stage rocket designed for the reliable and cost-effective transport of satellites and spacecraft to orbit. It is capable of carrying payloads of up to 22,800 kilograms to low Earth orbit and 8,300 kilograms to geostationary transfer orbit.\n  #solution Falcon Heavy\n  A heavy-lift launch vehicle that is currently the most powerful operational rocket in the world. It is capable of carrying payloads of up to 63,800 kilograms to low Earth orbit and 26,700 kilograms to geostationary transfer orbit.\n  #solution Dragon spacecraft\n  A reusable spacecraft designed for both cargo and crewed missions. It is capable of carrying up to 7 passengers to and from the International Space Station and can also deliver cargo to other destinations in space.\n  #solution Starship\n  A fully reusable spacecraft currently under development by Space X. It is designed to be capable of carrying both crew and cargo to various destinations in space, including the Moon, Mars, and beyond.\n"
     },
     {
-      "solution Name - Category",
+      "name": "solution Name - Category",
       "weight": "**",
       "format": "text",
       "id": "Category",
@@ -905,7 +905,7 @@
       "example": "Space Launch Services\nA company that provides launch services for satellites and spacecraft. They offer reliable and cost-effective transport to orbit for various payloads."
     },
     {
-      "solution Name - Components",
+      "name": "solution Name - Components",
       "weight": "*",
       "format": "text",
       "id": "Components",
@@ -916,7 +916,7 @@
       "example": "- Rocket engines\n- Propellant tanks\n- Avionics systems\n- Guidance and navigation systems\n- Payload fairings\n- Heat shields\n- Solar panels\n- Communication systems\n- Life support systems (for crewed missions)\n- Landing legs (for reusable rockets)\n- Parachutes (for cargo recovery)\n- Mars colonization infrastructure (habitat modules, life support systems, etc.)\n- Satellite communication systems (for Starlink)\n- Ground control systems\n- Launch pads and facilities."
     },
     {
-      "solution Name - Features",
+      "name": "solution Name - Features",
       "weight": "**",
       "format": "list",
       "id": "Features",
@@ -927,7 +927,7 @@
       "example": "#feature Reusable first stage\nA component of Space X's rockets that is designed to be reused multiple times, reducing the cost of space launches. It is the first stage of the rocket that provides the initial thrust to lift the rocket off the ground.\n\n#feature Payload capacity\nThe maximum weight or mass that a rocket can carry into space. It is an important factor in determining the types and sizes of satellites or spacecraft that can be launched.\n\n#feature Advanced avionics\nThe electronic systems and components used in spacecraft and rockets for navigation, control, and communication. Advanced avionics technology allows for more precise and efficient operations in space missions."
     },
     {
-      "solution Name - Roadmap",
+      "name": "solution Name - Roadmap",
       "weight": "*",
       "format": "template",
       "id": "Roadmap",
@@ -938,7 +938,7 @@
       "example": "#roadmap Phase 1\n  Development and testing of reusable rocket technology.\n\n#roadmap Phase 2\n  Launching and deploying satellites for commercial and government customers.\n\n#roadmap Phase 3\n  Conducting resupply missions to the International Space Station.\n\n#roadmap Phase 4\n  Developing and launching crewed missions to the International Space Station.\n\n#roadmap Phase 5\n  Establishing a sustainable presence on Mars."
     },
     {
-      "solution Name - Offerings",
+      "name": "solution Name - Offerings",
       "weight": "**",
       "format": "list",
       "id": "Offerings",
@@ -949,7 +949,7 @@
       "example": "#offering Space Launch Services\nSpace launch services for satellites and spacecraft.\n\n#offering Satellite Deployment\nDeployment of satellites into orbit.\n\n#offering International Space Station Resupply Missions\nSupply resupply missions to the International Space Station.\n\n#offering Manned Missions to the International Space Station\nHuman-crewed missions to the International Space Station.\n\n#offering Advanced Rocket and Spacecraft Technologies\nDevelopment of advanced technologies in rockets and spacecraft.\n\n#offering Future Colonization of Mars\nSpaceX's long-term goal of enabling the colonization of Mars."
     },
     {
-      "solution Name - Pricing",
+      "name": "solution Name - Pricing",
       "weight": "**",
       "format": "text",
       "id": "Pricing",
@@ -960,7 +960,7 @@
       "example": "Pricing strategy that takes into account competitor prices, perceived customer value, production costs, and other factors.\nThe pricing for space launch services, satellite deployment, and other offerings can be negotiated based on the specific requirements and needs of the customers.\n\n#price For satellites and spacecraft\nThe price depends significantly on the payload weight and orbit. For a Falcon 9 launch, prices start around $62 million for payloads up to 22,800 kilograms to low Earth orbit (LEO). Falcon Heavy launches, offering more lift capacity, start around $90 million.\n\n#price Deployment into orbit\nThe cost is included in the launch service pricing. However, for rideshare missions where small satellites share the launch with other payloads, prices can be as low as $1 million for small CubeSats.\n\n#price Supply missions\nUnder the Commercial Resupply Services contracts with NASA, each mission can cost between $130 million to $150 million, reflecting the specialized nature of these missions and the cargo's value and sensitivity.\n\n#price Human-crewed missions\nPricing for these missions is more complex due to the additional safety measures, life support systems, and training. Under NASA's Commercial Crew Program, a seat on the Crew Dragon to the ISS is approximately $55 million.\n\n#price Development projects\nThese are typically not priced as standalone offerings but are integrated into the cost structure of specific missions or long-term development contracts with agencies like NASA or other commercial partners."
     },
     {
-      "solution Name - Brochure",
+      "name": "solution Name - Brochure",
       "weight": "*",
       "format": "template",
       "id": "Brochure",
@@ -1136,7 +1136,7 @@
       "example": "These are the individuals who hold the most important positions in the company."
     },
     {
-      "person Name - Person",
+      "name": "person Name - Person",
       "weight": "****",
       "format": "text",
       "id": "Person",
@@ -1147,7 +1147,7 @@
       "example": "#person Elon Musk #founder\nCEO and founder of Space X, Tesla, Neuralink, and The Boring Company. He is known for his ambitious vision of advancing technology and space exploration.\nElon Musk is one of the founders of Space X and has played a crucial role in its establishment and development.\nHe is a prominent entrepreneur and visionary known for his involvement in various ventures, including Tesla, Neuralink, and The Boring Company.\nMusk has provided leadership and strategic direction to Space X, driving the company's mission to revolutionize space technology and enable human colonization of Mars.\nAs a founder, Musk has been actively involved in the decision-making process, technology development, and overall growth of Space X.\nHis vision and determination have been instrumental in shaping the company's goals and achievements."
     },
     {
-      "person Name - Skills",
+      "name": "person Name - Skills",
       "weight": "***",
       "format": "list",
       "id": "Skills",
@@ -1158,7 +1158,7 @@
       "example": "#skill Leadership\nMusk has demonstrated strong leadership skills in guiding Space X and other companies. He has the ability to inspire and motivate teams to work towards ambitious goals.\n\n#skill Visionary Thinking\nMusk is known for his visionary thinking and his ability to identify future trends and opportunities. He has a long-term vision for Space X and is driving the company towards the colonization of Mars.\n\n#skill Technical Expertise\nMusk has a deep knowledge of rocket science and space technology. He has been actively involved in the design and development of rockets and spacecrafts at Space X.\n\n#skill Entrepreneurship\nMusk is a successful entrepreneur with a track record of founding and growing innovative companies. He has the ability to identify market opportunities and build successful business models.\n\n#skill Problem Solving\nMusk is known for his problem-solving skills and his ability to tackle complex challenges. He has overcome numerous technical and operational obstacles in developing Space X solutions.\n\n#skill Communication\nMusk is an effective communicator and has the ability to articulate complex ideas and concepts clearly and concisely. He has used his communication skills to promote Space X solutions and engage with stakeholders.\n\n#skill Resilience\nMusk has demonstrated resilience and determination in the face of setbacks and challenges. He has the ability to persevere and find solutions to overcome obstacles.\n\n#skill Creativity\nMusk is known for his creative thinking and his ability to think innovatively. He has introduced innovative concepts and approaches in the space industry.\n\n#skill Strategic Thinking\nMusk has a strategic mindset and is able to develop and execute long-term plans for Space X. He has a clear understanding of the competitive landscape and market dynamics.\n\n#skill Risk Taking\nMusk is willing to take calculated risks and make bold decisions. He has taken on ambitious projects and pursued revolutionary technologies in the space industry."
     },
     {
-      "person Name - Functions",
+      "name": "person Name - Functions",
       "weight": "***",
       "format": "list",
       "id": "Functions",
@@ -1169,7 +1169,7 @@
       "example": "#function Strategy definition\nSetting the strategic direction and vision for the company\n\n#function High level decision making\nMaking high-level decisions regarding technology development, investments, and partnerships\n\n#function Operational oversight\nOverseeing the overall operations and performance of Space X\n\n#function Leadership and team motivation\nLeading and inspiring the team to achieve ambitious goals\n\n#function Stakeholder engagement\nEngaging with stakeholders, including government agencies, investors, and customers\n\n#function Public representation\nRepresenting Space X in public events, conferences, and media appearances\n\n#function Industry collaboration\nCollaborating with other industry leaders and organizations to advance space exploration and technology\n\n#function Policy advocacy\nAdvocating for policies and regulations that support the growth and development of the space industry\n\n#function Sales and marketing\nPromoting the benefits and capabilities of Space X's solutions to potential customers and clients\n\n#function Compliance and regulation\nEnsuring compliance with legal and regulatory requirements in the space industry\n\n#function Financial oversight\nMonitoring and evaluating the financial performance and sustainability of Space X\n\n#function Business development\nIdentifying and pursuing new business opportunities and markets for Space X's solutions\n\n#function Culture and innovation\nFostering a culture of innovation, collaboration, and continuous improvement within the company.\n"
     },
     {
-      "person Name - Contributions",
+      "name": "person Name - Contributions",
       "weight": "***",
       "format": "list",
       "id": "Contributions",
@@ -1180,7 +1180,7 @@
       "example": "#contribution Vision and Leadership\nMusk's vision of making life multi-planetary and his leadership have been fundamental in guiding SpaceX's direction and ambitions, inspiring innovation and dedication within the team.\n\n#contribution Capital Investment\nMusk invested a significant portion of his own capital to fund SpaceX, especially during its early stages when the company faced financial challenges. His investment helped SpaceX overcome initial hurdles and continue its development and testing programs.\n\n#contribution Time and Expertise\nMusk has dedicated a substantial amount of his time to SpaceX, involving himself deeply in engineering decisions, design processes, and strategic planning. His hands-on approach and technical expertise have been invaluable in solving complex problems and advancing the company's technology.\n\n#contribution Reputation and Influence\nMusk's reputation as a successful entrepreneur and innovator has attracted attention, talent, and investment to SpaceX. His ability to generate public interest and confidence has also been crucial for the company's branding and public relations efforts.\n\n#contribution Networking and Partnerships\nThrough his extensive network, Musk has facilitated partnerships, contracts, and collaborations with various entities, including NASA, other space agencies, and commercial customers, significantly expanding SpaceX's operational capabilities and business opportunities.\n\n#contribution Advocacy for Space and Regulatory Influence\nMusk's advocacy for space exploration and commercial space activities has contributed to shaping public policy and regulatory environments favorable to SpaceX's operations and the broader space industry.\n\n#contribution Financial Risk Management\nBy continuously investing in SpaceX and securing contracts and funding, Musk has played a key role in the company's financial stability and growth, enabling ambitious projects like the Falcon rockets, Dragon spacecraft, and Starship."
     },
     {
-      "person Name - Compensations",
+      "name": "person Name - Compensations",
       "weight": "***",
       "format": "list",
       "id": "Compensations",
@@ -1510,7 +1510,7 @@
       "example": "#experiment Vertical Integration\nSpace X adopted a vertically integrated approach, aiming to have control over key components and technologies in-house. By designing and manufacturing a majority of the rocket components themselves, Space X sought to reduce dependence on external suppliers, improve quality control, and accelerate innovation.\n\n#experiment Rocket Engine Development\nSpace X recognized the importance of reliable and cost-effective rocket engines. To reduce the risk associated with engine development, the company embarked on the ambitious task of designing and manufacturing its engines. This led to the development of the Merlin rocket engine, which powered the Falcon 1 and Falcon 9 rockets.\n\n#experiment Rocket Reusability\nRecognizing the high cost of expendable rockets, Space X embarked on an experimental journey to develop reusable rocket technology. The company conducted various experiments and tests to land and recover rocket boosters after launch. These experiments resulted in significant advancements, leading to the successful recovery and reuse of Falcon 9 first stages.\n\n#experiment Failure and Learning Culture\nSpace X adopted a culture that embraced failures as learning opportunities. The company understood that failures were an inherent part of pushing the boundaries of space exploration and technological innovation. Space X actively learned from failures, iterated on designs and processes, and implemented corrective measures to improve future missions.\n\n#experiment Commercial Cargo and Crew Programs\nSpace X pursued contracts with NASA under the Commercial Cargo and Crew Programs. These programs provided an opportunity for Space X to demonstrate its capabilities and reliability in delivering cargo and eventually crew to the International Space Station. The partnerships with NASA helped Space X refine its processes and gain valuable experience in managing complex missions.\n\n#experiment Incremental Testing and Iterative Development\nSpace X followed an incremental approach to testing and development, conducting numerous smaller-scale tests and missions before progressing to more ambitious projects. This approach allowed the company to identify and address issues early on, ensuring that subsequent missions had higher chances of success."
     },
     {
-      "experiment Name - Experiment",
+      "name": "experiment Name - Experiment",
       "weight": "***",
       "format": "text",
       "id": "Experiment",
