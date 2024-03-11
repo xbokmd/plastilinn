@@ -1,280 +1,280 @@
-# business summary #***** #>
+# Business summary #***** #>
 
-# business idea #*** #>
+# Business idea #*** #>
 
-## opportunity #** #>
+## Opportunity #** #>
 
-## inspiration #** #>
+## Inspiration #** #>
 
-## business status #**** #>
+## Business status #**** #>
 
-## challenges #**** #>
+## Challenges #**** #>
 
-## unfair advantage #*** #>
+## Unfair advantage #*** #>
 
-# business objectives #**** #>
+# Business objectives #**** #>
 
-## mission #*** #>
+## Mission #*** #>
 
-## vision #*** #>
+## Vision #*** #>
 
-## strategy #*** #>
+## Strategy #*** #>
 
-## organization values #*** #>
+## Organization values #*** #>
 
-## organization goals #**** #>
+## Organization goals #**** #>
 
-  - #goal
+#goal
 
-# stakeholders #**** #>
+# Stakeholders #**** #>
 
-  - #stakeholder
+#stakeholder
 
-# segment list #**** #>
+# Segment list #**** #>
 
-  - #segment
+#segment
 
-## #segment Main segment / segment #**** #>
+## #segment Main segment / Segment #**** #>
 
-  - #segment
+#segment
 
-### #segment Main segment / segmentation criteria #*** #>
+### #segment Main segment / Segmentation criteria #*** #>
 
-  - #segmentation
+#segmentation
 
-### #segment Main segment / market size #*** #>
+### #segment Main segment / Market size #*** #>
 
-### #segment Main segment / market trends #* #>
+### #segment Main segment / Market trends #* #>
 
-### #segment Main segment / partners #* #>
+### #segment Main segment / Partners #* #>
 
-  - #stakeholder
+#stakeholder
 
-### #segment Main segment / competition #** #>
+### #segment Main segment / Competition #** #>
 
-  - #stakeholder
+#stakeholder
 
-### #segment Main segment / roles #** #>
+### #segment Main segment / Roles #** #>
 
-  - #role
+#role
 
-# profile list #*** #>
+# Profile list #*** #>
 
-  - #profile
+#profile
 
-## #profile Main profile / profile #***** #>
+## #profile Main profile / Profile #***** #>
 
-  - #profile
+#profile
 
-### #profile Main profile / segmentation #*** #>
+### #profile Main profile / Segmentation #*** #>
 
-  - #segmentation
+#segmentation
 
-### #profile Main profile / persona #** #>
+### #profile Main profile / Persona #** #>
 
-### #profile Main profile / goals #***** #>
+### #profile Main profile / Goals #***** #>
 
-  - #goal
+#goal
 
-### #profile Main profile / perceptions #* #>
+### #profile Main profile / Perceptions #* #>
 
-  - #perception
+#perception
 
-### #profile Main profile / emotions #* #>
+### #profile Main profile / Emotions #* #>
 
-  - #emotion
+#emotion
 
-### #profile Main profile / value proposition #*** #>
+### #profile Main profile / Value proposition #*** #>
 
-  - #value
+#value
 
-#### #profile Main profile / quantified value proposition #* #>
+#### #profile Main profile / Quantified value proposition #* #>
 
-### #profile Main profile / relationship #* #>
+### #profile Main profile / Relationship #* #>
 
-  - #relationship
+#relationship
 
-### #profile Main profile / messages #** #>
+### #profile Main profile / Messages #** #>
 
-  - #message
+#message
 
-### #profile Main profile / channels #*** #>
+### #profile Main profile / Channels #*** #>
 
-  - #channel
+#channel
 
-### #profile Main profile / assets #** #>
+### #profile Main profile / Assets #** #>
 
-  - #asset
+#asset
 
-### #profile Main profile / transactions #* #>
+### #profile Main profile / Transactions #* #>
 
-  - #transaction
+#transaction
 
-### #profile Main profile / journey #** #>
+### #profile Main profile / Journey #** #>
 
-### #profile Main profile / funnel #* #>
+### #profile Main profile / Funnel #* #>
 
-### #profile Main profile / sales strategy #* #>
+### #profile Main profile / Sales strategy #* #>
 
-# solution list #**** #>
+# Solution list #**** #>
 
-  - #solution
+#solution
 
-## #solution Main solution / solution #***** #>
+## #solution Main solution / Solution #***** #>
 
-  - #solution
+#solution
 
-### #solution Main solution / category #** #>
+### #solution Main solution / Category #** #>
 
-### #solution Main solution / components #* #>
+### #solution Main solution / Components #* #>
 
-### #solution Main solution / features #** #>
+### #solution Main solution / Features #** #>
 
-  - #feature
+#feature
 
-### #solution Main solution / roadmap #* #>
+### #solution Main solution / Roadmap #* #>
 
-### #solution Main solution / offerings #** #>
+### #solution Main solution / Offerings #** #>
 
-  - #offering
+#offering
 
-### #solution Main solution / pricing #** #>
+### #solution Main solution / Pricing #** #>
 
-### #solution Main solution / brochure #* #>
+### #solution Main solution / Brochure #* #>
 
-# marketing #** #>
+# Marketing #** #>
 
-## naming #** #>
+## Naming #** #>
 
-## branding #* #>
+## Branding #* #>
 
-## visual identity #* #>
+## Visual identity #* #>
 
-## logo #* #>
+## Logo #* #>
 
-## marketing plan #* #>
+## Marketing plan #* #>
 
-# operations #*** #>
+# Operations #*** #>
 
-## activitiy list #** #>
+## Activitiy list #** #>
 
-  - #work
+#work
 
-## function list #** #>
+## Function list #** #>
 
-  - #function
+#function
 
-## resource list #** #>
+## Resource list #** #>
 
-  - #asset
+#asset
 
-# metric list #*** #>
+# Metric list #*** #>
 
-  - #metric
+#metric
 
-## life time value #*** #>
+## Life time value #*** #>
 
-## customer aquisition cost #*** #>
+## Customer aquisition cost #*** #>
 
-# team #**** #>
+# Team #**** #>
 
-## people #**** #>
+## People #**** #>
 
-  - #person
+#person
 
-### #person Main person / person #**** #>
+### #person Main person / Person #**** #>
 
-  - #person
+#person
 
-#### #person Main person / skills #*** #>
+#### #person Main person / Skills #*** #>
 
-  - #skill
+#skill
 
-#### #person Main person / functions #*** #>
+#### #person Main person / Functions #*** #>
 
-  - #function
+#function
 
-#### #person Main person / contributions #*** #>
+#### #person Main person / Contributions #*** #>
 
-#### #person Main person / compensations #*** #>
+#### #person Main person / Compensations #*** #>
 
-## position list #** #>
+## Position list #** #>
 
-  - #position
+#position
 
-# project plan #** #>
+# Project plan #** #>
 
-## phases #* #>
+## Phases #* #>
 
-  - #phase
+#phase
 
-## milestones #** #>
+## Milestones #** #>
 
-  - #milestone
+#milestone
 
-# finance #*** #>
+# Finance #*** #>
 
-## revenue lines #*** #>
+## Revenue lines #*** #>
 
-  - #revenue
+#revenue
 
-## cost lines #** #>
+## Cost lines #** #>
 
-  - #cost
+#cost
 
-## unit economics #** #>
+## Unit economics #** #>
 
-## funding strategy #** #>
+## Funding strategy #** #>
 
-## funding sources #* #>
+## Funding sources #* #>
 
-## capital structure #** #>
+## Capital structure #** #>
 
-### cap table #* #>
+### Cap table #* #>
 
-## finantial projections #* #>
+## Finantial projections #* #>
 
-## cashflow projections #** #>
+## Cashflow projections #** #>
 
-# legal #** #>
+# Legal #** #>
 
-## legal issues #** #>
+## Legal issues #** #>
 
-## contract list #* #>
+## Contract list #* #>
 
-# communication #** #>
+# Communication #** #>
 
-## pitch #* #>
+## Pitch #* #>
 
-## business brochure #* #>
+## Business brochure #* #>
 
-## web #* #>
+## Web #* #>
 
-## storytelling #* #>
+## Storytelling #* #>
 
-## presentations #* #>
+## Presentations #* #>
 
-# analysis #**** #>
+# Analysis #**** #>
 
-## key list #**** #>
+## Key list #**** #>
 
-## assumption list #*** #>
+## Assumption list #*** #>
 
-  - #assumption
+#assumption
 
-## risk list #***** #>
+## Risk list #***** #>
 
-  - #risk
+#risk
 
-# validation #***** #>
+# Validation #***** #>
 
-## experiment list #*** #>
+## Experiment list #*** #>
 
-  - #experiment
+#experiment
 
-### #experiment Main experiment / experiment #*** #>
+### #experiment Main experiment / Experiment #*** #>
 
-  - #experiment
+#experiment
 
-# references # #>
+# References # #>
 
