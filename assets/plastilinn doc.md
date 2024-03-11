@@ -34,27 +34,27 @@
 
 #segment
 
-## #segment Main segment / Segment #**** #>
+## #segment Main segment - Segment #**** #>
 
 #segment
 
-### #segment Main segment / Segmentation criteria #*** #>
+### #segment Main segment - Segmentation criteria #*** #>
 
 #segmentation
 
-### #segment Main segment / Market size #*** #>
+### #segment Main segment - Market size #*** #>
 
-### #segment Main segment / Market trends #* #>
+### #segment Main segment - Market trends #* #>
 
-### #segment Main segment / Partners #* #>
-
-#stakeholder
-
-### #segment Main segment / Competition #** #>
+### #segment Main segment - Partners #* #>
 
 #stakeholder
 
-### #segment Main segment / Roles #** #>
+### #segment Main segment - Competition #** #>
+
+#stakeholder
+
+### #segment Main segment - Roles #** #>
 
 #role
 
@@ -62,85 +62,85 @@
 
 #profile
 
-## #profile Main profile / Profile #***** #>
+## #profile Main profile - Profile #***** #>
 
 #profile
 
-### #profile Main profile / Segmentation #*** #>
+### #profile Main profile - Segmentation #*** #>
 
 #segmentation
 
-### #profile Main profile / Persona #** #>
+### #profile Main profile - Persona #** #>
 
-### #profile Main profile / Goals #***** #>
+### #profile Main profile - Goals #***** #>
 
 #goal
 
-### #profile Main profile / Perceptions #* #>
+### #profile Main profile - Perceptions #* #>
 
 #perception
 
-### #profile Main profile / Emotions #* #>
+### #profile Main profile - Emotions #* #>
 
 #emotion
 
-### #profile Main profile / Value proposition #*** #>
+### #profile Main profile - Value proposition #*** #>
 
 #value
 
-#### #profile Main profile / Quantified value proposition #* #>
+#### #profile Main profile - Quantified value proposition #* #>
 
-### #profile Main profile / Relationship #* #>
+### #profile Main profile - Relationship #* #>
 
 #relationship
 
-### #profile Main profile / Messages #** #>
+### #profile Main profile - Messages #** #>
 
 #message
 
-### #profile Main profile / Channels #*** #>
+### #profile Main profile - Channels #*** #>
 
 #channel
 
-### #profile Main profile / Assets #** #>
+### #profile Main profile - Assets #** #>
 
 #asset
 
-### #profile Main profile / Transactions #* #>
+### #profile Main profile - Transactions #* #>
 
 #transaction
 
-### #profile Main profile / Journey #** #>
+### #profile Main profile - Journey #** #>
 
-### #profile Main profile / Funnel #* #>
+### #profile Main profile - Funnel #* #>
 
-### #profile Main profile / Sales strategy #* #>
+### #profile Main profile - Sales strategy #* #>
 
 # Solution list #**** #>
 
 #solution
 
-## #solution Main solution / Solution #***** #>
+## #solution Main solution - Solution #***** #>
 
 #solution
 
-### #solution Main solution / Category #** #>
+### #solution Main solution - Category #** #>
 
-### #solution Main solution / Components #* #>
+### #solution Main solution - Components #* #>
 
-### #solution Main solution / Features #** #>
+### #solution Main solution - Features #** #>
 
 #feature
 
-### #solution Main solution / Roadmap #* #>
+### #solution Main solution - Roadmap #* #>
 
-### #solution Main solution / Offerings #** #>
+### #solution Main solution - Offerings #** #>
 
 #offering
 
-### #solution Main solution / Pricing #** #>
+### #solution Main solution - Pricing #** #>
 
-### #solution Main solution / Brochure #* #>
+### #solution Main solution - Brochure #* #>
 
 # Marketing #** #>
 
@@ -182,21 +182,21 @@
 
 #person
 
-### #person Main person / Person #**** #>
+### #person Main person - Person #**** #>
 
 #person
 
-#### #person Main person / Skills #*** #>
+#### #person Main person - Skills #*** #>
 
 #skill
 
-#### #person Main person / Functions #*** #>
+#### #person Main person - Functions #*** #>
 
 #function
 
-#### #person Main person / Contributions #*** #>
+#### #person Main person - Contributions #*** #>
 
-#### #person Main person / Compensations #*** #>
+#### #person Main person - Compensations #*** #>
 
 ## Position list #** #>
 
@@ -272,7 +272,7 @@
 
 #experiment
 
-### #experiment Main experiment / Experiment #*** #>
+### #experiment Main experiment - Experiment #*** #>
 
 #experiment
 
