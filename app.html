@@ -1123,7 +1123,6 @@
                         const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
                         const modelName = this.modelName; // Obtiene el nombre actual del modelo
                         const timestamp = new Date().toISOString().replace(/[:\-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
-
                         const fileName = `${modelName} - saved ${timestamp}.md`; // Construye el nombre del archivo
 
                         // Crea un Blob con el contenido Markdown
@@ -1142,9 +1141,26 @@
                     downloadHTML() {
                         // Convierte el Markdown a HTML
                         const htmlContent = marked.parse(this.modelMarkdown);
+                        const modelName = this.modelName; // Obtiene el nombre actual del modelo
+                        const timestamp = new Date().toISOString().replace(/[:\-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
+                        const fileName = `${modelName} - saved ${timestamp}.html`; // Construye el nombre del archivo
 
                         // Opcional: Si quieres incluir un estilo básico en tu HTML exportado, puedes agregarlo aquí
-                        const htmlWithStyle = `${htmlContent}`;
+                        const htmlWithStyle = `
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Plastilinn</title>
+                            <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+                            <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+                            <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
+                        </head>
+                        <body>
+                        ${htmlContent}
+                        </body>
+                        `;
 
                         // Crea un Blob con el contenido HTML
                         const blob = new Blob([htmlWithStyle], { type: 'text/html' });
@@ -1152,7 +1168,7 @@
                         // Crea un enlace para descargar el archivo
                         const link = document.createElement('a');
                         link.href = URL.createObjectURL(blob);
-                        link.download = "exported-content.html"; // Puedes personalizar el nombre del archivo
+                        link.download = fileName; // Puedes personalizar el nombre del archivo
 
                         // Simula un clic en el enlace para iniciar la descarga y luego limpia
                         document.body.appendChild(link);
