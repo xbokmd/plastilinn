@@ -75,6 +75,7 @@
                                     class="btn join-item btn-primary btn-sm">
                                     Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
                                 </button>
+                                <button @click="handleRefresh" class="btn join-item btn-primary btn-sm">Refresh</button>
                             </div>
                         </div>
                     </div>
@@ -168,6 +169,8 @@
                             </option>
                             <option value="https://xbokmd.github.io/plastilinn/guides/using_plastilinn.md">Using
                                 plastilinn
+                            </option>
+                            <option value="https://xbokmd.github.io/plastilinn/guides/IA.md">IA
                             </option>
                             <option value="https://xbokmd.github.io/plastilinn/guides/idea_definition.md">Idea
                                 definition
