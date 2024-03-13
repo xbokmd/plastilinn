@@ -447,7 +447,6 @@
             </div>
         </div>
 
-
         <!-- Modal de búsqueda y reemplazo -->
         <div v-if="showSearchReplaceModal"
             class="fixed inset-0 bg-gray-600 bg-opacity-75 flex justify-center items-center">
@@ -748,116 +747,188 @@
                         });
                     },
                     parseMarkdown(content) {
-                        const blocks = []; // Almacenará los bloques identificados
-                        let currentBlock = []; // Almacena las líneas del bloque actual
-                        const lines = content.split(/\r?\n/); // Divide el contenido en líneas
-
-                        lines.forEach(line => {
-                            // Verifica si la línea actual marca el inicio de un nuevo bloque
-                            if (/^\s*([-*\d.]*)*\s*#/.test(line)) {
-                                if (currentBlock.length > 0) {
-                                    blocks.push(currentBlock.join('\n')); // Agrega el bloque actual a los bloques
-                                    currentBlock = []; // Reinicia el bloque actual
-                                }
-                            }
-                            currentBlock.push(line); // Añade la línea al bloque actual
-                        });
-                        if (currentBlock.length > 0) {
-                            blocks.push(currentBlock.join('\n')); // Asegúrate de añadir el último bloque
-                        }
-
-                        // Actualiza this.model para que contenga bloques en lugar de líneas individuales
-                        this.model = blocks.map((blockContent, index) => {
-                            this.lastId += 1; // Incrementa el ID para cada bloque
-                            const firstLine = blockContent.split('\n')[0];
-
-                            let blockType = 'item';
-                            // Use a simpler approach to count '#' at the start of the line for depth level
-                            const depthLevel = firstLine.startsWith('#') ? firstLine.match(/^#+/)[0].length : 0;
-
-                            if (/^\s*(-\s+)?#(\s|#)/.test(firstLine)) {
-                                blockType = 'section';
-                            } else if (firstLine.match(/^\s*[\-\*] /) || firstLine.match(/^\s*\d+\. /)) {
-                                blockType = 'item';
-                            }
-
-                            let instanceClass = null; // Inicializa instanceClass como null
-
-                            // Verifica si el bloque es de tipo 'section' y busca una etiqueta justo después del encabezado
-                            if (blockType === 'section') {
-                                // Ajusta la expresión regular para excluir los casos donde solo hay hashtags seguidos de espacio
-                                // y buscar explícitamente una etiqueta después del conjunto de hashtags.
-                                const match = blockContent.match(/^\s*#+\s*(#[^\s]+)/);
-                                if (match && match[1]) {
-                                    instanceClass = match[1]; // Asigna el nombre de la etiqueta a instanceClass
-                                }
-
-                                // Comprueba si instanceClass es solo 1 o más hashtags y, en ese caso, lo pone como null
-                                if (/^#+$/.test(instanceClass)) {
-                                    instanceClass = null;
-                                } else {
-                                    // Si instanceClass no es null y comienza con un '#', elimina el '#' al principio
-                                    if (instanceClass && instanceClass.startsWith('#')) {
-                                        instanceClass = instanceClass.substring(1);
-                                    }
-                                }
-                            }
-
-                            const { tags, tagsParsed } = this.processTags(blockContent);
-                            let blockTitle = this.extractBlockTitle(blockContent);
-                            const blockContentWithTagsParsed = this.parseMDToHTML(blockContent);
-                            const parsedContent = marked.parse(blockContentWithTagsParsed); // Parsea el contenido Markdown
-                            let metamodelID = "";
-
-                            if (instanceClass && blockTitle) {
-                                // Si instanceClass no es null, concatena instanceClass y blockTitle para formar metamodelID
-                                // Asegúrate de incluir el '#' si es necesario y un espacio para separar los valores.
-                                metamodelID = `${instanceClass} ${blockTitle}`;
-                            } else if (!instanceClass) {
-                                // Si instanceClass es null, usa directamente blockTitle como metamodelID
-                                metamodelID = blockTitle;
-                            }
-
-                            if (blockTitle.includes(" - ")) {
-                                const parts = blockTitle.split(" - ");
-                                instanceValue = parts[0].trim(); // La parte antes del " - " es el instanceValue
-                                // Reemplazar instanceValue por "Id" en metamodelID
-                                metamodelID = metamodelID.replace(instanceValue, "Name").trim();
-                            }
-
-                            let metamodel = '';
-
-                            // Luego, usa metamodelID como el primer argumento en la llamada a importMetamodelData
-                            metamodel = this.importMetamodelData(metamodelID);
-                            console.log("Metamodel imported:", metamodel, "using metamodelID:", metamodelID, "blockTitle: ", blockTitle);
-
-                            // Suponiendo que importMetamodelData devuelve un objeto metamodelo con la estructura esperada
-                            if (metamodel && metamodel.name) {
-                                // Aquí asumimos que quieres usar el valor de `name` del metamodelo
-                                // como el `metamodelID` del bloque actual en el modelo.
-                                metamodelID = metamodel.name;
-                            }
-
-                            return {
-                                id: this.lastId,
-                                content: blockContent,
-                                blockType: blockType,
-                                tags: tags,
-                                tagsParsed: tagsParsed,
-                                blockTitle: blockTitle,
-                                parsedContent: parsedContent, // Agrega la propiedad parsedContent al objeto block
-                                metamodel: metamodel,
-                                depthLevel: depthLevel, // Include the depth level here
-                                instanceClass: instanceClass, // Agrega instanceClass al objeto
-                                metamodelID: metamodelID,
-                            };
-                        });
+                        const blocks = this.splitMarkdownIntoBlocks(content);
+                        this.model = blocks.map(blockContent => this.parseBlock(blockContent));
                         this.updateModelMarkdown();
-                        console.log(this.model); // Verificar la carga y transformación del contenido
-                        window.botpressWebChat.sendEvent({ type: 'hide' });
                         this.assignUids();
                         this.setInstanceValue();
                     },
+
+                    splitMarkdownIntoBlocks(content) {
+                        let blocks = [];
+                        let currentBlock = [];
+                        const lines = content.split(/\r?\n/);
+
+                        lines.forEach(line => {
+                            if (/^\s*([-*\d.]*)*\s*#/.test(line)) {
+                                if (currentBlock.length > 0) {
+                                    blocks.push(currentBlock.join('\n'));
+                                    currentBlock = [];
+                                }
+                            }
+                            currentBlock.push(line);
+                        });
+                        if (currentBlock.length > 0) {
+                            blocks.push(currentBlock.join('\n'));
+                        }
+                        return blocks;
+                    },
+                    parseToHTML(content) {
+                        // Procesa etiquetas como antes
+                        const processedTagsContent = content.replace(/(^|\s)#([^#\s][^\s]*)/g, (match, p1, p2) => {
+                            return `${p1}<span data-tag="${p2}" class="items-center justify-start rounded p-2">#${p2}</span>`;
+                        });
+
+                        // Procesa los saltos de línea, excepto en bloques de código
+                        const processedContent = processedTagsContent.split('\n').map((line, index, lines) => {
+                            // Detecta bloques de código para evitar añadir <br> dentro de ellos
+                            if (line.startsWith('```')) {
+                                // Busca el siguiente bloque de cierre de código y salta al índice correspondiente
+                                const findClosingTagIndex = lines.slice(index + 1).findIndex(line => line.startsWith('```'));
+                                if (findClosingTagIndex !== -1) {
+                                    index += findClosingTagIndex + 1;
+                                }
+                                return line; // No modifica los bloques de código
+                            } else {
+                                // Añade <br> al final de las líneas que no son parte de un bloque de código
+                                return line + '<br>';
+                            }
+                        }).join('\n');
+
+                        return processedContent;
+                    },
+                    parseBlock(blockContent) {
+                        this.lastId += 1;
+                        const firstLine = blockContent.split('\n')[0];
+                        let blockType = this.determineBlockType(firstLine);
+                        const depthLevel = this.determineDepthLevel(firstLine);
+                        const instanceClass = this.determineInstanceClass(blockContent, blockType);
+                        const { tags, tagsParsed } = this.processTags(blockContent);
+                        let blockTitle = this.extractBlockTitle(blockContent);
+                        let metamodelID = this.generateMetamodelID(instanceClass, blockTitle);
+                        let metamodel = this.importMetamodelData(metamodelID);
+                        let mdToHTML = this.parseToHTML(blockContent);
+                        const parsedContent = marked.parse(mdToHTML);
+
+                        return {
+                            id: this.lastId,
+                            content: blockContent,
+                            blockType: blockType,
+                            tags: tags,
+                            tagsParsed: tagsParsed,
+                            blockTitle: blockTitle,
+                            parsedContent: parsedContent,
+                            metamodel: metamodel,
+                            depthLevel: depthLevel,
+                            instanceClass: instanceClass,
+                            metamodelID: metamodelID,
+                        };
+                    },
+
+                    determineBlockType(firstLine) {
+                        if (/^\s*(-\s+)?#(\s|#)/.test(firstLine)) {
+                            return 'section';
+                        }
+                        return 'item';
+                    },
+
+                    determineDepthLevel(firstLine) {
+                        return firstLine.startsWith('#') ? firstLine.match(/^#+/)[0].length : 0;
+                    },
+
+                    determineInstanceClass(blockContent, blockType) {
+                        if (blockType === 'section') {
+                            const match = blockContent.match(/^\s*#+\s*(#[^\s]+)/);
+                            if (match && match[1] && !/^#+$/.test(match[1])) {
+                                return match[1].substring(1);
+                            }
+                        }
+                        return null;
+                    },
+
+                    processTags(blockContent) {
+                        const tags = [...blockContent.matchAll(/(?:^|\s)#([^\s]+)/g)].map(match => match[1]);
+                        const tagsParsed = tags.map(tag => `<span data-tag="${tag}">#${tag}</span>`).join(' ');
+                        return { tags, tagsParsed };
+                    },
+
+                    extractBlockTitle(blockContent) {
+                        const matches = blockContent.match(/^\s*#+\s*(.*)/);
+                        return matches && matches[1] ? matches[1].trim() : '';
+                    },
+
+                    generateMetamodelID(instanceClass, blockTitle) {
+                        return instanceClass && blockTitle ? `${instanceClass} ${blockTitle}` : blockTitle;
+                    },
+
+                    importMetamodelData(metamodelID) {
+                        // Simula la importación de datos del metamodelo basándose en metamodelID
+                        // Esta implementación debe ajustarse para coincidir con la lógica real de importación de datos
+                        console.log("Metamodel imported:", metamodelID);
+                        return { name: metamodelID }; // Simulación de un objeto metamodelo
+                    },
+
+                    importMetamodelData(metamodelID) {
+                        // Asumiendo que el metamodelo ya está cargado y almacenado en this.metamodel
+                        // y tiene una estructura donde se puede buscar una sección por metamodelID.
+                        // Cambia 'sections' y 'name' según corresponda a la estructura de tu metamodelo.
+
+                        // Encuentra la sección que coincide con el metamodelID proporcionado.
+                        const section = this.metamodel.sections.find(section => section.name === metamodelID);
+
+                        if (section) {
+                            console.log("Sección del metamodelo encontrada:", section);
+                            // Aquí puedes realizar operaciones adicionales con la sección encontrada.
+                            // Por ejemplo, actualizar la propiedad metamodel del bloque actual.
+                            // Esto es solo un ejemplo, necesitarás ajustar esto para que coincida con tu lógica de aplicación.
+                            return section;
+                        } else {
+                            console.log("No se encontró ninguna sección que coincida con el metamodelID:", metamodelID);
+                            // Maneja el caso en que no se encuentra una sección que coincida.
+                            // Puedes devolver null o un objeto vacío según lo que sea más adecuado para tu aplicación.
+                            return null;
+                        }
+                    },
+
+                    updateModelMarkdown() {
+                        this.modelMarkdown = this.model.map(block => block.content).join('\n\n');
+                        console.log(this.modelMarkdown);
+                    },
+
+                    assignUids() {
+                        // Implementar lógica para asignar UIDs
+                    },
+
+                    setInstanceValue() {
+                        // Implementar lógica para establecer valores de instancia
+                    },
+
+                    assignUids() {
+                        let uid = 1; // Inicia el contador de UID en 1 o cualquier otro valor inicial que prefieras.
+                        this.model.forEach(block => {
+                            block.uid = uid++; // Asigna el UID y luego incrementa el contador.
+                        });
+                        console.log("UIDs assigned to model blocks:", this.model);
+                    },
+
+                    setInstanceValue() {
+                        this.model.forEach(block => {
+                            // Ejemplo basado en el título del bloque. Ajusta esto según tus necesidades.
+                            let instanceValue = block.blockTitle; // Usa el título del bloque como valor de instancia inicial.
+
+                            // Implementa cualquier lógica específica para modificar o ajustar el instanceValue.
+                            // Por ejemplo, si deseas extraer una parte específica del título o aplicar ciertas reglas:
+                            if (instanceValue.includes("-")) {
+                                // Supongamos que deseas usar solo la parte del título antes de un guion como valor de instancia.
+                                instanceValue = instanceValue.split("-")[0].trim();
+                            }
+
+                            // Establece el valor de instancia modificado en el bloque.
+                            block.instanceValue = instanceValue;
+                        });
+                        console.log("Instance values set for model blocks:", this.model);
+                    },
+
                     extractBlockTitle(blockContent) {
                         const firstLine = blockContent.split(/\r?\n/)[0]; // Obtiene la primera línea
 
@@ -929,31 +1000,8 @@
                         return section;
                     },
 
-                    parseMDToHTML(content) {
-                        // Procesa etiquetas como antes
-                        const processedTagsContent = content.replace(/(^|\s)#([^#\s][^\s]*)/g, (match, p1, p2) => {
-                            return `${p1}<span data-tag="${p2}" class="items-center justify-start rounded p-2">#${p2}</span>`;
-                        });
 
-                        // Procesa los saltos de línea, excepto en bloques de código
-                        const processedContent = processedTagsContent.split('\n').map((line, index, lines) => {
-                            // Detecta bloques de código para evitar añadir <br> dentro de ellos
-                            if (line.startsWith('```')) {
-                                // Busca el siguiente bloque de cierre de código y salta al índice correspondiente
-                                const findClosingTagIndex = lines.slice(index + 1).findIndex(line => line.startsWith('```'));
-                                if (findClosingTagIndex !== -1) {
-                                    index += findClosingTagIndex + 1;
-                                }
-                                return line; // No modifica los bloques de código
-                            } else {
-                                // Añade <br> al final de las líneas que no son parte de un bloque de código
-                                return line + '<br>';
-                            }
-                        }).join('\n');
-
-                        return processedContent;
-                    },
-                    processTags(content) {
+                    processTagsDELETEME(content) {
                         // Usando matchAll para capturar el texto después del #
                         const regex = /(?:^|\s)#([^\s]+)/g;
                         const matches = Array.from(content.matchAll(regex));
@@ -1056,8 +1104,8 @@
                         if (this.selectedBlockIndex !== null) {
                             // Primero, procesa el contenido editado para obtener las tags y el contenido procesado
                             const { tags, tagsParsed } = this.processTags(editedContent);
-                            // Asume que parseMDToHTML es una función que deseas usar aquí
-                            const blockContentWithTagsParsed = this.parseMDToHTML(editedContent);
+                            // Asume que parseToHTML es una función que deseas usar aquí
+                            const blockContentWithTagsParsed = this.parseToHTML(editedContent);
                             const blockTitle = this.extractBlockTitle(editedContent);
 
                             // Luego, actualiza el bloque seleccionado con el nuevo contenido y metadatos
@@ -1080,18 +1128,6 @@
                     },
                     closeModal() {
                         this.isModalOpen = false;
-                    },
-                    updateBlock(index, newContent) {
-                        const tags = newContent.match(/#[^\s]+/g) || [];
-                        const tagsParsed = tags.map(tag => `<span class="${tag.substring(1)}">${tag.substring(1)}</span>`).join('');
-                        const parsedContent = this.parseContent(newContent); // Asume la existencia de esta función
-                        Vue.set(this.model, index, {
-                            ...this.model[index],
-                            content: newContent,
-                            parsedContent: parsedContent,
-                            tags: tags.map(tag => tag.substring(1)),
-                            tagsParsed: tagsParsed
-                        });
                     },
                     openRemoteModal(block) {
                         this.selectedInfoBlock = block;
