@@ -666,7 +666,7 @@
                             // Usa la variable originalText en lugar de searchText para el reemplazo
                             block.content = block.content.replaceAll(originalText, this.replaceText);
                             // Actualiza el contenido parseado después del reemplazo para reflejar los cambios
-                            block.parsedContent = marked.parse(block.content);
+                            block.parsedContent = this.parseBlock(block.content);
                         });
 
                         // Restablece searchText y replaceText a cadenas vacías después del reemplazo
