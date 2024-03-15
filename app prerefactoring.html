@@ -1,6 +1,8 @@
 <!-- eslint-disable no-console -->
 <!-- eslint-disable max-len -->
 <!-- eslint-disable linebreak-style -->
+<!-- eslint-disable linebreak-style -->
+<!-- eslint-disable linebreak-style -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -575,6 +577,9 @@
                     };
                 },
                 computed: {
+                    parsedModel() {
+                        // return this.model.map((block) => ({ ...block, parsedContent: marked.parse(block.content) }));
+                    },
                     filteredBlocks() {
                         const blocksWithSections = [];
                         const addedSectionIds = new Set(); // Almacena los IDs de secciones ya añadidas
@@ -617,7 +622,6 @@
                     filteredBlocksByTags(tags) {
                         return this.model.filter((block) => block.tags.some((tag) => tags.includes(tag)));
                     },
-
                     setArtifactTest(placeholder1, placeholder2) {
                         this.artifactModalContent = `
                         <div>
@@ -633,7 +637,6 @@
                         this.isArtifactModalOpen = true;
                         // eslint-disable-next-line linebreak-style
                     },
-
                     buildTagsQueryList(tags) {
                         // Filtra los bloques que contienen todas las etiquetas especificadas
                         const filteredBlocks = this.model.filter((block) => tags.every((tag) => block.tags.includes(tag)));
@@ -647,23 +650,21 @@
                         // Devuelve la lista HTML
                         return htmlList;
                     },
-
                     setArtifactBusinessModelCanvas() {
                         this.isArtifactModalOpen = true;
                     },
-
                     changeSection(section) {
                         this.currentSidebarSection = section;
                         console.log('Sección actual del sidebar:', this.currentSidebarSection);
                         // Aquí puedes agregar cualquier otra lógica que necesites ejecutar cuando cambies de sección
                     },
-
                     async loadMarkdownContent(url) {
                         if (url) {
                             try {
                                 const response = await fetch(url);
                                 const markdown = await response.text();
                                 // Aquí convertirías el Markdown a HTML
+                                // Puedes usar la librería marked.js como antes mencioné
                                 this.markdownGuideContent = marked.parse(markdown);
                             } catch (error) {
                                 console.error('Error cargando el archivo Markdown:', error);
@@ -673,7 +674,21 @@
                             this.markdownGuideContent = '';
                         }
                     },
+                    assignUidsDUPLICATE() {
+                        let sectionUid = 0; // Contador para uid de sección
+                        let itemUidCounter = 0; // Contador para uid de ítem dentro de la sección
 
+                        this.model.forEach((block, index) => {
+                            if (block.blockType === 'section') {
+                                sectionUid++;
+                                itemUidCounter = 0; // Reinicia el contador de ítems para la nueva sección
+                                block.id = `${sectionUid}`; // Asigna el uid de la sección
+                            } else if (block.blockType !== 'section') { // Cambio aquí para incluir cualquier tipo que no sea 'section'
+                                itemUidCounter++;
+                                block.id = `${sectionUid}.${itemUidCounter}`; // Asigna el uid compuesto a los ítems
+                            }
+                        });
+                    },
                     loadAndParseMarkdown(event) {
                         const file = event.target.files[0];
                         if (!file) {
@@ -689,13 +704,50 @@
                         reader.readAsText(file);
                         this.markdownLoaded = true;
                     },
-
                     getModelNameFromFileName(fileName) {
                         let name = fileName.replace(/\.md$/, ''); // Elimina la extensión ".md"
                         name = name.replace(/ - saved.*$/, ''); // Elimina " - saved" y todo lo que sigue
                         return name;
                     },
+                    setInstanceValueDUPLICATE() {
+                        this.model.forEach((block) => {
+                            // Verifica si blockTitle comienza con una etiqueta
+                            if (/^#\w+/.test(block.blockTitle)) {
+                                // Si blockTitle comienza con una etiqueta, asigna blockTitle a instanceValue
+                                block.instanceValue = block.blockTitle;
+                            }
+                            // Continúa con la lógica original de división y asignación
+                            // Extrae el componente del título que sigue inmediatamente después de la etiqueta inicial
+                            const titleParts = block.blockTitle.match(/^#\w+\s+(.*?)\s*(-|$)/);
 
+                            if (titleParts && titleParts[1]) {
+                                // Asigna el componente extraído a instanceValue, eliminando etiquetas adicionales si las hay
+                                block.instanceValue = titleParts[1].replace(/#\w+/g, '').trim();
+                            } else {
+                                // Si no se encuentra el patrón esperado, asigna null o maneja según sea necesario
+                                block.instanceValue = null;
+                            }
+
+                            // Añadir lógica para manejar instanceSection
+                            const sectionParts = block.blockTitle.split(' - ');
+                            if (sectionParts.length > 1) {
+                                // Asume que el texto después del " - " debe ser asignado a instanceSection
+                                block.instanceSection = sectionParts[1].trim();
+                            } else {
+                                // Si no hay un " - " en el blockTitle, se decide dejar instanceSection como null
+                                block.instanceSection = null;
+                            }
+
+                            // Verifica si instanceClass es null y, en ese caso, usa blockTitle como metamodelID.
+                            // De lo contrario, construye metamodelID usando instanceClass, instanceValue y, opcionalmente, instanceSection.
+                            let blockMetamodelID;
+                            if (block.instanceClass === null) {
+                                blockMetamodelID = block.blockTitle;
+                            } else {
+                                blockMetamodelID = `${block.instanceClass} Name${block.instanceSection ? ` - ${block.instanceSection}` : ''}`;
+                            }
+                        });
+                    },
                     parseMarkdown(content) {
                         const blocks = this.splitMarkdownIntoBlocks(content);
                         this.model = blocks.map((blockContent) => this.parseBlock(blockContent));
@@ -723,7 +775,6 @@
                         }
                         return blocks;
                     },
-
                     parseToHTML(content) {
                         // Procesa etiquetas como antes
                         // eslint-disable-next-line max-len
@@ -744,18 +795,34 @@
                         }).join('\n');
                         return processedContent;
                     },
-
-                    parseBlockDEKETE(blockContent) {
-                        const blockType = this.determineBlockType(blockContent);
-                        const { tags, tagsParsed } = this.processTags(blockContent);
-                        const parsedContent = this.parseToHTML(blockContent);
+                    parseBlock(blockContent) {
+                        this.lastId += 1;
+                        const firstLine = blockContent.split('\n')[0];
+                        const blockType = this.determineBlockType(firstLine);
+                        const depthLevel = this.determineDepthLevel(firstLine);
+                        const instanceClass = this.determineInstanceClass(blockContent, blockType);
+                        // Call processTags to get tags, tagsParsed, and markers
+                        const { tags, tagsParsed, markers } = this.processTags(blockContent);
+                        const blockTitle = this.extractBlockTitle(blockContent);
+                        const metamodelID = this.generateMetamodelID(instanceClass, blockTitle);
+                        const metamodel = this.importMetamodelData(metamodelID);
+                        const mdToHTML = this.parseToHTML(blockContent);
+                        // eslint-disable-next-line no-undef
+                        const parsedContent = '';
 
                         return {
-                            // otros campos del bloque...
+                            id: this.lastId,
+                            content: blockContent,
                             blockType,
                             tags,
                             tagsParsed,
+                            markers, // Include markers in the block object
+                            blockTitle,
                             parsedContent,
+                            metamodel,
+                            depthLevel,
+                            instanceClass,
+                            metamodelID,
                         };
                     },
 
@@ -794,8 +861,47 @@
                         return { tags, tagsParsed, markers };
                     },
 
+                    extractBlockTitleDUPLICATE(blockContent) {
+                        const matches = blockContent.match(/^\s*#+\s*(.*)/);
+                        return matches && matches[1] ? matches[1].trim() : '';
+                    },
+
                     generateMetamodelID(instanceClass, blockTitle) {
                         return instanceClass && blockTitle ? `${instanceClass} ${blockTitle}` : blockTitle;
+                    },
+
+                    importMetamodelDataDUPLICATE(metamodelID) {
+                        // Simula la importación de datos del metamodelo basándose en metamodelID
+                        // Esta implementación debe ajustarse para coincidir con la lógica real de importación de datos
+                        console.log('Metamodel imported:', metamodelID);
+                        return { name: metamodelID }; // Simulación de un objeto metamodelo
+                    },
+
+                    // eslint-disable-next-line no-dupe-keys
+                    importMetamodelDataDUPLICATE(metamodelID) {
+                        // Asumiendo que el metamodelo ya está cargado y almacenado en this.metamodel
+                        // y tiene una estructura donde se puede buscar una sección por metamodelID.
+                        // Cambia 'sections' y 'name' según corresponda a la estructura de tu metamodelo.
+
+                        // Encuentra la sección que coincide con el metamodelID proporcionado.
+                        const section = this.metamodel.sections.find((section) => section.name === metamodelID);
+
+                        if (section) {
+                            console.log('Sección del metamodelo encontrada:', section);
+                            // Aquí puedes realizar operaciones adicionales con la sección encontrada.
+                            // Por ejemplo, actualizar la propiedad metamodel del bloque actual.
+                            // Esto es solo un ejemplo, necesitarás ajustar esto para que coincida con tu lógica de aplicación.
+                            return section;
+                        }
+                        console.log('No se encontró ninguna sección que coincida con el metamodelID:', metamodelID);
+                        // Maneja el caso en que no se encuentra una sección que coincida.
+                        // Puedes devolver null o un objeto vacío según lo que sea más adecuado para tu aplicación.
+                        return null;
+                    },
+
+                    updateModelMarkdownDUPLICATE() {
+                        this.modelMarkdown = this.model.map((block) => block.content).join('\n\n');
+                        console.log(this.modelMarkdown);
                     },
 
                     assignUids() {
@@ -850,7 +956,6 @@
                         console.log('Returning blockTitle without matches:', finalTitle); // Traza antes del return
                         return finalTitle;
                     },
-
                     updateBlockTitles() {
                         // Recorre todos los bloques y agrega sus blockTitles al arreglo blockTitles
                         this.model.forEach((block) => {
@@ -859,7 +964,6 @@
                             }
                         });
                     },
-
                     importMetamodelData(metamodelID) {
                         // Intenta encontrar una coincidencia usando el metamodelID
                         const section = this.metamodel.sections.find((s) => s.name === metamodelID);
@@ -876,6 +980,22 @@
                         return section;
                     },
 
+                    processTagsDUPLICATE(content) {
+                        // Usando matchAll para capturar el texto después del #
+                        const regex = /(?:^|\s)#([^\s]+)/g;
+                        const matches = Array.from(content.matchAll(regex));
+
+                        // Extraemos solo las etiquetas sin el símbolo # para tags
+                        const tags = matches.map((match) => match[1]);
+
+                        // Generamos el HTML para tagsParsed
+                        const tagsParsed = tags.map((tag) => `<span data-tag="${tag}" class="items-center justify-start rounded p-2">#${tag}</span>`).join('');
+
+                        return {
+                            tags, // Ya no necesitamos eliminar el símbolo '#' aquí, porque ya lo hicimos arriba
+                            tagsParsed,
+                        };
+                    },
                     updateModelMarkdown() {
                         // Inicializa una variable para almacenar el contenido concatenado
                         let concatenatedContent = '';
@@ -890,7 +1010,6 @@
                         this.updateTagsArray();
                         console.log(concatenatedContent);
                     },
-
                     updateTagsArray() {
                         // Cargar la lista de bloques
                         this.blocks = this.model; // Asume que this.model contiene tus bloques
@@ -901,7 +1020,6 @@
                         // Inicializar el filtrado (si necesario)
                         this.filterBlocks([]);
                     },
-
                     filterBlocks(tags) {
                         // Implementa la lógica para filtrar los bloques aquí
                         // Utiliza la lista de bloques `this.model` y los tags seleccionados `tags`
@@ -911,16 +1029,13 @@
                         // Filtra los bloques que contienen al menos uno de los tags seleccionados
                         this.filteredBlocks = this.model.filter((block) => tags.some((tag) => block.tags.includes(tag)));
                     },
-
                     resetSelectedTags() {
                         this.selectedTags = [];
                     },
-
                     setFilterTags(tags) {
                         // Establece las etiquetas seleccionadas directamente
                         this.selectedTags = tags;
                     },
-
                     downloadJSON() {
                         // eslint-disable-next-line no-undef
                         axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
@@ -934,7 +1049,6 @@
                             })
                             .catch((error) => console.error('Error loading metamodel:', error));
                     },
-
                     openModal(block) {
                         console.log('Línea clicada:', block);
                         this.currentBlockId = block.id; // Asegúrate de tener currentBlockId definido en tu data()
@@ -951,7 +1065,6 @@
                         console.log('currentBlockId:', this.currentBlockId);
                         console.log(this.selectedBlockMarkers);
                     },
-
                     initEditor() {
                         if (this.editor) {
                             this.editor.destroy(); // Destruye la instancia anterior del editor
@@ -967,7 +1080,33 @@
                             initialValue: this.selectedBlockContent, // Asume que `editingContent` es tu contenido actual que quieres editar
                         });
                     },
+                    saveChanges() {
+                        const editedContent = this.editor.getMarkdown();
+                        if (this.selectedBlockIndex !== null) {
+                            // Primero, procesa el contenido editado para obtener las tags y el contenido procesado
+                            const { tags, tagsParsed } = this.processTags(editedContent);
+                            // Asume que parseToHTML es una función que deseas usar aquí
+                            // const blockContentWithTagsParsed = this.parseToHTML(editedContent);
+                            const blockTitle = this.extractBlockTitle(editedContent);
 
+                            // Luego, actualiza el bloque seleccionado con el nuevo contenido y metadatos
+                            this.model.splice(this.selectedBlockIndex, 1, {
+                                ...this.model[this.selectedBlockIndex],
+                                content: editedContent,
+                                tags,
+                                tagsParsed,
+                                blockTitle,
+                                // Usa el contenido procesado para establecer parsedContent
+                                // parsedContent: marked.parse(blockContentWithTagsParsed),
+                            });
+                        }
+                        this.updateModelMarkdown();
+                        this.closeModal();
+                        // Después de guardar, verifica si autoDownload está habilitado
+                        if (this.autoDownloadEnabled) {
+                            this.downloadMarkdown(); // Asume que este es tu método de descarga existente
+                        }
+                    },
                     performSearchReplace(originalText) {
                         // Asegúrate de que searchText no esté vacío y que realmente quieras usar el argumento originalText
                         if (!originalText) return; // Sale si originalText está vacío
@@ -985,11 +1124,9 @@
                         this.replaceText = '';
                         this.showSearchReplaceModal = false; // Cierra el modal después de realizar el reemplazo
                     },
-
                     closeModal() {
                         this.isModalOpen = false;
                     },
-
                     openRemoteModal(block) {
                         this.selectedInfoBlock = block;
                         console.log(block);
@@ -1020,7 +1157,6 @@
                         // eslint-disable-next-line max-len
                         window.open(this.currentBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
                     },
-
                     downloadMarkdown() {
                         // Asume que modelMarkdown y modelName ya están actualizados
                         const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
@@ -1041,7 +1177,6 @@
                         link.click();
                         document.body.removeChild(link);
                     },
-
                     downloadHTML() {
                         // Convierte el Markdown a HTML
                         // eslint-disable-next-line no-undef
@@ -1080,11 +1215,9 @@
                         link.click();
                         document.body.removeChild(link);
                     },
-
                     toggleAutoDownload() {
                         this.autoDownloadEnabled = !this.autoDownloadEnabled;
                     },
-
                     generateSuggestionPrompt() {
                         console.log('currentBlockId:', this.currentBlockId);
                         console.log('model:', this.model); // Ahora imprime el arreglo model para verificar
@@ -1120,7 +1253,6 @@
 
                         return suggestionPrompt;
                     },
-
                     sendMessageToBot() {
                         console.log(this.currentBlockId);
                         const suggestionPrompt = this.generateSuggestionPrompt();
@@ -1132,7 +1264,6 @@
                             text: suggestionPrompt,
                         });
                     },
-
                     highlightOnLoad() {
                         this.$nextTick(() => {
                             if (window.location.hash) {
@@ -1141,7 +1272,6 @@
                             }
                         });
                     },
-
                     highlightBlock(id) {
                         const element = document.getElementById(id);
                         if (element) {
@@ -1149,47 +1279,10 @@
                             setTimeout(() => element.classList.remove('highlight'), 3000);
                         }
                     },
-
                     processContent(content) {
-                        // Ensure content is not undefined or null before parsing
-                        if (typeof content === "string") {
-                            return marked.parse(content);
-                        } else {
-                            console.error('Content for parsing is undefined or null:', content);
-                            // Return an empty string or some default content as a fallback
-                            return '';
-                        }
-                    },
-
-                    updateBlockContent(index, newContent) {
-                        const block = this.model[index];
-                        block.content = newContent;
-
-                        // Reutiliza las funciones extraídas para actualizar el bloque
-                        const { tags, tagsParsed } = this.processTags(newContent);
-                        block.tags = tags;
-                        block.tagsParsed = tagsParsed;
-                        block.parsedContent = this.parseToHTML(newContent);
-
-                        // Llama a cualquier otro método necesario para actualizar el estado de la aplicación basado en estos cambios
-                        // Por ejemplo, podrías necesitar actualizar un índice de búsqueda, recalcular algún estado derivado, etc.
-                    },
-
-                    saveChanges() {
-                        const editedContent = this.editor.getMarkdown();
-                        if (this.selectedBlockIndex !== null) {
-                            this.updateBlockContent(this.selectedBlockIndex, editedContent);
-                            // Cierra la modal y maneja otras acciones de UI necesarias después de guardar los cambios
-                            this.closeModal();
-                            if (this.autoDownloadEnabled) {
-                                this.downloadMarkdown(); // Asume que este es tu método existente para descargar el contenido
-                            }
-                        }
-                    },
-                    // Determina el tipo de bloque basado en el contenido
-                    determineBlockType(content) {
-                        // Lógica para determinar si es 'section', 'item', etc.
-                        return /^\s*#/.test(content) ? 'section' : 'item';
+                        let parsedContent = marked.parse(content);
+                        parsedContent = this.parseToHTML(parsedContent); // Asume que esta función ya está definida en tu componente.
+                        return parsedContent;
                     },
                 },
                 watch: {
@@ -1212,15 +1305,11 @@
                     this.updateBlockTitles(); // Actualiza el arreglo blockTitles al cargar la página
                     this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
                     window.addEventListener('hashchange', this.highlightOnLoad);
-                    if (window.botpressWebChat && typeof window.botpressWebChat.onEvent === 'function') {
-                        window.botpressWebChat.onEvent((event) => {
-                            if (event.type === 'message' && event.message_type === 'text') {
-                                alert(`Respuesta del bot: ${event.text}`);
-                            }
-                        });
-                    } else {
-                        console.warn('Botpress Web Chat is not loaded.');
-                    }
+                    window.botpressWebChat.onEvent((event) => {
+                        if (event.type === 'message' && event.message_type === 'text') {
+                            alert(`Respuesta del bot: ${event.text}`);
+                        }
+                    });
                     // Configura marked.js para este componente
                     marked.setOptions({
                         gfm: true, // Habilita GitHub Flavored Markdown (GFM)
