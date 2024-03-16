@@ -1,3 +1,6 @@
+<!-- eslint-disable no-console -->
+<!-- eslint-disable max-len -->
+<!-- eslint-disable linebreak-style -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,16 +92,16 @@
                 <nav class="order-first w-1/4 m-4 p-2 overflow-y-auto" style="min-width: 440px">
                     <div class="flex flex-row flex-wrap gap-2 bg-white sticky top-0">
                         <div class="flex flex-row justify-between mb-4 gap-2">
-                            <button @click="changeSidebar('home')"
+                            <button @click="changeSection('home')"
                                 class="collapse-filter-button btn btn-primary btn-sm">🏠
                                 Home</button>
-                            <button @click="changeSidebar('guides')"
+                            <button @click="changeSection('guides')"
                                 class="collapse-filter-button btn btn-primary btn-sm">📋
                                 Guides</button>
-                            <button @click="changeSidebar('index')"
+                            <button @click="changeSection('index')"
                                 class="collapse-filter-button btn btn-primary btn-sm">🗂️
                                 Index</button>
-                            <button @click="changeSidebar('filter')"
+                            <button @click="changeSection('filter')"
                                 class="collapse-filter-button btn btn-primary btn-sm">🔍
                                 Filter</button>
                         </div>
@@ -163,7 +166,7 @@
                     <div
                         v-bind:class="{ block: currentSidebarSection === 'guides', hidden: currentSidebarSection !== 'guides' }">
                         <!-- Select que se muestra u oculta según showSelect -->
-                        <select @change="loadGuideMarkdownContent($event.target.value)"
+                        <select @change="loadMarkdownContent($event.target.value)"
                             class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-150 ease-in-out">
                             <option value="">Select a guide</option>
                             <option value="https://xbokmd.github.io/plastilinn/guides/plastilinn_cheatsheet.md">
@@ -359,7 +362,7 @@
                                                             v-if="block.metamodel">
                                                             <span data-tag="section"
                                                                 class="flex items-center justify-center h-8 px-2 text-sm">
-                                                                <button @click="openInfoModal(block.metamodel.name)"
+                                                                <button @click="openRemoteModal(block.metamodel.name)"
                                                                     class="opacity-50 hover:opacity-100 focus:opacity-100">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                                         viewBox="0 0 24 24" stroke-width="1.5"
@@ -614,27 +617,76 @@
                     },
                 },
                 methods: {
+                    filteredBlocksByTags(tags) {
+                        return this.model.filter((block) => block.tags.some((tag) => tags.includes(tag)));
+                    },
+                    setArtifactTest(placeholder1, placeholder2) {
+                        this.artifactModalContent = `
+                        <div>
+                            <h3>1</h3>
+                            ${placeholder1}
+                        </div>
+                        <div>
+                            <h3>2</h3>
+                            ${placeholder2}https://eslint.org/docs/latest/rules/linebreak-style
+                        </div>
+                    `;
+                        // eslint-disable-next-line linebreak-style
+                        this.isArtifactModalOpen = true;
+                        // eslint-disable-next-line linebreak-style
+                    },
+                    buildTagsQueryList(tags) {
+                        // Filtra los bloques que contienen todas las etiquetas especificadas
+                        const filteredBlocks = this.model.filter((block) => tags.every((tag) => block.tags.includes(tag)));
+                        // Construye una lista de HTML con los blockTitles de los bloques filtrados
+                        let htmlList = '<ul>';
+                        filteredBlocks.forEach((block) => {
+                            htmlList += `<li>${block.blockTitle}</li>`;
+                        });
+                        htmlList += '</ul>';
 
-                    changeSidebar(section) {
+                        // Devuelve la lista HTML
+                        return htmlList;
+                    },
+                    setArtifactBusinessModelCanvas() {
+                        this.isArtifactModalOpen = true;
+                    },
+                    changeSection(section) {
                         this.currentSidebarSection = section;
-                        console.log("🚀 ~ changeSidebar ~ this.currentSidebarSection:", this.currentSidebarSection)
+                        console.log("🚀 ~ changeSection ~ this.currentSidebarSection:", this.currentSidebarSection)
                         // Aquí puedes agregar cualquier otra lógica que necesites ejecutar cuando cambies de sección
                     },
+                    performSearchReplace(originalText) {
+                        // Asegúrate de que searchText no esté vacío y que realmente quieras usar el argumento originalText
+                        if (!originalText) return; // Sale si originalText está vacío
 
-                    // METAMODEL
+                        this.model.forEach((block) => {
+                            // Usa la variable originalText en lugar de searchText para el reemplazo
+                            block.content = block.content.replaceAll(originalText, this.replaceText);
+                            // Actualiza el contenido parseado después del reemplazo para reflejar los cambios
+                            block.parsedContent = this.parseBlock(block.content);
+                        });
 
-                    downloadJSON() {
-                        // eslint-disable-next-line no-undef
-                        axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
-                            .then((response) => {
-                                if (response.data && response.data.classes && response.data.sections) {
-                                    this.metamodel = response.data;
-                                    console.log('Metamodel loaded:', this.metamodel);
-                                } else {
-                                    console.error('Metamodel received does not have the expected structure');
-                                }
-                            })
-                            .catch((error) => console.error('Error loading metamodel:', error));
+                        // Restablece searchText y replaceText a cadenas vacías después del reemplazo
+                        this.searchText = '';
+                        this.replaceText = '';
+                        this.showSearchReplaceModal = false; // Cierra el modal después de realizar el reemplazo
+                    },
+                    async loadMarkdownContent(url) {
+                        if (url) {
+                            try {
+                                const response = await fetch(url);
+                                const markdown = await response.text();
+                                // Aquí convertirías el Markdown a HTML
+                                // Puedes usar la librería marked.js como antes mencioné
+                                this.markdownGuideContent = marked.parse(markdown);
+                            } catch (error) {
+                                console.log("🚀 ~ loadMarkdownContent ~ error:", error)
+                                this.markdownContent = '';
+                            }
+                        } else {
+                            this.markdownGuideContent = '';
+                        }
                     },
 
                     loadAndParseMarkdown(event) {
@@ -652,11 +704,48 @@
                         reader.readAsText(file);
                         this.markdownLoaded = true;
                     },
-
                     getModelNameFromFileName(fileName) {
                         let name = fileName.replace(/\.md$/, ''); // Elimina la extensión ".md"
                         name = name.replace(/ - saved.*$/, ''); // Elimina " - saved" y todo lo que sigue
                         return name;
+                    },
+
+                    setInstanceValueREPLACED() {
+                        this.model.forEach((block) => {
+                            // Initial assignment based on blockTitle starting with a hashtag
+                            if (/^#\w+/.test(block.blockTitle)) {
+                                block.instanceValue = block.blockTitle;
+                            }
+
+                            // Extract component after the initial tag and dash, refining instanceValue
+                            const titleParts = block.blockTitle.match(/^#\w+\s+(.*?)\s*(-|$)/);
+                            if (titleParts && titleParts[1]) {
+                                block.instanceValue = titleParts[1].replace(/#\w+/g, '').trim();
+                            } else if (block.blockTitle.includes('-')) {
+                                block.instanceValue = block.blockTitle.split('-')[0].trim();
+                            } else {
+                                block.instanceValue = block.blockTitle.trim();
+                            }
+
+                            // Handle instanceSection assignment
+                            const sectionParts = block.blockTitle.split(' - ');
+                            if (sectionParts.length > 1) {
+                                block.instanceSection = sectionParts[1].trim();
+                            } else {
+                                block.instanceSection = null;
+                            }
+
+                            // Construct metamodelID
+                            let blockMetamodelID;
+
+                            if (block.instanceClass === null) {
+                                blockMetamodelID = block.blockTitle;
+                            } else {
+                                blockMetamodelID = `${block.instanceClass} Name${block.instanceSection ? ` - ${block.instanceSection}` : ''}`;
+                            }
+                            block.metamodelID = blockMetamodelID; // Ensure to update the block with the constructed metamodelID
+                            console.log("🚀 ~ this.model.forEach ~ block.metamodelID:", block.metamodelID)
+                        });
                     },
 
                     parseMarkdown(content) {
@@ -664,7 +753,7 @@
                         this.model = blocks.map((blockContent) => this.parseBlock(blockContent));
                         this.updateModelMarkdown();
                         this.assignUids();
-                        // this.setInstanceValue();
+                        this.setInstanceValue();
                     },
 
                     splitMarkdownIntoBlocks(content) {
@@ -686,9 +775,28 @@
                         }
                         return blocks;
                     },
+                    parseToHTML(content) {
+                        // Procesa etiquetas como antes
+                        // eslint-disable-next-line max-len
+                        const processedTagsContent = content.replace(/(^|\s)#([^#\s][^\s]*)/g, (match, p1, p2) => `${p1}<span data-tag="${p2}" class="items-center justify-start rounded p-2">#${p2}</span>`);
 
-                    // BLOCK PROCESSING
+                        // Procesa los saltos de línea, excepto en bloques de código
+                        const processedContent = processedTagsContent.split('\n').map((line, index, lines) => {
+                            // Detecta bloques de código para evitar añadir <br> dentro de ellos
+                            if (line.startsWith('```')) {
+                                // Busca el siguiente bloque de cierre de código y salta al índice correspondiente
+                                const findClosingTagIndex = lines.slice(index + 1).findIndex((line) => line.startsWith('```'));
+                                if (findClosingTagIndex !== -1) {
+                                    index += findClosingTagIndex + 1;
+                                }
+                                return line; // No modifica los bloques de código
+                            }
+                            // Añade <br> al final de las líneas que no son parte de un bloque de código
+                            return `${line}<br>`;
+                        }).join('\n');
 
+                        return processedContent;
+                    },
                     parseBlock(blockContent) {
                         this.lastId += 1;
                         const firstLine = blockContent.split('\n')[0];
@@ -789,7 +897,7 @@
                         console.log("🚀 ~ setInstanceValue ~ blockTitle:", blockTitle)
                         // Verifica si blockTitle es una cadena
                         if (typeof blockTitle !== "string") {
-                            console.log("blockTitle debe ser una cadena.setInstanceValue ~ blockTitle:", blockTitle);
+                            console.error("blockTitle debe ser una cadena.");
                             return ""; // Retorna una cadena vacía o maneja el caso como prefieras
                         }
 
@@ -816,6 +924,7 @@
                         return instanceClass && blockTitle ? `${instanceClass} Name ${blockTitle}` : blockTitle;
                     },
 
+                    // eslint-disable-next-line no-dupe-keys
                     importMetamodelData(metamodelID) {
                         console.log("🚀 ~ importMetamodelData ~ metamodelID:", metamodelID)
                         // Encuentra la sección que coincide con el metamodelID proporcionado.
@@ -829,97 +938,80 @@
                         return null;
                     },
 
-                    parseToHTML(content) {
-                        // Procesa etiquetas como antes
-                        // eslint-disable-next-line max-len
-                        const processedTagsContent = content.replace(/(^|\s)#([^#\s][^\s]*)/g, (match, p1, p2) => `${p1}<span data-tag="${p2}" class="items-center justify-start rounded p-2">#${p2}</span>`);
-
-                        // Procesa los saltos de línea, excepto en bloques de código
-                        const processedContent = processedTagsContent.split('\n').map((line, index, lines) => {
-                            // Detecta bloques de código para evitar añadir <br> dentro de ellos
-                            if (line.startsWith('```')) {
-                                // Busca el siguiente bloque de cierre de código y salta al índice correspondiente
-                                const findClosingTagIndex = lines.slice(index + 1).findIndex((line) => line.startsWith('```'));
-                                if (findClosingTagIndex !== -1) {
-                                    index += findClosingTagIndex + 1;
-                                }
-                                return line; // No modifica los bloques de código
-                            }
-                            // Añade <br> al final de las líneas que no son parte de un bloque de código
-                            return `${line}<br>`;
-                        }).join('\n');
-
-                        return processedContent;
+                    assignUids() {
+                        let uid = 1; // Inicia el contador de UID en 1 o cualquier otro valor inicial que prefieras.
+                        this.model.forEach((block) => {
+                            block.uid = uid++; // Asigna el UID y luego incrementa el contador.
+                        });
+                        console.log('UIDs assigned to model blocks:', this.model);
                     },
 
-                    openInfoModal(block) {
-                        console.log("🚀 ~ openInfoModal ~ block:", block)
-                        this.selectedInfoBlock = block;
+                    updateBlockTitlesDELETEME() {
+                        // Recorre todos los bloques y agrega sus blockTitles al arreglo blockTitles
+                        this.model.forEach((block) => {
+                            if (!this.blockTitles.includes(block.blockTitle)) {
+                                this.blockTitles.push(block.blockTitle);
+                            }
+                        });
+                    },
+                    updateModelMarkdown() {
+                        // Inicializa una variable para almacenar el contenido concatenado
+                        let concatenatedContent = '';
+
+                        // Recorre cada elemento del array model y concatena su contenido con saltos de línea
+                        this.model.forEach((item) => {
+                            concatenatedContent += `${item.content}\n`;
+                        });
+
+                        // Guarda el contenido generado en el campo modelMarkdown del objeto model
+                        this.modelMarkdown = concatenatedContent;
+                        this.updateTagsArray();
+                    },
+                    updateTagsArray() {
+                        // Cargar la lista de bloques
+                        this.blocks = this.model; // Asume que this.model contiene tus bloques
+                        this.blocks.forEach((block) => block.tags.forEach((tag) => this.allTags.add(tag)));
+                        // Convertir allTags a un array, ordenarlo alfabéticamente y luego asignar a this.tags
+                        this.tags = Array.from(this.allTags).sort((a, b) => a.localeCompare(b));
+                        // Inicializar el filtrado (si necesario)
+                        this.filterBlocks([]);
+                    },
+                    filterBlocks(tags) {
+                        this.filteredBlocks = this.model.filter((block) => tags.some((tag) => block.tags.includes(tag)));
+                    },
+                    resetSelectedTags() {
+                        this.selectedTags = [];
+                    },
+                    setFilterTags(tags) {
+                        // Establece las etiquetas seleccionadas directamente
+                        this.selectedTags = tags;
+                    },
+                    downloadJSON() {
+                        // eslint-disable-next-line no-undef
+                        axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
+                            .then((response) => {
+                                if (response.data && response.data.classes && response.data.sections) {
+                                    this.metamodel = response.data;
+                                    console.log('Metamodel loaded:', this.metamodel);
+                                } else {
+                                    console.error('Metamodel received does not have the expected structure');
+                                }
+                            })
+                            .catch((error) => console.error('Error loading metamodel:', error));
+                    },
+                    openModal(block) {
+                        console.log("🚀 ~ openModal ~ block:", block)
                         this.currentBlockId = block.id; // Asegúrate de tener currentBlockId definido en tu data()
-                        this.currentBlockInfoURL = `https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/${block.replace(/ /g, '_')}`;
+                        this.selectedBlockContent = block.content;
+                        this.selectedBlockMarkers = block.markers; // Asegúrate de que `block` tiene una propiedad `markers`
                         // Busca el índice de la línea basándose en el ID único
                         this.selectedBlockIndex = this.model.findIndex((item) => item.id === block.id);
-                        this.isInfoModalOpen = true;
+                        this.isModalOpen = true;
                         this.$nextTick(() => {
                             // Asegúrate de que el contenedor del editor esté disponible en el DOM
-                            this.currentBlockInfoURL;
-                        });
-
-                        // Definir dimensiones y posición de la ventana
-                        const ancho = 900; // Ancho de la ventana
-                        const alto = 600; // Alto de la ventana
-                        // Calcular posición central
-                        const y = window.top.outerHeight / 2 + window.top.screenY - (alto / 2);
-                        const x = window.top.outerWidth / 2 + window.top.screenX - (ancho / 2);
-
-                        // Abrir nueva ventana
-                        // eslint-disable-next-line max-len
-                        window.open(this.currentBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
-                    },
-
-                    // EDIT BLOCK
-
-                    generateSuggestionPrompt() {
-                        let suggestionPrompt = '';
-                        const block = this.model.find((b) => b.id === this.currentBlockId); // Cambia this.blocks por this.model
-                        const blockTitle = block ? block.blockTitle : 'Título no encontrado';
-                        const { modelMarkdown } = this;
-                        const blockExample = block ? block.metamodel.example : 'Example no encontrado';
-                        suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
-                    Listening closely to understand the specifics of the business.
-                    Providing concise, targeted guidance without unnecessary repetition or formalities.
-                    Offering step-by-step feedback to ensure the document effectively captures the business model.
-                    You focus on the client's needs and how to best articulate their business model.
-                    GOAL: Write a business model document describing the user's project business model. Here's some information about my Business:\n`
-
-                            + `${modelMarkdown}\n`
-
-                            + `MY QUESTION: Please suggest content for the "${blockTitle}" section of the business model.
-                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name enclosed in double brackets '[[ ]]', and then a description on a new, indented line. This is an example of an answer:
-                    ---
-                    ${blockExample}
-                    ---
-                    Copy answer in the text box below:
-                    ---
-                    \`\`\`
-                    ${blockExample}
-                    \`\`\`
-                    ---
-                    - You can copy/paste this answer to your plastilinn doc`;
-
-                        return suggestionPrompt;
-                    },
-
-                    sendMessageToBot() {
-                        const suggestionPrompt = this.generateSuggestionPrompt();
-                        window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true });
-                        window.botpressWebChat.sendEvent({ type: 'show' });
-                        window.botpressWebChat.sendPayload({
-                            type: 'text',
-                            text: suggestionPrompt,
+                            this.initEditor();
                         });
                     },
-
                     initEditor() {
                         if (this.editor) {
                             this.editor.destroy(); // Destruye la instancia anterior del editor
@@ -935,7 +1027,6 @@
                             initialValue: this.selectedBlockContent, // Asume que `editingContent` es tu contenido actual que quieres editar
                         });
                     },
-
                     saveChanges() {
                         const editedContent = this.editor.getMarkdown();
                         if (this.selectedBlockIndex !== null) {
@@ -964,171 +1055,33 @@
                             this.downloadMarkdown(); // Asume que este es tu método de descarga existente
                         }
                     },
-
                     closeModal() {
                         this.isModalOpen = false;
                     },
-
-                    // NAVIGATION
-
-                    highlightOnLoad() {
-                        this.$nextTick(() => {
-                            if (window.location.hash) {
-                                const hash = decodeURIComponent(window.location.hash.substring(1)); // Decodifica el hash.
-                                this.highlightBlock(hash);
-                            }
-                        });
-                    },
-
-                    highlightBlock(id) {
-                        const element = document.getElementById(id);
-                        if (element) {
-                            element.classList.add('highlight');
-                            setTimeout(() => element.classList.remove('highlight'), 3000);
-                        }
-                    },
-
-                    // MODEL PROCESSING
-
-                    assignUids() {
-                        let uid = 1; // Inicia el contador de UID en 1 o cualquier otro valor inicial que prefieras.
-                        this.model.forEach((block) => {
-                            block.uid = uid++; // Asigna el UID y luego incrementa el contador.
-                        });
-                        console.log('UIDs assigned to model blocks:', this.model);
-                    },
-
-                    updateModelMarkdown() {
-                        // Inicializa una variable para almacenar el contenido concatenado
-                        let concatenatedContent = '';
-
-                        // Recorre cada elemento del array model y concatena su contenido con saltos de línea
-                        this.model.forEach((item) => {
-                            concatenatedContent += `${item.content}\n`;
-                        });
-
-                        // Guarda el contenido generado en el campo modelMarkdown del objeto model
-                        this.modelMarkdown = concatenatedContent;
-                        this.updateTagsArray();
-                    },
-
-                    updateTagsArray() {
-                        // Cargar la lista de bloques
-                        this.blocks = this.model; // Asume que this.model contiene tus bloques
-                        this.blocks.forEach((block) => block.tags.forEach((tag) => this.allTags.add(tag)));
-                        // Convertir allTags a un array, ordenarlo alfabéticamente y luego asignar a this.tags
-                        this.tags = Array.from(this.allTags).sort((a, b) => a.localeCompare(b));
-                        // Inicializar el filtrado (si necesario)
-                        this.filterBlocks([]);
-                    },
-
-                    // FILTERS
-
-                    filterBlocks(tags) {
-                        this.filteredBlocks = this.model.filter((block) => tags.some((tag) => block.tags.includes(tag)));
-                    },
-
-                    setFilterTags(tags) {
-                        // Establece las etiquetas seleccionadas directamente
-                        this.selectedTags = tags;
-                    },
-
-                    filteredBlocksByTags(tags) {
-                        return this.model.filter((block) => block.tags.some((tag) => tags.includes(tag)));
-                    },
-
-                    resetSelectedTags() {
-                        this.selectedTags = [];
-                    },
-
-                    buildTagsQueryList(tags) {
-                        // Filtra los bloques que contienen todas las etiquetas especificadas
-                        const filteredBlocks = this.model.filter((block) => tags.every((tag) => block.tags.includes(tag)));
-                        // Construye una lista de HTML con los blockTitles de los bloques filtrados
-                        let htmlList = '<ul>';
-                        filteredBlocks.forEach((block) => {
-                            htmlList += `<li>${block.blockTitle}</li>`;
-                        });
-                        htmlList += '</ul>';
-
-                        // Devuelve la lista HTML
-                        return htmlList;
-                    },
-
-                    // ARTIFACTS
-
-                    setArtifactTestDELETEME(placeholder1, placeholder2) {
-                        this.artifactModalContent = `
-                        <div>
-                            <h3>1</h3>
-                            ${placeholder1}
-                        </div>
-                        <div>
-                            <h3>2</h3>
-                            ${placeholder2}https://eslint.org/docs/latest/rules/linebreak-style
-                        </div>
-                    `;
-                        // eslint-disable-next-line linebreak-style
-                        this.isArtifactModalOpen = true;
-                        // eslint-disable-next-line linebreak-style
-                    },
-
-                    async loadGuideMarkdownContent(url) {
-                        if (url) {
-                            try {
-                                const response = await fetch(url);
-                                const markdown = await response.text();
-                                // Aquí convertirías el Markdown a HTML
-                                // Puedes usar la librería marked.js como antes mencioné
-                                this.markdownGuideContent = marked.parse(markdown);
-                            } catch (error) {
-                                console.log("🚀 ~ loadGuideMarkdownContent ~ error:", error)
-                                this.markdownContent = '';
-                            }
-                        } else {
-                            this.markdownGuideContent = '';
-                        }
-                    },
-
-                    setArtifactBusinessModelCanvas() {
-                        this.isArtifactModalOpen = true;
-                    },
-
-                    // SEARCH
-
-                    performSearchReplace(originalText) {
-                        // Asegúrate de que searchText no esté vacío y que realmente quieras usar el argumento originalText
-                        if (!originalText) return; // Sale si originalText está vacío
-
-                        this.model.forEach((block) => {
-                            // Usa la variable originalText en lugar de searchText para el reemplazo
-                            block.content = block.content.replaceAll(originalText, this.replaceText);
-                            // Actualiza el contenido parseado después del reemplazo para reflejar los cambios
-                            block.parsedContent = this.parseBlock(block.content);
-                        });
-
-                        // Restablece searchText y replaceText a cadenas vacías después del reemplazo
-                        this.searchText = '';
-                        this.replaceText = '';
-                        this.showSearchReplaceModal = false; // Cierra el modal después de realizar el reemplazo
-                    },
-
-                    openModal(block) {
-                        console.log("🚀 ~ openModal ~ block:", block)
+                    openRemoteModal(block) {
+                        console.log("🚀 ~ openRemoteModal ~ block:", block)
+                        this.selectedInfoBlock = block;
                         this.currentBlockId = block.id; // Asegúrate de tener currentBlockId definido en tu data()
-                        this.selectedBlockContent = block.content;
-                        this.selectedBlockMarkers = block.markers; // Asegúrate de que `block` tiene una propiedad `markers`
+                        this.currentBlockInfoURL = `https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/${block.replace(/ /g, '_')}`;
                         // Busca el índice de la línea basándose en el ID único
                         this.selectedBlockIndex = this.model.findIndex((item) => item.id === block.id);
-                        this.isModalOpen = true;
+                        this.isInfoModalOpen = true;
                         this.$nextTick(() => {
                             // Asegúrate de que el contenedor del editor esté disponible en el DOM
-                            this.initEditor();
+                            this.currentBlockInfoURL;
                         });
+
+                        // Definir dimensiones y posición de la ventana
+                        const ancho = 900; // Ancho de la ventana
+                        const alto = 600; // Alto de la ventana
+                        // Calcular posición central
+                        const y = window.top.outerHeight / 2 + window.top.screenY - (alto / 2);
+                        const x = window.top.outerWidth / 2 + window.top.screenX - (ancho / 2);
+
+                        // Abrir nueva ventana
+                        // eslint-disable-next-line max-len
+                        window.open(this.currentBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
                     },
-
-                    // DOWNLOAD AND EXPORT
-
                     downloadMarkdown() {
                         // Asume que modelMarkdown y modelName ya están actualizados
                         const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
@@ -1149,7 +1102,6 @@
                         link.click();
                         document.body.removeChild(link);
                     },
-
                     downloadHTML() {
                         // Convierte el Markdown a HTML
                         // eslint-disable-next-line no-undef
@@ -1188,11 +1140,63 @@
                         link.click();
                         document.body.removeChild(link);
                     },
-
                     toggleAutoDownload() {
                         this.autoDownloadEnabled = !this.autoDownloadEnabled;
                     },
+                    generateSuggestionPrompt() {
+                        let suggestionPrompt = '';
+                        const block = this.model.find((b) => b.id === this.currentBlockId); // Cambia this.blocks por this.model
+                        const blockTitle = block ? block.blockTitle : 'Título no encontrado';
+                        const { modelMarkdown } = this;
+                        const blockExample = block ? block.metamodel.example : 'Example no encontrado';
+                        suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
+                    Listening closely to understand the specifics of the business.
+                    Providing concise, targeted guidance without unnecessary repetition or formalities.
+                    Offering step-by-step feedback to ensure the document effectively captures the business model.
+                    You focus on the client's needs and how to best articulate their business model.
+                    GOAL: Write a business model document describing the user's project business model. Here's some information about my Business:\n`
 
+                            + `${modelMarkdown}\n`
+
+                            + `MY QUESTION: Please suggest content for the "${blockTitle}" section of the business model.
+                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name enclosed in double brackets '[[ ]]', and then a description on a new, indented line. This is an example of an answer:
+                    ---
+                    ${blockExample}
+                    ---
+                    Copy answer in the text box below:
+                    ---
+                    \`\`\`
+                    ${blockExample}
+                    \`\`\`
+                    ---
+                    - You can copy/paste this answer to your plastilinn doc`;
+
+                        return suggestionPrompt;
+                    },
+                    sendMessageToBot() {
+                        const suggestionPrompt = this.generateSuggestionPrompt();
+                        window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true });
+                        window.botpressWebChat.sendEvent({ type: 'show' });
+                        window.botpressWebChat.sendPayload({
+                            type: 'text',
+                            text: suggestionPrompt,
+                        });
+                    },
+                    highlightOnLoad() {
+                        this.$nextTick(() => {
+                            if (window.location.hash) {
+                                const hash = decodeURIComponent(window.location.hash.substring(1)); // Decodifica el hash.
+                                this.highlightBlock(hash);
+                            }
+                        });
+                    },
+                    highlightBlock(id) {
+                        const element = document.getElementById(id);
+                        if (element) {
+                            element.classList.add('highlight');
+                            setTimeout(() => element.classList.remove('highlight'), 3000);
+                        }
+                    },
                 },
                 mounted() {
                     this.downloadJSON(); // Otras inicializaciones pueden ir aquí
