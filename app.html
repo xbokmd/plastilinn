@@ -1,8 +1,6 @@
 <!-- eslint-disable no-console -->
 <!-- eslint-disable max-len -->
 <!-- eslint-disable linebreak-style -->
-<!-- eslint-disable linebreak-style -->
-<!-- eslint-disable linebreak-style -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -655,7 +653,7 @@
                     },
                     changeSection(section) {
                         this.currentSidebarSection = section;
-                        console.log('Sección actual del sidebar:', this.currentSidebarSection);
+                        console.log("🚀 ~ changeSection ~ this.currentSidebarSection:", this.currentSidebarSection)
                         // Aquí puedes agregar cualquier otra lógica que necesites ejecutar cuando cambies de sección
                     },
                     performSearchReplace(originalText) {
@@ -683,28 +681,14 @@
                                 // Puedes usar la librería marked.js como antes mencioné
                                 this.markdownGuideContent = marked.parse(markdown);
                             } catch (error) {
-                                console.error('Error cargando el archivo Markdown:', error);
+                                console.log("🚀 ~ loadMarkdownContent ~ error:", error)
                                 this.markdownContent = '';
                             }
                         } else {
                             this.markdownGuideContent = '';
                         }
                     },
-                    assignUidsDUPLICATE() {
-                        let sectionUid = 0; // Contador para uid de sección
-                        let itemUidCounter = 0; // Contador para uid de ítem dentro de la sección
 
-                        this.model.forEach((block, index) => {
-                            if (block.blockType === 'section') {
-                                sectionUid++;
-                                itemUidCounter = 0; // Reinicia el contador de ítems para la nueva sección
-                                block.id = `${sectionUid}`; // Asigna el uid de la sección
-                            } else if (block.blockType !== 'section') { // Cambio aquí para incluir cualquier tipo que no sea 'section'
-                                itemUidCounter++;
-                                block.id = `${sectionUid}.${itemUidCounter}`; // Asigna el uid compuesto a los ítems
-                            }
-                        });
-                    },
                     loadAndParseMarkdown(event) {
                         const file = event.target.files[0];
                         if (!file) {
@@ -725,45 +709,45 @@
                         name = name.replace(/ - saved.*$/, ''); // Elimina " - saved" y todo lo que sigue
                         return name;
                     },
-                    setInstanceValueDUPLICATE() {
+
+                    setInstanceValueREPLACED() {
                         this.model.forEach((block) => {
-                            // Verifica si blockTitle comienza con una etiqueta
+                            // Initial assignment based on blockTitle starting with a hashtag
                             if (/^#\w+/.test(block.blockTitle)) {
-                                // Si blockTitle comienza con una etiqueta, asigna blockTitle a instanceValue
                                 block.instanceValue = block.blockTitle;
                             }
-                            // Continúa con la lógica original de división y asignación
-                            // Extrae el componente del título que sigue inmediatamente después de la etiqueta inicial
-                            const titleParts = block.blockTitle.match(/^#\w+\s+(.*?)\s*(-|$)/);
 
+                            // Extract component after the initial tag and dash, refining instanceValue
+                            const titleParts = block.blockTitle.match(/^#\w+\s+(.*?)\s*(-|$)/);
                             if (titleParts && titleParts[1]) {
-                                // Asigna el componente extraído a instanceValue, eliminando etiquetas adicionales si las hay
                                 block.instanceValue = titleParts[1].replace(/#\w+/g, '').trim();
+                            } else if (block.blockTitle.includes('-')) {
+                                block.instanceValue = block.blockTitle.split('-')[0].trim();
                             } else {
-                                // Si no se encuentra el patrón esperado, asigna null o maneja según sea necesario
-                                block.instanceValue = null;
+                                block.instanceValue = block.blockTitle.trim();
                             }
 
-                            // Añadir lógica para manejar instanceSection
+                            // Handle instanceSection assignment
                             const sectionParts = block.blockTitle.split(' - ');
                             if (sectionParts.length > 1) {
-                                // Asume que el texto después del " - " debe ser asignado a instanceSection
                                 block.instanceSection = sectionParts[1].trim();
                             } else {
-                                // Si no hay un " - " en el blockTitle, se decide dejar instanceSection como null
                                 block.instanceSection = null;
                             }
 
-                            // Verifica si instanceClass es null y, en ese caso, usa blockTitle como metamodelID.
-                            // De lo contrario, construye metamodelID usando instanceClass, instanceValue y, opcionalmente, instanceSection.
+                            // Construct metamodelID
                             let blockMetamodelID;
+
                             if (block.instanceClass === null) {
                                 blockMetamodelID = block.blockTitle;
                             } else {
                                 blockMetamodelID = `${block.instanceClass} Name${block.instanceSection ? ` - ${block.instanceSection}` : ''}`;
                             }
+                            block.metamodelID = blockMetamodelID; // Ensure to update the block with the constructed metamodelID
+                            console.log("🚀 ~ this.model.forEach ~ block.metamodelID:", block.metamodelID)
                         });
                     },
+
                     parseMarkdown(content) {
                         const blocks = this.splitMarkdownIntoBlocks(content);
                         this.model = blocks.map((blockContent) => this.parseBlock(blockContent));
@@ -819,13 +803,13 @@
                         const blockType = this.determineBlockType(firstLine);
                         const depthLevel = this.determineDepthLevel(firstLine);
                         const instanceClass = this.determineInstanceClass(blockContent, blockType);
-                        // Call processTags to get tags, tagsParsed, and markers
                         const { tags, tagsParsed, markers } = this.processTags(blockContent);
                         const blockTitle = this.extractBlockTitle(blockContent);
+                        console.log("🚀 ~ parseBlock ~ blockTitle:", blockTitle)
+                        const instanceValue = this.setInstanceValue(blockTitle)
                         const metamodelID = this.generateMetamodelID(instanceClass, blockTitle);
                         const metamodel = this.importMetamodelData(metamodelID);
                         const mdToHTML = this.parseToHTML(blockContent);
-                        // eslint-disable-next-line no-undef
                         const parsedContent = marked.parse(mdToHTML);
 
                         return {
@@ -840,6 +824,7 @@
                             metamodel,
                             depthLevel,
                             instanceClass,
+                            instanceValue,
                             metamodelID,
                         };
                     },
@@ -879,75 +864,6 @@
                         return { tags, tagsParsed, markers };
                     },
 
-                    extractBlockTitleDUPLICATE(blockContent) {
-                        const matches = blockContent.match(/^\s*#+\s*(.*)/);
-                        return matches && matches[1] ? matches[1].trim() : '';
-                    },
-
-                    generateMetamodelID(instanceClass, blockTitle) {
-                        return instanceClass && blockTitle ? `${instanceClass} ${blockTitle}` : blockTitle;
-                    },
-
-                    importMetamodelDataDUPLICATE(metamodelID) {
-                        // Simula la importación de datos del metamodelo basándose en metamodelID
-                        // Esta implementación debe ajustarse para coincidir con la lógica real de importación de datos
-                        console.log('Metamodel imported:', metamodelID);
-                        return { name: metamodelID }; // Simulación de un objeto metamodelo
-                    },
-
-                    // eslint-disable-next-line no-dupe-keys
-                    importMetamodelDataDUPLICATE(metamodelID) {
-                        // Asumiendo que el metamodelo ya está cargado y almacenado en this.metamodel
-                        // y tiene una estructura donde se puede buscar una sección por metamodelID.
-                        // Cambia 'sections' y 'name' según corresponda a la estructura de tu metamodelo.
-
-                        // Encuentra la sección que coincide con el metamodelID proporcionado.
-                        const section = this.metamodel.sections.find((section) => section.name === metamodelID);
-
-                        if (section) {
-                            console.log('Sección del metamodelo encontrada:', section);
-                            // Aquí puedes realizar operaciones adicionales con la sección encontrada.
-                            // Por ejemplo, actualizar la propiedad metamodel del bloque actual.
-                            // Esto es solo un ejemplo, necesitarás ajustar esto para que coincida con tu lógica de aplicación.
-                            return section;
-                        }
-                        console.log('No se encontró ninguna sección que coincida con el metamodelID:', metamodelID);
-                        // Maneja el caso en que no se encuentra una sección que coincida.
-                        // Puedes devolver null o un objeto vacío según lo que sea más adecuado para tu aplicación.
-                        return null;
-                    },
-
-                    updateModelMarkdownDUPLICATE() {
-                        this.modelMarkdown = this.model.map((block) => block.content).join('\n\n');
-                        console.log(this.modelMarkdown);
-                    },
-
-                    assignUids() {
-                        let uid = 1; // Inicia el contador de UID en 1 o cualquier otro valor inicial que prefieras.
-                        this.model.forEach((block) => {
-                            block.uid = uid++; // Asigna el UID y luego incrementa el contador.
-                        });
-                        console.log('UIDs assigned to model blocks:', this.model);
-                    },
-
-                    setInstanceValue() {
-                        this.model.forEach((block) => {
-                            // Ejemplo basado en el título del bloque. Ajusta esto según tus necesidades.
-                            let instanceValue = block.blockTitle; // Usa el título del bloque como valor de instancia inicial.
-
-                            // Implementa cualquier lógica específica para modificar o ajustar el instanceValue.
-                            // Por ejemplo, si deseas extraer una parte específica del título o aplicar ciertas reglas:
-                            if (instanceValue.includes('-')) {
-                                // Supongamos que deseas usar solo la parte del título antes de un guion como valor de instancia.
-                                instanceValue = instanceValue.split('-')[0].trim();
-                            }
-
-                            // Establece el valor de instancia modificado en el bloque.
-                            block.instanceValue = instanceValue;
-                        });
-                        console.log('Instance values set for model blocks:', this.model);
-                    },
-
                     extractBlockTitle(blockContent) {
                         const firstLine = blockContent.split(/\r?\n/)[0]; // Obtiene la primera línea
 
@@ -973,72 +889,70 @@
                         const finalTitle = firstLine.replace(/^#+\s*/, '').trim();
                         console.log('Returning blockTitle without matches:', finalTitle); // Traza antes del return
                         return finalTitle;
+                        // Asegurarse de devolver una cadena vacía si el título no se encuentra
+                        return blockTitle || '';
                     },
-                    updateBlockTitles() {
+
+                    setInstanceValue(blockTitle) {
+                        console.log("🚀 ~ setInstanceValue ~ blockTitle:", blockTitle)
+                        // Verifica si blockTitle es una cadena
+                        if (typeof blockTitle !== "string") {
+                            console.error("blockTitle debe ser una cadena.");
+                            return ""; // Retorna una cadena vacía o maneja el caso como prefieras
+                        }
+
+                        // Initial assignment based on blockTitle starting with a hashtag
+                        if (/^#\w+/.test(blockTitle)) {
+                            this.instanceValue = blockTitle;
+                        }
+
+                        // Extract component after the initial tag and dash, refining instanceValue
+                        const titleParts = blockTitle.match(/^#\w+\s+(.*?)\s*(-|$)/);
+                        console.log("🚀 ~ setInstanceValue ~ titleParts:", titleParts)
+                        if (titleParts && titleParts[1]) {
+                            this.instanceValue = titleParts[1].replace(/#\w+/g, '').trim();
+                        } else if (blockTitle.includes('-')) {
+                            this.instanceValue = blockTitle.split('-')[0].trim();
+                        } else {
+                            this.instanceValue = blockTitle.trim();
+                        }
+                        console.log("🚀 ~ setInstanceValue ~ this.instanceValue:", this.instanceValue)
+                        return this.instanceValue;
+                    },
+
+                    generateMetamodelID(instanceClass, blockTitle) {
+                        return instanceClass && blockTitle ? `${instanceClass} Name ${blockTitle}` : blockTitle;
+                    },
+
+                    // eslint-disable-next-line no-dupe-keys
+                    importMetamodelData(metamodelID) {
+                        console.log("🚀 ~ importMetamodelData ~ metamodelID:", metamodelID)
+                        // Encuentra la sección que coincide con el metamodelID proporcionado.
+                        const section = this.metamodel.sections.find((section) => section.name === metamodelID);
+
+                        if (section) {
+                            console.log("🚀 ~ importMetamodelData ~ section:", section)
+                            return section;
+                        }
+                        console.log('No se encontró ninguna sección que coincida con el metamodelID:', metamodelID);
+                        return null;
+                    },
+
+                    assignUids() {
+                        let uid = 1; // Inicia el contador de UID en 1 o cualquier otro valor inicial que prefieras.
+                        this.model.forEach((block) => {
+                            block.uid = uid++; // Asigna el UID y luego incrementa el contador.
+                        });
+                        console.log('UIDs assigned to model blocks:', this.model);
+                    },
+
+                    updateBlockTitlesDELETEME() {
                         // Recorre todos los bloques y agrega sus blockTitles al arreglo blockTitles
                         this.model.forEach((block) => {
                             if (!this.blockTitles.includes(block.blockTitle)) {
                                 this.blockTitles.push(block.blockTitle);
                             }
                         });
-                    },
-                    importMetamodelData(metamodelID) {
-                        console.log('importMetamodelData called with metamodelID:', metamodelID);
-
-                        // Intenta encontrar una coincidencia usando el metamodelID
-                        const section = this.metamodel.sections.find((s) => s.name === metamodelID);
-
-                        // Incluye más información en el log para una depuración detallada
-                        console.log(
-                            'Searching for a metamodel section with metamodelID:',
-                            metamodelID,
-                            '\nMetamodel Sections Length:',
-                            this.metamodel.sections.length,
-                            '\nFound Section:',
-                            section ? `Yes, named ${section.name}` : 'No matching section found.',
-                        );
-
-                        // Si es útil, también puedes considerar mostrar la estructura de 'section' si se encuentra alguna
-                        if (section) {
-                            console.log('Details of the found section:', section);
-                        }
-
-                        // Si se encuentra una coincidencia
-                        if (section) {
-                            console.log('Match found, section:', section);
-                            const blockIndex = this.model.findIndex((block) => block.metamodelID === metamodelID || block.instanceClass === instanceClass);
-                            console.log('Block index found for update:', blockIndex);
-
-                            if (blockIndex !== -1) {
-                                // Actualiza el bloque encontrado con la sección del metamodelo encontrada
-                                this.$set(this.model[blockIndex], 'metamodel', section);
-                                console.log('Model updated at index:', blockIndex, 'with section:', section);
-                            } else {
-                                console.log('No matching block found in model for given metamodelID.');
-                            }
-                        } else {
-                            console.log('No matching section found in metamodel for given metamodelID');
-                        }
-
-                        // Devuelve la sección encontrada (o undefined si no se encontró ninguna coincidencia)
-                        return section;
-                    },
-
-                    processTagsDUPLICATE(content) {
-                        // Usando matchAll para capturar el texto después del #
-                        const regex = /(?:^|\s)#([^\s]+)/g;
-                        const matches = Array.from(content.matchAll(regex));
-
-                        // Extraemos solo las etiquetas sin el símbolo # para tags
-                        const tags = matches.map((match) => match[1]);
-
-                        // Generamos el HTML para tagsParsed
-                        const tagsParsed = tags.map((tag) => `<span data-tag="${tag}" class="items-center justify-start rounded p-2">#${tag}</span>`).join('');
-
-                        return {
-                            tags, // Ya no necesitamos eliminar el símbolo '#' aquí, porque ya lo hicimos arriba
-                            tagsParsed,
-                        };
                     },
                     updateModelMarkdown() {
                         // Inicializa una variable para almacenar el contenido concatenado
@@ -1052,7 +966,6 @@
                         // Guarda el contenido generado en el campo modelMarkdown del objeto model
                         this.modelMarkdown = concatenatedContent;
                         this.updateTagsArray();
-                        console.log(concatenatedContent);
                     },
                     updateTagsArray() {
                         // Cargar la lista de bloques
@@ -1060,17 +973,10 @@
                         this.blocks.forEach((block) => block.tags.forEach((tag) => this.allTags.add(tag)));
                         // Convertir allTags a un array, ordenarlo alfabéticamente y luego asignar a this.tags
                         this.tags = Array.from(this.allTags).sort((a, b) => a.localeCompare(b));
-                        console.log(this.tags);
                         // Inicializar el filtrado (si necesario)
                         this.filterBlocks([]);
                     },
                     filterBlocks(tags) {
-                        // Implementa la lógica para filtrar los bloques aquí
-                        // Utiliza la lista de bloques `this.model` y los tags seleccionados `tags`
-                        // para filtrar los bloques según los tags
-
-                        // Ejemplo de implementación:
-                        // Filtra los bloques que contienen al menos uno de los tags seleccionados
                         this.filteredBlocks = this.model.filter((block) => tags.some((tag) => block.tags.includes(tag)));
                     },
                     resetSelectedTags() {
@@ -1094,20 +1000,17 @@
                             .catch((error) => console.error('Error loading metamodel:', error));
                     },
                     openModal(block) {
-                        console.log('Línea clicada:', block);
+                        console.log("🚀 ~ openModal ~ block:", block)
                         this.currentBlockId = block.id; // Asegúrate de tener currentBlockId definido en tu data()
                         this.selectedBlockContent = block.content;
                         this.selectedBlockMarkers = block.markers; // Asegúrate de que `block` tiene una propiedad `markers`
                         // Busca el índice de la línea basándose en el ID único
                         this.selectedBlockIndex = this.model.findIndex((item) => item.id === block.id);
                         this.isModalOpen = true;
-                        console.log('Modal abierta con contenido:', this.selectedBlockContent, 'ID:', block.id);
                         this.$nextTick(() => {
                             // Asegúrate de que el contenedor del editor esté disponible en el DOM
                             this.initEditor();
                         });
-                        console.log('currentBlockId:', this.currentBlockId);
-                        console.log(this.selectedBlockMarkers);
                     },
                     initEditor() {
                         if (this.editor) {
@@ -1156,23 +1059,17 @@
                         this.isModalOpen = false;
                     },
                     openRemoteModal(block) {
+                        console.log("🚀 ~ openRemoteModal ~ block:", block)
                         this.selectedInfoBlock = block;
-                        console.log(block);
-                        console.log(this.isInfoModalOpen);
-                        console.log('Línea clicada:', block);
                         this.currentBlockId = block.id; // Asegúrate de tener currentBlockId definido en tu data()
                         this.currentBlockInfoURL = `https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/${block.replace(/ /g, '_')}`;
-                        console.log(this.currentBlockInfoURL);
-                        console.log('URL:', this.currentBlockInfoURL);
                         // Busca el índice de la línea basándose en el ID único
                         this.selectedBlockIndex = this.model.findIndex((item) => item.id === block.id);
                         this.isInfoModalOpen = true;
-                        console.log('Modal abierta con contenido:', this.currentBlockInfoURL, 'ID:', block.id);
                         this.$nextTick(() => {
                             // Asegúrate de que el contenedor del editor esté disponible en el DOM
                             this.currentBlockInfoURL;
                         });
-                        console.log('currentBlockId:', this.currentBlockId);
 
                         // Definir dimensiones y posición de la ventana
                         const ancho = 900; // Ancho de la ventana
@@ -1247,16 +1144,11 @@
                         this.autoDownloadEnabled = !this.autoDownloadEnabled;
                     },
                     generateSuggestionPrompt() {
-                        console.log('currentBlockId:', this.currentBlockId);
-                        console.log('model:', this.model); // Ahora imprime el arreglo model para verificar
                         let suggestionPrompt = '';
                         const block = this.model.find((b) => b.id === this.currentBlockId); // Cambia this.blocks por this.model
-                        console.log('block: ', block);
                         const blockTitle = block ? block.blockTitle : 'Título no encontrado';
-                        console.log('blockTitle: ', blockTitle);
                         const { modelMarkdown } = this;
                         const blockExample = block ? block.metamodel.example : 'Example no encontrado';
-                        console.log('blockExample: ', blockExample);
                         suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
                     Listening closely to understand the specifics of the business.
                     Providing concise, targeted guidance without unnecessary repetition or formalities.
@@ -1282,9 +1174,7 @@
                         return suggestionPrompt;
                     },
                     sendMessageToBot() {
-                        console.log(this.currentBlockId);
                         const suggestionPrompt = this.generateSuggestionPrompt();
-                        console.log(suggestionPrompt);
                         window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true });
                         window.botpressWebChat.sendEvent({ type: 'show' });
                         window.botpressWebChat.sendPayload({
@@ -1310,7 +1200,6 @@
                 },
                 mounted() {
                     this.downloadJSON(); // Otras inicializaciones pueden ir aquí
-                    this.updateBlockTitles(); // Actualiza el arreglo blockTitles al cargar la página
                     this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
                     window.addEventListener('hashchange', this.highlightOnLoad);
                     if (window.botpressWebChat && typeof window.botpressWebChat.onEvent === 'function') {
