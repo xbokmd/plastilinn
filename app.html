@@ -1313,11 +1313,15 @@
                     this.updateBlockTitles(); // Actualiza el arreglo blockTitles al cargar la página
                     this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
                     window.addEventListener('hashchange', this.highlightOnLoad);
-                    window.botpressWebChat.onEvent((event) => {
-                        if (event.type === 'message' && event.message_type === 'text') {
-                            alert(`Respuesta del bot: ${event.text}`);
-                        }
-                    });
+                    if (window.botpressWebChat && typeof window.botpressWebChat.onEvent === 'function') {
+                        window.botpressWebChat.onEvent((event) => {
+                            if (event.type === 'message' && event.message_type === 'text') {
+                                alert(`Respuesta del bot: ${event.text}`);
+                            }
+                        });
+                    } else {
+                        console.warn('Botpress Web Chat is not loaded.');
+                    }
                     // Configura marked.js para este componente
                     marked.setOptions({
                         gfm: true, // Habilita GitHub Flavored Markdown (GFM)
