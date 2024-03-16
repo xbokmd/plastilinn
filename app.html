@@ -324,7 +324,7 @@
                                             </svg>
                                             <span>Upload your plastilinn doc</span>
                                         </div>
-                                        <input type="file" @change="loadAndParseMarkdown" accept=".md"
+                                        <input type="file" @change="loadAndParseModelFile" accept=".md"
                                             class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
                                     </div>
                                 </div>
@@ -531,7 +531,6 @@
                         isModalOpen: false,
                         selectedBlockContent: '',
                         selectedBlockIndex: null,
-                        blocks: [], // Puedes inicializarlo como un array vacío o con valores iniciales
                         currentBlockId: null,
                         tags: [],
                         allTags: new Set(),
@@ -623,7 +622,7 @@
 
                     // METAMODEL
 
-                    downloadJSON() {
+                    processMetamodel() {
                         // eslint-disable-next-line no-undef
                         axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
                             .then((response) => {
@@ -637,7 +636,9 @@
                             .catch((error) => console.error('Error loading metamodel:', error));
                     },
 
-                    loadAndParseMarkdown(event) {
+                    // MODEL LOADING
+
+                    loadAndParseModelFile(event) {
                         const file = event.target.files[0];
                         if (!file) {
                             return;
@@ -660,31 +661,30 @@
                     },
 
                     parseMarkdown(content) {
-                        const blocks = this.splitMarkdownIntoBlocks(content);
-                        this.model = blocks.map((blockContent) => this.parseBlock(blockContent));
+                        const model = this.splitMarkdownIntoBlocks(content);
+                        this.model = model.map((blockContent) => this.parseBlock(blockContent));
                         this.updateModelMarkdown();
                         this.assignUids();
                         // this.setInstanceValue();
                     },
 
                     splitMarkdownIntoBlocks(content) {
-                        const blocks = [];
                         let currentBlock = [];
                         const lines = content.split(/\r?\n/);
 
                         lines.forEach((line) => {
                             if (/^\s*([-*\d.]*)*\s*#/.test(line)) {
                                 if (currentBlock.length > 0) {
-                                    blocks.push(currentBlock.join('\n'));
+                                    this.model.push(currentBlock.join('\n'));
                                     currentBlock = [];
                                 }
                             }
                             currentBlock.push(line);
                         });
                         if (currentBlock.length > 0) {
-                            blocks.push(currentBlock.join('\n'));
+                            this.model.push(currentBlock.join('\n'));
                         }
-                        return blocks;
+                        return this.model;
                     },
 
                     // BLOCK PROCESSING
@@ -881,7 +881,7 @@
 
                     generateSuggestionPrompt() {
                         let suggestionPrompt = '';
-                        const block = this.model.find((b) => b.id === this.currentBlockId); // Cambia this.blocks por this.model
+                        const block = this.model.find((b) => b.id === this.currentBlockId);
                         const blockTitle = block ? block.blockTitle : 'Título no encontrado';
                         const { modelMarkdown } = this;
                         const blockExample = block ? block.metamodel.example : 'Example no encontrado';
@@ -1014,8 +1014,7 @@
 
                     updateTagsArray() {
                         // Cargar la lista de bloques
-                        this.blocks = this.model; // Asume que this.model contiene tus bloques
-                        this.blocks.forEach((block) => block.tags.forEach((tag) => this.allTags.add(tag)));
+                        this.model.forEach((block) => block.tags.forEach((tag) => this.allTags.add(tag)));
                         // Convertir allTags a un array, ordenarlo alfabéticamente y luego asignar a this.tags
                         this.tags = Array.from(this.allTags).sort((a, b) => a.localeCompare(b));
                         // Inicializar el filtrado (si necesario)
@@ -1195,7 +1194,7 @@
 
                 },
                 mounted() {
-                    this.downloadJSON(); // Otras inicializaciones pueden ir aquí
+                    this.processMetamodel(); // Otras inicializaciones pueden ir aquí
                     this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
                     window.addEventListener('hashchange', this.highlightOnLoad);
                     if (window.botpressWebChat && typeof window.botpressWebChat.onEvent === 'function') {
