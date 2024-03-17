@@ -31,7 +31,7 @@
 </head>
 
 <body class="">
-    <div id="app">
+    <div id="vue-app">
         <app-start></app-start>
         <div class="min-h-screen h-screen flex flex-col">
             <header class="border-b border-gray-200">
@@ -564,15 +564,7 @@
                                 </div>
                         `
                 },
-            }
-        }).mount('#app');
-    </script>
-
-
-
-
-    <script>
-        Vue.createApp({
+            },
             data() {
                 return {
                     currentSidebarSection: 'home',
@@ -607,20 +599,6 @@
                     showSearchReplaceModal: false,
                     isArtifactModalOpen: false,
                     artifactModalContent: '', // Almacenará el contenido HTML generado
-                    blockMarkers: [
-                        {
-                            name: 'Completion', symbol: '>',
-                        },
-                        {
-                            name: 'Importance', symbol: '*',
-                        },
-                        {
-                            name: 'Uncertainty', symbol: '?',
-                        },
-                        {
-                            name: 'Priority', symbol: '!',
-                        },
-                    ],
                 };
             },
             computed: {
