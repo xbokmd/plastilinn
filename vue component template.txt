@@ -1,0 +1,27 @@
+{
+  'mi-componente': {
+    template: `
+      <div class="mi-componente">
+        <h1>{{ tituloCalculado }}</h1>
+        <button @click="incrementarContador">Incrementar</button>
+        <p>Contador: {{ contador }}</p>
+      </div>
+    `,
+    data() {
+      return {
+        titulo: 'Hola Vue!',
+        contador: 0,
+      };
+    },
+    computed: {
+      tituloCalculado() {
+        return `${this.titulo} - Contador actual: ${this.contador}`;
+      },
+    },
+    methods: {
+      incrementarContador() {
+        this.contador++;
+      },
+    },
+  }
+}
