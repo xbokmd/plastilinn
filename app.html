@@ -22,10 +22,20 @@
         h4 span[data-tag],
         h5 span[data-tag],
         h6 span[data-tag] {
-            padding-left: 2.8rem;
-            /* Ajusta según sea necesario */
+            font-size: 0rem;
+            padding-left: 1rem;
             vertical-align: middle;
-            /* Asegura que el ícono y el texto estén alineados verticalmente */
+        }
+
+        h1 span[data-tag]::before,
+        h2 span[data-tag]::before,
+        h3 span[data-tag]::before,
+        h4 span[data-tag]::before,
+        h5 span[data-tag]::before,
+        h6 span[data-tag]::before {
+            font-size: 1rem;
+            padding-left: 1rem;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -565,7 +575,7 @@
             },
             computed: {
 
-                blocksWithComputedFields() {
+                modelBlocks() {
                     return this.model.map(block => ({
                         ...block,
                         title: this.extractTitle(block.content),
@@ -692,7 +702,71 @@
 
                 // BLOCK PROCESSING
 
-                processBlock(blockContent) {
+                updateModelBlockContent(blockId, newContent) {
+                    const blockIndex = this.model.findIndex(block => block.id === blockId);
+                    if (blockIndex !== -1) {
+                        // Actualiza el contenido
+                        this.model[blockIndex].content = newContent;
+
+                        // Llama a los métodos para recalcular los campos dependientes
+                        this.updateDependentModelBlockFields(blockIndex);
+                    }
+                },
+
+                updateDependentModelBlockFields(blockIndex) {
+                    const block = this.model[blockIndex];
+                    const mdToHTML = this.parseToHTML(block.content);
+                    block.contentParsed = marked.parse(mdToHTML);
+                    const firstLine = block.content.split('\n')[0];
+                    block.type = this.determineBlockType(firstLine);
+                    block.depthLevel = this.determineDepthLevel(firstLine);
+                    block.title = this.extractBlockTitle(block.content); // Ajustado para usar el método recalculado
+                    block.instanceClass = this.determineInstanceClass(block.content, block.type);
+                    const tagResults = this.processTags(block.content);
+                    block.tags = tagResults.tags;
+                    block.tagsParsed = tagResults.tagsParsed;
+                    block.markers = tagResults.markers; // Suponiendo que markers es calculado en processTags
+                    block.instanceValue = this.setInstanceValue(block.title);
+                    block.metamodelID = this.generateMetamodelID(block.title, block.instanceClass);
+                    block.metamodel = this.importMetamodelData(block.metamodelID);
+                    // Aquí puedes agregar más campos para recalcular si es necesario
+                },
+
+                processBlock(blockContent, blockId = null) {
+                    let block;
+                    let isNewBlock = false;
+
+                    if (blockId == null) {
+                        // Creación de un nuevo bloque
+                        this.lastId += 1;
+                        block = { id: this.lastId, content: blockContent };
+                        this.model.push(block);
+                        isNewBlock = true;
+                    } else {
+                        // Actualización de un bloque existente
+                        const blockIndex = this.model.findIndex(block => block.id === blockId);
+                        if (blockIndex === -1) {
+                            console.error("Block not found");
+                            return;
+                        }
+                        block = this.model[blockIndex];
+                        block.content = blockContent;
+                    }
+
+                    // Recalcular campos que dependen del contenido actualizado.
+                    // Para nuevos bloques, esto también establecerá contentParsed correctamente.
+                    if (!isNewBlock || block.content) {
+                        const blockIndex = this.model.findIndex(b => b.id === block.id);
+                        this.updateDependentModelBlockFields(blockIndex);
+                    }
+
+                    // Siempre devuelve el bloque para operaciones de creación. Para actualizaciones,
+                    // el bloque ya está actualizado en el modelo.
+                    return block;
+                },
+
+
+                processBlockDELETEME(blockContent) {
                     this.lastId += 1;
                     const firstLine = blockContent.split('\n')[0];
                     const type = this.determineBlockType(firstLine);
@@ -956,26 +1030,17 @@
                 saveChanges() {
                     const editedContent = this.editor.getMarkdown();
                     if (this.selectedBlockIndex !== null) {
-                        // Primero, procesa el contenido editado para obtener las tags y el contenido procesado
-                        const { tags, tagsParsed } = this.processTags(editedContent);
-                        // Asume que parseToHTML es una función que deseas usar aquí
-                        const blockContentWithTagsParsed = this.parseToHTML(editedContent);
-                        const title = this.extractBlockTitle(editedContent);
+                        // Encuentra el ID del bloque seleccionado para poder pasarlo al método de actualización.
+                        const blockId = this.model[this.selectedBlockIndex].id;
 
-                        // Luego, actualiza el bloque seleccionado con el nuevo contenido y metadatos
-                        this.model.splice(this.selectedBlockIndex, 1, {
-                            ...this.model[this.selectedBlockIndex],
-                            content: editedContent,
-                            tags,
-                            tagsParsed,
-                            title,
-                            // Usa el contenido procesado para establecer contentParsed
-                            // eslint-disable-next-line no-undef
-                            contentParsed: marked.parse(blockContentWithTagsParsed),
-                        });
+                        // Actualiza el bloque utilizando el método de actualización que maneja la lógica de recalculo.
+                        this.updateModelBlockContent(blockId, editedContent);
+
+                        // Nota: No necesitas procesar tags, title, etc., aquí, ya que eso se manejará en el método de recálculo.
                     }
                     this.updateModelMarkdown();
                     this.closeModal();
+
                     // Después de guardar, verifica si autoDownload está habilitado
                     if (this.autoDownloadEnabled) {
                         this.downloadMarkdown(); // Asume que este es tu método de descarga existente
