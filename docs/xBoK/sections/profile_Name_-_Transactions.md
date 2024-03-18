@@ -1,11 +1,8 @@
 # #profile Name - Transactions
 - ## 🔍 Definition
   - A profile/transaction refers to the collection of data and activities associated with a specific customer or business transaction.
-- ## 📰 Content type (transaction)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - transaction
+- ## 📰 Content type (#transaction)
+  - Content is of type list and uses the following classes: #transaction
 
 - ## 🔑 Keys
   

@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the exchange of_information and ideas between the company and its stakeholders.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

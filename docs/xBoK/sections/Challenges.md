@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - Challenges in the context of a business model refer to obstacles or difficulties that hinder the achievement of desired outcomes.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

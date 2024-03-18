@@ -2,12 +2,9 @@
 - ## 🔍 Definition
   - the financial analysis of the revenue and costs associated with a single unit of a product or service.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[unit-economics]] > #key 💰40 [Cost management and pricing strategies](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/unit-economics%2FCost%20management%20and%20pricing%20strategies) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 40
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If unit economics is defined as :the financial analysis of the revenue and costs associated with a single unit of a product or service., What could it be?What are the potential revenue streams for our business model?
   How can we diversify our sources of income to minimize risk?

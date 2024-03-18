@@ -7,6 +7,7 @@
     <title>Web App</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/@heroicons/vue@1.0.4/dist/heroicons.js"></script>
     <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -16,8 +17,12 @@
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <style>
         span[data-tag] {
-            font-size: 1rem !important;
-            vertical-align: middle;
+            background-color: white;
+        }
+
+        .btn {
+            padding-left: 0.2rem;
+            padding-right: 0.2rem;
         }
     </style>
 </head>
@@ -43,31 +48,22 @@
                         </div>
                         <div class="navbar-end">
                             <div class="join">
-                                <button id="downloadBtn" @click="downloadMarkdown"
-                                    class="btn join-item btn-primary btn-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                        class="w-6 h-6">
-                                        <path fill-rule="evenodd"
-                                            d="M10.5 3.75a6 6 0 0 0-5.98 6.496A5.25 5.25 0 0 0 6.75 20.25H18a4.5 4.5 0 0 0 2.206-8.423 3.75 3.75 0 0 0-4.133-4.303A6.001 6.001 0 0 0 10.5 3.75Zm2.25 6a.75.75 0 0 0-1.5 0v4.94l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V9.75Z"
-                                            clip-rule="evenodd" />
-                                    </svg>
+                                <button id="downloadBtn" @click="downloadMarkdown" class="btn join-item btn-primary">
+                                    <ion-icon size="large" name="cloud-download-outline"></ion-icon>
                                     Download
                                 </button>
-                                <button id="exportBtn" @click="downloadHTML" class="btn join-item btn-primary btn-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                        class="w-6 h-6">
-                                        <path fill-rule="evenodd"
-                                            d="M10.5 3.75a6 6 0 0 0-5.98 6.496A5.25 5.25 0 0 0 6.75 20.25H18a4.5 4.5 0 0 0 2.206-8.423 3.75 3.75 0 0 0-4.133-4.303A6.001 6.001 0 0 0 10.5 3.75Zm2.25 6a.75.75 0 0 0-1.5 0v4.94l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V9.75Z"
-                                            clip-rule="evenodd" />
-                                    </svg>
+                                <button id="exportBtn" @click="downloadHTML" class="btn join-item btn-primary">
+                                    <ion-icon size="large" name="download-outline"></ion-icon>
                                     Export
                                 </button>
                                 <button @click="toggleAutoDownload"
                                     :class="{'bg-green-500': autoDownloadEnabled, 'bg-gray-500': !autoDownloadEnabled}"
-                                    class="btn join-item btn-primary btn-sm">
+                                    class="btn join-item btn-primary">
+                                    <ion-icon size="large" name="toggle-outline"></ion-icon>
                                     Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
                                 </button>
-                                <button @click="handleRefresh" class="btn join-item btn-primary btn-sm">Refresh</button>
+                                <button @click="handleRefresh" class="btn join-item btn-primary">
+                                    <ion-icon size="large" name="refresh-circle-outline"></ion-icon>Refresh</button>
                             </div>
                         </div>
                     </div>
@@ -81,18 +77,16 @@
                 <nav class="order-first w-1/4 m-4 p-2 overflow-y-auto" style="min-width: 440px">
                     <div class="flex flex-row flex-wrap gap-2 bg-white sticky top-0">
                         <div class="flex flex-row justify-between mb-4 gap-2">
-                            <button @click="changeSidebar('home')"
-                                class="collapse-filter-button btn btn-primary btn-sm">🏠
-                                Home</button>
-                            <button @click="changeSidebar('guides')"
-                                class="collapse-filter-button btn btn-primary btn-sm">📋
-                                Guides</button>
-                            <button @click="changeSidebar('index')"
-                                class="collapse-filter-button btn btn-primary btn-sm">🗂️
-                                Index</button>
-                            <button @click="changeSidebar('filter')"
-                                class="collapse-filter-button btn btn-primary btn-sm">🔍
-                                Filter</button>
+                            <button @click="changeSidebar('home')" class="collapse-filter-button btn btn-primary">
+                                <ion-icon size="large" name="link-outline"></ion-icon>Home</button>
+                            <button @click="changeSidebar('guides')" class="collapse-filter-button btn btn-primary">
+                                <ion-icon size="large" name="document-text-outline"></ion-icon
+                                    size="large">Guides</button>
+                            <button @click="changeSidebar('index')" class="collapse-filter-button btn btn-primary">
+                                <ion-icon size="large" name="albums-outline"></ion-icon>Index</button>
+                            <button @click="changeSidebar('filter')" class="collapse-filter-button btn btn-primary">
+                                <ion-icon size="large" name="filter-outline"></ion-icon></ion-icon
+                                    size="large">Filter</button>
                         </div>
                     </div>
 
@@ -104,47 +98,39 @@
                                 <p>Plastilinn allows you to create a business model and evolve it to make it better and
                                     better. </p>
                                 <div>
-                                    <h5>📋 Guides</h5>
+                                    <h5>Guides</h5>
                                     <p>Includes help guides that will make it easier for you to create your business
                                         model, offering you step by step all the information you need and precise
                                         instructions.</p>
-                                    <h5>🗂️ Index</h5>
+                                    <h5>Index</h5>
                                     <p>Allows you to quickly navigate to the section of your plastilin doc that you want
                                         to consult.</p>
-                                    <h5>🔍 Filter</h5>
+                                    <h5>Filter</h5>
                                     <p>Allows you to carry out smart queries by filtering the content of your plastilin
                                         doc.</p>
                                 </div>
 
                                 <div tabindex="0" class="collapse bg-base-200">
                                     <div class="collapse-title text-xl font-medium">
-                                        <span style="display: inline-block; vertical-align: middle;"><svg
-                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-                                            </svg></span>
+                                        <span style="display: inline-block; vertical-align: middle;">
+                                            <ion-icon size="large" name="information-circle-outline"></ion-icon
+                                                size="large">
+                                        </span>
                                         Help
                                     </div>
                                     <div class="collapse-content">
                                         <p>Click on the info icon <span
-                                                style="display: inline-block; vertical-align: middle;"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-                                                </svg></span> at the right of any section of your document</p>
+                                                style="display: inline-block; vertical-align: middle;">
+                                                <ion-icon size="large" name="information-circle-outline"></ion-icon
+                                                    size="large"></span> at the
+                                            right of any section of your document</p>
                                         <p>Click here to access the <a
                                                 href="https://xbokmd.github.io/plastilinn/index.html"
                                                 target="_blank">plastilinn documentation page</a> (Work in Progress)</p>
                                     </div>
                                 </div>
                                 <div role="alert" class="alert mt-10">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        class="stroke-info shrink-0 w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
+                                    <ion-icon size="large" name="information-circle-outline"></ion-icon>
                                     <h3 class="font-bold">New to plastilin?</h3>
                                     <div class="text-xs">Simply click on the guides button in this sidebar and select
                                         the quickstart guide.</div>
@@ -213,12 +199,7 @@
                                     <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
                                         <!-- Búsqueda -->
                                         <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor" class="w-5 h-5 text-gray-400">
-                                                <path fill-rule="evenodd"
-                                                    d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
+                                            <ion-icon size="large" name="search-outline"></ion-icon>
                                             <input v-model="searchQuery" type="text" placeholder="Search..."
                                                 class="input ml-2 bg-gray-50 w-full">
                                         </div>
@@ -234,13 +215,9 @@
                                                         class="flex items-center justify-center h-8 px-2 text-sm"
                                                         :data-tag="tag">{{ tag }}</span>
                                                 </div>
-                                                <button @click="resetSelectedTags" class="btn btn-ghost btn-sm">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="currentColor" class="w-6 h-6">
-                                                        <path fill-rule="evenodd"
-                                                            d="M4.755 10.059a7.5 7.5 0 0 1 12.548-3.364l1.903 1.903h-3.183a.75.75 0 1 0 0 1.5h4.992a.75.75 0 0 0 .75-.75V4.356a.75.75 0 0 0-1.5 0v3.18l-1.9-1.9A9 9 0 0 0 3.306 9.67a.75.75 0 1 0 1.45.388Zm15.408 3.352a.75.75 0 0 0-.919.53 7.5 7.5 0 0 1-12.548 3.364l-1.902-1.903h3.183a.75.75 0 0 0 0-1.5H2.984a.75.75 0 0 0-.75.75v4.992a.75.75 0 0 0 1.5 0v-3.18l1.9 1.9a9 9 0 0 0 15.059-4.035.75.75 0 0 0-.53-.918Z"
-                                                            clip-rule="evenodd" />
-                                                    </svg>Reset</button>
+                                                <button @click="resetSelectedTags" class="btn btn-ghost">
+                                                    <ion-icon size="large" name="refresh-circle-outline"></ion-icon
+                                                        size="large">Reset</button>
                                             </div>
                                             <select v-model="selectedTags"
                                                 class="select select-bordered w-full p-2 bg-white rounded-lg shadow"
@@ -308,12 +285,7 @@
                                         <div class="text-xl mt-4">Design, analyze and validate your business model.
                                         </div>
                                         <div role="alert" class="alert m-8">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                class="stroke-info shrink-0 w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                                </path>
-                                            </svg>
+                                            <ion-icon size="large" name="alert-circle-outline"></ion-icon>
                                             <span>Upload your plastilinn doc</span>
                                         </div>
                                         <input type="file" @change="loadAndParseModelFile" accept=".md"
@@ -334,33 +306,24 @@
                                                 class="md-block-container-right tags-container text-gray-500 w-full rounded-md text-sm text-center p-2 mt-1 mb-1 w-1/4">
                                                 <div
                                                     class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500 p-2 mt-1 mb-1 w-1/4">
-                                                    <div class="xbok-block-tags flex items-center gap-2">
-                                                        <span data-tag="edit"
-                                                            class="flex items-center justify-center h-8 px-2 text-sm">
-                                                            <button @click="openBlockEditModal(block)"
-                                                                class="opacity-50 hover:opacity-100 focus:opacity-100"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    viewBox="0 0 24 24" fill="blue" class="w-4 h-4">
-                                                                    <path
-                                                                        d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
-                                                                </svg>
-                                                            </button>
-                                                        </span>
+                                                    <div class="xbok-block-tags flex items-center">
+                                                        <button @click="openBlockEditModal(block)"
+                                                            class="btn btn-primary btn-outline text-white p-0 rounded opacity-80 hover:opacity-100 focus:opacity-100">
+                                                            <ion-icon size="large" name="document-outline"></ion-icon
+                                                                size="large">
+                                                        </button>
                                                         <div :id="block.metamodel.name"
                                                             class="block-metamodel section inline-flex"
                                                             v-if="block.metamodel">
-                                                            <span data-tag="section"
-                                                                class="flex items-center justify-center h-8 px-2 text-sm">
-                                                                <button @click="openInfoModal(block.metamodel.name)"
-                                                                    class="opacity-50 hover:opacity-100 focus:opacity-100">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                                        viewBox="0 0 24 24" stroke-width="1.5"
-                                                                        stroke="blue" class="w-6 h-6">
-                                                                        <path stroke-linecap="round"
-                                                                            stroke-linejoin="round"
-                                                                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-                                                                    </svg>
-                                                                </button>
+                                                            <button @click="openInfoModal(block.metamodel.name)"
+                                                                class="btn btn-primary btn-outline text-white p-0 rounded opacity-80 hover:opacity-100 focus:opacity-100">
+                                                                <ion-icon size="large"
+                                                                    name="information-circle-outline"></ion-icon
+                                                                    size="large">
+                                                            </button>
+                                                        </div>
+                                                        <div class="md-block-container-right markers-container"
+                                                            v-html="block.markersParsed">
                                                         </div>
                                                         <div class="md-block-container-right tags-container"
                                                             v-html="block.tagsParsed">
@@ -471,39 +434,24 @@
             <div class="relative top-20 mx-auto p-5 border w-4/5 shadow-lg rounded-md bg-white flex flex-col justify-center items-center"
                 style="z-index: 100;">
                 <!-- Contenedor para marcadores -->
-                <div class="markers flex flex-col items-start justify-start m-2">xxxx
+                <div class="markers flex flex-col items-start justify-start m-2">
                 </div>
                 <div class="flex">
                     <div class="mt-3 text-center">
                         <div class="mt-2">
                             <div id="editor-container"></div>
                         </div>
-                        <button class="btn m-2 btn-primary btn-sm" @click="sendMessageToBot()"><svg
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path d="M16.5 7.5h-9v9h9v-9Z" />
-                                <path fill-rule="evenodd"
-                                    d="M8.25 2.25A.75.75 0 0 1 9 3v.75h2.25V3a.75.75 0 0 1 1.5 0v.75H15V3a.75.75 0 0 1 1.5 0v.75h.75a3 3 0 0 1 3 3v.75H21A.75.75 0 0 1 21 9h-.75v2.25H21a.75.75 0 0 1 0 1.5h-.75V15H21a.75.75 0 0 1 0 1.5h-.75v.75a3 3 0 0 1-3 3h-.75V21a.75.75 0 0 1-1.5 0v-.75h-2.25V21a.75.75 0 0 1-1.5 0v-.75H9V21a.75.75 0 0 1-1.5 0v-.75h-.75a3 3 0 0 1-3-3v-.75H3A.75.75 0 0 1 3 15h.75v-2.25H3a.75.75 0 0 1 0-1.5h.75V9H3a.75.75 0 0 1 0-1.5h.75v-.75a3 3 0 0 1 3-3h.75V3a.75.75 0 0 1 .75-.75ZM6 6.75A.75.75 0 0 1 6.75 6h10.5a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75H6.75a.75.75 0 0 1-.75-.75V6.75Z"
-                                    clip-rule="evenodd" />
-                            </svg>
+                        <button class="btn m-2 btn-primary" @click="">
+                            <ion-icon size="large" name="pricetags-outline"></ion-icon>
+                            Tags</button>
+                        <button class="btn m-2 btn-primary" @click="sendMessageToBot()">
+                            <ion-icon size="large" name="hardware-chip-outline"></ion-icon>
                             AI suggest content</button>
-                        <button class="btn m-2 btn-primary btn-sm" @click="saveChanges"><svg
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path
-                                    d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
-                                <path fill-rule="evenodd"
-                                    d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z"
-                                    clip-rule="evenodd" />
-                            </svg>
+                        <button class="btn m-2 btn-primary" @click="saveChanges">
+                            <ion-icon size="large" name="save-outline"></ion-icon>
                             Save changes</button>
-                        <button class="btn m-2 btn-primary btn-sm" @click="closeModal"><svg
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
-                                    clip-rule="evenodd" />
-                            </svg>
+                        <button class="btn m-2 btn-primary" @click="closeModal"><ion-icon size="large"
+                                name="close-circle-outline"></ion-icon>
                             Close window</button>
                     </div>
                 </div>
@@ -529,6 +477,8 @@
                     artifactModalContent: '', // Almacenará el contenido HTML generado
                     // METAMODEL
                     metamodel: [],
+                    // Definir un array con los símbolos que usan los markers
+                    markerSymbols: ['>', '*', '?', '!', '¡', '=', '+', '-'],
                     // MODEL
                     model: [], // Se utilizará para almacenar el modelo de datos creado a partir del Markdown
                     modelName: '',
@@ -707,7 +657,8 @@
                     const tagResults = this.processTags(block.content);
                     block.tags = tagResults.tags;
                     block.tagsParsed = tagResults.tagsParsed;
-                    block.markers = tagResults.markers; // Suponiendo que markers es calculado en processTags
+                    block.markers = tagResults.markers;
+                    block.markersParsed = tagResults.markersParsed;
                     block.instanceValue = this.setInstanceValue(block.title);
                     block.metamodelID = this.generateMetamodelID(block.title, block.instanceClass);
                     block.metamodel = this.importMetamodelData(block.metamodelID);
@@ -747,39 +698,6 @@
                     return block;
                 },
 
-
-                processBlockDELETEME(blockContent) {
-                    this.lastId += 1;
-                    const firstLine = blockContent.split('\n')[0];
-                    const type = this.determineBlockType(firstLine);
-                    const depthLevel = this.determineDepthLevel(firstLine);
-                    const instanceClass = this.determineInstanceClass(blockContent, type);
-                    const { tags, tagsParsed, markers } = this.processTags(blockContent);
-                    const title = this.extractBlockTitle(blockContent);
-                    console.log("🚀 ~ processBlock ~ title:", title)
-                    const instanceValue = this.setInstanceValue(title)
-                    const metamodelID = this.generateMetamodelID(title, instanceClass);
-                    const metamodel = this.importMetamodelData(metamodelID);
-                    const mdToHTML = this.parseToHTML(blockContent);
-                    const contentParsed = marked.parse(mdToHTML);
-
-                    return {
-                        id: this.lastId,
-                        content: blockContent,
-                        type,
-                        tags,
-                        tagsParsed,
-                        markers, // Include markers in the block object
-                        title,
-                        contentParsed,
-                        metamodel,
-                        depthLevel,
-                        instanceClass,
-                        instanceValue,
-                        metamodelID,
-                    };
-                },
-
                 determineBlockType(firstLine) {
                     if (/^\s*(-\s+)?#(\s|#)/.test(firstLine)) {
                         return 'section';
@@ -802,17 +720,33 @@
                 },
 
                 processTags(blockContent) {
-                    // Existing functionality to extract regular tags and prepare them for display
-                    const tags = [...blockContent.matchAll(/(?:^|\s)#([^\s]+)/g)].map((match) => match[1]);
-                    const tagsParsed = tags.map((tag) => `<span data-tag="${tag}">#${tag}</span>`).join(' ');
+                    // Definir un array con los símbolos que usan los markers
+                    const markerSymbols = this.markerSymbols;
 
-                    // New functionality to find and process special tags
-                    // Define a regex that captures the desired special characters in tags
-                    const specialTagsRegex = /(?:^|\s)#([^\s]*[>!*?][^\s]*)/g;
-                    const markers = [...blockContent.matchAll(specialTagsRegex)].map((match) => match[1]);
+                    // Identificar las etiquetas de tipo Marker y guardarlas en un array llamado markers
+                    const markers = [...blockContent.matchAll(/(?:^|\s)#([^\s]*[>!*?+^-][^\s]*)/g)].map(match => match[1]);
 
-                    // Return the processed tags, the HTML representation, and the new markers
-                    return { tags, tagsParsed, markers };
+                    // Utilizar parseMarker para procesar cada marker
+                    const markersParsed = markers.map(marker => this.parseMarker(marker)).join(' ');
+
+                    // Identificar las etiquetas genéricas y guardarlas en un array llamado tags
+                    const tags = [...blockContent.matchAll(/(?:^|\s)#([^\s]+)/g)]
+                        .map(match => match[1])
+                        .filter(tag => !markerSymbols.some(symbol => tag.startsWith(symbol)));
+
+                    // Utilizar parseTag para procesar cada tag
+                    const tagsParsed = tags.map(tag => this.parseTag(tag)).join(' ');
+
+                    // Retornar los arrays y strings correspondientes
+                    return { markers, markersParsed, tags, tagsParsed };
+                },
+
+                parseMarker(marker) {
+                    return `<span data-marker="${marker}">#${marker}</span>`;
+                },
+
+                parseTag(tag) {
+                    return `<span data-tag="${tag}">#${tag}</span>`;
                 },
 
                 extractBlockTitle(blockContent) {
@@ -872,7 +806,26 @@
                 },
 
                 generateMetamodelID(title, instanceClass) {
-                    return instanceClass && title ? `${instanceClass} Name ${title}` : title;
+                    // Si instanceClass está vacío o es null, retorna directamente el title
+                    if (!instanceClass) {
+                        return title;
+                    }
+
+                    // Si instanceClass no está vacío y el título no contiene un guión con un espacio a cada lado
+                    if (instanceClass && !title.includes(" - ")) {
+                        return `${instanceClass} Name`;
+                    }
+
+                    // Si instanceClass no está vacío y el título contiene un guión con un espacio a cada lado
+                    if (instanceClass && title.includes(" - ")) {
+                        // Extrae el texto a la derecha del guión, incluyendo el guión y los espacios
+                        const titleAfterDash = title.substring(title.indexOf(" - ") + 3);
+                        // Construye metamodelID usando instanceClass y el texto a la derecha del guión, reemplazando el inicio del título por "Name"
+                        return `${instanceClass} Name - ${titleAfterDash}`;
+                    }
+
+                    // En cualquier otro caso (por precaución), retorna el título
+                    return title;
                 },
 
                 importMetamodelData(metamodelID) {
@@ -889,16 +842,31 @@
                 },
 
                 parseToHTML(content) {
-                    // Procesa etiquetas como antes
-                    // eslint-disable-next-line max-len
-                    const processedTagsContent = content.replace(/(^|\s)#([^#\s][^\s]*)/g, (match, p1, p2) => `${p1}<span data-tag="${p2}" class="items-center justify-start rounded p-2">#${p2}</span>`);
+                    // Define un array con los símbolos que usan los markers
+                    const markerSymbols = this.markerSymbols;
+
+                    // Procesa etiquetas y marcadores diferenciándolos, ignorando los encabezados Markdown
+                    const processedTagsContent = content.replace(/(^|\s)(#)([^\s]+)/g, (match, p1, p2, p3) => {
+                        // Ignora si es un encabezado Markdown (determinado por p2 siendo "#" y p1 siendo el inicio de una línea o un salto de línea)
+                        if (p1 === '' && /^#+/.test(p2 + p3)) {
+                            return match; // Devuelve el match original sin modificar
+                        }
+                        // Verifica si el elemento es un marcador
+                        if (markerSymbols.some(symbol => p3.startsWith(symbol))) {
+                            // Llama a parseMarker si es un marcador
+                            return `${p1}${this.parseMarker(p3)}`;
+                        } else {
+                            // Llama a parseTag si es una etiqueta regular
+                            return `${p1}${this.parseTag(p3)}`;
+                        }
+                    });
 
                     // Procesa los saltos de línea, excepto en bloques de código
                     const processedContent = processedTagsContent.split('\n').map((line, index, lines) => {
                         // Detecta bloques de código para evitar añadir <br> dentro de ellos
                         if (line.startsWith('```')) {
                             // Busca el siguiente bloque de cierre de código y salta al índice correspondiente
-                            const findClosingTagIndex = lines.slice(index + 1).findIndex((line) => line.startsWith('```'));
+                            const findClosingTagIndex = lines.slice(index + 1).findIndex(line => line.startsWith('```'));
                             if (findClosingTagIndex !== -1) {
                                 index += findClosingTagIndex + 1;
                             }
@@ -1268,6 +1236,8 @@
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/2aa639ac-f805-454c-b5da-6fcc527f8d70/webchat/config.js"
         defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

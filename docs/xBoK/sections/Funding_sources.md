@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the various ways a business model generates revenue or acquires capital to support its operations.
 - ## 📰 Content type 
-  - Content is of type list.
-  
+  - Content is of type list
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

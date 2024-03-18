@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the identification and targeting of specific customer groups with tailored sales approaches within a business model.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

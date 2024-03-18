@@ -1,11 +1,8 @@
 # Organization goals
 - ## 🔍 Definition
   - Business goals are the specific objectives that a business model aims to achieve in terms of revenue, growth, profitability, or market share.
-- ## 📰 Content type (goal)
-  - Content is of type tree.
-  
-  - Content uses the following classes:
-    - goal
+- ## 📰 Content type (#goal_organization)
+  - Content is of type tree and uses the following classes: #goal_organization
 
 - ## 🔑 Keys
   

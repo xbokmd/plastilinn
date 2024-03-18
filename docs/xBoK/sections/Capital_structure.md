@@ -2,12 +2,9 @@
 - ## 🔍 Definition
   - the financial resources, assets, and investments that a business uses to generate income and support its operations.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
-  - #block [[capital-structure]] > #key 💰50 [Capital structure](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/capital-structure%2FCapital%20structure) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 50
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If capital structure is defined as :the financial resources, assets, and investments that a business uses to generate income and support its operations., What could it be?How do we plan to secure initial funding for our startup?
   What are the different sources of funding that we can explore?

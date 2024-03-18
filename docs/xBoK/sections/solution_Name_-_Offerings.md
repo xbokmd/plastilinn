@@ -1,11 +1,8 @@
 # #solution Name - Offerings
 - ## 🔍 Definition
   - the products or services that a business model provides to its customers to fulfill their needs or solve their problems.
-- ## 📰 Content type (offering)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - offering
+- ## 📰 Content type (#offering)
+  - Content is of type list and uses the following classes: #offering
 
 - ## 🔑 Keys
   

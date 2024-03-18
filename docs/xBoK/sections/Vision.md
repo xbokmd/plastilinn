@@ -2,15 +2,10 @@
 - ## 🔍 Definition
   - Vision is a statement that outlines the long-term aspirations and goals of a business model.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[vision]] > #key 💰10 [Realism - Ambition](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/vision%2FRealism%20-%20Ambition) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 10
-    value:: 50
-  - #block [[vision]] > #key 💰10 [Clarity of Conception](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/vision%2FClarity%20of%20Conception) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 10
-    value:: 50
+  - Vision > #key 💰10 [Realism - Ambition](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Realism_-_Ambition
+  - Vision > #key 💰10 [Clarity of Conception](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Clarity_of_Conception
 - ## 🤖 innCoPilot
   If vision is defined as :Vision is a statement that outlines the long-term aspirations and goals of a business model., What could it be?What are the specific goals or targets that our business model aims to achieve?
   How do these objectives align with creating value for our stakeholders?

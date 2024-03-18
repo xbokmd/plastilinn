@@ -1,11 +1,8 @@
 # #profile Name - Relationship
 - ## 🔍 Definition
   - Relationship that we maintain with our stakeholders, which can be personal, automated, self-service, etc.
-- ## 📰 Content type (relationship)
-  - Content is of type text.
-  
-  - Content uses the following classes:
-    - relationship
+- ## 📰 Content type (#relationship)
+  - Content is of type text and uses the following classes: #relationship
 
 - ## 🔑 Keys
   

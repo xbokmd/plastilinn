@@ -1,11 +1,8 @@
 # Phases
 - ## 🔍 Definition
   - the distinct stages or steps involved in the development, implementation, and evolution of a business model.
-- ## 📰 Content type (phase)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - phase
+- ## 📰 Content type (#phase)
+  - Content is of type list and uses the following classes: #phase
 
 - ## 🔑 Keys
   

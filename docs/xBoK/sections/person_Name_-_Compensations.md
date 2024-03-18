@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - The various forms of remuneration, benefits, and rewards that a company provides to an individual in exchange for their contributions. This can include salary, bonuses, stock options, health benefits, retirement plans, and other perks that constitute the total compensation package offered to employees or collaborators for their valuable inputs to the company.
 - ## 📰 Content type 
-  - Content is of type list.
-  
+  - Content is of type list
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

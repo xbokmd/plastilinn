@@ -1,11 +1,8 @@
 # #person Name - Functions
 - ## 🔍 Definition
   - Specification of the functions that a person who is a stakeholder of the business can carry out, because they possess the capacity and experience to successfully complete them.
-- ## 📰 Content type (function)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - function
+- ## 📰 Content type (#function)
+  - Content is of type list and uses the following classes: #function
 
 - ## 🔑 Keys
   

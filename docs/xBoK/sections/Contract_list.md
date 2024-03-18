@@ -2,12 +2,9 @@
 - ## 🔍 Definition
   - A contract list refers to a comprehensive inventory of all the agreements and legal obligations between a business and its stakeholders.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[contract-list]] > #key 💰30 [Strong contractual agreements](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/contract-list%2FStrong%20contractual%20agreements) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
+  
 - ## 🤖 innCoPilot
   
 - ## 📖 Description

@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the overall look and feel of a company's brand, including its logo, color scheme, typography, and other visual elements.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

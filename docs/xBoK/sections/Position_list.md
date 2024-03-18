@@ -1,11 +1,8 @@
 # Position list
 - ## 🔍 Definition
   - A position list refers to a strategic document outlining the roles, responsibilities, and hierarchy of positions within a business.
-- ## 📰 Content type (position)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - position
+- ## 📰 Content type (#position)
+  - Content is of type list and uses the following classes: #position
 
 - ## 🔑 Keys
   

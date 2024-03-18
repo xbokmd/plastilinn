@@ -1,11 +1,8 @@
 # Assumption list
 - ## 🔍 Definition
   - Aspects that the entrepreneurial team knew are true and relevant to their business.
-- ## 📰 Content type (assumption)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - assumption
+- ## 📰 Content type (#assumption)
+  - Content is of type list and uses the following classes: #assumption
 
 - ## 🔑 Keys
   

@@ -2,6 +2,7 @@
   "classes": [
     {
       "name": "key",
+      "metamodelID": "key",
       "icon": "🔑",
       "color": "red",
       "alias": "keys",
@@ -9,6 +10,7 @@
     },
     {
       "name": "organization",
+      "metamodelID": "organization",
       "icon": "🏢",
       "color": "blue",
       "alias": "organizations",
@@ -16,20 +18,15 @@
     },
     {
       "name": "journey",
+      "metamodelID": "journey",
       "icon": "✈️",
       "color": "blue",
       "alias": "journeys",
       "info": "\"journey\" refers to the process or path that a customer takes from the initial awareness of a product or service to the final purchase and beyond. It encompasses all the touchpoints and interactions a customer has with a business, including marketing, sales, customer service, and post-purchase support. The customer journey is often mapped out to understand and optimize the overall experience and improve customer satisfaction and loyalty."
     },
     {
-      "name": "assumption",
-      "icon": "🔮",
-      "color": "blue",
-      "alias": "assumptions",
-      "info": "an assumption refers to a belief or statement about a certain aspect of the business that is considered to be true, but has not yet been proven or validated. Assumptions are often made when there is insufficient data or evidence available to make a definitive conclusion. These assumptions serve as the foundation for various elements of the business model, such as revenue streams, customer segments, cost structures, and value propositions. It is important for entrepreneurs to identify and test these assumptions to reduce risks and validate their business model."
-    },
-    {
       "name": "solution",
+      "metamodelID": "solution",
       "icon": "💊",
       "color": "blue",
       "alias": "solutions",
@@ -37,6 +34,7 @@
     },
     {
       "name": "offering",
+      "metamodelID": "offering",
       "icon": "🛍️",
       "color": "blue",
       "alias": "offerings",
@@ -44,6 +42,7 @@
     },
     {
       "name": "work",
+      "metamodelID": "work",
       "icon": "⚙️",
       "color": "blue",
       "alias": "",
@@ -51,6 +50,7 @@
     },
     {
       "name": "metric",
+      "metamodelID": "metric",
       "icon": "📐",
       "color": "blue",
       "alias": "metrics",
@@ -58,6 +58,7 @@
     },
     {
       "name": "asset",
+      "metamodelID": "asset",
       "icon": "⭐",
       "color": "blue",
       "alias": "assets",
@@ -65,6 +66,7 @@
     },
     {
       "name": "revenue",
+      "metamodelID": "revenue",
       "icon": "💰",
       "color": "blue",
       "alias": "",
@@ -72,6 +74,7 @@
     },
     {
       "name": "segmentation",
+      "metamodelID": "segmentation",
       "icon": "✂️",
       "color": "blue",
       "alias": "segmentations",
@@ -79,6 +82,7 @@
     },
     {
       "name": "segment",
+      "metamodelID": "segment",
       "icon": "🙋",
       "color": "blue",
       "alias": "segmentations",
@@ -86,6 +90,7 @@
     },
     {
       "name": "value",
+      "metamodelID": "value",
       "icon": "💎",
       "color": "blue",
       "alias": "values, value proposition",
@@ -93,6 +98,7 @@
     },
     {
       "name": "channel",
+      "metamodelID": "channel",
       "icon": "🎙️",
       "color": "blue",
       "alias": "channels",
@@ -100,6 +106,7 @@
     },
     {
       "name": "cost",
+      "metamodelID": "cost",
       "icon": "💸",
       "color": "blue",
       "alias": "costs",
@@ -107,6 +114,7 @@
     },
     {
       "name": "emotion",
+      "metamodelID": "emotion",
       "icon": "😐",
       "color": "blue",
       "alias": "emotions",
@@ -114,6 +122,7 @@
     },
     {
       "name": "message",
+      "metamodelID": "message",
       "icon": "📣",
       "color": "blue",
       "alias": "messages",
@@ -121,6 +130,7 @@
     },
     {
       "name": "feature",
+      "metamodelID": "feature",
       "icon": "🌟",
       "color": "blue",
       "alias": "features",
@@ -128,6 +138,7 @@
     },
     {
       "name": "function",
+      "metamodelID": "function",
       "icon": "👔",
       "color": "blue",
       "alias": "functions",
@@ -135,6 +146,7 @@
     },
     {
       "name": "goal",
+      "metamodelID": "goal",
       "icon": "🎯",
       "color": "blue",
       "alias": "goals",
@@ -142,6 +154,7 @@
     },
     {
       "name": "hypothesis",
+      "metamodelID": "hypothesis",
       "icon": "🔎",
       "color": "red",
       "alias": "",
@@ -149,6 +162,7 @@
     },
     {
       "name": "person",
+      "metamodelID": "person",
       "icon": "👤",
       "color": "blue",
       "alias": "persons",
@@ -156,148 +170,209 @@
     },
     {
       "name": "transaction",
+      "metamodelID": "transaction",
       "icon": "🛒",
       "color": "blue",
       "alias": "transactions",
       "info": "a transaction refers to the exchange of goods, services, or money between two or more parties. It involves a series of actions or events that occur when a customer purchases a product or service from a business. This can include activities such as placing an order, making a payment, and receiving the purchased item. Transactions are essential for generating revenue and tracking the flow of resources within a business."
     },
     {
-      "name": "risk",
-      "icon": "🚨",
-      "color": "red",
-      "alias": "risks",
-      "info": "#ERROR!"
-    },
-    {
       "name": "experiment",
+      "metamodelID": "experiment",
       "icon": "🧪",
       "color": "green",
       "alias": "experiments",
-      "info": "#ERROR!"
+      "info": "An \"experiment\" is a structured approach used by businesses to test hypotheses, validate assumptions, or explore new ideas. It involves designing and conducting controlled tests or trials to gather data, analyze results, and draw conclusions. Experiments can help businesses make data-driven decisions, optimize processes, and innovate their products or services. By systematically testing different variables and scenarios, businesses can uncover valuable insights and improve their overall performance."
     },
     {
       "name": "question",
+      "metamodelID": "question",
       "icon": "💭",
       "color": "red",
       "alias": "questions",
-      "info": ""
+      "info": "A \"question\" refers to an inquiry or problem that needs to be addressed within the business model. It can be related to various aspects of the business, such as customer needs, market trends, or operational efficiency. Questions are often used to guide decision-making processes and identify areas for improvement or innovation. By asking the right questions and seeking answers through research or experimentation, businesses can gain valuable insights and make informed decisions to drive success."
     },
     {
       "name": "insight",
+      "metamodelID": "insight",
       "icon": "💡",
       "color": "green",
       "alias": "insights",
-      "info": ""
+      "info": "An \"insight\" is a deep understanding or realization gained from data analysis, observation, or research. It involves uncovering meaningful patterns, trends, or connections that provide valuable information or knowledge to support decision-making. Insights can help businesses identify opportunities, optimize processes, and enhance customer experiences. By translating data into actionable insights, businesses can make informed decisions, drive strategic initiatives, and achieve sustainable growth."
     },
     {
       "name": "position",
+      "metamodelID": "position",
       "icon": "🪪",
       "color": "blue",
       "alias": "positions",
-      "info": ""
+      "info": "\"position\" refers to the specific role or job function within a company. It refers to the responsibilities, tasks, and duties that an individual is expected to perform as part of their job. Positions can vary depending on the size and structure of the company, and can range from entry-level roles to executive positions. Understanding the different positions within a company is important for designing an effective organizational structure and ensuring that the right people are in the right roles to achieve the company's goals."
     },
     {
       "name": "skill",
+      "metamodelID": "skill",
       "icon": "🔧",
       "color": "blue",
       "alias": "skills",
-      "info": ""
+      "info": "\"skill\" refers to the specific abilities, knowledge, or expertise required to perform certain tasks or functions within the business model. Skills can be technical, such as programming or design skills, or soft skills, such as communication or leadership skills. Having the right skills within the team is essential for achieving business goals and delivering value to customers. Businesses may need to invest in training or hiring to ensure that they have the necessary skills to succeed."
     },
     {
       "name": "phase",
+      "metamodelID": "phase",
       "icon": "🗓️",
       "color": "blue",
       "alias": "phases",
-      "info": ""
+      "info": "\"phase\" refers to a specific stage or step in the development or implementation of a business model. It can refer to different stages of the product development process, such as ideation, prototyping, testing, and launch. Phases can also refer to different stages of the business lifecycle, such as startup, growth, maturity, and decline. Understanding the different phases of the business model can help businesses identify key challenges and opportunities, and develop strategies to navigate each stage successfully."
     },
     {
       "name": "milestone",
+      "metamodelID": "milestone",
       "icon": "🏁",
       "color": "blue",
       "alias": "phases",
-      "info": ""
+      "info": "A \"milestone\" refers to a significant event or achievement within a business model. It represents a key point in the development or implementation of the business model and can be used to track progress and measure success. Milestones can include the launch of a new product, the acquisition of a major customer, or the achievement of a specific revenue target. By setting and achieving milestones, businesses can stay focused on their goals and ensure that they are making progress towards their desired outcomes."
     },
     {
       "name": "role",
+      "metamodelID": "role",
       "icon": "🎩",
       "color": "blue",
       "alias": "roles",
-      "info": ""
+      "info": "\"role\" refers to the specific responsibilities, duties, or functions that an individual or team performs within the business model. Roles can be defined based on the skills, expertise, or experience required to perform certain tasks or activities. For example, the role of a marketing manager may involve developing and implementing marketing strategies, while the role of a customer service representative may involve addressing customer inquiries and resolving issues. Defining clear roles and responsibilities is essential for ensuring effective collaboration and coordination within the business model."
     },
     {
       "name": "stakeholder",
+      "metamodelID": "stakeholder",
       "icon": "🤔",
       "color": "blue",
-      "alias": "roles",
-      "info": ""
+      "alias": "stakeholders",
+      "info": "A \"stakeholder\" refers to any individual or group that has an interest or stake in the success of the business. This can include customers, employees, investors, suppliers, regulators, and the wider community. Understanding the needs and expectations of stakeholders is important for developing a sustainable and responsible business model that creates value for all parties involved. Effective stakeholder management can help businesses build trust, enhance reputation, and achieve long-term success."
     },
     {
       "name": "persona",
+      "metamodelID": "persona",
       "icon": "👩‍💼",
       "color": "blue",
-      "alias": "roles",
-      "info": ""
+      "alias": "personas",
+      "info": "A \"persona\" is a fictional representation of a specific customer segment or target audience. It is created based on research and data analysis to capture the characteristics, needs, and behaviors of the target audience. Personas help businesses understand their customers better and design products or services that meet their specific needs and preferences. By creating personas, businesses can tailor their marketing messages, improve customer experience, and increase customer loyalty."
+    },
+    {
+      "name": "profile",
+      "metamodelID": "profile",
+      "icon": "🙎‍♂️",
+      "color": "blue",
+      "alias": "profiles",
+      "info": "A \"profile\" refers to a detailed description or analysis of a specific customer segment or persona. It includes information such as demographics, behaviors, preferences, and needs of the target audience. Profiles are used to create a better understanding of the customer and to tailor the business model to meet their specific needs. By developing accurate and detailed profiles, businesses can create more effective marketing strategies, improve customer engagement, and increase customer satisfaction."
+    },
+    {
+      "name": "relationship",
+      "metamodelID": "relationship",
+      "icon": "🤝",
+      "color": "blue",
+      "alias": "relationships",
+      "info": "\"relationship\" refers to the connections and interactions between different elements or components within the business model. This can include relationships between customers and the business, between different departments or functions within the business, or between the business and its partners or suppliers. Building strong relationships is essential for creating value, fostering loyalty, and achieving long-term success in the market. Effective relationship management can help businesses improve customer satisfaction, streamline operations, and reduce costs."
     },
     {
       "name": "topic",
+      "metamodelID": "topic",
       "icon": "🗄️",
       "color": "grey",
       "alias": "topics",
-      "info": ""
+      "info": "\"topic\" refers to a specific subject or area of focus within the business model. It can refer to a particular aspect of the product or service, a market segment, a business process, or a strategic initiative. Topics provide a framework for organizing and analyzing information, and can help businesses identify areas for improvement or innovation. By focusing on specific topics, businesses can develop a deeper understanding of their business model and make more informed decisions."
     },
     {
       "name": "resource",
+      "metamodelID": "resource",
       "icon": "🖥️",
       "color": "grey",
       "alias": "resources",
-      "info": ""
+      "info": "\"resource\" refers to any asset or input that a business uses to create value and achieve its goals. This can include physical resources such as equipment, facilities, and inventory, as well as intangible resources such as intellectual property, human capital, and brand reputation. Effective resource management is critical for ensuring that a business has the necessary inputs to operate efficiently and effectively, and to achieve its desired outcomes."
     },
     {
       "name": "artifact",
+      "metamodelID": "artifact",
       "icon": "🧿",
       "color": "blue",
       "alias": "artifacts",
-      "info": ""
+      "info": "An \"artifact\" refers to any physical or digital object or tool that is used within the business model to create, deliver, or support the products or services offered. This can include things like software applications, manufacturing equipment, marketing materials, or customer support systems. Artifacts are essential for enabling the various functions and processes within the business model and ensuring that the products or services are delivered effectively and efficiently."
     },
     {
       "name": "unit",
+      "metamodelID": "unit",
       "icon": "📓",
       "color": "grey",
       "alias": "units",
-      "info": ""
+      "info": "A \"unit\" refers to a specific component or element within the business model. It can be a department, team, process, or system that performs a specific function or contributes to the overall value proposition of the business. Units are often organized and managed in a way that maximizes efficiency and effectiveness, and they can be optimized or restructured to improve performance and achieve business goals. Understanding the role and function of each unit is essential for designing and implementing a successful business model."
     },
     {
       "name": "content",
+      "metamodelID": "content",
       "icon": "📘",
       "color": "blue",
       "alias": "",
-      "info": ""
+      "info": "\"content\" refers to the information, media, or materials that a business creates and shares with its target audience. This can include written articles, videos, images, social media posts, and other forms of communication. Content is often used to attract and engage customers, build brand awareness, and provide value to the target audience. Effective content creation and distribution can help businesses establish themselves as thought leaders in their industry and drive customer loyalty and engagement."
     },
     {
       "name": "AI",
+      "metamodelID": "AI",
       "icon": "🤖",
       "color": "blue",
       "alias": "ai",
-      "info": ""
+      "info": "\"AI\" refers to artificial intelligence, which is the simulation of human intelligence in machines that are programmed to perform tasks that typically require human intelligence, such as learning, problem-solving, and decision-making. AI can be used in various aspects of business design, such as data analysis, customer service, and product development. By leveraging AI, businesses can improve efficiency, accuracy, and speed in their operations, as well as gain insights and make predictions based on large amounts of data."
     },
     {
       "name": "help",
+      "metamodelID": "help",
       "icon": "🌐",
       "color": "grey",
       "alias": "",
-      "info": ""
+      "info": "\"help\" refers to the resources, tools, or support that businesses may need to achieve their goals and improve their performance. This can include external resources such as consultants, mentors, or industry experts, as well as internal resources such as training programs, software, or technology. Help can also refer to collaboration and partnerships with other businesses or organizations to achieve mutual benefits and shared goals. Access to help can be critical for businesses to overcome challenges, stay competitive, and achieve success."
     },
     {
       "name": "block",
+      "metamodelID": "block",
       "icon": "🧿",
       "color": "blue",
       "alias": "blocks",
-      "info": ""
+      "info": "A \"block\" refers to a specific component or element within a business model that can be analyzed and optimized. It can refer to a process, system, or function that contributes to the overall performance of the business. By breaking down the business model into smaller blocks, businesses can identify areas for improvement and make targeted changes to optimize their operations and achieve their goals. Blocks can also be used to visualize and communicate the different components of the business model to stakeholders and team members."
+    },
+    {
+      "name": "assumption",
+      "metamodelID": "assumption",
+      "icon": "🔮",
+      "color": "blue",
+      "alias": "assumptions",
+      "info": "an assumption refers to a belief or statement about a certain aspect of the business that is considered to be true, but has not yet been proven or validated. Assumptions are often made when there is insufficient data or evidence available to make a definitive conclusion. These assumptions serve as the foundation for various elements of the business model, such as revenue streams, customer segments, cost structures, and value propositions. It is important for entrepreneurs to identify and test these assumptions to reduce risks and validate their business model."
+    },
+    {
+      "name": "comment",
+      "metamodelID": "comment",
+      "icon": "🗨️",
+      "color": "",
+      "alias": "comments",
+      "info": "A comment is a statement or feedback provided by an individual or group regarding a specific aspect of the business. Comments can be positive or negative and can provide valuable insights into customer preferences, satisfaction levels, and areas for improvement. Businesses can use comments to identify trends, address concerns, and improve their overall customer experience. Comments can be gathered through various channels such as surveys, social media, or customer support interactions."
+    },
+    {
+      "name": "task",
+      "metamodelID": "task",
+      "icon": "🛠️",
+      "color": "",
+      "alias": "tasks",
+      "info": "A \"task\" refers to a specific activity or assignment that needs to be completed within the business model. Tasks can be related to various aspects of the business, such as marketing, sales, production, or customer service. They are often assigned to specific individuals or teams within the organization and are essential for achieving the overall goals and objectives of the business. Effective task management is crucial for ensuring that tasks are completed on time and within budget, and that the business model operates efficiently and effectively."
+    },
+    {
+      "name": "risk",
+      "metamodelID": "risk",
+      "icon": "🚨",
+      "color": "red",
+      "alias": "risks",
+      "info": "\"Risk\" refers to the potential negative consequences or uncertainties associated with a particular decision or action within the business model. Risks can arise from various sources, such as market volatility, competition, regulatory changes, or operational inefficiencies. Identifying and managing risks is essential for ensuring the long-term sustainability and success of the business. Effective risk management involves assessing the likelihood and impact of potential risks, developing mitigation strategies, and monitoring and adjusting risk management plans as needed."
     }
   ],
   "markers": [
     {
       "name": "weight",
+      "metamodelID": "weight",
       "info": "- #question How important is this block for the business model?\n- #question If it turns out not to be true... is my business model greatly affected?\n- #question Is this something that could easily change without affecting the business model?",
       "low": "",
       "low icon": "",
@@ -322,6 +397,7 @@
     },
     {
       "name": "completion",
+      "metamodelID": "completion",
       "info": "- #question Is the block completed?",
       "low": "",
       "low icon": "",
@@ -346,6 +422,7 @@
     },
     {
       "name": "priority",
+      "metamodelID": "priority",
       "info": "- #question Mark with 'p' if you think this needs to be worked on (! if it's not very relevant or !!!!! if it's something you should prioritize)",
       "low": "",
       "low icon": "",
@@ -370,6 +447,7 @@
     },
     {
       "name": "certainty",
+      "metamodelID": "certainty",
       "info": "- #question How sure am I that this is true?\n- #question Do I have enough experience to assert this confidently?\n- #question Have I verified this in the real world or are these just assumptions?\n- #question Have I verified this in the real world?\n- #question Is this a fact I have experimentally verified?\n- #question Is this a statement I can prove with objective facts and data?",
       "low": "?",
       "low icon": "❓",
@@ -394,6 +472,7 @@
     },
     {
       "name": "rating",
+      "metamodelID": "rating",
       "info": "",
       "low": "-",
       "low icon": "🔴",
@@ -418,6 +497,7 @@
     },
     {
       "name": "risk",
+      "metamodelID": "risk",
       "info": "- #question Is this something I should prioritize ($$$$$)?\n- #question Is this something urgent but not the most urgent ($)?",
       "low": "",
       "low icon": "",
@@ -444,6 +524,7 @@
   "sections": [
     {
       "name": "Business summary",
+      "metamodelID": "",
       "weight": "*****",
       "format": "text",
       "id": "Business-summary",
@@ -455,6 +536,7 @@
     },
     {
       "name": "Business idea",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Business-idea",
@@ -466,6 +548,7 @@
     },
     {
       "name": "Opportunity",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Opportunity",
@@ -477,6 +560,7 @@
     },
     {
       "name": "Inspiration",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Inspiration",
@@ -488,6 +572,7 @@
     },
     {
       "name": "Business status",
+      "metamodelID": "",
       "weight": "****",
       "format": "text",
       "id": "Business-status",
@@ -499,6 +584,7 @@
     },
     {
       "name": "Challenges",
+      "metamodelID": "",
       "weight": "****",
       "format": "text",
       "id": "Challenges",
@@ -510,6 +596,7 @@
     },
     {
       "name": "Unfair advantage",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Unfair-advantage",
@@ -521,6 +608,7 @@
     },
     {
       "name": "Business objectives",
+      "metamodelID": "",
       "weight": "****",
       "format": "text",
       "id": "Business-objectives",
@@ -532,6 +620,7 @@
     },
     {
       "name": "Mission",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Mission",
@@ -543,6 +632,7 @@
     },
     {
       "name": "Vision",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Vision",
@@ -554,6 +644,7 @@
     },
     {
       "name": "Strategy",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Strategy",
@@ -565,6 +656,7 @@
     },
     {
       "name": "Organization values",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Organization-values",
@@ -576,10 +668,11 @@
     },
     {
       "name": "Organization goals",
+      "metamodelID": "",
       "weight": "****",
       "format": "tree",
       "id": "Organization-goals",
-      "classes": "goal",
+      "classes": "goal_organization",
       "definition": "Business goals are the specific objectives that a business model aims to achieve in terms of revenue, growth, profitability, or market share.",
       "info": "https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Organization-goals",
       "question": "If Organization goals is defined as :Business goals are the specific objectives that a business model aims to achieve in terms of revenue, growth, profitability, or market share., what could it be?",
@@ -587,6 +680,7 @@
     },
     {
       "name": "Stakeholders",
+      "metamodelID": "",
       "weight": "****",
       "format": "text",
       "id": "Stakeholders",
@@ -598,6 +692,7 @@
     },
     {
       "name": "Segment list",
+      "metamodelID": "",
       "weight": "****",
       "format": "list",
       "id": "Segment-list",
@@ -608,7 +703,8 @@
       "example": "The #stakeholder Satellite Launch Customers has these segments:\n\n#segment Government Agencies\nThe government agencies segment includes national space agencies that require space transportation and communication services for their missions.\n\n#segment Commercial Companies\nThe commercial companies segment includes private companies that require space transportation and communication services for their business operations.\n\n#segment ISS Cargo Transport Customers\n This segment includes space agencies and scientific organizations that require transportation of cargo to the International Space Station (ISS). They need a partner to deliver supplies, equipment, and scientific experiments to the astronauts on board the space station.\n\n#segment Third-Party Launch and Cargo Customers\nThis segment comprises companies and organizations in the space industry that require launch and cargo services for their own satellite deployments or space missions. They are seeking a reliable and efficient partner to handle their launch and cargo needs, providing Space X with additional revenue streams and increased utilization of their rockets and resources."
     },
     {
-      "name": "segment Name - Segment",
+      "name": "segment Name",
+      "metamodelID": "",
       "weight": "****",
       "format": "text",
       "id": "Segment",
@@ -620,6 +716,7 @@
     },
     {
       "name": "segment Name - Segmentation criteria",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Segmentation-criteria",
@@ -631,6 +728,7 @@
     },
     {
       "name": "segment Name - Market size",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Market-size",
@@ -642,6 +740,7 @@
     },
     {
       "name": "segment Name - Market trends",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Market-trends",
@@ -653,10 +752,11 @@
     },
     {
       "name": "segment Name - Partners",
+      "metamodelID": "",
       "weight": "*",
       "format": "list",
       "id": "Partners",
-      "classes": "stakeholder",
+      "classes": "partner",
       "definition": "Stakeholders with whom our business maintains a relationship in order to fulfill their objectives. They can be, for example, suppliers, legislators, associations, etc.",
       "info": "https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Partners",
       "question": "If Partners is defined as :Stakeholders with whom our business maintains a relationship in order to fulfill their objectives. They can be, for example, suppliers, legislators, associations, etc., what could it be?",
@@ -664,10 +764,11 @@
     },
     {
       "name": "segment Name - Competition",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Competition",
-      "classes": "stakeholder",
+      "classes": "competitor",
       "definition": "Entities or organizations or people who are trying to solve the same problems. For the same clients.",
       "info": "https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Competition",
       "question": "If Competition is defined as :Entities or organizations or people who are trying to solve the same problems. For the same clients., what could it be?",
@@ -675,6 +776,7 @@
     },
     {
       "name": "segment Name - Roles",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Roles",
@@ -686,6 +788,7 @@
     },
     {
       "name": "Profile list",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Profile-list",
@@ -696,7 +799,8 @@
       "example": "#profile Governmental Space Agencies\r\nAgencies seeking reliable and cost-effective launch services for their space missions.\n\r\n#profile Commercial Satellite Operators\r\nOperators requiring orbital deployment of satellites for communication, television, and navigation services.\r\n\n#profile Scientific Research Institutions\r\nInstitutions that need to conduct experiments in space or require transport to the International Space Station for research purposes.\r\n\n#profile Global Internet Service Providers\r\nCompanies aiming to expand their internet coverage globally using satellite technology.\r\n\n#profile Mars Colonization Enthusiasts\r\nEntities focused on the development and realization of interplanetary travel and habitation projects."
     },
     {
-      "name": "profile Name - Profile",
+      "name": "profile Name",
+      "metamodelID": "",
       "weight": "*****",
       "format": "text",
       "id": "Profile",
@@ -708,6 +812,7 @@
     },
     {
       "name": "profile Name - Segmentation",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Segmentation",
@@ -719,6 +824,7 @@
     },
     {
       "name": "profile Name - Persona",
+      "metamodelID": "",
       "weight": "**",
       "format": "template",
       "id": "Persona",
@@ -730,6 +836,7 @@
     },
     {
       "name": "profile Name - Goals",
+      "metamodelID": "",
       "weight": "*****",
       "format": "list",
       "id": "Goals",
@@ -741,6 +848,7 @@
     },
     {
       "name": "profile Name - Perceptions",
+      "metamodelID": "",
       "weight": "*",
       "format": "list",
       "id": "Perceptions",
@@ -752,6 +860,7 @@
     },
     {
       "name": "profile Name - Emotions",
+      "metamodelID": "",
       "weight": "*",
       "format": "list",
       "id": "Emotions",
@@ -763,6 +872,7 @@
     },
     {
       "name": "profile Name - Value proposition",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Value-proposition",
@@ -774,6 +884,7 @@
     },
     {
       "name": "profile Name - Quantified value proposition",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Quantified-value-proposition",
@@ -785,6 +896,7 @@
     },
     {
       "name": "profile Name - Relationship",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Relationship",
@@ -796,6 +908,7 @@
     },
     {
       "name": "profile Name - Messages",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Messages",
@@ -806,7 +919,8 @@
       "example": "- Innovative Launch Solutions at Unparalleled Cost Savings\n\"Discover how SpaceX's revolutionary reusable rocket technology can drastically reduce your mission costs, enabling more frequent launches and greater scope within your existing budget. Let's redefine access to space together, making your ambitious projects more achievable than ever before.\"\n\n- Tailored Launch Services for Enhanced Mission Flexibility\n\"SpaceX offers tailored launch services that adapt to your mission's unique needs. Our flexible scheduling and rapid turnaround capability ensure your payloads reach orbit precisely when and how you need them. Experience the new standard in mission adaptability and reliability.\"\n\n- Advanced Capabilities for Ambitious Space Missions\n\"Embark on your most ambitious space missions with confidence, leveraging SpaceX's advanced Falcon Heavy and Starship vehicles. Our heavy-lift capabilities and innovative spacecraft design open new frontiers for deep space exploration, satellite deployment, and interplanetary travel.\"\n\n- Collaborative Partnerships for Cutting-Edge R\n\"Join SpaceX in pioneering the future of space exploration. Our collaborative R&D initiatives offer space agencies the opportunity to co-develop groundbreaking technologies and solutions for the challenges of tomorrow. Together, we can push the boundaries of what's possible in space.\"\n\n- Sustainable and Responsible Space Exploration\n\"SpaceX is committed to sustainable space exploration, with a focus on minimizing environmental impact through reusable rocket technology and promoting space safety. Partner with us to achieve your space exploration goals in an environmentally responsible manner, ensuring a sustainable future for space travel.\""
     },
     {
-      "name": "profile Name Channels",
+      "name": "profile Name - Channels",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Channels",
@@ -818,6 +932,7 @@
     },
     {
       "name": "profile Name - Assets",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Assets",
@@ -829,6 +944,7 @@
     },
     {
       "name": "profile Name - Transactions",
+      "metamodelID": "",
       "weight": "*",
       "format": "list",
       "id": "Transactions",
@@ -840,6 +956,7 @@
     },
     {
       "name": "profile Name - Journey",
+      "metamodelID": "",
       "weight": "**",
       "format": "template",
       "id": "Journey",
@@ -851,6 +968,7 @@
     },
     {
       "name": "profile Name - Funnel",
+      "metamodelID": "",
       "weight": "*",
       "format": "template",
       "id": "Funnel",
@@ -862,6 +980,7 @@
     },
     {
       "name": "profile Name - Sales strategy",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Sales-strategy",
@@ -873,6 +992,7 @@
     },
     {
       "name": "Solution list",
+      "metamodelID": "",
       "weight": "****",
       "format": "list",
       "id": "Solution-list",
@@ -883,7 +1003,8 @@
       "example": "#solution Space X services\nLaunch services for satellites and spacecraft.\nResupply missions to the International Space Station.\nCrewed missions to the International Space Station.\nDevelopment of advanced rocket and spacecraft technologies.\n\n#solution Starlink\nA satellite constellation being constructed by Space X to provide global broadband internet coverage. It aims to deliver high-speed, low-latency internet access to users around the world, especially in underserved areas.\n\n#solution Mars colonization\nSpace X's long-term goal is to enable the colonization of Mars. They are developing the Starship spacecraft, which is intended to transport humans and cargo to Mars for the establishment of a sustainable presence on the planet.\n"
     },
     {
-      "name": "solution Name - Solution",
+      "name": "solution Name",
+      "metamodelID": "",
       "weight": "*****",
       "format": "text",
       "id": "Solution",
@@ -895,6 +1016,7 @@
     },
     {
       "name": "solution Name - Category",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Category",
@@ -906,6 +1028,7 @@
     },
     {
       "name": "solution Name - Components",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Components",
@@ -917,6 +1040,7 @@
     },
     {
       "name": "solution Name - Features",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Features",
@@ -928,6 +1052,7 @@
     },
     {
       "name": "solution Name - Roadmap",
+      "metamodelID": "",
       "weight": "*",
       "format": "template",
       "id": "Roadmap",
@@ -939,6 +1064,7 @@
     },
     {
       "name": "solution Name - Offerings",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Offerings",
@@ -950,6 +1076,7 @@
     },
     {
       "name": "solution Name - Pricing",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Pricing",
@@ -961,6 +1088,7 @@
     },
     {
       "name": "solution Name - Brochure",
+      "metamodelID": "",
       "weight": "*",
       "format": "template",
       "id": "Brochure",
@@ -972,6 +1100,7 @@
     },
     {
       "name": "Marketing",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Marketing",
@@ -983,6 +1112,7 @@
     },
     {
       "name": "Naming",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Naming",
@@ -994,6 +1124,7 @@
     },
     {
       "name": "Branding",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Branding",
@@ -1005,6 +1136,7 @@
     },
     {
       "name": "Visual identity",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Visual-identity",
@@ -1016,6 +1148,7 @@
     },
     {
       "name": "Logo",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Logo",
@@ -1027,6 +1160,7 @@
     },
     {
       "name": "Marketing plan",
+      "metamodelID": "",
       "weight": "*",
       "format": "template",
       "id": "Marketing-plan",
@@ -1038,6 +1172,7 @@
     },
     {
       "name": "Operations",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Operations",
@@ -1049,6 +1184,7 @@
     },
     {
       "name": "Activitiy list",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Activitiy-list",
@@ -1060,6 +1196,7 @@
     },
     {
       "name": "Function list",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Function-list",
@@ -1071,6 +1208,7 @@
     },
     {
       "name": "Resource list",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Resource-list",
@@ -1082,6 +1220,7 @@
     },
     {
       "name": "Metric list",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Metric-list",
@@ -1093,6 +1232,7 @@
     },
     {
       "name": "Life time value",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Life-time-value",
@@ -1104,6 +1244,7 @@
     },
     {
       "name": "Customer aquisition cost",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Customer-aquisition-cost",
@@ -1115,6 +1256,7 @@
     },
     {
       "name": "Team",
+      "metamodelID": "",
       "weight": "****",
       "format": "text",
       "id": "Team",
@@ -1126,6 +1268,7 @@
     },
     {
       "name": "People",
+      "metamodelID": "",
       "weight": "****",
       "format": "list",
       "id": "People",
@@ -1136,7 +1279,8 @@
       "example": "These are the individuals who hold the most important positions in the company."
     },
     {
-      "name": "person Name - Person",
+      "name": "person Name",
+      "metamodelID": "",
       "weight": "****",
       "format": "text",
       "id": "Person",
@@ -1147,7 +1291,20 @@
       "example": "#person Elon Musk #founder\nCEO and founder of Space X, Tesla, Neuralink, and The Boring Company. He is known for his ambitious vision of advancing technology and space exploration.\nElon Musk is one of the founders of Space X and has played a crucial role in its establishment and development.\nHe is a prominent entrepreneur and visionary known for his involvement in various ventures, including Tesla, Neuralink, and The Boring Company.\nMusk has provided leadership and strategic direction to Space X, driving the company's mission to revolutionize space technology and enable human colonization of Mars.\nAs a founder, Musk has been actively involved in the decision-making process, technology development, and overall growth of Space X.\nHis vision and determination have been instrumental in shaping the company's goals and achievements."
     },
     {
+      "name": "person Name - Goals",
+      "metamodelID": "",
+      "weight": "***",
+      "format": "list",
+      "id": "Goals",
+      "classes": "",
+      "definition": "",
+      "info": "https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Goals",
+      "question": "If Goals is defined as :, what could it be?",
+      "example": ""
+    },
+    {
       "name": "person Name - Skills",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Skills",
@@ -1159,6 +1316,7 @@
     },
     {
       "name": "person Name - Functions",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Functions",
@@ -1170,6 +1328,7 @@
     },
     {
       "name": "person Name - Contributions",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Contributions",
@@ -1181,6 +1340,7 @@
     },
     {
       "name": "person Name - Compensations",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Compensations",
@@ -1192,6 +1352,7 @@
     },
     {
       "name": "Position list",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Position-list",
@@ -1203,6 +1364,7 @@
     },
     {
       "name": "Project plan",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Project-plan",
@@ -1214,6 +1376,7 @@
     },
     {
       "name": "Phases",
+      "metamodelID": "",
       "weight": "*",
       "format": "list",
       "id": "Phases",
@@ -1225,6 +1388,7 @@
     },
     {
       "name": "Milestones",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Milestones",
@@ -1236,6 +1400,7 @@
     },
     {
       "name": "Finance",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Finance",
@@ -1247,6 +1412,7 @@
     },
     {
       "name": "Revenue lines",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Revenue-lines",
@@ -1258,6 +1424,7 @@
     },
     {
       "name": "Cost lines",
+      "metamodelID": "",
       "weight": "**",
       "format": "list",
       "id": "Cost-lines",
@@ -1269,6 +1436,7 @@
     },
     {
       "name": "Unit economics",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Unit-economics",
@@ -1280,6 +1448,7 @@
     },
     {
       "name": "Funding strategy",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Funding-strategy",
@@ -1291,6 +1460,7 @@
     },
     {
       "name": "Funding sources",
+      "metamodelID": "",
       "weight": "*",
       "format": "list",
       "id": "Funding-sources",
@@ -1302,6 +1472,7 @@
     },
     {
       "name": "Capital structure",
+      "metamodelID": "",
       "weight": "**",
       "format": "template",
       "id": "Capital-structure",
@@ -1313,6 +1484,7 @@
     },
     {
       "name": "Cap table",
+      "metamodelID": "",
       "weight": "*",
       "format": "template",
       "id": "Cap-table",
@@ -1324,6 +1496,7 @@
     },
     {
       "name": "Finantial projections",
+      "metamodelID": "",
       "weight": "*",
       "format": "template",
       "id": "Finantial-projections",
@@ -1335,6 +1508,7 @@
     },
     {
       "name": "Cashflow projections",
+      "metamodelID": "",
       "weight": "**",
       "format": "template",
       "id": "Cashflow-projections",
@@ -1346,6 +1520,7 @@
     },
     {
       "name": "Legal",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Legal",
@@ -1357,6 +1532,7 @@
     },
     {
       "name": "Legal issues",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Legal-issues",
@@ -1368,6 +1544,7 @@
     },
     {
       "name": "Contract list",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Contract-list",
@@ -1379,6 +1556,7 @@
     },
     {
       "name": "Communication",
+      "metamodelID": "",
       "weight": "**",
       "format": "text",
       "id": "Communication",
@@ -1390,6 +1568,7 @@
     },
     {
       "name": "Pitch",
+      "metamodelID": "",
       "weight": "*",
       "format": "template",
       "id": "Pitch",
@@ -1401,6 +1580,7 @@
     },
     {
       "name": "Business brochure",
+      "metamodelID": "",
       "weight": "*",
       "format": "template",
       "id": "Business-brochure",
@@ -1412,6 +1592,7 @@
     },
     {
       "name": "Web",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Web",
@@ -1423,6 +1604,7 @@
     },
     {
       "name": "Storytelling",
+      "metamodelID": "",
       "weight": "*",
       "format": "text",
       "id": "Storytelling",
@@ -1434,6 +1616,7 @@
     },
     {
       "name": "Presentations",
+      "metamodelID": "",
       "weight": "*",
       "format": "template",
       "id": "Presentations",
@@ -1445,6 +1628,7 @@
     },
     {
       "name": "Analysis",
+      "metamodelID": "",
       "weight": "****",
       "format": "text",
       "id": "Analysis",
@@ -1456,6 +1640,7 @@
     },
     {
       "name": "Key list",
+      "metamodelID": "",
       "weight": "****",
       "format": "text",
       "id": "Key-list",
@@ -1467,6 +1652,7 @@
     },
     {
       "name": "Assumption list",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Assumption-list",
@@ -1478,6 +1664,7 @@
     },
     {
       "name": "Risk list",
+      "metamodelID": "",
       "weight": "*****",
       "format": "list",
       "id": "Risk-list",
@@ -1489,6 +1676,7 @@
     },
     {
       "name": "Validation",
+      "metamodelID": "",
       "weight": "*****",
       "format": "text",
       "id": "Validation",
@@ -1500,6 +1688,7 @@
     },
     {
       "name": "Experiment list",
+      "metamodelID": "",
       "weight": "***",
       "format": "list",
       "id": "Experiment-list",
@@ -1510,7 +1699,8 @@
       "example": "#experiment Vertical Integration\nSpace X adopted a vertically integrated approach, aiming to have control over key components and technologies in-house. By designing and manufacturing a majority of the rocket components themselves, Space X sought to reduce dependence on external suppliers, improve quality control, and accelerate innovation.\n\n#experiment Rocket Engine Development\nSpace X recognized the importance of reliable and cost-effective rocket engines. To reduce the risk associated with engine development, the company embarked on the ambitious task of designing and manufacturing its engines. This led to the development of the Merlin rocket engine, which powered the Falcon 1 and Falcon 9 rockets.\n\n#experiment Rocket Reusability\nRecognizing the high cost of expendable rockets, Space X embarked on an experimental journey to develop reusable rocket technology. The company conducted various experiments and tests to land and recover rocket boosters after launch. These experiments resulted in significant advancements, leading to the successful recovery and reuse of Falcon 9 first stages.\n\n#experiment Failure and Learning Culture\nSpace X adopted a culture that embraced failures as learning opportunities. The company understood that failures were an inherent part of pushing the boundaries of space exploration and technological innovation. Space X actively learned from failures, iterated on designs and processes, and implemented corrective measures to improve future missions.\n\n#experiment Commercial Cargo and Crew Programs\nSpace X pursued contracts with NASA under the Commercial Cargo and Crew Programs. These programs provided an opportunity for Space X to demonstrate its capabilities and reliability in delivering cargo and eventually crew to the International Space Station. The partnerships with NASA helped Space X refine its processes and gain valuable experience in managing complex missions.\n\n#experiment Incremental Testing and Iterative Development\nSpace X followed an incremental approach to testing and development, conducting numerous smaller-scale tests and missions before progressing to more ambitious projects. This approach allowed the company to identify and address issues early on, ensuring that subsequent missions had higher chances of success."
     },
     {
-      "name": "experiment Name - Experiment",
+      "name": "experiment Name",
+      "metamodelID": "",
       "weight": "***",
       "format": "text",
       "id": "Experiment",
@@ -1522,6 +1712,7 @@
     },
     {
       "name": "References",
+      "metamodelID": "",
       "weight": "",
       "format": "text",
       "id": "References",

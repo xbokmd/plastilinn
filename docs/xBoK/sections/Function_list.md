@@ -1,11 +1,8 @@
 # Function list
 - ## 🔍 Definition
   - High-level specification of the set of tasks that are necessary to carry out a business activity towards the achievement of a business goal.
-- ## 📰 Content type (function)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - function
+- ## 📰 Content type (#function)
+  - Content is of type list and uses the following classes: #function
 
 - ## 🔑 Keys
   

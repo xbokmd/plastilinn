@@ -1,11 +1,8 @@
 # #profile Name - Assets
 - ## 🔍 Definition
   - Assets that our clients have...advantages for our business model
-- ## 📰 Content type (asset)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - asset
+- ## 📰 Content type (#asset)
+  - Content is of type list and uses the following classes: #asset
 
 - ## 🔑 Keys
   

@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - plan that outlines the steps and strategies needed to implement a business model solution.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

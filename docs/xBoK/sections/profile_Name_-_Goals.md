@@ -1,11 +1,8 @@
 # #profile Name - Goals
 - ## 🔍 Definition
   - Problems, needs or desires that our stakeholders have and are relevant to my business.
-- ## 📰 Content type (goal)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - goal
+- ## 📰 Content type (#goal)
+  - Content is of type list and uses the following classes: #goal
 
 - ## 🔑 Keys
   

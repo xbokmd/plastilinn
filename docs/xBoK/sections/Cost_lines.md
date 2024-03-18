@@ -1,19 +1,11 @@
 # Cost lines
 - ## 🔍 Definition
   - the expenses incurred in the production and delivery of a product or service within a business model.
-- ## 📰 Content type (cost)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - cost
+- ## 📰 Content type (#cost)
+  - Content is of type list and uses the following classes: #cost
 
 - ## 🔑 Keys
-  - #block [[cost-lines]] > #key 💰35 [Cost Structure](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/cost-lines%2FCost%20Structure) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 35
-    value:: 50
-  - #block [[cost-lines]] > #key 💰30 [Cost optimization](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/cost-lines%2FCost%20optimization) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If cost lines is defined as :the expenses incurred in the production and delivery of a product or service within a business model., What could it be?What strategies can we implement to effectively manage our financial resources and ensure their optimal allocation within our business model?
   How can we determine the appropriate amount of funds to allocate to different areas of our startup, such as marketing, research and development, and operations?

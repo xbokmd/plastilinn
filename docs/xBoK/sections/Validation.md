@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the process of testing and verifying the assumptions and hypotheses underlying a business model.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

@@ -2,15 +2,9 @@
 - ## 🔍 Definition
   - Unfair advantage refers to a unique and difficult-to-replicate attribute or strategy that gives a business a competitive edge.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[unfair-advantage]] > #key 💰60 [Differentiation and competitive advantage](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/unfair-advantage%2FDifferentiation%20and%20competitive%20advantage) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[unfair-advantage]] > #key 💰55 [Relevance of the Advantage](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/unfair-advantage%2FRelevance%20of%20the%20Advantage) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 55
-    value:: 50
+  
 - ## 🤖 innCoPilot
   
 - ## 📖 Description

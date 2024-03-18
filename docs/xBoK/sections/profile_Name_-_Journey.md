@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - The Stateholder's journey is a sequence formed by the different stages that a stakeholder goes through in their relationship with my business.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

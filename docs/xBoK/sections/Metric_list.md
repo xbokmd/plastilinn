@@ -1,19 +1,11 @@
 # Metric list
 - ## 🔍 Definition
   - Metrics are quantifiable measures used to evaluate the performance and effectiveness of a business model.
-- ## 📰 Content type (metric)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - metric
+- ## 📰 Content type (#metric)
+  - Content is of type list and uses the following classes: #metric
 
 - ## 🔑 Keys
-  - #block [[metric-list]] > #key 💰50 [Monitoring Key Metrics](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/metric-list%2FMonitoring%20Key%20Metrics) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 50
-    value:: 50
-  - #block [[metric-list]] > #key 💰20 [Data Analysis Tools](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/metric-list%2FData%20Analysis%20Tools) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 20
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If metrics is defined as :Metrics are quantifiable measures used to evaluate the performance and effectiveness of a business model., What could it be?What are the key functions needed to achieve our business goals?
   How do these functions contribute to the overall success of our startup?

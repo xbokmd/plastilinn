@@ -1,11 +1,8 @@
 # #segment Name - Segmentation criteria
 - ## 🔍 Definition
   - the process of dividing a market into distinct groups of customers with similar needs or characteristics.
-- ## 📰 Content type (segmentation)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - segmentation
+- ## 📰 Content type (#segmentation)
+  - Content is of type list and uses the following classes: #segmentation
 
 - ## 🔑 Keys
   

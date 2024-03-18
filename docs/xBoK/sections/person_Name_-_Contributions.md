@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - The multiple resources or inputs that an individual provides to the company, highlighting the variety and range of valuable assets they bring to the organization's operations and growth.
 - ## 📰 Content type 
-  - Content is of type list.
-  
+  - Content is of type list
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

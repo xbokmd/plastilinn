@@ -2,36 +2,17 @@
 - ## 🔍 Definition
   - the compliance of a business model with laws and regulations governing its operations and interactions with stakeholders.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[legal]] > #key 💰70 [Strong intellectual property protection](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FStrong%20intellectual%20property%20protection) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 70
-    value:: 50
-  - #block [[legal]] > #key 💰60 [Risk Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FRisk%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[legal]] > #key 💰60 [Legal Compliance](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FLegal%20Compliance) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[legal]] > #key 💰60 [Licenses and Permits](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FLicenses%20and%20Permits) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[legal]] > #key 💰45 [Protectability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FProtectability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 45
-    value:: 50
-  - #block [[legal]] > #key 💰35 [Contracts and Agreements](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FContracts%20and%20Agreements) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 35
-    value:: 50
-  - #block [[legal]] > #key 💰25 [Legal complexity](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FLegal%20complexity) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 25
-    value:: 50
-  - #block [[legal]] > #key 💰20 [Regulatory compliance](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FRegulatory%20compliance) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 20
-    value:: 50
-  - #block [[legal]] > #key 💰20 [Intellectual Property](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/legal%2FIntellectual%20Property) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 20
-    value:: 50
+  - Legal > #key 💰70 [Strong intellectual property protection](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Strong_intellectual_property_protection
+  - Legal > #key 💰60 [Risk Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Risk_Management
+  - Legal > #key 💰60 [Legal Compliance](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Legal_Compliance
+  - Legal > #key 💰60 [Licenses and Permits](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Licenses_and_Permits
+  - Legal > #key 💰45 [Protectability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Protectability
+  - Legal > #key 💰35 [Contracts and Agreements](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Contracts_and_Agreements
+  - Legal > #key 💰25 [Legal complexity](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Legal_complexity
+  - Legal > #key 💰20 [Regulatory compliance](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Regulatory_compliance
+  - Legal > #key 💰20 [Intellectual Property](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Intellectual_Property
 - ## 🤖 innCoPilot
   If legal is defined as :the compliance of a business model with laws and regulations governing its operations and interactions with stakeholders., What could it be?How can we effectively use storytelling to communicate our brand's purpose, values, and mission to our customers?
   What narrative techniques can we employ to create a compelling and engaging brand story?

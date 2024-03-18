@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - The business state refers to the current condition or status of a business, including its operations, performance, and market position.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

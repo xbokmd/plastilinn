@@ -1,11 +1,8 @@
 # #profile Name - Emotions
 - ## 🔍 Definition
   - Emotions that our stakeholders feel and that are relevant to empathize with them and be able to design a value proposition that resonates with them.
-- ## 📰 Content type (emotion)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - emotion
+- ## 📰 Content type (#emotion)
+  - Content is of type list and uses the following classes: #emotion
 
 - ## 🔑 Keys
   

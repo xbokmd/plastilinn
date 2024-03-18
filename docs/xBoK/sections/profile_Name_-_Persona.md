@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - Client archetype with many details about their circumstances that helps us understand and connect with our clients. It also serves to communicate to whom we are addressing.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

@@ -1,25 +1,11 @@
 # Solution list
 - ## 🔍 Definition
   - the products, services, or processes that a business offers to address the needs or problems of its customers.
-- ## 📰 Content type (solution)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - solution
+- ## 📰 Content type (#solution)
+  - Content is of type list and uses the following classes: #solution
 
 - ## 🔑 Keys
-  - #block [[solution-list]] > #key 💰40 [Efficient product development process](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/solution-list%2FEfficient%20product%20development%20process) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 40
-    value:: 50
-  - #block [[solution-list]] > #key 💰40 [Use of Technology](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/solution-list%2FUse%20of%20Technology) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 40
-    value:: 50
-  - #block [[solution-list]] > #key 💰40 [Information Security](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/solution-list%2FInformation%20Security) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 40
-    value:: 50
-  - #block [[solution-list]] > #key 💰30 [Technological Adaptability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/solution-list%2FTechnological%20Adaptability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If solution  list is defined as :the products, services, or processes that a business offers to address the needs or problems of its customers., What could it be?How have you identified and analyzed your target market? 
   What is your unique value proposition and how do you plan to differentiate yourselves from competitors?

@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - Lifetime value is the net present value of the total revenue a customer will generate over their relationship with a business.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

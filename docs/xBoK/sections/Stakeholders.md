@@ -1,11 +1,8 @@
 # Stakeholders
 - ## 🔍 Definition
   - Market segments are groups of customers with similar needs, behaviors, or characteristics that a business targets with its products or services.
-- ## 📰 Content type (stakeholder)
-  - Content is of type text.
-  
-  - Content uses the following classes:
-    - stakeholder
+- ## 📰 Content type (#stakeholder)
+  - Content is of type text and uses the following classes: #stakeholder
 
 - ## 🔑 Keys
   

@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the potential consequences or obligations that arise from the legal framework within which a business model operates.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

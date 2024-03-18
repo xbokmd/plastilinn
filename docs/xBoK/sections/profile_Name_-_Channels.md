@@ -1,11 +1,8 @@
 # #profile Name - Channels
 - ## 🔍 Definition
   - Means through which we interact with our clients throughout the life cycle.
-- ## 📰 Content type (channel)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - channel
+- ## 📰 Content type (#channel)
+  - Content is of type list and uses the following classes: #channel
 
 - ## 🔑 Keys
   

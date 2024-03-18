@@ -1,11 +1,8 @@
 # Milestones
 - ## 🔍 Definition
   - Milestones are specific achievements or events that mark significant progress or success in a business model.
-- ## 📰 Content type (milestone)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - milestone
+- ## 📰 Content type (#milestone)
+  - Content is of type list and uses the following classes: #milestone
 
 - ## 🔑 Keys
   

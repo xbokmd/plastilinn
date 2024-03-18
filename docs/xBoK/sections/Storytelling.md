@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the use of narrative techniques to communicate the brand's purpose, values, and mission to customers.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - The process of examining and evaluating the different components of the business model to identify their importance and coherence and determine the risks it entails.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

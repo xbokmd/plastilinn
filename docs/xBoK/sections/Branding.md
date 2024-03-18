@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - Branding is the process of creating a unique image and identity for a business, product, or service.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

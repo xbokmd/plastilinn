@@ -1,11 +1,8 @@
 # #segment Name - Competition
 - ## 🔍 Definition
   - Entities or organizations or people who are trying to solve the same problems. For the same clients.
-- ## 📰 Content type (stakeholder)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - stakeholder
+- ## 📰 Content type (#competitor)
+  - Content is of type list and uses the following classes: #competitor
 
 - ## 🔑 Keys
   

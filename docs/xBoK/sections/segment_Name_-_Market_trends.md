@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the identification and analysis of specific customer groups and their evolving needs and preferences within a business model.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

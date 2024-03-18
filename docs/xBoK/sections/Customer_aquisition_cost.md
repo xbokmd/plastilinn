@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the cost incurred by a business to attract and convert a new customer.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

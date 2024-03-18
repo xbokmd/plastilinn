@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the principles, beliefs, and attitudes that guide the behavior and decision-making of a business and its stakeholders.
 - ## 📰 Content type 
-  - Content is of type list.
-  
+  - Content is of type list
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

@@ -1,11 +1,8 @@
 # #segment Name - Roles
 - ## 🔍 Definition
   - Roles involved in the purchasing decision of our product or service by the customers. For example, it can be the financial director, the technical director, a member of the core family, etcetera.
-- ## 📰 Content type (role)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - role
+- ## 📰 Content type (#role)
+  - Content is of type list and uses the following classes: #role
 
 - ## 🔑 Keys
   

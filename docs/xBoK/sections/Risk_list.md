@@ -1,22 +1,11 @@
 # Risk list
 - ## 🔍 Definition
   - potential negative outcomes or uncertainties that may affect the success and sustainability of a business model.
-- ## 📰 Content type (risk)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - risk
+- ## 📰 Content type (#risk)
+  - Content is of type list and uses the following classes: #risk
 
 - ## 🔑 Keys
-  - #block [[risk-list]] > #key 💰50 [Risk Identification](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/risk-list%2FRisk%20Identification) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 50
-    value:: 50
-  - #block [[risk-list]] > #key 💰30 [Crisis Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/risk-list%2FCrisis%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
-  - #block [[risk-list]] > #key 💰20 [Contingency Plans](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/risk-list%2FContingency%20Plans) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 20
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If risks is defined as :potential negative outcomes or uncertainties that may affect the success and sustainability of a business model., What could it be?What is the key problem or pain point that our startup is addressing?
   How unique and innovative is our solution compared to existing alternatives in the market?

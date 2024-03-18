@@ -2,27 +2,14 @@
 - ## 🔍 Definition
   - the management of financial resources and the allocation of funds within a business model.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[finance]] > #key 💰60 [Profitability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FProfitability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[finance]] > #key 💰60 [Gross margins](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FGross%20margins) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[finance]] > #key 💰50 [Financial Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FFinancial%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 50
-    value:: 50
-  - #block [[finance]] > #key 💰45 [Finantial needs](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FFinantial%20needs) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 45
-    value:: 50
-  - #block [[finance]] > #key 💰15 [Proactive tax planning and compliance](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FProactive%20tax%20planning%20and%20compliance) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 15
-    value:: 50
-  - #block [[finance]] > #key 💰10 [Currency risk management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finance%2FCurrency%20risk%20management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 10
-    value:: 50
+  - Finance > #key 💰60 [Profitability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Profitability
+  - Finance > #key 💰60 [Gross margins](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Gross_margins
+  - Finance > #key 💰50 [Financial Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Financial_Management
+  - Finance > #key 💰45 [Finantial needs](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Finantial_needs
+  - Finance > #key 💰15 [Proactive tax planning and compliance](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Proactive_tax_planning_and_compliance
+  - Finance > #key 💰10 [Currency risk management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Currency_risk_management
 - ## 🤖 innCoPilot
   If finance is defined as :the management of financial resources and the allocation of funds within a business model., What could it be?How do we calculate the lifetime value of a customer in our business model?
   What factors should we consider when estimating the lifetime value of our customers?

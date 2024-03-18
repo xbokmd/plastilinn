@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - Basic piece of_information that should be provided to the end customer so that they know the advantages of using our product or service.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

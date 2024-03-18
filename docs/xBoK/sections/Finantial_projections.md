@@ -2,12 +2,9 @@
 - ## 🔍 Definition
   - Financial projections are estimates of future financial performance of a business model, based on assumptions and historical data.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
-  - #block [[finantial-projections]] > #key 💰40 [Projections](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/finantial-projections%2FProjections) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 40
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If finantial projections is defined as :Financial projections are estimates of future financial performance of a business model, based on assumptions and historical data., What could it be?How have you determined the pricing strategy for your product or service?
   What are the projected sales volume and revenue per unit for the first year of operation?

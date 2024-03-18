@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - A business is an organization or entity that provides goods or services in exchange for profit or revenue.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

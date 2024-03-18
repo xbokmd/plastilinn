@@ -1,19 +1,11 @@
 # Revenue lines
 - ## 🔍 Definition
   - the various sources of income that a business model generates through its offerings
-- ## 📰 Content type (revenue)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - revenue
+- ## 📰 Content type (#revenue)
+  - Content is of type list and uses the following classes: #revenue
 
 - ## 🔑 Keys
-  - #block [[revenue-lines]] > #key 💰65 [Revenue Sources](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/revenue-lines%2FRevenue%20Sources) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 65
-    value:: 50
-  - #block [[revenue-lines]] > #key 💰40 [Diversified revenue streams](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/revenue-lines%2FDiversified%20revenue%20streams) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 40
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If revenue lines is defined as :the various sources of income that a business model generates through its offerings, What could it be?What strategies or channels do you recommend for customer acquisition in our industry?
   How can we calculate and track our customer acquisition cost accurately?

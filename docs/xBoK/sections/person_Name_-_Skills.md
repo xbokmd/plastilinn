@@ -1,11 +1,8 @@
 # #person Name - Skills
 - ## 🔍 Definition
   - the unique identification and competencies of individuals within a business model.
-- ## 📰 Content type (skill)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - skill
+- ## 📰 Content type (#skill)
+  - Content is of type list and uses the following classes: #skill
 
 - ## 🔑 Keys
   

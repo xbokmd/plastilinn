@@ -2,45 +2,25 @@
 - ## 🔍 Definition
   - A group of individuals working together towards a common goal within a business model.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[team]] > #key 💰70 [Team Skills](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FTeam%20Skills) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 70
-    value:: 50
-  - #block [[team]] > #key 💰60 [Team Commitment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FTeam%20Commitment) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[team]] > #key 💰55 [Adaptability to Change](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FAdaptability%20to%20Change) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 55
-    value:: 50
-  - #block [[team]] > #key 💰50 [Team alignment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FTeam%20alignment) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 50
-    value:: 50
-  - #block [[team]] > #key 💰50 [Effective talent acquisition and retention](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FEffective%20talent%20acquisition%20and%20retention) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 50
-    value:: 50
-  - #block [[team]] > #key 💰50 [Culture of Experimentation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FCulture%20of%20Experimentation) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 50
-    value:: 50
-  - #block [[team]] > #key 💰45 [Human Resource Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FHuman%20Resource%20Management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 45
-    value:: 50
-  - #block [[team]] > #key 💰35 [Talent Retention](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FTalent%20Retention) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 35
-    value:: 50
-  - #block [[team]] > #key 💰30 [Work Environment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FWork%20Environment) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
-  - #block [[team]] > #key 💰30 [Team composition](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FTeam%20composition) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
-  - #block [[team]] > #key 💰20 [Benefits and Compensation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FBenefits%20and%20Compensation) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 20
-    value:: 50
-  - #block [[team]] > #key 💰20 [Employee Development](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/team%2FEmployee%20Development) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 20
-    value:: 50
+  - Team > #key 💰65 [Founder's capacity](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Founder's_capacity
+  - Team > #key 💰55 [Founder's commitment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Founder's_commitment
+  - Team > #key 💰40 [Leadership Skills](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Leadership_Skills
+  - Team > #key 💰30 [Attitude for improvement](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Attitude_for_improvement
+  - Team > #key 💰20 [Founder's circumstances](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Founder's_circumstances
+  - Team > #key 💰70 [Team Skills](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Team_Skills
+  - Team > #key 💰60 [Team Commitment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Team_Commitment
+  - Team > #key 💰55 [Adaptability to Change](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Adaptability_to_Change
+  - Team > #key 💰50 [Team alignment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Team_alignment
+  - Team > #key 💰50 [Effective talent acquisition and retention](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Effective_talent_acquisition_and_retention
+  - Team > #key 💰50 [Culture of Experimentation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Culture_of_Experimentation
+  - Team > #key 💰45 [Human Resource Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Human_Resource_Management
+  - Team > #key 💰35 [Talent Retention](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Talent_Retention
+  - Team > #key 💰30 [Work Environment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Work_Environment
+  - Team > #key 💰30 [Team composition](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Team_composition
+  - Team > #key 💰20 [Benefits and Compensation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Benefits_and_Compensation
+  - Team > #key 💰20 [Employee Development](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Employee_Development
 - ## 🤖 innCoPilot
   If team is defined as :A group of individuals working together towards a common goal within a business model., What could it be?What is the target market for our product or service and how can we ensure that it reaches them effectively?
   What distribution channels should we consider to reach our target market?

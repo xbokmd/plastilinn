@@ -2,36 +2,9 @@
 - ## 🔍 Definition
   - A business idea refers to a unique concept or proposition that forms the foundation of a business model.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[business-idea]] > #key 💰95 [Business Model Viability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/business-idea%2FBusiness%20Model%20Viability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 95
-    value:: 50
-  - #block [[business-idea]] > #key 💰85 [Maturity stage](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/business-idea%2FMaturity%20stage) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 85
-    value:: 50
-  - #block [[business-idea]] > #key 💰60 [Monetizability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/business-idea%2FMonetizability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[business-idea]] > #key 💰55 [Space](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/business-idea%2FSpace) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 55
-    value:: 50
-  - #block [[business-idea]] > #key 💰55 [Scalability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/business-idea%2FScalability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 55
-    value:: 50
-  - #block [[business-idea]] > #key 💰40 [Discoverability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/business-idea%2FDiscoverability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 40
-    value:: 50
-  - #block [[business-idea]] > #key 💰35 [Business Model Innovation ](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/business-idea%2FBusiness%20Model%20Innovation%20) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 35
-    value:: 50
-  - #block [[business-idea]] > #key 💰30 [Clarity of the Idea](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/business-idea%2FClarity%20of%20the%20Idea) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
-  - #block [[business-idea]] > #key 💰20 [Environment](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/business-idea%2FEnvironment) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 20
-    value:: 50
+  
 - ## 🤖 innCoPilot
   
 - ## 📖 Description

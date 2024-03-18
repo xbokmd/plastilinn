@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - Pricing strategy that can be based on competitor prices, perceived customer value, production costs, etc.... Different channels will be used for this.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

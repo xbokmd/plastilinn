@@ -2,12 +2,9 @@
 - ## 🔍 Definition
   - A project is a temporary endeavor with a specific goal or objective that contributes to the overall business model.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[project-plan]] > #key 💰35 [Business plan](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/project-plan%2FBusiness%20plan) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 35
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If business project is defined as :A project is a temporary endeavor with a specific goal or objective that contributes to the overall business model., What could it be?What are the different funding sources we should consider for our startup?
   How can we attract investors to fund our business?

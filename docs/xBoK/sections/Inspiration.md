@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - Inspiration in the context of a business model refers to the creative spark that drives innovative ideas and solutions.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

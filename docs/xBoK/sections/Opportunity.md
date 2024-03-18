@@ -2,21 +2,12 @@
 - ## 🔍 Definition
   - An opportunity is a potential area for a business to generate revenue or create value for customers within its business model.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[opportunity]] > #key 💰60 [Momentum](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/opportunity%2FMomentum) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[opportunity]] > #key 💰40 [Innovative approach](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/opportunity%2FInnovative%20approach) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 40
-    value:: 50
-  - #block [[opportunity]] > #key 💰30 [Evolution potential](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/opportunity%2FEvolution%20potential) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
-  - #block [[opportunity]] > #key 💰20 [Business obviousness](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/opportunity%2FBusiness%20obviousness) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 20
-    value:: 50
+  - Opportunity > #key 💰60 [Momentum](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Momentum
+  - Opportunity > #key 💰40 [Innovative approach](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Innovative_approach
+  - Opportunity > #key 💰30 [Evolution potential](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Evolution_potential
+  - Opportunity > #key 💰20 [Business obviousness](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Business_obviousness
 - ## 🤖 innCoPilot
   How did you identify the opportunity for your business? 
   What market research have you conducted to validate the potential of this opportunity? 

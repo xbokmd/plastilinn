@@ -1,11 +1,8 @@
 # Experiment list
 - ## 🔍 Definition
   - Experiments are tests or trials designed to validate assumptions and hypotheses about a business model's value proposition, customer segments, and revenue streams.
-- ## 📰 Content type (experiment)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - experiment
+- ## 📰 Content type (#experiment)
+  - Content is of type list and uses the following classes: #experiment
 
 - ## 🔑 Keys
   

@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - The funnel is a set of steps that reflect the actions that the client carries out in relation to my company. Each step includes the percentage of people from the previous step who take that specific step.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

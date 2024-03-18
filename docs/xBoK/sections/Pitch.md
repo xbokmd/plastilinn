@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - A pitch is a concise and compelling presentation of a business idea or model to potential investors or customers.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

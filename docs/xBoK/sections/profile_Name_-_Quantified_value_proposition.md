@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - An argumentation. Based on metrics of the amount of value that the user receives when using our solution.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

@@ -1,11 +1,8 @@
 # Activitiy list
 - ## 🔍 Definition
   - the tasks or processes that a business engages in to create, deliver, and capture value for its customers.
-- ## 📰 Content type (work)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - work
+- ## 📰 Content type (#work)
+  - Content is of type list and uses the following classes: #work
 
 - ## 🔑 Keys
   

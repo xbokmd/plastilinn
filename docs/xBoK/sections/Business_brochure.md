@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - A business brochure is a marketing tool that outlines a company's products, services, and value proposition to potential customers.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

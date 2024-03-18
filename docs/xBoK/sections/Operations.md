@@ -2,24 +2,13 @@
 - ## 🔍 Definition
   - the activities and processes involved in delivering a product or service to customers within a business model.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[operations]] > #key 💰30 [Robust cybersecurity measures](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/operations%2FRobust%20cybersecurity%20measures) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
-  - #block [[operations]] > #key 💰30 [Problem Resolution](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/operations%2FProblem%20Resolution) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
-  - #block [[operations]] > #key 💰30 [Efficiency and Continuous Improvement](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/operations%2FEfficiency%20and%20Continuous%20Improvement) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
-  - #block [[operations]] > #key 💰25 [Process Automation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/operations%2FProcess%20Automation) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 25
-    value:: 50
-  - #block [[operations]] > #key 💰20 [Production Capability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/operations%2FProduction%20Capability) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 20
-    value:: 50
+  - Operations > #key 💰30 [Robust cybersecurity measures](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Robust_cybersecurity_measures
+  - Operations > #key 💰30 [Problem Resolution](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Problem_Resolution
+  - Operations > #key 💰30 [Efficiency and Continuous Improvement](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Efficiency_and_Continuous_Improvement
+  - Operations > #key 💰25 [Process Automation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Process_Automation
+  - Operations > #key 💰20 [Production Capability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Production_Capability
 - ## 🤖 innCoPilot
   If operations is defined as :the activities and processes involved in delivering a product or service to customers within a business model., What could it be?What specific functions should a person in a stakeholder role possess in order to contribute to the success of the business?
   How can we identify individuals who have the necessary capacity and experience to successfully carry out these functions?

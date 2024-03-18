@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - A logo is a visual symbol or design that represents a company or brand and is used to promote recognition and awareness.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

@@ -2,15 +2,9 @@
 - ## 🔍 Definition
   - A funding strategy is a plan outlining how a business will secure financial resources to support its operations and growth.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[funding-strategy]] > #key 💰90 [Sufficient funding](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/funding-strategy%2FSufficient%20funding) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 90
-    value:: 50
-  - #block [[funding-strategy]] > #key 💰45 [Access to Capital](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/funding-strategy%2FAccess%20to%20Capital) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 45
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If funding strategy is defined as :A funding strategy is a plan outlining how a business will secure financial resources to support its operations and growth., What could it be?What assumptions are you making in your cashflow projections?
   How did you determine the expected inflows and outflows of cash?

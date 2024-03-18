@@ -1,11 +1,8 @@
 # #profile Name - Messages
 - ## 🔍 Definition
   - Messages that we want to communicate to... that they carry out a specific action.
-- ## 📰 Content type (message)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - message
+- ## 📰 Content type (#message)
+  - Content is of type list and uses the following classes: #message
 
 - ## 🔑 Keys
   

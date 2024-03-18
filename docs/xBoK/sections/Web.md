@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - the online platform or digital presence of a business model, which includes websites, social media, and other online channels.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

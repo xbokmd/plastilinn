@@ -1,19 +1,11 @@
 # Segment list
 - ## 🔍 Definition
   - A segment list refers to a categorized compilation of target customer groups based on shared characteristics or needs.
-- ## 📰 Content type (segment)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - segment
+- ## 📰 Content type (#segment)
+  - Content is of type list and uses the following classes: #segment
 
 - ## 🔑 Keys
-  - #block [[segment-list]] > #key 💰60 [Market expansion opportunities](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/segment-list%2FMarket%20expansion%20opportunities) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[segment-list]] > #key 💰30 [Diversified customer base](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/segment-list%2FDiversified%20customer%20base) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
+  
 - ## 🤖 innCoPilot
   
 - ## 📖 Description

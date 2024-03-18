@@ -2,27 +2,14 @@
 - ## 🔍 Definition
   - Marketing is the process of identifying and satisfying customer needs through the creation, promotion, and distribution of products or services.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
-  - #block [[marketing]] > #key 💰70 [Effective distribution and marketing channels](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/marketing%2FEffective%20distribution%20and%20marketing%20channels) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 70
-    value:: 50
-  - #block [[marketing]] > #key 💰65 [Market Demand](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/marketing%2FMarket%20Demand) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 65
-    value:: 50
-  - #block [[marketing]] > #key 💰60 [Strong reputation management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/marketing%2FStrong%20reputation%20management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[marketing]] > #key 💰60 [Marketing Strategy](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/marketing%2FMarketing%20Strategy) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 60
-    value:: 50
-  - #block [[marketing]] > #key 💰45 [Barriers to Entry](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/marketing%2FBarriers%20to%20Entry) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 45
-    value:: 50
-  - #block [[marketing]] > #key 💰30 [Comprehensive market research and analysis](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/marketing%2FComprehensive%20market%20research%20and%20analysis) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 30
-    value:: 50
+  - Marketing > #key 💰70 [Effective distribution and marketing channels](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Effective_distribution_and_marketing_channels
+  - Marketing > #key 💰65 [Market Demand](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Market_Demand
+  - Marketing > #key 💰60 [Strong reputation management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Strong_reputation_management
+  - Marketing > #key 💰60 [Marketing Strategy](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Marketing_Strategy
+  - Marketing > #key 💰45 [Barriers to Entry](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Barriers_to_Entry
+  - Marketing > #key 💰30 [Comprehensive market research and analysis](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Comprehensive_market_research_and_analysis
 - ## 🤖 innCoPilot
   If marketing is defined as :Marketing is the process of identifying and satisfying customer needs through the creation, promotion, and distribution of products or services., What could it be?What are the key phases or steps involved in the development and implementation of a successful business model?
   How can we effectively identify and prioritize the distinct stages of our business project?

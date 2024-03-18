@@ -1,11 +1,8 @@
 # #profile Name - Perceptions
 - ## 🔍 Definition
   - Signals that our stakeholders receive... that generate some kind of emotion for them
-- ## 📰 Content type (perception)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - perception
+- ## 📰 Content type (#perception)
+  - Content is of type list and uses the following classes: #perception
 
 - ## 🔑 Keys
   

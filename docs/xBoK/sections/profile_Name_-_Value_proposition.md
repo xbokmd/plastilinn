@@ -1,11 +1,8 @@
 # #profile Name - Value proposition
 - ## 🔍 Definition
   - The reason that will convince this stakeholder to take the action we want them to take, such as buying a product.
-- ## 📰 Content type (value)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - value
+- ## 📰 Content type (#value)
+  - Content is of type list and uses the following classes: #value
 
 - ## 🔑 Keys
   

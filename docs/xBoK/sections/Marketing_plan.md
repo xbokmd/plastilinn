@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - A marketing plan outlines the strategies and tactics a business will use to promote and sell its products or services.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

@@ -1,11 +1,8 @@
 # #solution Name - Features
 - ## 🔍 Definition
   - the unique characteristics and functionalities of a product or service that addresses the needs of a specific customer segment within a business model.
-- ## 📰 Content type (feature)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - feature
+- ## 📰 Content type (#feature)
+  - Content is of type list and uses the following classes: #feature
 
 - ## 🔑 Keys
   

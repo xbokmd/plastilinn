@@ -1,19 +1,11 @@
 # Resource list
 - ## 🔍 Definition
   - the assets, capabilities, and infrastructure a business uses to create and deliver value to its customers.
-- ## 📰 Content type (asset)
-  - Content is of type list.
-  
-  - Content uses the following classes:
-    - asset
+- ## 📰 Content type (#asset)
+  - Content is of type list and uses the following classes: #asset
 
 - ## 🔑 Keys
-  - #block [[resource-list]] > #key 💰50 [Resilient supply chain management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/resource-list%2FResilient%20supply%20chain%20management) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 50
-    value:: 50
-  - #block [[resource-list]] > #key 💰40 [Financial needs](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/resource-list%2FFinancial%20needs) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 40
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If resources is defined as :the assets, capabilities, and infrastructure a business uses to create and deliver value to its customers., What could it be?What specific activities will our startup engage in to create value for our customers?
   How will these activities differentiate us from our competitors?

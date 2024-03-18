@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - A key list in the context of a business model refers to a prioritized set of essential elements or components.
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

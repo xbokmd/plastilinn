@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - Size of a market in which the number of actors is involved. It exists in it and above all the amount of money that is involved. In transactions between suppliers and customers
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot

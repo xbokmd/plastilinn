@@ -2,12 +2,9 @@
 - ## 🔍 Definition
   - Cashflow projections are estimates of the expected inflows and outflows of cash in a business model over a specific period.
 - ## 📰 Content type 
-  - Content is of type template.
-  
+  - Content is of type template
 - ## 🔑 Keys
-  - #block [[cashflow-projections]] > #key 💰55 [Positive Cash Flow](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/cashflow-projections%2FPositive%20Cash%20Flow) {{renderer :slider_rjxyar}} [:span {:is "slider-rjxyar"}] 
-    key-weight:: 55
-    value:: 50
+  
 - ## 🤖 innCoPilot
   If cashflow projections is defined as :Cashflow projections are estimates of the expected inflows and outflows of cash in a business model over a specific period., What could it be?What are the main cost lines that we should consider in our business model?
   How can we effectively manage and optimize our production and delivery expenses?

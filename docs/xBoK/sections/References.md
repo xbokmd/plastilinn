@@ -2,8 +2,7 @@
 - ## 🔍 Definition
   - Documents, articles, web sites, etc... referenced in this document
 - ## 📰 Content type 
-  - Content is of type text.
-  
+  - Content is of type text
 - ## 🔑 Keys
   
 - ## 🤖 innCoPilot
