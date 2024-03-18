@@ -375,54 +375,64 @@ box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); /* Sombra suave alrededor */
 }
 
 
-span[data-tag] {
+span[data-tagTEMP] {
 background-color: white; /* Color de fondo de las etiquetas */
-padding: 2px;
-border-radius: 4px;
 }
 
-span[data-tag="key"] { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span[data-tag="key"]::before { content: "🔑"; position: absolute; left: 0;}
-span[data-tag="organization"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="organization"]::before { content: "🏢"; position: absolute; left: 0;}
-span[data-tag="journey"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="journey"]::before { content: "✈️"; position: absolute; left: 0;}
-span[data-tag="assumption"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="assumption"]::before { content: "🔮"; position: absolute; left: 0;}
-span[data-tag="solution"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="solution"]::before { content: "💊"; position: absolute; left: 0;}
-span[data-tag="offering"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="offering"]::before { content: "🛍️"; position: absolute; left: 0;}
-span[data-tag="work"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="work"]::before { content: "⚙️"; position: absolute; left: 0;}
-span[data-tag="metric"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="metric"]::before { content: "📐"; position: absolute; left: 0;}
-span[data-tag="asset"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="asset"]::before { content: "⭐"; position: absolute; left: 0;}
-span[data-tag="revenue"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="revenue"]::before { content: "💰"; position: absolute; left: 0;}
-span[data-tag="segmentation"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="segmentation"]::before { content: "✂️"; position: absolute; left: 0;}
-span[data-tag="segment"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="segment"]::before { content: "🙋"; position: absolute; left: 0;}
-span[data-tag="value"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="value"]::before { content: "💎"; position: absolute; left: 0;}
-span[data-tag="channel"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="channel"]::before { content: "🎙️"; position: absolute; left: 0;}
-span[data-tag="cost"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="cost"]::before { content: "💸"; position: absolute; left: 0;}
-span[data-tag="emotion"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="emotion"]::before { content: "😐"; position: absolute; left: 0;}
-span[data-tag="message"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="message"]::before { content: "📣"; position: absolute; left: 0;}
-span[data-tag="feature"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="feature"]::before { content: "🌟"; position: absolute; left: 0;}
-span[data-tag="function"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="function"]::before { content: "👔"; position: absolute; left: 0;}
-span[data-tag="goal"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="goal"]::before { content: "🎯"; position: absolute; left: 0;}
-span[data-tag="hypothesis"] { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span[data-tag="hypothesis"]::before { content: "🔎"; position: absolute; left: 0;}
-span[data-tag="person"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="person"]::before { content: "👤"; position: absolute; left: 0;}
-span[data-tag="transaction"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="transaction"]::before { content: "🛒"; position: absolute; left: 0;}
-span[data-tag="risk"] { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span[data-tag="risk"]::before { content: "🚨"; position: absolute; left: 0;}
-span[data-tag="experiment"] { position: relative; padding-left: 25px;  background-color: #90EE90; } span[data-tag="experiment"]::before { content: "🧪"; position: absolute; left: 0;}
-span[data-tag="question"] { position: relative; padding-left: 25px;  background-color: #FFCCCC; } span[data-tag="question"]::before { content: "💭"; position: absolute; left: 0;}
-span[data-tag="insight"] { position: relative; padding-left: 25px;  background-color: #90EE90; } span[data-tag="insight"]::before { content: "💡"; position: absolute; left: 0;}
-span[data-tag="position"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="position"]::before { content: "🪪"; position: absolute; left: 0;}
-span[data-tag="skill"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="skill"]::before { content: "🔧"; position: absolute; left: 0;}
-span[data-tag="phase"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="phase"]::before { content: "🗓️"; position: absolute; left: 0;}
-span[data-tag="milestone"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="milestone"]::before { content: "🏁"; position: absolute; left: 0;}
-span[data-tag="role"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="role"]::before { content: "🎩"; position: absolute; left: 0;}
-span[data-tag="stakeholder"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="stakeholder"]::before { content: "🤔"; position: absolute; left: 0;}
-span[data-tag="persona"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="persona"]::before { content: "👩‍💼"; position: absolute; left: 0;}
-span[data-tag="topic"] { position: relative; padding-left: 25px;  background-color: lightgrey; } span[data-tag="topic"]::before { content: "🗄️"; position: absolute; left: 0;}
-span[data-tag="resource"] { position: relative; padding-left: 25px;  background-color: lightgrey; } span[data-tag="resource"]::before { content: "🖥️"; position: absolute; left: 0;}
-span[data-tag="artifact"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="artifact"]::before { content: "🧿"; position: absolute; left: 0;}
-span[data-tag="unit"] { position: relative; padding-left: 25px;  background-color: lightgrey; } span[data-tag="unit"]::before { content: "📓"; position: absolute; left: 0;}
-span[data-tag="content"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="content"]::before { content: "📘"; position: absolute; left: 0;}
-span[data-tag="AI"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="AI"]::before { content: "🤖"; position: absolute; left: 0;}
-span[data-tag="help"] { position: relative; padding-left: 25px;  background-color: lightgrey; } span[data-tag="help"]::before { content: "🌐"; position: absolute; left: 0;}
-span[data-tag="block"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="block"]::before { content: "🧿"; position: absolute; left: 0;}
+span[data-tag] {
+    position: relative;
+    padding-left: 25px;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+span[data-tag]::before {
+    position: absolute;
+    left: 0;
+}
+
+span[data-tag="key"] { background-color: #FFCCCC; } span[data-tag="key"]::before { content: "🔑";}
+span[data-tag="organization"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="organization"]::before { content: "🏢";}
+span[data-tag="journey"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="journey"]::before { content: "✈️";}
+span[data-tag="assumption"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="assumption"]::before { content: "🔮";}
+span[data-tag="solution"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="solution"]::before { content: "💊";}
+span[data-tag="offering"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="offering"]::before { content: "🛍️";}
+span[data-tag="work"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="work"]::before { content: "⚙️";}
+span[data-tag="metric"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="metric"]::before { content: "📐";}
+span[data-tag="asset"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="asset"]::before { content: "⭐";}
+span[data-tag="revenue"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="revenue"]::before { content: "💰";}
+span[data-tag="segmentation"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="segmentation"]::before { content: "✂️";}
+span[data-tag="segment"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="segment"]::before { content: "🙋";}
+span[data-tag="value"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="value"]::before { content: "💎";}
+span[data-tag="channel"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="channel"]::before { content: "🎙️";}
+span[data-tag="cost"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="cost"]::before { content: "💸";}
+span[data-tag="emotion"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="emotion"]::before { content: "😐";}
+span[data-tag="message"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="message"]::before { content: "📣";}
+span[data-tag="feature"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="feature"]::before { content: "🌟";}
+span[data-tag="function"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="function"]::before { content: "👔";}
+span[data-tag="goal"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="goal"]::before { content: "🎯";}
+span[data-tag="hypothesis"] { background-color: #FFCCCC; } span[data-tag="hypothesis"]::before { content: "🔎";}
+span[data-tag="person"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="person"]::before { content: "👤";}
+span[data-tag="transaction"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="transaction"]::before { content: "🛒";}
+span[data-tag="risk"] { background-color: #FFCCCC; } span[data-tag="risk"]::before { content: "🚨";}
+span[data-tag="experiment"] { background-color: #90EE90; } span[data-tag="experiment"]::before { content: "🧪";}
+span[data-tag="question"] { background-color: #FFCCCC; } span[data-tag="question"]::before { content: "💭";}
+span[data-tag="insight"] { background-color: #90EE90; } span[data-tag="insight"]::before { content: "💡";}
+span[data-tag="position"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="position"]::before { content: "🪪";}
+span[data-tag="skill"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="skill"]::before { content: "🔧";}
+span[data-tag="phase"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="phase"]::before { content: "🗓️";}
+span[data-tag="milestone"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="milestone"]::before { content: "🏁";}
+span[data-tag="role"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="role"]::before { content: "🎩";}
+span[data-tag="stakeholder"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="stakeholder"]::before { content: "🤔";}
+span[data-tag="persona"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="persona"]::before { content: "👩‍💼";}
+span[data-tag="topic"] { background-color: lightgrey; } span[data-tag="topic"]::before { content: "🗄️";}
+span[data-tag="resource"] { background-color: lightgrey; } span[data-tag="resource"]::before { content: "🖥️";}
+span[data-tag="artifact"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="artifact"]::before { content: "🧿";}
+span[data-tag="unit"] { background-color: lightgrey; } span[data-tag="unit"]::before { content: "📓";}
+span[data-tag="content"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="content"]::before { content: "📘";}
+span[data-tag="AI"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="AI"]::before { content: "🤖";}
+span[data-tag="help"] { background-color: lightgrey; } span[data-tag="help"]::before { content: "🌐";}
+span[data-tag="block"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="block"]::before { content: "🧿";}
 
 span[data-marker] {
     position: relative;
