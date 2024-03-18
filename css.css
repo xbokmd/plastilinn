@@ -381,9 +381,11 @@ background-color: white; /* Color de fondo de las etiquetas */
 
 span[data-tag] {
     position: relative;
-    padding-left: 25px;
+    padding-left: 1.4rem !important;
     border-radius: 4px;
     padding: 2px;
+    font-size: 1rem !important;
+    vertical-align: middle;
 }
 
 span[data-tag]::before {
