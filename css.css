@@ -424,33 +424,49 @@ span[data-tag="AI"] { position: relative; padding-left: 25px;  background-color:
 span[data-tag="help"] { position: relative; padding-left: 25px;  background-color: lightgrey; } span[data-tag="help"]::before { content: "🌐"; position: absolute; left: 0;}
 span[data-tag="block"] { position: relative; padding-left: 25px;  background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="block"]::before { content: "🧿"; position: absolute; left: 0;}
 
-span[data-tag="\2A"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\2A"]::before { content: "⭐1";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.2; }
-span[data-tag="\2A\2A"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\2A\2A"]::before { content: "⭐2";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.4; }
-span[data-tag="\2A\2A\2A"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\2A\2A\2A"]::before { content: "⭐3";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.6; }
-span[data-tag="\2A\2A\2A\2A"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\2A\2A\2A\2A"]::before { content: "⭐4";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.8; }
-span[data-tag="\2A\2A\2A\2A\2A"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\2A\2A\2A\2A\2A"]::before { content: "⭐5";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 1; }
-span[data-tag="\3E"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3E"]::before { content: "✔️1";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.2; }
-span[data-tag="\3E\3E"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3E\3E"]::before { content: "✔️2";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.4; }
-span[data-tag="\3E\3E\3E"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3E\3E\3E"]::before { content: "✔️3";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.6; }
-span[data-tag="\3E\3E\3E\3E"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3E\3E\3E\3E"]::before { content: "✔️4";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.8; }
-span[data-tag="\3E\3E\3E\3E\3E"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3E\3E\3E\3E\3E"]::before { content: "✔️5";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 1; }
-span[data-tag="\21"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\21"]::before { content: "🚩1";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.2; }
-span[data-tag="\21\21"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\21\21"]::before { content: "🚩2";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.4; }
-span[data-tag="\21\21\21"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\21\21\21"]::before { content: "🚩3";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.6; }
-span[data-tag="\21\21\21\21"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\21\21\21\21"]::before { content: "🚩4";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.8; }
-span[data-tag="\21\21\21\21\21"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\21\21\21\21\21"]::before { content: "🚩5";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 1; }
-span[data-tag="\3F"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3F"]::before { content: "❓1";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.2; }
-span[data-tag="\3F\3F"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3F\3F"]::before { content: "❓2";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.4; }
-span[data-tag="\3F\3F\3F"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3F\3F\3F"]::before { content: "❓3";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.6; }
-span[data-tag="\3F\3F\3F\3F"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3F\3F\3F\3F"]::before { content: "❓4";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.8; }
-span[data-tag="\3F\3F\3F\3F\3F"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3F\3F\3F\3F\3F"]::before { content: "❓5";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 1; }
-span[data-tag="\A1"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\A1"]::before { content: "🔥1";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.2; }
-span[data-tag="\A1\A1"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\A1\A1"]::before { content: "🔥2";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.4; }
-span[data-tag="\A1\A1\A1"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\A1\A1\A1"]::before { content: "🔥3";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.6; }
-span[data-tag="\A1\A1\A1\A1"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\A1\A1\A1\A1"]::before { content: "🔥4";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.8; }
-span[data-tag="\A1\A1\A1\A1\A1"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\A1\A1\A1\A1\A1"]::before { content: "🔥5";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 1; }
-span[data-tag="\3D"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3D"]::before { content: "🟰1";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.2; }
-span[data-tag="\3D\3D"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3D\3D"]::before { content: "🟰2";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.4; }
-span[data-tag="\3D\3D\3D"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3D\3D\3D"]::before { content: "🟰3";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.6; }
-span[data-tag="\3D\3D\3D\3D"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3D\3D\3D\3D"]::before { content: "🟰4";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 0.8; }
-span[data-tag="\3D\3D\3D\3D\3D"] {position: relative; font-size: 0 !important; pointer-events: none;  display: inline-block; padding: 4px !important; text-align: center;} span[data-tag="\3D\3D\3D\3D\3D"]::before { content: "🟰5";  filter: brightness(0.5) saturate(0); font-size: 1rem; opacity: 1; }
+span[data-marker] {
+    position: relative;
+    font-size: 0 !important;
+    pointer-events: none;
+    display: inline-block;
+    padding: 4px !important;
+    text-align: center;
+  }
+  
+  span[data-marker]::before {
+    content: var(--emoji);
+    filter: brightness(0.5) saturate(0);
+    font-size: 1rem;
+    opacity: var(--opacity);
+  }
+
+  span[data-marker="\2A"]::before { --emoji: "⭐1"; --opacity: 0.2; }
+  span[data-marker="\2A\2A"]::before { --emoji: "⭐2"; --opacity: 0.4; }
+  span[data-marker="\2A\2A\2A"]::before { --emoji: "⭐3"; --opacity: 0.6; }
+  span[data-marker="\2A\2A\2A\2A"]::before { --emoji: "⭐4"; --opacity: 0.8; }
+  span[data-marker="\2A\2A\2A\2A\2A"]::before { --emoji: "⭐5"; --opacity: 1; }
+  span[data-marker="\3E"]::before { --emoji: "✔️1"; --opacity: 0.2; }
+  span[data-marker="\3E\3E"]::before { --emoji: "✔️2"; --opacity: 0.4; }
+  span[data-marker="\3E\3E\3E"]::before { --emoji: "✔️3"; --opacity: 0.6; }
+  span[data-marker="\3E\3E\3E\3E"]::before { --emoji: "✔️4"; --opacity: 0.8; }
+  span[data-marker="\3E\3E\3E\3E\3E"]::before { --emoji: "✔️5"; --opacity: 1; }
+  span[data-marker="\21"]::before { --emoji: "🚩1"; --opacity: 0.2; }
+  span[data-marker="\21\21"]::before { --emoji: "🚩2"; --opacity: 0.4; }
+  span[data-marker="\21\21\21"]::before { --emoji: "🚩3"; --opacity: 0.6; }
+  span[data-marker="\21\21\21\21"]::before { --emoji: "🚩4"; --opacity: 0.8; }
+  span[data-marker="\21\21\21\21\21"]::before { --emoji: "🚩5"; --opacity: 1; }
+  span[data-marker="\3F"]::before { --emoji: "❓1"; --opacity: 0.2; }
+  span[data-marker="\3F\3F"]::before { --emoji: "❓2"; --opacity: 0.4; }
+  span[data-marker="\3F\3F\3F"]::before { --emoji: "❓3"; --opacity: 0.6; }
+  span[data-marker="\3F\3F\3F\3F"]::before { --emoji: "❓4"; --opacity: 0.8; }
+  span[data-marker="\3F\3F\3F\3F\3F"]::before { --emoji: "❓5"; --opacity: 1; }
+  span[data-marker="\A1"]::before { --emoji: "🔥1"; --opacity: 0.2; }
+  span[data-marker="\A1\A1"]::before { --emoji: "🔥2"; --opacity: 0.4; }
+  span[data-marker="\A1\A1\A1"]::before { --emoji: "🔥3"; --opacity: 0.6; }
+  span[data-marker="\A1\A1\A1\A1"]::before { --emoji: "🔥4"; --opacity: 0.8; }
+  span[data-marker="\A1\A1\A1\A1\A1"]::before { --emoji: "🔥5"; --opacity: 1; }
+  span[data-marker="\3D"]::before { --emoji: "🟰1"; --opacity: 0.2; }
+  span[data-marker="\3D\3D"]::before { --emoji: "🟰2"; --opacity: 0.4; }
+  span[data-marker="\3D\3D\3D"]::before { --emoji: "🟰3"; --opacity: 0.6; }
+  span[data-marker="\3D\3D\3D\3D"]::before { --emoji: "🟰4"; --opacity: 0.8; }
+  span[data-marker="\3D\3D\3D\3D\3D"]::before { --emoji: "🟰5"; --opacity: 1; }  
