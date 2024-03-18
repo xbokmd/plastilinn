@@ -4,12 +4,12 @@
 - ## 📰 Content type 
   - Content is of type text
 - ## 🔑 Keys
-  - Finance > #key 💰60 [Profitability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Profitability
-  - Finance > #key 💰60 [Gross margins](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Gross_margins
-  - Finance > #key 💰50 [Financial Management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Financial_Management
-  - Finance > #key 💰45 [Finantial needs](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Finantial_needs
-  - Finance > #key 💰15 [Proactive tax planning and compliance](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Proactive_tax_planning_and_compliance
-  - Finance > #key 💰10 [Currency risk management](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Currency_risk_management
+  - Finance > #key 💰60 [Profitability](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Profitability)
+  - Finance > #key 💰60 [Gross margins](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Gross_margins)
+  - Finance > #key 💰50 [Financial Management](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Financial_Management)
+  - Finance > #key 💰45 [Finantial needs](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Finantial_needs)
+  - Finance > #key 💰15 [Proactive tax planning and compliance](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Proactive_tax_planning_and_compliance)
+  - Finance > #key 💰10 [Currency risk management](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Currency_risk_management)
 - ## 🤖 innCoPilot
   If finance is defined as :the management of financial resources and the allocation of funds within a business model., What could it be?How do we calculate the lifetime value of a customer in our business model?
   What factors should we consider when estimating the lifetime value of our customers?

@@ -1,21 +1,21 @@
 ## Finance - Currency risk management
 #rating: 10
 - #### Implementing strategies to manage currency exchange fluctuations in order to mitigate the impact on international business and profitability.
-- ##### Questions
-  - #question Does the startup have strategies in place to manage currency risk?
-  - #question Are there measures to mitigate the impact of currency exchange fluctuations?
-  - #question Is the profitability of international business ensured through currency risk management?
-- ##### Risks
+- ##### 💭 Questions
+  - 💭 #question Does the startup have strategies in place to manage currency risk?
+  - 💭 #question Are there measures to mitigate the impact of currency exchange fluctuations?
+  - 💭 #question Is the profitability of international business ensured through currency risk management?
+- ##### 🚨 Risks
 
-  - ###### Currency Exchange Risk
+  - ###### 🚨Currency Exchange Risk
   - Currency exchange fluctuations can impact international business and profitability.
-  - ###### mitigation strategy
+  - ###### 🚨mitigation strategy
   - Implement currency hedging strategies and monitor exchange rate movements.
-  - ###### contingency strategy
+  - ###### 🚨contingency strategy
   - Diversify currency holdings and adjust pricing strategies.
-- ##### Tasks
-  - #task Develop strategies to manage currency risk in international business operations
-  - #task  Implement measures to mitigate the impact of currency exchange fluctuations
-  - #task  Ensure the profitability of international business through currency risk management.
+- ##### ⚙️ Tasks
+  - ⚙️ #task Develop strategies to manage currency risk in international business operations
+  - ⚙️ #task  Implement measures to mitigate the impact of currency exchange fluctuations
+  - ⚙️ #task  Ensure the profitability of international business through currency risk management.
 
 

@@ -4,10 +4,10 @@
 - ## 📰 Content type 
   - Content is of type text
 - ## 🔑 Keys
-  - Strategy > #key 💰45 [Expansion Capability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Expansion_Capability
-  - Strategy > #key 💰40 [Cultural Adaptability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Cultural_Adaptability
-  - Strategy > #key 💰30 [Cultural Sensitivity](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Cultural_Sensitivity
-  - Strategy > #key 💰20 [International Logistics](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/International_Logistics
+  - Strategy > #key 💰45 [Expansion Capability](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Expansion_Capability)
+  - Strategy > #key 💰40 [Cultural Adaptability](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Cultural_Adaptability)
+  - Strategy > #key 💰30 [Cultural Sensitivity](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Cultural_Sensitivity)
+  - Strategy > #key 💰20 [International Logistics](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/International_Logistics)
 - ## 🤖 innCoPilot
   If strategy is defined as :the plan of action or approach taken by a business model to achieve its goals and objectives., What could it be?What are the key business values that should be incorporated into our startup's culture and decision-making process?
   How can we ensure that our business values align with the needs and expectations of our stakeholders?

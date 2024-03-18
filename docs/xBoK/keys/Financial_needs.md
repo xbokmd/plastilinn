@@ -1,18 +1,18 @@
 ## Resource list - Financial needs
 #rating: 40
 - #### Determine the financial needs of the business and the amount of money required.
-- ##### Questions
-  - #question How much money will be needed?
-- ##### Risks
+- ##### 💭 Questions
+  - 💭 #question How much money will be needed?
+- ##### 🚨 Risks
 
-  - ###### Financial Needs
+  - ###### 🚨Financial Needs
   - Lack of financial planning and understanding of funding needs can hinder the ability to secure necessary resources.
-  - ###### mitigation strategy
+  - ###### 🚨mitigation strategy
   - Evaluate the financial requirements and funding needs of the business.
-  - ###### contingency strategy
+  - ###### 🚨contingency strategy
   - Determine the amount of money needed and consider potential sources of funding and investment.
-- ##### Tasks
-  - #task Evaluate the financial requirements and funding needs of the business
-  - #task  Consider the potential sources of funding and investment.
+- ##### ⚙️ Tasks
+  - ⚙️ #task Evaluate the financial requirements and funding needs of the business
+  - ⚙️ #task  Consider the potential sources of funding and investment.
 
 

@@ -5,13 +5,13 @@
   - Content is of type list and uses the following classes: #person
 
 - ## 🔑 Keys
-  - People > #key 💰40 [Receptiveness to Feedback](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Receptiveness_to_Feedback
-  - People > #key 💰40 [Competency scope](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Competency_scope
-  - People > #key 💰30 [Relevant experience](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Relevant_experience
-  - People > #key 💰25 [Market experience](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Market_experience
-  - People > #key 💰25 [Skills and expectations overlap](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Skills_and_expectations_overlap
-  - People > #key 💰15 [Vertical experience](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Vertical_experience
-  - People > #key 💰10 [Experience working together](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Experience_working_together
+  - People > #key 💰40 [Receptiveness to Feedback](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Receptiveness_to_Feedback)
+  - People > #key 💰40 [Competency scope](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Competency_scope)
+  - People > #key 💰30 [Relevant experience](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Relevant_experience)
+  - People > #key 💰25 [Market experience](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Market_experience)
+  - People > #key 💰25 [Skills and expectations overlap](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Skills_and_expectations_overlap)
+  - People > #key 💰15 [Vertical experience](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Vertical_experience)
+  - People > #key 💰10 [Experience working together](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Experience_working_together)
 - ## 🤖 innCoPilot
   If founders is defined as :Founders are the individuals who establish and initiate a business model, often taking on leadership roles in its development and growth., What could it be?What specific_information should be included in our solution ID___brochure to effectively communicate the advantages of using our product or service to the end customer?
   How can we ensure that the_information provided in our solution ID___brochure is clear, concise, and easily understandable for the target audience?

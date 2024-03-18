@@ -4,8 +4,8 @@
 - ## 📰 Content type 
   - Content is of type text
 - ## 🔑 Keys
-  - Vision > #key 💰10 [Realism - Ambition](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Realism_-_Ambition
-  - Vision > #key 💰10 [Clarity of Conception](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Clarity_of_Conception
+  - Vision > #key 💰10 [Realism - Ambition](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Realism_-_Ambition)
+  - Vision > #key 💰10 [Clarity of Conception](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Clarity_of_Conception)
 - ## 🤖 innCoPilot
   If vision is defined as :Vision is a statement that outlines the long-term aspirations and goals of a business model., What could it be?What are the specific goals or targets that our business model aims to achieve?
   How do these objectives align with creating value for our stakeholders?

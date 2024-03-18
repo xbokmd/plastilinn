@@ -4,11 +4,11 @@
 - ## 📰 Content type 
   - Content is of type text
 - ## 🔑 Keys
-  - Operations > #key 💰30 [Robust cybersecurity measures](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Robust_cybersecurity_measures
-  - Operations > #key 💰30 [Problem Resolution](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Problem_Resolution
-  - Operations > #key 💰30 [Efficiency and Continuous Improvement](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Efficiency_and_Continuous_Improvement
-  - Operations > #key 💰25 [Process Automation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Process_Automation
-  - Operations > #key 💰20 [Production Capability](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Production_Capability
+  - Operations > #key 💰30 [Robust cybersecurity measures](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Robust_cybersecurity_measures)
+  - Operations > #key 💰30 [Problem Resolution](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Problem_Resolution)
+  - Operations > #key 💰30 [Efficiency and Continuous Improvement](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Efficiency_and_Continuous_Improvement)
+  - Operations > #key 💰25 [Process Automation](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Process_Automation)
+  - Operations > #key 💰20 [Production Capability](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Production_Capability)
 - ## 🤖 innCoPilot
   If operations is defined as :the activities and processes involved in delivering a product or service to customers within a business model., What could it be?What specific functions should a person in a stakeholder role possess in order to contribute to the success of the business?
   How can we identify individuals who have the necessary capacity and experience to successfully carry out these functions?

@@ -1,21 +1,21 @@
 ## Team - Team Commitment
 #rating: 60
 - #### The commitment and dedication of the team are essential. A committed team is more likely to overcome challenges and stay focused on the goals.
-- ##### Questions
-  - #question Is the team fully committed to the startup?
-  - #question Are team members willing to put in the effort required?
-  - #question Is there a shared vision and goals among the team?
-- ##### Risks
+- ##### 💭 Questions
+  - 💭 #question Is the team fully committed to the startup?
+  - 💭 #question Are team members willing to put in the effort required?
+  - 💭 #question Is there a shared vision and goals among the team?
+- ##### 🚨 Risks
 
-  - ###### Team Commitment
+  - ###### 🚨Team Commitment
   - Lack of commitment and dedication can result in low motivation and lack of focus among team members.
-  - ###### mitigation strategy
+  - ###### 🚨mitigation strategy
   - Foster a shared vision and goals among team members, regularly communicate and reinforce the startup's mission and values, and provide opportunities for team members to contribute to decision-making and goal-setting.
-  - ###### contingency strategy
+  - ###### 🚨contingency strategy
   - Foster a shared vision and goals among team members and provide opportunities for them to contribute to decision-making and goal-setting.
-- ##### Tasks
-  - #task Foster a shared vision and goals among team members
-  - #task  Regularly communicate and reinforce the startup's mission and values
-  - #task  Provide opportunities for team members to contribute to decision-making and goal-setting.
+- ##### ⚙️ Tasks
+  - ⚙️ #task Foster a shared vision and goals among team members
+  - ⚙️ #task  Regularly communicate and reinforce the startup's mission and values
+  - ⚙️ #task  Provide opportunities for team members to contribute to decision-making and goal-setting.
 
 

@@ -4,10 +4,10 @@
 - ## 📰 Content type 
   - Content is of type text
 - ## 🔑 Keys
-  - Opportunity > #key 💰60 [Momentum](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Momentum
-  - Opportunity > #key 💰40 [Innovative approach](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Innovative_approach
-  - Opportunity > #key 💰30 [Evolution potential](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Evolution_potential
-  - Opportunity > #key 💰20 [Business obviousness](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Business_obviousness
+  - Opportunity > #key 💰60 [Momentum](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Momentum)
+  - Opportunity > #key 💰40 [Innovative approach](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Innovative_approach)
+  - Opportunity > #key 💰30 [Evolution potential](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Evolution_potential)
+  - Opportunity > #key 💰20 [Business obviousness](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Business_obviousness)
 - ## 🤖 innCoPilot
   How did you identify the opportunity for your business? 
   What market research have you conducted to validate the potential of this opportunity? 

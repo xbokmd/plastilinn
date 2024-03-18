@@ -1,18 +1,18 @@
 ## Business idea - Business Model Innovation
 #rating: 35
 - #### Determine the level of innovation in the business model and assess its potential for differentiation and competitive advantage.
-- ##### Questions
-  - #question How innovative is the business model?
-- ##### Risks
+- ##### 💭 Questions
+  - 💭 #question How innovative is the business model?
+- ##### 🚨 Risks
 
-  - ###### Business Model Innovation
+  - ###### 🚨Business Model Innovation
   - Lack of innovation can make it difficult to compete in the market.
-  - ###### mitigation strategy
+  - ###### 🚨mitigation strategy
   - Evaluate the level of innovation in the business model and identify opportunities for differentiation.
-  - ###### contingency strategy
+  - ###### 🚨contingency strategy
   - Continuously innovate and adapt the business model to stay ahead of competitors.
-- ##### Tasks
-  - #task Evaluate the uniqueness and creativity of the business model
-  - #task  Consider the potential for disruption and market leadership.
+- ##### ⚙️ Tasks
+  - ⚙️ #task Evaluate the uniqueness and creativity of the business model
+  - ⚙️ #task  Consider the potential for disruption and market leadership.
 
 

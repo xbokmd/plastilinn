@@ -4,10 +4,10 @@
 - ## 📰 Content type 
   - Content is of type text
 - ## 🔑 Keys
-  - Naming > #key 💰20 [Pronunciation Ease](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Pronunciation_Ease
-  - Naming > #key 💰10 [Phonetic Consistency](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Phonetic_Consistency
-  - Naming > #key 💰10 [Spelling from Pronunciation](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Spelling_from_Pronunciation
-  - Naming > #key 💰10 [Negative Connotations](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Negative_Connotations
+  - Naming > #key 💰20 [Pronunciation Ease](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Pronunciation_Ease)
+  - Naming > #key 💰10 [Phonetic Consistency](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Phonetic_Consistency)
+  - Naming > #key 💰10 [Spelling from Pronunciation](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Spelling_from_Pronunciation)
+  - Naming > #key 💰10 [Negative Connotations](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Negative_Connotations)
 - ## 🤖 innCoPilot
   If naming is defined as :the process of choosing and defining the name of a business, product, or service within a business model., What could it be?What specific milestones should we aim to achieve in the first year of our startup?
   How can we ensure that our milestones are measurable and achievable?

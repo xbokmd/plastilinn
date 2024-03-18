@@ -1,18 +1,18 @@
 ## Naming - Pronunciation Ease
 #rating: 20
 - #### Is the name easy to pronounce in different languages?
-- ##### Questions
-  - #question Is the name easy to pronounce in different languages?
-- ##### Risks
+- ##### 💭 Questions
+  - 💭 #question Is the name easy to pronounce in different languages?
+- ##### 🚨 Risks
 
-  - ###### Pronunciation Ease
+  - ###### 🚨Pronunciation Ease
   - Difficult pronunciation can hinder brand recognition and global reach.
-  - ###### mitigation strategy
+  - ###### 🚨mitigation strategy
   - Assess the ease of pronunciation of the chosen name in various languages and consider the potential impact on brand recognition.
-  - ###### contingency strategy
+  - ###### 🚨contingency strategy
   - Choose a name that is easy to pronounce in different languages to facilitate global reach.
-- ##### Tasks
-  - #task Assess the ease of pronunciation of the chosen name in various languages
-  - #task  Consider the potential impact on brand recognition and global reach.
+- ##### ⚙️ Tasks
+  - ⚙️ #task Assess the ease of pronunciation of the chosen name in various languages
+  - ⚙️ #task  Consider the potential impact on brand recognition and global reach.
 
 

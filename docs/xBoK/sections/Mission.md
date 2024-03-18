@@ -4,8 +4,8 @@
 - ## 📰 Content type 
   - Content is of type text
 - ## 🔑 Keys
-  - Mission > #key 💰30 [Realism - Ambition](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Realism_-_Ambition
-  - Mission > #key 💰20 [Clarity of Conception](https://xbokmd.github.io/plastilinn/#/docs/xBoK/sections/Clarity_of_Conception
+  - Mission > #key 💰30 [Realism - Ambition](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Realism_-_Ambition)
+  - Mission > #key 💰20 [Clarity of Conception](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Clarity_of_Conception)
 - ## 🤖 innCoPilot
   If mission is defined as :the purpose or reason for the existence of a business, including its goals and values., What could it be?How did you identify the opportunity for your business? 
   What market research have you conducted to validate the potential of this opportunity? 

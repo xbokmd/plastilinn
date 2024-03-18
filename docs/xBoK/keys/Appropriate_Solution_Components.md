@@ -1,18 +1,18 @@
 ## solution Name - Components - Appropriate Solution Components
 #rating: 20
 - #### Assess the solidity and maintenance guarantees of the solution components, including the potential for price increases.
-- ##### Questions
-  - #question Are the components incorporated into the solution solid? Will they be properly maintained by the supplier? Are there guarantees that it will not fail? Is there a possibility that the price will increase?
-- ##### Risks
+- ##### 💭 Questions
+  - 💭 #question Are the components incorporated into the solution solid? Will they be properly maintained by the supplier? Are there guarantees that it will not fail? Is there a possibility that the price will increase?
+- ##### 🚨 Risks
 
-  - ###### Appropriate Solution Components
+  - ###### 🚨Appropriate Solution Components
   - Lack of solid and well-maintained solution components can result in product failures and customer dissatisfaction.
-  - ###### mitigation strategy
+  - ###### 🚨mitigation strategy
   - Evaluate the reliability and sustainability of the solution components and consider long-term supplier support and cost stability.
-  - ###### contingency strategy
+  - ###### 🚨contingency strategy
   - Assess the solidity and maintenance guarantees of the solution components and ensure long-term supplier support and cost stability.
-- ##### Tasks
-  - #task Evaluate the reliability and sustainability of the solution components
-  - #task  Consider the potential for long-term supplier support and cost stability.
+- ##### ⚙️ Tasks
+  - ⚙️ #task Evaluate the reliability and sustainability of the solution components
+  - ⚙️ #task  Consider the potential for long-term supplier support and cost stability.
 
 
