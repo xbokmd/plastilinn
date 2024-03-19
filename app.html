@@ -208,13 +208,10 @@
                                         </div>
                                         <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
                                             <ion-icon name="create-outline"></ion-icon>
-                                            <input v-model="replaceText" type="text" placeholder="Reemplazar con..."
+                                            <input v-model="replaceText" type="text" placeholder="Replace with..."
                                                 class="input ml-2 bg-gray-50 w-full">
                                         </div>
-                                        <button @click="replaceMatches" class="btn btn-primary">Reemplazar</button>
-                                        <!-- Botón para abrir el modal de búsqueda y reemplazo -->
-                                        <button @click="showSearchReplaceModal = true" class="btn btn-primary">Abrir
-                                            búsqueda y reemplazo</button>
+                                        <button @click="replaceMatches" class="btn btn-primary">Replace</button>
                                         <!-- Filtro de etiquetas -->
                                         <div class="flex flex-col">
                                             <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
@@ -413,28 +410,7 @@
             </div>
         </div>
 
-        <!-- Modal de búsqueda y reemplazo -->
-        <div v-if="showSearchReplaceModal"
-            class="fixed inset-0 bg-gray-600 bg-opacity-75 flex justify-center items-center">
-            <div class="bg-white p-4 rounded-lg shadow-lg flex flex-col">
-                <div class="mb-2">
-                    <label for="searchText" class="block text-sm font-medium text-gray-700">Texto a buscar</label>
-                    <input v-model="searchText" id="searchText" type="text"
-                        class="mt-1 p-2 border border-gray-300 rounded-md shadow-sm">
-                </div>
-                <div class="mb-4">
-                    <label for="replaceText" class="block text-sm font-medium text-gray-700">Texto de reemplazo</label>
-                    <input v-model="replaceText" id="replaceText" type="text"
-                        class="mt-1 p-2 border border-gray-300 rounded-md shadow-sm">
-                </div>
-                <div class="flex justify-end gap-2">
-                    <button @click="showSearchReplaceModal = false" class="btn btn-secondary">Cancelar</button>
-                    <button @click="performSearchReplace(searchText)" class="btn mb-2 btn-primary">Reemplazar</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal para editar el contenido del bloqur seleccionada -->
+        <!-- Modal para editar el contenido del bloque seleccionada -->
         <div v-if="isBlockEditModalOpen"
             class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full items-center z-50">
             <div class="modal-background absolute inset-0 bg-black opacity-50"></div>
@@ -479,7 +455,6 @@
                     autoDownloadEnabled: true,
                     showGuidesSelect: false, // Controla la visibilidad del select
                     markdownGuideContent: '', // Almacena el contenido del Markdown cargado
-                    showSearchReplaceModal: false,
                     isArtifactModalOpen: false,
                     artifactModalContent: '', // Almacenará el contenido HTML generado
                     // METAMODEL
@@ -631,6 +606,7 @@
                     this.model = model.map((blockContent) => this.processBlock(blockContent));
                     this.updateModelMarkdown();
                     this.assignUids();
+                    this.highlightTitleMatches();
                     // this.setInstanceValue();
                 },
 
@@ -1017,6 +993,7 @@
                     if (this.autoDownloadEnabled) {
                         this.downloadMarkdown(); // Asume que este es tu método de descarga existente
                     }
+                    this.highlightTitleMatches();
                 },
 
                 closeModal() {
@@ -1123,23 +1100,6 @@
                     return text.replace(pattern, '<span class="highlight-text">$1</span>');
                 },
 
-                performSearchReplace(originalText) {
-                    // Asegúrate de que searchText no esté vacío y que realmente quieras usar el argumento originalText
-                    if (!originalText) return; // Sale si originalText está vacío
-
-                    this.model.forEach((block) => {
-                        // Usa la variable originalText en lugar de searchText para el reemplazo
-                        block.content = block.content.replaceAll(originalText, this.replaceText);
-                        // Actualiza el contenido parseado después del reemplazo para reflejar los cambios
-                        block.contentParsed = this.processBlock(block.content);
-                    });
-
-                    // Restablece searchText y replaceText a cadenas vacías después del reemplazo
-                    this.searchText = '';
-                    this.replaceText = '';
-                    this.showSearchReplaceModal = false; // Cierra el modal después de realizar el reemplazo
-                },
-
                 escapeRegExp(string) {
                     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escapa caracteres especiales para regex
                 },
@@ -1169,6 +1129,39 @@
                     this.replaceText = '';
 
                     // Opcionalmente, puedes llamar a otros métodos si es necesario actualizar la UI o el estado global
+                },
+
+                // FORMATING
+
+                highlightTitlesInContent() {
+                    // Paso 1: Obtener todos los titles
+                    const titles = this.model.map(block => block.title);
+
+                    // Paso 2: Para cada bloque, buscar coincidencias de titles en contentParsed y aplicar estilo
+                    this.model.forEach(block => {
+                        let contentParsedWithHighlights = block.contentParsed;
+
+                        titles.forEach(title => {
+                            // Escapa caracteres especiales en el título para su uso en una expresión regular
+                            const escapedTitle = this.escapeRegExp(title);
+                            const regex = new RegExp(escapedTitle, 'gi');
+
+                            // Reemplaza las coincidencias para incluir el estilo de fondo gris claro
+                            contentParsedWithHighlights = contentParsedWithHighlights.replace(regex, match => {
+                                return `<span style="background-color: lightgray;">${match}</span>`;
+                            });
+                        });
+
+                        // Actualiza el contentParsed del bloque con las coincidencias resaltadas
+                        block.contentParsed = contentParsedWithHighlights;
+                    });
+
+                    // Actualiza la UI si es necesario, por ejemplo, podrías necesitar forzar una actualización
+                    // para asegurarte de que los cambios se reflejen en la interfaz de usuario
+                },
+
+                escapeRegExp(string) {
+                    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escapa caracteres especiales para regex
                 },
 
                 // ARTIFACTS
@@ -1214,6 +1207,7 @@
 
                 downloadMarkdown() {
                     // Asume que modelMarkdown y modelName ya están actualizados
+                    this.updateModelMarkdown();
                     const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
                     const { modelName } = this; // Obtiene el nombre actual del modelo
                     const timestamp = new Date().toISOString().replace(/[:-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
@@ -1235,6 +1229,7 @@
 
                 downloadHTML() {
                     // Convierte el Markdown a HTML
+                    this.updateModelMarkdown();
                     // eslint-disable-next-line no-undef
                     const htmlContent = marked.parse(this.modelMarkdown);
                     const { modelName } = this; // Obtiene el nombre actual del modelo
