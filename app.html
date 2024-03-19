@@ -557,7 +557,7 @@
 
                 changeSidebar(section) {
                     this.currentSidebarSection = section;
-                    console.log("🚀 ~ changeSidebar ~ this.currentSidebarSection:", this.currentSidebarSection)
+                    /// console.log("🚀 ~ changeSidebar ~ this.currentSidebarSection:", this.currentSidebarSection)
                     // Aquí puedes agregar cualquier otra lógica que necesites ejecutar cuando cambies de sección
                 },
 
@@ -569,7 +569,7 @@
                         .then((response) => {
                             if (response.data && response.data.classes && response.data.sections) {
                                 this.metamodel = response.data;
-                                console.log('Metamodel loaded:', this.metamodel);
+                                /// console.log('Metamodel loaded:', this.metamodel);
                             } else {
                                 console.error('Metamodel received does not have the expected structure');
                             }
@@ -602,12 +602,11 @@
                 },
 
                 parseModelMarkdown(content) {
+                    console.log("🚀 ~ parseModelMarkdown ~ content:", content)
                     const model = this.splitModelMarkdownIntoBlocks(content);
                     this.model = model.map((blockContent) => this.processBlock(blockContent));
-                    this.updateModelMarkdown();
                     this.assignUids();
                     // this.highlightTitlesInContent();
-                    // this.setInstanceValue();
                 },
 
                 splitModelMarkdownIntoBlocks(content) {
@@ -742,16 +741,6 @@
                 },
 
                 parseMarker(marker) {
-                    // Assumes implementation of converting marker to HTML span remains the same
-                    return `<span class="marker">${marker}</span>`;
-                },
-
-                parseTag(tag) {
-                    // Assumes implementation of converting tag to HTML span remains the same
-                    return `<span class="tag">${tag}</span>`;
-                },
-
-                parseMarker(marker) {
                     return `<span data-marker="${marker}">#${marker}</span>`;
                 },
 
@@ -775,24 +764,24 @@
                         // Elimina cualquier número de '#' que puedan existir al principio del valor de la variable title y estén seguidos de un espacio
                         title = title.replace(/^#+\s*/, '');
 
-                        console.log('Returning title with matches:', title); // Traza antes del return
+                        // /// console.log('Returning title with matches:', title); // Traza antes del return
                         return title;
                     }
 
                     // En caso de que no haya coincidencia, retorna la línea completa, pero también limpiamos posibles '#' al inicio aquí.
                     // Se asegura que se aplique la eliminación de '#' seguidos de un espacio para todos los casos.
                     const finalTitle = firstLine.replace(/^#+\s*/, '').trim();
-                    console.log('Returning title without matches:', finalTitle); // Traza antes del return
+                    /// console.log('Returning title without matches:', finalTitle); // Traza antes del return
                     return finalTitle;
                     // Asegurarse de devolver una cadena vacía si el título no se encuentra
                     return title || '';
                 },
 
                 setInstanceValue(title) {
-                    console.log("🚀 ~ setInstanceValue ~ title:", title)
+                    /// console.log("🚀 ~ setInstanceValue ~ title:", title)
                     // Verifica si title es una cadena
                     if (typeof title !== "string") {
-                        console.log("title debe ser una cadena.setInstanceValue ~ title:", title);
+                        /// console.log("title debe ser una cadena.setInstanceValue ~ title:", title);
                         return ""; // Retorna una cadena vacía o maneja el caso como prefieras
                     }
 
@@ -803,7 +792,7 @@
 
                     // Extract component after the initial tag and dash, refining instanceValue
                     const titleParts = title.match(/^#\w+\s+(.*?)\s*(-|$)/);
-                    console.log("🚀 ~ setInstanceValue ~ titleParts:", titleParts)
+                    /// console.log("🚀 ~ setInstanceValue ~ titleParts:", titleParts)
                     if (titleParts && titleParts[1]) {
                         this.instanceValue = titleParts[1].replace(/#\w+/g, '').trim();
                     } else if (title.includes('-')) {
@@ -811,7 +800,7 @@
                     } else {
                         this.instanceValue = title.trim();
                     }
-                    console.log("🚀 ~ setInstanceValue ~ this.instanceValue:", this.instanceValue)
+                    /// console.log("🚀 ~ setInstanceValue ~ this.instanceValue:", this.instanceValue)
                     return this.instanceValue;
                 },
 
@@ -839,19 +828,24 @@
                 },
 
                 importMetamodelData(metamodelID) {
-                    console.log("🚀 ~ importMetamodelData ~ metamodelID:", metamodelID)
+                    /// console.log("🚀 ~ importMetamodelData ~ metamodelID:", metamodelID)
                     // Encuentra la sección que coincide con el metamodelID proporcionado.
                     const section = this.metamodel.sections.find((section) => section.name === metamodelID);
 
                     if (section) {
-                        console.log("🚀 ~ importMetamodelData ~ section:", section)
+                        /// console.log("🚀 ~ importMetamodelData ~ section:", section)
                         return section;
                     }
-                    console.log('No se encontró ninguna sección que coincida con el metamodelID:', metamodelID);
+                    /// console.log('No se encontró ninguna sección que coincida con el metamodelID:', metamodelID);
                     return null;
                 },
 
                 parseToHTML(content) {
+                    if (typeof content !== 'string') {
+                        console.error('Expected content to be a string, but got:', typeof content, content);
+                        return ''; // Retorna una cadena vacía o maneja el error como prefieras
+                    }
+
                     // Define un array con los símbolos que usan los markers
                     const markerSymbols = this.markerSymbols;
 
@@ -881,7 +875,7 @@
                 },
 
                 openInfoModal(block) {
-                    console.log("🚀 ~ openInfoModal ~ block:", block)
+                    /// console.log("🚀 ~ openInfoModal ~ block:", block)
                     this.selectedInfoBlock = block;
                     this.selectedBlockId = block.id; // Asegúrate de tener selectedBlockId definido en tu data()
                     this.selectedBlockInfoURL = `https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/${block.replace(/ /g, '_')}`;
@@ -924,7 +918,7 @@
                 },
 
                 openBlockEditModal(block) {
-                    console.log("🚀 ~ openBlockEditModal ~ block:", block)
+                    /// console.log("🚀 ~ openBlockEditModal ~ block:", block)
                     this.selectedBlockId = block.id; // Asegúrate de tener selectedBlockId definido en tu data()
                     this.selectedBlockContent = block.content;
                     this.selectedBlockMarkers = block.markers; // Asegúrate de que `block` tiene una propiedad `markers`
@@ -974,15 +968,14 @@
 
                 saveChanges() {
                     const editedContent = this.editor.getMarkdown();
-                    // Paso 1: Extraer el título antiguo y el nuevo del contenido del bloque
                     const oldTitle = this.extractBlockTitle(this.selectedBlockContent); // Utiliza tu método existente para extraer el título
                     const newTitle = this.extractBlockTitle(editedContent); // Suponiendo que tengas una función similar para el contenido editado
 
-                    // Paso 2: Comprueba si el título ha cambiado
                     if (oldTitle !== newTitle) {
                         // Muestra una alerta al usuario. Este es el mensaje traducido al inglés.
                         alert("You have changed the title of a block. If you have references to this title in the document, you might want to use the search and replace feature within the sidebar filter.");
                     }
+
                     if (this.selectedBlockIndex !== null) {
                         // Encuentra el ID del bloque seleccionado para poder pasarlo al método de actualización.
                         const blockId = this.model[this.selectedBlockIndex].id;
@@ -1032,7 +1025,7 @@
                     this.model.forEach((block) => {
                         block.uid = uid++; // Asigna el UID y luego incrementa el contador.
                     });
-                    console.log('UIDs assigned to model blocks:', this.model);
+                    /// console.log('UIDs assigned to model blocks:', this.model);
                 },
 
                 updateModelMarkdown() {
@@ -1046,6 +1039,7 @@
 
                     // Guarda el contenido generado en el campo modelMarkdown del objeto model
                     this.modelMarkdown = concatenatedContent;
+                    this.parseModelMarkdown(concatenatedContent);
                     this.updateTagsArray();
                 },
 
@@ -1094,8 +1088,8 @@
                 // SEARCH
 
                 highlightSearchText(text, searchTerm) {
-                    console.log("🚀 ~ highlightSearchText ~ searchTerm:", searchTerm)
-                    console.log("🚀 ~ highlightSearchText ~ text:", text)
+                    /// console.log("🚀 ~ highlightSearchText ~ searchTerm:", searchTerm)
+                    /// console.log("🚀 ~ highlightSearchText ~ text:", text)
                     if (!searchTerm.trim()) return text; // Retorna el texto original si el término de búsqueda está vacío
 
                     // Escapa caracteres especiales en searchTerm para su uso en una expresión regular
@@ -1141,22 +1135,6 @@
 
                 // ARTIFACTS
 
-                setArtifactTestDELETEME(placeholder1, placeholder2) {
-                    this.artifactModalContent = `
-                        <div>
-                            <h3>1</h3>
-                            ${placeholder1}
-                        </div>
-                        <div>
-                            <h3>2</h3>
-                            ${placeholder2}https://eslint.org/docs/latest/rules/linebreak-style
-                        </div>
-                    `;
-                    // eslint-disable-next-line linebreak-style
-                    this.isArtifactModalOpen = true;
-                    // eslint-disable-next-line linebreak-style
-                },
-
                 async loadGuideMarkdownContent(url) {
                     if (url) {
                         try {
@@ -1166,7 +1144,7 @@
                             // Puedes usar la librería marked.js como antes mencioné
                             this.markdownGuideContent = marked.parse(markdown);
                         } catch (error) {
-                            console.log("🚀 ~ loadGuideMarkdownContent ~ error:", error)
+                            /// console.log("🚀 ~ loadGuideMarkdownContent ~ error:", error)
                             this.markdownContent = '';
                         }
                     } else {
