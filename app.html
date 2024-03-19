@@ -16,13 +16,12 @@
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <style>
-        span[data-tag] {
-            background-color: white;
+        .btn {
+            padding: 0.2rem;
         }
 
-        .btn {
-            padding-left: 0.2rem;
-            padding-right: 0.2rem;
+        ion-icon {
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -49,21 +48,21 @@
                         <div class="navbar-end">
                             <div class="join">
                                 <button id="downloadBtn" @click="downloadMarkdown" class="btn join-item btn-primary">
-                                    <ion-icon size="large" name="cloud-download-outline"></ion-icon>
+                                    <ion-icon name="cloud-download-outline"></ion-icon>
                                     Download
                                 </button>
                                 <button id="exportBtn" @click="downloadHTML" class="btn join-item btn-primary">
-                                    <ion-icon size="large" name="download-outline"></ion-icon>
+                                    <ion-icon name="download-outline"></ion-icon>
                                     Export
                                 </button>
                                 <button @click="toggleAutoDownload"
                                     :class="{'bg-green-500': autoDownloadEnabled, 'bg-gray-500': !autoDownloadEnabled}"
                                     class="btn join-item btn-primary">
-                                    <ion-icon size="large" name="toggle-outline"></ion-icon>
+                                    <ion-icon name="toggle-outline"></ion-icon>
                                     Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
                                 </button>
                                 <button @click="handleRefresh" class="btn join-item btn-primary">
-                                    <ion-icon size="large" name="refresh-circle-outline"></ion-icon>Refresh</button>
+                                    <ion-icon name="refresh-circle-outline"></ion-icon>Refresh</button>
                             </div>
                         </div>
                     </div>
@@ -78,15 +77,13 @@
                     <div class="flex flex-row flex-wrap gap-2 bg-white sticky top-0">
                         <div class="flex flex-row justify-between mb-4 gap-2">
                             <button @click="changeSidebar('home')" class="collapse-filter-button btn btn-primary">
-                                <ion-icon size="large" name="link-outline"></ion-icon>Home</button>
+                                <ion-icon name="link-outline"></ion-icon>Home</button>
                             <button @click="changeSidebar('guides')" class="collapse-filter-button btn btn-primary">
-                                <ion-icon size="large" name="document-text-outline"></ion-icon
-                                    size="large">Guides</button>
+                                <ion-icon name="document-text-outline"></ion-icon size="large">Guides</button>
                             <button @click="changeSidebar('index')" class="collapse-filter-button btn btn-primary">
-                                <ion-icon size="large" name="albums-outline"></ion-icon>Index</button>
+                                <ion-icon name="albums-outline"></ion-icon>Index</button>
                             <button @click="changeSidebar('filter')" class="collapse-filter-button btn btn-primary">
-                                <ion-icon size="large" name="filter-outline"></ion-icon></ion-icon
-                                    size="large">Filter</button>
+                                <ion-icon name="filter-outline"></ion-icon></ion-icon size="large">Filter</button>
                         </div>
                     </div>
 
@@ -113,15 +110,14 @@
                                 <div tabindex="0" class="collapse bg-base-200">
                                     <div class="collapse-title text-xl font-medium">
                                         <span style="display: inline-block; vertical-align: middle;">
-                                            <ion-icon size="large" name="information-circle-outline"></ion-icon
-                                                size="large">
+                                            <ion-icon name="information-circle-outline"></ion-icon size="large">
                                         </span>
                                         Help
                                     </div>
                                     <div class="collapse-content">
                                         <p>Click on the info icon <span
                                                 style="display: inline-block; vertical-align: middle;">
-                                                <ion-icon size="large" name="information-circle-outline"></ion-icon
+                                                <ion-icon name="information-circle-outline"></ion-icon
                                                     size="large"></span> at the
                                             right of any section of your document</p>
                                         <p>Click here to access the <a
@@ -130,7 +126,7 @@
                                     </div>
                                 </div>
                                 <div role="alert" class="alert mt-10">
-                                    <ion-icon size="large" name="information-circle-outline"></ion-icon>
+                                    <ion-icon name="information-circle-outline"></ion-icon>
                                     <h3 class="font-bold">New to plastilin?</h3>
                                     <div class="text-xs">Simply click on the guides button in this sidebar and select
                                         the quickstart guide.</div>
@@ -199,7 +195,7 @@
                                     <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
                                         <!-- Búsqueda -->
                                         <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                            <ion-icon size="large" name="search-outline"></ion-icon>
+                                            <ion-icon name="search-outline"></ion-icon>
                                             <input v-model="searchQuery" type="text" placeholder="Search..."
                                                 class="input ml-2 bg-gray-50 w-full">
                                         </div>
@@ -216,7 +212,7 @@
                                                         :data-tag="tag">{{ tag }}</span>
                                                 </div>
                                                 <button @click="resetSelectedTags" class="btn btn-ghost">
-                                                    <ion-icon size="large" name="refresh-circle-outline"></ion-icon
+                                                    <ion-icon name="refresh-circle-outline"></ion-icon
                                                         size="large">Reset</button>
                                             </div>
                                             <select v-model="selectedTags"
@@ -228,18 +224,17 @@
                                         </div>
                                     </div>
                                     <div class="">
-
                                         <!-- Botones para aplicar filtros directamente -->
                                         <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
-                                            <button @click="setFilterTags(['*****', '?????'])"
+                                            <button @click="setFilterTags(['!!!!!', '!!!!'])"
                                                 class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
                                                 High priority
                                             </button>
                                             <div class="flex items-center bg-gray-100 px-4 py-2">
                                                 <p>
-                                                    <span data-tag="!!!!!">!!!!!</span> <kbd
+                                                    <span data-marker="!!!!!">!!!!!</span> <kbd
                                                         class="kbd kbd-xs">#!!!!!</kbd> or
-                                                    <span data-tag="!!!!">!!!!</span> <kbd
+                                                    <span data-marker="!!!!">!!!!</span> <kbd
                                                         class="kbd kbd-xs">#!!!!</kbd>
                                                 </p>
                                             </div>
@@ -251,9 +246,9 @@
                                             </button>
                                             <div class="flex items-center bg-gray-100 px-4 py-2">
                                                 <p>
-                                                    <span data-tag="*****">*****</span> <kbd
+                                                    <span data-marker="*****">*****</span> <kbd
                                                         class="kbd kbd-xs">#*****</kbd> or
-                                                    <span data-tag="?????">?????</span> <kbd
+                                                    <span data-marker="?????">?????</span> <kbd
                                                         class="kbd kbd-xs">#?????</kbd>
                                                 </p>
                                             </div>
@@ -280,12 +275,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="md:text-5xl text-2xl uppercase font-black">Shape your business with
-                                            AI</div>
+                                        <div
+                                            class="md:text-5xl text-2xl uppercase font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+                                            Shape your business with AI
+                                        </div>
                                         <div class="text-xl mt-4">Design, analyze and validate your business model.
                                         </div>
                                         <div role="alert" class="alert m-8">
-                                            <ion-icon size="large" name="alert-circle-outline"></ion-icon>
+                                            <ion-icon name="alert-circle-outline"></ion-icon>
                                             <span>Upload your plastilinn doc</span>
                                         </div>
                                         <input type="file" @change="loadAndParseModelFile" accept=".md"
@@ -309,17 +306,14 @@
                                                     <div class="xbok-block-tags flex items-center">
                                                         <button @click="openBlockEditModal(block)"
                                                             class="btn btn-primary btn-outline text-white p-0 rounded opacity-80 hover:opacity-100 focus:opacity-100">
-                                                            <ion-icon size="large" name="document-outline"></ion-icon
-                                                                size="large">
+                                                            <ion-icon name="document-outline"></ion-icon size="large">
                                                         </button>
                                                         <div :id="block.metamodel.name"
                                                             class="block-metamodel section inline-flex"
                                                             v-if="block.metamodel">
                                                             <button @click="openInfoModal(block.metamodel.name)"
                                                                 class="btn btn-primary btn-outline text-white p-0 rounded opacity-80 hover:opacity-100 focus:opacity-100">
-                                                                <ion-icon size="large"
-                                                                    name="information-circle-outline"></ion-icon
-                                                                    size="large">
+                                                                <ion-icon name="information-circle-outline"></ion-icon>
                                                             </button>
                                                         </div>
                                                         <div class="md-block-container-right markers-container"
@@ -442,13 +436,13 @@
                             <div id="editor-container"></div>
                         </div>
                         <button class="btn m-2 btn-primary" @click="">
-                            <ion-icon size="large" name="pricetags-outline"></ion-icon>
+                            <ion-icon name="pricetags-outline"></ion-icon>
                             Tags</button>
                         <button class="btn m-2 btn-primary" @click="sendMessageToBot()">
-                            <ion-icon size="large" name="hardware-chip-outline"></ion-icon>
+                            <ion-icon name="hardware-chip-outline"></ion-icon>
                             AI suggest content</button>
                         <button class="btn m-2 btn-primary" @click="saveChanges">
-                            <ion-icon size="large" name="save-outline"></ion-icon>
+                            <ion-icon name="save-outline"></ion-icon>
                             Save changes</button>
                         <button class="btn m-2 btn-primary" @click="closeModal"><ion-icon size="large"
                                 name="close-circle-outline"></ion-icon>
@@ -720,26 +714,41 @@
                 },
 
                 processTags(blockContent) {
-                    // Definir un array con los símbolos que usan los markers
                     const markerSymbols = this.markerSymbols;
-
-                    // Identificar las etiquetas de tipo Marker y guardarlas en un array llamado markers
-                    const markers = [...blockContent.matchAll(/(?:^|\s)#([^\s]*[>!*?+^-][^\s]*)/g)].map(match => match[1]);
-
-                    // Utilizar parseMarker para procesar cada marker
+                    // Capturing markers: strings starting with # followed by one of the special marker symbols
+                    const markers = [...blockContent.matchAll(/(?:^|\s)#([>!*?+^-][^\s]*)/g)].map(match => match[1]);
                     const markersParsed = markers.map(marker => this.parseMarker(marker)).join(' ');
 
-                    // Identificar las etiquetas genéricas y guardarlas en un array llamado tags
-                    const tags = [...blockContent.matchAll(/(?:^|\s)#([^\s]+)/g)]
-                        .map(match => match[1])
-                        .filter(tag => !markerSymbols.some(symbol => tag.startsWith(symbol)));
+                    // Adjusted regular expression for capturing tags
+                    const tagsRegex = /(?:^|\s)(#[^\s#][^\s]*)/g;
+                    const tags = [];
+                    let match;
+                    while ((match = tagsRegex.exec(blockContent)) !== null) {
+                        // Avoid infinite loops with zero-width matches
+                        if (match.index === tagsRegex.lastIndex) {
+                            tagsRegex.lastIndex++;
+                        }
 
-                    // Utilizar parseTag para procesar cada tag
+                        // Exclude markers from the tags array
+                        if (!markerSymbols.some(symbol => match[1].startsWith(`#${symbol}`))) {
+                            tags.push(match[1].substring(1)); // Remove leading # for consistency with your original logic
+                        }
+                    }
                     const tagsParsed = tags.map(tag => this.parseTag(tag)).join(' ');
 
-                    // Retornar los arrays y strings correspondientes
                     return { markers, markersParsed, tags, tagsParsed };
                 },
+
+                parseMarker(marker) {
+                    // Assumes implementation of converting marker to HTML span remains the same
+                    return `<span class="marker">${marker}</span>`;
+                },
+
+                parseTag(tag) {
+                    // Assumes implementation of converting tag to HTML span remains the same
+                    return `<span class="tag">${tag}</span>`;
+                }
+                ,
 
                 parseMarker(marker) {
                     return `<span data-marker="${marker}">#${marker}</span>`;
@@ -845,39 +854,31 @@
                     // Define un array con los símbolos que usan los markers
                     const markerSymbols = this.markerSymbols;
 
-                    // Procesa etiquetas y marcadores diferenciándolos, ignorando los encabezados Markdown
-                    const processedTagsContent = content.replace(/(^|\s)(#)([^\s]+)/g, (match, p1, p2, p3) => {
-                        // Ignora si es un encabezado Markdown (determinado por p2 siendo "#" y p1 siendo el inicio de una línea o un salto de línea)
-                        if (p1 === '' && /^#+/.test(p2 + p3)) {
-                            return match; // Devuelve el match original sin modificar
-                        }
-                        // Verifica si el elemento es un marcador
-                        if (markerSymbols.some(symbol => p3.startsWith(symbol))) {
-                            // Llama a parseMarker si es un marcador
-                            return `${p1}${this.parseMarker(p3)}`;
+                    // Procesa etiquetas y marcadores primero
+                    let processedTagsContent = content.replace(/(^|\s)(#[^\s#]+)/g, (match, p1, p2) => {
+                        if (markerSymbols.some(symbol => p2[1] === symbol)) {
+                            // Si es un marcador
+                            return `${p1}${this.parseMarker(p2.slice(1))}`;
                         } else {
-                            // Llama a parseTag si es una etiqueta regular
-                            return `${p1}${this.parseTag(p3)}`;
+                            // Si es una etiqueta
+                            return `${p1}${this.parseTag(p2.slice(1))}`;
                         }
                     });
 
-                    // Procesa los saltos de línea, excepto en bloques de código
-                    const processedContent = processedTagsContent.split('\n').map((line, index, lines) => {
-                        // Detecta bloques de código para evitar añadir <br> dentro de ellos
-                        if (line.startsWith('```')) {
-                            // Busca el siguiente bloque de cierre de código y salta al índice correspondiente
-                            const findClosingTagIndex = lines.slice(index + 1).findIndex(line => line.startsWith('```'));
-                            if (findClosingTagIndex !== -1) {
-                                index += findClosingTagIndex + 1;
-                            }
-                            return line; // No modifica los bloques de código
+                    // Luego convierte los encabezados Markdown a HTML línea por línea
+                    // Esto evita convertir todo el texto con marked.parse directamente, lo que podría alterar el procesamiento previo
+                    processedTagsContent = processedTagsContent.split('\n').map((line) => {
+                        // Verifica si la línea es un encabezado Markdown
+                        if (/^#+\s/.test(line)) {
+                            // Convierte solo el encabezado a HTML
+                            return marked.parse(line).trim(); // Usa marked para convertir a HTML y elimina espacios extra al final
                         }
-                        // Añade <br> al final de las líneas que no son parte de un bloque de código
-                        return `${line}<br>`;
-                    }).join('\n');
+                        return line;
+                    }).join('<br>'); // Mantiene los saltos de línea reemplazándolos con <br> después de procesar etiquetas/marcadores y encabezados
 
-                    return processedContent;
-                },
+                    return processedTagsContent;
+                }
+                ,
 
                 openInfoModal(block) {
                     console.log("🚀 ~ openInfoModal ~ block:", block)
@@ -939,31 +940,25 @@
                 generateSuggestionPrompt() {
                     let suggestionPrompt = '';
                     const block = this.model.find((b) => b.id === this.selectedBlockId);
-                    const title = block ? block.title : 'Título no encontrado';
+                    const title = block ? block.title : 'Title not found';
+                    const metamodelID = block ? block.metamodelID : 'metamodelID not found';
                     const { modelMarkdown } = this;
-                    const blockExample = block ? block.metamodel.example : 'Example no encontrado';
-                    suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:
-                    Listening closely to understand the specifics of the business.
-                    Providing concise, targeted guidance without unnecessary repetition or formalities.
-                    Offering step-by-step feedback to ensure the document effectively captures the business model.
-                    You focus on the client's needs and how to best articulate their business model.
-                    GOAL: Write a business model document describing the user's project business model. Here's some information about my Business:\n`
-
-                        + `${modelMarkdown}\n`
-
-                        + `MY QUESTION: Please suggest content for the "${title}" section of the business model.
-                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name enclosed in double brackets '[[ ]]', and then a description on a new, indented line. This is an example of an answer:
-                    ---
-                    ${blockExample}
-                    ---
-                    Copy answer in the text box below:
-                    ---
-                    \`\`\`
-                    ${blockExample}
-                    \`\`\`
-                    ---
-                    - You can copy/paste this answer to your plastilinn doc`;
-
+                    const blockExample = block ? block.metamodel.example : 'Example not found';
+                    suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\n\n
+                    Listening closely to understand the specifics of the business.\n
+                    Providing concise, targeted guidance without unnecessary repetition or formalities.\n
+                    Offering step-by-step feedback to ensure the document effectively captures the business model.\n
+                    You focus on the client's needs and how to best articulate their business model.\n
+                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business  (delimited with XML tags):\n\n
+                    <business-model>`
+                        + `${modelMarkdown}\n\n`
+                        + `</business-model>
+                    QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.
+                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then a description on a new line. This is an example of an answer (delimited with XML tags) for the company Space X, an aerospace manufacturer and space transportation company:\n\n
+                    <example-answer>`
+                        + `${blockExample}\n\n`
+                        + `</example-answer>\n\n
+                    You can copy/paste this answer to your plastilinn doc`;
                     return suggestionPrompt;
                 },
 
