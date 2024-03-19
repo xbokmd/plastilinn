@@ -606,7 +606,7 @@
                     this.model = model.map((blockContent) => this.processBlock(blockContent));
                     this.updateModelMarkdown();
                     this.assignUids();
-                    this.highlightTitleMatches();
+                    // this.highlightTitlesInContent();
                     // this.setInstanceValue();
                 },
 
@@ -684,8 +684,6 @@
                         block.content = blockContent;
                     }
 
-                    // Recalcular campos que dependen del contenido actualizado.
-                    // Para nuevos bloques, esto también establecerá contentParsed correctamente.
                     if (!isNewBlock || block.content) {
                         const blockIndex = this.model.findIndex(b => b.id === block.id);
                         this.updateDependentModelBlockFields(blockIndex);
@@ -751,8 +749,7 @@
                 parseTag(tag) {
                     // Assumes implementation of converting tag to HTML span remains the same
                     return `<span class="tag">${tag}</span>`;
-                }
-                ,
+                },
 
                 parseMarker(marker) {
                     return `<span data-marker="${marker}">#${marker}</span>`;
@@ -977,6 +974,15 @@
 
                 saveChanges() {
                     const editedContent = this.editor.getMarkdown();
+                    // Paso 1: Extraer el título antiguo y el nuevo del contenido del bloque
+                    const oldTitle = this.extractBlockTitle(this.selectedBlockContent); // Utiliza tu método existente para extraer el título
+                    const newTitle = this.extractBlockTitle(editedContent); // Suponiendo que tengas una función similar para el contenido editado
+
+                    // Paso 2: Comprueba si el título ha cambiado
+                    if (oldTitle !== newTitle) {
+                        // Muestra una alerta al usuario. Este es el mensaje traducido al inglés.
+                        alert("You have changed the title of a block. If you have references to this title in the document, you might want to use the search and replace feature within the sidebar filter.");
+                    }
                     if (this.selectedBlockIndex !== null) {
                         // Encuentra el ID del bloque seleccionado para poder pasarlo al método de actualización.
                         const blockId = this.model[this.selectedBlockIndex].id;
@@ -993,7 +999,7 @@
                     if (this.autoDownloadEnabled) {
                         this.downloadMarkdown(); // Asume que este es tu método de descarga existente
                     }
-                    this.highlightTitleMatches();
+                    // this.highlightTitlesInContent();
                 },
 
                 closeModal() {
@@ -1132,37 +1138,6 @@
                 },
 
                 // FORMATING
-
-                highlightTitlesInContent() {
-                    // Paso 1: Obtener todos los titles
-                    const titles = this.model.map(block => block.title);
-
-                    // Paso 2: Para cada bloque, buscar coincidencias de titles en contentParsed y aplicar estilo
-                    this.model.forEach(block => {
-                        let contentParsedWithHighlights = block.contentParsed;
-
-                        titles.forEach(title => {
-                            // Escapa caracteres especiales en el título para su uso en una expresión regular
-                            const escapedTitle = this.escapeRegExp(title);
-                            const regex = new RegExp(escapedTitle, 'gi');
-
-                            // Reemplaza las coincidencias para incluir el estilo de fondo gris claro
-                            contentParsedWithHighlights = contentParsedWithHighlights.replace(regex, match => {
-                                return `<span style="background-color: lightgray;">${match}</span>`;
-                            });
-                        });
-
-                        // Actualiza el contentParsed del bloque con las coincidencias resaltadas
-                        block.contentParsed = contentParsedWithHighlights;
-                    });
-
-                    // Actualiza la UI si es necesario, por ejemplo, podrías necesitar forzar una actualización
-                    // para asegurarte de que los cambios se reflejen en la interfaz de usuario
-                },
-
-                escapeRegExp(string) {
-                    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escapa caracteres especiales para regex
-                },
 
                 // ARTIFACTS
 
