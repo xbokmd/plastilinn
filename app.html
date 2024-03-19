@@ -206,6 +206,12 @@
                                             <input v-model="searchQuery" type="text" placeholder="Search..."
                                                 class="input ml-2 bg-gray-50 w-full">
                                         </div>
+                                        <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
+                                            <ion-icon name="create-outline"></ion-icon>
+                                            <input v-model="replaceText" type="text" placeholder="Reemplazar con..."
+                                                class="input ml-2 bg-gray-50 w-full">
+                                        </div>
+                                        <button @click="replaceMatches" class="btn btn-primary">Reemplazar</button>
                                         <!-- Botón para abrir el modal de búsqueda y reemplazo -->
                                         <button @click="showSearchReplaceModal = true" class="btn btn-primary">Abrir
                                             búsqueda y reemplazo</button>
@@ -653,7 +659,8 @@
                     const blockIndex = this.model.findIndex(block => block.id === blockId);
                     if (blockIndex !== -1) {
                         // Actualiza el contenido
-                        this.model[blockIndex].content = newContent;
+                        const block = this.model[blockIndex];
+                        block.content = newContent;
 
                         // Llama a los métodos para recalcular los campos dependientes
                         this.updateDependentModelBlockFields(blockIndex);
@@ -1131,6 +1138,37 @@
                     this.searchText = '';
                     this.replaceText = '';
                     this.showSearchReplaceModal = false; // Cierra el modal después de realizar el reemplazo
+                },
+
+                escapeRegExp(string) {
+                    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escapa caracteres especiales para regex
+                },
+
+                replaceMatches() {
+                    if (!this.searchQuery || !this.replaceText) {
+                        alert("Por favor, completa ambos campos de búsqueda y reemplazo.");
+                        return;
+                    }
+
+                    // Utiliza el método escapeRegExp correctamente llamado con 'this.'
+                    const regex = new RegExp(this.escapeRegExp(this.searchQuery), 'gi');
+
+                    this.model.forEach((block) => {
+                        if (regex.test(block.content)) {
+                            // Reemplaza todas las coincidencias en el contenido del bloque
+                            const updatedContent = block.content.replace(regex, this.replaceText);
+
+                            // Llama a updateModelBlockContent para cada bloque afectado
+                            // Esto asegurará que todos los campos dependientes se actualicen adecuadamente
+                            this.updateModelBlockContent(block.id, updatedContent);
+                        }
+                    });
+
+                    // Limpia los campos de búsqueda y reemplazo después del proceso
+                    this.searchQuery = '';
+                    this.replaceText = '';
+
+                    // Opcionalmente, puedes llamar a otros métodos si es necesario actualizar la UI o el estado global
                 },
 
                 // ARTIFACTS
