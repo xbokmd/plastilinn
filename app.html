@@ -23,6 +23,13 @@
         ion-icon {
             font-size: 1.2rem;
         }
+
+        .highlight-text {
+            background-color: blue;
+            color: white;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
     </style>
 </head>
 
@@ -544,6 +551,20 @@
                 },
 
                 searchFilteredBlocks() {
+                    if (!this.searchQuery) {
+                        return this.filteredBlocks; // Retorna todos los bloques si no hay término de búsqueda
+                    }
+                    // Filtra primero los bloques que contienen el término de búsqueda en su contenido
+                    const filteredBlocks = this.filteredBlocks.filter((block) => block.contentParsed.toLowerCase().includes(this.searchQuery.toLowerCase()));
+
+                    // Luego aplica el resaltado a las coincidencias encontradas en esos bloques filtrados
+                    return filteredBlocks.map((block) => {
+                        const highlightedContent = this.highlightSearchText(block.contentParsed, this.searchQuery);
+                        return { ...block, contentParsed: highlightedContent };
+                    });
+                },
+
+                searchFilteredBlocksORIGINAL() {
                     if (!this.searchQuery) return this.filteredBlocks;
                     // Utiliza filteredBlocks para mantener los filtros anteriores
                     // Verifica si el contenido del bloque incluye el texto de búsqueda
@@ -877,8 +898,7 @@
                     }).join('<br>'); // Mantiene los saltos de línea reemplazándolos con <br> después de procesar etiquetas/marcadores y encabezados
 
                     return processedTagsContent;
-                }
-                ,
+                },
 
                 openInfoModal(block) {
                     console.log("🚀 ~ openInfoModal ~ block:", block)
@@ -1082,6 +1102,19 @@
                 },
 
                 // SEARCH
+
+                highlightSearchText(text, searchTerm) {
+                    console.log("🚀 ~ highlightSearchText ~ searchTerm:", searchTerm)
+                    console.log("🚀 ~ highlightSearchText ~ text:", text)
+                    if (!searchTerm.trim()) return text; // Retorna el texto original si el término de búsqueda está vacío
+
+                    // Escapa caracteres especiales en searchTerm para su uso en una expresión regular
+                    const search = searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                    const pattern = new RegExp(`(${search})`, 'gi'); // 'gi' para búsqueda global e insensible a mayúsculas
+
+                    // Reemplaza las coincidencias con el término de búsqueda envuelto en un span para el resaltado
+                    return text.replace(pattern, '<span class="highlight-text">$1</span>');
+                },
 
                 performSearchReplace(originalText) {
                     // Asegúrate de que searchText no esté vacío y que realmente quieras usar el argumento originalText
