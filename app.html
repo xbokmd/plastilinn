@@ -68,7 +68,7 @@
                                     <ion-icon name="toggle-outline"></ion-icon>
                                     Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
                                 </button>
-                                <button @click="processDownloadedContent" class="btn join-item btn-primary">
+                                <button @click="processNewContent" class="btn join-item btn-primary">
                                     <ion-icon name="refresh-circle-outline"></ion-icon>Refresh</button>
                             </div>
                         </div>
@@ -453,7 +453,7 @@
                     isIndexOpen: true,
                     isInfoModalOpen: false,
                     autoDownloadEnabled: true,
-                    lastDownloadedMarkdownContent: '',
+                    newMarkdownContent: '',
                     showGuidesSelect: false, // Controla la visibilidad del select
                     markdownGuideContent: '', // Almacena el contenido del Markdown cargado
                     isArtifactModalOpen: false,
@@ -998,7 +998,11 @@
 
                         // Nota: No necesitas procesar tags, title, etc., aquí, ya que eso se manejará en el método de recálculo.
                     }
+                    //                    this.updateModelMarkdown();
                     this.updateModelMarkdown();
+                    const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
+                    this.newMarkdownContent = markdownContent; // Almacena el contenido en el estado
+                    this.processNewContent()
                     this.closeModal();
 
                     // Después de guardar, verifica si autoDownload está habilitado
@@ -1053,7 +1057,7 @@
                     // Guarda el contenido generado en el campo modelMarkdown del objeto model
                     this.modelMarkdown = concatenatedContent;
                     //this.parseModelMarkdown(concatenatedContent);
-                    this.updateTagsArray();
+                    //   this.updateTagsArray();
                 },
 
                 updateTagsArray() {
@@ -1175,7 +1179,7 @@
                     // Asume que modelMarkdown y modelName ya están actualizados
                     this.updateModelMarkdown();
                     const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
-                    this.lastDownloadedMarkdownContent = markdownContent; // Almacena el contenido en el estado
+                    this.newMarkdownContent = markdownContent; // Almacena el contenido en el estado
                     const { modelName } = this; // Obtiene el nombre actual del modelo
                     const timestamp = new Date().toISOString().replace(/[:-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
                     const fileName = `${modelName} - saved ${timestamp}.md`; // Construye el nombre del archivo
@@ -1195,19 +1199,19 @@
                 },
 
                 processLoadedMarkdown() {
-                    if (!this.lastDownloadedMarkdownContent) {
+                    if (!this.newMarkdownContent) {
                         console.error("No hay contenido de Markdown para cargar.");
                         return;
                     }
 
                     // Simula la carga y el procesamiento del contenido Markdown
-                    this.parseModelMarkdown(this.lastDownloadedMarkdownContent);
+                    this.parseModelMarkdown(this.newMarkdownContent);
                 },
 
-                processDownloadedContent() {
+                processNewContent() {
                     // Resetear model a un array vacío
                     this.model = [];
-                    const content = this.lastDownloadedMarkdownContent;
+                    const content = this.newMarkdownContent;
                     // Aquí debes invocar la lógica que normalmente usas para procesar el contenido Markdown cargado.
                     // Por ejemplo, si tienes un método que parsea el Markdown a bloques del modelo, úsalo aquí.
                     this.parseModelMarkdown(content);
