@@ -521,7 +521,63 @@
                     return this.model.map((block) => ({ ...block, contentParsed: marked.parse(block.content) }));
                 },
 
+                preparedFilteredBlocks() {
+                    return this.filteredBlocks.map(block => {
+                        // Clona el bloque para evitar mutaciones no deseadas
+                        const clonedBlock = { ...block, contentParsed: block.contentParsed };
+
+                        // Aplica el resaltado utilizando las etiquetas seleccionadas
+                        clonedBlock.contentParsed = this.highlightText(clonedBlock.contentParsed, this.selectedTags);
+
+                        return clonedBlock;
+                    });
+                },
+
                 filteredBlocks() {
+                    let blocksWithParents = []; // Esta array almacenará los bloques filtrados junto con sus bloques padres
+                    let allLocators = new Set(); // Almacena los localizadores para evitar duplicados
+
+                    // Primero, identifica los bloques que coinciden con los filtros seleccionados
+                    this.model.forEach(block => {
+                        const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
+                        if (tagMatch) {
+                            blocksWithParents.push(block);
+                            allLocators.add(block.locator);
+
+                            // Encuentra y añade los bloques padres si aún no están incluidos
+                            let parentLocator = block.locator.split('.').slice(0, -1).join('.');
+                            while (parentLocator) {
+                                if (!allLocators.has(parentLocator)) {
+                                    const parentBlock = this.model.find(b => b.locator === parentLocator);
+                                    if (parentBlock) {
+                                        blocksWithParents.unshift(parentBlock); // Añade el bloque padre al inicio para mantener el orden jerárquico
+                                        allLocators.add(parentLocator);
+                                    }
+                                }
+                                parentLocator = parentLocator.split('.').slice(0, -1).join('.');
+                            }
+                        }
+                    });
+
+                    // Ordena los bloques por su localizador para mantener la jerarquía correcta
+                    blocksWithParents.sort((a, b) => a.locator.localeCompare(b.locator));
+
+                    // Ahora aplica el resaltado a las etiquetas seleccionadas
+                    const highlightedBlocks = blocksWithParents.map(block => {
+                        // Clona el bloque para evitar mutaciones directas al estado
+                        const clonedBlock = { ...block };
+                        // Aplica el resaltado solo si hay etiquetas seleccionadas
+                        if (this.selectedTags.length > 0) {
+                            // Usa el método highlightText para aplicar el resaltado a las etiquetas dentro del contenidoParsed
+                            clonedBlock.contentParsed = this.highlightText(clonedBlock.contentParsed, this.selectedTags);
+                        }
+                        return clonedBlock;
+                    });
+
+                    return highlightedBlocks;
+                },
+
+                filteredBlocksOLD() {
                     const filteredBlocks = [];
                     const allLocators = new Set(); // Almacena los localizadores de todos los bloques que serán incluidos
 
@@ -558,36 +614,6 @@
                         }
                         return aParts.length - bParts.length;
                     });
-                },
-
-                filteredBlocksOLD() {
-                    const blocksWithSections = [];
-                    const addedSectionIds = new Set(); // Almacena los IDs de secciones ya añadidas
-                    this.model.filter((block) => {
-                        const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some((tag) => block.tags.includes(tag));
-                        const titleMatch = this.selectedBlockTitles.length === 0 || this.selectedBlockTitles.includes(block.title);
-                        return tagMatch && titleMatch;
-                    }).forEach((block) => {
-                        if (block.type === 'item') {
-                            const sectionUid = String(block.id).split('.')[0];
-                            // Verificar si la sección ya fue añadida, si no, encontrar y añadir la sección
-                            if (!addedSectionIds.has(sectionUid)) {
-                                const sectionBlock = this.model.find((b) => String(b.id) === sectionUid && b.type === 'section');
-                                if (sectionBlock && !blocksWithSections.includes(sectionBlock)) {
-                                    blocksWithSections.push(sectionBlock);
-                                    addedSectionIds.add(sectionUid);
-                                }
-                            }
-                        }
-                        // Añadir el bloque si es un ítem o si es una sección que no ha sido añadida previamente
-                        if (block.type === 'section' && !addedSectionIds.has(String(block.id))) {
-                            addedSectionIds.add(String(block.id));
-                            blocksWithSections.push(block);
-                        } else if (block.type === 'item') {
-                            blocksWithSections.push(block);
-                        }
-                    });
-                    return blocksWithSections;
                 },
 
                 searchFilteredBlocks() {
@@ -631,32 +657,11 @@
 
                     // Finalmente, aplicar el resaltado
                     return filteredBlocks.map(block => {
-                        const highlightedContent = this.highlightSearchText(block.contentParsed, this.searchQuery);
+                        const highlightedContent = this.highlightText(block.contentParsed, this.searchQuery);
                         return { ...block, contentParsed: highlightedContent };
                     });
                 },
 
-                searchFilteredBlocksOLD() {
-                    if (!this.searchQuery) {
-                        return this.filteredBlocks; // Retorna todos los bloques si no hay término de búsqueda
-                    }
-                    // Filtra primero los bloques que contienen el término de búsqueda en su contenido
-                    const filteredBlocks = this.filteredBlocks.filter((block) => block.contentParsed.toLowerCase().includes(this.searchQuery.toLowerCase()));
-
-                    // Luego aplica el resaltado a las coincidencias encontradas en esos bloques filtrados
-                    return filteredBlocks.map((block) => {
-                        const highlightedContent = this.highlightSearchText(block.contentParsed, this.searchQuery);
-                        return { ...block, contentParsed: highlightedContent };
-                    });
-                },
-
-                searchFilteredBlocksORIGINAL() {
-                    if (!this.searchQuery) return this.filteredBlocks;
-                    // Utiliza filteredBlocks para mantener los filtros anteriores
-                    // Verifica si el contenido del bloque incluye el texto de búsqueda
-                    // Asume que 'contentParsed' es el contenido que deseas buscar
-                    return this.filteredBlocks.filter((block) => block.contentParsed.toLowerCase().includes(this.searchQuery.toLowerCase()));
-                },
             },
             methods: {
 
@@ -858,11 +863,6 @@
                         }
                     }
                     return '0'; // Devuelve un valor por defecto si no encuentras ninguno.
-                },
-
-                determineDepthLevelOLD(firstLine) {
-                    console.log("🚀 ~ determineDepthLevel ~ firstLine:", firstLine)
-                    return firstLine.startsWith('#') ? firstLine.match(/^#+/)[0].length : 0;
                 },
 
                 determineInstanceClass(blockContent, type) {
@@ -1204,22 +1204,6 @@
                     /// console.log('UIDs assigned to model blocks:', this.model);
                 },
 
-                calculateLocatorOLD(depthLevel) {
-                    if (depthLevel >= 1 && depthLevel <= 6) {
-                        this.depthCounters[depthLevel - 1] += 1;
-
-                        // Reinicia los contadores de profundidades mayores si es necesario
-                        for (let i = depthLevel; i < 6; i++) {
-                            this.depthCounters[i] = 0;
-                        }
-
-                        return this.depthCounters.slice(0, depthLevel).join('.');
-                    } else {
-                        console.error(`Depth level out of range: ${depthLevel}`);
-                        return '';
-                    }
-                },
-
                 resetDepthCounters() {
                     this.depthCounters = [0, 0, 0, 0, 0, 0];
                 },
@@ -1248,7 +1232,7 @@
                     this.filterBlocks([]);
                 },
 
-                // FILTERS
+                // FILTERS AND SEARCH
 
                 filterBlocks(tags) {
                     this.filteredBlocks = this.model.filter((block) => tags.some((tag) => block.tags.includes(tag)));
@@ -1281,11 +1265,24 @@
                     return htmlList;
                 },
 
-                // SEARCH
+                highlightText(text, terms) {
+                    if (!terms.length) return text; // Si no hay términos, devuelve el texto tal cual
 
-                highlightSearchText(text, searchTerm) {
-                    /// console.log("🚀 ~ highlightSearchText ~ searchTerm:", searchTerm)
-                    /// console.log("🚀 ~ highlightSearchText ~ text:", text)
+                    // Asegura que terms sea un array. Si no lo es, conviértelo.
+                    if (!Array.isArray(terms)) {
+                        terms = [terms];
+                    }
+
+                    // Resalta cada término
+                    terms.forEach(term => {
+                        const regex = new RegExp(`(${term})`, 'gi');
+                        text = text.replace(regex, '<span class="highlight-text">$1</span>');
+                    });
+
+                    return text;
+                },
+
+                highlightSearchTextOLD(text, searchTerm) {
                     if (!searchTerm.trim()) return text; // Retorna el texto original si el término de búsqueda está vacío
 
                     // Escapa caracteres especiales en searchTerm para su uso en una expresión regular
