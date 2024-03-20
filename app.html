@@ -553,6 +553,52 @@
 
                 searchFilteredBlocks() {
                     if (!this.searchQuery) {
+                        return this.filteredBlocks;
+                    }
+
+                    let filteredBlocks = this.filteredBlocks.filter(block =>
+                        block.contentParsed.toLowerCase().includes(this.searchQuery.toLowerCase())
+                    );
+
+                    const allLocators = new Set(filteredBlocks.map(block => block.locator));
+                    let blocksToAdd = []; // Guardaremos aquí los bloques padres para luego insertarlos
+
+                    filteredBlocks.forEach(block => {
+                        const parentLocators = this.findParentLocators(block.locator);
+                        parentLocators.forEach(parentLocator => {
+                            if (!allLocators.has(parentLocator)) {
+                                const parentBlock = this.model.find(b => b.locator === parentLocator);
+                                if (parentBlock) {
+                                    blocksToAdd.push(parentBlock);
+                                    allLocators.add(parentLocator);
+                                }
+                            }
+                        });
+                    });
+
+                    // Insertar cada bloque padre en la posición correcta
+                    blocksToAdd.forEach(parentBlock => {
+                        const childIndex = filteredBlocks.findIndex(block =>
+                            block.locator.startsWith(parentBlock.locator + '.')
+                        );
+                        if (childIndex !== -1) {
+                            // Si encontramos un hijo, insertamos el padre justo antes
+                            filteredBlocks.splice(childIndex, 0, parentBlock);
+                        } else {
+                            // Si no encontramos un hijo (debido a filtros), agregamos el padre al final
+                            filteredBlocks.push(parentBlock);
+                        }
+                    });
+
+                    // Finalmente, aplicar el resaltado
+                    return filteredBlocks.map(block => {
+                        const highlightedContent = this.highlightSearchText(block.contentParsed, this.searchQuery);
+                        return { ...block, contentParsed: highlightedContent };
+                    });
+                },
+
+                searchFilteredBlocksOLD() {
+                    if (!this.searchQuery) {
                         return this.filteredBlocks; // Retorna todos los bloques si no hay término de búsqueda
                     }
                     // Filtra primero los bloques que contienen el término de búsqueda en su contenido
@@ -972,6 +1018,17 @@
                     // Abrir nueva ventana
                     // eslint-disable-next-line max-len
                     window.open(this.selectedBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
+                },
+
+                findParentLocators(locator) {
+                    const parts = locator.split('.');
+                    const parents = [];
+
+                    for (let i = 1; i < parts.length; i++) {
+                        parents.push(parts.slice(0, i).join('.'));
+                    }
+
+                    return parents;
                 },
 
                 // EDIT BLOCK
