@@ -15,9 +15,18 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
     <style>
-        .btn {
+        .metadata-container button,
+        span {
+            height: 1.2rem;
+            min-height: 2rem;
             padding: 0.2rem;
+            margin: 0.2rem;
+            border-radius: var(--rounded-btn, .5rem);
+            background-color: whitesmoke;
         }
 
         ion-icon {
@@ -30,12 +39,19 @@
             padding: 0 4px;
             border-radius: 3px;
         }
+
+        .noto-color emoji-regular {
+            font-family: "Noto Color Emoji", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
     </style>
 </head>
 
 <body>
     <div id="vue-app">
         <div class="min-h-screen h-screen flex flex-col">
+            <!-- HEADER -->
             <header class="border-b border-gray-200">
                 <div id="top-container" class="bg-gray-200 w-full fixed">
                     <div id="navbar" class="navbar bg-base-100 shadow-xl">
@@ -76,10 +92,9 @@
 
                 </div>
             </header>
-
-            <!-- main container -->
-
+            <!-- MAIN CONTAINER -->
             <div class="flex-1 flex flex-row overflow-y-hidden">
+                <!-- SIDEBAR -->
                 <nav class="order-first w-1/4 m-4 p-2 overflow-y-auto" style="min-width: 440px">
                     <div class="flex flex-row flex-wrap gap-2 bg-white sticky top-0">
                         <div class="flex flex-row justify-between mb-4 gap-2">
@@ -270,7 +285,7 @@
                         </div>
                     </div>
                 </nav>
-
+                <!-- CONTENT -->
                 <main class="flex-auto border-l border-r border-gray-200 p-2 overflow-y-auto"
                     style="scroll-behavior: smooth;">
                     <div class="leading-10">
@@ -310,26 +325,26 @@
                                                 <div v-html="block.contentParsed"></div>
                                             </div>
                                             <div
-                                                class="md-block-container-right tags-container text-gray-500 w-full rounded-md text-sm text-center p-2 mt-1 mb-1 w-1/4">
+                                                class="md-block-container-right metadata-container text-gray-500 w-full rounded-md text-sm text-center">
                                                 <div
-                                                    class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500 p-2 mt-1 mb-1 w-1/4">
+                                                    class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500">
                                                     <div class="xbok-block-tags flex items-center">
                                                         <button @click="openBlockEditModal(block)"
-                                                            class="btn btn-primary btn-outline text-white p-0 rounded opacity-80 hover:opacity-100 focus:opacity-100">
-                                                            <ion-icon name="document-outline"></ion-icon size="large">
+                                                            class="btn btn-primary btn-outline bg-base-200 p-2 rounded opacity-100 hover:opacity-100 focus:opacity-100">
+                                                            📝
                                                         </button>
                                                         <div :id="block.metamodel.name"
                                                             class="block-metamodel section inline-flex"
                                                             v-if="block.metamodel">
                                                             <button @click="openInfoModal(block.metamodel.name)"
-                                                                class="btn btn-primary btn-outline text-white p-0 rounded opacity-80 hover:opacity-100 focus:opacity-100">
-                                                                <ion-icon name="information-circle-outline"></ion-icon>
+                                                                class="btn btn-primary btn-outline bg-base-200 p-2 rounded opacity-100 hover:opacity-100 focus:opacity-100">
+                                                                🆔
                                                             </button>
                                                         </div>
                                                         <div class="md-block-container-right markers-container"
                                                             v-html="block.markersParsed">
                                                         </div>
-                                                        <div class="md-block-container-right tags-container"
+                                                        <div class="md-block-container-right metadata-container"
                                                             v-html="block.tagsParsed">
                                                         </div>
                                                     </div>
@@ -352,16 +367,11 @@
                         </div>
                     </div>
                 </main>
-
-
             </div>
-            <!-- end main container -->
-
+            <!-- FOOTER -->
             <footer class="border-t border-gray-200 p-2">Footer</footer>
         </div>
-
         <!-- MODAL WINDOWS -->
-
         <div id="artifact-modal" v-if="isArtifactModalOpen"
             style="position: fixed; top: 5%; left: 5%; width: 90%; height: 90%; z-index: 100; background-color: white; overflow: auto; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
             <!-- Usa v-html para insertar el contenido de artifactModalContent como HTML -->
@@ -409,7 +419,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Modal para editar el contenido del bloque seleccionada -->
         <div v-if="isBlockEditModalOpen"
             class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full items-center z-50">
@@ -468,6 +477,7 @@
                     modelMarkdown: '', // Campo para almacenar el contenido Markdown concatenado
                     modelMarkdownLoaded: false, // Variable para controlar si el markdown ha sido cargado y analizado
                     modelTagsArray: new Set(),
+                    depthCounters: [0, 0, 0, 0, 0, 0],
                     // MODEL BLOCKS
                     lastId: 0, // Inicializa un contador para los IDs
                     isBlockEditModalOpen: false,
@@ -672,6 +682,8 @@
                     block.instanceValue = this.setInstanceValue(block.title);
                     block.metamodelID = this.generateMetamodelID(block.title, block.instanceClass);
                     block.metamodel = this.importMetamodelData(block.metamodelID);
+                    // Llama al nuevo método para calcular el locator
+                    block.locator = this.calculateLocator(block.depthLevel);
                     // Aquí puedes agregar más campos para recalcular si es necesario
                 },
 
@@ -998,11 +1010,10 @@
 
                         // Nota: No necesitas procesar tags, title, etc., aquí, ya que eso se manejará en el método de recálculo.
                     }
-                    //                    this.updateModelMarkdown();
                     this.updateModelMarkdown();
                     const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
                     this.newMarkdownContent = markdownContent; // Almacena el contenido en el estado
-                    this.processNewContent()
+                    this.processNewContent();
                     this.closeModal();
 
                     // Después de guardar, verifica si autoDownload está habilitado
@@ -1045,6 +1056,26 @@
                     /// console.log('UIDs assigned to model blocks:', this.model);
                 },
 
+                calculateLocator(depthLevel) {
+                    if (depthLevel >= 1 && depthLevel <= 6) {
+                        this.depthCounters[depthLevel - 1] += 1;
+
+                        // Reinicia los contadores de profundidades mayores si es necesario
+                        for (let i = depthLevel; i < 6; i++) {
+                            this.depthCounters[i] = 0;
+                        }
+
+                        return this.depthCounters.slice(0, depthLevel).join('.');
+                    } else {
+                        console.error(`Depth level out of range: ${depthLevel}`);
+                        return '';
+                    }
+                },
+
+                resetDepthCounters() {
+                    this.depthCounters = [0, 0, 0, 0, 0, 0];
+                },
+
                 updateModelMarkdown() {
                     // Inicializa una variable para almacenar el contenido concatenado
                     let concatenatedContent = '';
@@ -1057,7 +1088,7 @@
                     // Guarda el contenido generado en el campo modelMarkdown del objeto model
                     this.modelMarkdown = concatenatedContent;
                     //this.parseModelMarkdown(concatenatedContent);
-                    //   this.updateTagsArray();
+                    this.updateTagsArray();
                 },
 
                 updateTagsArray() {

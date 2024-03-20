@@ -437,6 +437,7 @@ span[data-tag="help"] { background-color: lightgrey; } span[data-tag="help"]::be
 span[data-tag="block"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="block"]::before { content: "🧿";}
 
 span[data-marker] {
+    line-height: 1.4rem;
     position: relative;
     font-size: 0 !important;
     pointer-events: none;
@@ -446,10 +447,12 @@ span[data-marker] {
   }
   
   span[data-marker]::before {
+    line-height: 1.4rem;
     content: var(--emoji);
     filter: brightness(0.5) saturate(0);
     font-size: 1rem;
     opacity: var(--opacity);
+    background-color: whitesmoke;
   }
 
   span[data-marker="\2A"]::before { --emoji: "⭐1"; --opacity: 0.2; }
