@@ -735,6 +735,47 @@
                 },
 
                 determineDepthLevel(firstLine) {
+                    // Esta expresión regular busca signos '#' al inicio de la línea seguidos directamente
+                    // por otro '#' o un espacio, indicando un encabezado de Markdown.
+                    const match = firstLine.match(/^\s*(#+)(?=\s|#)/);
+                    if (match) {
+                        return match[1].length; // La longitud de la coincidencia es el nivel de profundidad.
+                    }
+                    // Si no es un encabezado de Markdown, retorna 0 o un valor por defecto.
+                    return 0;
+                },
+
+                calculateLocator(depthLevel) {
+                    if (depthLevel === 0) {
+                        // Encuentra el último locator con un depthLevel > 0 y trátalo como base para este.
+                        const lastNonZeroDepthLocator = this.findLastNonZeroDepthLocator();
+                        return `${lastNonZeroDepthLocator}.1`; // Asume que quieres añadirlo como un subnivel del último encabezado.
+                    } else if (depthLevel >= 1 && depthLevel <= 6) {
+                        this.depthCounters[depthLevel - 1] += 1;
+
+                        for (let i = depthLevel; i < 6; i++) {
+                            this.depthCounters[i] = 0;
+                        }
+
+                        return this.depthCounters.slice(0, depthLevel).join('.');
+                    } else {
+                        console.error(`Depth level out of range: ${depthLevel}`);
+                        return '';
+                    }
+                },
+
+                findLastNonZeroDepthLocator() {
+                    // Busca hacia atrás desde el final del array model hasta encontrar un bloque con depthLevel > 0.
+                    for (let i = this.model.length - 1; i >= 0; i--) {
+                        if (this.model[i].depthLevel > 0) {
+                            return this.model[i].locator; // Asegúrate de que este bloque ya tiene un locator calculado.
+                        }
+                    }
+                    return '0'; // Devuelve un valor por defecto si no encuentras ninguno.
+                },
+
+                determineDepthLevelOLD(firstLine) {
+                    console.log("🚀 ~ determineDepthLevel ~ firstLine:", firstLine)
                     return firstLine.startsWith('#') ? firstLine.match(/^#+/)[0].length : 0;
                 },
 
@@ -1066,7 +1107,7 @@
                     /// console.log('UIDs assigned to model blocks:', this.model);
                 },
 
-                calculateLocator(depthLevel) {
+                calculateLocatorOLD(depthLevel) {
                     if (depthLevel >= 1 && depthLevel <= 6) {
                         this.depthCounters[depthLevel - 1] += 1;
 

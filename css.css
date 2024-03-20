@@ -380,7 +380,6 @@ span[data-tag] {
     border-radius: 4px;
     padding: 2px;
     font-size: 1rem !important;
-    vertical-align: middle;
 }
 
 span[data-tag]::before {
