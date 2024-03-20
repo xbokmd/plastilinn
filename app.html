@@ -134,13 +134,13 @@
                                 <ion-icon name="link-outline"></ion-icon>Home</button>
                             <button @click="changeSidebar('guides')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
-                                <ion-icon name="document-text-outline"></ion-icon size="large">Guides</button>
+                                <ion-icon name="document-text-outline"></ion-icon>Guides</button>
                             <button @click="changeSidebar('index')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
                                 <ion-icon name="albums-outline"></ion-icon>Index</button>
                             <button @click="changeSidebar('filter')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
-                                <ion-icon name="filter-outline"></ion-icon></ion-icon size="large">Filter</button>
+                                <ion-icon name="filter-outline"></ion-icon>Filter</button>
                         </div>
                     </div>
 
@@ -171,15 +171,15 @@
                                     <div tabindex="0" class="collapse bg-base-200">
                                         <div class="collapse-title text-xl font-medium">
                                             <span style="display: inline-block; vertical-align: middle;">
-                                                <ion-icon name="information-circle-outline"></ion-icon size="large">
+                                                <ion-icon name="information-circle-outline"></ion-icon>
                                             </span>
                                             Help
                                         </div>
                                         <div class="collapse-content">
                                             <p>Click on the info icon <span
                                                     style="display: inline-block; vertical-align: middle;">
-                                                    <ion-icon name="information-circle-outline"></ion-icon
-                                                        size="large"></span> at the
+                                                    <ion-icon name="information-circle-outline"></ion-icon></span> at
+                                                the
                                                 right of any section of your document</p>
                                             <p>Click here to access the <a
                                                     href="https://xbokmd.github.io/plastilinn/index.html"
@@ -200,7 +200,7 @@
                         <div
                             v-bind:class="{ block: currentSidebarSection === 'guides', hidden: currentSidebarSection !== 'guides' }">
                             <!-- Select que se muestra u oculta según showSelect -->
-                            <select @change="loadGuideMarkdownContent($event.target.value)"
+                            <select @change="loadGuideMarkdownContent($event.target.value)" id="guide-select"
                                 class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-150 ease-in-out">
                                 <option value="">Select a guide</option>
                                 <option value="https://xbokmd.github.io/plastilinn/guides/plastilinn_cheatsheet.md">
@@ -221,6 +221,9 @@
                                     Model Canvas
                                 </option>
                                 <option value="https://xbokmd.github.io/plastilinn/guides/lean_canvas.md">Lean Canvas
+                                </option>
+                                <option value="https://xbokmd.github.io/plastilinn/guides/business_model_canvas.md">
+                                    Business Model Canvas
                                 </option>
                                 <option value="https://xbokmd.github.io/plastilinn/guides/value_proposition_canvas.md">
                                     Value
@@ -259,13 +262,13 @@
                                             <!-- Búsqueda -->
                                             <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
                                                 <ion-icon name="search-outline"></ion-icon>
-                                                <input v-model="searchQuery" type="text" placeholder="Search..."
-                                                    class="input ml-2 bg-gray-50 w-full">
+                                                <input v-model="searchQuery" id="seach-query" type="text"
+                                                    placeholder="Search..." class="input ml-2 bg-gray-50 w-full">
                                             </div>
                                             <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
                                                 <ion-icon name="create-outline"></ion-icon>
-                                                <input v-model="replaceText" type="text" placeholder="Replace with..."
-                                                    class="input ml-2 bg-gray-50 w-full">
+                                                <input v-model="replaceText" id="replace-text" type="text"
+                                                    placeholder="Replace with..." class="input ml-2 bg-gray-50 w-full">
                                             </div>
                                             <button @click="replaceMatches" class="btn btn-primary">Replace</button>
                                             <!-- Filtro de etiquetas -->
@@ -278,8 +281,8 @@
                                                             :data-tag="tag">{{ tag }}</span>
                                                     </div>
                                                     <button @click="resetSelectedTags" class="btn btn-ghost">
-                                                        <ion-icon name="refresh-circle-outline"></ion-icon
-                                                            size="large">Reset</button>
+                                                        <ion-icon
+                                                            name="refresh-circle-outline"></ion-icon>Reset</button>
                                                 </div>
                                                 <select v-model="selectedTags"
                                                     class="select select-bordered w-full p-2 bg-white rounded-lg shadow"
@@ -332,7 +335,7 @@
                     style="scroll-behavior: smooth;">
                     <div class="leading-10">
                         <div id="content" class="bg-gray-200 p-1 rounded">
-                            <div class="plastilinn-hero hero pt-48" v-if="!modelMarkdownLoaded">
+                            <div class="plastilinn-hero hero pt-20" v-if="!modelMarkdownLoaded">
                                 <div class="hero-content text-center">
                                     <div class="max-w-md">
                                         <div class="m-auto max-w-6xl p-12">
@@ -484,7 +487,7 @@
                         <button class="btn m-2 btn-primary" @click="saveChanges">
                             <ion-icon name="save-outline"></ion-icon>
                             Save changes</button>
-                        <button class="btn m-2 btn-primary" @click="closeModal"><ion-icon size="large"
+                        <button class="btn m-2 btn-primary" @click="closeModal"><ion-icon
                                 name="close-circle-outline"></ion-icon>
                             Close window</button>
                     </div>
@@ -542,28 +545,8 @@
             },
             computed: {
 
-                modelBlocks() {
-                    return this.model.map(block => ({
-                        ...block,
-                        title: this.extractTitle(block.content),
-                        htmlContent: this.markdownToHtml(block.content)
-                    }));
-                },
-
                 parsedModel() {
                     return this.model.map((block) => ({ ...block, contentParsed: marked.parse(block.content) }));
-                },
-
-                preparedFilteredBlocksDELETEME() {
-                    return this.filteredBlocks.map(block => {
-                        // Clona el bloque para evitar mutaciones no deseadas
-                        const clonedBlock = { ...block, contentParsed: block.contentParsed };
-
-                        // Aplica el resaltado utilizando las etiquetas seleccionadas
-                        clonedBlock.contentParsed = this.highlightText(clonedBlock.contentParsed, this.selectedTags);
-
-                        return clonedBlock;
-                    });
                 },
 
                 filteredBlocks() {
@@ -672,21 +655,13 @@
                     }
                 },
 
-                changeSidebarOLD(section) {
-                    this.currentSidebarSection = section;
-                    /// console.log("🚀 ~ changeSidebar ~ this.currentSidebarSection:", this.currentSidebarSection)
-                    // Aquí puedes agregar cualquier otra lógica que necesites ejecutar cuando cambies de sección
-                },
-
                 // METAMODEL
 
                 processMetamodel() {
-                    // eslint-disable-next-line no-undef
                     axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
                         .then((response) => {
                             if (response.data && response.data.classes && response.data.sections) {
                                 this.metamodel = response.data;
-                                /// console.log('Metamodel loaded:', this.metamodel);
                             } else {
                                 console.error('Metamodel received does not have the expected structure');
                             }
@@ -775,7 +750,9 @@
                     // Conversión forzada a cadena si es necesario.
                     let contentAsString = String(block.content)
                     const mdToHTML = this.parseToHTML(block.content);
+                    console.log("🚀 ~ updateDependentModelBlockFields ~ mdToHTML:", mdToHTML)
                     block.contentParsed = marked.parse(mdToHTML);
+                    //block.contentParsed = marked.parse(mdToHTML);
                     const firstLine = block.content.split('\n')[0];
                     block.type = this.determineBlockType(firstLine);
                     block.depthLevel = this.determineDepthLevel(firstLine);
@@ -1030,7 +1007,7 @@
 
                     // Luego convierte los encabezados Markdown a HTML línea por línea
                     // Esto evita convertir todo el texto con marked.parse directamente, lo que podría alterar el procesamiento previo
-                    processedTagsContent = processedTagsContent.split('\n').map((line) => {
+                    /* processedTagsContent = processedTagsContent.split('\n').map((line) => {
                         // Verifica si la línea es un encabezado Markdown
                         if (/^#+\s/.test(line)) {
                             // Convierte solo el encabezado a HTML
@@ -1038,7 +1015,7 @@
                         }
                         return line;
                     }).join('<br>'); // Mantiene los saltos de línea reemplazándolos con <br> después de procesar etiquetas/marcadores y encabezados
-
+*/
                     return processedTagsContent;
                 },
 
@@ -1084,7 +1061,6 @@
                     if (this.editor) {
                         this.editor.destroy(); // Destruye la instancia anterior del editor
                     }
-                    // eslint-disable-next-line no-undef
                     this.editor = new toastui.Editor({
                         el: document.querySelector('#editor-container'),
                         initialEditType: 'markdown',
@@ -1100,7 +1076,7 @@
                     /// console.log("🚀 ~ openBlockEditModal ~ block:", block)
                     this.selectedBlockId = block.id; // Asegúrate de tener selectedBlockId definido en tu data()
                     this.selectedBlockContent = block.content;
-                    this.selectedBlockMarkers = block.markers; // Asegúrate de que `block` tiene una propiedad `markers`
+                    //this.selectedBlockMarkers = block.markers; // Asegúrate de que `block` tiene una propiedad `markers`
                     // Busca el índice de la línea basándose en el ID único
                     this.selectedBlockIndex = this.model.findIndex((item) => item.id === block.id);
                     this.isBlockEditModalOpen = true;
@@ -1287,17 +1263,6 @@
                     });
 
                     return text;
-                },
-
-                highlightSearchTextOLD(text, searchTerm) {
-                    if (!searchTerm.trim()) return text; // Retorna el texto original si el término de búsqueda está vacío
-
-                    // Escapa caracteres especiales en searchTerm para su uso en una expresión regular
-                    const search = searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                    const pattern = new RegExp(`(${search})`, 'gi'); // 'gi' para búsqueda global e insensible a mayúsculas
-
-                    // Reemplaza las coincidencias con el término de búsqueda envuelto en un span para el resaltado
-                    return text.replace(pattern, '<span class="highlight-text">$1</span>');
                 },
 
                 escapeRegExp(string) {
