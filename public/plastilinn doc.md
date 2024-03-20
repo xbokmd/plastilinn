@@ -1,280 +1,200 @@
-# Business summary #***** #>
+# Business summary
 
-# Business idea #*** #>
+# Business idea
 
-## Opportunity #** #>
+## Opportunity
 
-## Inspiration #** #>
+## Inspiration
 
-## Business status #**** #>
+## Business status
 
-## Challenges #**** #>
+## Challenges
 
-## Unfair advantage #*** #>
+## Unfair advantage
 
-# Business objectives #**** #>
+# Business objectives
 
-## Mission #*** #>
+## Mission
 
-## Vision #*** #>
+## Vision
 
-## Strategy #*** #>
+## Strategy
 
-## Organization values #*** #>
+## Organization values
 
-## Organization goals #**** #>
+## Organization goals
 
-#goal
+# Stakeholders
 
-# Stakeholders #**** #>
+# Segment list
 
-#stakeholder
+## #segment Main segment - Segment
 
-# Segment list #**** #>
+### #segment Main segment - Segmentation criteria
 
-#segment
+### #segment Main segment - Market size
 
-## #segment Main segment - Segment #**** #>
+### #segment Main segment - Market trends
 
-#segment
+### #segment Main segment - Partners
 
-### #segment Main segment - Segmentation criteria #*** #>
+### #segment Main segment - Competition
 
-#segmentation
+### #segment Main segment - Roles
 
-### #segment Main segment - Market size #*** #>
+# Profile list
 
-### #segment Main segment - Market trends #* #>
+## #profile Main profile - Profile
 
-### #segment Main segment - Partners #* #>
+### #profile Main profile - Segmentation
 
-#stakeholder
+### #profile Main profile - Persona
 
-### #segment Main segment - Competition #** #>
+### #profile Main profile - Goals
 
-#stakeholder
+### #profile Main profile - Perceptions
 
-### #segment Main segment - Roles #** #>
+### #profile Main profile - Emotions
 
-#role
+### #profile Main profile - Value proposition
 
-# Profile list #*** #>
+#### #profile Main profile - Quantified value proposition
 
-#profile
+### #profile Main profile - Relationship
 
-## #profile Main profile - Profile #***** #>
+### #profile Main profile - Messages
 
-#profile
+### #profile Main profile - Channels
 
-### #profile Main profile - Segmentation #*** #>
+### #profile Main profile - Assets
 
-#segmentation
+### #profile Main profile - Transactions
 
-### #profile Main profile - Persona #** #>
+### #profile Main profile - Journey
 
-### #profile Main profile - Goals #***** #>
+### #profile Main profile - Funnel
 
-#goal
+### #profile Main profile - Sales strategy
 
-### #profile Main profile - Perceptions #* #>
+# Solution list
 
-#perception
+## #solution Main solution - Solution
 
-### #profile Main profile - Emotions #* #>
+### #solution Main solution - Category
 
-#emotion
+### #solution Main solution - Components
 
-### #profile Main profile - Value proposition #*** #>
+### #solution Main solution - Features
 
-#value
+### #solution Main solution - Roadmap
 
-#### #profile Main profile - Quantified value proposition #* #>
+### #solution Main solution - Offerings
 
-### #profile Main profile - Relationship #* #>
+### #solution Main solution - Pricing
 
-#relationship
+### #solution Main solution - Brochure
 
-### #profile Main profile - Messages #** #>
+# Marketing
 
-#message
+## Naming
 
-### #profile Main profile - Channels #*** #>
+## Branding
 
-#channel
+## Visual identity
 
-### #profile Main profile - Assets #** #>
+## Logo
 
-#asset
+## Marketing plan
 
-### #profile Main profile - Transactions #* #>
+# Operations
 
-#transaction
+## Activitiy list
 
-### #profile Main profile - Journey #** #>
+## Function list
 
-### #profile Main profile - Funnel #* #>
+## Resource list
 
-### #profile Main profile - Sales strategy #* #>
+# Metric list
 
-# Solution list #**** #>
+## Life time value
 
-#solution
+## Customer aquisition cost
 
-## #solution Main solution - Solution #***** #>
+# Team
 
-#solution
+## People
 
-### #solution Main solution - Category #** #>
+### #person Main person - Person
 
-### #solution Main solution - Components #* #>
+#### #person Main person - Goals
 
-### #solution Main solution - Features #** #>
+#### #person Main person - Skills
 
-#feature
+#### #person Main person - Functions
 
-### #solution Main solution - Roadmap #* #>
+#### #person Main person - Contributions
 
-### #solution Main solution - Offerings #** #>
+#### #person Main person - Compensations
 
-#offering
+## Position list
 
-### #solution Main solution - Pricing #** #>
+# Project plan
 
-### #solution Main solution - Brochure #* #>
+## Phases
 
-# Marketing #** #>
+## Milestones
 
-## Naming #** #>
+# Finance
 
-## Branding #* #>
+## Revenue lines
 
-## Visual identity #* #>
+## Cost lines
 
-## Logo #* #>
+## Unit economics
 
-## Marketing plan #* #>
+## Funding strategy
 
-# Operations #*** #>
+## Funding sources
 
-## Activitiy list #** #>
+## Capital structure
 
-#work
+### Cap table
 
-## Function list #** #>
+## Finantial projections
 
-#function
+## Cashflow projections
 
-## Resource list #** #>
+# Legal
 
-#asset
+## Legal issues
 
-# Metric list #*** #>
+## Contract list
 
-#metric
+# Communication
 
-## Life time value #*** #>
+## Pitch
 
-## Customer aquisition cost #*** #>
+## Business brochure
 
-# Team #**** #>
+## Web
 
-## People #**** #>
+## Storytelling
 
-#person
+## Presentations
 
-### #person Main person - Person #**** #>
+# Analysis
 
-#person
+## Key list
 
-#### #person Main person - Skills #*** #>
+## Assumption list
 
-#skill
+## Risk list
 
-#### #person Main person - Functions #*** #>
+# Validation
 
-#function
+## Experiment list
 
-#### #person Main person - Contributions #*** #>
+### #experiment Main experiment - Experiment
 
-#### #person Main person - Compensations #*** #>
-
-## Position list #** #>
-
-#position
-
-# Project plan #** #>
-
-## Phases #* #>
-
-#phase
-
-## Milestones #** #>
-
-#milestone
-
-# Finance #*** #>
-
-## Revenue lines #*** #>
-
-#revenue
-
-## Cost lines #** #>
-
-#cost
-
-## Unit economics #** #>
-
-## Funding strategy #** #>
-
-## Funding sources #* #>
-
-## Capital structure #** #>
-
-### Cap table #* #>
-
-## Finantial projections #* #>
-
-## Cashflow projections #** #>
-
-# Legal #** #>
-
-## Legal issues #** #>
-
-## Contract list #* #>
-
-# Communication #** #>
-
-## Pitch #* #>
-
-## Business brochure #* #>
-
-## Web #* #>
-
-## Storytelling #* #>
-
-## Presentations #* #>
-
-# Analysis #**** #>
-
-## Key list #**** #>
-
-## Assumption list #*** #>
-
-#assumption
-
-## Risk list #***** #>
-
-#risk
-
-# Validation #***** #>
-
-## Experiment list #*** #>
-
-#experiment
-
-### #experiment Main experiment - Experiment #*** #>
-
-#experiment
-
-# References # #>
+# References
 
