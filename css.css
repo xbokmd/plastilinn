@@ -449,7 +449,6 @@ span[data-marker] {
   span[data-marker]::before {
     line-height: 1.4rem;
     content: var(--emoji);
-    filter: brightness(0.5) saturate(0);
     font-size: 1rem;
     opacity: var(--opacity);
     background-color: whitesmoke;
