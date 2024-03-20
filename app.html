@@ -667,6 +667,15 @@
 
                 changeSidebar(section) {
                     this.currentSidebarSection = section;
+                    // Si la sección no es 'filter', resetea el input de búsqueda y los tags de filtro
+                    if (section !== 'filter') {
+                        this.searchQuery = ''; // Resetea el input de búsqueda
+                        this.selectedTags = []; // Resetea los tags de filtro seleccionados
+                    }
+                },
+
+                changeSidebarOLD(section) {
+                    this.currentSidebarSection = section;
                     /// console.log("🚀 ~ changeSidebar ~ this.currentSidebarSection:", this.currentSidebarSection)
                     // Aquí puedes agregar cualquier otra lógica que necesites ejecutar cuando cambies de sección
                 },
