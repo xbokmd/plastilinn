@@ -673,6 +673,7 @@
                     this.model = model.map((blockContent) => this.processBlock(blockContent));
                     this.assignUids();
                     // this.highlightTitlesInContent();
+                    this.updateTagsArray();
                 },
 
                 splitModelMarkdownIntoBlocks(content) {
