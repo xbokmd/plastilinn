@@ -54,6 +54,27 @@
             margin-bottom: 10px;
             /* Ajusta el espacio inferior */
         }
+
+        /* Personaliza la barra de desplazamiento */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            /* Controla el ancho de la barra de desplazamiento */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            /* Color de fondo de la pista de la barra de desplazamiento */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #888;
+            /* Color del control deslizante de la barra de desplazamiento */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            /* Color del control deslizante de la barra de desplazamiento al pasar el mouse */
+        }
     </style>
 </head>
 
@@ -70,7 +91,7 @@
                                 <img src="assets/logo.png" alt="Logo de mi empresa" class="h-8">
                                 <!-- Logo como texto o SVG, aquí un ejemplo con texto -->
                             </div>
-                            <a class="btn btn-ghost text-xl">Plastilinn</a>V0.1.0
+                            <a class="btn btn-ghost text-xl">Plastilinn</a><kbd class="kbd kbd-xs">V0.2.0</kbd>
                         </div>
                         <div class="navbar-center">
                             <div class="flex-1 text-center bg-gray-200 rounded-lg p-2 m-2">
@@ -104,190 +125,202 @@
             <!-- MAIN CONTAINER -->
             <div class="flex-1 flex flex-row overflow-y-hidden">
                 <!-- SIDEBAR -->
-                <nav class="order-first w-1/4 m-4 p-2 overflow-y-auto" style="min-width: 440px">
-                    <div class="flex flex-row flex-wrap gap-2 bg-white sticky top-0">
-                        <div class="flex flex-row justify-between mb-4 gap-2">
-                            <button @click="changeSidebar('home')" class="collapse-filter-button btn btn-primary">
+                <nav class="order-first w-1/4 overflow-y-auto custom-scrollbar" style="min-width: 440px">
+                    <div class="flex flex-row flex-wrap p-2 
+                    gap-2 bg-white sticky z-10 top-0">
+                        <div class="flex flex-row justify-between gap-2">
+                            <button @click="changeSidebar('home')"
+                                class="collapse-filter-button btn btn-primary btn-sm">
                                 <ion-icon name="link-outline"></ion-icon>Home</button>
-                            <button @click="changeSidebar('guides')" class="collapse-filter-button btn btn-primary">
+                            <button @click="changeSidebar('guides')"
+                                class="collapse-filter-button btn btn-primary btn-sm">
                                 <ion-icon name="document-text-outline"></ion-icon size="large">Guides</button>
-                            <button @click="changeSidebar('index')" class="collapse-filter-button btn btn-primary">
+                            <button @click="changeSidebar('index')"
+                                class="collapse-filter-button btn btn-primary btn-sm">
                                 <ion-icon name="albums-outline"></ion-icon>Index</button>
-                            <button @click="changeSidebar('filter')" class="collapse-filter-button btn btn-primary">
+                            <button @click="changeSidebar('filter')"
+                                class="collapse-filter-button btn btn-primary btn-sm">
                                 <ion-icon name="filter-outline"></ion-icon></ion-icon size="large">Filter</button>
                         </div>
                     </div>
 
                     <!-- Secciones con visibilidad condicional -->
-                    <div
-                        v-bind:class="{ block: currentSidebarSection === 'home', hidden: currentSidebarSection !== 'home' }">
-                        <div id="sidebar-home">
-                            <div>
-                                <p>Plastilinn allows you to create a business model and evolve it to make it better and
-                                    better. </p>
+                    <div class="p-2">
+                        <div
+                            v-bind:class="{ block: currentSidebarSection === 'home', hidden: currentSidebarSection !== 'home' }">
+                            <div id="sidebar-home">
                                 <div>
-                                    <h5>Guides</h5>
-                                    <p>Includes help guides that will make it easier for you to create your business
-                                        model, offering you step by step all the information you need and precise
-                                        instructions.</p>
-                                    <h5>Index</h5>
-                                    <p>Allows you to quickly navigate to the section of your plastilin doc that you want
-                                        to consult.</p>
-                                    <h5>Filter</h5>
-                                    <p>Allows you to carry out smart queries by filtering the content of your plastilin
-                                        doc.</p>
-                                </div>
+                                    <p>Plastilinn allows you to create a business model and evolve it to make it better
+                                        and
+                                        better. </p>
+                                    <div>
+                                        <h5>Guides</h5>
+                                        <p>Includes help guides that will make it easier for you to create your business
+                                            model, offering you step by step all the information you need and precise
+                                            instructions.</p>
+                                        <h5>Index</h5>
+                                        <p>Allows you to quickly navigate to the section of your plastilin doc that you
+                                            want
+                                            to consult.</p>
+                                        <h5>Filter</h5>
+                                        <p>Allows you to carry out smart queries by filtering the content of your
+                                            plastilin
+                                            doc.</p>
+                                    </div>
 
-                                <div tabindex="0" class="collapse bg-base-200">
-                                    <div class="collapse-title text-xl font-medium">
-                                        <span style="display: inline-block; vertical-align: middle;">
-                                            <ion-icon name="information-circle-outline"></ion-icon size="large">
-                                        </span>
-                                        Help
+                                    <div tabindex="0" class="collapse bg-base-200">
+                                        <div class="collapse-title text-xl font-medium">
+                                            <span style="display: inline-block; vertical-align: middle;">
+                                                <ion-icon name="information-circle-outline"></ion-icon size="large">
+                                            </span>
+                                            Help
+                                        </div>
+                                        <div class="collapse-content">
+                                            <p>Click on the info icon <span
+                                                    style="display: inline-block; vertical-align: middle;">
+                                                    <ion-icon name="information-circle-outline"></ion-icon
+                                                        size="large"></span> at the
+                                                right of any section of your document</p>
+                                            <p>Click here to access the <a
+                                                    href="https://xbokmd.github.io/plastilinn/index.html"
+                                                    target="_blank">plastilinn documentation page</a> (Work in Progress)
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="collapse-content">
-                                        <p>Click on the info icon <span
-                                                style="display: inline-block; vertical-align: middle;">
-                                                <ion-icon name="information-circle-outline"></ion-icon
-                                                    size="large"></span> at the
-                                            right of any section of your document</p>
-                                        <p>Click here to access the <a
-                                                href="https://xbokmd.github.io/plastilinn/index.html"
-                                                target="_blank">plastilinn documentation page</a> (Work in Progress)</p>
+                                    <div role="alert" class="alert mt-10">
+                                        <ion-icon name="information-circle-outline"></ion-icon>
+                                        <h3 class="font-bold">New to plastilin?</h3>
+                                        <div class="text-xs">Simply click on the guides button in this sidebar and
+                                            select
+                                            the quickstart guide.</div>
                                     </div>
-                                </div>
-                                <div role="alert" class="alert mt-10">
-                                    <ion-icon name="information-circle-outline"></ion-icon>
-                                    <h3 class="font-bold">New to plastilin?</h3>
-                                    <div class="text-xs">Simply click on the guides button in this sidebar and select
-                                        the quickstart guide.</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div
-                        v-bind:class="{ block: currentSidebarSection === 'guides', hidden: currentSidebarSection !== 'guides' }">
-                        <!-- Select que se muestra u oculta según showSelect -->
-                        <select @change="loadGuideMarkdownContent($event.target.value)"
-                            class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-150 ease-in-out">
-                            <option value="">Select a guide</option>
-                            <option value="https://xbokmd.github.io/plastilinn/guides/plastilinn_cheatsheet.md">
-                                Plastilinn cheatsheet
-                            </option>
-                            <option value="https://xbokmd.github.io/plastilinn/guides/quick_start.md">Quick start
-                            </option>
-                            <option value="https://xbokmd.github.io/plastilinn/guides/using_plastilinn.md">Using
-                                plastilinn
-                            </option>
-                            <option value="https://xbokmd.github.io/plastilinn/guides/IA.md">IA
-                            </option>
-                            <option value="https://xbokmd.github.io/plastilinn/guides/idea_definition.md">Idea
-                                definition
-                            </option>
-                            <option value="https://xbokmd.github.io/plastilinn/guides/business_model_canvas.md">Business
-                                Model Canvas
-                            </option>
-                            <option value="https://xbokmd.github.io/plastilinn/guides/lean_canvas.md">Lean Canvas
-                            </option>
-                            <option value="https://xbokmd.github.io/plastilinn/guides/value_proposition_canvas.md">Value
-                                Proposition Canvas
-                            </option>
-                            <option value="https://xbokmd.github.io/plastilinn/guides/empathy_map.md">Empathy map
-                            </option>
-                        </select>
-                        <!-- Div que muestra el contenido del Markdown seleccionado -->
-                        <div v-if="markdownGuideContent">
-                            <div v-html="markdownGuideContent"></div>
+                        <div
+                            v-bind:class="{ block: currentSidebarSection === 'guides', hidden: currentSidebarSection !== 'guides' }">
+                            <!-- Select que se muestra u oculta según showSelect -->
+                            <select @change="loadGuideMarkdownContent($event.target.value)"
+                                class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-150 ease-in-out">
+                                <option value="">Select a guide</option>
+                                <option value="https://xbokmd.github.io/plastilinn/guides/plastilinn_cheatsheet.md">
+                                    Plastilinn cheatsheet
+                                </option>
+                                <option value="https://xbokmd.github.io/plastilinn/guides/quick_start.md">Quick start
+                                </option>
+                                <option value="https://xbokmd.github.io/plastilinn/guides/using_plastilinn.md">Using
+                                    plastilinn
+                                </option>
+                                <option value="https://xbokmd.github.io/plastilinn/guides/IA.md">IA
+                                </option>
+                                <option value="https://xbokmd.github.io/plastilinn/guides/idea_definition.md">Idea
+                                    definition
+                                </option>
+                                <option value="https://xbokmd.github.io/plastilinn/guides/business_model_canvas.md">
+                                    Business
+                                    Model Canvas
+                                </option>
+                                <option value="https://xbokmd.github.io/plastilinn/guides/lean_canvas.md">Lean Canvas
+                                </option>
+                                <option value="https://xbokmd.github.io/plastilinn/guides/value_proposition_canvas.md">
+                                    Value
+                                    Proposition Canvas
+                                </option>
+                                <option value="https://xbokmd.github.io/plastilinn/guides/empathy_map.md">Empathy map
+                                </option>
+                            </select>
+                            <!-- Div que muestra el contenido del Markdown seleccionado -->
+                            <div v-if="markdownGuideContent">
+                                <div v-html="markdownGuideContent"></div>
+                            </div>
+
+                            <button
+                                @click="setArtifactBusinessModelCanvas('partners', 'activities', 'valuePropositions', 'relationships', 'profile', 'resources', 'channels', 'costLines', 'revenueLines'); isArtifactModalOpen = true"
+                                class="btn btn-primary">Business
+                                Model Canvas</button>
                         </div>
-
-                        <button
-                            @click="setArtifactBusinessModelCanvas('partners', 'activities', 'valuePropositions', 'relationships', 'profile', 'resources', 'channels', 'costLines', 'revenueLines'); isArtifactModalOpen = true"
-                            class="btn btn-primary">Business
-                            Model Canvas</button>
-                    </div>
-
-                    <div
-                        v-bind:class="{ block: currentSidebarSection === 'index', hidden: currentSidebarSection !== 'index' }">
-                        <div class="index">
-                            <ul class="menu p-4 w-80 bg-base-100">
-                                <li v-for="block in model.filter(b => b.type === 'section')" :key="block.id"
-                                    :class="`pl-${block.depthLevel * 4} p-0`">
-                                    <a :href="'#' + block.title">{{ block.title }}</a>
-                                </li>
-                            </ul>
+                        <div
+                            v-bind:class="{ block: currentSidebarSection === 'index', hidden: currentSidebarSection !== 'index' }">
+                            <div class="index">
+                                <ul class="menu p-4 w-80 bg-base-100">
+                                    <li v-for="block in model.filter(b => b.type === 'section')" :key="block.id"
+                                        :class="`pl-${block.depthLevel * 4} p-0`">
+                                        <a :href="'#' + block.title">{{ block.title }}</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-
-                    <div
-                        v-bind:class="{ block: currentSidebarSection === 'filter', hidden: currentSidebarSection !== 'filter' }">
-                        <div class=" flex justify-between bg-white" v-if="filterVisible">
-                            <div class="flex flex-col gap-4">
-                                <div class="flex flex-col w-full">
-                                    <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
-                                        <!-- Búsqueda -->
-                                        <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                            <ion-icon name="search-outline"></ion-icon>
-                                            <input v-model="searchQuery" type="text" placeholder="Search..."
-                                                class="input ml-2 bg-gray-50 w-full">
-                                        </div>
-                                        <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                            <ion-icon name="create-outline"></ion-icon>
-                                            <input v-model="replaceText" type="text" placeholder="Replace with..."
-                                                class="input ml-2 bg-gray-50 w-full">
-                                        </div>
-                                        <button @click="replaceMatches" class="btn btn-primary">Replace</button>
-                                        <!-- Filtro de etiquetas -->
-                                        <div class="flex flex-col mt-4">
+                        <div
+                            v-bind:class="{ block: currentSidebarSection === 'filter', hidden: currentSidebarSection !== 'filter' }">
+                            <div class=" flex justify-between bg-white" v-if="filterVisible">
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex flex-col w-full">
+                                        <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
+                                            <!-- Búsqueda -->
                                             <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                <span>Filter tags</span>
-                                                <div class="flex flex-wrap gap-2 mt-2">
-                                                    <span v-for="tag in selectedTags" :key="tag"
-                                                        class="flex items-center justify-center h-8 px-2 text-sm"
-                                                        :data-tag="tag">{{ tag }}</span>
+                                                <ion-icon name="search-outline"></ion-icon>
+                                                <input v-model="searchQuery" type="text" placeholder="Search..."
+                                                    class="input ml-2 bg-gray-50 w-full">
+                                            </div>
+                                            <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
+                                                <ion-icon name="create-outline"></ion-icon>
+                                                <input v-model="replaceText" type="text" placeholder="Replace with..."
+                                                    class="input ml-2 bg-gray-50 w-full">
+                                            </div>
+                                            <button @click="replaceMatches" class="btn btn-primary">Replace</button>
+                                            <!-- Filtro de etiquetas -->
+                                            <div class="flex flex-col mt-4">
+                                                <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
+                                                    <span>Filter tags</span>
+                                                    <div class="flex flex-wrap gap-2 mt-2">
+                                                        <span v-for="tag in selectedTags" :key="tag"
+                                                            class="flex items-center justify-center h-8 px-2 text-sm"
+                                                            :data-tag="tag">{{ tag }}</span>
+                                                    </div>
+                                                    <button @click="resetSelectedTags" class="btn btn-ghost">
+                                                        <ion-icon name="refresh-circle-outline"></ion-icon
+                                                            size="large">Reset</button>
                                                 </div>
-                                                <button @click="resetSelectedTags" class="btn btn-ghost">
-                                                    <ion-icon name="refresh-circle-outline"></ion-icon
-                                                        size="large">Reset</button>
-                                            </div>
-                                            <select v-model="selectedTags"
-                                                class="select select-bordered w-full p-2 bg-white rounded-lg shadow"
-                                                multiple>
-                                                <option v-for="tag in tags" :key="tag" :value="tag">{{ tag }}
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="">
-                                        <!-- Botones para aplicar filtros directamente -->
-                                        <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
-                                            <button @click="setFilterTags(['!!!!!', '!!!!'])"
-                                                class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
-                                                High priority
-                                            </button>
-                                            <div class="flex items-center bg-gray-100 px-4 py-2">
-                                                <p>
-                                                    <span data-marker="!!!!!">!!!!!</span> <kbd
-                                                        class="kbd kbd-xs">#!!!!!</kbd> or
-                                                    <span data-marker="!!!!">!!!!</span> <kbd
-                                                        class="kbd kbd-xs">#!!!!</kbd>
-                                                </p>
+                                                <select v-model="selectedTags"
+                                                    class="select select-bordered w-full p-2 bg-white rounded-lg shadow"
+                                                    multiple>
+                                                    <option v-for="tag in tags" :key="tag" :value="tag">{{ tag }}
+                                                    </option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
-                                            <button @click="setFilterTags(['*****', '?????'])"
-                                                class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
-                                                High importance or uncertainty
-                                            </button>
-                                            <div class="flex items-center bg-gray-100 px-4 py-2">
-                                                <p>
-                                                    <span data-marker="*****">*****</span> <kbd
-                                                        class="kbd kbd-xs">#*****</kbd> or
-                                                    <span data-marker="?????">?????</span> <kbd
-                                                        class="kbd kbd-xs">#?????</kbd>
-                                                </p>
+                                        <div class="">
+                                            <!-- Botones para aplicar filtros directamente -->
+                                            <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
+                                                <button @click="setFilterTags(['!!!!!', '!!!!'])"
+                                                    class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
+                                                    High priority
+                                                </button>
+                                                <div class="flex items-center bg-gray-100 px-4 py-2">
+                                                    <p>
+                                                        <span data-marker="!!!!!">!!!!!</span> <kbd
+                                                            class="kbd kbd-xs">#!!!!!</kbd> or
+                                                        <span data-marker="!!!!">!!!!</span> <kbd
+                                                            class="kbd kbd-xs">#!!!!</kbd>
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
+                                            <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
+                                                <button @click="setFilterTags(['*****', '?????'])"
+                                                    class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
+                                                    High importance or uncertainty
+                                                </button>
+                                                <div class="flex items-center bg-gray-100 px-4 py-2">
+                                                    <p>
+                                                        <span data-marker="*****">*****</span> <kbd
+                                                            class="kbd kbd-xs">#*****</kbd> or
+                                                        <span data-marker="?????">?????</span> <kbd
+                                                            class="kbd kbd-xs">#?????</kbd>
+                                                    </p>
+                                                </div>
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -295,7 +328,7 @@
                     </div>
                 </nav>
                 <!-- CONTENT -->
-                <main class="flex-auto border-l border-r border-gray-200 p-2 overflow-y-auto"
+                <main class="flex-auto border-l border-r border-gray-200 overflow-y-auto"
                     style="scroll-behavior: smooth;">
                     <div class="leading-10">
                         <div id="content" class="bg-gray-200 p-1 rounded">
@@ -330,7 +363,7 @@
                                         <div v-for="block in searchFilteredBlocks" :key="block.id" :id="block.title"
                                             class="md-block flex">
                                             <div
-                                                class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow p-2 ml-2 mr-2 custom-flex-2 w-1/2">
+                                                class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow custom-flex-2 w-1/2">
                                                 <div v-html="block.contentParsed"></div>
                                             </div>
                                             <div
