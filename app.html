@@ -1293,6 +1293,7 @@
                 processNewContent() {
                     // Resetear model a un array vacío
                     this.model = [];
+                    this.resetDepthCounters();
                     const content = this.newMarkdownContent;
                     // Aquí debes invocar la lógica que normalmente usas para procesar el contenido Markdown cargado.
                     // Por ejemplo, si tienes un método que parsea el Markdown a bloques del modelo, úsalo aquí.
