@@ -522,6 +522,45 @@
                 },
 
                 filteredBlocks() {
+                    const filteredBlocks = [];
+                    const allLocators = new Set(); // Almacena los localizadores de todos los bloques que serán incluidos
+
+                    // Primero, filtra los bloques según los criterios existentes
+                    const initialFilteredBlocks = this.model.filter(block => {
+                        // Aquí iría la lógica existente de filtrado, por ejemplo, por etiquetas seleccionadas
+                        return this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
+                    });
+
+                    initialFilteredBlocks.forEach(block => {
+                        allLocators.add(block.locator); // Añade el localizador del bloque actual
+                        filteredBlocks.push(block); // Añade el bloque a la lista de resultados
+
+                        // Encuentra y añade los bloques padres
+                        let parentLocator = block.locator.split('.').slice(0, -1).join('.');
+                        while (parentLocator) {
+                            if (!allLocators.has(parentLocator)) {
+                                const parentBlock = this.model.find(b => b.locator === parentLocator);
+                                if (parentBlock) {
+                                    filteredBlocks.push(parentBlock); // Añade el bloque padre si no estaba ya incluido
+                                    allLocators.add(parentLocator); // Añade su localizador al conjunto de control
+                                }
+                            }
+                            parentLocator = parentLocator.split('.').slice(0, -1).join('.'); // Sube un nivel en la jerarquía
+                        }
+                    });
+
+                    // Ordena los bloques por su localizador para mantener la estructura jerárquica
+                    return filteredBlocks.sort((a, b) => {
+                        const aParts = a.locator.split('.').map(Number);
+                        const bParts = b.locator.split('.').map(Number);
+                        for (let i = 0; i < Math.min(aParts.length, bParts.length); i++) {
+                            if (aParts[i] !== bParts[i]) return aParts[i] - bParts[i];
+                        }
+                        return aParts.length - bParts.length;
+                    });
+                },
+
+                filteredBlocksOLD() {
                     const blocksWithSections = [];
                     const addedSectionIds = new Set(); // Almacena los IDs de secciones ya añadidas
                     this.model.filter((block) => {
