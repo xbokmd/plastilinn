@@ -25,7 +25,7 @@
             min-height: 2rem;
             padding: 0.2rem;
             margin: 0.2rem;
-            border-radius: var(--rounded-btn, .5rem);
+            border-radius: 4px;
             background-color: whitesmoke;
         }
 
@@ -44,6 +44,15 @@
             font-family: "Noto Color Emoji", sans-serif;
             font-weight: 400;
             font-style: normal;
+        }
+
+        br {
+            content: "";
+            display: block;
+            margin-top: 10px;
+            /* Ajusta el espacio superior */
+            margin-bottom: 10px;
+            /* Ajusta el espacio inferior */
         }
     </style>
 </head>
@@ -997,8 +1006,9 @@
                     const newTitle = this.extractBlockTitle(editedContent); // Suponiendo que tengas una función similar para el contenido editado
 
                     if (oldTitle !== newTitle) {
-                        // Muestra una alerta al usuario. Este es el mensaje traducido al inglés.
-                        alert("You have changed the title of a block. If you have references to this title in the document, you might want to use the search and replace feature within the sidebar filter.");
+                        alert("You have changed the title of a block. If you have references to this title in the document, " +
+                            "you might want to use the search and replace feature within the sidebar filter. " +
+                            `Search "${oldTitle}" and replace it with "${newTitle}"`);
                     }
 
                     if (this.selectedBlockIndex !== null) {

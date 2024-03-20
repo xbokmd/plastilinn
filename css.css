@@ -354,13 +354,8 @@ height: 1.5em;
 margin: 0px auto; /* Añade margen arriba y abajo y centra horizontalmente */
 }
 
-.btn-primary {
-transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
 .btn-primary:hover {
 background-color: #2563eb; /* Un azul más brillante */
-transform: translateY(-2px); /* Efecto de levitación ligera */
 }
 
 /* Mejoras en Inputs */
@@ -389,52 +384,57 @@ span[data-tag] {
 }
 
 span[data-tag]::before {
+    content: "🔖"; /* Emoji por defecto */
     position: absolute;
     left: 0;
 }
 
 span[data-tag="key"] { background-color: #FFCCCC; } span[data-tag="key"]::before { content: "🔑";}
-span[data-tag="organization"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="organization"]::before { content: "🏢";}
-span[data-tag="journey"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="journey"]::before { content: "✈️";}
-span[data-tag="assumption"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="assumption"]::before { content: "🔮";}
-span[data-tag="solution"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="solution"]::before { content: "💊";}
-span[data-tag="offering"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="offering"]::before { content: "🛍️";}
-span[data-tag="work"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="work"]::before { content: "⚙️";}
-span[data-tag="metric"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="metric"]::before { content: "📐";}
-span[data-tag="asset"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="asset"]::before { content: "⭐";}
-span[data-tag="revenue"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="revenue"]::before { content: "💰";}
-span[data-tag="segmentation"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="segmentation"]::before { content: "✂️";}
-span[data-tag="segment"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="segment"]::before { content: "🙋";}
-span[data-tag="value"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="value"]::before { content: "💎";}
-span[data-tag="channel"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="channel"]::before { content: "🎙️";}
-span[data-tag="cost"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="cost"]::before { content: "💸";}
-span[data-tag="emotion"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="emotion"]::before { content: "😐";}
-span[data-tag="message"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="message"]::before { content: "📣";}
-span[data-tag="feature"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="feature"]::before { content: "🌟";}
-span[data-tag="function"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="function"]::before { content: "👔";}
-span[data-tag="goal"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="goal"]::before { content: "🎯";}
+span[data-tag="organization"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="organization"]::before { content: "🏢";}
+span[data-tag="journey"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="journey"]::before { content: "✈️";}
+span[data-tag="solution"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="solution"]::before { content: "💊";}
+span[data-tag="offering"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="offering"]::before { content: "🛍️";}
+span[data-tag="work"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="work"]::before { content: "⚙️";}
+span[data-tag="metric"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="metric"]::before { content: "📐";}
+span[data-tag="asset"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="asset"]::before { content: "⭐";}
+span[data-tag="revenue"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="revenue"]::before { content: "💰";}
+span[data-tag="segmentation"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="segmentation"]::before { content: "✂️";}
+span[data-tag="segment"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="segment"]::before { content: "🙋";}
+span[data-tag="value"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="value"]::before { content: "💎";}
+span[data-tag="channel"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="channel"]::before { content: "🎙️";}
+span[data-tag="cost"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="cost"]::before { content: "💸";}
+span[data-tag="emotion"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="emotion"]::before { content: "😐";}
+span[data-tag="message"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="message"]::before { content: "📣";}
+span[data-tag="feature"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="feature"]::before { content: "🌟";}
+span[data-tag="function"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="function"]::before { content: "👔";}
+span[data-tag="goal"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="goal"]::before { content: "🎯";}
 span[data-tag="hypothesis"] { background-color: #FFCCCC; } span[data-tag="hypothesis"]::before { content: "🔎";}
-span[data-tag="person"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="person"]::before { content: "👤";}
-span[data-tag="transaction"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="transaction"]::before { content: "🛒";}
-span[data-tag="risk"] { background-color: #FFCCCC; } span[data-tag="risk"]::before { content: "🚨";}
+span[data-tag="person"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="person"]::before { content: "👤";}
+span[data-tag="transaction"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="transaction"]::before { content: "🛒";}
 span[data-tag="experiment"] { background-color: #90EE90; } span[data-tag="experiment"]::before { content: "🧪";}
 span[data-tag="question"] { background-color: #FFCCCC; } span[data-tag="question"]::before { content: "💭";}
 span[data-tag="insight"] { background-color: #90EE90; } span[data-tag="insight"]::before { content: "💡";}
-span[data-tag="position"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="position"]::before { content: "🪪";}
-span[data-tag="skill"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="skill"]::before { content: "🔧";}
-span[data-tag="phase"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="phase"]::before { content: "🗓️";}
-span[data-tag="milestone"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="milestone"]::before { content: "🏁";}
-span[data-tag="role"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="role"]::before { content: "🎩";}
-span[data-tag="stakeholder"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="stakeholder"]::before { content: "🤔";}
-span[data-tag="persona"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="persona"]::before { content: "👩‍💼";}
+span[data-tag="position"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="position"]::before { content: "🪪";}
+span[data-tag="skill"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="skill"]::before { content: "🔧";}
+span[data-tag="phase"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="phase"]::before { content: "🗓️";}
+span[data-tag="milestone"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="milestone"]::before { content: "🏁";}
+span[data-tag="role"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="role"]::before { content: "🎩";}
+span[data-tag="stakeholder"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="stakeholder"]::before { content: "🤔";}
+span[data-tag="persona"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="persona"]::before { content: "👩‍💼";}
+span[data-tag="profile"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="profile"]::before { content: "🙎‍♂️";}
+span[data-tag="relationship"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="relationship"]::before { content: "🤝";}
 span[data-tag="topic"] { background-color: lightgrey; } span[data-tag="topic"]::before { content: "🗄️";}
 span[data-tag="resource"] { background-color: lightgrey; } span[data-tag="resource"]::before { content: "🖥️";}
-span[data-tag="artifact"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="artifact"]::before { content: "🧿";}
+span[data-tag="artifact"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="artifact"]::before { content: "🧿";}
 span[data-tag="unit"] { background-color: lightgrey; } span[data-tag="unit"]::before { content: "📓";}
-span[data-tag="content"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="content"]::before { content: "📘";}
-span[data-tag="AI"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="AI"]::before { content: "🤖";}
+span[data-tag="content"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="content"]::before { content: "📘";}
+span[data-tag="AI"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="AI"]::before { content: "🤖";}
 span[data-tag="help"] { background-color: lightgrey; } span[data-tag="help"]::before { content: "🌐";}
-span[data-tag="block"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)); } span[data-tag="block"]::before { content: "🧿";}
+span[data-tag="block"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="block"]::before { content: "🧿";}
+span[data-tag="assumption"] { background-color: #FFCCCC; } span[data-tag="assumption"]::before { content: "🔮";}
+span[data-tag="comment"] { background-color: lightgrey; } span[data-tag="comment"]::before { content: "🗨️";}
+span[data-tag="task"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="task"]::before { content: "🛠️";}
+span[data-tag="risk"] { background-color: #FFCCCC; } span[data-tag="risk"]::before { content: "🚨";}
 
 span[data-marker] {
     line-height: 1.4rem;
