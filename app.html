@@ -47,13 +47,13 @@
                         <div class="navbar-end">
                             <div class="join">
                                 <button id="downloadBtn" @click="downloadMarkdown" class="btn join-item btn-primary">
-                                    <span class="material-symbols-outlined">
+                                    <span class="material-symbols-outlined" translate="no">
                                         download_for_offline
                                     </span>
                                     Download
                                 </button>
                                 <button id="exportBtn" @click="downloadHTML" class="btn join-item btn-primary">
-                                    <span class="material-symbols-outlined">
+                                    <span class="material-symbols-outlined" translate="no">
                                         download_for_offline
                                     </span>
                                     Export
@@ -61,7 +61,7 @@
                                 <button @click="toggleAutoDownload"
                                     :class="{'bg-green-500': autoDownloadEnabled, 'bg-gray-500': !autoDownloadEnabled}"
                                     class="btn join-item btn-primary">
-                                    <span class="material-symbols-outlined">
+                                    <span class="material-symbols-outlined" translate="no">
                                         toggle_on
                                     </span>
                                     Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
@@ -81,22 +81,22 @@
                         <div class="flex flex-row justify-between gap-2">
                             <button @click="changeSidebar('home')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
-                                <span class="material-symbols-outlined">
+                                <span class="material-symbols-outlined" translate="no">
                                     link
                                 </span>Home</button>
                             <button @click="changeSidebar('guides')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
-                                <span class="material-symbols-outlined">
+                                <span class="material-symbols-outlined" translate="no">
                                     fact_check
                                 </span>Guides</button>
                             <button @click="changeSidebar('index')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
-                                <span class="material-symbols-outlined">
+                                <span class="material-symbols-outlined" translate="no">
                                     list_alt
                                 </span>Index</button>
                             <button @click="changeSidebar('filter')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
-                                <span class="material-symbols-outlined">
+                                <span class="material-symbols-outlined" translate="no">
                                     filter_alt
                                 </span>Filter</button>
                         </div>
@@ -125,44 +125,10 @@
                                             plastilin
                                             doc.</p>
                                     </div>
-
-                                    <div tabindex="0" class="collapse bg-base-200">
-                                        <div class="collapse-title text-xl font-medium">
-                                            <span style="display: inline-block; vertical-align: middle;">
-                                                <span class="material-symbols-outlined">
-                                                    info
-                                                </span>
-                                            </span>
-                                            Help
-                                        </div>
-                                        <div class="collapse-content">
-                                            <p>Click on the info icon <span
-                                                    style="display: inline-block; vertical-align: middle;">
-                                                    <span class="material-symbols-outlined">
-                                                        info
-                                                    </span></span> at
-                                                the
-                                                right of any section of your document</p>
-                                            <p>Click here to access the <a
-                                                    href="https://xbokmd.github.io/plastilinn/index.html"
-                                                    target="_blank">plastilinn documentation page</a> (Work in Progress)
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div role="alert" class="alert mt-10">
-                                        <span class="material-symbols-outlined">
-                                            info
-                                        </span>
-                                        <h3 class="font-bold">New to plastilin?</h3>
-                                        <div class="text-xs">Simply click on the guides button in this sidebar and
-                                            select
-                                            the quickstart guide.</div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div
-                            v-bind:class="{ block: currentSidebarSection === 'guides', hidden: currentSidebarSection !== 'guides' }">
+                        <div v-if="currentSidebarSection === 'guides'">sss
                             <!-- Select que se muestra u oculta según showSelect -->
                             <select @change="loadGuideMarkdownContent($event.target.value)" id="guide-select"
                                 class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-150 ease-in-out">
@@ -170,7 +136,8 @@
                                 <option value="https://xbokmd.github.io/plastilinn/guides/plastilinn_cheatsheet.md">
                                     Plastilinn cheatsheet
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/quick_start.md">Quick start
+                                <option value="https://xbokmd.github.io/plastilinn/guides/quick_start.md">Quick
+                                    start
                                 </option>
                                 <option value="https://xbokmd.github.io/plastilinn/guides/using_plastilinn.md">Using
                                     plastilinn
@@ -184,7 +151,8 @@
                                     Business
                                     Model Canvas
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/lean_canvas.md">Lean Canvas
+                                <option value="https://xbokmd.github.io/plastilinn/guides/lean_canvas.md">Lean
+                                    Canvas
                                 </option>
                                 <option value="https://xbokmd.github.io/plastilinn/guides/business_model_canvas.md">
                                     Business Model Canvas
@@ -193,7 +161,8 @@
                                     Value
                                     Proposition Canvas
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/empathy_map.md">Empathy map
+                                <option value="https://xbokmd.github.io/plastilinn/guides/empathy_map.md">Empathy
+                                    map
                                 </option>
                             </select>
                             <!-- Div que muestra el contenido del Markdown seleccionado -->
@@ -225,14 +194,14 @@
                                         <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
                                             <!-- Búsqueda -->
                                             <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                <span class="material-symbols-outlined">
+                                                <span class="material-symbols-outlined" translate="no">
                                                     search
                                                 </span>
                                                 <input v-model="searchQuery" id="seach-query" type="text"
                                                     placeholder="Search..." class="input ml-2 bg-gray-50 w-full">
                                             </div>
                                             <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                <span class="material-symbols-outlined">
+                                                <span class="material-symbols-outlined" translate="no">
                                                     find_replace
                                                 </span>
                                                 <input v-model="replaceText" id="replace-text" type="text"
@@ -249,7 +218,7 @@
                                                             :data-tag="tag">{{ tag }}</span>
                                                     </div>
                                                     <button @click="resetSelectedTags" class="btn btn-ghost">
-                                                        <span class="material-symbols-outlined">
+                                                        <span class="material-symbols-outlined" translate="no">
                                                             restart_alt
                                                         </span>Reset</button>
                                                 </div>
@@ -304,12 +273,12 @@
                     style="scroll-behavior: smooth;">
                     <div class="leading-10">
                         <div id="content" class="bg-gray-200 p-1 rounded">
-                            <div class="plastilinn-hero hero pt-20" v-if="!modelMarkdownLoaded">
+                            <div class="plastilinn-hero hero pt-12" v-if="!modelMarkdownLoaded">
                                 <div class="hero-content text-center">
-                                    <div class="max-w-md">
-                                        <div class="m-auto max-w-6xl p-12">
+                                    <div class="">
+                                        <div class="m-auto p-12">
                                             <div class="flex flex-col md:flex-row">
-                                                <div class="md:w-1/2 max-w-md flex flex-col justify-center">
+                                                <div class="flex flex-col justify-center">
 
                                                 </div>
                                             </div>
@@ -318,15 +287,54 @@
                                             class="md:text-5xl text-2xl uppercase font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
                                             Shape your business with AI
                                         </div>
-                                        <div class="text-xl mt-4">Design, analyze and validate your business model.
+                                        <div class="text-xl m-4">Design, analyze and validate your business model.
                                         </div>
-                                        <button
-                                            @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/guides/quick_start.md')">Cargar
-                                            Guía Rápida</button>
+                                        <div class="collapse bg-base-200 mb-2">
+                                            <input type="checkbox" />
+                                            <div class="collapse-title text-xl font-medium">
+                                                Change language / Cambiar idioma
+                                            </div>
+                                            <div class="collapse-content">
+                                                <img src="assets/changing_language.gif" />
+
+                                            </div>
+                                        </div>
+                                        <div class="card bg-base-100 shadow-xl">
+                                            <div class="card-body flex justify-center items-center">
+                                                <h2>I'm already using plastilinn</h2>
+                                                Load or drag and drop your plastilinn doc
+                                                <input type="file" @change="loadAndParseModelFile" accept=".md"
+                                                    class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
+                                            </div>
+                                        </div>
+                                        <div class="card bg-base-100 shadow-xl mt-4">
+                                            <div class="card-body">
+                                                <h2>I'm new to Plastilinn</h2>
+                                                <div class="card-actions">
+                                                    <button
+                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/guides/existing_business.md')">
+                                                        I have a business running and I want to improve it</button>
+                                                </div>
+                                                <div class="card-actions">
+                                                    <button
+                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/guides/new_business.md')">
+                                                        I am creating a new business from scratch</button>
+                                                </div>
+                                                <div class="card-actions">
+                                                    <button
+                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/guides/learn.md')">
+                                                        I want to learn how to create a business</button>
+                                                </div>
+                                                <div class="card-actions">
+                                                    <button
+                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/guides/quick_start.md')">
+                                                        I want to try plastilinn</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
 
 
-                                        <input type="file" @change="loadAndParseModelFile" accept=".md"
-                                            class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
                                     </div>
                                 </div>
                             </div>
@@ -449,22 +457,22 @@
                             <div id="editor-container"></div>
                         </div>
                         <button class="btn m-2 btn-primary" @click="">
-                            <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined" translate="no">
                                 style
                             </span>
                             Tags</button>
                         <button class="btn m-2 btn-primary" @click="sendMessageToBot()">
-                            <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined" translate="no">
                                 robot_2
                             </span>
                             AI suggest content</button>
                         <button class="btn m-2 btn-primary" @click="saveChanges">
-                            <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined" translate="no">
                                 save
                             </span>
                             Save changes</button>
                         <button class="btn m-2 btn-primary" @click="closeModal">
-                            <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined" translate="no">
                                 cancel
                             </span>
                             Close window</button>
@@ -1139,7 +1147,7 @@
                     const element = document.getElementById(id);
                     if (element) {
                         element.classList.add('highlight');
-                        setTimeout(() => element.classList.remove('highlight'), 3000);
+                        setTimeout(() => element.classList.remove('highlight'), 5000);
                     }
                 },
 
@@ -1222,10 +1230,37 @@
                         terms = [terms];
                     }
 
+                    // Preparar una expresión regular que identifique si estamos dentro de una etiqueta HTML
+                    const htmlTagRegex = /<\/?[^>]+>/gi;
+
+                    // Esta función de reemplazo verifica si el término está dentro de una etiqueta HTML
+                    function replacementFunction(match, offset, fullText) {
+                        // Encuentra todos los tags en el texto
+                        let tagMatch;
+                        let isInTag = false;
+                        while ((tagMatch = htmlTagRegex.exec(fullText)) !== null) {
+                            const tagStart = tagMatch.index;
+                            const tagEnd = tagMatch.index + tagMatch[0].length;
+                            if (offset >= tagStart && offset < tagEnd) {
+                                // Si el match está dentro de un tag, marcamos isInTag como verdadero y rompemos el ciclo
+                                isInTag = true;
+                                break;
+                            }
+                        }
+
+                        // Si el match está dentro de un tag, lo devuelve sin modificarlo
+                        if (isInTag) {
+                            return match;
+                        } else {
+                            // Si no está dentro de un tag, aplica el resaltado
+                            return `<span class="highlight-text">${match}</span>`;
+                        }
+                    }
+
                     // Resalta cada término
                     terms.forEach(term => {
-                        const regex = new RegExp(`(${term})`, 'gi');
-                        text = text.replace(regex, '<span class="highlight-text">$1</span>');
+                        const regex = new RegExp(term, 'gi');
+                        text = text.replace(regex, replacementFunction);
                     });
 
                     return text;
