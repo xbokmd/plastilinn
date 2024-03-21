@@ -28,71 +28,71 @@
 
 # Segment list
 
-## #segment Main segment - Segment
+## segment Name
 
-### #segment Main segment - Segmentation criteria
+### segment Name - Segmentation criteria
 
-### #segment Main segment - Market size
+### segment Name - Market size
 
-### #segment Main segment - Market trends
+### segment Name - Market trends
 
-### #segment Main segment - Partners
+### segment Name - Partners
 
-### #segment Main segment - Competition
+### segment Name - Competition
 
-### #segment Main segment - Roles
+### segment Name - Roles
 
 # Profile list
 
-## #profile Main profile - Profile
+## profile Name
 
-### #profile Main profile - Segmentation
+### profile Name - Segmentation
 
-### #profile Main profile - Persona
+### profile Name - Persona
 
-### #profile Main profile - Goals
+### profile Name - Goals
 
-### #profile Main profile - Perceptions
+### profile Name - Perceptions
 
-### #profile Main profile - Emotions
+### profile Name - Emotions
 
-### #profile Main profile - Value proposition
+### profile Name - Value proposition
 
-#### #profile Main profile - Quantified value proposition
+#### profile Name - Quantified value proposition
 
-### #profile Main profile - Relationship
+### profile Name - Relationship
 
-### #profile Main profile - Messages
+### profile Name - Messages
 
-### #profile Main profile - Channels
+### profile Name - Channels
 
-### #profile Main profile - Assets
+### profile Name - Assets
 
-### #profile Main profile - Transactions
+### profile Name - Transactions
 
-### #profile Main profile - Journey
+### profile Name - Journey
 
-### #profile Main profile - Funnel
+### profile Name - Funnel
 
-### #profile Main profile - Sales strategy
+### profile Name - Sales strategy
 
 # Solution list
 
-## #solution Main solution - Solution
+## solution Name
 
-### #solution Main solution - Category
+### solution Name - Category
 
-### #solution Main solution - Components
+### solution Name - Components
 
-### #solution Main solution - Features
+### solution Name - Features
 
-### #solution Main solution - Roadmap
+### solution Name - Roadmap
 
-### #solution Main solution - Offerings
+### solution Name - Offerings
 
-### #solution Main solution - Pricing
+### solution Name - Pricing
 
-### #solution Main solution - Brochure
+### solution Name - Brochure
 
 # Marketing
 
@@ -124,17 +124,17 @@
 
 ## People
 
-### #person Main person - Person
+### person Name
 
-#### #person Main person - Goals
+#### person Name - Goals
 
-#### #person Main person - Skills
+#### person Name - Skills
 
-#### #person Main person - Functions
+#### person Name - Functions
 
-#### #person Main person - Contributions
+#### person Name - Contributions
 
-#### #person Main person - Compensations
+#### person Name - Compensations
 
 ## Position list
 
@@ -194,7 +194,7 @@
 
 ## Experiment list
 
-### #experiment Main experiment - Experiment
+### experiment Name
 
 # References
 
