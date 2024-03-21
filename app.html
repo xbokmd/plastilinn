@@ -4,77 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web App</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://unpkg.com/@heroicons/vue@1.0.4/dist/heroicons.js"></script>
-    <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
+    <title>Plastilinn</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
-        .metadata-container button,
-        span {
-            height: 1.2rem;
-            min-height: 2rem;
-            padding: 0.2rem;
-            margin: 0.2rem;
-            border-radius: 4px;
-            background-color: whitesmoke;
-        }
 
-        ion-icon {
-            font-size: 1.2rem;
-        }
-
-        .highlight-text {
-            background-color: blue;
-            color: white;
-            padding: 0 4px;
-            border-radius: 3px;
-        }
-
-        .noto-color emoji-regular {
-            font-family: "Noto Color Emoji", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        br {
-            content: "";
-            display: block;
-            margin-top: 10px;
-            /* Ajusta el espacio superior */
-            margin-bottom: 10px;
-            /* Ajusta el espacio inferior */
-        }
-
-        /* Personaliza la barra de desplazamiento */
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-            /* Controla el ancho de la barra de desplazamiento */
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            /* Color de fondo de la pista de la barra de desplazamiento */
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #888;
-            /* Color del control deslizante de la barra de desplazamiento */
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #555;
-            /* Color del control deslizante de la barra de desplazamiento al pasar el mouse */
-        }
     </style>
 </head>
 
@@ -101,21 +47,25 @@
                         <div class="navbar-end">
                             <div class="join">
                                 <button id="downloadBtn" @click="downloadMarkdown" class="btn join-item btn-primary">
-                                    <ion-icon name="cloud-download-outline"></ion-icon>
+                                    <span class="material-symbols-outlined">
+                                        download_for_offline
+                                    </span>
                                     Download
                                 </button>
                                 <button id="exportBtn" @click="downloadHTML" class="btn join-item btn-primary">
-                                    <ion-icon name="download-outline"></ion-icon>
+                                    <span class="material-symbols-outlined">
+                                        download_for_offline
+                                    </span>
                                     Export
                                 </button>
                                 <button @click="toggleAutoDownload"
                                     :class="{'bg-green-500': autoDownloadEnabled, 'bg-gray-500': !autoDownloadEnabled}"
                                     class="btn join-item btn-primary">
-                                    <ion-icon name="toggle-outline"></ion-icon>
+                                    <span class="material-symbols-outlined">
+                                        toggle_on
+                                    </span>
                                     Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
                                 </button>
-                                <button @click="processNewContent" class="btn join-item btn-primary">
-                                    <ion-icon name="refresh-circle-outline"></ion-icon>Refresh</button>
                             </div>
                         </div>
                     </div>
@@ -131,16 +81,24 @@
                         <div class="flex flex-row justify-between gap-2">
                             <button @click="changeSidebar('home')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
-                                <ion-icon name="link-outline"></ion-icon>Home</button>
+                                <span class="material-symbols-outlined">
+                                    link
+                                </span>Home</button>
                             <button @click="changeSidebar('guides')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
-                                <ion-icon name="document-text-outline"></ion-icon>Guides</button>
+                                <span class="material-symbols-outlined">
+                                    fact_check
+                                </span>Guides</button>
                             <button @click="changeSidebar('index')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
-                                <ion-icon name="albums-outline"></ion-icon>Index</button>
+                                <span class="material-symbols-outlined">
+                                    list_alt
+                                </span>Index</button>
                             <button @click="changeSidebar('filter')"
                                 class="collapse-filter-button btn btn-primary btn-sm">
-                                <ion-icon name="filter-outline"></ion-icon>Filter</button>
+                                <span class="material-symbols-outlined">
+                                    filter_alt
+                                </span>Filter</button>
                         </div>
                     </div>
 
@@ -171,14 +129,18 @@
                                     <div tabindex="0" class="collapse bg-base-200">
                                         <div class="collapse-title text-xl font-medium">
                                             <span style="display: inline-block; vertical-align: middle;">
-                                                <ion-icon name="information-circle-outline"></ion-icon>
+                                                <span class="material-symbols-outlined">
+                                                    info
+                                                </span>
                                             </span>
                                             Help
                                         </div>
                                         <div class="collapse-content">
                                             <p>Click on the info icon <span
                                                     style="display: inline-block; vertical-align: middle;">
-                                                    <ion-icon name="information-circle-outline"></ion-icon></span> at
+                                                    <span class="material-symbols-outlined">
+                                                        info
+                                                    </span></span> at
                                                 the
                                                 right of any section of your document</p>
                                             <p>Click here to access the <a
@@ -188,7 +150,9 @@
                                         </div>
                                     </div>
                                     <div role="alert" class="alert mt-10">
-                                        <ion-icon name="information-circle-outline"></ion-icon>
+                                        <span class="material-symbols-outlined">
+                                            info
+                                        </span>
                                         <h3 class="font-bold">New to plastilin?</h3>
                                         <div class="text-xs">Simply click on the guides button in this sidebar and
                                             select
@@ -261,12 +225,16 @@
                                         <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
                                             <!-- Búsqueda -->
                                             <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                <ion-icon name="search-outline"></ion-icon>
+                                                <span class="material-symbols-outlined">
+                                                    search
+                                                </span>
                                                 <input v-model="searchQuery" id="seach-query" type="text"
                                                     placeholder="Search..." class="input ml-2 bg-gray-50 w-full">
                                             </div>
                                             <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                <ion-icon name="create-outline"></ion-icon>
+                                                <span class="material-symbols-outlined">
+                                                    find_replace
+                                                </span>
                                                 <input v-model="replaceText" id="replace-text" type="text"
                                                     placeholder="Replace with..." class="input ml-2 bg-gray-50 w-full">
                                             </div>
@@ -281,8 +249,9 @@
                                                             :data-tag="tag">{{ tag }}</span>
                                                     </div>
                                                     <button @click="resetSelectedTags" class="btn btn-ghost">
-                                                        <ion-icon
-                                                            name="refresh-circle-outline"></ion-icon>Reset</button>
+                                                        <span class="material-symbols-outlined">
+                                                            restart_alt
+                                                        </span>Reset</button>
                                                 </div>
                                                 <select v-model="selectedTags"
                                                     class="select select-bordered w-full p-2 bg-white rounded-lg shadow"
@@ -352,7 +321,9 @@
                                         <div class="text-xl mt-4">Design, analyze and validate your business model.
                                         </div>
                                         <div role="alert" class="alert m-8">
-                                            <ion-icon name="alert-circle-outline"></ion-icon>
+                                            <span class="material-symbols-outlined">
+                                                upload_file
+                                            </span>
                                             <span>Upload your plastilinn doc</span>
                                         </div>
                                         <input type="file" @change="loadAndParseModelFile" accept=".md"
@@ -479,16 +450,24 @@
                             <div id="editor-container"></div>
                         </div>
                         <button class="btn m-2 btn-primary" @click="">
-                            <ion-icon name="pricetags-outline"></ion-icon>
+                            <span class="material-symbols-outlined">
+                                style
+                            </span>
                             Tags</button>
                         <button class="btn m-2 btn-primary" @click="sendMessageToBot()">
-                            <ion-icon name="hardware-chip-outline"></ion-icon>
+                            <span class="material-symbols-outlined">
+                                robot_2
+                            </span>
                             AI suggest content</button>
                         <button class="btn m-2 btn-primary" @click="saveChanges">
-                            <ion-icon name="save-outline"></ion-icon>
+                            <span class="material-symbols-outlined">
+                                save
+                            </span>
                             Save changes</button>
-                        <button class="btn m-2 btn-primary" @click="closeModal"><ion-icon
-                                name="close-circle-outline"></ion-icon>
+                        <button class="btn m-2 btn-primary" @click="closeModal">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>
                             Close window</button>
                     </div>
                 </div>
@@ -1004,18 +983,6 @@
                             return `${p1}${this.parseTag(p2.slice(1))}`;
                         }
                     });
-
-                    // Luego convierte los encabezados Markdown a HTML línea por línea
-                    // Esto evita convertir todo el texto con marked.parse directamente, lo que podría alterar el procesamiento previo
-                    /* processedTagsContent = processedTagsContent.split('\n').map((line) => {
-                        // Verifica si la línea es un encabezado Markdown
-                        if (/^#+\s/.test(line)) {
-                            // Convierte solo el encabezado a HTML
-                            return marked.parse(line).trim(); // Usa marked para convertir a HTML y elimina espacios extra al final
-                        }
-                        return line;
-                    }).join('<br>'); // Mantiene los saltos de línea reemplazándolos con <br> después de procesar etiquetas/marcadores y encabezados
-*/
                     return processedTagsContent;
                 },
 
@@ -1436,8 +1403,6 @@
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/2aa639ac-f805-454c-b5da-6fcc527f8d70/webchat/config.js"
         defer></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
