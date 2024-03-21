@@ -320,12 +320,11 @@
                                         </div>
                                         <div class="text-xl mt-4">Design, analyze and validate your business model.
                                         </div>
-                                        <div role="alert" class="alert m-8">
-                                            <span class="material-symbols-outlined">
-                                                upload_file
-                                            </span>
-                                            <span>Upload your plastilinn doc</span>
-                                        </div>
+                                        <button
+                                            @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/guides/quick_start.md')">Cargar
+                                            Guía Rápida</button>
+
+
                                         <input type="file" @change="loadAndParseModelFile" accept=".md"
                                             class="file-input file-input-bordered file-input-primary w-full max-w-xs m-4">
                                     </div>
@@ -1266,6 +1265,18 @@
                 // FORMATING
 
                 // ARTIFACTS
+
+                // Método para cambiar a la sección "Guides" y cargar una guía específica por URL
+                activateGuidesAndLoadGuide(url) {
+                    // Cambia la sección activa del sidebar a "Guides"
+                    this.changeSidebar('guides');
+
+                    // Espera un momento para asegurar que la interfaz se haya actualizado
+                    this.$nextTick(() => {
+                        // Carga la guía especificada por la URL
+                        this.loadGuideMarkdownContent(url);
+                    });
+                },
 
                 async loadGuideMarkdownContent(url) {
                     if (url) {

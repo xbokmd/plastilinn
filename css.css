@@ -41,13 +41,13 @@ h6 {
     color: #333;
     background-color: whitesmoke;
     /* Establece el color de fondo a whitesmoke */
-    border-radius: 8px;
+    border-radius: 4px;
     /* Establece los bordes redondeados */
-    padding: 8px;
+    padding: 2px;
     /* Añade algo de padding para que el fondo tenga espacio alrededor del texto */
     display: inline-block;
     /* Asegura que el fondo solo cubra el texto */
-    margin: 10px 0;
+    margin: 4px 4px;
     /* Añade margen superior e inferior para separar los encabezados */
     width: auto;
     /* Asegura que el ancho del encabezado se ajuste al contenido */
@@ -452,16 +452,10 @@ border-color: #4f46e5; /* Cambia el color del borde al enfocar */
 box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); /* Sombra suave alrededor */
 }
 
-
-span[data-tagTEMP] {
-background-color: white; /* Color de fondo de las etiquetas */
-}
-
 span[data-tag] {
     position: relative;
     padding-left: 1.4rem !important;
     border-radius: 4px;
-    padding: 2px;
     font-size: 1rem !important;
 }
 
