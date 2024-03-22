@@ -253,7 +253,7 @@
                                                         <input class="checkbox checkbox-primary sr-only"
                                                             :id="`marker-${markerName}-${value}`"
                                                             :value="`${markerName}:${value}`" type="checkbox"
-                                                            @change="toggleMarkerSelection(`${markerName}:${value}`)">
+                                                            @change="toggleMarkerSelection(`${value}`)">
                                                         <label :for="`marker-${markerName}-${value}`"
                                                             class="cursor-pointer inline-block text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow px-3 py-1">{{
                                                             value }}</label>
@@ -556,6 +556,7 @@
                     selectedTags: [], // Almacena las etiquetas seleccionadas
                     selectedBlockTitles: [], // Arreglo para almacenar los titles seleccionados
                     selectedMarkers: [],
+                    combinedFilters: [],
                     filterVisible: true,
                     // SEARCH
                     searchQuery: '',
@@ -570,52 +571,53 @@
                 },
 
                 filteredBlocks() {
-                    let blocksWithParents = []; // Este array almacenará los bloques filtrados junto con sus bloques padres
-                    let allLocators = new Set(); // Almacena los localizadores para evitar duplicados
+                    try {
+                        let blocksWithParents = [];
+                        let allLocators = new Set();
 
-                    this.model.forEach(block => {
-                        // Evalúa si el bloque coincide con alguno de los tags seleccionados (si hay alguno seleccionado)
-                        const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
-                        // Evalúa si el bloque coincide con alguno de los marcadores seleccionados (si hay alguno seleccionado)
-                        const markerMatch = this.selectedMarkers.length === 0 || this.selectedMarkers.some(marker => block.markers && block.markers.includes(marker));
+                        this.model.forEach(block => {
+                            const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
+                            const markerMatch = this.selectedMarkers.length === 0 || this.selectedMarkers.some(marker => {
+                                return block.markers && block.markers.some(bMarker => bMarker === marker || bMarker.includes(marker));
+                            });
 
-                        if (tagMatch && markerMatch) { // Solo incluye bloques que cumplan con ambos criterios
-                            blocksWithParents.push(block);
-                            allLocators.add(block.locator);
+                            if (tagMatch && markerMatch) {
+                                blocksWithParents.push(block);
+                                allLocators.add(block.locator);
 
-                            // Encuentra y añade los bloques padres si aún no están incluidos, para mantener la estructura jerárquica
-                            let parentLocator = block.locator.split('.').slice(0, -1).join('.');
-                            while (parentLocator) {
-                                if (!allLocators.has(parentLocator)) {
-                                    const parentBlock = this.model.find(b => b.locator === parentLocator);
-                                    if (parentBlock) {
-                                        blocksWithParents.unshift(parentBlock); // Añade el bloque padre al inicio para mantener el orden jerárquico
-                                        allLocators.add(parentLocator);
+                                let parentLocator = block.locator.split('.').slice(0, -1).join('.');
+                                while (parentLocator) {
+                                    if (!allLocators.has(parentLocator)) {
+                                        const parentBlock = this.model.find(b => b.locator === parentLocator);
+                                        if (parentBlock) {
+                                            blocksWithParents.unshift(parentBlock);
+                                            allLocators.add(parentLocator);
+                                        }
                                     }
+                                    parentLocator = parentLocator.split('.').slice(0, -1).join('.');
                                 }
-                                parentLocator = parentLocator.split('.').slice(0, -1).join('.');
                             }
-                        }
-                    });
+                        });
 
-                    // Ordena los bloques por su localizador para mantener la jerarquía correcta
-                    blocksWithParents.sort((a, b) => a.locator.localeCompare(b.locator));
-                    blocksWithParents.sort((a, b) => a.uid - b.uid);
 
-                    // Aplica el resaltado a las etiquetas seleccionadas
-                    const highlightedBlocks = blocksWithParents.map(block => {
-                        // Clona el bloque para evitar mutaciones directas al estado
-                        const clonedBlock = { ...block };
-                        // Aplica el resaltado solo si hay etiquetas seleccionadas
-                        if (this.selectedTags.length > 0) {
-                            // Usa el método highlightText para aplicar el resaltado a las etiquetas dentro del contenidoParsed
-                            clonedBlock.contentParsed = this.highlightText(clonedBlock.contentParsed, this.selectedTags);
-                        }
-                        return clonedBlock;
-                    });
+                        // Ordena y resalta como antes
+                        blocksWithParents.sort((a, b) => a.locator.localeCompare(b.locator));
+                        blocksWithParents.sort((a, b) => a.uid - b.uid);
 
-                    return highlightedBlocks;
+                        const highlightedBlocks = blocksWithParents.map(block => {
+                            const clonedBlock = { ...block };
+                            if (this.selectedTags.length > 0) {
+                                clonedBlock.contentParsed = this.highlightText(clonedBlock.contentParsed, this.selectedTags);
+                            }
+                            return clonedBlock;
+                        });
+
+                        return highlightedBlocks;
+                    } catch (error) {
+                        console.error('Error al filtrar bloques:', error);
+                    }
                 },
+
 
 
                 searchFilteredBlocks() {
@@ -886,31 +888,42 @@
 
                 processTags(blockContent) {
                     const markerSymbols = this.markerSymbols;
-                    // Capturing markers: strings starting with # followed by one of the special marker symbols
-                    const markers = [...blockContent.matchAll(/(?:^|\s)#([>!*?+^-][^\s]*)/g)].map(match => match[1]);
-                    const markersParsed = markers.map(marker => this.parseMarker(marker)).join(' ');
+                    // Inicializando un nuevo array para los marcadores ajustados
+                    const adjustedMarkers = [];
 
-                    // Adjusted regular expression for capturing tags
+                    // Capturando marcadores: cadenas que comienzan con # seguido por uno de los símbolos especiales de marcadores
+                    const markers = [...blockContent.matchAll(/(?:^|\s)#([>!*?+^-][^\s]*)/g)].map(match => {
+                        const markerWithoutPrefix = match[1];
+                        adjustedMarkers.push(markerWithoutPrefix); // Agrega el marcador ajustado sin el prefijo
+                        return markerWithoutPrefix; // Devuelve el marcador sin el prefijo para el mapeo
+                    });
+
+                    const markersParsed = adjustedMarkers.map(marker => this.parseMarker(marker)).join(' ');
+
+                    // Expresión regular ajustada para capturar etiquetas
                     const tagsRegex = /(?:^|\s)(#[^\s#][^\s]*)/g;
                     const tags = [];
                     let match;
                     while ((match = tagsRegex.exec(blockContent)) !== null) {
-                        // Avoid infinite loops with zero-width matches
+                        // Evita bucles infinitos con coincidencias de ancho cero
                         if (match.index === tagsRegex.lastIndex) {
                             tagsRegex.lastIndex++;
                         }
 
-                        // Exclude markers from the tags array
+                        // Excluye marcadores del array de etiquetas
                         if (!markerSymbols.some(symbol => match[1].startsWith(`#${symbol}`))) {
-                            tags.push(match[1].substring(1)); // Remove leading # for consistency with your original logic
+                            tags.push(match[1].substring(1)); // Elimina el # principal por consistencia con tu lógica original
                         }
                     }
                     const tagsParsed = tags.map(tag => this.parseTag(tag)).join(' ');
 
-                    return { markers, markersParsed, tags, tagsParsed };
+                    // Nota: Este código asume que todos los marcadores vienen con un prefijo y los ajusta en consecuencia.
+                    // Si algunos marcadores pueden venir sin prefijo, deberás ajustar esta lógica.
+                    return { markers: adjustedMarkers, markersParsed, tags, tagsParsed };
                 },
 
                 parseMarker(marker) {
+                    // Asegúrate de que esta función maneje correctamente el marcador ya sin prefijo
                     return `<span data-marker="${marker}">#${marker}</span>`;
                 },
 
@@ -1225,7 +1238,7 @@
                     // Convertir modelTagsArray a un array, ordenarlo alfabéticamente y luego asignar a this.tags
                     this.tags = Array.from(this.modelTagsArray).sort((a, b) => a.localeCompare(b));
                     // Inicializar el filtrado (si necesario)
-                    this.filterBlocks([]);
+                    //this.filterBlocks([]);
                 },
 
                 // FILTERS AND SEARCH
@@ -1259,6 +1272,23 @@
 
                     // Devuelve la lista HTML
                     return htmlList;
+                },
+
+                toggleTagSelection(tag) {
+                    // Directamente usa el tag sin añadirle un prefijo.
+                    this.toggleFilter(tag);
+                },
+                toggleMarkerSelection(marker) {
+                    // Directamente usa el marker sin añadirle un prefijo.
+                    this.toggleFilter(marker);
+                },
+                toggleFilter(filter) {
+                    const index = this.combinedFilters.indexOf(filter);
+                    if (index > -1) {
+                        this.combinedFilters.splice(index, 1);
+                    } else {
+                        this.combinedFilters.push(filter);
+                    }
                 },
 
                 highlightText(text, terms) {
@@ -1376,7 +1406,7 @@
                     }
 
                     // Opcional: Puedes llamar aquí al método que actualiza el filtro de bloques si deseas que los bloques se actualicen inmediatamente después de cambiar la selección.
-                    this.updateBlocksFilter();
+                    // this.updateBlocksFilter();
                 },
 
                 updateFilter(selectedMarker) {
