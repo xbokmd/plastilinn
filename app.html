@@ -235,12 +235,24 @@
                                                             restart_alt
                                                         </span>Reset</button>
                                                 </div>
-                                                <select v-model="selectedTags"
-                                                    class="select select-bordered w-full p-2 bg-white rounded-lg shadow"
-                                                    multiple>
-                                                    <option v-for="tag in tags" :key="tag" :value="tag">{{ tag }}
-                                                    </option>
-                                                </select>
+                                                <div class="tag-group mb-4 px-2 py-3 bg-gray-200 rounded-md shadow-lg">
+                                                    <div class="tag-name text-center font-semibold text-blue-600 mb-2">
+                                                        Tags
+                                                    </div>
+                                                    <ul class="flex justify-center items-center flex-wrap gap-2">
+                                                        <li v-for="tag in tags" :key="`tag-${tag}`"
+                                                            class="filter-switch-item">
+                                                            <input class="checkbox checkbox-primary sr-only"
+                                                                :id="`tag-${tag}`" :value="tag" type="checkbox"
+                                                                @change="toggleTagSelection(`${tag}`)">
+                                                            <label :for="`tag-${tag}`"
+                                                                class="cursor-pointer inline-block text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow px-3 py-1">
+                                                                <span :data-tag="tag">{{ tag }}</span>
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
                                             </div>
 
                                             <div v-for="(values, markerName) in prepareMarkers()" :key="markerName"
@@ -1275,21 +1287,25 @@
                 },
 
                 toggleTagSelection(tag) {
-                    // Directamente usa el tag sin añadirle un prefijo.
-                    this.toggleFilter(tag);
-                },
-                toggleMarkerSelection(marker) {
-                    // Directamente usa el marker sin añadirle un prefijo.
-                    this.toggleFilter(marker);
-                },
-                toggleFilter(filter) {
-                    const index = this.combinedFilters.indexOf(filter);
+                    console.log("🚀 ~ toggleTagSelection ~ tag:", tag)
+                    const index = this.selectedTags.indexOf(tag);
                     if (index > -1) {
-                        this.combinedFilters.splice(index, 1);
+                        this.selectedTags.splice(index, 1); // Si la etiqueta ya está seleccionada, quítala
                     } else {
-                        this.combinedFilters.push(filter);
+                        this.selectedTags.push(tag); // Si no, añádela
                     }
                 },
+
+                toggleMarkerSelection(marker) {
+                    // Asume que los marcadores ya se gestionan con su propio sistema de prefijos o identificación
+                    const index = this.selectedMarkers.indexOf(marker);
+                    if (index > -1) {
+                        this.selectedMarkers.splice(index, 1); // Si el marcador ya está seleccionado, quítalo
+                    } else {
+                        this.selectedMarkers.push(marker); // Si no, añádelo
+                    }
+                },
+
 
                 highlightText(text, terms) {
                     if (!terms.length) return text; // Si no hay términos, devuelve el texto tal cual
