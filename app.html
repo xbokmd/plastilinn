@@ -34,6 +34,15 @@
             --bg-opacity: 0;
             box-shadow: none;
         }
+
+        #content ul {
+            list-style-type: circle;
+            margin-right: 2rem;
+        }
+
+        #content li {
+            line-height: 1.4rem;
+        }
     </style>
 </head>
 
@@ -114,7 +123,6 @@
                                 </span>Filter</button>
                         </div>
                     </div>
-
                     <!-- Secciones con visibilidad condicional -->
                     <div class="p-2">
                         <div
@@ -206,34 +214,59 @@
                                     <div class="flex flex-col w-full">
                                         <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
                                             <!-- Búsqueda -->
-                                            <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                <span class="material-symbols-outlined" translate="no">
-                                                    search
-                                                </span>
-                                                <input v-model="searchQuery" id="seach-query" type="text"
-                                                    placeholder="Search..." class="input ml-2 bg-gray-50 w-full">
+                                            <div tabindex="0"
+                                                class="collapse collapse-arrow border border-base-300 bg-base-200">
+                                                <div class="collapse-title text-xl font-medium">
+                                                    Search and replace
+                                                </div>
+                                                <div class="collapse-content">
+                                                    <div
+                                                        class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
+                                                        <span class="material-symbols-outlined" translate="no">
+                                                            search
+                                                        </span>
+                                                        <input v-model="searchQuery" id="seach-query" type="text"
+                                                            placeholder="Search..."
+                                                            class="input ml-2 bg-gray-50 w-full">
+                                                    </div>
+                                                    <div
+                                                        class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
+                                                        <span class="material-symbols-outlined" translate="no">
+                                                            find_replace
+                                                        </span>
+                                                        <input v-model="replaceText" id="replace-text" type="text"
+                                                            placeholder="Replace with..."
+                                                            class="input ml-2 bg-gray-50 w-full">
+                                                    </div>
+                                                    <button @click="replaceMatches"
+                                                        class="btn btn-primary">Replace</button>
+                                                </div>
                                             </div>
-                                            <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                <span class="material-symbols-outlined" translate="no">
-                                                    find_replace
-                                                </span>
-                                                <input v-model="replaceText" id="replace-text" type="text"
-                                                    placeholder="Replace with..." class="input ml-2 bg-gray-50 w-full">
-                                            </div>
-                                            <button @click="replaceMatches" class="btn btn-primary">Replace</button>
                                             <!-- Filtro de etiquetas -->
                                             <div class="flex flex-col mt-4">
-                                                <div class="flex items-center mb-4 p-2 bg-gray-50 rounded-lg shadow">
-                                                    <span>Filter tags</span>
-                                                    <div class="flex flex-wrap gap-2 mt-2">
-                                                        <span v-for="tag in selectedTags" :key="tag"
-                                                            class="flex items-center justify-center h-8 px-2 text-sm"
-                                                            :data-tag="tag">{{ tag }}</span>
+                                                <div class="flex flex-col mb-4 p-2 bg-gray-200 rounded-lg shadow">
+                                                    <!-- Encabezado con Filter y Reset en la misma línea -->
+                                                    <div class="flex justify-between items-center mb-2">
+                                                        <span class="text-lg font-semibold">Filtered tags and
+                                                            markers</span>
+                                                        <button @click="resetSelectedTagsAndMarkers"
+                                                            class="btn btn-ghost">
+                                                            <span class="material-symbols-outlined"
+                                                                translate="no">restart_alt</span>
+                                                            Reset
+                                                        </button>
                                                     </div>
-                                                    <button @click="resetSelectedTags" class="btn btn-ghost">
-                                                        <span class="material-symbols-outlined" translate="no">
-                                                            restart_alt
-                                                        </span>Reset</button>
+                                                    <!-- Contenedor para las etiquetas, ahora debajo del encabezado -->
+                                                    <div class="flex flex-wrap gap-2 rounded bg-red-300">
+                                                        <div class="flex flex-wrap gap-2 mt-2">
+                                                            <span v-for="tag in selectedTags" :key="tag"
+                                                                class="flex items-center justify-center h-8 px-2 text-sm"
+                                                                :data-tag="tag">{{ tag }}</span>
+                                                            <span v-for="marker in selectedMarkers" :key="marker"
+                                                                class="flex items-center justify-center h-8 px-2 text-sm"
+                                                                :data-marker="marker">{{ marker }}</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="tag-group mb-4 px-2 py-3 bg-gray-200 rounded-md shadow-lg">
                                                     <div class="tag-name text-center font-semibold text-blue-600 mb-2">
@@ -246,15 +279,13 @@
                                                                 :id="`tag-${tag}`" :value="tag" type="checkbox"
                                                                 @change="toggleTagSelection(`${tag}`)">
                                                             <label :for="`tag-${tag}`"
-                                                                class="cursor-pointer inline-block text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow px-3 py-1">
+                                                                class="cursor-pointer inline-block text-sm text-gray-600 hover:text-gray-800 bg-white rounded shadow p-1">
                                                                 <span :data-tag="tag">{{ tag }}</span>
                                                             </label>
                                                         </li>
                                                     </ul>
                                                 </div>
-
                                             </div>
-
                                             <div v-for="(values, markerName) in prepareMarkers()" :key="markerName"
                                                 class="marker-group mb-4 px-2 py-3 bg-gray-200 rounded-md shadow-lg">
                                                 <div class="marker-name text-center font-semibold text-blue-600 mb-2">{{
@@ -267,13 +298,11 @@
                                                             :value="`${markerName}:${value}`" type="checkbox"
                                                             @change="toggleMarkerSelection(`${value}`)">
                                                         <label :for="`marker-${markerName}-${value}`"
-                                                            class="cursor-pointer inline-block text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow px-3 py-1">{{
+                                                            class="cursor-pointer inline-block text-sm text-gray-600 hover:text-gray-800 bg-white rounded shadow p-1">{{
                                                             value }}</label>
                                                     </li>
                                                 </ul>
                                             </div>
-
-
                                         </div>
                                         <div class="">
                                             <!-- Botones para aplicar filtros directamente -->
@@ -630,7 +659,9 @@
                     }
                 },
 
-
+                combinedFilters() {
+                    return [...this.selectedBrands, ...this.selectedTags];
+                },
 
                 searchFilteredBlocks() {
                     if (!this.searchQuery) {
@@ -723,6 +754,7 @@
                         this.parseModelMarkdown(content);
                     };
                     reader.readAsText(file);
+                    this.updateModelMarkdown();
                     this.modelMarkdownLoaded = true;
                 },
 
@@ -789,7 +821,6 @@
                     // Conversión forzada a cadena si es necesario.
                     let contentAsString = String(block.content)
                     const mdToHTML = this.parseToHTML(block.content);
-                    console.log("🚀 ~ updateDependentModelBlockFields ~ mdToHTML:", mdToHTML)
                     block.contentParsed = marked.parse(mdToHTML);
                     //block.contentParsed = marked.parse(mdToHTML);
                     const firstLine = block.content.split('\n')[0];
@@ -1111,11 +1142,9 @@
                 },
 
                 openBlockEditModal(block) {
-                    /// console.log("🚀 ~ openBlockEditModal ~ block:", block)
+                    this.updateModelMarkdown();
                     this.selectedBlockId = block.id; // Asegúrate de tener selectedBlockId definido en tu data()
                     this.selectedBlockContent = block.content;
-                    //this.selectedBlockMarkers = block.markers; // Asegúrate de que `block` tiene una propiedad `markers`
-                    // Busca el índice de la línea basándose en el ID único
                     this.selectedBlockIndex = this.model.findIndex((item) => item.id === block.id);
                     this.isBlockEditModalOpen = true;
                     this.$nextTick(() => {
@@ -1126,6 +1155,7 @@
 
                 generateSuggestionPrompt() {
                     let suggestionPrompt = '';
+                    this.updateModelMarkdown();
                     const block = this.model.find((b) => b.id === this.selectedBlockId);
                     const title = block ? block.title : 'Title not found';
                     const metamodelID = block ? block.metamodelID : 'metamodelID not found';
@@ -1136,15 +1166,15 @@
                     Providing concise, targeted guidance without unnecessary repetition or formalities.\n
                     Offering step-by-step feedback to ensure the document effectively captures the business model.\n
                     You focus on the client's needs and how to best articulate their business model.\n
-                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business  (delimited with XML tags):\n\n
-                    <business-model>`
+                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business:\n\n
+                    --- business model start ---`
                         + `${modelMarkdown}\n\n`
-                        + `</business-model>
+                        + `--- business model end ---
                     QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.
-                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then a description on a new line. This is an example of an answer (delimited with XML tags) for the company Space X, an aerospace manufacturer and space transportation company:\n\n
-                    <example-answer>`
+                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then a description on a new line. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n
+                    --- example-answer start ---`
                         + `${blockExample}\n\n`
-                        + `</example-answer>\n\n
+                        + `--- example-answer end ---\n\n
                     You can copy/paste this answer to your plastilinn doc`;
                     return suggestionPrompt;
                 },
@@ -1268,8 +1298,9 @@
                     return this.model.filter((block) => block.tags.some((tag) => tags.includes(tag)));
                 },
 
-                resetSelectedTags() {
+                resetSelectedTagsAndMarkers() {
                     this.selectedTags = [];
+                    this.selectedMarkers = [];
                 },
 
                 buildTagsQueryList(tags) {
