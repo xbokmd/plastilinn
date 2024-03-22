@@ -43,7 +43,7 @@
             <!-- HEADER -->
             <header class="border-b border-gray-200">
                 <div id="top-container" class="bg-gray-200 w-full fixed">
-                    <div id="navbar" class="navbar bg-base-100 shadow-xl">
+                    <div id="navbar" class="navbar bg-base-100 shadow-2xl">
                         <div class="navbar-start">
                             <div class="p-5">
                                 <!-- Logo como imagen -->
@@ -243,57 +243,24 @@
                                                 </select>
                                             </div>
 
-                                            <ul v-for="(values, markerName) in prepareMarkers()" :key="markerName"
-                                                id="filter1"
-                                                class="filter-markers filter-switch inline-flex items-center relative h-10 p-1 space-x-1 bg-gray-200 rounded-md font-semibold text-blue-600 my-4">
-                                                {{ markerName }}
-                                                <li class="filter-switch-item flex relative h-8 bg-gray-300x"
-                                                    v-for="value in values" :key="`marker-${markerName}-${value}`">
-                                                    <input class="checkbox checkbox-primary sr-only"
-                                                        :id="`marker-${markerName}-${value}`"
-                                                        :value="`${markerName}:${value}`" v-model="selectedMarkers"
-                                                        type="radio" name="filter1" checked>
-                                                    <label :for="`marker-${markerName}-${value}`"
-                                                        class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">{{
-                                                        value
-                                                        }}</label>
-                                                    <div aria-hidden="true" class="filter-active"></div>
-                                                </li>
-                                            </ul>
+                                            <div v-for="(values, markerName) in prepareMarkers()" :key="markerName"
+                                                class="marker-group mb-4 px-2 py-3 bg-gray-200 rounded-md shadow-lg">
+                                                <div class="marker-name text-center font-semibold text-blue-600 mb-2">{{
+                                                    markerName }}</div>
+                                                <ul class="flex justify-center items-center flex-wrap gap-2">
+                                                    <li v-for="value in values" :key="`marker-${markerName}-${value}`"
+                                                        class="filter-switch-item">
+                                                        <input class="checkbox checkbox-primary sr-only"
+                                                            :id="`marker-${markerName}-${value}`"
+                                                            :value="`${markerName}:${value}`" type="checkbox"
+                                                            @change="toggleMarkerSelection(`${markerName}:${value}`)">
+                                                        <label :for="`marker-${markerName}-${value}`"
+                                                            class="cursor-pointer inline-block text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow px-3 py-1">{{
+                                                            value }}</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
 
-                                            <ul id="filter1"
-                                                class="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 bg-gray-200 rounded-md font-semibold text-blue-600 my-4">
-                                                <li class="filter-switch-item flex relative h-8 bg-gray-300x">
-                                                    <input type="radio" name="filter1" id="filter1-0" class="sr-only"
-                                                        checked>
-                                                    <label for="filter1-0"
-                                                        class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                                        All
-                                                    </label>
-                                                    <div aria-hidden="true" class="filter-active"></div>
-                                                </li>
-                                                <li class="filter-switch-item flex relative h-8 bg-gray-300x">
-                                                    <input type="radio" name="filter1" id="filter1-1" class="sr-only">
-                                                    <label for="filter1-1"
-                                                        class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                                        Upcoming
-                                                    </label>
-                                                </li>
-                                                <li class="filter-switch-item flex relative h-8 bg-gray-300x">
-                                                    <input type="radio" name="filter1" id="filter1-2" class="sr-only">
-                                                    <label for="filter1-2"
-                                                        class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                                        Ongoing
-                                                    </label>
-                                                </li>
-                                                <li class="filter-switch-item flex relative h-8 bg-gray-300x">
-                                                    <input type="radio" name="filter1" id="filter1-3" class="sr-only">
-                                                    <label for="filter1-3"
-                                                        class="h-8 py-1 px-2 text-sm leading-6 text-gray-600 hover:text-gray-800 bg-white rounded shadow">
-                                                        Complete
-                                                    </label>
-                                                </li>
-                                            </ul>
 
                                         </div>
                                         <div class="">
@@ -603,19 +570,20 @@
                 },
 
                 filteredBlocks() {
-                    let blocksWithParents = []; // Esta array almacenará los bloques filtrados junto con sus bloques padres
+                    let blocksWithParents = []; // Este array almacenará los bloques filtrados junto con sus bloques padres
                     let allLocators = new Set(); // Almacena los localizadores para evitar duplicados
 
-                    // Primero, identifica los bloques que coinciden con los filtros seleccionados
                     this.model.forEach(block => {
+                        // Evalúa si el bloque coincide con alguno de los tags seleccionados (si hay alguno seleccionado)
                         const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
-                        const markerMatch = this.selectedMarkers.length === 0 || this.selectedMarkers.some(marker => block.markers && block.markers.includes(marker)); // Añadido
+                        // Evalúa si el bloque coincide con alguno de los marcadores seleccionados (si hay alguno seleccionado)
+                        const markerMatch = this.selectedMarkers.length === 0 || this.selectedMarkers.some(marker => block.markers && block.markers.includes(marker));
 
-                        if (tagMatch && markerMatch) { // Modificado para incluir markerMatch
+                        if (tagMatch && markerMatch) { // Solo incluye bloques que cumplan con ambos criterios
                             blocksWithParents.push(block);
                             allLocators.add(block.locator);
 
-                            // Encuentra y añade los bloques padres si aún no están incluidos
+                            // Encuentra y añade los bloques padres si aún no están incluidos, para mantener la estructura jerárquica
                             let parentLocator = block.locator.split('.').slice(0, -1).join('.');
                             while (parentLocator) {
                                 if (!allLocators.has(parentLocator)) {
@@ -633,7 +601,8 @@
                     // Ordena los bloques por su localizador para mantener la jerarquía correcta
                     blocksWithParents.sort((a, b) => a.locator.localeCompare(b.locator));
                     blocksWithParents.sort((a, b) => a.uid - b.uid);
-                    // Ahora aplica el resaltado a las etiquetas seleccionadas
+
+                    // Aplica el resaltado a las etiquetas seleccionadas
                     const highlightedBlocks = blocksWithParents.map(block => {
                         // Clona el bloque para evitar mutaciones directas al estado
                         const clonedBlock = { ...block };
@@ -647,6 +616,7 @@
 
                     return highlightedBlocks;
                 },
+
 
                 searchFilteredBlocks() {
                     if (!this.searchQuery) {
@@ -1260,7 +1230,7 @@
 
                 // FILTERS AND SEARCH
 
-                filterBlocksDELETEME(tags) {
+                filterBlocks(tags) {
                     this.filteredBlocks = this.model.filter((block) => tags.some((tag) => block.tags.includes(tag)));
                 },
 
@@ -1395,13 +1365,27 @@
                     return markers;
                 },
 
-                toggleMarkerSelection(marker) {
-                    const index = this.selectedMarkers.indexOf(marker);
+                toggleMarkerSelection(markerValue) {
+                    const index = this.selectedMarkers.indexOf(markerValue);
                     if (index > -1) {
-                        this.selectedMarkers.splice(index, 1); // Elimina el marcador si ya estaba seleccionado
+                        // El marcador ya está seleccionado, quitarlo del array
+                        this.selectedMarkers.splice(index, 1);
                     } else {
-                        this.selectedMarkers.push(marker); // Añade el marcador si no estaba seleccionado
+                        // El marcador no está seleccionado, añadirlo al array
+                        this.selectedMarkers.push(markerValue);
                     }
+
+                    // Opcional: Puedes llamar aquí al método que actualiza el filtro de bloques si deseas que los bloques se actualicen inmediatamente después de cambiar la selección.
+                    this.updateBlocksFilter();
+                },
+
+                updateFilter(selectedMarker) {
+                    // Aquí puedes implementar la lógica para filtrar los bloques basándose en el marcador seleccionado.
+                    // Por ejemplo, podrías ajustar la propiedad 'filteredBlocks' para que solo incluya bloques que coincidan con el marcador seleccionado.
+                    this.filteredBlocks = this.model.filter(block => {
+                        // Suponiendo que 'block.markers' es un array de marcadores asociados con el bloque
+                        return block.markers.includes(selectedMarker);
+                    });
                 },
 
                 // FORMATING
