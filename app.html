@@ -154,35 +154,36 @@
                             <select @change="loadGuideMarkdownContent($event.target.value)" id="guide-select"
                                 class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-150 ease-in-out">
                                 <option value="">Select a guide</option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/plastilinn_cheatsheet.md">
+                                <option value="https://xbokmd.github.io/plastilinndocs/guides/plastilinn_cheatsheet.md">
                                     Plastilinn cheatsheet
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/quick_start.md">Quick
+                                <option value="https://xbokmd.github.io/plastilinndocs/guides/quick_start.md">Quick
                                     start
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/using_plastilinn.md">Using
+                                <option value="https://xbokmd.github.io/plastilinndocs/guides/using_plastilinn.md">Using
                                     plastilinn
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/IA.md">IA
+                                <option value="https://xbokmd.github.io/plastilinndocs/guides/IA.md">IA
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/idea_definition.md">Idea
+                                <option value="https://xbokmd.github.io/plastilinndocs/guides/idea_definition.md">Idea
                                     definition
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/business_model_canvas.md">
+                                <option value="https://xbokmd.github.io/plastilinndocs/guides/business_model_canvas.md">
                                     Business
                                     Model Canvas
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/lean_canvas.md">Lean
+                                <option value="https://xbokmd.github.io/plastilinndocs/guides/lean_canvas.md">Lean
                                     Canvas
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/business_model_canvas.md">
+                                <option value="https://xbokmd.github.io/plastilinndocs/guides/business_model_canvas.md">
                                     Business Model Canvas
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/value_proposition_canvas.md">
+                                <option
+                                    value="https://xbokmd.github.io/plastilinndocs/guides/value_proposition_canvas.md">
                                     Value
                                     Proposition Canvas
                                 </option>
-                                <option value="https://xbokmd.github.io/plastilinn/guides/empathy_map.md">Empathy
+                                <option value="https://xbokmd.github.io/plastilinndocs/guides/empathy_map.md">Empathy
                                     map
                                 </option>
                             </select>
@@ -257,7 +258,8 @@
                                                         </button>
                                                     </div>
                                                     <!-- Contenedor para las etiquetas, ahora debajo del encabezado -->
-                                                    <div class="flex flex-wrap gap-2 rounded bg-red-300">
+                                                    <div id="show-selected"
+                                                        class="flex flex-wrap gap-2 rounded bg-red-300">
                                                         <div class="flex flex-wrap gap-2 mt-2">
                                                             <span v-for="tag in selectedTags" :key="tag"
                                                                 class="flex items-center justify-center h-8 px-2 text-sm"
@@ -386,22 +388,22 @@
                                                 <h2>I'm new to Plastilinn</h2>
                                                 <div class="card-actions">
                                                     <button
-                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/guides/existing_business.md')">
+                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinndocs/guides/existing_business.md')">
                                                         I have a business running and I want to improve it</button>
                                                 </div>
                                                 <div class="card-actions">
                                                     <button
-                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/guides/new_business.md')">
+                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinndocs/guides/new_business.md')">
                                                         I am creating a new business from scratch</button>
                                                 </div>
                                                 <div class="card-actions">
                                                     <button
-                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/guides/learn.md')">
+                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinndocs/guides/learn.md')">
                                                         I want to learn how to create a business</button>
                                                 </div>
                                                 <div class="card-actions">
                                                     <button
-                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/guides/quick_start.md')">
+                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinndocs/guides/quick_start.md')">
                                                         I want to try plastilinn</button>
                                                 </div>
                                             </div>
@@ -640,7 +642,6 @@
                             }
                         });
 
-
                         // Ordena y resalta como antes
                         blocksWithParents.sort((a, b) => a.locator.localeCompare(b.locator));
                         blocksWithParents.sort((a, b) => a.uid - b.uid);
@@ -652,7 +653,7 @@
                             }
                             return clonedBlock;
                         });
-
+                        this.highlightFilteredBlocks();
                         return highlightedBlocks;
                     } catch (error) {
                         console.error('Error al filtrar bloques:', error);
@@ -1245,6 +1246,19 @@
                     }
                 },
 
+                highlightFilteredBlocks() {
+                    this.$nextTick(() => {
+                        // Asumiendo que tienes un array 'filteredBlocks' que contiene los bloques filtrados
+                        this.filteredBlocks.forEach(block => {
+                            const element = document.getElementById(block.title); // Asumiendo que el 'id' del elemento HTML corresponde al 'title' del bloque
+                            if (element) {
+                                element.classList.add('highlight');
+                                setTimeout(() => element.classList.remove('highlight'), 5000);
+                            }
+                        });
+                    });
+                },
+
                 // MODEL PROCESSING
 
                 assignUids() {
@@ -1284,10 +1298,6 @@
                 },
 
                 // FILTERS AND SEARCH
-
-                filterBlocksTEMP(tags) {
-                    this.filteredBlocks = this.model.filter((block) => tags.some((tag) => block.tags.includes(tag)));
-                },
 
                 setFilterTags(tags) {
                     // Establece las etiquetas seleccionadas directamente
@@ -1336,7 +1346,6 @@
                         this.selectedMarkers.push(marker); // Si no, añádelo
                     }
                 },
-
 
                 highlightText(text, terms) {
                     if (!terms.length) return text; // Si no hay términos, devuelve el texto tal cual
