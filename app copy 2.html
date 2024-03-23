@@ -20,58 +20,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
-        #bp-web-widget-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            /* Asegura que el contenedor tenga el alto total de la pantalla */
-        }
-
-        #bp-web-widget {
-            width: 80% !important;
-            /* Sobrescribe el estilo en línea y ajusta el ancho al 60% */
-            height: 80% !important;
-            /* Ajusta la altura según el contenido o define una altura específica */
-            border: 0;
-            /* Opcional: elimina el borde del iframe si es necesario */
-        }
-
-        .bp-widget-side {
-            /* bottom: 0; */
-            height: 80% !important;
-            left: 200px !important;
-            right: 200px !important;
-            top: 200px !important;
-            bottom: 200px !important;
-        }
-
-        /*
-        .bpw-chat-container {
-            position: fixed;
-            /* O absolute, dependiendo de tus necesidades */
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        /* Esto deja un margen del 10% a cada lado */
-        max-width: 600px;
-        /* Puedes definir un ancho máximo si lo deseas */
-        height: auto;
-        /* Altura automática según el contenido, pero puedes ajustarlo como prefieras */
-        padding: 20px;
-        /* Espaciado interno para el contenido de la modal */
-        background: white;
-        /* Fondo blanco para la ventana modal */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* Sombra suave para darle profundidad */
-        overflow: auto;
-        /* Permite el desplazamiento si el contenido es demasiado largo */
-        z-index: 1000;
-        /* Asegúrate de que la modal esté por encima de otros elementos */
-        }
-
-        */ .filter-switch label {
+        .filter-switch label {
             cursor: pointer;
         }
 
@@ -586,7 +535,7 @@
                                 style
                             </span>
                             Tags</button>
-                        <button class="btn m-2 btn-primary" @click="sendMessageToBot()">
+                        <button class="btn m-2 btn-primary" @click="sendMessageToBot">
                             <span class="material-symbols-outlined" translate="no">
                                 robot_2
                             </span>
@@ -601,16 +550,14 @@
                                 cancel
                             </span>
                             Close window</button>
-
+                    </div>
+                </div>
+                <div
+                    class="relative top-20 mx-auto p-5 border w-4/5 shadow-lg rounded-md bg-white flex flex-col justify-center items-center">
+                    <div id="plastilinn-botpress" class="absolute inset-4 h-500 pt-24">xxxx
                         <div
-                            class="relative top-20 mx-auto p-5 border w-4/5 shadow-lg rounded-md bg-white flex flex-col justify-center items-center">
-                            <div id="plastilinn-botpress" class="absolute inset-4 h-500 pt-24">xxxx
-                                <div
-                                    class="center-div relative h-full w-full overflow-clip rounded-md border border-zinc-200 bg-white p-2 px-0 py-0">
-                                    <iframe style="border: none;" srcdoc="<body></body>" width="100%"
-                                        height="100%"></iframe>
-                                </div>
-                            </div>
+                            class="center-div relative h-full w-full overflow-clip rounded-md border border-zinc-200 bg-white p-2 px-0 py-0">
+                            <iframe style="border: none;" srcdoc="<body></body>" width="100%" height="100%"></iframe>
                         </div>
                     </div>
                 </div>
@@ -1241,6 +1188,34 @@
                 },
 
                 sendMessageToBot() {
+                    console.log("Button clicked");
+                    console.log("🚀 ~ sendMessageToBot ~ sendMessageToBot", botDiv.innerHTML)
+                    const suggestionPrompt = this.generateSuggestionPrompt();
+                    const botIframe = document.createElement('iframe');
+
+                    // Configura la URL de tu bot de Botpress aquí. Asegúrate de incluir cualquier parámetro necesario.
+                    botIframe.src = 'https://webhook.botpress.cloud/e90e2e1b-930a-4e71-bfd0-fd0511c1339c';
+                    botIframe.style.width = '100%';
+                    botIframe.style.height = '100%';
+                    botIframe.style.border = 'none';
+
+                    // Vacía el div en caso de que ya contenga un iframe u otro contenido
+                    const botDiv = document.getElementById('plastilinn-botpress');
+                    botDiv.innerHTML = '';
+                    console.log("🚀 ~ sendMessageToBot ~ botDiv.innerHTML:", botDiv.innerHTML)
+                    botDiv.appendChild(botIframe);
+
+                    window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true });
+                    window.botpressWebChat.sendEvent({ type: 'show' });
+                    window.botpressWebChat.sendPayload({
+                        type: 'text',
+                        text: suggestionPrompt,
+                    });
+                },
+
+
+
+                sendMessageToBotOLD() {
                     const suggestionPrompt = this.generateSuggestionPrompt();
                     window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true });
                     window.botpressWebChat.sendEvent({ type: 'show' });
@@ -1660,6 +1635,25 @@
                     this.autoDownloadEnabled = !this.autoDownloadEnabled;
                 },
 
+                sendMessageToBot() {
+                    const suggestionPrompt = this.generateSuggestionPrompt();
+                    const botIframe = document.createElement('iframe');
+
+                    // Configura la URL de tu bot de Botpress aquí. Asegúrate de incluir cualquier parámetro necesario.
+                    botIframe.src = 'URL_DE_TU_BOT_CON_CONFIGURACIONES_OPCIONALES';
+                    botIframe.style.width = '100%';
+                    botIframe.style.height = '100%';
+                    botIframe.style.border = 'none';
+
+                    // Vacía el div en caso de que ya contenga un iframe u otro contenido
+                    const botDiv = document.getElementById('plastilinn-botpress');
+                    botDiv.innerHTML = '';
+                    botDiv.appendChild(botIframe);
+
+                    // Opcional: Enviar el mensaje inicial al bot. Esto depende de cómo hayas configurado tu bot y cómo maneja los mensajes entrantes.
+                    // Puedes necesitar implementar una comunicación específica de la API de Botpress o usar postMessage si el iframe permite la comunicación de origen cruzado.
+                },
+
             },
             mounted() {
                 this.processMetamodel(); // Otras inicializaciones pueden ir aquí
@@ -1668,9 +1662,11 @@
                 if (window.botpressWebChat && typeof window.botpressWebChat.onEvent === 'function') {
                     window.botpressWebChat.onEvent((event) => {
                         if (event.type === 'message' && event.message_type === 'text') {
+                            window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
                             alert(`Respuesta del bot: ${event.text}`);
                         }
                     });
+
                 } else {
                     console.warn('Botpress Web Chat is not loaded.');
                 }
@@ -1683,29 +1679,34 @@
         })
             .mount('#vue-app');
     </script>
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script>
-        window.botpressWebChat.init({
-            // Replace <your-bot-id> and <your-client-id> with your actual bot and client IDs
-            'botId': '2aa639ac-f805-454c-b5da-6fcc527f8d70',
-            'clientId': '2aa639ac-f805-454c-b5da-6fcc527f8d70',
-
-            // Set the URL for the Botpress WebChat JavaScript file and the messaging server
-            'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
-            'messagingUrl': 'https://messaging.botpress.cloud',
-
-            // Set the name of the bot that will be displayed in the WebChat interface
-            'botName': 'Plastilinn bot',
-
-            // Set the width of the WebChat container and layout to 100% (Full Screen)
-            'containerWidth': '90%25',
-            'layoutWidth': '90%25',
-
-            // Hide the widget and disable animations
-            'hideWidget': true,
-            'disableAnimations': true,
-        });
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js">
     </script>
+    <script src="https://mediafiles.botpress.cloud/2aa639ac-f805-454c-b5da-6fcc527f8d70/webchat/config.js" defer>
+
+        <script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
+    < script>
+                window.botpressWebChat.init({
+                    // Replace <your-bot-id> and <your-client-id> with your actual bot and client IDs
+                    'botId': '2aa639ac-f805-454c-b5da-6fcc527f8d70',
+                'clientId': '2aa639ac-f805-454c-b5da-6fcc527f8d70',
+
+                // Set the URL for the Botpress WebChat JavaScript file and the messaging server
+                'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
+                'messagingUrl': 'https://messaging.botpress.cloud',
+
+                // Set the name of the bot that will be displayed in the WebChat interface
+                'botName': 'Plastilinn bot',
+
+                // Set the width of the WebChat container and layout to 100% (Full Screen)
+                'containerWidth': '100%25',
+                'layoutWidth': '100%25',
+
+                // Hide the widget and disable animations
+                'hideWidget': true,
+                'disableAnimations': true,
+                });
+    </script>
+
 </body>
 
 </html>
