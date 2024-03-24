@@ -46,32 +46,7 @@
             bottom: 200px !important;
         }
 
-        /*
-        .bpw-chat-container {
-            position: fixed;
-            /* O absolute, dependiendo de tus necesidades */
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        /* Esto deja un margen del 10% a cada lado */
-        max-width: 600px;
-        /* Puedes definir un ancho máximo si lo deseas */
-        height: auto;
-        /* Altura automática según el contenido, pero puedes ajustarlo como prefieras */
-        padding: 20px;
-        /* Espaciado interno para el contenido de la modal */
-        background: white;
-        /* Fondo blanco para la ventana modal */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* Sombra suave para darle profundidad */
-        overflow: auto;
-        /* Permite el desplazamiento si el contenido es demasiado largo */
-        z-index: 1000;
-        /* Asegúrate de que la modal esté por encima de otros elementos */
-        }
-
-        */ .filter-switch label {
+        .filter-switch label {
             cursor: pointer;
         }
 
@@ -517,7 +492,7 @@
                 </main>
             </div>
             <!-- FOOTER -->
-            <footer class="border-t border-gray-200 p-2">Footer</footer>
+            <!-- <footer class="border-t border-gray-200 p-2">Footer</footer> -->
         </div>
         <!-- MODAL WINDOWS -->
         <div id="artifact-modal" v-if="isArtifactModalOpen"
@@ -581,16 +556,16 @@
                         <div class="mt-2">
                             <div id="editor-container"></div>
                         </div>
-                        <button class="btn m-2 btn-primary" @click="">
-                            <span class="material-symbols-outlined" translate="no">
-                                style
-                            </span>
-                            Tags</button>
                         <button class="btn m-2 btn-primary" @click="sendMessageToBot()">
                             <span class="material-symbols-outlined" translate="no">
                                 robot_2
                             </span>
                             AI suggest content</button>
+                        <button class="btn m-2 btn-primary" @click="">
+                            <span class="material-symbols-outlined" translate="no">
+                                style
+                            </span>
+                            Tags</button>
                         <button class="btn m-2 btn-primary" @click="saveChanges">
                             <span class="material-symbols-outlined" translate="no">
                                 save
@@ -601,17 +576,6 @@
                                 cancel
                             </span>
                             Close window</button>
-
-                        <div
-                            class="relative top-20 mx-auto p-5 border w-4/5 shadow-lg rounded-md bg-white flex flex-col justify-center items-center">
-                            <div id="plastilinn-botpress" class="absolute inset-4 h-500 pt-24">xxxx
-                                <div
-                                    class="center-div relative h-full w-full overflow-clip rounded-md border border-zinc-200 bg-white p-2 px-0 py-0">
-                                    <iframe style="border: none;" srcdoc="<body></body>" width="100%"
-                                        height="100%"></iframe>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1227,16 +1191,16 @@
                     Providing concise, targeted guidance without unnecessary repetition or formalities.\n
                     Offering step-by-step feedback to ensure the document effectively captures the business model.\n
                     You focus on the client's needs and how to best articulate their business model.\n
-                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business:\n\n
-                    --- business model start ---`
+                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business:\n\n`
+                        + `--- business model start ---\n\n`
                         + `${modelMarkdown}\n\n`
-                        + `--- business model end ---
+                        + `--- business model end ---\n\n
                     QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.
-                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then a description on a new line. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n
-                    --- example-answer start ---`
+                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then a description on a new line. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n`
+                        + `--- example-answer start ---\n\n`
                         + `${blockExample}\n\n`
-                        + `--- example-answer end ---\n\n
-                    You can copy/paste this answer to your plastilinn doc`;
+                        + `--- example-answer end ---\n\n`
+                        + `You can copy/paste this answer to your plastilinn doc`;
                     return suggestionPrompt;
                 },
 
@@ -1247,6 +1211,45 @@
                     window.botpressWebChat.sendPayload({
                         type: 'text',
                         text: suggestionPrompt,
+                    });
+                },
+
+                generateSuggestionPromptORIG() {
+                    let suggestionPrompt = '';
+                    this.updateModelMarkdown();
+                    const block = this.model.find((b) => b.id === this.selectedBlockId);
+                    const title = block ? block.title : 'Title not found';
+                    const metamodelID = block ? block.metamodelID : 'metamodelID not found';
+                    const { modelMarkdown } = this;
+                    const blockExample = block ? block.metamodel.example : 'Example not found';
+                    suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\n\n
+                    Listening closely to understand the specifics of the business.\n
+                    Providing concise, targeted guidance without unnecessary repetition or formalities.\n
+                    Offering step-by-step feedback to ensure the document effectively captures the business model.\n
+                    You focus on the client's needs and how to best articulate their business model.\n
+                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business:\n\n`
+                        + `--- business model start ---\n\n`
+                        + `${modelMarkdown}\n\n`
+                        + `--- business model end ---\n\n
+                    QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.
+                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then a description on a new line. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n`
+                        + `--- example-answer start ---\n\n`
+                        + `${blockExample}\n\n`
+                        + `--- example-answer end ---\n\n`
+                        + `You can copy/paste this answer to your plastilinn doc`;
+                    return suggestionPrompt;
+                },
+
+                sendMessageToBotORIG() {
+                    const suggestionPromptData = this.generateSuggestionPromptData(); // Asume que esta función ahora genera los datos necesarios, no el texto completo.
+                    window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true });
+                    window.botpressWebChat.sendEvent({ type: 'show' });
+                    window.botpressWebChat.sendEvent({
+                        type: 'custom',
+                        payload: {
+                            type: 'suggestionPromptData',
+                            data: suggestionPromptData, // Envía los datos necesarios como parte del payload.
+                        },
                     });
                 },
 
@@ -1704,6 +1707,9 @@
             // Hide the widget and disable animations
             'hideWidget': true,
             'disableAnimations': true,
+            'enableConversationDeletion': true,
+            'avatarUrl': 'https://xbokmd.github.io/plastilinn/assets/plastilinn-avatar.png',
+            'className': 'plastilinn-botpress',
         });
     </script>
 </body>
