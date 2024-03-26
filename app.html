@@ -24,8 +24,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            /* Asegura que el contenedor tenga el alto total de la pantalla */
         }
 
         #bp-web-widget {
@@ -44,6 +42,10 @@
             right: 200px !important;
             top: 200px !important;
             bottom: 200px !important;
+        }
+
+        #bpw-bubble-undefined {
+            width: 100%;
         }
 
         .filter-switch label {
@@ -579,7 +581,32 @@
                     </div>
                 </div>
             </div>
-
+            <iframe style="border: none;" srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
+            <script>
+              window.botpressWebChat.init({
+                  'composerPlaceholder': 'Chat with bot',
+                  'botConversationDescription': 'This chatbot was built surprisingly fast with Botpress',
+                  'botName': 'Name',
+                  'botId': 'f87c4530-e481-49dd-8841-236d83aa1389',
+                  'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
+                  'messagingUrl': 'https://messaging.botpress.cloud',
+                  'clientId': 'f87c4530-e481-49dd-8841-236d83aa1389',
+                  'enableConversationDeletion': true,
+                  'showPoweredBy': true,
+                  'className': 'webchatIframe',
+                  'containerWidth': '100%25',
+                  'layoutWidth': '100%25',
+                  'hideWidget': true,
+                  'showCloseButton': false,
+                  'disableAnimations': true,
+                  'closeOnEscape': false,
+                  'showConversationsButton': false,
+                  'enableTranscriptDownload': false,
+                  'stylesheet':'https://webchat-styler-css.botpress.app/prod/code/3fcd3e4e-d5bc-4bf5-8699-14b621b3ada2/v31782/style.css'
+                  
+              });
+            window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
+            </script></body>" width="100%" height="100%"></iframe>
         </div>
     </div>
     <script>
@@ -1208,11 +1235,28 @@
                     const suggestionPrompt = this.generateSuggestionPrompt();
                     window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true });
                     window.botpressWebChat.sendEvent({ type: 'show' });
+                    window.botpressWebChat.sendEvent({ type: 'createConversation' });
                     window.botpressWebChat.sendPayload({
                         type: 'text',
-                        text: suggestionPrompt,
+                        text: 'Sending your question...',
+                        payload: {
+                            plastilinnPrompt: suggestionPrompt
+                        }
                     });
                 },
+
+                receiveBotAnswer() {
+                    window.botpressWebChat.onEvent(
+                        (event) => {
+                            if (event.type === 'MESSAGE.RECEIVED') {
+                                console.log('A new message was received!')
+                            }
+                        },
+                        ['MESSAGE.RECEIVED']
+                    )
+
+                },
+
 
                 generateSuggestionPromptORIG() {
                     let suggestionPrompt = '';
@@ -1690,11 +1734,11 @@
     <script>
         window.botpressWebChat.init({
             // Replace <your-bot-id> and <your-client-id> with your actual bot and client IDs
-            'botId': '2aa639ac-f805-454c-b5da-6fcc527f8d70',
-            'clientId': '2aa639ac-f805-454c-b5da-6fcc527f8d70',
+            'botId': '6871fc59-bc5b-4684-aac0-4b4ea72a7697',
+            'clientId': '6871fc59-bc5b-4684-aac0-4b4ea72a7697',
 
             // Set the URL for the Botpress WebChat JavaScript file and the messaging server
-            'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
+            'hostUrl': 'https://cdn.botpress.cloud/webchat/v1',
             'messagingUrl': 'https://messaging.botpress.cloud',
 
             // Set the name of the bot that will be displayed in the WebChat interface
@@ -1709,7 +1753,7 @@
             'disableAnimations': true,
             'enableConversationDeletion': true,
             'avatarUrl': 'https://xbokmd.github.io/plastilinn/assets/plastilinn-avatar.png',
-            'className': 'plastilinn-botpress',
+            'className': 'plastilinn-botpress hidden',
         });
     </script>
 </body>
