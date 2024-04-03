@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -190,7 +191,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div v-if="currentSidebarSection === 'guides'">sss
+                        <div v-if="currentSidebarSection === 'guides'">
                             <!-- Select que se muestra u oculta según showSelect -->
                             <select @change="loadGuideMarkdownContent($event.target.value)" id="guide-select"
                                 class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-150 ease-in-out">
@@ -239,7 +240,7 @@
 
                             <button
                                 @click="setArtifactBusinessModelCanvas('partners', 'activities', 'valuePropositions', 'relationships', 'profile', 'resources', 'channels', 'costLines', 'revenueLines'); isArtifactModalOpen = true"
-                                class="btn btn-primary">Business
+                                class="btn btn-primary mt-4">Business
                                 Model Canvas</button>
                         </div>
                         <div
@@ -1225,14 +1226,12 @@
                     const suggestionPrompt = this.generateSuggestionPrompt();
                     // El webchat está listo. Aquí puedes enviar mensajes o realizar acciones.
                     //window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true });
-                    window.botpressWebChat.sendEvent({ type: 'show' });
                     //window.botpressWebChat.sendEvent({ type: 'createConversation' });
                     window.botpressWebChat.sendPayload({
-                        payload: {
-                            plastilinnID: 'Test',
-                            plastilinnPrompt: suggestionPrompt
-                        }
+                        type: 'text',
+                        text: suggestionPrompt
                     });
+                    window.botpressWebChat.sendEvent({ type: 'show' });
                 },
 
                 receiveBotAnswer() {
@@ -1246,7 +1245,6 @@
                     )
 
                 },
-
 
                 generateSuggestionPromptORIG() {
                     let suggestionPrompt = '';
@@ -1720,16 +1718,16 @@
         })
             .mount('#vue-app');
     </script>
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+
     <script>
         window.botpressWebChat.init({
             "composerPlaceholder": "Chat with Plastilinn bot V0.2.0",
             "botConversationDescription": "This chatbot was built surprisingly fast with Botpress",
-            "botId": "6871fc59-bc5b-4684-aac0-4b4ea72a7697",
+            "botId": "52bd5724-db50-4bd1-8348-092faf88e2a1",
             "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
             "messagingUrl": "https://messaging.botpress.cloud",
-            "clientId": "6871fc59-bc5b-4684-aac0-4b4ea72a7697",
-            "webhookId": "34c7cdbd-f181-48c7-985d-a4415435d689",
+            "clientId": "52bd5724-db50-4bd1-8348-092faf88e2a1",
+            "webhookId": "d4940c60-2b73-425d-bb52-67d64810a71b",
             "lazySocket": true,
             "themeName": "prism",
             "botName": "Plastilinn bot V0.2.0",
@@ -1739,10 +1737,14 @@
             "enableConversationDeletion": true,
             "showPoweredBy": true,
             "theme": "prism",
-            "themeColor": "#2563eb"
+            "themeColor": "#2563eb",
+            "avatarUrl": "",
+            "hideWidget": true,
+            "useSessionStorage": true,
+            "containerWidth": "520",
+            "layoutWidth": "520",
         });
     </script>
-
 </body>
 
 </html>
