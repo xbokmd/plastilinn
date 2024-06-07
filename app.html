@@ -23,43 +23,15 @@
     <style>
         .bp-widget-side {
             width: 100% !important;
-            /* Full width */
             height: 100vh !important;
-            /* Full height of the viewport */
             position: fixed !important;
-            /* Fixed position relative to the viewport */
             top: 0 !important;
-            /* Align top edge with viewport */
             left: 0 !important;
-            /* Align left edge with viewport */
             right: 0 !important;
-            /* Align right edge with viewport */
             bottom: 0 !important;
-            /* Align bottom edge with viewport */
             border: none !important;
-            /* No border */
             border-radius: 0 !important;
-            /* No rounded corners for full screen */
             overflow: hidden !important;
-            /* No scrollbars */
-        }
-
-        .bpw-layout {
-            width: 100vw !important;
-            height: 100vh !important;
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            /* Ensure it's not cut off by starting from the left edge */
-            margin: 0;
-            /* Remove any default margins */
-            border-radius: 0;
-            /* Full screen typically doesn't need rounded corners */
-            border: none;
-            z-index: 1000;
-            /* Adjust as necessary to ensure it's above other content */
         }
 
         .filter-switch label {
@@ -593,10 +565,6 @@
                             </span>
                             Close window</button>
                     </div>
-                </div>
-                <div
-                    class="center-div relative h-full w-full overflow-clip rounded-md border border-zinc-200 bg-white p-2 px-0 py-0">
-
                 </div>
             </div>
         </div>
@@ -1262,9 +1230,9 @@
                     GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business:\n\n`
                         + `--- business model start ---\n\n`
                         + `${modelMarkdown}\n\n`
-                        + `--- business model end ---\n\n
-                    QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.
-                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then a description on a new line. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n`
+                        + `--- business model end ---\n\n`
+                        + `QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.\n\n`
+                        + `WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then a description on a new line. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n`
                         + `--- example-answer start ---\n\n`
                         + `${blockExample}\n\n`
                         + `--- example-answer end ---\n\n`
@@ -1722,7 +1690,7 @@
     <script>
         window.botpressWebChat.init({
             "composerPlaceholder": "Chat with Plastilinn bot V0.2.0",
-            "botConversationDescription": "This chatbot was built surprisingly fast with Botpress",
+            "botConversationDescription": "",
             "botId": "52bd5724-db50-4bd1-8348-092faf88e2a1",
             "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
             "messagingUrl": "https://messaging.botpress.cloud",
