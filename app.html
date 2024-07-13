@@ -1235,28 +1235,12 @@
                 },
 
                 openNewWindowWithPrompt() {
-                    const suggestionPrompt = this.generateSuggestionPrompt();
+                    const url = "https://chatgpt.com/g/g-CqzH3wBOC-plastilinn-business-advisor";
                     const ancho = 800;
                     const alto = 600;
                     const y = window.top.outerHeight / 2 + window.top.screenY - (alto / 2);
                     const x = window.top.outerWidth / 2 + window.top.screenX - (ancho / 2);
-                    const newWindow = window.open('', '_blank', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
-                    newWindow.document.write(`
-        <html>
-            <head>
-                <title>Generated Content</title>
-                <style>
-                    body { font-family: Arial, sans-serif; padding: 20px; }
-                    textarea { width: 100%; height: 90%; font-size: 16px; padding: 10px; box-sizing: border-box; }
-                </style>
-            </head>
-            <body>
-                <h1>Generated Content</h1>
-                <textarea>${suggestionPrompt}</textarea>
-                <iframe src="https://chatgpt.com/g/g-CqzH3wBOC-plastilinn-business-advisor"></iframe>
-            </body>
-        </html>
-    `);
+                    window.open(url, '_blank', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
                 },
 
                 sendMessageToBot() {
