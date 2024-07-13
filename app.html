@@ -549,23 +549,51 @@
                             <span class="material-symbols-outlined" translate="no">
                                 robot_2
                             </span>
-                            AI suggest content</button>
+                            AI suggest content
+                        </button>
+                        <button class="btn m-2 btn-primary" @click="showGeneratedContent()">
+                            <span class="material-symbols-outlined" translate="no">
+                                robot_2
+                            </span>
+                            AI suggest content 2
+                        </button>
                         <button class="btn m-2 btn-primary" @click="">
                             <span class="material-symbols-outlined" translate="no">
                                 style
                             </span>
-                            Tags</button>
+                            Tags
+                        </button>
                         <button class="btn m-2 btn-primary" @click="saveChanges">
                             <span class="material-symbols-outlined" translate="no">
                                 save
                             </span>
-                            Save changes</button>
+                            Save changes
+                        </button>
                         <button class="btn m-2 btn-primary" @click="closeModal">
                             <span class="material-symbols-outlined" translate="no">
                                 cancel
                             </span>
-                            Close window</button>
+                            Close window
+                        </button>
                     </div>
+
+                    <!-- Agrega los nuevos botones aquí -->
+                    <div v-if="generatedContent">
+                        <textarea v-model="generatedContent" class="w-full h-32 mt-4 p-2 border"></textarea>
+                        <button class="btn m-2 btn-primary" @click="copyToClipboard()">
+                            <span class="material-symbols-outlined" translate="no">
+                                content_copy
+                            </span>
+                            Copy Content
+                        </button>
+                        <button class="btn m-2 btn-primary" @click="openNewWindowWithPrompt()">
+                            <span class="material-symbols-outlined" translate="no">
+                                open_in_new
+                            </span>
+                            Open in New Window
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -586,6 +614,7 @@
                     markdownGuideContent: '', // Almacena el contenido del Markdown cargado
                     isArtifactModalOpen: false,
                     artifactModalContent: '', // Almacenará el contenido HTML generado
+                    generatedContent: '',
                     // METAMODEL
                     metamodel: [],
                     // Definir un array con los símbolos que usan los markers
@@ -1191,11 +1220,50 @@
                     return suggestionPrompt;
                 },
 
+                showGeneratedContent() {
+                    this.generatedContent = this.generateSuggestionPrompt();
+                },
+
+                copyToClipboard() {
+                    const textarea = document.createElement('textarea');
+                    textarea.value = this.generatedContent;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    alert('Content copied to clipboard');
+                },
+
+                openNewWindowWithPrompt() {
+                    const suggestionPrompt = this.generateSuggestionPrompt();
+                    const ancho = 800;
+                    const alto = 600;
+                    const y = window.top.outerHeight / 2 + window.top.screenY - (alto / 2);
+                    const x = window.top.outerWidth / 2 + window.top.screenX - (ancho / 2);
+                    const newWindow = window.open('', '_blank', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
+                    newWindow.document.write(`
+        <html>
+            <head>
+                <title>Generated Content</title>
+                <style>
+                    body { font-family: Arial, sans-serif; padding: 20px; }
+                    textarea { width: 100%; height: 90%; font-size: 16px; padding: 10px; box-sizing: border-box; }
+                </style>
+            </head>
+            <body>
+                <h1>Generated Content</h1>
+                <textarea>${suggestionPrompt}</textarea>
+                <iframe src="https://chatgpt.com/g/g-CqzH3wBOC-plastilinn-business-advisor"></iframe>
+            </body>
+        </html>
+    `);
+                },
+
                 sendMessageToBot() {
                     const suggestionPrompt = this.generateSuggestionPrompt();
                     // El webchat está listo. Aquí puedes enviar mensajes o realizar acciones.
-                    //window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true });
-                    //window.botpressWebChat.sendEvent({ type: 'createConversation' });
+                    //window.botpressWebChat.mergeConfig({className: 'plastilinnChatBot', showCloseButton: true });
+                    //window.botpressWebChat.sendEvent({type: 'createConversation' });
                     window.botpressWebChat.sendPayload({
                         type: 'text',
                         text: suggestionPrompt
@@ -1224,11 +1292,11 @@
                     const { modelMarkdown } = this;
                     const blockExample = block ? block.metamodel.example : 'Example not found';
                     suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\n\n
-                    Listening closely to understand the specifics of the business.\n
-                    Providing concise, targeted guidance without unnecessary repetition or formalities.\n
-                    Offering step-by-step feedback to ensure the document effectively captures the business model.\n
-                    You focus on the client's needs and how to best articulate their business model.\n
-                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business:\n\n`
+                                Listening closely to understand the specifics of the business.\n
+                                Providing concise, targeted guidance without unnecessary repetition or formalities.\n
+                                Offering step-by-step feedback to ensure the document effectively captures the business model.\n
+                                You focus on the client's needs and how to best articulate their business model.\n
+                                GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business:\n\n`
                         + `--- business model start ---\n\n`
                         + `${modelMarkdown}\n\n`
                         + `--- business model end ---\n\n`
@@ -1456,7 +1524,7 @@
                 },
 
                 escapeRegExp(string) {
-                    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escapa caracteres especiales para regex
+                    return string.replace(/[.*+?^${ }()|[\]\\]/g, '\\$&'); // Escapa caracteres especiales para regex
                 },
 
                 replaceMatches() {
@@ -1631,20 +1699,20 @@
 
                     // Opcional: Si quieres incluir un estilo básico en tu HTML exportado, puedes agregarlo aquí
                     const htmlWithStyle = `
-                        <!DOCTYPE html>
-                        <html lang="en">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <title>Plastilinn</title>
-                            <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-                            <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-                            <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
-                        </head>
-                        <body>
-                        ${htmlContent}
-                        </body>
-                        `;
+                                <!DOCTYPE html>
+                                <html lang="en">
+                                    <head>
+                                        <meta charset="UTF-8">
+                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                                <title>Plastilinn</title>
+                                                <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+                                                    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+                                                    <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
+                                                    </head>
+                                                    <body>
+                                                        ${htmlContent}
+                                                    </body>
+                                                    `;
 
                     // Crea un Blob con el contenido HTML
                     const blob = new Blob([htmlWithStyle], { type: 'text/html' });
