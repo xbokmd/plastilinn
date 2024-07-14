@@ -545,17 +545,19 @@
                         <div class="mt-2">
                             <div id="editor-container"></div>
                         </div>
+                        <!--
                         <button class="btn m-2 btn-primary" @click="sendMessageToBot()">
                             <span class="material-symbols-outlined" translate="no">
                                 robot_2
                             </span>
                             AI suggest content
                         </button>
+-->
                         <button class="btn m-2 btn-primary" @click="showGeneratedContent()">
                             <span class="material-symbols-outlined" translate="no">
                                 robot_2
                             </span>
-                            AI suggest content 2
+                            Suggest content with AI
                         </button>
                         <button class="btn m-2 btn-primary" @click="">
                             <span class="material-symbols-outlined" translate="no">
@@ -577,27 +579,48 @@
                         </button>
                     </div>
 
-                    <!-- Agrega los nuevos botones aquí -->
                     <div v-if="generatedContent">
-                        <textarea v-model="generatedContent" class="w-full h-32 mt-4 p-2 border"></textarea>
-                        <button class="btn m-2 btn-primary" @click="copyToClipboard()">
-                            <span class="material-symbols-outlined" translate="no">
-                                content_copy
-                            </span>
-                            1, Click to copy the prompt
-                        </button>
-                        <button class="btn m-2 btn-primary" @click="openNewWindowWithPrompt()">
-                            <span class="material-symbols-outlined" translate="no">
-                                open_in_new
-                            </span>
-                            Open plastilinn chatbot and paste the prompt
-                        </button>
+                        <div class="card lg:card-side bg-base-100 shadow-xl">
+                            <div class="card-body">
+                                <textarea id="ai-promot" v-model="generatedContent" class="w-full h-32 mt-4 p-2 border"
+                                    hidden></textarea>
+                                <ul class="steps steps-horizontal">
+                                    <li class="step step-primary">
+                                        <button class="btn m-2 btn-primary" @click="copyToClipboard()">
+                                            <span class="material-symbols-outlined" translate="no">
+                                                content_copy
+                                            </span>
+                                            Click to copy prompt
+                                        </button>
+                                    </li>
+                                    <li class="step step-primary">
+                                        <button class="btn m-2 btn-primary" @click="openNewWindowWithPrompt()">
+                                            <span class="material-symbols-outlined" translate="no">
+                                                open_in_new
+                                            </span>
+                                            Open plastilinn chatbot and paste prompt
+                                        </button>
+                                    </li>
+                                    <li class="step step-primary">
+                                        <span class="material-symbols-outlined" translate="no">
+                                            content_paste
+                                        </span>
+                                        Paste content above and edit
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
         </div>
+        <div id="confirmation-message"
+            class="fixed top-4 left-1/2 transform -translate-x-1/2 hidden bg-green-500 text-white py-2 px-4 rounded shadow-md transition-opacity duration-300 opacity-0 z-50">
+            Content copied to clipboard
+        </div>
     </div>
+
     <script>
         Vue.createApp({
             data() {
@@ -1231,7 +1254,20 @@
                     textarea.select();
                     document.execCommand('copy');
                     document.body.removeChild(textarea);
-                    alert('Content copied to clipboard');
+
+                    // Mostrar mensaje de confirmación
+                    const confirmationMessage = document.getElementById('confirmation-message');
+                    confirmationMessage.classList.remove('hidden', 'opacity-0');
+                    confirmationMessage.classList.add('opacity-100');
+
+                    // Ocultar el mensaje después de 3 segundos
+                    setTimeout(() => {
+                        confirmationMessage.classList.remove('opacity-100');
+                        confirmationMessage.classList.add('opacity-0');
+                        setTimeout(() => {
+                            confirmationMessage.classList.add('hidden');
+                        }, 300); // Duración de la transición
+                    }, 3000); // Tiempo de espera para ocultar el mensaje
                 },
 
                 openNewWindowWithPrompt() {
