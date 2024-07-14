@@ -571,7 +571,7 @@
                             </span>
                             Save changes
                         </button>
-                        <button class="btn m-2 btn-primary" @click="closeModal">
+                        <button class="btn m-2" @click="closeModal">
                             <span class="material-symbols-outlined" translate="no">
                                 cancel
                             </span>
@@ -586,38 +586,34 @@
                                     hidden></textarea>
                                 <ul class="steps steps-horizontal">
                                     <li class="step step-primary">
-                                        <button class="btn m-2 btn-primary" @click="copyToClipboard()">
+                                        <button class="btn m-2 btn-primary"
+                                            @click="copyToClipboard();openNewWindowWithPrompt();printMessage('Prompt copied. Paste it in the chatbot')">
                                             <span class="material-symbols-outlined" translate="no">
                                                 content_copy
                                             </span>
-                                            Click to copy prompt
+                                            Copy prompt and open AI chatbot
                                         </button>
                                     </li>
                                     <li class="step step-primary">
-                                        <button class="btn m-2 btn-primary" @click="openNewWindowWithPrompt()">
+                                        <button class="btn m-2 btn-primary">
                                             <span class="material-symbols-outlined" translate="no">
-                                                open_in_new
+                                                content_paste
                                             </span>
-                                            Open plastilinn chatbot and paste prompt
+                                            Paste content above and edit
                                         </button>
-                                    </li>
-                                    <li class="step step-primary">
-                                        <span class="material-symbols-outlined" translate="no">
-                                            content_paste
-                                        </span>
-                                        Paste content above and edit
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
+
                 </div>
             </div>
         </div>
         <div id="confirmation-message"
             class="fixed top-4 left-1/2 transform -translate-x-1/2 hidden bg-green-500 text-white py-2 px-4 rounded shadow-md transition-opacity duration-300 opacity-0 z-50">
-            Content copied to clipboard
+
         </div>
     </div>
 
@@ -1247,6 +1243,21 @@
                     this.generatedContent = this.generateSuggestionPrompt();
                 },
 
+                printMessage(message) {
+                    const confirmationMessage = document.getElementById('confirmation-message');
+                    confirmationMessage.textContent = message; // Establece el mensaje proporcionado como contenido del elemento
+                    confirmationMessage.classList.remove('hidden', 'opacity-0');
+                    confirmationMessage.classList.add('opacity-100');
+
+                    setTimeout(() => {
+                        confirmationMessage.classList.remove('opacity-100');
+                        confirmationMessage.classList.add('opacity-0');
+                        setTimeout(() => {
+                            confirmationMessage.classList.add('hidden');
+                        }, 300); // Duración de la transición
+                    }, 3000); // Tiempo de espera para ocultar el mensaje
+                },
+
                 copyToClipboard() {
                     const textarea = document.createElement('textarea');
                     textarea.value = this.generatedContent;
@@ -1255,19 +1266,8 @@
                     document.execCommand('copy');
                     document.body.removeChild(textarea);
 
-                    // Mostrar mensaje de confirmación
-                    const confirmationMessage = document.getElementById('confirmation-message');
-                    confirmationMessage.classList.remove('hidden', 'opacity-0');
-                    confirmationMessage.classList.add('opacity-100');
-
-                    // Ocultar el mensaje después de 3 segundos
-                    setTimeout(() => {
-                        confirmationMessage.classList.remove('opacity-100');
-                        confirmationMessage.classList.add('opacity-0');
-                        setTimeout(() => {
-                            confirmationMessage.classList.add('hidden');
-                        }, 300); // Duración de la transición
-                    }, 3000); // Tiempo de espera para ocultar el mensaje
+                    // Llama al método printMessage con el mensaje de confirmación
+                    this.printMessage('Content copied to clipboard');
                 },
 
                 openNewWindowWithPrompt() {
