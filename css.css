@@ -484,6 +484,7 @@ span[data-tag="message"] { background-color: rgba(191,219,254,var(--tw-bg-opacit
 span[data-tag="feature"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="feature"]::before { content: "🌟";}
 span[data-tag="function"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="function"]::before { content: "👔";}
 span[data-tag="goal"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="goal"]::before { content: "🎯";}
+span[data-tag="profile_goal"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="profile_goal"]::before { content: "🎯";}
 span[data-tag="hypothesis"] { background-color: #FFCCCC; } span[data-tag="hypothesis"]::before { content: "🔎";}
 span[data-tag="person"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="person"]::before { content: "👤";}
 span[data-tag="transaction"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="transaction"]::before { content: "🛒";}
@@ -494,6 +495,7 @@ span[data-tag="position"] { background-color: rgba(191,219,254,var(--tw-bg-opaci
 span[data-tag="skill"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="skill"]::before { content: "🔧";}
 span[data-tag="phase"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="phase"]::before { content: "🗓️";}
 span[data-tag="milestone"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="milestone"]::before { content: "🏁";}
+span[data-tag="organization_value"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="organization_value"]::before { content: "🧠";}
 span[data-tag="role"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="role"]::before { content: "🎩";}
 span[data-tag="stakeholder"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="stakeholder"]::before { content: "🤔";}
 span[data-tag="persona"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="persona"]::before { content: "👩‍💼";}
@@ -510,7 +512,7 @@ span[data-tag="block"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)
 span[data-tag="assumption"] { background-color: #FFCCCC; } span[data-tag="assumption"]::before { content: "🔮";}
 span[data-tag="comment"] { background-color: lightgrey; } span[data-tag="comment"]::before { content: "🗨️";}
 span[data-tag="task"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="task"]::before { content: "🛠️";}
-span[data-tag="risk"] { background-color: #FFCCCC; } span[data-tag="risk"]::before { content: "🚨";}
+span[data-tag="risk"] { background-color: #FFCCCC; } span[data-tag="risk"]::before { content: "🚨";};}
 
 span[data-marker] {
     line-height: 1.4rem;

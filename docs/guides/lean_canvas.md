@@ -20,9 +20,9 @@
 
 4. #### Solution
 
-	Outline the proposed solutions to the top problems you've identified
+	Outline the proposed solutions to the top problems you've identified.
     
-    #id [solution](<#Main Solution>)
+    #id [solution](<#Main Solution - Solution>)
 
 5. #### Channels
 
