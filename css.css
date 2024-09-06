@@ -109,8 +109,8 @@ br {
 }
 
 a {
-    color: blue !important;
-    text-decoration: underline !important;
+    color: blue;
+    text-decoration: underline;
 }
 
 .md-block {

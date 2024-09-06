@@ -1,5 +1,7 @@
 ## Lean Canvas
 
+<button class="btn btn-primary mt-4">Business Model Canvas</button>
+
 1. #### Customer Segments
 
     Define the target customer segments you want to serve.

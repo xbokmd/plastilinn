@@ -36,9 +36,7 @@ Un plastilinn doc Te permite describir tu modelo de negocio de forma estructurad
 
 ## Editando tu plastilinn doc
 
-Puedes editar tu plastilinn doc Directamente en la aplicación
-
-https://stackedit.io/app#
+Puedes editar tu plastilinn doc Directamente en la aplicación <a href="https://stackedit.io/app#"  target="_blank">Stackedit</a>
 
 ## Export content
 
