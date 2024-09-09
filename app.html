@@ -64,12 +64,13 @@
                                     </span>
                                     Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
                                 </button>
-                                <button id="openInEditorBtn" @click="openInNewEditor" class="btn join-item btn-primary">
+                                <button @click="openEditorInModal" class="btn btn-primary">
                                     <span class="material-symbols-outlined" translate="no">
                                         open_in_browser
                                     </span>
-                                    Open in New Editor
+                                    Open Editor in Modal
                                 </button>
+
                             </div>
                         </div>
                     </div>
@@ -574,8 +575,17 @@
                         </div>
                     </div>
 
-
                 </div>
+            </div>
+        </div>
+        <!-- Modal para el editor de pantalla completa -->
+        <div v-if="isFullScreenEditorOpen"
+            class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
+            <div class="relative bg-white w-11/12 h-5/6 p-5 shadow-lg rounded-md">
+                <!-- Contenedor del editor -->
+                <div id="editor-container"></div>
+                <button @click="saveNewEditorContent(); closeFullScreenEditor()" class="btn btn-primary mt-4">Guardar
+                    cambios</button>
             </div>
         </div>
         <div id="confirmation-message"
@@ -632,6 +642,7 @@
                     searchQuery: '',
                     searchText: '',
                     replaceText: '',
+                    isFullScreenEditorOpen: false, // Estado para controlar el modal del editor en pantalla completa
                 };
             },
             computed: {
@@ -1206,6 +1217,51 @@
                         + `--- example-answer end ---\n\n`;
                     return suggestionPrompt;
                 },
+
+                // EDIT MD DOCUMENT
+                openFullScreenEditor() {
+                    this.isFullScreenEditorOpen = true;
+                    this.$nextTick(() => {
+                        this.initDocumentEditor();  // Inicializa el editor dentro del modal una vez que esté visible
+                    });
+                },
+
+                closeFullScreenEditor() {
+                    this.isFullScreenEditorOpen = false; // Cierra el modal
+                },
+
+                initDocumentEditor() {
+                    if (this.editor) {
+                        this.editor.destroy(); // Destruye el editor si ya existe una instancia anterior
+                    }
+                    this.editor = new toastui.Editor({
+                        el: document.querySelector('#editor-container'),
+                        initialEditType: 'markdown',
+                        previewStyle: 'tab',
+                        height: '500px',
+                        initialValue: this.modelMarkdown, // Puedes ajustar para cargar el contenido markdown actual
+                    });
+                },
+
+
+                openEditorInModal() {
+                    // Activa el modal de pantalla completa
+                    this.isFullScreenEditorOpen = true;
+
+                    // Espera a que el modal esté completamente renderizado
+                    this.$nextTick(() => {
+                        // Inicializa el editor en el contenedor del modal
+                        this.newEditorInstance = new toastui.Editor({
+                            el: document.querySelector('#editor-container'), // Contenedor dentro del modal
+                            initialEditType: 'markdown',
+                            previewStyle: 'tab',
+                            height: '500px', // Ajusta la altura según tus necesidades
+                            initialValue: this.modelMarkdown, // Utiliza el contenido actual de Markdown
+                        });
+                    });
+                },
+
+
 
                 showGeneratedContent() {
                     this.generatedContent = this.generateSuggestionPrompt();
