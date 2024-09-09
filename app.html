@@ -1390,12 +1390,40 @@
                         link.click();
                         document.body.removeChild(link);
 
-                        // Después de descargar, simula la subida del archivo
-                        this.simulateFileUpload(blob, fileName);
+                        // Simula la carga del archivo y procesa el nuevo contenido en Markdown
+                        this.newMarkdownContent = markdownContent;
+
+                        // Llama al método para refrescar todo el modelo
+                        this.refreshModelFromMarkdown();
+
+                        // Opcional: Mostrar un mensaje de confirmación o hacer más acciones después de guardar
+                        this.printMessage('Markdown saved and model refreshed.');
                     } else {
                         alert('No editor instance found');
                     }
                 },
+
+                refreshModelFromMarkdown() {
+                    // Resetea el modelo antes de procesar el nuevo contenido
+                    this.model = [];
+                    this.resetDepthCounters();
+
+                    // Procesa el contenido Markdown nuevo
+                    this.parseModelMarkdown(this.newMarkdownContent);
+
+                    // Actualiza el contenido Markdown para reflejar los cambios
+                    this.updateModelMarkdown();
+
+                    // Llama a los métodos para actualizar los tags y otros campos si es necesario
+                    this.updateTagsArray();
+
+                    // Si hay algún otro método necesario para refrescar la UI, se puede agregar aquí.
+                    this.$nextTick(() => {
+                        this.highlightFilteredBlocks(); // Opcional, resalta bloques filtrados
+                    });
+                },
+
+
 
                 // Método para simular la subida del archivo después de la descarga
                 simulateFileUpload(blob, fileName) {
