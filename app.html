@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -152,11 +151,6 @@
                                 </option>
                                 <option value="https://xbokmd.github.io/plastilinn/docs/guides/idea_definition.md">Idea
                                     definition
-                                </option>
-                                <option
-                                    value="https://xbokmd.github.io/plastilinn/docs/guides/business_model_canvas.md">
-                                    Business
-                                    Model Canvas
                                 </option>
                                 <option value="https://xbokmd.github.io/plastilinn/docs/guides/lean_canvas.md">Lean
                                     Canvas
@@ -574,7 +568,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -584,8 +577,9 @@
             <div class="relative bg-white w-11/12 h-5/6 p-5 shadow-lg rounded-md">
                 <!-- Contenedor del editor -->
                 <div id="editor-container"></div>
-                <button @click="saveNewEditorContent(); closeFullScreenEditor()" class="btn btn-primary mt-4">Guardar
-                    cambios</button>
+                <button @click="saveNewEditorContent(); closeFullScreenEditor()"
+                    class="btn btn-primary mt-4">Save</button>
+                <button @click="closeFullScreenEditor()" class="absolute btn mt-4">Close</button>
             </div>
         </div>
         <div id="confirmation-message"
@@ -1199,6 +1193,7 @@
                     const metamodelID = block ? block.metamodelID : 'metamodelID not found';
                     const { modelMarkdown } = this;
                     const blockExample = block ? block.metamodel.example : 'Example not found';
+                    const blockGuide = block ? block.metamodel.guide : 'Guide not found';
                     suggestionPrompt = `As a business model design expert, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each business unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\n\n
                     Listening closely to understand the specifics of the business.\n
                     Providing concise, targeted guidance without unnecessary repetition or formalities.\n
@@ -1209,6 +1204,7 @@
                         + `${modelMarkdown}\n\n`
                         + `--- business model end ---\n\n
                     QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.
+                    ${blockGuide}
                     WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn doc (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then two line breacks followed by a description. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n`
                         + `--- example-answer start ---\n\n`
                         + `\n\n${blockExample}\n\n`
