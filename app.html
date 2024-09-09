@@ -11,7 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -21,44 +20,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <style>
-        .bp-widget-side {
-            width: 100% !important;
-            height: 100vh !important;
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            border: none !important;
-            border-radius: 0 !important;
-            overflow: hidden !important;
-        }
-
-        .filter-switch label {
-            cursor: pointer;
-        }
-
-        .filter-switch-item input:checked+label {
-            color: white;
-            background-color: blue;
-            font-weight: 400;
-        }
-
-        .filter-switch-item input:not(:checked)+label {
-            --bg-opacity: 0;
-            box-shadow: none;
-        }
-
-        #content ul {
-            list-style-type: circle;
-            margin-right: 2rem;
-        }
-
-        #content li {
-            line-height: 1.4rem;
-        }
-    </style>
 </head>
 
 <body>
@@ -545,14 +506,6 @@
                         <div class="mt-2">
                             <div id="editor-container"></div>
                         </div>
-                        <!--
-                        <button class="btn m-2 btn-primary" @click="sendMessageToBot()">
-                            <span class="material-symbols-outlined" translate="no">
-                                robot_2
-                            </span>
-                            AI suggest content
-                        </button>
--->
                         <button class="btn m-2 btn-primary" @click="showGeneratedContent()">
                             <span class="material-symbols-outlined" translate="no">
                                 robot_2
@@ -607,7 +560,7 @@
                                             <span class="material-symbols-outlined" translate="no">
                                                 content_paste
                                             </span>
-                                            Copy chatbot response and paste it on the plastilinn editor
+                                            Copy cresponse and paste it on the editor
                                         </button>
                                     </li>
                                 </ul>
@@ -1288,69 +1241,6 @@
                     window.open(url, '_blank', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
                 },
 
-                sendMessageToBot() {
-                    const suggestionPrompt = this.generateSuggestionPrompt();
-                    // El webchat está listo. Aquí puedes enviar mensajes o realizar acciones.
-                    //window.botpressWebChat.mergeConfig({className: 'plastilinnChatBot', showCloseButton: true });
-                    //window.botpressWebChat.sendEvent({type: 'createConversation' });
-                    window.botpressWebChat.sendPayload({
-                        type: 'text',
-                        text: suggestionPrompt
-                    });
-                    window.botpressWebChat.sendEvent({ type: 'show' });
-                },
-
-                receiveBotAnswer() {
-                    window.botpressWebChat.onEvent(
-                        (event) => {
-                            if (event.type === 'MESSAGE.RECEIVED') {
-                                console.log('A new message was received!')
-                            }
-                        },
-                        ['MESSAGE.RECEIVED']
-                    )
-
-                },
-
-                generateSuggestionPromptORIG() {
-                    let suggestionPrompt = '';
-                    this.updateModelMarkdown();
-                    const block = this.model.find((b) => b.id === this.selectedBlockId);
-                    const title = block ? block.title : 'Title not found';
-                    const metamodelID = block ? block.metamodelID : 'metamodelID not found';
-                    const { modelMarkdown } = this;
-                    const blockExample = block ? block.metamodel.example : 'Example not found';
-                    suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\n\n
-                                Listening closely to understand the specifics of the business.\n
-                                Providing concise, targeted guidance without unnecessary repetition or formalities.\n
-                                Offering step-by-step feedback to ensure the document effectively captures the business model.\n
-                                You focus on the client's needs and how to best articulate their business model.\n
-                                GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business:\n\n`
-                        + `--- business model start ---\n\n`
-                        + `${modelMarkdown}\n\n`
-                        + `--- business model end ---\n\n`
-                        + `QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.\n\n`
-                        + `WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then a description on a new line. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n`
-                        + `--- example-answer start ---\n\n`
-                        + `${blockExample}\n\n`
-                        + `--- example-answer end ---\n\n`
-                        + `You can copy/paste this answer to your plastilinn doc`;
-                    return suggestionPrompt;
-                },
-
-                sendMessageToBotORIG() {
-                    const suggestionPromptData = this.generateSuggestionPromptData(); // Asume que esta función ahora genera los datos necesarios, no el texto completo.
-                    window.botpressWebChat.mergeConfig({ className: 'plastilinnChatBot', showCloseButton: true });
-                    window.botpressWebChat.sendEvent({ type: 'show' });
-                    window.botpressWebChat.sendEvent({
-                        type: 'custom',
-                        payload: {
-                            type: 'suggestionPromptData',
-                            data: suggestionPromptData, // Envía los datos necesarios como parte del payload.
-                        },
-                    });
-                },
-
                 saveChanges() {
                     const editedContent = this.editor.getMarkdown();
                     const oldTitle = this.extractBlockTitle(this.selectedBlockContent); // Utiliza tu método existente para extraer el título
@@ -1732,15 +1622,20 @@
                                 <html lang="en">
                                     <head>
                                         <meta charset="UTF-8">
-                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                                <title>Plastilinn</title>
-                                                <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-                                                    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-                                                    <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
-                                                    </head>
-                                                    <body>
-                                                        ${htmlContent}
-                                                    </body>
+                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                        <title>Plastilinn</title>
+                                        <link rel="stylesheet" href="https://stackedit.io/style.css" />
+                                    </head>
+                                    <body>
+                                    <script>
+                                        // Esto se ejecuta automáticamente cuando se carga la página
+                                        window.onload = function() {
+                                            alert("Copy the page content and paste it on your text editor");
+                                        };
+                                    <\/script>
+                                    ${htmlContent}
+                                    </body>
+                                </html>
                                                     `;
 
                     // Crea un Blob con el contenido HTML
@@ -1766,15 +1661,6 @@
                 this.processMetamodel(); // Otras inicializaciones pueden ir aquí
                 this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
                 window.addEventListener('hashchange', this.highlightOnLoad);
-                if (window.botpressWebChat && typeof window.botpressWebChat.onEvent === 'function') {
-                    window.botpressWebChat.onEvent((event) => {
-                        if (event.type === 'message' && event.message_type === 'text') {
-                            alert(`Respuesta del bot: ${event.text}`);
-                        }
-                    });
-                } else {
-                    console.warn('Botpress Web Chat is not loaded.');
-                }
                 // Configura marked.js para este componente
                 marked.setOptions({
                     gfm: true, // Habilita GitHub Flavored Markdown (GFM)
@@ -1783,33 +1669,6 @@
             },
         })
             .mount('#vue-app');
-    </script>
-
-    <script>
-        window.botpressWebChat.init({
-            "composerPlaceholder": "Chat with Plastilinn bot V0.2.0",
-            "botConversationDescription": "",
-            "botId": "52bd5724-db50-4bd1-8348-092faf88e2a1",
-            "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
-            "messagingUrl": "https://messaging.botpress.cloud",
-            "clientId": "52bd5724-db50-4bd1-8348-092faf88e2a1",
-            "webhookId": "d4940c60-2b73-425d-bb52-67d64810a71b",
-            "lazySocket": true,
-            "themeName": "prism",
-            "botName": "Plastilinn bot V0.2.0",
-            "frontendVersion": "v1",
-            "useSessionStorage": true,
-            "showBotInfoPage": true,
-            "enableConversationDeletion": true,
-            "showPoweredBy": true,
-            "theme": "prism",
-            "themeColor": "#2563eb",
-            "avatarUrl": "",
-            "hideWidget": true,
-            "useSessionStorage": true,
-            "containerWidth": "520",
-            "layoutWidth": "520",
-        });
     </script>
 </body>
 
