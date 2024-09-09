@@ -1229,21 +1229,22 @@
                     const metamodelID = block ? block.metamodelID : 'metamodelID not found';
                     const { modelMarkdown } = this;
                     const blockExample = block ? block.metamodel.example : 'Example not found';
-                    suggestionPrompt = `As a business model design expert for startups, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each startup's unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\n\n
+                    suggestionPrompt = `As a business model design expert, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each business unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\n\n
                     Listening closely to understand the specifics of the business.\n
                     Providing concise, targeted guidance without unnecessary repetition or formalities.\n
                     Offering step-by-step feedback to ensure the document effectively captures the business model.\n
                     You focus on the client's needs and how to best articulate their business model.\n
-                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about my Business:\n\n`
+                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about the business:\n\n`
                         + `--- business model start ---\n\n`
                         + `${modelMarkdown}\n\n`
                         + `--- business model end ---\n\n
                     QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.
-                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then a description on a new line. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n`
+                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn doc (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then two line breacks followed by a description. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n`
                         + `--- example-answer start ---\n\n`
-                        + `${blockExample}\n\n`
-                        + `--- example-answer end ---\n\n`
-                        + `You can copy/paste this answer to your plastilinn doc`;
+                        + `\n\n${blockExample}\n\n`
+                        + `You can copy/paste this answer to your plastilinn doc`
+                        + `\n\n\`\`\`\n\n${blockExample}\n\n\`\`\`\n\n`
+                        + `--- example-answer end ---\n\n`;
                     return suggestionPrompt;
                 },
 
