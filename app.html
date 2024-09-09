@@ -64,6 +64,12 @@
                                     </span>
                                     Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
                                 </button>
+                                <button id="openInEditorBtn" @click="openInNewEditor" class="btn join-item btn-primary">
+                                    <span class="material-symbols-outlined" translate="no">
+                                        open_in_browser
+                                    </span>
+                                    Open in New Editor
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -790,8 +796,8 @@
                     const model = this.splitModelMarkdownIntoBlocks(content);
                     this.model = model.map((blockContent) => this.processBlock(blockContent));
                     this.assignUids();
-                    // this.highlightTitlesInContent();
                     this.updateTagsArray();
+                    this.modelMarkdownLoaded = true; // Indicar que el markdown ha sido cargado y analizado
                 },
 
                 splitModelMarkdownIntoBlocks(content) {
@@ -1324,19 +1330,98 @@
                     this.depthCounters = [0, 0, 0, 0, 0, 0];
                 },
 
-                updateModelMarkdown() {
-                    // Inicializa una variable para almacenar el contenido concatenado
-                    let concatenatedContent = '';
+                // Método para abrir el contenido en un nuevo editor
+                openInNewEditor() {
+                    this.updateModelMarkdown();
 
-                    // Recorre cada elemento del array model y concatena su contenido con saltos de línea
+                    // Crea un nuevo div dinámicamente
+                    const editorContainer = document.createElement('div');
+                    editorContainer.id = `editor-container-${Date.now()}`; // Un ID único para cada instancia
+                    editorContainer.style = 'margin-top: 20px;'; // Opcional, para añadir espaciado
+
+                    // Añade el contenedor del editor al cuerpo
+                    document.body.appendChild(editorContainer);
+
+                    // Inicializa un nuevo editor y guarda la referencia en `this.newEditorInstance`
+                    this.newEditorInstance = new toastui.Editor({
+                        el: editorContainer,
+                        initialEditType: 'markdown',
+                        previewStyle: 'tab',
+                        height: '500px', // Ajusta la altura según sea necesario
+                        initialValue: this.modelMarkdown, // Utiliza el contenido actual de Markdown
+                    });
+
+                    // Crea un botón para guardar el contenido del nuevo editor
+                    const saveButton = document.createElement('button');
+                    saveButton.innerText = 'Save as Markdown';
+                    saveButton.classList.add('btn', 'btn-primary', 'm-2');
+                    saveButton.onclick = this.saveNewEditorContent; // Asigna el método de guardado al evento `click`
+
+                    // Añade el botón de guardar después del editor
+                    editorContainer.appendChild(saveButton);
+                },
+
+
+                generateFileName() {
+                    const { modelName } = this; // Obtén el nombre actual del modelo
+                    const timestamp = new Date().toISOString().replace(/[:-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
+                    return `${modelName} - saved ${timestamp}.md`; // Devuelve el nombre del archivo
+                },
+
+                // Método para guardar el contenido del nuevo editor como archivo Markdown
+                saveNewEditorContent() {
+                    if (this.newEditorInstance) {
+                        // Obtén el contenido actual del editor en formato Markdown
+                        const markdownContent = this.newEditorInstance.getMarkdown();
+
+                        // Usa el método `generateFileName()` para obtener el nombre del archivo
+                        const fileName = this.generateFileName();
+
+                        // Crea un Blob con el contenido Markdown
+                        const blob = new Blob([markdownContent], { type: 'text/markdown' });
+
+                        // Crea un enlace para descargar el archivo
+                        const link = document.createElement('a');
+                        link.href = URL.createObjectURL(blob);
+                        link.download = fileName;
+
+                        // Simula un clic en el enlace para iniciar la descarga
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+
+                        // Después de descargar, simula la subida del archivo
+                        this.simulateFileUpload(blob, fileName);
+                    } else {
+                        alert('No editor instance found');
+                    }
+                },
+
+                // Método para simular la subida del archivo después de la descarga
+                simulateFileUpload(blob, fileName) {
+                    // Crea un archivo simulado (File API no está soportada directamente en blobs, pero esta es una solución aproximada)
+                    const simulatedFile = new File([blob], fileName, { type: 'text/markdown' });
+
+                    // Crea un FileReader para leer el archivo como texto
+                    const reader = new FileReader();
+
+                    reader.onload = (event) => {
+                        const content = event.target.result; // Este es el contenido del archivo subido
+                        // Procesa el archivo subido como si hubiera sido subido por el usuario
+                        this.parseModelMarkdown(content); // Método para parsear el contenido Markdown
+                    };
+
+                    // Leer el archivo como texto
+                    reader.readAsText(simulatedFile);
+                },
+
+
+                updateModelMarkdown() {
+                    let concatenatedContent = '';
                     this.model.forEach((item) => {
                         concatenatedContent += `${item.content}\n`;
                     });
-
-                    // Guarda el contenido generado en el campo modelMarkdown del objeto model
-                    this.modelMarkdown = concatenatedContent;
-                    //this.parseModelMarkdown(concatenatedContent);
-                    this.updateTagsArray();
+                    this.modelMarkdown = concatenatedContent; // Actualiza el Markdown
                 },
 
                 updateTagsArray() {
@@ -1565,13 +1650,9 @@
                 // DOWNLOAD AND EXPORT
 
                 downloadMarkdown() {
-                    // Asume que modelMarkdown y modelName ya están actualizados
-                    this.updateModelMarkdown();
-                    const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
-                    this.newMarkdownContent = markdownContent; // Almacena el contenido en el estado
-                    const { modelName } = this; // Obtiene el nombre actual del modelo
-                    const timestamp = new Date().toISOString().replace(/[:-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
-                    const fileName = `${modelName} - saved ${timestamp}.md`; // Construye el nombre del archivo
+                    this.updateModelMarkdown(); // Actualiza el contenido Markdown
+                    const markdownContent = this.modelMarkdown; // Obtén el contenido actual
+                    const fileName = this.generateFileName(); // Usa el mismo método para generar el nombre del archivo
 
                     // Crea un Blob con el contenido Markdown
                     const blob = new Blob([markdownContent], { type: 'text/markdown' });
