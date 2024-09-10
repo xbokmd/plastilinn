@@ -67,7 +67,7 @@
                                     <span class="material-symbols-outlined" translate="no">
                                         open_in_browser
                                     </span>
-                                    Open Editor in Modal
+                                    Edit document
                                 </button>
 
                             </div>
@@ -525,13 +525,6 @@
                             </span>
                             Save changes
                         </button>
-                        <button class="btn m-2" @click="closeModal">
-                            <span class="material-symbols-outlined" translate="no">
-                                cancel
-                            </span>
-                            Close window
-                        </button>
-
                         <!-- Mostrar botones dinámicos basados en el metamodelID del bloque -->
                         <div v-if="selectedBlockIndex !== null">
                             <div v-for="prompt in getPromptsForMetamodelID(model[selectedBlockIndex].metamodelID)"
@@ -546,7 +539,12 @@
                             </div>
                         </div>
                     </div>
-
+                    <button class="btn m-2" @click="closeModal">
+                        <span class="material-symbols-outlined" translate="no">
+                            cancel
+                        </span>
+                        Close window
+                    </button>
                     <!--
                     <div v-if="generatedContent">
                         <div class="card lg:card-side bg-base-100 shadow-xl">
@@ -596,1207 +594,908 @@
                             </div>
                         </div>
                     </div>
-                </div>
             -->
                 </div>
             </div>
-            <!-- Modal para el editor de pantalla completa -->
-            <div v-if="isFullScreenEditorOpen"
-                class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
-                <div class="relative bg-white w-11/12 h-5/6 p-5 shadow-lg rounded-md">
-                    <!-- Contenedor del editor -->
-                    <div id="editor-container"></div>
-                    <button @click="saveNewEditorContent(); closeFullScreenEditor()"
-                        class="btn btn-primary mt-4">Save</button>
-                    <button @click="closeFullScreenEditor()" class="absolute btn mt-4">Close</button>
-                </div>
-            </div>
-            <div id="confirmation-message"
-                class="fixed top-4 left-1/2 transform -translate-x-1/2 hidden bg-green-500 text-white py-2 px-4 rounded shadow-md transition-opacity duration-300 opacity-0 z-50">
-
+        </div>
+        <!-- Modal para el editor de pantalla completa -->
+        <div v-if="isFullScreenEditorOpen"
+            class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
+            <div class="relative bg-white w-11/12 h-5/6 p-5 shadow-lg rounded-md">
+                <!-- Contenedor del editor -->
+                <div id="doc-editor-container"></div>
+                <button @click="saveNewEditorContent(); closeFullScreenEditor()"
+                    class="btn btn-primary mt-4">Save</button>
+                <button @click="closeFullScreenEditor()" class="absolute btn mt-4">Close</button>
             </div>
         </div>
+        <div id="confirmation-message"
+            class="fixed top-4 left-1/2 transform -translate-x-1/2 hidden bg-green-500 text-white py-2 px-4 rounded shadow-md transition-opacity duration-300 opacity-0 z-50">
+        </div>
+    </div>
 
-        <script>
-            Vue.createApp({
-                data() {
-                    return {
+    <script>
+        Vue.createApp({
+            data() {
+                return {
 
-                        // APP STATE
-                        currentSidebarSection: 'home',
-                        isSidebarVisible: true, // Controla la visibilidad de la sidebar
-                        isIndexOpen: true,
-                        isInfoModalOpen: false,
-                        autoDownloadEnabled: true,
-                        newMarkdownContent: '',
-                        showGuidesSelect: false, // Controla la visibilidad del select
-                        markdownGuideContent: '', // Almacena el contenido del Markdown cargado
-                        isArtifactModalOpen: false,
-                        artifactModalContent: '', // Almacenará el contenido HTML generado
-                        generatedContent: '',
-                        // METAMODEL
-                        metamodel: [],
-                        // Definir un array con los símbolos que usan los markers
-                        markerSymbols: ['>', '*', '?', '!', '¡', '=', '+', '-'],
-                        // MODEL
-                        model: [], // Se utilizará para almacenar el modelo de datos creado a partir del Markdown
-                        modelName: '',
-                        modelMarkdown: '', // Campo para almacenar el contenido Markdown concatenado
-                        modelMarkdownLoaded: false, // Variable para controlar si el markdown ha sido cargado y analizado
-                        modelTagsArray: new Set(),
-                        depthCounters: [0, 0, 0, 0, 0, 0],
-                        // MODEL BLOCKS
-                        lastId: 0, // Inicializa un contador para los IDs
-                        isBlockEditModalOpen: false,
-                        selectedBlockContent: '',
-                        selectedBlockIndex: null,
-                        selectedBlockId: null,
-                        tags: [],
-                        // BLOCK INFO MODAL
-                        selectedInfoBlock: null, // Para almacenar la información del bloque seleccionado
-                        selectedBlockInfoURL: null,
-                        // FILTERS
-                        selectedTags: [], // Almacena las etiquetas seleccionadas
-                        selectedBlockTitles: [], // Arreglo para almacenar los titles seleccionados
-                        selectedMarkers: [],
-                        // combinedFilters: [],
-                        filterVisible: true,
-                        // SEARCH
-                        searchQuery: '',
-                        searchText: '',
-                        replaceText: '',
-                        isFullScreenEditorOpen: false, // Estado para controlar el modal del editor en pantalla completa
-                    };
+                    // APP STATE
+                    currentSidebarSection: 'home',
+                    isSidebarVisible: true, // Controla la visibilidad de la sidebar
+                    isIndexOpen: true,
+                    isInfoModalOpen: false,
+                    autoDownloadEnabled: true,
+                    newMarkdownContent: '',
+                    showGuidesSelect: false, // Controla la visibilidad del select
+                    markdownGuideContent: '', // Almacena el contenido del Markdown cargado
+                    isArtifactModalOpen: false,
+                    artifactModalContent: '', // Almacenará el contenido HTML generado
+                    generatedContent: '',
+                    // METAMODEL
+                    metamodel: [],
+                    // Definir un array con los símbolos que usan los markers
+                    markerSymbols: ['>', '*', '?', '!', '¡', '=', '+', '-'],
+                    // MODEL
+                    model: [], // Se utilizará para almacenar el modelo de datos creado a partir del Markdown
+                    modelName: '',
+                    modelMarkdown: '', // Campo para almacenar el contenido Markdown concatenado
+                    modelMarkdownLoaded: false, // Variable para controlar si el markdown ha sido cargado y analizado
+                    modelTagsArray: new Set(),
+                    depthCounters: [0, 0, 0, 0, 0, 0],
+                    // MODEL BLOCKS
+                    lastId: 0, // Inicializa un contador para los IDs
+                    isBlockEditModalOpen: false,
+                    selectedBlockContent: '',
+                    selectedBlockIndex: null,
+                    selectedBlockId: null,
+                    tags: [],
+                    // BLOCK INFO MODAL
+                    selectedInfoBlock: null, // Para almacenar la información del bloque seleccionado
+                    selectedBlockInfoURL: null,
+                    // FILTERS
+                    selectedTags: [], // Almacena las etiquetas seleccionadas
+                    selectedBlockTitles: [], // Arreglo para almacenar los titles seleccionados
+                    selectedMarkers: [],
+                    // combinedFilters: [],
+                    filterVisible: true,
+                    // SEARCH
+                    searchQuery: '',
+                    searchText: '',
+                    replaceText: '',
+                    isFullScreenEditorOpen: false, // Estado para controlar el modal del editor en pantalla completa
+                };
+            },
+            computed: {
+
+                parsedModel() {
+                    return this.model.map((block) => ({ ...block, contentParsed: marked.parse(block.content) }));
                 },
-                computed: {
 
-                    parsedModel() {
-                        return this.model.map((block) => ({ ...block, contentParsed: marked.parse(block.content) }));
-                    },
+                filteredBlocks() {
+                    try {
+                        let blocksWithParents = [];
+                        let allLocators = new Set();
 
-                    filteredBlocks() {
-                        try {
-                            let blocksWithParents = [];
-                            let allLocators = new Set();
+                        this.model.forEach(block => {
+                            const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
+                            const markerMatch = this.selectedMarkers.length === 0 || this.selectedMarkers.some(marker => {
+                                return block.markers && block.markers.some(bMarker => bMarker === marker || bMarker.includes(marker));
+                            });
 
-                            this.model.forEach(block => {
-                                const tagMatch = this.selectedTags.length === 0 || this.selectedTags.some(tag => block.tags.includes(tag));
-                                const markerMatch = this.selectedMarkers.length === 0 || this.selectedMarkers.some(marker => {
-                                    return block.markers && block.markers.some(bMarker => bMarker === marker || bMarker.includes(marker));
-                                });
+                            if (tagMatch && markerMatch) {
+                                blocksWithParents.push(block);
+                                allLocators.add(block.locator);
 
-                                if (tagMatch && markerMatch) {
-                                    blocksWithParents.push(block);
-                                    allLocators.add(block.locator);
-
-                                    let parentLocator = block.locator.split('.').slice(0, -1).join('.');
-                                    while (parentLocator) {
-                                        if (!allLocators.has(parentLocator)) {
-                                            const parentBlock = this.model.find(b => b.locator === parentLocator);
-                                            if (parentBlock) {
-                                                blocksWithParents.unshift(parentBlock);
-                                                allLocators.add(parentLocator);
-                                            }
+                                let parentLocator = block.locator.split('.').slice(0, -1).join('.');
+                                while (parentLocator) {
+                                    if (!allLocators.has(parentLocator)) {
+                                        const parentBlock = this.model.find(b => b.locator === parentLocator);
+                                        if (parentBlock) {
+                                            blocksWithParents.unshift(parentBlock);
+                                            allLocators.add(parentLocator);
                                         }
-                                        parentLocator = parentLocator.split('.').slice(0, -1).join('.');
                                     }
+                                    parentLocator = parentLocator.split('.').slice(0, -1).join('.');
                                 }
-                            });
-
-                            // Ordena y resalta como antes
-                            blocksWithParents.sort((a, b) => a.locator.localeCompare(b.locator));
-                            blocksWithParents.sort((a, b) => a.uid - b.uid);
-
-                            const highlightedBlocks = blocksWithParents.map(block => {
-                                const clonedBlock = { ...block };
-                                if (this.selectedTags.length > 0) {
-                                    clonedBlock.contentParsed = this.highlightText(clonedBlock.contentParsed, this.selectedTags);
-                                }
-                                return clonedBlock;
-                            });
-                            this.highlightFilteredBlocks();
-                            return highlightedBlocks;
-                        } catch (error) {
-                            console.error('Error al filtrar bloques:', error);
-                        }
-                    },
-
-                    combinedFilters() {
-                        return [...this.selectedBrands, ...this.selectedTags];
-                    },
-
-                    searchFilteredBlocks() {
-                        if (!this.searchQuery) {
-                            return this.filteredBlocks;
-                        }
-
-                        let filteredBlocks = this.filteredBlocks.filter(block =>
-                            block.contentParsed.toLowerCase().includes(this.searchQuery.toLowerCase())
-                        );
-
-                        const allLocators = new Set(filteredBlocks.map(block => block.locator));
-                        let blocksToAdd = []; // Guardaremos aquí los bloques padres para luego insertarlos
-
-                        filteredBlocks.forEach(block => {
-                            const parentLocators = this.findParentLocators(block.locator);
-                            parentLocators.forEach(parentLocator => {
-                                if (!allLocators.has(parentLocator)) {
-                                    const parentBlock = this.model.find(b => b.locator === parentLocator);
-                                    if (parentBlock) {
-                                        blocksToAdd.push(parentBlock);
-                                        allLocators.add(parentLocator);
-                                    }
-                                }
-                            });
-                        });
-
-                        // Insertar cada bloque padre en la posición correcta
-                        blocksToAdd.forEach(parentBlock => {
-                            const childIndex = filteredBlocks.findIndex(block =>
-                                block.locator.startsWith(parentBlock.locator + '.')
-                            );
-                            if (childIndex !== -1) {
-                                // Si encontramos un hijo, insertamos el padre justo antes
-                                filteredBlocks.splice(childIndex, 0, parentBlock);
-                            } else {
-                                // Si no encontramos un hijo (debido a filtros), agregamos el padre al final
-                                filteredBlocks.push(parentBlock);
                             }
                         });
 
-                        // Finalmente, aplicar el resaltado
-                        return filteredBlocks.map(block => {
-                            const highlightedContent = this.highlightText(block.contentParsed, this.searchQuery);
-                            return { ...block, contentParsed: highlightedContent };
-                        });
-                    },
+                        // Ordena y resalta como antes
+                        blocksWithParents.sort((a, b) => a.locator.localeCompare(b.locator));
+                        blocksWithParents.sort((a, b) => a.uid - b.uid);
 
-                    orderedBlocks() {
-                        return this.model.sort((a, b) => a.uid - b.uid);
+                        const highlightedBlocks = blocksWithParents.map(block => {
+                            const clonedBlock = { ...block };
+                            if (this.selectedTags.length > 0) {
+                                clonedBlock.contentParsed = this.highlightText(clonedBlock.contentParsed, this.selectedTags);
+                            }
+                            return clonedBlock;
+                        });
+                        this.highlightFilteredBlocks();
+                        return highlightedBlocks;
+                    } catch (error) {
+                        console.error('Error al filtrar bloques:', error);
+                    }
+                },
+
+                combinedFilters() {
+                    return [...this.selectedBrands, ...this.selectedTags];
+                },
+
+                searchFilteredBlocks() {
+                    if (!this.searchQuery) {
+                        return this.filteredBlocks;
                     }
 
-                },
-                methods: {
+                    let filteredBlocks = this.filteredBlocks.filter(block =>
+                        block.contentParsed.toLowerCase().includes(this.searchQuery.toLowerCase())
+                    );
 
-                    changeSidebar(section) {
-                        this.currentSidebarSection = section;
-                        // Si la sección no es 'filter', resetea el input de búsqueda y los tags de filtro
-                        if (section !== 'filter') {
-                            this.searchQuery = ''; // Resetea el input de búsqueda
-                            this.selectedTags = []; // Resetea los tags de filtro seleccionados
-                        }
-                    },
+                    const allLocators = new Set(filteredBlocks.map(block => block.locator));
+                    let blocksToAdd = []; // Guardaremos aquí los bloques padres para luego insertarlos
 
-                    // METAMODEL
-
-                    processMetamodel() {
-                        axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
-                            .then((response) => {
-                                if (response.data && response.data.classes && response.data.sections) {
-                                    this.metamodel = response.data;
-                                } else {
-                                    console.error('Metamodel received does not have the expected structure');
+                    filteredBlocks.forEach(block => {
+                        const parentLocators = this.findParentLocators(block.locator);
+                        parentLocators.forEach(parentLocator => {
+                            if (!allLocators.has(parentLocator)) {
+                                const parentBlock = this.model.find(b => b.locator === parentLocator);
+                                if (parentBlock) {
+                                    blocksToAdd.push(parentBlock);
+                                    allLocators.add(parentLocator);
                                 }
-                            })
-                            .catch((error) => console.error('Error loading metamodel:', error));
-                    },
+                            }
+                        });
+                    });
 
-                    // MODEL LOADING
+                    // Insertar cada bloque padre en la posición correcta
+                    blocksToAdd.forEach(parentBlock => {
+                        const childIndex = filteredBlocks.findIndex(block =>
+                            block.locator.startsWith(parentBlock.locator + '.')
+                        );
+                        if (childIndex !== -1) {
+                            // Si encontramos un hijo, insertamos el padre justo antes
+                            filteredBlocks.splice(childIndex, 0, parentBlock);
+                        } else {
+                            // Si no encontramos un hijo (debido a filtros), agregamos el padre al final
+                            filteredBlocks.push(parentBlock);
+                        }
+                    });
 
-                    loadAndParseModelFile(event) {
-                        const file = event.target.files[0];
-                        if (!file) {
+                    // Finalmente, aplicar el resaltado
+                    return filteredBlocks.map(block => {
+                        const highlightedContent = this.highlightText(block.contentParsed, this.searchQuery);
+                        return { ...block, contentParsed: highlightedContent };
+                    });
+                },
+
+                orderedBlocks() {
+                    return this.model.sort((a, b) => a.uid - b.uid);
+                }
+
+            },
+            methods: {
+
+                changeSidebar(section) {
+                    this.currentSidebarSection = section;
+                    // Si la sección no es 'filter', resetea el input de búsqueda y los tags de filtro
+                    if (section !== 'filter') {
+                        this.searchQuery = ''; // Resetea el input de búsqueda
+                        this.selectedTags = []; // Resetea los tags de filtro seleccionados
+                    }
+                },
+
+                // METAMODEL
+
+                processMetamodel() {
+                    axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
+                        .then((response) => {
+                            if (response.data && response.data.classes && response.data.sections) {
+                                this.metamodel = response.data;
+                            } else {
+                                console.error('Metamodel received does not have the expected structure');
+                            }
+                        })
+                        .catch((error) => console.error('Error loading metamodel:', error));
+                },
+
+                // MODEL LOADING
+
+                loadAndParseModelFile(event) {
+                    const file = event.target.files[0];
+                    if (!file) {
+                        return;
+                    }
+                    const modelName = this.getModelNameFromFileName(file.name);
+                    this.modelName = modelName; // Actualiza modelName con el resultado de la función
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const content = e.target.result;
+                        this.parseModelMarkdown(content);
+                    };
+                    reader.readAsText(file);
+                    this.updateModelMarkdown();
+                    this.modelMarkdownLoaded = true;
+                },
+
+                getModelNameFromFileName(fileName) {
+                    let name = fileName.replace(/\.md$/, ''); // Elimina la extensión ".md"
+                    name = name.replace(/ - saved.*$/, ''); // Elimina " - saved" y todo lo que sigue
+                    return name;
+                },
+
+                parseModelMarkdown(content) {
+                    const model = this.splitModelMarkdownIntoBlocks(content);
+                    this.model = model.map((blockContent) => this.processBlock(blockContent));
+                    this.assignUids();
+                    this.updateTagsArray();
+                    this.modelMarkdownLoaded = true; // Indicar que el markdown ha sido cargado y analizado
+                },
+
+                splitModelMarkdownIntoBlocks(content) {
+                    let currentBlock = [];
+                    const lines = content.split(/\r?\n/);
+
+                    lines.forEach((line) => {
+                        if (/^\s*([-*\d.]*)*\s*#/.test(line)) {
+                            if (currentBlock.length > 0) {
+                                this.model.push(currentBlock.join('\n'));
+                                currentBlock = [];
+                            }
+                        }
+                        currentBlock.push(line);
+                    });
+                    if (currentBlock.length > 0) {
+                        this.model.push(currentBlock.join('\n'));
+                    }
+                    return this.model;
+                },
+
+                // BLOCK PROCESSING
+
+                updateModelBlockContent(blockId, newContent) {
+                    const blockIndex = this.model.findIndex(block => block.id === blockId);
+                    if (blockIndex !== -1) {
+                        // Actualiza el contenido
+                        const block = this.model[blockIndex];
+                        // Asegura que newContent sea una cadena antes de asignarla.
+                        // Si newContent no es una cadena, podrías convertirla a cadena o manejar el error como prefieras.
+                        if (typeof newContent !== 'string') {
+                            console.error('newContent esperaba una cadena, recibido:', typeof newContent, newContent);
+                            // Por ejemplo, si newContent debería ser siempre una cadena, podrías convertirla forzosamente a cadena
+                            // o asignar una cadena vacía o algún valor por defecto según sea apropiado para tu aplicación.
+                            newContent = String(newContent); // Convierte forzosamente a cadena (podría resultar en 'undefined' o 'null' como cadena)
+                            // O manejar el caso de manera diferente según sea necesario.
+                        }
+
+                        block.content = newContent;
+
+                        // Llama a los métodos para recalcular los campos dependientes
+                        this.updateDependentModelBlockFields(blockIndex);
+                    }
+                },
+
+                updateDependentModelBlockFields(blockIndex) {
+                    const block = this.model[blockIndex];
+                    // Conversión forzada a cadena si es necesario.
+                    let contentAsString = String(block.content)
+                    const mdToHTML = this.parseToHTML(block.content);
+                    block.contentParsed = marked.parse(mdToHTML);
+                    //block.contentParsed = marked.parse(mdToHTML);
+                    const firstLine = block.content.split('\n')[0];
+                    block.type = this.determineBlockType(firstLine);
+                    block.depthLevel = this.determineDepthLevel(firstLine);
+                    block.title = this.extractBlockTitle(block.content); // Ajustado para usar el método recalculado
+                    block.instanceClass = this.determineInstanceClass(block.content, block.type);
+                    const tagResults = this.processTags(block.content);
+                    block.tags = tagResults.tags;
+                    block.tagsParsed = tagResults.tagsParsed;
+                    block.markers = tagResults.markers;
+                    block.markersParsed = tagResults.markersParsed;
+                    block.instanceValue = this.setInstanceValue(block.title);
+                    block.metamodelID = this.generateMetamodelID(block.title, block.instanceClass);
+                    block.metamodel = this.importMetamodelData(block.metamodelID);
+                    // Llama al nuevo método para calcular el locator
+                    block.locator = this.calculateLocator(block.depthLevel);
+                    // Aquí puedes agregar más campos para recalcular si es necesario
+                },
+
+                processBlock(blockContent, blockId = null) {
+                    let block;
+                    let isNewBlock = false;
+
+                    if (blockId == null) {
+                        // Creación de un nuevo bloque
+                        this.lastId += 1;
+                        block = { id: this.lastId, content: blockContent };
+                        this.model.push(block);
+                        isNewBlock = true;
+                    } else {
+                        // Actualización de un bloque existente
+                        const blockIndex = this.model.findIndex(block => block.id === blockId);
+                        if (blockIndex === -1) {
+                            console.error("Block not found");
                             return;
                         }
-                        const modelName = this.getModelNameFromFileName(file.name);
-                        this.modelName = modelName; // Actualiza modelName con el resultado de la función
-                        const reader = new FileReader();
-                        reader.onload = (e) => {
-                            const content = e.target.result;
-                            this.parseModelMarkdown(content);
-                        };
-                        reader.readAsText(file);
-                        this.updateModelMarkdown();
-                        this.modelMarkdownLoaded = true;
-                    },
+                        block = this.model[blockIndex];
+                        block.content = blockContent;
+                    }
 
-                    getModelNameFromFileName(fileName) {
-                        let name = fileName.replace(/\.md$/, ''); // Elimina la extensión ".md"
-                        name = name.replace(/ - saved.*$/, ''); // Elimina " - saved" y todo lo que sigue
-                        return name;
-                    },
+                    if (!isNewBlock || block.content) {
+                        const blockIndex = this.model.findIndex(b => b.id === block.id);
+                        this.updateDependentModelBlockFields(blockIndex);
+                    }
 
-                    parseModelMarkdown(content) {
-                        const model = this.splitModelMarkdownIntoBlocks(content);
-                        this.model = model.map((blockContent) => this.processBlock(blockContent));
-                        this.assignUids();
-                        this.updateTagsArray();
-                        this.modelMarkdownLoaded = true; // Indicar que el markdown ha sido cargado y analizado
-                    },
+                    // Siempre devuelve el bloque para operaciones de creación. Para actualizaciones,
+                    // el bloque ya está actualizado en el modelo.
+                    return block;
+                },
 
-                    splitModelMarkdownIntoBlocks(content) {
-                        let currentBlock = [];
-                        const lines = content.split(/\r?\n/);
+                determineBlockType(firstLine) {
+                    if (/^\s*(-\s+)?#(\s|#)/.test(firstLine)) {
+                        return 'section';
+                    }
+                    return 'item';
+                },
 
-                        lines.forEach((line) => {
-                            if (/^\s*([-*\d.]*)*\s*#/.test(line)) {
-                                if (currentBlock.length > 0) {
-                                    this.model.push(currentBlock.join('\n'));
-                                    currentBlock = [];
-                                }
-                            }
-                            currentBlock.push(line);
-                        });
-                        if (currentBlock.length > 0) {
-                            this.model.push(currentBlock.join('\n'));
-                        }
-                        return this.model;
-                    },
+                determineDepthLevel(firstLine) {
+                    // Esta expresión regular busca signos '#' al inicio de la línea seguidos directamente
+                    // por otro '#' o un espacio, indicando un encabezado de Markdown.
+                    const match = firstLine.match(/^\s*(#+)(?=\s|#)/);
+                    if (match) {
+                        return match[1].length; // La longitud de la coincidencia es el nivel de profundidad.
+                    }
+                    // Si no es un encabezado de Markdown, retorna 0 o un valor por defecto.
+                    return 0;
+                },
 
-                    // BLOCK PROCESSING
+                calculateLocator(depthLevel) {
+                    if (depthLevel === 0) {
+                        // Encuentra el último locator con un depthLevel > 0 y trátalo como base para este.
+                        const lastNonZeroDepthLocator = this.findLastNonZeroDepthLocator();
+                        return `${lastNonZeroDepthLocator}.1`; // Asume que quieres añadirlo como un subnivel del último encabezado.
+                    } else if (depthLevel >= 1 && depthLevel <= 6) {
+                        this.depthCounters[depthLevel - 1] += 1;
 
-                    updateModelBlockContent(blockId, newContent) {
-                        const blockIndex = this.model.findIndex(block => block.id === blockId);
-                        if (blockIndex !== -1) {
-                            // Actualiza el contenido
-                            const block = this.model[blockIndex];
-                            // Asegura que newContent sea una cadena antes de asignarla.
-                            // Si newContent no es una cadena, podrías convertirla a cadena o manejar el error como prefieras.
-                            if (typeof newContent !== 'string') {
-                                console.error('newContent esperaba una cadena, recibido:', typeof newContent, newContent);
-                                // Por ejemplo, si newContent debería ser siempre una cadena, podrías convertirla forzosamente a cadena
-                                // o asignar una cadena vacía o algún valor por defecto según sea apropiado para tu aplicación.
-                                newContent = String(newContent); // Convierte forzosamente a cadena (podría resultar en 'undefined' o 'null' como cadena)
-                                // O manejar el caso de manera diferente según sea necesario.
-                            }
-
-                            block.content = newContent;
-
-                            // Llama a los métodos para recalcular los campos dependientes
-                            this.updateDependentModelBlockFields(blockIndex);
-                        }
-                    },
-
-                    updateDependentModelBlockFields(blockIndex) {
-                        const block = this.model[blockIndex];
-                        // Conversión forzada a cadena si es necesario.
-                        let contentAsString = String(block.content)
-                        const mdToHTML = this.parseToHTML(block.content);
-                        block.contentParsed = marked.parse(mdToHTML);
-                        //block.contentParsed = marked.parse(mdToHTML);
-                        const firstLine = block.content.split('\n')[0];
-                        block.type = this.determineBlockType(firstLine);
-                        block.depthLevel = this.determineDepthLevel(firstLine);
-                        block.title = this.extractBlockTitle(block.content); // Ajustado para usar el método recalculado
-                        block.instanceClass = this.determineInstanceClass(block.content, block.type);
-                        const tagResults = this.processTags(block.content);
-                        block.tags = tagResults.tags;
-                        block.tagsParsed = tagResults.tagsParsed;
-                        block.markers = tagResults.markers;
-                        block.markersParsed = tagResults.markersParsed;
-                        block.instanceValue = this.setInstanceValue(block.title);
-                        block.metamodelID = this.generateMetamodelID(block.title, block.instanceClass);
-                        block.metamodel = this.importMetamodelData(block.metamodelID);
-                        // Llama al nuevo método para calcular el locator
-                        block.locator = this.calculateLocator(block.depthLevel);
-                        // Aquí puedes agregar más campos para recalcular si es necesario
-                    },
-
-                    processBlock(blockContent, blockId = null) {
-                        let block;
-                        let isNewBlock = false;
-
-                        if (blockId == null) {
-                            // Creación de un nuevo bloque
-                            this.lastId += 1;
-                            block = { id: this.lastId, content: blockContent };
-                            this.model.push(block);
-                            isNewBlock = true;
-                        } else {
-                            // Actualización de un bloque existente
-                            const blockIndex = this.model.findIndex(block => block.id === blockId);
-                            if (blockIndex === -1) {
-                                console.error("Block not found");
-                                return;
-                            }
-                            block = this.model[blockIndex];
-                            block.content = blockContent;
+                        for (let i = depthLevel; i < 6; i++) {
+                            this.depthCounters[i] = 0;
                         }
 
-                        if (!isNewBlock || block.content) {
-                            const blockIndex = this.model.findIndex(b => b.id === block.id);
-                            this.updateDependentModelBlockFields(blockIndex);
+                        return this.depthCounters.slice(0, depthLevel).join('.');
+                    } else {
+                        console.error(`Depth level out of range: ${depthLevel}`);
+                        return '';
+                    }
+                },
+
+                findLastNonZeroDepthLocator() {
+                    // Busca hacia atrás desde el final del array model hasta encontrar un bloque con depthLevel > 0.
+                    for (let i = this.model.length - 1; i >= 0; i--) {
+                        if (this.model[i].depthLevel > 0) {
+                            return this.model[i].locator; // Asegúrate de que este bloque ya tiene un locator calculado.
+                        }
+                    }
+                    return '0'; // Devuelve un valor por defecto si no encuentras ninguno.
+                },
+
+                determineInstanceClass(blockContent, type) {
+                    if (type === 'section') {
+                        const match = blockContent.match(/^\s*#+\s*(#[^\s]+)/);
+                        if (match && match[1] && !/^#+$/.test(match[1])) {
+                            return match[1].substring(1);
+                        }
+                    }
+                    return null;
+                },
+
+                processTags(blockContent) {
+                    const markerSymbols = this.markerSymbols;
+                    // Inicializando un nuevo array para los marcadores ajustados
+                    const adjustedMarkers = [];
+
+                    // Capturando marcadores: cadenas que comienzan con # seguido por uno de los símbolos especiales de marcadores
+                    const markers = [...blockContent.matchAll(/(?:^|\s)#([>!*?+^-][^\s]*)/g)].map(match => {
+                        const markerWithoutPrefix = match[1];
+                        adjustedMarkers.push(markerWithoutPrefix); // Agrega el marcador ajustado sin el prefijo
+                        return markerWithoutPrefix; // Devuelve el marcador sin el prefijo para el mapeo
+                    });
+
+                    const markersParsed = adjustedMarkers.map(marker => this.parseMarker(marker)).join(' ');
+
+                    // Expresión regular ajustada para capturar etiquetas
+                    const tagsRegex = /(?:^|\s)(#[^\s#][^\s]*)/g;
+                    const tags = [];
+                    let match;
+                    while ((match = tagsRegex.exec(blockContent)) !== null) {
+                        // Evita bucles infinitos con coincidencias de ancho cero
+                        if (match.index === tagsRegex.lastIndex) {
+                            tagsRegex.lastIndex++;
                         }
 
-                        // Siempre devuelve el bloque para operaciones de creación. Para actualizaciones,
-                        // el bloque ya está actualizado en el modelo.
-                        return block;
-                    },
-
-                    determineBlockType(firstLine) {
-                        if (/^\s*(-\s+)?#(\s|#)/.test(firstLine)) {
-                            return 'section';
+                        // Excluye marcadores del array de etiquetas
+                        if (!markerSymbols.some(symbol => match[1].startsWith(`#${symbol}`))) {
+                            tags.push(match[1].substring(1)); // Elimina el # principal por consistencia con tu lógica original
                         }
-                        return 'item';
-                    },
+                    }
+                    const tagsParsed = tags.map(tag => this.parseTag(tag)).join(' ');
 
-                    determineDepthLevel(firstLine) {
-                        // Esta expresión regular busca signos '#' al inicio de la línea seguidos directamente
-                        // por otro '#' o un espacio, indicando un encabezado de Markdown.
-                        const match = firstLine.match(/^\s*(#+)(?=\s|#)/);
-                        if (match) {
-                            return match[1].length; // La longitud de la coincidencia es el nivel de profundidad.
-                        }
-                        // Si no es un encabezado de Markdown, retorna 0 o un valor por defecto.
-                        return 0;
-                    },
+                    // Nota: Este código asume que todos los marcadores vienen con un prefijo y los ajusta en consecuencia.
+                    // Si algunos marcadores pueden venir sin prefijo, deberás ajustar esta lógica.
+                    return { markers: adjustedMarkers, markersParsed, tags, tagsParsed };
+                },
 
-                    calculateLocator(depthLevel) {
-                        if (depthLevel === 0) {
-                            // Encuentra el último locator con un depthLevel > 0 y trátalo como base para este.
-                            const lastNonZeroDepthLocator = this.findLastNonZeroDepthLocator();
-                            return `${lastNonZeroDepthLocator}.1`; // Asume que quieres añadirlo como un subnivel del último encabezado.
-                        } else if (depthLevel >= 1 && depthLevel <= 6) {
-                            this.depthCounters[depthLevel - 1] += 1;
+                parseMarker(marker) {
+                    // Asegúrate de que esta función maneje correctamente el marcador ya sin prefijo
+                    return `<span data-marker="${marker}">#${marker}</span>`;
+                },
 
-                            for (let i = depthLevel; i < 6; i++) {
-                                this.depthCounters[i] = 0;
-                            }
+                parseTag(tag) {
+                    return `<span data-tag="${tag}">#${tag}</span>`;
+                },
 
-                            return this.depthCounters.slice(0, depthLevel).join('.');
-                        } else {
-                            console.error(`Depth level out of range: ${depthLevel}`);
-                            return '';
-                        }
-                    },
+                extractBlockTitle(blockContent) {
+                    const firstLine = blockContent.split(/\r?\n/)[0]; // Obtiene la primera línea
 
-                    findLastNonZeroDepthLocator() {
-                        // Busca hacia atrás desde el final del array model hasta encontrar un bloque con depthLevel > 0.
-                        for (let i = this.model.length - 1; i >= 0; i--) {
-                            if (this.model[i].depthLevel > 0) {
-                                return this.model[i].locator; // Asegúrate de que este bloque ya tiene un locator calculado.
-                            }
-                        }
-                        return '0'; // Devuelve un valor por defecto si no encuentras ninguno.
-                    },
+                    // Extrae el encabezado Markdown y la primera etiqueta (si existe) que esté directamente después del encabezado
+                    const matches = firstLine.match(/^(#+\s*)(#[^\s]+)?\s*(.*)/);
+                    if (matches) {
+                        const markdownHeader = matches[1]; // Encabezado Markdown (p.ej., '###')
+                        const directTag = matches[2] ? `${matches[2]} ` : ''; // La etiqueta directa después del encabezado, si existe
+                        const restOfTheTitle = matches[3]; // El resto del título después del encabezado y la etiqueta directa
 
-                    determineInstanceClass(blockContent, type) {
-                        if (type === 'section') {
-                            const match = blockContent.match(/^\s*#+\s*(#[^\s]+)/);
-                            if (match && match[1] && !/^#+$/.test(match[1])) {
-                                return match[1].substring(1);
-                            }
-                        }
-                        return null;
-                    },
+                        // Combina la etiqueta directa (si existe) y el resto del título, eliminando otras etiquetas
+                        let title = (directTag + restOfTheTitle).replace(/#[^\s]+/g, '').trim();
 
-                    processTags(blockContent) {
-                        const markerSymbols = this.markerSymbols;
-                        // Inicializando un nuevo array para los marcadores ajustados
-                        const adjustedMarkers = [];
+                        // Elimina cualquier número de '#' que puedan existir al principio del valor de la variable title y estén seguidos de un espacio
+                        title = title.replace(/^#+\s*/, '');
 
-                        // Capturando marcadores: cadenas que comienzan con # seguido por uno de los símbolos especiales de marcadores
-                        const markers = [...blockContent.matchAll(/(?:^|\s)#([>!*?+^-][^\s]*)/g)].map(match => {
-                            const markerWithoutPrefix = match[1];
-                            adjustedMarkers.push(markerWithoutPrefix); // Agrega el marcador ajustado sin el prefijo
-                            return markerWithoutPrefix; // Devuelve el marcador sin el prefijo para el mapeo
-                        });
-
-                        const markersParsed = adjustedMarkers.map(marker => this.parseMarker(marker)).join(' ');
-
-                        // Expresión regular ajustada para capturar etiquetas
-                        const tagsRegex = /(?:^|\s)(#[^\s#][^\s]*)/g;
-                        const tags = [];
-                        let match;
-                        while ((match = tagsRegex.exec(blockContent)) !== null) {
-                            // Evita bucles infinitos con coincidencias de ancho cero
-                            if (match.index === tagsRegex.lastIndex) {
-                                tagsRegex.lastIndex++;
-                            }
-
-                            // Excluye marcadores del array de etiquetas
-                            if (!markerSymbols.some(symbol => match[1].startsWith(`#${symbol}`))) {
-                                tags.push(match[1].substring(1)); // Elimina el # principal por consistencia con tu lógica original
-                            }
-                        }
-                        const tagsParsed = tags.map(tag => this.parseTag(tag)).join(' ');
-
-                        // Nota: Este código asume que todos los marcadores vienen con un prefijo y los ajusta en consecuencia.
-                        // Si algunos marcadores pueden venir sin prefijo, deberás ajustar esta lógica.
-                        return { markers: adjustedMarkers, markersParsed, tags, tagsParsed };
-                    },
-
-                    parseMarker(marker) {
-                        // Asegúrate de que esta función maneje correctamente el marcador ya sin prefijo
-                        return `<span data-marker="${marker}">#${marker}</span>`;
-                    },
-
-                    parseTag(tag) {
-                        return `<span data-tag="${tag}">#${tag}</span>`;
-                    },
-
-                    extractBlockTitle(blockContent) {
-                        const firstLine = blockContent.split(/\r?\n/)[0]; // Obtiene la primera línea
-
-                        // Extrae el encabezado Markdown y la primera etiqueta (si existe) que esté directamente después del encabezado
-                        const matches = firstLine.match(/^(#+\s*)(#[^\s]+)?\s*(.*)/);
-                        if (matches) {
-                            const markdownHeader = matches[1]; // Encabezado Markdown (p.ej., '###')
-                            const directTag = matches[2] ? `${matches[2]} ` : ''; // La etiqueta directa después del encabezado, si existe
-                            const restOfTheTitle = matches[3]; // El resto del título después del encabezado y la etiqueta directa
-
-                            // Combina la etiqueta directa (si existe) y el resto del título, eliminando otras etiquetas
-                            let title = (directTag + restOfTheTitle).replace(/#[^\s]+/g, '').trim();
-
-                            // Elimina cualquier número de '#' que puedan existir al principio del valor de la variable title y estén seguidos de un espacio
-                            title = title.replace(/^#+\s*/, '');
-
-                            // /// console.log('Returning title with matches:', title); // Traza antes del return
-                            return title;
-                        }
-
-                        // En caso de que no haya coincidencia, retorna la línea completa, pero también limpiamos posibles '#' al inicio aquí.
-                        // Se asegura que se aplique la eliminación de '#' seguidos de un espacio para todos los casos.
-                        const finalTitle = firstLine.replace(/^#+\s*/, '').trim();
-                        /// console.log('Returning title without matches:', finalTitle); // Traza antes del return
-                        return finalTitle;
-                        // Asegurarse de devolver una cadena vacía si el título no se encuentra
-                        return title || '';
-                    },
-
-                    setInstanceValue(title) {
-                        /// console.log("🚀 ~ setInstanceValue ~ title:", title)
-                        // Verifica si title es una cadena
-                        if (typeof title !== "string") {
-                            /// console.log("title debe ser una cadena.setInstanceValue ~ title:", title);
-                            return ""; // Retorna una cadena vacía o maneja el caso como prefieras
-                        }
-
-                        // Initial assignment based on title starting with a hashtag
-                        if (/^#\w+/.test(title)) {
-                            this.instanceValue = title;
-                        }
-
-                        // Extract component after the initial tag and dash, refining instanceValue
-                        const titleParts = title.match(/^#\w+\s+(.*?)\s*(-|$)/);
-                        /// console.log("🚀 ~ setInstanceValue ~ titleParts:", titleParts)
-                        if (titleParts && titleParts[1]) {
-                            this.instanceValue = titleParts[1].replace(/#\w+/g, '').trim();
-                        } else if (title.includes('-')) {
-                            this.instanceValue = title.split('-')[0].trim();
-                        } else {
-                            this.instanceValue = title.trim();
-                        }
-                        /// console.log("🚀 ~ setInstanceValue ~ this.instanceValue:", this.instanceValue)
-                        return this.instanceValue;
-                    },
-
-                    generateMetamodelID(title, instanceClass) {
-                        // Si instanceClass está vacío o es null, retorna directamente el title
-                        if (!instanceClass) {
-                            return title;
-                        }
-
-                        // Si instanceClass no está vacío y el título no contiene un guión con un espacio a cada lado
-                        if (instanceClass && !title.includes(" - ")) {
-                            return `${instanceClass} Name`;
-                        }
-
-                        // Si instanceClass no está vacío y el título contiene un guión con un espacio a cada lado
-                        if (instanceClass && title.includes(" - ")) {
-                            // Extrae el texto a la derecha del guión, incluyendo el guión y los espacios
-                            const titleAfterDash = title.substring(title.indexOf(" - ") + 3);
-                            // Construye metamodelID usando instanceClass y el texto a la derecha del guión, reemplazando el inicio del título por "Name"
-                            return `${instanceClass} Name - ${titleAfterDash}`;
-                        }
-
-                        // En cualquier otro caso (por precaución), retorna el título
+                        // /// console.log('Returning title with matches:', title); // Traza antes del return
                         return title;
-                    },
+                    }
 
-                    importMetamodelData(metamodelID) {
-                        /// console.log("🚀 ~ importMetamodelData ~ metamodelID:", metamodelID)
-                        // Encuentra la sección que coincide con el metamodelID proporcionado.
-                        const section = this.metamodel.sections.find((section) => section.name === metamodelID);
+                    // En caso de que no haya coincidencia, retorna la línea completa, pero también limpiamos posibles '#' al inicio aquí.
+                    // Se asegura que se aplique la eliminación de '#' seguidos de un espacio para todos los casos.
+                    const finalTitle = firstLine.replace(/^#+\s*/, '').trim();
+                    /// console.log('Returning title without matches:', finalTitle); // Traza antes del return
+                    return finalTitle;
+                    // Asegurarse de devolver una cadena vacía si el título no se encuentra
+                    return title || '';
+                },
 
-                        if (section) {
-                            /// console.log("🚀 ~ importMetamodelData ~ section:", section)
-                            return section;
+                setInstanceValue(title) {
+                    /// console.log("🚀 ~ setInstanceValue ~ title:", title)
+                    // Verifica si title es una cadena
+                    if (typeof title !== "string") {
+                        /// console.log("title debe ser una cadena.setInstanceValue ~ title:", title);
+                        return ""; // Retorna una cadena vacía o maneja el caso como prefieras
+                    }
+
+                    // Initial assignment based on title starting with a hashtag
+                    if (/^#\w+/.test(title)) {
+                        this.instanceValue = title;
+                    }
+
+                    // Extract component after the initial tag and dash, refining instanceValue
+                    const titleParts = title.match(/^#\w+\s+(.*?)\s*(-|$)/);
+                    /// console.log("🚀 ~ setInstanceValue ~ titleParts:", titleParts)
+                    if (titleParts && titleParts[1]) {
+                        this.instanceValue = titleParts[1].replace(/#\w+/g, '').trim();
+                    } else if (title.includes('-')) {
+                        this.instanceValue = title.split('-')[0].trim();
+                    } else {
+                        this.instanceValue = title.trim();
+                    }
+                    /// console.log("🚀 ~ setInstanceValue ~ this.instanceValue:", this.instanceValue)
+                    return this.instanceValue;
+                },
+
+                generateMetamodelID(title, instanceClass) {
+                    // Si instanceClass está vacío o es null, retorna directamente el title
+                    if (!instanceClass) {
+                        return title;
+                    }
+
+                    // Si instanceClass no está vacío y el título no contiene un guión con un espacio a cada lado
+                    if (instanceClass && !title.includes(" - ")) {
+                        return `${instanceClass} Name`;
+                    }
+
+                    // Si instanceClass no está vacío y el título contiene un guión con un espacio a cada lado
+                    if (instanceClass && title.includes(" - ")) {
+                        // Extrae el texto a la derecha del guión, incluyendo el guión y los espacios
+                        const titleAfterDash = title.substring(title.indexOf(" - ") + 3);
+                        // Construye metamodelID usando instanceClass y el texto a la derecha del guión, reemplazando el inicio del título por "Name"
+                        return `${instanceClass} Name - ${titleAfterDash}`;
+                    }
+
+                    // En cualquier otro caso (por precaución), retorna el título
+                    return title;
+                },
+
+                importMetamodelData(metamodelID) {
+                    /// console.log("🚀 ~ importMetamodelData ~ metamodelID:", metamodelID)
+                    // Encuentra la sección que coincide con el metamodelID proporcionado.
+                    const section = this.metamodel.sections.find((section) => section.name === metamodelID);
+
+                    if (section) {
+                        /// console.log("🚀 ~ importMetamodelData ~ section:", section)
+                        return section;
+                    }
+                    /// console.log('No se encontró ninguna sección que coincida con el metamodelID:', metamodelID);
+                    return null;
+                },
+
+                parseToHTML(content) {
+                    if (typeof content !== 'string') {
+                        console.error('Expected content to be a string, but got:', typeof content, content);
+                        return ''; // Retorna una cadena vacía o maneja el error como prefieras
+                    }
+
+                    // Define un array con los símbolos que usan los markers
+                    const markerSymbols = this.markerSymbols;
+
+                    // Procesa etiquetas y marcadores primero
+                    let processedTagsContent = content.replace(/(^|\s)(#[^\s#]+)/g, (match, p1, p2) => {
+                        if (markerSymbols.some(symbol => p2[1] === symbol)) {
+                            // Si es un marcador
+                            return `${p1}${this.parseMarker(p2.slice(1))}`;
+                        } else {
+                            // Si es una etiqueta
+                            return `${p1}${this.parseTag(p2.slice(1))}`;
                         }
-                        /// console.log('No se encontró ninguna sección que coincida con el metamodelID:', metamodelID);
-                        return null;
-                    },
+                    });
+                    return processedTagsContent;
+                },
 
-                    parseToHTML(content) {
-                        if (typeof content !== 'string') {
-                            console.error('Expected content to be a string, but got:', typeof content, content);
-                            return ''; // Retorna una cadena vacía o maneja el error como prefieras
-                        }
+                openInfoModal(block) {
+                    /// console.log("🚀 ~ openInfoModal ~ block:", block)
+                    this.selectedInfoBlock = block;
+                    this.selectedBlockId = block.id; // Asegúrate de tener selectedBlockId definido en tu data()
+                    this.selectedBlockInfoURL = `https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/${block.replace(/ /g, '_')}`;
+                    // Busca el índice de la línea basándose en el ID único
+                    this.selectedBlockIndex = this.model.findIndex((item) => item.id === block.id);
+                    this.isInfoModalOpen = true;
+                    this.$nextTick(() => {
+                        // Asegúrate de que el contenedor del editor esté disponible en el DOM
+                        this.selectedBlockInfoURL;
+                    });
 
-                        // Define un array con los símbolos que usan los markers
-                        const markerSymbols = this.markerSymbols;
+                    const width = 900; // Ancho de la ventana
+                    const height = 600; // Alto de la ventana
 
-                        // Procesa etiquetas y marcadores primero
-                        let processedTagsContent = content.replace(/(^|\s)(#[^\s#]+)/g, (match, p1, p2) => {
-                            if (markerSymbols.some(symbol => p2[1] === symbol)) {
-                                // Si es un marcador
-                                return `${p1}${this.parseMarker(p2.slice(1))}`;
-                            } else {
-                                // Si es una etiqueta
-                                return `${p1}${this.parseTag(p2.slice(1))}`;
-                            }
-                        });
-                        return processedTagsContent;
-                    },
+                    // Calcular posición central
+                    const y = window.top.outerHeight / 2 + window.top.screenY - (height / 2);
+                    const x = window.top.outerWidth / 2 + window.top.screenX - (width / 2);
 
-                    openInfoModal(block) {
-                        /// console.log("🚀 ~ openInfoModal ~ block:", block)
-                        this.selectedInfoBlock = block;
-                        this.selectedBlockId = block.id; // Asegúrate de tener selectedBlockId definido en tu data()
-                        this.selectedBlockInfoURL = `https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/${block.replace(/ /g, '_')}`;
-                        // Busca el índice de la línea basándose en el ID único
-                        this.selectedBlockIndex = this.model.findIndex((item) => item.id === block.id);
-                        this.isInfoModalOpen = true;
-                        this.$nextTick(() => {
-                            // Asegúrate de que el contenedor del editor esté disponible en el DOM
-                            this.selectedBlockInfoURL;
-                        });
+                    window.open(this.selectedBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${width}, height=${height}, top=${y}, left=${x}`);
+                },
 
-                        const width = 900; // Ancho de la ventana
-                        const height = 600; // Alto de la ventana
+                findParentLocators(locator) {
+                    const parts = locator.split('.');
+                    const parents = [];
 
-                        // Calcular posición central
-                        const y = window.top.outerHeight / 2 + window.top.screenY - (height / 2);
-                        const x = window.top.outerWidth / 2 + window.top.screenX - (width / 2);
+                    for (let i = 1; i < parts.length; i++) {
+                        parents.push(parts.slice(0, i).join('.'));
+                    }
 
-                        window.open(this.selectedBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${width}, height=${height}, top=${y}, left=${x}`);
-                    },
+                    return parents;
+                },
 
-                    findParentLocators(locator) {
-                        const parts = locator.split('.');
-                        const parents = [];
+                // EDIT BLOCK
 
-                        for (let i = 1; i < parts.length; i++) {
-                            parents.push(parts.slice(0, i).join('.'));
-                        }
+                initEditor() {
+                    if (this.editor) {
+                        this.editor.destroy(); // Destruye la instancia anterior del editor
+                    }
+                    this.editor = new toastui.Editor({
+                        el: document.querySelector('#editor-container'),
+                        initialEditType: 'markdown',
+                        previewStyle: 'tab',
+                        height: '340px',
+                        width: '500px',
+                        hideModeSwitch: true,
+                        initialValue: this.selectedBlockContent, // Asume que `editingContent` es tu contenido actual que quieres editar
+                    });
+                },
 
-                        return parents;
-                    },
+                openBlockEditModal(block) {
+                    this.updateModelMarkdown();
+                    this.selectedBlockId = block.id; // Asegúrate de tener selectedBlockId definido en tu data()
+                    this.selectedBlockContent = block.content;
+                    this.selectedBlockIndex = this.model.findIndex((item) => item.id === block.id);
+                    this.isBlockEditModalOpen = true;
+                    this.$nextTick(() => {
+                        // Asegúrate de que el contenedor del editor esté disponible en el DOM
+                        this.initEditor();
+                    });
+                },
 
-                    // EDIT BLOCK
-
-                    initEditor() {
-                        if (this.editor) {
-                            this.editor.destroy(); // Destruye la instancia anterior del editor
-                        }
-                        this.editor = new toastui.Editor({
-                            el: document.querySelector('#editor-container'),
-                            initialEditType: 'markdown',
-                            previewStyle: 'tab',
-                            height: '340px',
-                            width: '500px',
-                            hideModeSwitch: true,
-                            initialValue: this.selectedBlockContent, // Asume que `editingContent` es tu contenido actual que quieres editar
-                        });
-                    },
-
-                    openBlockEditModal(block) {
-                        this.updateModelMarkdown();
-                        this.selectedBlockId = block.id; // Asegúrate de tener selectedBlockId definido en tu data()
-                        this.selectedBlockContent = block.content;
-                        this.selectedBlockIndex = this.model.findIndex((item) => item.id === block.id);
-                        this.isBlockEditModalOpen = true;
-                        this.$nextTick(() => {
-                            // Asegúrate de que el contenedor del editor esté disponible en el DOM
-                            this.initEditor();
-                        });
-                    },
-
-                    generateSuggestionPrompt() {
-                        let suggestionPrompt = '';
-                        this.updateModelMarkdown();
-                        const block = this.model.find((b) => b.id === this.selectedBlockId);
-                        const title = block ? block.title : 'Title not found';
-                        const metamodelID = block ? block.metamodelID : 'metamodelID not found';
-                        const { modelMarkdown } = this;
-                        const blockExample = block ? block.metamodel.example : 'Example not found';
-                        const blockGuide = block ? block.metamodel.guide : 'Guide not found';
-                        suggestionPrompt = `As a business model design expert, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each business unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\n\n
-                    Listening closely to understand the specifics of the business.\n
-                    Providing concise, targeted guidance without unnecessary repetition or formalities.\n
-                    Offering step-by-step feedback to ensure the document effectively captures the business model.\n
-                    You focus on the client's needs and how to best articulate their business model.\n
-                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model based on CUSTOM INFO.
-                    QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.
-                    ${blockGuide}\n\n
-                    EXAMPLE ANSWER: Here's an example of a good answer:\n\n`
-                            + `--- example-answer start ---\n\n`
-                            + `\n\n${blockExample}\n\n`
-                            + `--- example-answer end ---\n\n
-                    CUSTOM INFO: Here's some information about the business:\n\n`
-                            + `--- business model start ---\n\n`
-                            + `${modelMarkdown}\n\n`
-                            + `--- business model end ---\n\n`;
-                        return suggestionPrompt;
-                    },
-
-                    getPromptsForMetamodelID(metamodelID) {
-                        return this.metamodel.prompts.filter(prompt => prompt.item === metamodelID);
-                    },
-
-                    // EDIT MD DOCUMENT
-                    openFullScreenEditor() {
-                        this.isFullScreenEditorOpen = true;
-                        this.$nextTick(() => {
-                            this.initDocumentEditor();  // Inicializa el editor dentro del modal una vez que esté visible
-                        });
-                    },
-
-                    closeFullScreenEditor() {
-                        this.isFullScreenEditorOpen = false; // Cierra el modal
-                    },
-
-                    initDocumentEditor() {
-                        if (this.editor) {
-                            this.editor.destroy(); // Destruye el editor si ya existe una instancia anterior
-                        }
-                        this.editor = new toastui.Editor({
-                            el: document.querySelector('#editor-container'),
-                            initialEditType: 'markdown',
-                            previewStyle: 'tab',
-                            height: '500px',
-                            initialValue: this.modelMarkdown, // Puedes ajustar para cargar el contenido markdown actual
-                        });
-                    },
-
-
-                    openEditorInModal() {
-                        // Activa el modal de pantalla completa
-                        this.isFullScreenEditorOpen = true;
-
-                        // Espera a que el modal esté completamente renderizado
-                        this.$nextTick(() => {
-                            // Inicializa el editor en el contenedor del modal
-                            this.newEditorInstance = new toastui.Editor({
-                                el: document.querySelector('#editor-container'), // Contenedor dentro del modal
-                                initialEditType: 'markdown',
-                                previewStyle: 'tab',
-                                height: '500px', // Ajusta la altura según tus necesidades
-                                initialValue: this.modelMarkdown, // Utiliza el contenido actual de Markdown
-                            });
-                        });
-                    },
-
-                    showGeneratedContent() {
-                        this.generatedContent = this.generateSuggestionPrompt();
-                    },
-
-                    printMessage(message) {
-                        const confirmationMessage = document.getElementById('confirmation-message');
-                        confirmationMessage.textContent = message; // Establece el mensaje proporcionado como contenido del elemento
-                        confirmationMessage.classList.remove('hidden', 'opacity-0');
-                        confirmationMessage.classList.add('opacity-100');
-
-                        setTimeout(() => {
-                            confirmationMessage.classList.remove('opacity-100');
-                            confirmationMessage.classList.add('opacity-0');
-                            setTimeout(() => {
-                                confirmationMessage.classList.add('hidden');
-                            }, 300); // Duración de la transición
-                        }, 8000); // Tiempo de espera para ocultar el mensaje
-                    },
-
-                    /*
-                                    copyToClipboard() {
-                                        const textarea = document.createElement('textarea');
-                                        textarea.value = this.generatedContent;
-                                        document.body.appendChild(textarea);
-                                        textarea.select();
-                                        document.execCommand('copy');
-                                        document.body.removeChild(textarea);
-                    
-                                        // Llama al método printMessage con el mensaje de confirmación
-                                        this.printMessage('Content copied to clipboard');
+                /*
+                                    generateSuggestionPrompt() {
+                                        let suggestionPrompt = '';
+                                        this.updateModelMarkdown();
+                                        const block = this.model.find((b) => b.id === this.selectedBlockId);
+                                        const title = block ? block.title : 'Title not found';
+                                        const metamodelID = block ? block.metamodelID : 'metamodelID not found';
+                                        const { modelMarkdown } = this;
+                                        const blockExample = block ? block.metamodel.example : 'Example not found';
+                                        const blockGuide = block ? block.metamodel.guide : 'Guide not found';
+                                        suggestionPrompt = `As a a business model design expert, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each business unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\n\n
+                                    Listening closely to understand the specifics of the business.\n
+                                    Providing concise, targeted guidance without unnecessary repetition or formalities.\n
+                                    Offering step-by-step feedback to ensure the document effectively captures the business model.\n
+                                    You focus on the client's needs and how to best articulate their business model.\n
+                                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model based on CUSTOM INFO.
+                                    QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.
+                                    ${blockGuide}\n\n
+                                    EXAMPLE ANSWER: Here's an example of a good answer:\n\n`
+                                            + `--- example-answer start ---\n\n`
+                                            + `\n\n${blockExample}\n\n`
+                                            + `--- example-answer end ---\n\n
+                                    CUSTOM INFO: Here's some information about the business:\n\n`
+                                            + `--- business model start ---\n\n`
+                                            + `${modelMarkdown}\n\n`
+                                            + `--- business model end ---\n\n`;
+                                        return suggestionPrompt;
                                     },
-                    */
+                */
 
-                    generateCompletePrompt(partialPrompt) {
-                        this.updateModelMarkdown();
-                        const { modelMarkdown } = this;
-                        const completePrompt = partialPrompt + `
-        CUSTOM INFO: Here's some information about the business:\n\n`
-                            + `--- business model start ---\n\n`
-                            + `${modelMarkdown}\n\n`
-                            + `--- business model end ---\n\n`;
-                        return completePrompt;
-                    },
+                getPromptsForMetamodelID(metamodelID) {
+                    return this.metamodel.prompts.filter(prompt => prompt.item === metamodelID);
+                },
 
-                    copyPromptToClipboard(prompt) {
-                        const textarea = document.createElement('textarea');
-                        textarea.value = this.generateCompletePrompt(prompt);  // Referencia al método correctamente con 'this'
-                        document.body.appendChild(textarea);
-                        textarea.select();
-                        document.execCommand('copy');
-                        document.body.removeChild(textarea);
+                // EDIT MD DOCUMENT
 
-                        // Llama al método printMessage con el mensaje de confirmación
-                        this.printMessage('Prompt copied to clipboard!!!');
-                    },
+                closeFullScreenEditor() {
+                    this.isFullScreenEditorOpen = false; // Cierra el modal
+                },
 
+                initDocumentEditor() {
+                    const editorContainer = document.querySelector('#doc-editor-container');
+                    if (!editorContainer) {
+                        console.error("Editor container not found");
+                        return; // Sal del método si el contenedor no existe
+                    }
 
-                    /*
-                                    openNewWindowWithPrompt() {
-                                        const url = "https://chatgpt.com/g/g-CqzH3wBOC-plastilinn-business-advisor";
-                                        const width = 800;
-                                        const height = 600;
-                                        const y = window.top.outerHeight / 2 + window.top.screenY - (height / 2);
-                                        const x = window.top.outerWidth / 2 + window.top.screenX - (width / 2);
-                                        window.open(url, '_blank', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${width}, height=${height}, top=${y}, left=${x}`);
-                                    },
-                    */
+                    if (this.editor) {
+                        this.editor.destroy(); // Destruye el editor si ya existe una instancia anterior
+                    }
 
-                    openNewWindowWithURL(url) {
-                        const width = 800;
-                        const height = 600;
-                        const y = window.top.outerHeight / 2 + window.top.screenY - (height / 2);
-                        const x = window.top.outerWidth / 2 + window.top.screenX - (width / 2);
-                        window.open(url, '_blank', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${width}, height=${height}, top=${y}, left=${x}`);
-                    },
+                    this.editor = new toastui.Editor({
+                        el: editorContainer,
+                        initialEditType: 'markdown',
+                        previewStyle: 'tab',
+                        height: '500px',
+                        initialValue: this.modelMarkdown, // Puedes ajustar para cargar el contenido markdown actual
+                    });
+                },
 
-                    saveChanges() {
-                        const editedContent = this.editor.getMarkdown();
-                        const oldTitle = this.extractBlockTitle(this.selectedBlockContent); // Utiliza tu método existente para extraer el título
-                        const newTitle = this.extractBlockTitle(editedContent); // Suponiendo que tengas una función similar para el contenido editado
+                openEditorInModal() {
+                    this.isFullScreenEditorOpen = true;  // Abre el modal
 
-                        if (oldTitle !== newTitle) {
-                            alert("You have changed the title of a block. If you have references to this title in the document, " +
-                                "you might want to use the search and replace feature within the sidebar filter. " +
-                                `Search "${oldTitle}" and replace it with "${newTitle}"`);
+                    // Usa un setTimeout para asegurar que el DOM se ha renderizado completamente
+                    setTimeout(() => {
+                        const editorContainer = document.querySelector('#doc-editor-container');
+                        if (!editorContainer) {
+                            console.error("Editor container not found");
+                            return;
                         }
 
-                        if (this.selectedBlockIndex !== null) {
-                            // Encuentra el ID del bloque seleccionado para poder pasarlo al método de actualización.
-                            const blockId = this.model[this.selectedBlockIndex].id;
-
-                            // Actualiza el bloque utilizando el método de actualización que maneja la lógica de recalculo.
-                            this.updateModelBlockContent(blockId, editedContent);
-
-                            // Nota: No necesitas procesar tags, title, etc., aquí, ya que eso se manejará en el método de recálculo.
-                        }
-                        this.updateModelMarkdown();
-                        const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
-                        this.newMarkdownContent = markdownContent; // Almacena el contenido en el estado
-                        this.processNewContent();
-                        this.closeModal();
-
-                        // Después de guardar, verifica si autoDownload está habilitado
-                        if (this.autoDownloadEnabled) {
-                            this.downloadMarkdown(); // Asume que este es tu método de descarga existente
-                        }
-                        // this.highlightTitlesInContent();
-                    },
-
-                    closeModal() {
-                        this.isBlockEditModalOpen = false;
-                    },
-
-                    // NAVIGATION
-
-                    highlightOnLoad() {
-                        this.$nextTick(() => {
-                            if (window.location.hash) {
-                                const hash = decodeURIComponent(window.location.hash.substring(1)); // Decodifica el hash.
-                                this.highlightBlock(hash);
-                            }
-                        });
-                    },
-
-                    highlightBlock(id) {
-                        const element = document.getElementById(id);
-                        if (element) {
-                            element.classList.add('highlight');
-                            setTimeout(() => element.classList.remove('highlight'), 5000);
-                        }
-                    },
-
-                    highlightFilteredBlocks() {
-                        this.$nextTick(() => {
-                            // Asumiendo que tienes un array 'filteredBlocks' que contiene los bloques filtrados
-                            this.filteredBlocks.forEach(block => {
-                                const element = document.getElementById(block.title); // Asumiendo que el 'id' del elemento HTML corresponde al 'title' del bloque
-                                if (element) {
-                                    element.classList.add('highlight');
-                                    setTimeout(() => element.classList.remove('highlight'), 5000);
-                                }
-                            });
-                        });
-                    },
-
-                    // MODEL PROCESSING
-
-                    assignUids() {
-                        let uid = 1; // Inicia el contador de UID en 1 o cualquier otro valor inicial que prefieras.
-                        this.model.forEach((block) => {
-                            block.uid = uid++; // Asigna el UID y luego incrementa el contador.
-                        });
-                        /// console.log('UIDs assigned to model blocks:', this.model);
-                    },
-
-                    resetDepthCounters() {
-                        this.depthCounters = [0, 0, 0, 0, 0, 0];
-                    },
-
-                    // Método para abrir el contenido en un nuevo editor
-                    openInNewEditor() {
-                        this.updateModelMarkdown();
-
-                        // Crea un nuevo div dinámicamente
-                        const editorContainer = document.createElement('div');
-                        editorContainer.id = `editor-container-${Date.now()}`; // Un ID único para cada instancia
-                        editorContainer.style = 'margin-top: 20px;'; // Opcional, para añadir espaciado
-
-                        // Añade el contenedor del editor al cuerpo
-                        document.body.appendChild(editorContainer);
-
-                        // Inicializa un nuevo editor y guarda la referencia en `this.newEditorInstance`
                         this.newEditorInstance = new toastui.Editor({
                             el: editorContainer,
                             initialEditType: 'markdown',
                             previewStyle: 'tab',
-                            height: '500px', // Ajusta la altura según sea necesario
-                            initialValue: this.modelMarkdown, // Utiliza el contenido actual de Markdown
+                            height: '500px',
+                            initialValue: this.modelMarkdown, // Contenido inicial
                         });
-
-                        // Crea un botón para guardar el contenido del nuevo editor
-                        const saveButton = document.createElement('button');
-                        saveButton.innerText = 'Save as Markdown';
-                        saveButton.classList.add('btn', 'btn-primary', 'm-2');
-                        saveButton.onclick = this.saveNewEditorContent; // Asigna el método de guardado al evento `click`
-
-                        // Añade el botón de guardar después del editor
-                        editorContainer.appendChild(saveButton);
-                    },
+                    }, 500); // Ajusta el tiempo si es necesario
+                },
 
 
-                    generateFileName() {
-                        const { modelName } = this; // Obtén el nombre actual del modelo
-                        const timestamp = new Date().toISOString().replace(/[:-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
-                        return `${modelName} - saved ${timestamp}.md`; // Devuelve el nombre del archivo
-                    },
+                showGeneratedContent() {
+                    this.generatedContent = this.generateSuggestionPrompt();
+                },
 
-                    // Método para guardar el contenido del nuevo editor como archivo Markdown
-                    saveNewEditorContent() {
-                        if (this.newEditorInstance) {
-                            // Obtén el contenido actual del editor en formato Markdown
-                            const markdownContent = this.newEditorInstance.getMarkdown();
+                printMessage(message) {
+                    const confirmationMessage = document.getElementById('confirmation-message');
+                    confirmationMessage.textContent = message; // Establece el mensaje proporcionado como contenido del elemento
+                    confirmationMessage.classList.remove('hidden', 'opacity-0');
+                    confirmationMessage.classList.add('opacity-100');
 
-                            // Usa el método `generateFileName()` para obtener el nombre del archivo
-                            const fileName = this.generateFileName();
+                    setTimeout(() => {
+                        confirmationMessage.classList.remove('opacity-100');
+                        confirmationMessage.classList.add('opacity-0');
+                        setTimeout(() => {
+                            confirmationMessage.classList.add('hidden');
+                        }, 300); // Duración de la transición
+                    }, 8000); // Tiempo de espera para ocultar el mensaje
+                },
 
-                            // Crea un Blob con el contenido Markdown
-                            const blob = new Blob([markdownContent], { type: 'text/markdown' });
+                /*
+                                copyToClipboard() {
+                                    const textarea = document.createElement('textarea');
+                                    textarea.value = this.generatedContent;
+                                    document.body.appendChild(textarea);
+                                    textarea.select();
+                                    document.execCommand('copy');
+                                    document.body.removeChild(textarea);
+                
+                                    // Llama al método printMessage con el mensaje de confirmación
+                                    this.printMessage('Content copied to clipboard');
+                                },
+                */
 
-                            // Crea un enlace para descargar el archivo
-                            const link = document.createElement('a');
-                            link.href = URL.createObjectURL(blob);
-                            link.download = fileName;
+                generateCompletePrompt(partialPrompt) {
+                    this.updateModelMarkdown();
+                    const { modelMarkdown } = this;
+                    const completePrompt = partialPrompt + `
+        CUSTOM INFO: Here's some information about the business:\n\n`
+                        + `--- business model start ---\n\n`
+                        + `${modelMarkdown}\n\n`
+                        + `--- business model end ---\n\n`;
+                    return completePrompt;
+                },
 
-                            // Simula un clic en el enlace para iniciar la descarga
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
+                copyPromptToClipboard(prompt) {
+                    const textarea = document.createElement('textarea');
+                    textarea.value = this.generateCompletePrompt(prompt);  // Referencia al método correctamente con 'this'
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
 
-                            // Simula la carga del archivo y procesa el nuevo contenido en Markdown
-                            this.newMarkdownContent = markdownContent;
+                    // Llama al método printMessage con el mensaje de confirmación
+                    this.printMessage('Prompt copied to clipboard!!!');
+                },
 
-                            // Llama al método para refrescar todo el modelo
-                            this.refreshModelFromMarkdown();
 
-                            // Opcional: Mostrar un mensaje de confirmación o hacer más acciones después de guardar
-                            this.printMessage('Markdown saved and model refreshed.');
-                        } else {
-                            alert('No editor instance found');
+                /*
+                                openNewWindowWithPrompt() {
+                                    const url = "https://chatgpt.com/g/g-CqzH3wBOC-plastilinn-business-advisor";
+                                    const width = 800;
+                                    const height = 600;
+                                    const y = window.top.outerHeight / 2 + window.top.screenY - (height / 2);
+                                    const x = window.top.outerWidth / 2 + window.top.screenX - (width / 2);
+                                    window.open(url, '_blank', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${width}, height=${height}, top=${y}, left=${x}`);
+                                },
+                */
+
+                openNewWindowWithURL(url) {
+                    const width = 800;
+                    const height = 600;
+                    const y = window.top.outerHeight / 2 + window.top.screenY - (height / 2);
+                    const x = window.top.outerWidth / 2 + window.top.screenX - (width / 2);
+                    window.open(url, '_blank', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${width}, height=${height}, top=${y}, left=${x}`);
+                },
+
+                saveChanges() {
+                    const editedContent = this.editor.getMarkdown();
+                    const oldTitle = this.extractBlockTitle(this.selectedBlockContent); // Utiliza tu método existente para extraer el título
+                    const newTitle = this.extractBlockTitle(editedContent); // Suponiendo que tengas una función similar para el contenido editado
+
+                    if (oldTitle !== newTitle) {
+                        alert("You have changed the title of a block. If you have references to this title in the document, " +
+                            "you might want to use the search and replace feature within the sidebar filter. " +
+                            `Search "${oldTitle}" and replace it with "${newTitle}"`);
+                    }
+
+                    if (this.selectedBlockIndex !== null) {
+                        // Encuentra el ID del bloque seleccionado para poder pasarlo al método de actualización.
+                        const blockId = this.model[this.selectedBlockIndex].id;
+
+                        // Actualiza el bloque utilizando el método de actualización que maneja la lógica de recalculo.
+                        this.updateModelBlockContent(blockId, editedContent);
+
+                        // Nota: No necesitas procesar tags, title, etc., aquí, ya que eso se manejará en el método de recálculo.
+                    }
+                    this.updateModelMarkdown();
+                    const markdownContent = this.modelMarkdown; // Obtiene el valor actual de modelMarkdown
+                    this.newMarkdownContent = markdownContent; // Almacena el contenido en el estado
+                    this.processNewContent();
+                    this.closeModal();
+
+                    // Después de guardar, verifica si autoDownload está habilitado
+                    if (this.autoDownloadEnabled) {
+                        this.downloadMarkdown(); // Asume que este es tu método de descarga existente
+                    }
+                    // this.highlightTitlesInContent();
+                },
+
+                closeModal() {
+                    this.isBlockEditModalOpen = false;
+                },
+
+                // NAVIGATION
+
+                highlightOnLoad() {
+                    this.$nextTick(() => {
+                        if (window.location.hash) {
+                            const hash = decodeURIComponent(window.location.hash.substring(1)); // Decodifica el hash.
+                            this.highlightBlock(hash);
                         }
-                    },
+                    });
+                },
 
-                    refreshModelFromMarkdown() {
-                        // Resetea el modelo antes de procesar el nuevo contenido
-                        this.model = [];
-                        this.resetDepthCounters();
+                highlightBlock(id) {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.classList.add('highlight');
+                        setTimeout(() => element.classList.remove('highlight'), 5000);
+                    }
+                },
 
-                        // Procesa el contenido Markdown nuevo
-                        this.parseModelMarkdown(this.newMarkdownContent);
-
-                        // Actualiza el contenido Markdown para reflejar los cambios
-                        this.updateModelMarkdown();
-
-                        // Llama a los métodos para actualizar los tags y otros campos si es necesario
-                        this.updateTagsArray();
-
-                        // Si hay algún otro método necesario para refrescar la UI, se puede agregar aquí.
-                        this.$nextTick(() => {
-                            this.highlightFilteredBlocks(); // Opcional, resalta bloques filtrados
-                        });
-                    },
-
-
-
-                    // Método para simular la subida del archivo después de la descarga
-                    simulateFileUpload(blob, fileName) {
-                        // Crea un archivo simulado (File API no está soportada directamente en blobs, pero esta es una solución aproximada)
-                        const simulatedFile = new File([blob], fileName, { type: 'text/markdown' });
-
-                        // Crea un FileReader para leer el archivo como texto
-                        const reader = new FileReader();
-
-                        reader.onload = (event) => {
-                            const content = event.target.result; // Este es el contenido del archivo subido
-                            // Procesa el archivo subido como si hubiera sido subido por el usuario
-                            this.parseModelMarkdown(content); // Método para parsear el contenido Markdown
-                        };
-
-                        // Leer el archivo como texto
-                        reader.readAsText(simulatedFile);
-                    },
-
-
-                    updateModelMarkdown() {
-                        let concatenatedContent = '';
-                        this.model.forEach((item) => {
-                            concatenatedContent += `${item.content}\n`;
-                        });
-                        this.modelMarkdown = concatenatedContent; // Actualiza el Markdown
-                    },
-
-                    updateTagsArray() {
-                        // Cargar la lista de bloques
-                        this.model.forEach((block) => block.tags.forEach((tag) => this.modelTagsArray.add(tag)));
-                        // Convertir modelTagsArray a un array, ordenarlo alfabéticamente y luego asignar a this.tags
-                        this.tags = Array.from(this.modelTagsArray).sort((a, b) => a.localeCompare(b));
-                        // Inicializar el filtrado (si necesario)
-                        //this.filterBlocks([]);
-                    },
-
-                    // FILTERS AND SEARCH
-
-                    setFilterTags(tags) {
-                        // Establece las etiquetas seleccionadas directamente
-                        this.selectedTags = tags;
-                    },
-
-                    filteredBlocksByTags(tags) {
-                        return this.model.filter((block) => block.tags.some((tag) => tags.includes(tag)));
-                    },
-
-                    resetSelectedTagsAndMarkers() {
-                        this.selectedTags = [];
-                        this.selectedMarkers = [];
-                    },
-
-                    buildTagsQueryList(tags) {
-                        // Filtra los bloques que contienen todas las etiquetas especificadas
-                        const filteredBlocks = this.model.filter((block) => tags.every((tag) => block.tags.includes(tag)));
-                        // Construye una lista de HTML con los titles de los bloques filtrados
-                        let htmlList = '<ul>';
-                        filteredBlocks.forEach((block) => {
-                            htmlList += `<li>${block.title}</li>`;
-                        });
-                        htmlList += '</ul>';
-
-                        // Devuelve la lista HTML
-                        return htmlList;
-                    },
-
-                    toggleTagSelection(tag) {
-                        console.log("🚀 ~ toggleTagSelection ~ tag:", tag)
-                        const index = this.selectedTags.indexOf(tag);
-                        if (index > -1) {
-                            this.selectedTags.splice(index, 1); // Si la etiqueta ya está seleccionada, quítala
-                        } else {
-                            this.selectedTags.push(tag); // Si no, añádela
-                        }
-                    },
-
-                    toggleMarkerSelection(marker) {
-                        // Asume que los marcadores ya se gestionan con su propio sistema de prefijos o identificación
-                        const index = this.selectedMarkers.indexOf(marker);
-                        if (index > -1) {
-                            this.selectedMarkers.splice(index, 1); // Si el marcador ya está seleccionado, quítalo
-                        } else {
-                            this.selectedMarkers.push(marker); // Si no, añádelo
-                        }
-                    },
-
-                    highlightText(text, terms) {
-                        if (!terms.length) return text; // Si no hay términos, devuelve el texto tal cual
-
-                        // Asegura que terms sea un array. Si no lo es, conviértelo.
-                        if (!Array.isArray(terms)) {
-                            terms = [terms];
-                        }
-
-                        // Preparar una expresión regular que identifique si estamos dentro de una etiqueta HTML
-                        const htmlTagRegex = /<\/?[^>]+>/gi;
-
-                        // Esta función de reemplazo verifica si el término está dentro de una etiqueta HTML
-                        function replacementFunction(match, offset, fullText) {
-                            // Encuentra todos los tags en el texto
-                            let tagMatch;
-                            let isInTag = false;
-                            while ((tagMatch = htmlTagRegex.exec(fullText)) !== null) {
-                                const tagStart = tagMatch.index;
-                                const tagEnd = tagMatch.index + tagMatch[0].length;
-                                if (offset >= tagStart && offset < tagEnd) {
-                                    // Si el match está dentro de un tag, marcamos isInTag como verdadero y rompemos el ciclo
-                                    isInTag = true;
-                                    break;
-                                }
-                            }
-
-                            // Si el match está dentro de un tag, lo devuelve sin modificarlo
-                            if (isInTag) {
-                                return match;
-                            } else {
-                                // Si no está dentro de un tag, aplica el resaltado
-                                return `<span class="highlight-text">${match}</span>`;
-                            }
-                        }
-
-                        // Resalta cada término
-                        terms.forEach(term => {
-                            const regex = new RegExp(term, 'gi');
-                            text = text.replace(regex, replacementFunction);
-                        });
-
-                        return text;
-                    },
-
-                    escapeRegExp(string) {
-                        return string.replace(/[.*+?^${ }()|[\]\\]/g, '\\$&'); // Escapa caracteres especiales para regex
-                    },
-
-                    replaceMatches() {
-                        if (!this.searchQuery || !this.replaceText) {
-                            alert("Por favor, completa ambos campos de búsqueda y reemplazo.");
-                            return;
-                        }
-
-                        // Utiliza el método escapeRegExp correctamente llamado con 'this.'
-                        const regex = new RegExp(this.escapeRegExp(this.searchQuery), 'gi');
-
-                        this.model.forEach((block) => {
-                            if (regex.test(block.content)) {
-                                // Reemplaza todas las coincidencias en el contenido del bloque
-                                const updatedContent = block.content.replace(regex, this.replaceText);
-
-                                // Llama a updateModelBlockContent para cada bloque afectado
-                                // Esto asegurará que todos los campos dependientes se actualicen adecuadamente
-                                this.updateModelBlockContent(block.id, updatedContent);
+                highlightFilteredBlocks() {
+                    this.$nextTick(() => {
+                        // Asumiendo que tienes un array 'filteredBlocks' que contiene los bloques filtrados
+                        this.filteredBlocks.forEach(block => {
+                            const element = document.getElementById(block.title); // Asumiendo que el 'id' del elemento HTML corresponde al 'title' del bloque
+                            if (element) {
+                                element.classList.add('highlight');
+                                setTimeout(() => element.classList.remove('highlight'), 5000);
                             }
                         });
+                    });
+                },
 
-                        // Limpia los campos de búsqueda y reemplazo después del proceso
-                        this.searchQuery = '';
-                        this.replaceText = '';
+                // MODEL PROCESSING
 
-                        // Opcionalmente, puedes llamar a otros métodos si es necesario actualizar la UI o el estado global
-                    },
+                assignUids() {
+                    let uid = 1; // Inicia el contador de UID en 1 o cualquier otro valor inicial que prefieras.
+                    this.model.forEach((block) => {
+                        block.uid = uid++; // Asigna el UID y luego incrementa el contador.
+                    });
+                    /// console.log('UIDs assigned to model blocks:', this.model);
+                },
 
-                    prepareMarkers() {
-                        const markers = {};
-                        if (this.metamodel.markers && Array.isArray(this.metamodel.markers)) {
-                            this.metamodel.markers.forEach((marker) => {
-                                // Asegúrate de que marker.name existe y es una cadena válida
-                                if (marker.name && typeof marker.name === 'string') {
-                                    if (!markers[marker.name]) {
-                                        markers[marker.name] = new Set(); // Usa un Set para evitar valores duplicados
-                                    }
-                                    // Verifica si marker.values es una cadena y conviértela en un arreglo si es necesario
-                                    const values = typeof marker.values === 'string' ? marker.values.split(',') : marker.values;
-                                    // Asegúrate de que values sea un arreglo antes de intentar iterar sobre él
-                                    if (Array.isArray(values)) {
-                                        values.forEach(value => markers[marker.name].add(value.trim())); // Usa trim para eliminar espacios en blanco al inicio y al final
-                                    } else {
-                                        // Si marker.values no es un arreglo ni una cadena, muestra una advertencia
-                                        console.warn(`Expected marker.values to be an array or a string, got:`, typeof marker.values, marker.values);
-                                    }
-                                }
-                            });
-                        }
+                resetDepthCounters() {
+                    this.depthCounters = [0, 0, 0, 0, 0, 0];
+                },
 
-                        // Convierte los sets a arrays y elimina espacios en blanco de los valores
-                        for (const markerName in markers) {
-                            markers[markerName] = Array.from(markers[markerName]);
-                        }
-                        return markers;
-                    },
+                // Método para abrir el contenido en un nuevo editor
+                openInNewEditor() {
+                    this.updateModelMarkdown();
 
-                    toggleMarkerSelection(markerValue) {
-                        const index = this.selectedMarkers.indexOf(markerValue);
-                        if (index > -1) {
-                            // El marcador ya está seleccionado, quitarlo del array
-                            this.selectedMarkers.splice(index, 1);
-                        } else {
-                            // El marcador no está seleccionado, añadirlo al array
-                            this.selectedMarkers.push(markerValue);
-                        }
+                    // Crea un nuevo div dinámicamente
+                    const editorContainer = document.createElement('div');
+                    editorContainer.id = `editor-container-${Date.now()}`; // Un ID único para cada instancia
+                    editorContainer.style = 'margin-top: 20px;'; // Opcional, para añadir espaciado
 
-                        // Opcional: Puedes llamar aquí al método que actualiza el filtro de bloques si deseas que los bloques se actualicen inmediatamente después de cambiar la selección.
-                        // this.updateBlocksFilter();
-                    },
+                    // Añade el contenedor del editor al cuerpo
+                    document.body.appendChild(editorContainer);
 
-                    updateFilter(selectedMarker) {
-                        // Aquí puedes implementar la lógica para filtrar los bloques basándose en el marcador seleccionado.
-                        // Por ejemplo, podrías ajustar la propiedad 'filteredBlocks' para que solo incluya bloques que coincidan con el marcador seleccionado.
-                        this.filteredBlocks = this.model.filter(block => {
-                            // Suponiendo que 'block.markers' es un array de marcadores asociados con el bloque
-                            return block.markers.includes(selectedMarker);
-                        });
-                    },
+                    // Inicializa un nuevo editor y guarda la referencia en `this.newEditorInstance`
+                    this.newEditorInstance = new toastui.Editor({
+                        el: editorContainer,
+                        initialEditType: 'markdown',
+                        previewStyle: 'tab',
+                        height: '500px', // Ajusta la altura según sea necesario
+                        initialValue: this.modelMarkdown, // Utiliza el contenido actual de Markdown
+                    });
 
-                    // FORMATING
+                    // Crea un botón para guardar el contenido del nuevo editor
+                    const saveButton = document.createElement('button');
+                    saveButton.innerText = 'Save as Markdown';
+                    saveButton.classList.add('btn', 'btn-primary', 'm-2');
+                    saveButton.onclick = this.saveNewEditorContent; // Asigna el método de guardado al evento `click`
 
-                    // ARTIFACTS
+                    // Añade el botón de guardar después del editor
+                    editorContainer.appendChild(saveButton);
+                },
 
-                    // Método para cambiar a la sección "Guides" y cargar una guía específica por URL
-                    activateGuidesAndLoadGuide(url) {
-                        // Cambia la sección activa del sidebar a "Guides"
-                        this.changeSidebar('guides');
 
-                        // Espera un momento para asegurar que la interfaz se haya actualizado
-                        this.$nextTick(() => {
-                            // Carga la guía especificada por la URL
-                            this.loadGuideMarkdownContent(url);
-                        });
-                    },
+                generateFileName() {
+                    const { modelName } = this; // Obtén el nombre actual del modelo
+                    const timestamp = new Date().toISOString().replace(/[:-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
+                    return `${modelName} - saved ${timestamp}.md`; // Devuelve el nombre del archivo
+                },
 
-                    async loadGuideMarkdownContent(url) {
-                        if (url) {
-                            try {
-                                const response = await fetch(url);
-                                const markdown = await response.text();
-                                // Aquí convertirías el Markdown a HTML
-                                // Puedes usar la librería marked.js como antes mencioné
-                                this.markdownGuideContent = marked.parse(markdown);
-                            } catch (error) {
-                                /// console.log("🚀 ~ loadGuideMarkdownContent ~ error:", error)
-                                this.markdownContent = '';
-                            }
-                        } else {
-                            this.markdownGuideContent = '';
-                        }
-                    },
+                // Método para guardar el contenido del nuevo editor como archivo Markdown
+                saveNewEditorContent() {
+                    if (this.newEditorInstance) {
+                        // Obtén el contenido actual del editor en formato Markdown
+                        const markdownContent = this.newEditorInstance.getMarkdown();
 
-                    setArtifactBusinessModelCanvas() {
-                        this.isArtifactModalOpen = true;
-                    },
-
-                    // DOWNLOAD AND EXPORT
-
-                    downloadMarkdown() {
-                        this.updateModelMarkdown(); // Actualiza el contenido Markdown
-                        const markdownContent = this.modelMarkdown; // Obtén el contenido actual
-                        const fileName = this.generateFileName(); // Usa el mismo método para generar el nombre del archivo
+                        // Usa el método `generateFileName()` para obtener el nombre del archivo
+                        const fileName = this.generateFileName();
 
                         // Crea un Blob con el contenido Markdown
                         const blob = new Blob([markdownContent], { type: 'text/markdown' });
@@ -1806,43 +1505,348 @@
                         link.href = URL.createObjectURL(blob);
                         link.download = fileName;
 
-                        // Simula un clic en el enlace para iniciar la descarga y luego limpia
+                        // Simula un clic en el enlace para iniciar la descarga
                         document.body.appendChild(link);
                         link.click();
                         document.body.removeChild(link);
-                    },
 
-                    processLoadedMarkdown() {
-                        if (!this.newMarkdownContent) {
-                            console.error("No hay contenido de Markdown para cargar.");
-                            return;
+                        // Simula la carga del archivo y procesa el nuevo contenido en Markdown
+                        this.newMarkdownContent = markdownContent;
+
+                        // Llama al método para refrescar todo el modelo
+                        this.refreshModelFromMarkdown();
+
+                        // Opcional: Mostrar un mensaje de confirmación o hacer más acciones después de guardar
+                        this.printMessage('Markdown saved and model refreshed.');
+                    } else {
+                        alert('No editor instance found');
+                    }
+                },
+
+                refreshModelFromMarkdown() {
+                    // Resetea el modelo antes de procesar el nuevo contenido
+                    this.model = [];
+                    this.resetDepthCounters();
+
+                    // Procesa el contenido Markdown nuevo
+                    this.parseModelMarkdown(this.newMarkdownContent);
+
+                    // Actualiza el contenido Markdown para reflejar los cambios
+                    this.updateModelMarkdown();
+
+                    // Llama a los métodos para actualizar los tags y otros campos si es necesario
+                    this.updateTagsArray();
+
+                    // Si hay algún otro método necesario para refrescar la UI, se puede agregar aquí.
+                    this.$nextTick(() => {
+                        this.highlightFilteredBlocks(); // Opcional, resalta bloques filtrados
+                    });
+                },
+
+
+
+                // Método para simular la subida del archivo después de la descarga
+                simulateFileUpload(blob, fileName) {
+                    // Crea un archivo simulado (File API no está soportada directamente en blobs, pero esta es una solución aproximada)
+                    const simulatedFile = new File([blob], fileName, { type: 'text/markdown' });
+
+                    // Crea un FileReader para leer el archivo como texto
+                    const reader = new FileReader();
+
+                    reader.onload = (event) => {
+                        const content = event.target.result; // Este es el contenido del archivo subido
+                        // Procesa el archivo subido como si hubiera sido subido por el usuario
+                        this.parseModelMarkdown(content); // Método para parsear el contenido Markdown
+                    };
+
+                    // Leer el archivo como texto
+                    reader.readAsText(simulatedFile);
+                },
+
+
+                updateModelMarkdown() {
+                    let concatenatedContent = '';
+                    this.model.forEach((item) => {
+                        concatenatedContent += `${item.content}\n`;
+                    });
+                    this.modelMarkdown = concatenatedContent; // Actualiza el Markdown
+                },
+
+                updateTagsArray() {
+                    // Cargar la lista de bloques
+                    this.model.forEach((block) => block.tags.forEach((tag) => this.modelTagsArray.add(tag)));
+                    // Convertir modelTagsArray a un array, ordenarlo alfabéticamente y luego asignar a this.tags
+                    this.tags = Array.from(this.modelTagsArray).sort((a, b) => a.localeCompare(b));
+                    // Inicializar el filtrado (si necesario)
+                    //this.filterBlocks([]);
+                },
+
+                // FILTERS AND SEARCH
+
+                setFilterTags(tags) {
+                    // Establece las etiquetas seleccionadas directamente
+                    this.selectedTags = tags;
+                },
+
+                filteredBlocksByTags(tags) {
+                    return this.model.filter((block) => block.tags.some((tag) => tags.includes(tag)));
+                },
+
+                resetSelectedTagsAndMarkers() {
+                    this.selectedTags = [];
+                    this.selectedMarkers = [];
+                },
+
+                buildTagsQueryList(tags) {
+                    // Filtra los bloques que contienen todas las etiquetas especificadas
+                    const filteredBlocks = this.model.filter((block) => tags.every((tag) => block.tags.includes(tag)));
+                    // Construye una lista de HTML con los titles de los bloques filtrados
+                    let htmlList = '<ul>';
+                    filteredBlocks.forEach((block) => {
+                        htmlList += `<li>${block.title}</li>`;
+                    });
+                    htmlList += '</ul>';
+
+                    // Devuelve la lista HTML
+                    return htmlList;
+                },
+
+                toggleTagSelection(tag) {
+                    console.log("🚀 ~ toggleTagSelection ~ tag:", tag)
+                    const index = this.selectedTags.indexOf(tag);
+                    if (index > -1) {
+                        this.selectedTags.splice(index, 1); // Si la etiqueta ya está seleccionada, quítala
+                    } else {
+                        this.selectedTags.push(tag); // Si no, añádela
+                    }
+                },
+
+                toggleMarkerSelection(marker) {
+                    // Asume que los marcadores ya se gestionan con su propio sistema de prefijos o identificación
+                    const index = this.selectedMarkers.indexOf(marker);
+                    if (index > -1) {
+                        this.selectedMarkers.splice(index, 1); // Si el marcador ya está seleccionado, quítalo
+                    } else {
+                        this.selectedMarkers.push(marker); // Si no, añádelo
+                    }
+                },
+
+                highlightText(text, terms) {
+                    if (!terms.length) return text; // Si no hay términos, devuelve el texto tal cual
+
+                    // Asegura que terms sea un array. Si no lo es, conviértelo.
+                    if (!Array.isArray(terms)) {
+                        terms = [terms];
+                    }
+
+                    // Preparar una expresión regular que identifique si estamos dentro de una etiqueta HTML
+                    const htmlTagRegex = /<\/?[^>]+>/gi;
+
+                    // Esta función de reemplazo verifica si el término está dentro de una etiqueta HTML
+                    function replacementFunction(match, offset, fullText) {
+                        // Encuentra todos los tags en el texto
+                        let tagMatch;
+                        let isInTag = false;
+                        while ((tagMatch = htmlTagRegex.exec(fullText)) !== null) {
+                            const tagStart = tagMatch.index;
+                            const tagEnd = tagMatch.index + tagMatch[0].length;
+                            if (offset >= tagStart && offset < tagEnd) {
+                                // Si el match está dentro de un tag, marcamos isInTag como verdadero y rompemos el ciclo
+                                isInTag = true;
+                                break;
+                            }
                         }
 
-                        // Simula la carga y el procesamiento del contenido Markdown
-                        this.parseModelMarkdown(this.newMarkdownContent);
-                    },
+                        // Si el match está dentro de un tag, lo devuelve sin modificarlo
+                        if (isInTag) {
+                            return match;
+                        } else {
+                            // Si no está dentro de un tag, aplica el resaltado
+                            return `<span class="highlight-text">${match}</span>`;
+                        }
+                    }
 
-                    processNewContent() {
-                        // Resetear model a un array vacío
-                        this.model = [];
-                        this.resetDepthCounters();
-                        const content = this.newMarkdownContent;
-                        // Aquí debes invocar la lógica que normalmente usas para procesar el contenido Markdown cargado.
-                        // Por ejemplo, si tienes un método que parsea el Markdown a bloques del modelo, úsalo aquí.
-                        this.parseModelMarkdown(content);
-                    },
+                    // Resalta cada término
+                    terms.forEach(term => {
+                        const regex = new RegExp(term, 'gi');
+                        text = text.replace(regex, replacementFunction);
+                    });
 
-                    downloadHTML() {
-                        // Convierte el Markdown a HTML
-                        this.updateModelMarkdown();
-                        // eslint-disable-next-line no-undef
-                        const htmlContent = marked.parse(this.modelMarkdown);
-                        const { modelName } = this; // Obtiene el nombre actual del modelo
-                        const timestamp = new Date().toISOString().replace(/[:-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
-                        const fileName = `${modelName} - saved ${timestamp}.html`; // Construye el nombre del archivo
+                    return text;
+                },
 
-                        // Opcional: Si quieres incluir un estilo básico en tu HTML exportado, puedes agregarlo aquí
-                        const htmlWithStyle = `
+                escapeRegExp(string) {
+                    return string.replace(/[.*+?^${ }()|[\]\\]/g, '\\$&'); // Escapa caracteres especiales para regex
+                },
+
+                replaceMatches() {
+                    if (!this.searchQuery || !this.replaceText) {
+                        alert("Por favor, completa ambos campos de búsqueda y reemplazo.");
+                        return;
+                    }
+
+                    // Utiliza el método escapeRegExp correctamente llamado con 'this.'
+                    const regex = new RegExp(this.escapeRegExp(this.searchQuery), 'gi');
+
+                    this.model.forEach((block) => {
+                        if (regex.test(block.content)) {
+                            // Reemplaza todas las coincidencias en el contenido del bloque
+                            const updatedContent = block.content.replace(regex, this.replaceText);
+
+                            // Llama a updateModelBlockContent para cada bloque afectado
+                            // Esto asegurará que todos los campos dependientes se actualicen adecuadamente
+                            this.updateModelBlockContent(block.id, updatedContent);
+                        }
+                    });
+
+                    // Limpia los campos de búsqueda y reemplazo después del proceso
+                    this.searchQuery = '';
+                    this.replaceText = '';
+
+                    // Opcionalmente, puedes llamar a otros métodos si es necesario actualizar la UI o el estado global
+                },
+
+                prepareMarkers() {
+                    const markers = {};
+                    if (this.metamodel.markers && Array.isArray(this.metamodel.markers)) {
+                        this.metamodel.markers.forEach((marker) => {
+                            // Asegúrate de que marker.name existe y es una cadena válida
+                            if (marker.name && typeof marker.name === 'string') {
+                                if (!markers[marker.name]) {
+                                    markers[marker.name] = new Set(); // Usa un Set para evitar valores duplicados
+                                }
+                                // Verifica si marker.values es una cadena y conviértela en un arreglo si es necesario
+                                const values = typeof marker.values === 'string' ? marker.values.split(',') : marker.values;
+                                // Asegúrate de que values sea un arreglo antes de intentar iterar sobre él
+                                if (Array.isArray(values)) {
+                                    values.forEach(value => markers[marker.name].add(value.trim())); // Usa trim para eliminar espacios en blanco al inicio y al final
+                                } else {
+                                    // Si marker.values no es un arreglo ni una cadena, muestra una advertencia
+                                    console.warn(`Expected marker.values to be an array or a string, got:`, typeof marker.values, marker.values);
+                                }
+                            }
+                        });
+                    }
+
+                    // Convierte los sets a arrays y elimina espacios en blanco de los valores
+                    for (const markerName in markers) {
+                        markers[markerName] = Array.from(markers[markerName]);
+                    }
+                    return markers;
+                },
+
+                toggleMarkerSelection(markerValue) {
+                    const index = this.selectedMarkers.indexOf(markerValue);
+                    if (index > -1) {
+                        // El marcador ya está seleccionado, quitarlo del array
+                        this.selectedMarkers.splice(index, 1);
+                    } else {
+                        // El marcador no está seleccionado, añadirlo al array
+                        this.selectedMarkers.push(markerValue);
+                    }
+
+                    // Opcional: Puedes llamar aquí al método que actualiza el filtro de bloques si deseas que los bloques se actualicen inmediatamente después de cambiar la selección.
+                    // this.updateBlocksFilter();
+                },
+
+                updateFilter(selectedMarker) {
+                    // Aquí puedes implementar la lógica para filtrar los bloques basándose en el marcador seleccionado.
+                    // Por ejemplo, podrías ajustar la propiedad 'filteredBlocks' para que solo incluya bloques que coincidan con el marcador seleccionado.
+                    this.filteredBlocks = this.model.filter(block => {
+                        // Suponiendo que 'block.markers' es un array de marcadores asociados con el bloque
+                        return block.markers.includes(selectedMarker);
+                    });
+                },
+
+                // FORMATING
+
+                // ARTIFACTS
+
+                // Método para cambiar a la sección "Guides" y cargar una guía específica por URL
+                activateGuidesAndLoadGuide(url) {
+                    // Cambia la sección activa del sidebar a "Guides"
+                    this.changeSidebar('guides');
+
+                    // Espera un momento para asegurar que la interfaz se haya actualizado
+                    this.$nextTick(() => {
+                        // Carga la guía especificada por la URL
+                        this.loadGuideMarkdownContent(url);
+                    });
+                },
+
+                async loadGuideMarkdownContent(url) {
+                    if (url) {
+                        try {
+                            const response = await fetch(url);
+                            const markdown = await response.text();
+                            // Aquí convertirías el Markdown a HTML
+                            // Puedes usar la librería marked.js como antes mencioné
+                            this.markdownGuideContent = marked.parse(markdown);
+                        } catch (error) {
+                            /// console.log("🚀 ~ loadGuideMarkdownContent ~ error:", error)
+                            this.markdownContent = '';
+                        }
+                    } else {
+                        this.markdownGuideContent = '';
+                    }
+                },
+
+                setArtifactBusinessModelCanvas() {
+                    this.isArtifactModalOpen = true;
+                },
+
+                // DOWNLOAD AND EXPORT
+
+                downloadMarkdown() {
+                    this.updateModelMarkdown(); // Actualiza el contenido Markdown
+                    const markdownContent = this.modelMarkdown; // Obtén el contenido actual
+                    const fileName = this.generateFileName(); // Usa el mismo método para generar el nombre del archivo
+
+                    // Crea un Blob con el contenido Markdown
+                    const blob = new Blob([markdownContent], { type: 'text/markdown' });
+
+                    // Crea un enlace para descargar el archivo
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = fileName;
+
+                    // Simula un clic en el enlace para iniciar la descarga y luego limpia
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                },
+
+                processLoadedMarkdown() {
+                    if (!this.newMarkdownContent) {
+                        console.error("No hay contenido de Markdown para cargar.");
+                        return;
+                    }
+
+                    // Simula la carga y el procesamiento del contenido Markdown
+                    this.parseModelMarkdown(this.newMarkdownContent);
+                },
+
+                processNewContent() {
+                    // Resetear model a un array vacío
+                    this.model = [];
+                    this.resetDepthCounters();
+                    const content = this.newMarkdownContent;
+                    // Aquí debes invocar la lógica que normalmente usas para procesar el contenido Markdown cargado.
+                    // Por ejemplo, si tienes un método que parsea el Markdown a bloques del modelo, úsalo aquí.
+                    this.parseModelMarkdown(content);
+                },
+
+                downloadHTML() {
+                    // Convierte el Markdown a HTML
+                    this.updateModelMarkdown();
+                    // eslint-disable-next-line no-undef
+                    const htmlContent = marked.parse(this.modelMarkdown);
+                    const { modelName } = this; // Obtiene el nombre actual del modelo
+                    const timestamp = new Date().toISOString().replace(/[:-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
+                    const fileName = `${modelName} - saved ${timestamp}.html`; // Construye el nombre del archivo
+
+                    // Opcional: Si quieres incluir un estilo básico en tu HTML exportado, puedes agregarlo aquí
+                    const htmlWithStyle = `
                                 <!DOCTYPE html>
                                 <html lang="en">
                                     <head>
@@ -1850,6 +1854,8 @@
                                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                                         <title>Plastilinn</title>
                                         <link rel="stylesheet" href="https://stackedit.io/style.css" />
+                                        <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
+                                        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
                                     </head>
                                     <body>
                                     <script>
@@ -1858,43 +1864,61 @@
                                             alert("Copy the page content and paste it on your text editor");
                                         };
                                     <\/script>
+                                    <style>
+                                        h1,
+                                        h2,
+                                        h3,
+                                        h4,
+                                        h5,
+                                        h6 {
+                                            all: unset;
+                                            font-size: 2rem !important;
+                                            /* Ajusta el tamaño según tus necesidades */
+                                            font-weight: 700 !important;
+                                            /* 700 es bold */
+                                            margin-bottom: 16px !important;
+                                            /* Añadir espacio entre los encabezados */
+                                            display: block !important;
+                                            /* Asegurar que los encabezados sigan siendo bloque */
+                                        }
+                                    </style>
                                     ${htmlContent}
                                     </body>
                                 </html>
                                                     `;
 
-                        // Crea un Blob con el contenido HTML
-                        const blob = new Blob([htmlWithStyle], { type: 'text/html' });
+                    // Crea un Blob con el contenido HTML
+                    const blob = new Blob([htmlWithStyle], { type: 'text/html' });
 
-                        // Crea un enlace para descargar el archivo
-                        const link = document.createElement('a');
-                        link.href = URL.createObjectURL(blob);
-                        link.download = fileName; // Puedes personalizar el nombre del archivo
+                    // Crea un enlace para descargar el archivo
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = fileName; // Puedes personalizar el nombre del archivo
 
-                        // Simula un clic en el enlace para iniciar la descarga y luego limpia
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    },
-
-                    toggleAutoDownload() {
-                        this.autoDownloadEnabled = !this.autoDownloadEnabled;
-                    },
-
+                    // Simula un clic en el enlace para iniciar la descarga y luego limpia
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
                 },
-                mounted() {
-                    this.processMetamodel(); // Otras inicializaciones pueden ir aquí
-                    this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
-                    window.addEventListener('hashchange', this.highlightOnLoad);
-                    // Configura marked.js para este componente
-                    marked.setOptions({
-                        gfm: true, // Habilita GitHub Flavored Markdown (GFM)
-                        breaks: true, // Convierte los saltos de línea simples en <br>
-                    });
+
+                toggleAutoDownload() {
+                    this.autoDownloadEnabled = !this.autoDownloadEnabled;
                 },
-            })
-                .mount('#vue-app');
-        </script>
+
+            },
+            mounted() {
+                this.processMetamodel(); // Otras inicializaciones pueden ir aquí
+                this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
+                window.addEventListener('hashchange', this.highlightOnLoad);
+                // Configura marked.js para este componente
+                marked.setOptions({
+                    gfm: true, // Habilita GitHub Flavored Markdown (GFM)
+                    breaks: true, // Convierte los saltos de línea simples en <br>
+                });
+            },
+        })
+            .mount('#vue-app');
+    </script>
 </body>
 
 </html>
