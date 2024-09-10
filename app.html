@@ -412,7 +412,7 @@
                                                             v-if="block.metamodel">
                                                             <button @click="openInfoModal(block.metamodel.name)"
                                                                 class="btn btn-primary btn-outline bg-base-200 p-2 rounded opacity-100 hover:opacity-100 focus:opacity-100">
-                                                                ❓
+                                                                ℹ️
                                                             </button>
                                                         </div>
                                                         <div class="md-block-container-right markers-container"
@@ -547,6 +547,19 @@
                                             </span>
                                             Copy prompt and open AI chatbot
                                         </button>
+
+
+                                        <button class="btn m-2 btn-primary"
+                                            @click="copyToClipboard();openNewWindowWithPrompt();printMessage('Prompt copied. Paste it in the chatbot')">
+                                            <span class="material-symbols-outlined" translate="no">
+                                                content_copy
+                                            </span>
+                                            Copy prompt and open AI chatbot
+                                        </button>
+
+
+
+
                                     </li>
                                     <li class="step step-primary">
                                         <button class="btn m-2 btn-primary">
@@ -1133,16 +1146,14 @@
                         this.selectedBlockInfoURL;
                     });
 
-                    // Definir dimensiones y posición de la ventana
-                    const ancho = 900; // Ancho de la ventana
-                    const alto = 600; // Alto de la ventana
-                    // Calcular posición central
-                    const y = window.top.outerHeight / 2 + window.top.screenY - (alto / 2);
-                    const x = window.top.outerWidth / 2 + window.top.screenX - (ancho / 2);
+                    const width = 900; // Ancho de la ventana
+                    const height = 600; // Alto de la ventana
 
-                    // Abrir nueva ventana
-                    // eslint-disable-next-line max-len
-                    window.open(this.selectedBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
+                    // Calcular posición central
+                    const y = window.top.outerHeight / 2 + window.top.screenY - (height / 2);
+                    const x = window.top.outerWidth / 2 + window.top.screenX - (width / 2);
+
+                    window.open(this.selectedBlockInfoURL, 'Modal', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${width}, height=${height}, top=${y}, left=${x}`);
                 },
 
                 findParentLocators(locator) {
@@ -1199,18 +1210,17 @@
                     Providing concise, targeted guidance without unnecessary repetition or formalities.\n
                     Offering step-by-step feedback to ensure the document effectively captures the business model.\n
                     You focus on the client's needs and how to best articulate their business model.\n
-                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model. Here's some information about the business:\n\n`
-                        + `--- business model start ---\n\n`
-                        + `${modelMarkdown}\n\n`
-                        + `--- business model end ---\n\n
+                    GOAL: Help the user write the "${metamodelID}" section of a document that describes his project business model based on CUSTOM INFO.
                     QUESTION: Please suggest content for the "${metamodelID}" (${title}) section of the business model.
-                    ${blockGuide}
-                    WRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn doc (taking the {block example} as a reference example of a properly formatted answer). In your response, each list component should begin with '#tag', followed by the name, and then two line breacks followed by a description. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n`
+                    ${blockGuide}\n\n
+                    EXAMPLE ANSWER: Here's an example of a good answer:\n\n`
                         + `--- example-answer start ---\n\n`
                         + `\n\n${blockExample}\n\n`
-                        + `You can copy/paste this answer to your plastilinn doc`
-                        + `\n\n\`\`\`\n\n${blockExample}\n\n\`\`\`\n\n`
-                        + `--- example-answer end ---\n\n`;
+                        + `--- example-answer end ---\n\n
+                    CUSTOM INFO: Here's some information about the business:\n\n`
+                        + `--- business model start ---\n\n`
+                        + `${modelMarkdown}\n\n`
+                        + `--- business model end ---\n\n`;
                     return suggestionPrompt;
                 },
 
@@ -1275,7 +1285,7 @@
                         setTimeout(() => {
                             confirmationMessage.classList.add('hidden');
                         }, 300); // Duración de la transición
-                    }, 3000); // Tiempo de espera para ocultar el mensaje
+                    }, 8000); // Tiempo de espera para ocultar el mensaje
                 },
 
                 copyToClipboard() {
@@ -1292,11 +1302,11 @@
 
                 openNewWindowWithPrompt() {
                     const url = "https://chatgpt.com/g/g-CqzH3wBOC-plastilinn-business-advisor";
-                    const ancho = 800;
-                    const alto = 600;
-                    const y = window.top.outerHeight / 2 + window.top.screenY - (alto / 2);
-                    const x = window.top.outerWidth / 2 + window.top.screenX - (ancho / 2);
-                    window.open(url, '_blank', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${ancho}, height=${alto}, top=${y}, left=${x}`);
+                    const width = 800;
+                    const height = 600;
+                    const y = window.top.outerHeight / 2 + window.top.screenY - (height / 2);
+                    const x = window.top.outerWidth / 2 + window.top.screenX - (width / 2);
+                    window.open(url, '_blank', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${width}, height=${height}, top=${y}, left=${x}`);
                 },
 
                 saveChanges() {
