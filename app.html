@@ -504,26 +504,37 @@
                 </div>
                 <div>
                     <div class="mt-3 text-center">
+
+
                         <div class="mt-2">
                             <div id="editor-container"></div>
                         </div>
-                        <button class="btn m-2 btn-primary" @click="showGeneratedContent()">
-                            <span class="material-symbols-outlined" translate="no">
-                                robot_2
-                            </span>
-                            Suggest content with AI
-                        </button>
+                        <div v-if="selectedBlockIndex !== null">
+                            <select v-model="selectedPrompt" @change="handleSelection">
+                                <option
+                                    v-for="prompt in getPromptsForMetamodelID(model[selectedBlockIndex].metamodelID)"
+                                    :key="prompt.id" :value="prompt">
+                                    {{ prompt.caption }}
+                                </option>
+                            </select>
+                        </div>
                         <button class="btn m-2 btn-primary" @click="">
                             <span class="material-symbols-outlined" translate="no">
                                 style
                             </span>
-                            Tags
+                            Help
                         </button>
-                        <button class="btn m-2 btn-primary" @click="saveChanges">
+                        <button class="btn m-2 btn-success" @click="saveChanges">
                             <span class="material-symbols-outlined" translate="no">
                                 save
                             </span>
                             Save changes
+                        </button>
+                        <button class="btn m-2 btn-error" @click="closeModal">
+                            <span class="material-symbols-outlined" translate="no">
+                                cancel
+                            </span>
+                            Close window
                         </button>
                         <!-- Mostrar botones dinámicos basados en el metamodelID del bloque -->
                         <div v-if="selectedBlockIndex !== null">
@@ -539,12 +550,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn m-2" @click="closeModal">
-                        <span class="material-symbols-outlined" translate="no">
-                            cancel
-                        </span>
-                        Close window
-                    </button>
+
                 </div>
             </div>
         </div>
@@ -612,6 +618,7 @@
                     searchText: '',
                     replaceText: '',
                     isFullScreenEditorOpen: false, // Estado para controlar el modal del editor en pantalla completa
+                    selectedPrompt: null,
                 };
             },
             computed: {
@@ -1202,6 +1209,14 @@
 
                 closeFullScreenEditor() {
                     this.isFullScreenEditorOpen = false; // Cierra el modal
+                },
+
+                handleSelection() {
+                    if (this.selectedPrompt) {
+                        this.copyPromptToClipboard(this.selectedPrompt.prompt);
+                        this.openNewWindowWithURL(this.selectedPrompt.url);
+                        this.printMessage('Prompt copied. Paste it in the chatbot!!!');
+                    }
                 },
 
                 initDocumentEditor() {

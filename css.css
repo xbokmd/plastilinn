@@ -1,3 +1,5 @@
+
+
 * {
     -webkit-text-size-adjust: 100%;
     -moz-tab-size: 4;
@@ -108,7 +110,7 @@ br {
 
 a {
     color: blue !important;
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 .md-block {
