@@ -139,6 +139,10 @@
                                 class="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition duration-150 ease-in-out">
                                 <option value="">Select a guide</option>
                                 <option
+                                    value="https://xbokmd.github.io/plastilinn/docs/guides/plastilinn_documentation.md">
+                                    Plastilinn documentation
+                                </option>
+                                <option
                                     value="https://xbokmd.github.io/plastilinn/docs/guides/plastilinn_cheatsheet.md">
                                     Plastilinn cheatsheet
                                 </option>
@@ -174,11 +178,6 @@
                             <div v-if="markdownGuideContent">
                                 <div v-html="markdownGuideContent"></div>
                             </div>
-
-                            <button
-                                @click="setArtifactBusinessModelCanvas('partners', 'activities', 'valuePropositions', 'relationships', 'profile', 'resources', 'channels', 'costLines', 'revenueLines'); isArtifactModalOpen = true"
-                                class="btn btn-primary mt-4">Business
-                                Model Canvas</button>
                         </div>
                         <div
                             v-bind:class="{ block: currentSidebarSection === 'index', hidden: currentSidebarSection !== 'index' }">
@@ -448,53 +447,6 @@
             <!-- <footer class="border-t border-gray-200 p-2">Footer</footer> -->
         </div>
         <!-- MODAL WINDOWS -->
-        <div id="artifact-modal" v-if="isArtifactModalOpen"
-            style="position: fixed; top: 5%; left: 5%; width: 90%; height: 90%; z-index: 100; background-color: white; overflow: auto; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
-            <!-- Usa v-html para insertar el contenido de artifactModalContent como HTML -->
-            <button @click="isArtifactModalOpen = false" class="btn">Cerrar</button>
-            <div v-html="artifactModalContent"></div>
-            <div id="business-model-canvas" class="bg-gray-100 -black h-screen p-5">
-                <div class="row-span-2 grid h-3/5 grid-cols-5 bg-white  shadow-lg">
-                    <div class="row-span-2 border pl-2">
-                        <h3>Key Partners</h2>
-                    </div>
-                    <div class="row-span-1 border pl-2">
-                        <h3>Key activities</h3>
-                        <div v-html="buildTagsQueryList(['work'])"></div>
-                    </div>
-                    <div class="row-span-2 border pl-2">
-                        <h3>Value propositions</h3>
-                        <div v-html="buildTagsQueryList(['value'])"></div>
-                    </div>
-                    <div class="border pl-2">
-                        <h3>Customer relationships</h3>
-                        <div v-html="buildTagsQueryList(['relation'])"></div>
-                    </div>
-                    <div class="row-span-2 border pl-2>">
-                        <h3>Customer segments</h3>
-                        <div v-html="buildTagsQueryList(['profile'])"></div>
-                    </div>
-                    <div class="border pl-2">
-                        <h3>Key resources</h3>
-                        <div v-html="buildTagsQueryList(['resource'])"></div>
-                    </div>
-                    <div class="border pl-2">
-                        <h3>Channels</h3>
-                        <div v-html="buildTagsQueryList(['channel'])"></div>
-                    </div>
-                </div>
-                <div class="grid h-52 grid-cols-2 bg-white shadow-lg">
-                    <div class="border pl-2">
-                        <h3>Cost lines</h3>
-                        <div v-html="buildTagsQueryList(['cost'])"></div>
-                    </div>
-                    <div class="border pl-2">
-                        <h3>Revenue lines</h3>
-                        <div v-html="buildTagsQueryList(['revenue'])"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Modal para editar el contenido del bloque seleccionada -->
         <div v-if="isBlockEditModalOpen"
             class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full items-center z-50">
