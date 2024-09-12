@@ -1,7 +1,23 @@
+# Índice
+
+- [Ir a la Introducción](#sección-1-introducción)
+- [Ir a la Conclusión](#sección-2-conclusión)
+
+## Sección 1: Introducción
+
+Este es el contenido de la introducción.
+
+## Sección 2: Conclusión
+
+Este es el contenido de la conclusión.
 
 
 ## Table of Contents
 
+- [Índice](#índice)
+  - [Sección 1: Introducción](#sección-1-introducción)
+  - [Sección 2: Conclusión](#sección-2-conclusión)
+  - [Table of Contents](#table-of-contents)
 - [Using Plastilinn](#using-plastilinn)
     - [Plain Text](#plain-text)
     - [Markdown](#markdown)
