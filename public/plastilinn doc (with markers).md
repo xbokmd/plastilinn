@@ -1,5 +1,3 @@
-# Business summary #***** #>
-
 # Business idea #*** #>
 
 ## Opportunity #** #>
@@ -138,6 +136,10 @@
 
 #offering
 
+### #solution Main solution - Profiles #** #>
+
+#profile
+
 ### #solution Main solution - Pricing #** #>
 
 ### #solution Main solution - Brochure #* #>
@@ -234,9 +236,9 @@
 
 ### Cap table #* #>
 
-## Finantial projections #* #>
-
 ## Cashflow projections #** #>
+
+## Finantial projections #* #>
 
 # Legal #** #>
 
@@ -258,8 +260,6 @@
 
 # Analysis #**** #>
 
-## Key list #**** #>
-
 ## Assumption list #*** #>
 
 #assumption
@@ -279,3 +279,10 @@
 #experiment
 
 # References # #>
+
+# Artifacts # #>
+
+# Keys #**** #>
+
+# Attachments # #>
+
