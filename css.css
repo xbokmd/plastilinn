@@ -1,5 +1,3 @@
-
-
 * {
     -webkit-text-size-adjust: 100%;
     -moz-tab-size: 4;
@@ -109,7 +107,7 @@ br {
 }
 
 a {
-    color: blue;
+    color: blue !important;
     text-decoration: underline;
 }
 
