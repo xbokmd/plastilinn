@@ -19,6 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -40,6 +43,12 @@
                             <div class="flex-1 text-center bg-gray-200 rounded-lg p-2 m-2">
                                 <p v-if="modelName">{{ modelName }}</p>
                             </div>
+                            <button @click="openEditorInModal" class="btn btn-primary">
+                                <span class="material-symbols-outlined" translate="no">
+                                    open_in_browser
+                                </span>
+                                Edit
+                            </button>
                         </div>
                         <div class="navbar-end">
                             <div class="join">
@@ -63,13 +72,6 @@
                                     </span>
                                     Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
                                 </button>
-                                <button @click="openEditorInModal" class="btn btn-primary">
-                                    <span class="material-symbols-outlined" translate="no">
-                                        open_in_browser
-                                    </span>
-                                    Edit document
-                                </button>
-
                             </div>
                         </div>
                     </div>
