@@ -1,3 +1,5 @@
+[Quick start](#quick-start)
+[Structured Business Model](#structured-business-model)
 - [Quick start](#quick-start)
     - [Try plastilinn](#try-plastilinn)
     - [Download your own Plastilinn doc template](#download-your-own-plastilinn-doc-template)
