@@ -13,7 +13,7 @@
 ## Quick start
 
 [Try plastilinn](#try-plastilinn)
-[Download your own Plastilinn doc template](#download-your-own-plastilinn-doc-template)
+[Download the Plastilinn doc template](#download-the-plastilinn-doc-template)
 [Load your Plastilinn doc](#load-your-plastilinn-doc)
 [Open the idea definition guide](#open-the-idea-definition-guide)
 
@@ -26,16 +26,25 @@
 - Load the Plastilinn sample doc you just downloaded by clicking the "choose file" button
 - Now you have a Plastilinn document loaded. Explore the different options the app offers.
 
-#### Download your own Plastilinn doc template
+<span id="create-a-new-business-from-scratch"></span>
+#### Create a new business from scratch
+
+<span id="improve-an-existing-business"></span>
+#### Improve an existing business
+
+<span id="download-the-Plastilinn-doc-template"></span>
+#### Download the Plastilinn doc template
 
    - Download the template from this link [Plastilinn doc template](https://xbokmd.github.io/plastilinn/public/plastilinn%20doc.md)
    - Save it in a folder called "Plastilinn"
    - Rename the template using your project's name
 
+<span id="load-your-Plastilinn-doc"></span>
 #### Load your Plastilinn doc
 
    Load the Plastilinn doc template you just downloaded by clicking the "choose file" button in the <a href="https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md" target="_blank">Plastilinn application</a>.
 
+<span id="open-the-idea-definition-guide"></span>
 #### Open the idea definition guide
 
 Click on the [Idea Definition Canvas](#idea-definition-canvas) guide and follow the instructions.
@@ -153,14 +162,14 @@ This guide will help you outline your business idea in Plastilinn at a very high
 <span id="problem"></span>
 #### Problem
 
-  List the top three problems your target customers face.
+List the top three problems your target customers face.
 
-  #id [goals](<#goals>)
+#id [goals](<#goals>)
 
 <span id="solution"></span>
 #### Solution
 
-  Outline the proposed solutions to the top problems you've identified.
+Outline the proposed solutions to the top problems you've identified.
 
 #id[solution](<#solution>)
 
