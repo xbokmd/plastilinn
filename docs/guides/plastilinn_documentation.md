@@ -22,32 +22,11 @@
 [Problem](#problem)
 [Solution](#solution)
 [Lean Canvas](#lean-canvas)
-[Customer Segments](#customer-segments)
-[Problem](#problem-1)
-[Unique Value Proposition](#unique-value-proposition)
-[Solution](#solution-1)
-[Channels](#channels)
-[Revenue Streams](#revenue-streams)
-[Cost Structure](#cost-structure)
-[Key Metrics](#key-metrics)
-[Unfair Advantage](#unfair-advantage)
+
 [Business Model Canvas](#business-model-canvas)
 [Empathy Map](#empathy-map)
-[Think \& Feel](#think--feel)
-[Hear](#hear)
-[See](#see)
-[Say \& Do](#say--do)
-[Pain](#pain)
-[Gain](#gain)
+
 [Value Proposition Canvas](#value-proposition-canvas)
-[Customer Segment](#customer-segment)
-[Customer Jobs](#customer-jobs)
-[Customer Pains](#customer-pains)
-[Customer Gains](#customer-gains)
-[Value Proposition](#value-proposition)
-[Pain Relievers](#pain-relievers)
-[Gain Creators](#gain-creators)
-[Products \& Services](#products--services)
 
 ---
 
@@ -195,8 +174,20 @@ This guide will help you outline your business idea in Plastilinn at a very high
 
 #id[solution](<#solution>)
 
+---
+
 <span id="lean-canvas"></span>
 ### Lean Canvas
+
+[Customer Segments](#customer-segments)
+[Problem](#problem-1)
+[Unique Value Proposition](#unique-value-proposition)
+[Solution](#solution-1)
+[Channels](#channels)
+[Revenue Streams](#revenue-streams)
+[Cost Structure](#cost-structure)
+[Key Metrics](#key-metrics)
+[Unfair Advantage](#unfair-advantage)
 
 <span id="customer-segments"></span>
 #### Customer Segments
@@ -267,6 +258,13 @@ This guide will help you outline your business idea in Plastilinn at a very high
 <span id="empathy-map"></span>
 ### Empathy Map
 
+[Think \& Feel](#think--feel)
+[Hear](#hear)
+[See](#see)
+[Say \& Do](#say--do)
+[Pain](#pain)
+[Gain](#gain)
+
 <span id="think-feel"></span>
 #### Think & Feel
 What are the thoughts and feelings that occupy the customer's mind? Consider worries, aspirations, and how the environment affects them.
@@ -299,6 +297,15 @@ What are the customer's gains? Consider what successes look like, their hopes, a
 
 <span id="value-proposition-canvas"></span>
 ### Value Proposition Canvas
+
+[Customer Segment](#customer-segment)
+[Customer Jobs](#customer-jobs)
+[Customer Pains](#customer-pains)
+[Customer Gains](#customer-gains)
+[Value Proposition](#value-proposition)
+[Pain Relievers](#pain-relievers)
+[Gain Creators](#gain-creators)
+[Products \& Services](#products--services)
 
 <span id="customer-segment"></span>
 #### Customer Segment
