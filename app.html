@@ -10,18 +10,16 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-    <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <link rel="stylesheet" href="https://stackedit.io/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
 </head>
 
 <body>
@@ -40,25 +38,25 @@
                             <a class="btn btn-ghost text-xl">Plastilinn</a><kbd class="kbd kbd-xs">V0.2.0</kbd>
                         </div>
                         <div class="navbar-center">
-                            <div class="flex-1 text-center bg-gray-200 rounded-lg p-2 m-2">
-                                <p v-if="modelName">{{ modelName }}</p>
+                            <div class="flex-1 text-center rounded-lg p-2 m-2" v-if="modelName">
+                                <h4>{{ modelName }}
+                                    <button @click="openEditorInModal" class="btn btn-primary btn-outline">
+                                        edit
+                                    </button>
+                                </h4>
                             </div>
-                            <button @click="openEditorInModal" class="btn btn-primary">
-                                <span class="material-symbols-outlined" translate="no">
-                                    open_in_browser
-                                </span>
-                                Edit
-                            </button>
                         </div>
                         <div class="navbar-end">
                             <div class="join">
-                                <button id="downloadBtn" @click="downloadMarkdown" class="btn join-item btn-primary">
+                                <button id="downloadBtn" @click="downloadMarkdown"
+                                    class="btn join-item btn-primary btn-outline no-animation">
                                     <span class="material-symbols-outlined" translate="no">
                                         download_for_offline
                                     </span>
                                     Download
                                 </button>
-                                <button id="exportBtn" @click="downloadHTML" class="btn join-item btn-primary">
+                                <button id="exportBtn" @click="downloadHTML"
+                                    class="btn join-item btn-primary btn-outline no-animation">
                                     <span class="material-symbols-outlined" translate="no">
                                         download_for_offline
                                     </span>
@@ -66,7 +64,7 @@
                                 </button>
                                 <button @click="toggleAutoDownload"
                                     :class="{'bg-green-500': autoDownloadEnabled, 'bg-gray-500': !autoDownloadEnabled}"
-                                    class="btn join-item btn-primary">
+                                    class="btn join-item btn-primary btn-outline no-animation">
                                     <span class="material-symbols-outlined" translate="no">
                                         toggle_on
                                     </span>
@@ -86,22 +84,22 @@
                     gap-2 bg-white sticky z-10 top-0">
                         <div class="flex flex-row justify-between gap-2">
                             <button @click="changeSidebar('home')"
-                                class="collapse-filter-button btn btn-primary btn-sm">
+                                class="collapse-filter-button btn btn-primary btn-outline btn-sm">
                                 <span class="material-symbols-outlined" translate="no">
                                     link
                                 </span>Home</button>
                             <button @click="changeSidebar('guides')"
-                                class="collapse-filter-button btn btn-primary btn-sm">
+                                class="collapse-filter-button btn btn-primary btn-outline btn-sm">
                                 <span class="material-symbols-outlined" translate="no">
                                     fact_check
                                 </span>Guides</button>
                             <button @click="changeSidebar('index')"
-                                class="collapse-filter-button btn btn-primary btn-sm">
+                                class="collapse-filter-button btn btn-primary btn-outline btn-sm">
                                 <span class="material-symbols-outlined" translate="no">
                                     list_alt
                                 </span>Index</button>
                             <button @click="changeSidebar('filter')"
-                                class="collapse-filter-button btn btn-primary btn-sm">
+                                class="collapse-filter-button btn btn-primary btn-outline btn-sm">
                                 <span class="material-symbols-outlined" translate="no">
                                     filter_alt
                                 </span>Filter</button>
@@ -141,37 +139,6 @@
                                 <option
                                     value="https://xbokmd.github.io/plastilinn/docs/guides/plastilinn_documentation.md">
                                     Plastilinn documentation
-                                </option>
-                                <option
-                                    value="https://xbokmd.github.io/plastilinn/docs/guides/plastilinn_cheatsheet.md">
-                                    Plastilinn cheatsheet
-                                </option>
-                                <option value="https://xbokmd.github.io/plastilinn/docs/guides/quick_start.md">Quick
-                                    start
-                                </option>
-                                <option value="https://xbokmd.github.io/plastilinn/docs/guides/using_plastilinn.md">
-                                    Using
-                                    plastilinn
-                                </option>
-                                <option value="https://xbokmd.github.io/plastilinn/docs/guides/IA.md">IA
-                                </option>
-                                <option value="https://xbokmd.github.io/plastilinn/docs/guides/idea_definition.md">Idea
-                                    definition
-                                </option>
-                                <option value="https://xbokmd.github.io/plastilinn/docs/guides/lean_canvas.md">Lean
-                                    Canvas
-                                </option>
-                                <option
-                                    value="https://xbokmd.github.io/plastilinn/docs/guides/business_model_canvas.md">
-                                    Business Model Canvas
-                                </option>
-                                <option
-                                    value="https://xbokmd.github.io/plastilinn/docs/guides/value_proposition_canvas.md">
-                                    Value
-                                    Proposition Canvas
-                                </option>
-                                <option value="https://xbokmd.github.io/plastilinn/docs/guides/empathy_map.md">Empathy
-                                    map
                                 </option>
                             </select>
                             <!-- Div que muestra el contenido del Markdown seleccionado -->
@@ -383,10 +350,7 @@
                                                         I want to try plastilinn</button>
                                                 </div>
                                             </div>
-
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -396,7 +360,7 @@
                                         <div v-for="block in searchFilteredBlocks" :key="block.id" :id="block.title"
                                             class="md-block flex">
                                             <div
-                                                class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow custom-flex-2 w-1/2">
+                                                class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow custom-flex-2">
                                                 <div v-html="block.contentParsed"></div>
                                             </div>
                                             <div
@@ -405,14 +369,14 @@
                                                     class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500">
                                                     <div class="xbok-block-tags flex items-center">
                                                         <button @click="openBlockEditModal(block)"
-                                                            class="btn btn-primary btn-outline bg-base-200 p-2 rounded opacity-100 hover:opacity-100 focus:opacity-100">
+                                                            class="btn btn-primary btn-outline btn-outline bg-base-200 p-2 rounded opacity-100 hover:opacity-100 focus:opacity-100">
                                                             📝
                                                         </button>
                                                         <div :id="block.metamodel.name"
                                                             class="block-metamodel section inline-flex"
                                                             v-if="block.metamodel">
                                                             <button @click="openInfoModal(block.metamodel.name)"
-                                                                class="btn btn-primary btn-outline bg-base-200 p-2 rounded opacity-100 hover:opacity-100 focus:opacity-100">
+                                                                class="btn btn-primary btn-outline btn-outline bg-base-200 p-2 rounded opacity-100 hover:opacity-100 focus:opacity-100">
                                                                 ℹ️
                                                             </button>
                                                         </div>
@@ -472,7 +436,7 @@
                                 </option>
                             </select>
                         </div>
-                        <button class="btn m-2 btn-primary" @click="">
+                        <button class="btn m-2 btn-primary btn-outline" @click="">
                             <span class="material-symbols-outlined" translate="no">
                                 style
                             </span>
@@ -494,7 +458,7 @@
                         <div v-if="selectedBlockIndex !== null">
                             <div v-for="prompt in getPromptsForMetamodelID(model[selectedBlockIndex].metamodelID)"
                                 :key="prompt.id">
-                                <button class="btn m-2 btn-primary"
+                                <button class="btn m-2 btn-primary btn-outline"
                                     @click="copyPromptToClipboard(prompt.prompt); openNewWindowWithURL(prompt.url); printMessage('Prompt copied. Paste it in the chatbot!!!')">
                                     <span class="material-symbols-outlined" translate="no">
                                         content_copy
@@ -515,7 +479,7 @@
                 <!-- Contenedor del editor -->
                 <div id="doc-editor-container"></div>
                 <button @click="saveNewEditorContent(); closeFullScreenEditor()"
-                    class="btn btn-primary mt-4">Save</button>
+                    class="btn btn-primary btn-outline mt-4">Save</button>
                 <button @click="closeFullScreenEditor()" class="absolute btn mt-4">Close</button>
             </div>
         </div>
@@ -1398,7 +1362,7 @@
                     // Crea un botón para guardar el contenido del nuevo editor
                     const saveButton = document.createElement('button');
                     saveButton.innerText = 'Save as Markdown';
-                    saveButton.classList.add('btn', 'btn-primary', 'm-2');
+                    saveButton.classList.add('btn', 'btn-primary btn-outline', 'm-2');
                     saveButton.onclick = this.saveNewEditorContent; // Asigna el método de guardado al evento `click`
 
                     // Añade el botón de guardar después del editor
@@ -1839,6 +1803,10 @@
                     gfm: true, // Habilita GitHub Flavored Markdown (GFM)
                     breaks: true, // Convierte los saltos de línea simples en <br>
                 });
+                // Cargar la guía "Plastilinn documentation" al cargar la página
+                this.currentSidebarSection = 'guides'; // Cambia la sección activa a 'guides'
+                const guideUrl = 'https://xbokmd.github.io/plastilinn/docs/guides/plastilinn_documentation.md';
+                this.loadGuideMarkdownContent(guideUrl); // Cargar la guía directamente
             },
         })
             .mount('#vue-app');
