@@ -1,47 +1,76 @@
-- [Using Plastilinn](#using-plastilinn)
-- [Plain Text](#plain-text)
-- [Markdown](#markdown)
-- [Local Storage](#local-storage)
+- [Quick start](#quick-start)
+    - [Try plastilinn](#try-plastilinn)
+    - [Download your own Plastilinn doc template](#download-your-own-plastilinn-doc-template)
+    - [Load your Plastilinn doc](#load-your-plastilinn-doc)
+    - [Open the idea definition guide](#open-the-idea-definition-guide)
+  - [Plain Text](#plain-text)
+  - [Markdown](#markdown)
+  - [Local Storage](#local-storage)
 - [Structured Business Model](#structured-business-model)
-  - [Section](#section)
-  - [Class](#class)
-  - [Marker](#marker)
 - [Editing Your Plastilinn Doc](#editing-your-plastilinn-doc)
   - [Using Markers](#using-markers)
   - [Export Content](#export-content)
-- [xBoK](#xbok)
+  - [xBoK](#xbok)
 - [Artifacts](#artifacts)
   - [Idea Definition Canvas](#idea-definition-canvas)
+    - [Provide a brief description of your business idea](#provide-a-brief-description-of-your-business-idea)
+    - [Who will be the user of the product or service?](#who-will-be-the-user-of-the-product-or-service)
+    - [Problem](#problem)
+    - [Solution](#solution)
   - [Lean Canvas](#lean-canvas)
+    - [Customer Segments](#customer-segments)
+    - [Problem](#problem-1)
+    - [Unique Value Proposition](#unique-value-proposition)
+    - [Solution](#solution-1)
+    - [Channels](#channels)
+    - [Revenue Streams](#revenue-streams)
+    - [Cost Structure](#cost-structure)
+    - [Key Metrics](#key-metrics)
+    - [Unfair Advantage](#unfair-advantage)
   - [Business Model Canvas](#business-model-canvas)
   - [Empathy Map](#empathy-map)
+    - [Think \& Feel](#think--feel)
+    - [Hear](#hear)
+    - [See](#see)
+    - [Say \& Do](#say--do)
+    - [Pain](#pain)
+    - [Gain](#gain)
   - [Value Proposition Canvas](#value-proposition-canvas)
+    - [Customer Segment](#customer-segment)
+    - [Customer Jobs](#customer-jobs)
+    - [Customer Pains](#customer-pains)
+    - [Customer Gains](#customer-gains)
+    - [Value Proposition](#value-proposition)
+    - [Pain Relievers](#pain-relievers)
+    - [Gain Creators](#gain-creators)
+    - [Products \& Services](#products--services)
 
 ---
 
 ## Quick start
 
-#### Explore a sample Plastilinn doc and play with it
+<span id="try-plastilinn"></span>
+#### Try plastilinn
 
-   - Download the sample document from this link [Plastilinn sample doc](https://xbokmd.github.io/plastilinn/public/plastilinn doc - Space X.md)
-   - Save it in a folder called Plastilinn
-   - Open the application [Plastilinn](https://xbokmd.github.io/plastilinn/app.html)
-   - Load the Plastilinn sample doc you just downloaded by clicking the "choose file" button
-   - Now you have a Plastilinn document loaded. Explore the different options the app offers.
+- Download the sample document from this link [Plastilinn sample doc](https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md)
+- Save it in a folder called "Plastilinn"
+- Open the <a href="https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md" target="_blank">Plastilinn application</a>
+- Load the Plastilinn sample doc you just downloaded by clicking the "choose file" button
+- Now you have a Plastilinn document loaded. Explore the different options the app offers.
 
 #### Download your own Plastilinn doc template
 
    - Download the template from this link [Plastilinn doc template](https://xbokmd.github.io/plastilinn/public/plastilinn%20doc.md)
-   - Save it in a folder called Plastilinn
+   - Save it in a folder called "Plastilinn"
+   - Rename the template using your project's name
 
 #### Load your Plastilinn doc
 
-   Load the Plastilinn doc template you just downloaded by clicking the "choose file" button.
+   Load the Plastilinn doc template you just downloaded by clicking the "choose file" button in the <a href="https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md" target="_blank">Plastilinn application</a>.
 
 #### Open the idea definition guide
 
-   Click the "guides" button on the sidebar of the application, select the "idea definition" guide, and follow the instructions.
-
+Click on the [Idea Definition Canvas](#idea-definition-canvas) guide and follow the instructions.
 
 <a href="https://xbokmd.github.io/plastilinn/app.html" target="_blank">Open the plastilinn app online</a>
 
