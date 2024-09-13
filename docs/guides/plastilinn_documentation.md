@@ -50,6 +50,11 @@
 
 ## Quick start
 
+- [Try plastilinn](#try-plastilinn)
+- [Download your own Plastilinn doc template](#download-your-own-plastilinn-doc-template)
+- [Load your Plastilinn doc](#load-your-plastilinn-doc)
+- [Open the idea definition guide](#open-the-idea-definition-guide)
+
 <span id="try-plastilinn"></span>
 #### Try plastilinn
 
