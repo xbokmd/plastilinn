@@ -1,5 +1,4 @@
 - [Using Plastilinn](#using-plastilinn)
-<<<<<<< Updated upstream
 - [Plain Text](#plain-text)
 - [Markdown](#markdown)
 - [Local Storage](#local-storage)
@@ -17,55 +16,34 @@
   - [Business Model Canvas](#business-model-canvas)
   - [Empathy Map](#empathy-map)
   - [Value Proposition Canvas](#value-proposition-canvas)
-=======
-    - [Plain Text](#plain-text)
-    - [Markdown](#markdown)
-    - [Local Storage](#local-storage)
-  - [Structured Business Model](#structured-business-model)
-  - [Editing Your Plastilinn Doc](#editing-your-plastilinn-doc)
-    - [Using Markers](#using-markers)
-    - [Export Content](#export-content)
-    - [xBoK](#xbok)
-  - [Artifacts](#artifacts)
-    - [Idea Definition Canvas](#idea-definition-canvas)
-      - [Provide a brief description of your business idea](#provide-a-brief-description-of-your-business-idea)
-      - [Who will be the user of the product or service?](#who-will-be-the-user-of-the-product-or-service)
-      - [Problem](#problem)
-      - [Solution](#solution)
-    - [Lean Canvas](#lean-canvas)
-      - [Customer Segments](#customer-segments)
-      - [Problem](#problem-1)
-      - [Unique Value Proposition](#unique-value-proposition)
-      - [Solution](#solution-1)
-      - [Channels](#channels)
-      - [Revenue Streams](#revenue-streams)
-      - [Cost Structure](#cost-structure)
-      - [Key Metrics](#key-metrics)
-      - [Unfair Advantage](#unfair-advantage)
-    - [Business Model Canvas](#business-model-canvas)
-    - [Empathy Map](#empathy-map)
-      - [Think \& Feel](#think--feel)
-      - [Hear](#hear)
-      - [See](#see)
-      - [Say \& Do](#say--do)
-      - [Pain](#pain)
-      - [Gain](#gain)
-    - [Value Proposition Canvas](#value-proposition-canvas)
-      - [Customer Segment](#customer-segment)
-      - [Customer Jobs](#customer-jobs)
-      - [Customer Pains](#customer-pains)
-      - [Customer Gains](#customer-gains)
-      - [Value Proposition](#value-proposition)
-      - [Pain Relievers](#pain-relievers)
-      - [Gain Creators](#gain-creators)
-      - [Products \& Services](#products--services)
->>>>>>> Stashed changes
 
 ---
 
-[Plastilinn app](https://xbokmd.github.io/plastilinn/app.html)
+## Quick start
 
-[GitHub](https://github.com/xbokmd/plastilinn)
+#### Explore a sample Plastilinn doc and play with it
+
+   - Download the sample document from this link [Plastilinn sample doc](https://xbokmd.github.io/plastilinn/public/plastilinn doc - Space X.md)
+   - Save it in a folder called Plastilinn
+   - Open the application [Plastilinn](https://xbokmd.github.io/plastilinn/app.html)
+   - Load the Plastilinn sample doc you just downloaded by clicking the "choose file" button
+   - Now you have a Plastilinn document loaded. Explore the different options the app offers.
+
+#### Download your own Plastilinn doc template
+
+   - Download the template from this link [Plastilinn doc template](https://xbokmd.github.io/plastilinn/public/plastilinn%20doc.md)
+   - Save it in a folder called Plastilinn
+
+#### Load your Plastilinn doc
+
+   Load the Plastilinn doc template you just downloaded by clicking the "choose file" button.
+
+#### Open the idea definition guide
+
+   Click the "guides" button on the sidebar of the application, select the "idea definition" guide, and follow the instructions.
+
+
+<a href="https://xbokmd.github.io/plastilinn/app.html" target="_blank">Open the plastilinn app online</a>
 
 In Plastilinn, everything revolves around your Plastilinn doc, which is a single document containing your entire business model.
 
