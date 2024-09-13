@@ -458,7 +458,7 @@ span[data-tag] {
 }
 
 span[data-tag]::before {
-    content: "🔖"; /* Emoji por defecto */
+    content: "⚪"; /* Emoji por defecto */
     position: absolute;
     left: 0;
 }
