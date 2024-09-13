@@ -1,19 +1,6 @@
 [Quick start](#quick-start)
-[Structured Business Model](#structured-business-model)
-[Quick start](#quick-start)
-[Try plastilinn](#try-plastilinn)
-[Download your own Plastilinn doc template](#download-your-own-plastilinn-doc-template)
-[Load your Plastilinn doc](#load-your-plastilinn-doc)
-[Open the idea definition guide](#open-the-idea-definition-guide)
 [Features](#features)
-[Plain Text](#plain-text)
-[Markdown](#markdown)
-[Local Storage](#local-storage)
-[Structured Business Model](#structured-business-model)
-[Editing Your Plastilinn Doc](#editing-your-plastilinn-doc)
-[Document block editor](#document-block-editor)
-[Using Markers](#using-markers)
-[Export Content](#export-content)
+
 [xBoK](#xbok)
 [Artifacts](#artifacts)
 [Idea Definition Canvas](#idea-definition-canvas)
@@ -112,6 +99,11 @@ A Plastilinn doc allows you to describe your business model in a structured mann
 
 <span id="editing-your-plastilinn-doc"></span>
 ## Editing Your Plastilinn Doc
+
+[Editing Your Plastilinn Doc](#editing-your-plastilinn-doc)
+[Document block editor](#document-block-editor)
+[Using Markers](#using-markers)
+[Export Content](#export-content)
 
 You can edit your Plastilinn doc directly in the application <a href="https://stackedit.io/app#" target="_blank">Stackedit</a>
 
