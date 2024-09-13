@@ -3,6 +3,7 @@
     - [Download your own Plastilinn doc template](#download-your-own-plastilinn-doc-template)
     - [Load your Plastilinn doc](#load-your-plastilinn-doc)
     - [Open the idea definition guide](#open-the-idea-definition-guide)
+  - [Features](#features)
   - [Plain Text](#plain-text)
   - [Markdown](#markdown)
   - [Local Storage](#local-storage)
@@ -52,7 +53,7 @@
 <span id="try-plastilinn"></span>
 #### Try plastilinn
 
-- Download the sample document from this link [Plastilinn sample doc](https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md)
+- Download the sample document (based on Space X) from this link [Plastilinn sample doc](https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md)
 - Save it in a folder called "Plastilinn"
 - Open the <a href="https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md" target="_blank">Plastilinn application</a>
 - Load the Plastilinn sample doc you just downloaded by clicking the "choose file" button
@@ -79,6 +80,9 @@ In Plastilinn, everything revolves around your Plastilinn doc, which is a single
 A business model is a simplified representation of the logic that makes a business profitable. That is, your business model is captured in your Plastilinn doc, which is a document that gathers all relevant information about your business. It includes information about who your customers are, what problems you help them solve, what channels you will use for them to get to know you, etc.
 
 A Plastilinn doc is simply a plain text file in Markdown format.
+
+<span id="features"></span>
+### Features
 
 <span id="plain-text"></span>
 ### Plain Text
