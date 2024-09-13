@@ -1,18 +1,11 @@
 [Quick start](#quick-start)
 [Features](#features)
-
 [xBoK](#xbok)
 [Artifacts](#artifacts)
 [Idea Definition Canvas](#idea-definition-canvas)
-[Provide a brief description of your business idea](#provide-a-brief-description-of-your-business-idea)
-[Who will be the user of the product or service?](#who-will-be-the-user-of-the-product-or-service)
-[Problem](#problem)
-[Solution](#solution)
 [Lean Canvas](#lean-canvas)
-
 [Business Model Canvas](#business-model-canvas)
 [Empathy Map](#empathy-map)
-
 [Value Proposition Canvas](#value-proposition-canvas)
 
 ---
@@ -137,6 +130,11 @@ The metamodel describes the structure and essential elements that should be cons
 
 <span id="idea-definition-canvas"></span>
 ### Idea Definition Canvas
+
+[Provide a brief description of your business idea](#provide-a-brief-description-of-your-business-idea)
+[Who will be the user of the product or service?](#who-will-be-the-user-of-the-product-or-service)
+[Problem](#problem)
+[Solution](#solution)
 
 This guide will help you outline your business idea in Plastilinn at a very high level.
 
