@@ -9,6 +9,7 @@
   - [Local Storage](#local-storage)
 - [Structured Business Model](#structured-business-model)
 - [Editing Your Plastilinn Doc](#editing-your-plastilinn-doc)
+  - [Document block editor](#document-block-editor)
   - [Using Markers](#using-markers)
   - [Export Content](#export-content)
   - [xBoK](#xbok)
@@ -126,6 +127,9 @@ A Plastilinn doc allows you to describe your business model in a structured mann
 ## Editing Your Plastilinn Doc
 
 You can edit your Plastilinn doc directly in the application <a href="https://stackedit.io/app#" target="_blank">Stackedit</a>
+
+<span id="document-block-editor"></span>
+### Document block editor
 
 <span id="using-markers"></span>
 ### Using Markers
