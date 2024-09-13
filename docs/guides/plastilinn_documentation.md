@@ -1,4 +1,4 @@
-- [Índice](#índice)
+- [Índice](#índice) 
   - [Sección 1: Introducción](#sección-1-introducción)
   - [Sección 2: Conclusión](#sección-2-conclusión)
   - [Table of Contents](#table-of-contents)
