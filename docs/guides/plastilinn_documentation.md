@@ -132,8 +132,8 @@ This guide will help you outline your business idea in Plastilinn at a very high
 
     #id [solution](<#solution>)
 
-### Lean Canvas
 <span id="lean-canvas"></span>
+### Lean Canvas
 
 1. #### Customer Segments
 
