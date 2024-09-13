@@ -20,9 +20,9 @@
 <span id="try-plastilinn"></span>
 #### Try plastilinn
 
-- Download the sample document (based on Space X) from this link [Plastilinn sample doc](https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md)
+- Download the sample document (based on Space X) from this link <a href="https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md"  download="plastilinn-doc_SpaceX.md">Plastilinn sample doc</a>
 - Save it in a folder called "Plastilinn"
-- Open the <a href="https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md" target="_blank">Plastilinn application</a>
+- Open the <a href="https://xbokmd.github.io/plastilinn/app.html" target="_blank">Plastilinn application</a>
 - Load the Plastilinn sample doc you just downloaded by clicking the "choose file" button
 - Now you have a Plastilinn document loaded. Explore the different options the app offers.
 
@@ -35,7 +35,7 @@
 <span id="download-the-Plastilinn-doc-template"></span>
 #### Download the Plastilinn doc template
 
-   - Download the template from this link [Plastilinn doc template](https://xbokmd.github.io/plastilinn/public/plastilinn%20doc.md)
+   - Download the template from this link  <a href="https://xbokmd.github.io/plastilinn/public/plastilinn%20doc.md"  download="Plastilinn doc - Project name.md">Plastilinn doc template</a>
    - Save it in a folder called "Plastilinn"
    - Rename the template using your project's name
 

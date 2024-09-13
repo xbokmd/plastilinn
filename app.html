@@ -31,11 +31,26 @@
                     <div id="navbar" class="navbar bg-base-100 shadow-2xl">
                         <div class="navbar-start">
                             <div class="p-5">
-                                <!-- Logo como imagen -->
                                 <img src="assets/logo.png" alt="Logo de mi empresa" class="h-8">
-                                <!-- Logo como texto o SVG, aquí un ejemplo con texto -->
                             </div>
-                            <a class="btn btn-ghost text-xl">Plastilinn</a><kbd class="kbd kbd-xs">V0.2.0</kbd>
+                            <kbd class="kbd kbd-xs">Plastilinn V0.3.0</kbd>
+                            <div class="flex flex-row justify-between gap-2">
+                                <button @click="changeSidebar('guides')"
+                                    class="collapse-filter-button btn btn-primary btn-outline btn-sm">
+                                    <span class="material-symbols-outlined" translate="no">
+                                        fact_check
+                                    </span>Guides</button>
+                                <button @click="changeSidebar('index')"
+                                    class="collapse-filter-button btn btn-primary btn-outline btn-sm">
+                                    <span class="material-symbols-outlined" translate="no">
+                                        list_alt
+                                    </span>Index</button>
+                                <button @click="changeSidebar('filter')"
+                                    class="collapse-filter-button btn btn-primary btn-outline btn-sm">
+                                    <span class="material-symbols-outlined" translate="no">
+                                        filter_alt
+                                    </span>Filter</button>
+                            </div>
                         </div>
                         <div class="navbar-center">
                             <div class="flex-1 text-center rounded-lg p-2 m-2" v-if="modelName">
@@ -79,29 +94,10 @@
             <!-- MAIN CONTAINER -->
             <div class="flex-1 flex flex-row overflow-y-hidden">
                 <!-- SIDEBAR -->
-                <nav class="order-first w-1/4 overflow-y-auto custom-scrollbar" style="min-width: 520px">
-                    <div class="flex flex-row flex-wrap p-2 
-                    gap-2 bg-white sticky z-10 top-0">
-                        <div class="flex flex-row justify-between gap-2">
-                            <button @click="changeSidebar('guides')"
-                                class="collapse-filter-button btn btn-primary btn-outline btn-sm">
-                                <span class="material-symbols-outlined" translate="no">
-                                    fact_check
-                                </span>Guides</button>
-                            <button @click="changeSidebar('index')"
-                                class="collapse-filter-button btn btn-primary btn-outline btn-sm">
-                                <span class="material-symbols-outlined" translate="no">
-                                    list_alt
-                                </span>Index</button>
-                            <button @click="changeSidebar('filter')"
-                                class="collapse-filter-button btn btn-primary btn-outline btn-sm">
-                                <span class="material-symbols-outlined" translate="no">
-                                    filter_alt
-                                </span>Filter</button>
-                        </div>
-                    </div>
+                <nav class="order-first w-1/4 overflow-y-auto custom-scrollbar"
+                    style="min-width: 520px; scroll-behavior: smooth;">
                     <!-- Secciones con visibilidad condicional -->
-                    <div class="p-2 mt-20">
+                    <div class="p-2">
                         <div v-if="currentSidebarSection === 'guides'">
                             <div v-if="markdownGuideContent">
                                 <div v-html="markdownGuideContent"></div>
@@ -240,7 +236,6 @@
                                                     </p>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -252,8 +247,9 @@
                 <main class="flex-auto border-l border-r border-gray-200 overflow-y-auto"
                     style="scroll-behavior: smooth;">
                     <div class="toast toast-top toast-end">
-                        <div class="alert alert-info mt-20">
-                            <span><a href="#editing-your-plastilinn-doc">Editing Your Plastilinn doc</a></span>
+                        <div class="alert mt-20">
+                            <button class="btn btn-link btn-sm"><a href="#editing-your-plastilinn-doc">❓Editing Your
+                                    Plastilinn doc</a></button>
                         </div>
                     </div>
                     <div class="leading-10">
@@ -273,15 +269,6 @@
                                         </div>
                                         <div class="text-xl m-4">Design, analyze and validate your business model.
                                         </div>
-                                        <div class="collapse bg-base-200 mb-2">
-                                            <input type="checkbox" />
-                                            <div class="collapse-title text-xl font-medium">
-                                                Change language / Cambiar idioma
-                                            </div>
-                                            <div class="collapse-content">
-                                                <img src="assets/changing_language.gif" />
-                                            </div>
-                                        </div>
                                         <div class="card bg-base-100 shadow-xl">
                                             <div class="card-body flex justify-center items-center">
                                                 <h2>⬆️ I'm already using plastilinn</h2>
@@ -291,22 +278,19 @@
                                             </div>
                                         </div>
                                         <div class="card bg-base-100 shadow-xl mt-4">
-                                            <div class="card-body">
-                                                <h2>I want to:</h2>
+                                            <div class="card-body flex justify-center items-center">
+                                                <h2>🆕 I'm new to plastilinn and I want to:</h2>
                                                 <div class="card-actions">
-                                                    <button
-                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/docs/guides/existing_business.md')">
-                                                        Improve an existing business</button>
+                                                    <a href="#improve-an-existing-business">🔍 Improve an existing
+                                                        business</a>
                                                 </div>
                                                 <div class="card-actions">
-                                                    <button
-                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/docs/guides/new_business.md')">
-                                                        Create a new business from scratch</button>
+                                                    <a href="#create-a-new-business-from-scratch">✏️ Create a new
+                                                        business
+                                                        from scratch</a>
                                                 </div>
                                                 <div class="card-actions">
-                                                    <button
-                                                        @click="activateGuidesAndLoadGuide('https://xbokmd.github.io/plastilinn/docs/guides/quick_start.md')">
-                                                        Try plastilinn</button>
+                                                    <a href="#try-plastilinn">👉 Try plastilinn</a>
                                                 </div>
                                             </div>
                                         </div>
