@@ -35,9 +35,9 @@
 <span id="download-the-Plastilinn-doc-template"></span>
 #### Download the Plastilinn doc template
 
-- Download the template from this link  <a href="https://xbokmd.github.io/plastilinn/public/plastilinn%20doc.md"  download="plastilinn%20doc.md">Plastilinn doc template</a>
+- Download the template from this link  <a href="https://xbokmd.github.io/plastilinn/public/pPlastilinn_doc_project_name.md"  download="Plastilinn_doc_project_name.md">Plastilinn doc template</a>
 - Save it in a folder called "Plastilinn"
-- Rename the template using your project's name
+- Rename the template using your project's name (IE, "Plastilinn_doc_SpaceX.md")
 
 <span id="load-your-Plastilinn-doc"></span>
 #### Load your Plastilinn doc
@@ -47,7 +47,7 @@ Load the Plastilinn doc template you just downloaded by clicking the "choose fil
 <span id="open-the-idea-definition-guide"></span>
 #### Open the idea definition guide
 
-Click on the [Idea Definition Canvas](#idea-definition-canvas) guide and follow the instructions.
+Click on the [Idea Definition Guide](#idea-definition-guide) guide and follow the instructions.
 
 <a href="https://xbokmd.github.io/plastilinn/app.html" target="_blank">Open the plastilinn app online</a>
 
@@ -138,7 +138,7 @@ The metamodel describes the structure and essential elements that should be cons
 ## Artifacts
 
 <span id="idea-definition-canvas"></span>
-### Idea Definition Canvas
+### Idea Definition Guide
 
 [Provide a brief description of your business idea](#provide-a-brief-description-of-your-business-idea)
 [Who will be the user of the product or service?](#who-will-be-the-user-of-the-product-or-service)
@@ -150,28 +150,28 @@ This guide will help you outline your business idea in Plastilinn at a very high
 <span id="provide-a-brief-description-of-your-business-idea"></span>
 #### Provide a brief description of your business idea
 
-    Describe your business idea in one or two paragraphs by editing the content of the [business summary](<#Business summary>) section.
+Describe your business idea in one or two paragraphs by editing the content of the [business summary](<#Business summary>) section.
 
 <span id="who-will-be-the-user-of-the-product-or-service"></span>
 #### Who will be the user of the product or service?
 
-    Define the target customer segments you want to serve.
+Define the target customer segments you want to serve.
 
-#id[profile/Main profile](<#profile Main profile>)
-    
+#id [Main profile](<#Main profile>)
+
 <span id="problem"></span>
 #### Problem
 
 List the top three problems your target customers face.
 
-#id [goals](<#goals>)
+#id [Main profile - Goals](<#Main profile - Goals>)
 
 <span id="solution"></span>
 #### Solution
 
 Outline the proposed solutions to the top problems you've identified.
 
-#id[solution](<#solution>)
+#id [Main solution](<#Main solution>)
 
 ---
 
@@ -191,63 +191,63 @@ Outline the proposed solutions to the top problems you've identified.
 <span id="customer-segments"></span>
 #### Customer Segments
 
-    Define the target customer segments you want to serve.
+Define the target customer segments you want to serve.
 
-  #id [Main profile](<#profile Main profile>)
-    
+#id [Main profile](<#profile Main profile>)
+
 <span id="problem-1"></span>
 #### Problem
 
-  List the top three problems your target customers face.
+List the top three problems your target customers face.
 
-  #id [goals](<#Main profile - Goals>)
+#id [goals](<#Main profile - Goals>)
 
 <span id="unique-value-proposition"></span>
 #### Unique Value Proposition
 
-  Describe the unique and compelling value you offer to your customers that sets you apart from the competition.
+Describe the unique and compelling value you offer to your customers that sets you apart from the competition.
 
 #id[value proposition](<#Main profile - Value proposition>)
 
 <span id="solution-1"></span>
 #### Solution
 
-  Outline the proposed solutions to the top problems you've identified.
+Outline the proposed solutions to the top problems you've identified.
 
 #id[solution](<#Main Solution - Solution>)
 
 <span id="channels"></span>
 #### Channels
 
-  List the channels you'll use to reach your target customers.
+List the channels you'll use to reach your target customers.
 
 #id[channels](<#Main profile - Channels>)
 
 <span id="revenue-streams"></span>
 #### Revenue Streams
 
-  Identify the ways your business will generate revenue.
+Identify the ways your business will generate revenue.
 
 #id[revenue lines](<#Revenue lines>)
 
 <span id="cost-structure"></span>
 #### Cost Structure
 
-  Enumerate the main costs associated with your business model.
+Enumerate the main costs associated with your business model.
 
 #id[cost lines](<#Cost lines>)
 
 <span id="key-metrics"></span>
 #### Key Metrics
 
-  Define the key metrics that will help you track your business's success.
+Define the key metrics that will help you track your business's success.
 
 #id[metric list](<#Metric list>)
 
 <span id="unfair-advantage"></span>
 #### Unfair Advantage
 
-  Describe any unfair advantage you may have that cannot be easily copied or bought by competitors.
+Describe any unfair advantage you may have that cannot be easily copied or bought by competitors.
 
 #id[unfair advantage](<#Unfair advantage>)
 
@@ -266,31 +266,37 @@ Outline the proposed solutions to the top problems you've identified.
 
 <span id="think-feel"></span>
 #### Think & Feel
+
 What are the thoughts and feelings that occupy the customer's mind? Consider worries, aspirations, and how the environment affects them.
 #id think-feel
 
 <span id="hear"></span>
 #### Hear
+
 What does the customer hear from their environment, friends, colleagues, and in the media? Include both positive and negative influences.
 #id hear
 
 <span id="see"></span>
 #### See
+
 What does the customer see in their immediate environment, the market, and in the media? Capture their view of the world.
 #id see
 
 <span id="say-do"></span>
 #### Say & Do
+
 What does the customer say and do in their environment? How do they behave in public, and what might they be telling others?
 #id say-do
 
 <span id="pain"></span>
 #### Pain
+
 Identify the customer's pains. What frustrates them, causes them problems, or prevents them from achieving their goals?
 #id pain
 
 <span id="gain"></span>
 #### Gain
+
 What are the customer's gains? Consider what successes look like, their hopes, and what they would consider a win.
 #id gain
 
