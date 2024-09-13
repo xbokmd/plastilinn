@@ -35,14 +35,14 @@
 <span id="download-the-Plastilinn-doc-template"></span>
 #### Download the Plastilinn doc template
 
-   - Download the template from this link  <a href="https://xbokmd.github.io/plastilinn/public/plastilinn%20doc.md"  download="Plastilinn doc - Project name.md">Plastilinn doc template</a>
-   - Save it in a folder called "Plastilinn"
-   - Rename the template using your project's name
+- Download the template from this link  <a href="https://xbokmd.github.io/plastilinn/public/plastilinn%20doc.md"  download="plastilinn%20doc.md">Plastilinn doc template</a>
+- Save it in a folder called "Plastilinn"
+- Rename the template using your project's name
 
 <span id="load-your-Plastilinn-doc"></span>
 #### Load your Plastilinn doc
 
-   Load the Plastilinn doc template you just downloaded by clicking the "choose file" button in the <a href="https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md" target="_blank">Plastilinn application</a>.
+Load the Plastilinn doc template you just downloaded by clicking the "choose file" button in the <a href="https://xbokmd.github.io/plastilinn/app.html" target="_blank">Plastilinn application</a>.
 
 <span id="open-the-idea-definition-guide"></span>
 #### Open the idea definition guide
