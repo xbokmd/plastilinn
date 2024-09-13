@@ -1,19 +1,3 @@
-# Índice
-
-- [Ir a la Introducción](#sección-1-introducción)
-- [Ir a la Conclusión](#sección-2-conclusión)
-
-## Sección 1: Introducción
-
-Este es el contenido de la introducción.
-
-## Sección 2: Conclusión
-
-Este es el contenido de la conclusión.
-
-
-## Table of Contents
-
 - [Índice](#índice)
   - [Sección 1: Introducción](#sección-1-introducción)
   - [Sección 2: Conclusión](#sección-2-conclusión)
@@ -79,7 +63,7 @@ A Plastilinn doc allows you to describe your business model in a structured mann
 
 You can edit your Plastilinn doc directly in the application <a href="https://stackedit.io/app#" target="_blank">Stackedit</a>
 
-## Using Markers
+### Using Markers
 
 | marker | low | high |
 | --- | --- | --- |
@@ -90,11 +74,11 @@ You can edit your Plastilinn doc directly in the application <a href="https://st
 | risk | <span data-tag='¡'>¡</span><kbd class='kbd kbd-xs'>#¡</kbd> | <kbd class='kbd kbd-xs'>#¡¡¡¡¡</kbd> <span data-tag='¡¡¡¡¡'>¡¡¡¡¡</span> |
 | validation | <span data-tag='='>=</span><kbd class='kbd kbd-xs'>#=</kbd> | <kbd class='kbd kbd-xs'>#=====</kbd> <span data-tag='====='>=====</span> |
 
-## Export Content
+### Export Content
 
 At any time, you can export your document as HTML by clicking the "export" button in the upper right corner. Your document will be exported as clean HTML that you can open, import, or copy and paste into your favorite document editor (MS Word, Google Docs, etc.). The following <a href="https://drive.google.com/drive/folders/1IbMu1j6hqWG0BLllePYftHpzubjxCEQy?usp=sharing" target="_blank">link opens a Google Drive folder where you can view a sample of all these documents</a>.
 
-## xBoK
+### xBoK
 
 The metamodel describes the structure and essential elements that should be considered when designing and analyzing business models. This structure includes components such as "key", "organization", "journey", "assumption", "solution", "offering", and many more, each with its own symbol, color, and detailed definition. These elements cover a wide range of critical aspects of a business, from key resources and activities to value propositions, customer segments, and relationships with them.
 
@@ -110,15 +94,15 @@ This metamodel is a comprehensive tool designed to facilitate in-depth analysis 
 
 This guide will help you outline your business idea in Plastilinn at a very high level.
 
-1. #### Provide a brief description of your business idea
+#### Provide a brief description of your business idea
 
     Describe your business idea in one or two paragraphs by editing the content of the [business summary](<#Business summary>) section.
 
-2. #### Who will be the user of the product or service?
+#### Who will be the user of the product or service?
 
     Define the target customer segments you want to serve.
 
-  #id [profile/Main profile](<#profile Main profile>)
+    #id [profile/Main profile](<#profile Main profile>)
     
 3. #### Problem
 
