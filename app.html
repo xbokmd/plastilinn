@@ -361,23 +361,8 @@
             <div class="modal-background absolute inset-0 bg-black opacity-50"></div>
             <div class="relative top-10 mx-auto p-1 border w-4/5 h-4/5 shadow-lg rounded-md bg-white flex flex-col justify-center items-center"
                 style="z-index: 100;">
-                <!-- Contenedor para marcadores -->
-                <div class="markers flex flex-col items-start justify-start">
-                </div>
                 <div>
-                    <div class="mt-3 text-center">
-                        <div class="mt-2">
-                            <div id="editor-container"></div>
-                        </div>
-                        <div v-if="selectedBlockIndex !== null">
-                            <select v-model="selectedPrompt" @change="handleSelection">
-                                <option
-                                    v-for="prompt in getPromptsForMetamodelID(model[selectedBlockIndex].metamodelID)"
-                                    :key="prompt.id" :value="prompt">
-                                    {{ prompt.caption }}
-                                </option>
-                            </select>
-                        </div>
+                    <div class="text-center">
                         <button class="btn m-2 btn-success" @click="saveChanges">
                             <span class="material-symbols-outlined" translate="no">
                                 save
@@ -390,17 +375,23 @@
                             </span>
                             Close window
                         </button>
+                        <div class="mt-2">
+                            <div id="editor-container"></div>
+                        </div>
                         <!-- Mostrar botones dinámicos basados en el metamodelID del bloque -->
                         <div v-if="selectedBlockIndex !== null">
                             <div v-for="prompt in getPromptsForMetamodelID(model[selectedBlockIndex].metamodelID)"
                                 :key="prompt.id">
-                                <button class="btn m-2 btn-primary btn-outline"
-                                    @click="copyPromptToClipboard(prompt.prompt); openNewWindowWithURL(prompt.url); printMessage('Prompt copied. Paste it in the chatbot!!!')">
-                                    <span class="material-symbols-outlined" translate="no">
-                                        content_copy
-                                    </span>
-                                    {{ prompt.caption }}
-                                </button>
+                                <div role="alert" class="alert">🤖 Artificial Intelligence (click to open AI toold and
+                                    paste the prompt copied to your clipboard)
+                                    <button class="btn m-2 btn-primary"
+                                        @click="copyPromptToClipboard(prompt.prompt); openNewWindowWithURL(prompt.url); printMessage('Prompt copied. Paste it in the chatbot!!!')">
+                                        <span class="material-symbols-outlined" translate="no">
+                                            content_copy
+                                        </span>
+                                        {{ prompt.caption }}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
