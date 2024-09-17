@@ -463,7 +463,6 @@ span[data-tag]::before {
     left: 0;
 }
 
-span[data-tag="key"] { background-color: #FFCCCC; } span[data-tag="key"]::before { content: "🔑";}
 span[data-tag="organization"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="organization"]::before { content: "🏢";}
 span[data-tag="journey"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="journey"]::before { content: "✈️";}
 span[data-tag="solution"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="solution"]::before { content: "💊";}
@@ -482,6 +481,7 @@ span[data-tag="message"] { background-color: rgba(191,219,254,var(--tw-bg-opacit
 span[data-tag="feature"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="feature"]::before { content: "🌟";}
 span[data-tag="function"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="function"]::before { content: "👔";}
 span[data-tag="goal"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="goal"]::before { content: "🎯";}
+span[data-tag="profile_goal"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="profile_goal"]::before { content: "🎯";}
 span[data-tag="hypothesis"] { background-color: #FFCCCC; } span[data-tag="hypothesis"]::before { content: "🔎";}
 span[data-tag="person"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="person"]::before { content: "👤";}
 span[data-tag="transaction"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="transaction"]::before { content: "🛒";}
@@ -492,14 +492,29 @@ span[data-tag="position"] { background-color: rgba(191,219,254,var(--tw-bg-opaci
 span[data-tag="skill"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="skill"]::before { content: "🔧";}
 span[data-tag="phase"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="phase"]::before { content: "🗓️";}
 span[data-tag="milestone"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="milestone"]::before { content: "🏁";}
+span[data-tag="organization_value"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="organization_value"]::before { content: "🧠";}
 span[data-tag="role"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="role"]::before { content: "🎩";}
 span[data-tag="stakeholder"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="stakeholder"]::before { content: "🤔";}
 span[data-tag="persona"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="persona"]::before { content: "👩‍💼";}
 span[data-tag="profile"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="profile"]::before { content: "🙎‍♂️";}
 span[data-tag="relationship"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="relationship"]::before { content: "🤝";}
+span[data-tag="challenge"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="challenge"]::before { content: "🏆";}
+span[data-tag="compensation"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="compensation"]::before { content: "💸";}
+span[data-tag="contribution"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="contribution"]::before { content: "💵";}
+span[data-tag="competitor"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="competitor"]::before { content: "🏅";}
+span[data-tag="partner"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="partner"]::before { content: "👥";}
+span[data-tag="perception"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="perception"]::before { content: "👁️";}
+span[data-tag="price"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="price"]::before { content: "💲";}
+span[data-tag="profile_goal"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="profile_goal"]::before { content: "🎯";}
+span[data-tag="roadmap"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="roadmap"]::before { content: "🗺️";}
+span[data-tag="funding_source"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="funding_source"]::before { content: "💵";}
+span[data-tag="funnel"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="funnel"]::before { content: "🔽";}
+span[data-tag="inspiration"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="inspiration"]::before { content: "🦋";}
+span[data-tag="legal_issue"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="legal_issue"]::before { content: "📜";}
+span[data-tag="organization_value"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="organization_value"]::before { content: "🌟";}
+span[data-tag="trend"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="trend"]::before { content: "📈";}
 span[data-tag="topic"] { background-color: lightgrey; } span[data-tag="topic"]::before { content: "🗄️";}
 span[data-tag="resource"] { background-color: lightgrey; } span[data-tag="resource"]::before { content: "🖥️";}
-span[data-tag="artifact"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="artifact"]::before { content: "🧿";}
 span[data-tag="unit"] { background-color: lightgrey; } span[data-tag="unit"]::before { content: "📓";}
 span[data-tag="content"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="content"]::before { content: "📘";}
 span[data-tag="AI"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="AI"]::before { content: "🤖";}
@@ -509,6 +524,7 @@ span[data-tag="assumption"] { background-color: #FFCCCC; } span[data-tag="assump
 span[data-tag="comment"] { background-color: lightgrey; } span[data-tag="comment"]::before { content: "🗨️";}
 span[data-tag="task"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="task"]::before { content: "🛠️";}
 span[data-tag="risk"] { background-color: #FFCCCC; } span[data-tag="risk"]::before { content: "🚨";}
+
 
 span[data-marker] {
     line-height: 1.4rem;
@@ -553,11 +569,14 @@ span[data-marker="\3D\3D"]::before { --emoji: "🟰2"; --opacity: 0.4; }
 span[data-marker="\3D\3D\3D"]::before { --emoji: "🟰3"; --opacity: 0.6; }
 span[data-marker="\3D\3D\3D\3D"]::before { --emoji: "🟰4"; --opacity: 0.8; }
 span[data-marker="\3D\3D\3D\3D\3D"]::before { --emoji: "🟰5"; --opacity: 1; }
-span[data-marker="\3D"]::before { --emoji: "🟰1"; --opacity: 0.2; }
-span[data-marker="\3D\3D"]::before { --emoji: "🟰2"; --opacity: 0.4; }
-/* Usa un data-marker diferente para 🟢 */
-span[data-marker="\3E"]::before { --emoji: "🟢1"; --opacity: 0.2; }
-span[data-marker="\3E\3E"]::before { --emoji: "🟢2"; --opacity: 0.4; }
-/* Usa otro data-marker diferente para 🔴 */
-span[data-marker="\21"]::before { --emoji: "🔴1"; --opacity: 0.2; }
-span[data-marker="\21\21"]::before { --emoji: "🔴2"; --opacity: 0.4; }
+span[data-marker="\8D"]::before { --emoji: "🟢1"; --opacity: 0.2; }
+span[data-marker="\8D\8D"]::before { --emoji: "🟢2"; --opacity: 0.4; }
+span[data-marker="\8D\8D\8D"]::before { --emoji: "🟢3"; --opacity: 0.6; }
+span[data-marker="\8D\8D\8D\8D"]::before { --emoji: "🟢4"; --opacity: 0.8; }
+span[data-marker="\8D\8D\8D\8D\8D"]::before { --emoji: "🟢5"; --opacity: 1; }
+span[data-marker="\9D"]::before { --emoji: "🔴1"; --opacity: 0.2; }
+span[data-marker="\9D\9D"]::before { --emoji: "🔴2"; --opacity: 0.4; }
+span[data-marker="\9D\9D\9D"]::before { --emoji: "🔴3"; --opacity: 0.6; }
+span[data-marker="\9D\9D\9D\9D"]::before { --emoji: "🔴4"; --opacity: 0.8; }
+span[data-marker="\9D\9D\9D\9D\9D"]::before { --emoji: "🔴5"; --opacity: 1; }
+
