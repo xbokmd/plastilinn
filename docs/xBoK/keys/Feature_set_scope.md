@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Have all the features been clearly identified? Are there too many? Too few?
 - ##### 🚨 Risks
-
   - ###### 🚨Feature Set Scope
   - Lack of a balanced feature set can result in either an overwhelming or insufficient product offering.
   - ###### 🚨mitigation strategy

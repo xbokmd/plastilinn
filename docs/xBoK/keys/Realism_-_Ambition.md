@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Is the mission statement realistic and ambitious?
 - ##### 🚨 Risks
-
   - ###### 🚨Realism - Ambition
   - Lack of realism or ambition in the mission statement can impact the motivation and alignment of stakeholders.
   - ###### 🚨mitigation strategy

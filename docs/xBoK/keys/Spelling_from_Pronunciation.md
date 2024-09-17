@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Can the name be easily written correctly in different languages?
 - ##### 🚨 Risks
-
   - ###### 🚨Spelling from Pronunciation
   - Difficult spelling based on pronunciation can lead to confusion and misspellings in different languages.
   - ###### 🚨mitigation strategy

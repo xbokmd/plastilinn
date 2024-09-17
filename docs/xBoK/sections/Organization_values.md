@@ -3,14 +3,6 @@
   - the principles, beliefs, and attitudes that guide the behavior and decision-making of a business and its stakeholders.
 - ## 📰 Content type 
   - Content is of type list
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If business values is defined as :the principles, beliefs, and attitudes that guide the behavior and decision-making of a business and its stakeholders., What could it be?What is the overall mission of our startup?
-  How does our mission align with the goals and values of our target market?
-  How can we ensure that our mission is effectively communicated to our customers and stakeholders?
-  Are there any potential challenges or obstacles that could hinder us from fulfilling our mission?
-  How will the achievement of our mission contribute to the long-term success and sustainability of our startup?
 - ## 📖 Description
   In business modeling, the concept of "organization values" refers to the core principles or standards that guide a company's actions and decisions. These values are deeply ingrained in the company's culture and serve as a compass for its behavior, shaping its interactions with stakeholders, its approach to business, and its overall identity.
   
@@ -35,17 +27,8 @@
   
   #organization_value Visionary Leadership
   Fostering a culture of bold ambitions and visionary goals, aiming to make life multi-planetary and ensure the long-term survival of humanity.
-  ### vein visualizer
-  -  [[integrity]]
-  	- Upholding honesty, transparency, and ethical behavior in all business dealings.
-  -  [[collaboration]]
-  	- Encouraging teamwork, cooperation, and open communication to achieve shared goals.
-  -  [[customer-centricity]]
-  	- Prioritizing the needs and satisfaction of customers, providing exceptional service and value.
-  -  [[continuous improvement]]
-  	- Striving for ongoing learning, growth, and innovation to constantly enhance products and processes.
-  -  [[social responsibility]]
-  	- Taking into account the impact of business decisions on society and actively contributing to the well-being of communities and the environment.
+  ### 
+  
   ### extinguished animals meat
   -  [[ethical stewardship]]
   	- Assuming responsibility for the well-being of the revived animals, prioritizing their welfare and respecting their natural behaviors.
@@ -96,3 +79,5 @@
   
   - [[McKinsey 7S Framework]]
     - The McKinsey 7S Framework, developed by Tom Peters and Robert Waterman at McKinsey & Company, is a model that analyzes seven key elements of an organization to determine how well they are aligned and how they can be improved. One of these elements is 'Shared Values', which are the core values of the company that are reflected in the corporate culture and general work ethic.
+- ## 🔑 Keys
+  

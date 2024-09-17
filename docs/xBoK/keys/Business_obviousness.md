@@ -6,7 +6,6 @@
   - 💭 #question What is the potential impact of the product or service?
   - 💭 #question Can it create significant value for customers?
 - ##### 🚨 Risks
-
   - ###### 🚨Business Obviousness
   - Lack of clarity in the value proposition can make it difficult for customers to understand the benefits of the product or service.
   - ###### 🚨mitigation strategy

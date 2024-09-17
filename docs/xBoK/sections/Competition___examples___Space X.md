@@ -10,21 +10,7 @@ Arianespace is a European space company that provides launch services using the 
 #competitor Roscosmos
 The Russian space agency, Roscosmos, competes in various segments of the space industry. They offer launch services using their Soyuz rockets, have their own crewed space program, and provide services to international partners.
 
-#competitor Boeing
-Boeing, a major aerospace company, is a competitor in the space industry. They are involved in satellite manufacturing, providing space transportation services, and have been a long-standing NASA contractor.
-
-#competitor Northrop Grumman
-Northrop Grumman is an American aerospace and defense company that offers satellite manufacturing, space systems, and launch services. They are known for their Antares rocket and the Cygnus spacecraft for cargo resupply missions to the ISS.
-
-#competitor China Aerospace Science and Technology Corporation (CASC)
-CASC is the main space contractor in China, responsible for various space missions, including satellite launches, lunar exploration, and space station development.
-
-#competitor Rocket Lab
-An emerging private space company challenging the traditional space industry with innovative approaches and technologies.
-
 #competitor Virgin Orbit
 An emerging private space company challenging the traditional space industry with innovative approaches and technologies.
 
-#competitor Relativity Space
-An emerging private space company challenging the traditional space industry with innovative approaches and technologies.
 

@@ -6,7 +6,6 @@
   - 💭 #question Are employees satisfied and engaged?
   - 💭 #question Is turnover monitored and addressed?
 - ##### 🚨 Risks
-
   - ###### 🚨Talent Retention
   - Lack of strategies to retain talented employees can result in high turnover and loss of valuable skills and knowledge.
   - ###### 🚨mitigation strategy

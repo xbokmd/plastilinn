@@ -6,7 +6,6 @@
   - 💭 #question Are there sufficient resources and infrastructure for production?
   - 💭 #question Is there a plan for scaling production if needed?
 - ##### 🚨 Risks
-
   - ###### 🚨Production Capability
   - Inadequate production capability can lead to delays and inability to meet customer demands.
   - ###### 🚨mitigation strategy

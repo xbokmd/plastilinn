@@ -6,7 +6,6 @@
   - 💭 #question Does it offer something that is not currently available in the market?
   - 💭 #question Is the innovation protected (e.g., patents, trade secrets)?
 - ##### 🚨 Risks
-
   - ###### 🚨Innovative Approach
   - Lack of innovation can make it difficult to differentiate from competitors and attract customers.
   - ###### 🚨mitigation strategy

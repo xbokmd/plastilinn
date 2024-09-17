@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Is the incorporation of features into the solution well planned? Is it too optimistic? Does it allow for frequent incremental releases?
 - ##### 🚨 Risks
-
   - ###### 🚨Solution Roadmap Quality
   - Lack of a quality solution roadmap can result in delays, inefficiencies, and missed opportunities.
   - ###### 🚨mitigation strategy

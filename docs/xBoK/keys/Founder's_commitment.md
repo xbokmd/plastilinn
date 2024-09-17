@@ -6,7 +6,6 @@
   - 💭 #question Has the entrepreneur invested personal funds into the venture?
   - 💭 #question Is the entrepreneur dedicated full-time to the startup?
 - ##### 🚨 Risks
-
   - ###### 🚨Founder's Commitment
   - Lack of commitment can hinder the progress and growth of the startup.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Is sustainability part of the company’s values or mission?
   - 💭 #question Are sustainable practices communicated to customers?
 - ##### 🚨 Risks
-
   - ###### 🚨Sustainable Practices
   - Neglecting sustainable business practices can result in negative environmental impact and missed opportunities.
   - ###### 🚨mitigation strategy

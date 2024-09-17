@@ -6,7 +6,6 @@
   - 💭 #question Is the competitive advantage sustainable?
   - 💭 #question Is the competitive advantage communicated to customers?
 - ##### 🚨 Risks
-
   - ###### 🚨Competitive Advantage
   - Lack of competitive advantage can result in difficulty in differentiating from rivals and attracting customers.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Are these alliances beneficial to the startup?
   - 💭 #question Is there a strategy for building alliances?
 - ##### 🚨 Risks
-
   - ###### 🚨Strategic Alliances
   - Lack of strategic alliances and partnerships can limit access to resources, markets, and expertise, hindering growth.
   - ###### 🚨mitigation strategy

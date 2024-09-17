@@ -6,7 +6,6 @@
   - 💭 #question Is there a strategy for talent acquisition and retention?
   - 💭 #question Are employee performance and development being managed?
 - ##### 🚨 Risks
-
   - ###### 🚨Human Resource Management
   - Ineffective management of human resources can result in difficulties in hiring and retaining skilled employees.
   - ###### 🚨mitigation strategy

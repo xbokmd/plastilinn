@@ -6,7 +6,6 @@
   - 💭 #question What is the size and strength of the competition?
   - 💭 #question How will competitors react to the startup's entry into the market?
 - ##### 🚨 Risks
-
   - ###### 🚨Competitive Landscape
   - Lack of understanding of the competition can result in ineffective strategies and missed opportunities.
   - ###### 🚨mitigation strategy

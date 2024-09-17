@@ -4,14 +4,6 @@
 - ## 📰 Content type (#perception)
   - Content is of type list and uses the following classes: #perception
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If profile id___perceptions is defined as :Signals that our stakeholders receive... that generate some kind of emotion for them, What could it be?What specific demographic_information should we include in our client archetype profile? (e.g. age, gender, location, income level, education level)
-  How can we gather accurate data to create an accurate client archetype profile?
-  What are the key motivations and pain points of our target clients that we should address in our marketing and product development strategies?
-  How can we ensure that our client archetype profile accurately represents our target market and does not exclude potential customers?
-  How can we use the client archetype profile to effectively communicate our target audience to potential investors and stakeholders?
 - ## 📖 Description
   In business modeling, the concept of "profile/perceptions" refers to the understanding and interpretation of a specific group of customers, users, or stakeholders based on their individual profiles. This concept goes beyond the mere collection of demographic or psychographic characteristics, and delves into how these individuals perceive a product, service, or the company itself.
   
@@ -32,24 +24,13 @@
   Space X has developed reusable rocket systems, such as the Falcon 9 and Falcon Heavy, which have the potential to significantly reduce launch costs and improve operational efficiency.
   
   #perception Positive feedback and reviews from other space agencies or clients who have worked with Space X
-  Space X has received positive feedback and reviews from other space agencies and clients it has collaborated with, demonstrating its reputation and quality in the industry.
+  Space X has received positive feedback and reviews from other space agencies and clients it has collaborated with.
   
   #perception Industry news and expectations surrounding Space X's achievements
-  Space X has generated significant interest in the space industry due to its achievements, such as successful landings and advancements in space technology.
   
-  #perception Updates on Space X's partnerships and collaborations with other space agencies or organizations
-  Space X has established partnerships and collaborations with other space agencies and organizations, showcasing its commitment to cooperation and the advancement of space exploration.
-  ### vein visualizer
-  - #perception [[Reliable and accurate vein visualization technology for medical professionals]]
-  	- The company's device offers vein visualization technology that is reliable and accurate, improving the abilities of medical professionals.
-  - #perception [[Improved efficiency and precision in intravenous injections and medical procedures]]
-  	- The device enhances the efficiency and precision of intravenous injections and other medical procedures, benefiting both patients and healthcare providers.
-  - #perception [[Enhanced patient comfort and reduced discomfort during medical procedures]]
-  	- The device's use of infrared technology improves patient comfort by reducing discomfort during medical procedures.
-  - #perception [[Positive feedback and testimonials from medical professionals using the device]]
-  	- Medical professionals who have used the device have given positive feedback and testimonials, confirming its effectiveness and value.
-  - #perception [[Growing demand and adoption of the device in the medical community]]
-  	- The device is experiencing increasing demand and adoption within the medical community, indicating its recognition as a valuable tool.
+  
+  ### 
+  
   ### extinguished animals meat
   - #perception [[Reviving extinct animals through biotechnology and genetic engineering]]
   	- The company's use of biotechnology and genetic engineering to revive extinct animals generates interest and curiosity.
@@ -100,3 +81,5 @@
     - The NPS is a tool that measures customer loyalty and, indirectly, their perception of the business. It is based on one simple question: "On a scale of 0-10, how likely are you to recommend our company/product/service to a friend or colleague?" The answers allow companies to classify customers into Promoters (9-10 score), Passives (7-8 score), and Detractors (0-6 score). The NPS is then calculated by subtracting the percentage of Detractors from the percentage of Promoters.
   - [[Social Media Monitoring Tools]]
     - These tools can be used to monitor and manage online perceptions of the company. They can track mentions of the company on social media and analyze the sentiment of these mentions, helping the company understand and manage online perceptions.
+- ## 🔑 Keys
+  

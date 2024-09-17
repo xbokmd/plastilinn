@@ -6,7 +6,6 @@
   - 💭 #question Are there legal advisors or counsel available?
   - 💭 #question Are licenses and permits in place?
 - ##### 🚨 Risks
-
   - ###### 🚨Legal Compliance
   - Non-compliance with laws and regulations can lead to legal issues and penalties.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Is it similar to existing ideas in the market?
   - 💭 #question Is there a unique selling proposition?
 - ##### 🚨 Risks
-
   - ###### 🚨Originality
   - Lack of originality can make it difficult to differentiate from competitors.
   - ###### 🚨mitigation strategy

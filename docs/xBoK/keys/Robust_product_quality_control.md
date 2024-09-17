@@ -6,7 +6,6 @@
   - 💭 #question Are there processes in place to ensure product quality and minimize defects?
   - 💭 #question Is the risk of legal claims and damage to reputation minimized?
 - ##### 🚨 Risks
-
   - ###### 🚨Product Liability
   - Product defects can lead to legal claims, financial losses, and damage to reputation.
   - ###### 🚨mitigation strategy

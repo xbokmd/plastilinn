@@ -6,7 +6,6 @@
   - 💭 #question Is there a clear value proposition that sets the business apart from competitors?
   - 💭 #question Is the competitive advantage sustainable?
 - ##### 🚨 Risks
-
   - ###### 🚨Competitive Pressure
   - Increased competition can lead to loss of market share and reduced profitability.
   - ###### 🚨mitigation strategy

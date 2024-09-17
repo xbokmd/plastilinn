@@ -5,7 +5,6 @@
   - 💭 #question Do they have experience in business management?
   - 💭 #question Have they worked at a startup before?
 - ##### 🚨 Risks
-
   - ###### 🚨Relevant Experience
   - Lack of experience in business management and startups can impact the ability to effectively lead and grow the startup.
   - ###### 🚨mitigation strategy

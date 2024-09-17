@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question How does market seasonality affect the business?
 - ##### 🚨 Risks
-
   - ###### 🚨Market Seasonality
   - Lack of understanding and adaptation to market seasonality can result in revenue fluctuations and instability.
   - ###### 🚨mitigation strategy

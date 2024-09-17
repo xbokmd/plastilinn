@@ -6,7 +6,6 @@
   - 💭 #question Can it be replicated in different markets or industries?
   - 💭 #question Is there potential for significant growth and expansion?
 - ##### 🚨 Risks
-
   - ###### 🚨Scalability
   - Limited scalability can hinder the growth potential of the startup.
   - ###### 🚨mitigation strategy

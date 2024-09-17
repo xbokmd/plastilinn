@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question How difficult is it to speak with decision-makers?
 - ##### 🚨 Risks
-
   - ###### 🚨Accessibility to Decision Makers
   - Difficulty in reaching decision makers can hinder the ability to influence and persuade key stakeholders.
   - ###### 🚨mitigation strategy

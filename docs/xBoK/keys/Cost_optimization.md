@@ -6,7 +6,6 @@
   - 💭 #question Are there measures in place to reduce costs without compromising quality?
   - 💭 #question Is the financial stability of the business ensured through cost optimization?
 - ##### 🚨 Risks
-
   - ###### 🚨Too high costs
   - High operational or production costs can erode profit margins, making it challenging to maintain financial stability and invest in business growth and development.
   - ###### 🚨mitigation strategy

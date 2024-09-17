@@ -9,7 +9,6 @@
   - 💭 #question Are there targets or benchmarks for each KPI?
   - 💭 #question Is there a process for analyzing and acting on KPI data?
 - ##### 🚨 Risks
-
   - ###### 🚨Monitoring Key Metrics
   - Failure to monitor key metrics can result in a lack of visibility into the health and progress of the business.
   - ###### 🚨mitigation strategy

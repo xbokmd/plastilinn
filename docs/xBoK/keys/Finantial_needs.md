@@ -6,7 +6,6 @@
   - 💭 #question Are there significant financial needs or requirements?
   - 💭 #question Is there a plan for securing funding?
 - ##### 🚨 Risks
-
   - ###### 🚨Financial Needs
   - Insufficient funding can hinder the growth and development of the startup.
   - ###### 🚨mitigation strategy

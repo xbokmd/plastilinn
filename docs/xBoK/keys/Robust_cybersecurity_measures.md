@@ -6,7 +6,6 @@
   - 💭 #question Are there measures to prevent data loss and protect against cyber threats?
   - 💭 #question Is the risk of legal issues and damage to reputation minimized?
 - ##### 🚨 Risks
-
   - ###### 🚨Cybersecurity Breach
   - Cybersecurity breaches can lead to data loss, legal issues, and damage to reputation.
   - ###### 🚨mitigation strategy

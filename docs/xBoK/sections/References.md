@@ -3,10 +3,6 @@
   - Documents, articles, web sites, etc... referenced in this document
 - ## 📰 Content type 
   - Content is of type text
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  
 - ## 📖 Description
   The concept of "References" in business modeling refers to the various sources of information that are used to support the development and validation of a business model. These references can include documents, articles, websites, and other resources that provide valuable insights, data, or perspectives related to the business model.
   
@@ -21,8 +17,12 @@
   In summary, the concept of "References" in business modeling is about leveraging various sources of information to support, inspire, and inform the development of a business model. It is a crucial aspect of business design that contributes to the credibility, innovation, adaptability, and learning of the business.
 - ## 👉 Examples
   ### Space X
+  - Howell E. 2024 Jul 18. SpaceX launches to ISS are under independent NASA review after rare Falcon 9 rocket failure. Spacecom. [accessed 2024 Sep 12]. https://www.space.com/spacex-falcon-9-failure-nasa-independent-investigation.
+  - Space Launch Report: SpaceX Falcon 9 Data Sheet Home On the Pad Space Logs Library Links. 2017. https://sma.nasa.gov/LaunchVehicle/assets/spacex-falcon-9-data-sheet.pdf.
   
-  ### vein visualizer
+  ‌
+  
+  ### 
   
   ### extinguished animals meat
   - #solution [[VeinView]]
@@ -76,3 +76,5 @@
     - Reports from market research firms like Gartner, Forrester, and IDC often serve as references in business model design. They provide data and analysis on market trends, industry benchmarks, and technological advancements.
   - [[Patent Databases]]
     - Patent databases like those maintained by the U.S. Patent and Trademark Office or the European Patent Office can serve as references for business model design. They provide information on patented business methods and systems, which can inspire new business model ideas or help avoid patent infringement.
+- ## 🔑 Keys
+  

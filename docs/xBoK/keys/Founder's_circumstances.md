@@ -6,7 +6,6 @@
   - 💭 #question Does the entrepreneur have any personal constraints or obligations?
   - 💭 #question Is the entrepreneur in a favorable position to focus on the startup?
 - ##### 🚨 Risks
-
   - ###### 🚨Founder's Circumstances
   - Personal constraints or obligations can impact the founder's ability to focus on the startup.
   - ###### 🚨mitigation strategy

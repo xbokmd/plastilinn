@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Are the components incorporated into the solution solid? Will they be properly maintained by the supplier? Are there guarantees that it will not fail? Is there a possibility that the price will increase?
 - ##### 🚨 Risks
-
   - ###### 🚨Appropriate Solution Components
   - Lack of solid and well-maintained solution components can result in product failures and customer dissatisfaction.
   - ###### 🚨mitigation strategy

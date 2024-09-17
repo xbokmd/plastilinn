@@ -4,14 +4,6 @@
 - ## 📰 Content type (#milestone)
   - Content is of type list and uses the following classes: #milestone
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If business project______milestones is defined as :Milestones are specific achievements or events that mark significant progress or success in a business model., What could it be?What is the specific goal or objective of our business project?
-  How does our business project contribute to the overall business model?
-  What is the timeline for our business project and how does it align with our overall business goals?
-  What resources and budget are required to successfully execute our business project?
-  How will the success of our business project be measured and evaluated?
 - ## 📖 Description
   The concept of Milestones in business modeling refers to the significant achievements or events that indicate substantial progress or success in a business model. These milestones serve as markers that help businesses track their progress towards their strategic goals and objectives.
   
@@ -34,40 +26,21 @@
   #milestone First successful satellite deployment
   This milestone marks the successful deployment of Space X's first satellite into orbit. It showcases the company's ability to provide satellite communication services and contributes to the development of its Starlink project.
   
-  #milestone First successful manned mission
-  This milestone marks the successful launch and return of astronauts in a Space X spacecraft. It demonstrates the company's ability to transport humans to and from space and opens opportunities for space tourism and collaboration with space agencies.
+  #milestone First successful manned mission (achived Feb 2020)
+  Successful launch and return of astronauts in a Space X spacecraft.
   
-  #milestone First successful landing of a reusable rocket
-  This milestone marks the successful landing of a Space X rocket after launch, demonstrating the company's advancement in rocket reusability. It significantly reduces the cost of space launches and establishes Space X as a leader in sustainable space exploration.
+  #milestone First successful landing of a reusable rocket (expected Jun 2025)
+  Successful landing of a Space X rocket after launch, demonstrating the company's advancement in rocket reusability.
   
   #milestone Successful completion of a major contract
-  This milestone marks the successful completion of a significant contract, such as launching multiple satellites for a client or delivering cargo to the International Space Station. It demonstrates Space X's reliability, customer satisfaction, and ability to fulfill large-scale contracts.
+  Successful completion of a significant contract, such as launching multiple satellites for a client or delivering cargo to the International Space Station.
   
   #milestone Achievement of profitability
-  This milestone marks the point at which Space X achieves profitability, generating more revenue than expenses. It showcases the company's financial sustainability and success in the space industry.
+  Point at which Space X achieves profitability, generating more revenue than expenses.
   
-  #milestone Expansion into new markets
-  This milestone marks Space X's data into new markets or industries, such as satellite internet services, deep space exploration, or space tourism. It demonstrates the company's ability to diversify its offerings and capture new sources of revenue.
   
-  #milestone Successful development of new technologies
-  This milestone marks the successful development of new technologies or solutions that advance space exploration or have broader applications. It showcases Space X's innovation capabilities and positions the company as a technological leader.
+  ### 
   
-  #milestone Recognition and awards
-  This milestone includes receiving recognition and awards from industry organizations, government agencies, or the public. It highlights Space X's achievements, contributions to the space industry, and positive reputation.
-  
-  #milestone Significant investment or strategic partnership
-  This milestone marks the successful acquisition of a significant investment or the formation of a strategic partnership with a key player in the space industry. It demonstrates confidence in Space X's business model and provides additional resources to support growth and development.
-  ### vein visualizer
-  - #milestone [[Successful commercialization of the vein visualization device]]
-  	- This milestone signifies the successful launch and sale of the company's vein visualization device in the market. It demonstrates the device's effectiveness and acceptance by healthcare professionals.
-  - #milestone [[Establishment of partnerships with key healthcare institutions]]
-  	- This milestone indicates the formation of strategic partnerships with well-known hospitals and healthcare institutions. It showcases the company's credibility and expands its customer base.
-  - #milestone [[Achievement of a high customer satisfaction rate]]
-  	- This milestone represents the achievement of a high rate of customer satisfaction through positive feedback and testimonials. It reflects the company's dedication to providing quality products and services.
-  - #milestone [[Expansion into international markets]]
-  	- This milestone represents the successful expansion of the company into international markets, reaching healthcare facilities worldwide. It demonstrates the company's global presence and growth.
-  - #milestone [[Continuous improvement and innovation of the device]]
-  	- This milestone signifies the company's commitment to ongoing research and development, resulting in improvements to the vein visualization device. It ensures that the device remains at the forefront of technology and meets the evolving needs of customers.
   ### extinguished animals meat
   - #milestone [[Successful revival of the first extinct animal]]
   	- This milestone marks the company's achievement in reviving the DNA of an extinct animal and successfully creating a living individual of the species.
@@ -116,3 +89,5 @@
     - The Balanced Scorecard is a strategic planning and management system used to align business activities with the vision and strategy of the organization. Milestones can be used within this framework to track the progress of strategic objectives across various perspectives (financial, customer, internal process, learning and growth).
   - [[Lean Startup Methodology]]
     - In the Lean Startup methodology, milestones are often used in the "Build-Measure-Learn" feedback loop. They can mark significant points in the process, such as the completion of a minimum viable product (MVP), pivot points, or validation of a key hypothesis.
+- ## 🔑 Keys
+  

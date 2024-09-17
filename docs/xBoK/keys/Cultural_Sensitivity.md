@@ -6,7 +6,6 @@
   - 💭 #question Is there cultural training or awareness programs for employees?
   - 💭 #question Does the startup consider cultural differences in its marketing and operations?
 - ##### 🚨 Risks
-
   - ###### 🚨Cultural Sensitivity
   - Lack of cultural sensitivity can result in cultural misunderstandings and damage to the brand reputation.
   - ###### 🚨mitigation strategy

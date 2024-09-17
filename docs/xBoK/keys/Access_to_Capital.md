@@ -6,7 +6,6 @@
   - 💭 #question Is there a plan to secure additional funding if needed?
   - 💭 #question Are financial projections realistic?
 - ##### 🚨 Risks
-
   - ###### 🚨Funding Strategy
   - Lack of access to capital can hinder the growth and development of the startup.
   - ###### 🚨mitigation strategy

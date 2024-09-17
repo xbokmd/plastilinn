@@ -6,7 +6,6 @@
   - 💭 #question What is the growth potential of the market?
   - 💭 #question Is there room for significant market expansion?
 - ##### 🚨 Risks
-
   - ###### 🚨Market Growth Potential
   - Lack of understanding of the market growth potential can result in missed opportunities for expansion and revenue generation.
   - ###### 🚨mitigation strategy

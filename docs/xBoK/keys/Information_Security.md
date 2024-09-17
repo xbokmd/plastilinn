@@ -6,7 +6,6 @@
   - 💭 #question Is customer data protected?
   - 💭 #question Has the startup undergone security audits or assessments?
 - ##### 🚨 Risks
-
   - ###### 🚨Information Security
   - Lack of_information security practices can result in data breaches and loss of customer trust.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Are there initiatives in place to reduce environmental impact?
   - 💭 #question Is the startup committed to sustainability practices?
 - ##### 🚨 Risks
-
   - ###### 🚨Environmental Consciousness
   - Lack of prioritization of environmental consciousness can result in negative environmental impact and missed opportunities.
   - ###### 🚨mitigation strategy

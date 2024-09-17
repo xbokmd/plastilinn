@@ -6,7 +6,6 @@
   - 💭 #question Are there patents, trademarks, or copyrights in place?
   - 💭 #question Is the risk of theft and legal disputes minimized?
 - ##### 🚨 Risks
-
   - ###### 🚨Intellectual Property Theft
   - Unauthorized use or theft of intellectual property can lead to loss of competitive advantage and legal disputes.
   - ###### 🚨mitigation strategy

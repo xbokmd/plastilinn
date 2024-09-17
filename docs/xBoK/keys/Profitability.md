@@ -6,7 +6,6 @@
   - 💭 #question Are profit margins healthy?
   - 💭 #question Is there a plan to improve profitability?
 - ##### 🚨 Risks
-
   - ###### 🚨Profitability
   - Lack of profitability can hinder the long-term viability of the startup.
   - ###### 🚨mitigation strategy

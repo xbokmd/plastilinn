@@ -6,7 +6,6 @@
   - 💭 #question Is the market stable and growing?
   - 💭 #question Are there any economic factors that could impact the success of the startup?
 - ##### 🚨 Risks
-
   - ###### 🚨Economic Conditions
   - Unfavorable economic conditions can impact the success of the startup.
   - ###### 🚨mitigation strategy

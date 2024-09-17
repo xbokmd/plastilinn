@@ -6,7 +6,6 @@
   - 💭 #question Do customers feel a sense of urgency to solve the problem?
   - 💭 #question Is there a pressing need for a solution?
 - ##### 🚨 Risks
-
   - ###### 🚨Pain Perception
   - Lack of perceived urgency or significance of the problem can result in low customer demand.
   - ###### 🚨mitigation strategy

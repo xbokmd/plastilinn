@@ -6,7 +6,6 @@
   - 💭 #question Are there measures to mitigate the risk of contractual disputes?
   - 💭 #question Are there effective mechanisms for dispute resolution?
 - ##### 🚨 Risks
-
   - ###### 🚨Contractual Disputes
   - Contractual disputes can lead to legal complications and strained business relationships.
   - ###### 🚨mitigation strategy

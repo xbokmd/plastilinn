@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question What barriers exist for customers to switch to a competitor?
 - ##### 🚨 Risks
-
   - ###### 🚨Exit Barriers
   - High exit barriers can result in customer loyalty and reduce the risk of customer churn.
   - ###### 🚨mitigation strategy

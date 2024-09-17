@@ -4,14 +4,6 @@
 - ## 📰 Content type (#assumption)
   - Content is of type list and uses the following classes: #assumption
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If assumptions is defined as :Aspects that the entrepreneurial team knew are true and relevant to their business., What could it be?How can we effectively analyze and evaluate the different components of our business model?
-  What are the key factors to consider when determining the importance and coherence of each component in our business model?
-  How can we identify and assess the risks associated with our business model?
-  Are there any specific tools or methodologies that you recommend for conducting a thorough analysis of our business model?
-  What are some common pitfalls or blind spots that entrepreneurs often overlook when analyzing their business models?
 - ## 📖 Description
   The concept of "Assumption List" in business modeling refers to a list of hypotheses or beliefs that the entrepreneurial team holds to be true and relevant to their business. These assumptions are often based on the team's understanding of the market, the customer, the product or service, and the business environment. They serve as the foundation upon which the business model is built and are used to guide decision-making and strategy development.
   
@@ -31,33 +23,20 @@
 - ## 👉 Examples
   ### Space X
   #assumption Cost reduction through reusable rockets
-  One of the main assumptions on which Space X operates is that the development and use of reusable rocket technology will significantly reduce the cost of space exploration and transportation. By recovering and reusing rocket boosters, Space X aims to reduce the expenses associated with building new rockets for each mission.
+  The development and use of reusable rocket technology will significantly reduce the cost of space exploration and transportation.
   
   #assumption Reliability of reusable rockets
-  Space X assumes that its reusable rockets, such as the Falcon 9 and Falcon Heavy, can maintain high levels of reliability and performance in multiple launches. This assumption is crucial to their cost-saving strategy, as successful rocket recovery and reuse are key to reducing overall mission costs.
-  
-  #assumption Technological advancements
-  Space X assumes that continuous technological advancements and innovation will improve their launch systems and spacecraft, allowing them to push the boundaries of space exploration. They invest in research and development to enhance the design of their rockets, propulsion systems, and landing capabilities.
+  Reusable rockets, such as the Falcon 9 and Falcon Heavy, can maintain high levels of reliability and performance in multiple launches.
   
   #assumption Demand for commercial space services
-  Space X assumes that there is a growing and sustained demand for commercial space services, including satellite launches, cargo resupply missions, and manned missions. Their goal is to capture a significant portion of the market by offering reliable and cost-effective solutions to meet this demand.
+  There is a growing and sustained demand for commercial space services, including satellite launches, cargo resupply missions, and manned missions.
   
   #assumption Collaboration with space agencies
-  Space X assumes that collaboration with space agencies, such as NASA and international counterparts, will provide opportunities for partnerships, contracts, and joint missions. This assumption is based on the belief that collaboration with established space agencies can enhance their credibility and open avenues for additional funding and support.
+  Collaboration with space agencies, such as NASA and international counterparts, will provide opportunities for partnerships, contracts, and joint missions.
   
-  #assumption Operational efficiency
-  Space X assumes that they can continuously improve operational efficiency and optimize their processes to reduce costs and ensure reliable mission execution. This includes manufacturing processes, on-site launch operations, supply chain management, and quality control measures.
-  ### vein visualizer
-  - #assumption [[Medical industry demand]]
-  	- The company assumes that there is a significant and sustained demand for their vein visualization device in the medical industry. This assumption is based on the need for improved accuracy and efficiency in intravenous procedures.
-  - #assumption [[Acceptance of infrared technology]]
-  	- The company assumes that medical professionals will widely accept and adopt the use of infrared technology for vein visualization. This assumption is crucial to the success of their device in the market.
-  - #assumption [[Customer willingness to invest]]
-  	- The company assumes that hospitals, clinics, and medical practices are willing to invest in their vein visualization device, considering the potential benefits it offers in terms of patient care and procedural efficiency.
-  - #assumption [[Effective marketing and promotion]]
-  	- The company assumes that their marketing and promotional efforts will effectively reach and resonate with their target audience of medical professionals. This assumption is important for generating awareness and driving demand for their device.
-  - #assumption [[Ongoing product development]]
-  	- The company assumes that ongoing product development and improvement will be necessary to stay competitive in the market and meet the evolving needs of medical professionals. This assumption drives their investment in research and development.
+  
+  ### 
+  
   ### extinguished animals meat
   - #assumption [[Scientific feasibility of DNA reconstruction]]
   	- The company assumes that it is scientifically feasible to reconstruct the DNA of extinct animals using biotechnology and genetic engineering techniques. This assumption is crucial for the success of their research and development efforts.
@@ -120,3 +99,5 @@
     - This tool, also from the Lean Startup methodology, is used after assumptions have been tested. If an assumption is invalidated, the entrepreneurial team must decide whether to pivot (change a fundamental part of the business model) or persevere (keep testing the current model). The assumption list is a critical input to this decision.
   - [[Assumption Mapping]]
     - This tool, developed by David Bland, is specifically designed to help teams identify and test their riskiest assumptions. The assumption list is a key component of this tool. The team lists their assumptions and then maps them based on their level of uncertainty and the impact on the business if the assumption is wrong.
+- ## 🔑 Keys
+  

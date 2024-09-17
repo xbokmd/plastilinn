@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Does the product focus on solving a specific problem, or is it scattered?
 - ##### 🚨 Risks
-
   - ###### 🚨Product Focus
   - Lack of product focus can result in a diluted value proposition and confusion among customers.
   - ###### 🚨mitigation strategy

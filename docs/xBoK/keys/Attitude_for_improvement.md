@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Are they receptive to receiving feedback on the project?
 - ##### 🚨 Risks
-
   - ###### 🚨Attitude for Improvement
   - Lack of openness to feedback and improvement can hinder the growth and innovation of the startup.
   - ###### 🚨mitigation strategy

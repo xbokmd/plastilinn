@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Does it describe the company adequately? Does it contain a call to action? Does it convey relevant_information clearly and effectively? Is the design appropriate? Does it use visual components (photos, graphics, etc.)? Is the tone of the communication appropriate?
 - ##### 🚨 Risks
-
   - ###### 🚨Business Brochure Quality
   - Lack of a high-quality business brochure can result in ineffective communication and missed opportunities for customer engagement.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Is there a funding strategy in place to support operations and growth?
   - 💭 #question Is the financial stability of the business ensured?
 - ##### 🚨 Risks
-
   - ###### 🚨Funding Shortfall
   - Lack of funding can hinder business operations, development, and growth.
   - ###### 🚨mitigation strategy

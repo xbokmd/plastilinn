@@ -6,7 +6,6 @@
   - 💭 #question Is it a viable and practical solution?
   - 💭 #question Does it address the root cause of the problem?
 - ##### 🚨 Risks
-
   - ###### 🚨Solution Efficiency
   - Lack of solution efficiency can result in customer dissatisfaction and limited adoption.
   - ###### 🚨mitigation strategy

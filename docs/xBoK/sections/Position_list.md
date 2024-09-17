@@ -4,10 +4,6 @@
 - ## 📰 Content type (#position)
   - Content is of type list and uses the following classes: #position
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  
 - ## 📖 Description
   The concept of a "Position List" in business modeling refers to a strategic document that outlines the roles, responsibilities, and hierarchy of positions within a business. This is a critical component in business design as it provides a clear structure for the organization and helps to define the roles and responsibilities of each position. 
   
@@ -59,12 +55,7 @@
   #position Customer Support and Service Representatives
   Responsible for providing technical support, training, and assistance to customers using Space X's solutions.
   
-  #position Quality Assurance and Safety Experts
-  Responsible for ensuring the quality and safety of the solutions, conducting tests, inspections, and certifications.
-  
-  #position Public Relations and Communication Professionals
-  Responsible for managing the public image of Space X, handling media relations, and communicating with stakeholders and the general public.
-  ### vein visualizer
+  ### 
   
   ### extinguished animals meat
   
@@ -85,3 +76,5 @@
     - The Work Breakdown Structure is a tool used in project management to break down projects into smaller, more manageable components. This tool can be used to assign specific tasks to different positions within a business, ensuring that all tasks are appropriately allocated and managed.
   - [[McKinsey 7S Framework]]
     - The McKinsey 7S Framework is a management tool used to assess the alignment of seven key elements of a business: strategy, structure, systems, shared values, style, staff, and skills. This tool can be used to understand how the roles and responsibilities of different positions within a business align with the overall strategy and structure of the organization.
+- ## 🔑 Keys
+  

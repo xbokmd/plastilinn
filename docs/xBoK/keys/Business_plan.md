@@ -6,7 +6,6 @@
   - 💭 #question Does it clearly articulate the startup's vision, goals, and strategies?
   - 💭 #question Is the plan comprehensive and aligned with the market opportunity?
 - ##### 🚨 Risks
-
   - ###### 🚨Business Plan
   - Lack of coherence in the business plan can result in a lack of direction and clarity for the startup.
   - ###### 🚨mitigation strategy

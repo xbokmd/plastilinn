@@ -6,7 +6,6 @@
   - 💭 #question Are there crisis management plans and protocols in place?
   - 💭 #question Is the startup able to respond effectively to unexpected events or emergencies?
 - ##### 🚨 Risks
-
   - ###### 🚨Crisis Management
   - Lack of effective crisis management can result in significant damage to the business during unexpected events or emergencies.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Are there multiple sources of revenue to mitigate risks?
   - 💭 #question Is the business less reliant on a single market or customer segment?
 - ##### 🚨 Risks
-
   - ###### 🚨Economic Downturn
   - Economic downturns can lead to reduced consumer spending and increased business uncertainty.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Are there partnerships or logistics providers in place to facilitate international expansion?
   - 💭 #question Is there expertise in navigating customs and regulations?
 - ##### 🚨 Risks
-
   - ###### 🚨International Logistics
   - Lack of capability to manage international logistics can result in delays and compliance issues.
   - ###### 🚨mitigation strategy

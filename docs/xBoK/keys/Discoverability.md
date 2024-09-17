@@ -6,7 +6,6 @@
   - 💭 #question Is it a significant pain point?
   - 💭 #question Does it have a significant negative impact on customers?
 - ##### 🚨 Risks
-
   - ###### 🚨Discoverability
   - Lack of awareness can hinder the growth and adoption of the product/service.
   - ###### 🚨mitigation strategy

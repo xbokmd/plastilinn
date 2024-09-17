@@ -6,7 +6,6 @@
   - 💭 #question Are there gaps in the team that need to be filled?
   - 💭 #question Is the team capable of executing the business plan?
 - ##### 🚨 Risks
-
   - ###### 🚨Team Skills
   - Lack of necessary skills and expertise can hinder the execution of the business plan.
   - ###### 🚨mitigation strategy

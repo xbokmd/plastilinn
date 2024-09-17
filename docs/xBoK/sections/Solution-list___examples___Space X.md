@@ -1,8 +1,5 @@
   #solution Space X services
-Launch services for satellites and spacecraft.
-Resupply missions to the International Space Station.
-Crewed missions to the International Space Station.
-Development of advanced rocket and spacecraft technologies.
+Launch services for satellites and spacecraft. Resupply missions to the International Space Station. Crewed missions to the International Space Station. Development of advanced rocket and spacecraft technologies.
 
 #solution Starlink
 A satellite constellation being constructed by Space X to provide global broadband internet coverage. It aims to deliver high-speed, low-latency internet access to users around the world, especially in underserved areas.

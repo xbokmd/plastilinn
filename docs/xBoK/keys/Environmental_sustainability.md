@@ -6,7 +6,6 @@
   - 💭 #question Are there measures in place to minimize environmental damage?
   - 💭 #question Is the risk of legal penalties and damage to reputation minimized?
 - ##### 🚨 Risks
-
   - ###### 🚨Environmental Risks
   - Environmental damage can lead to legal penalties and reputational harm.
   - ###### 🚨mitigation strategy

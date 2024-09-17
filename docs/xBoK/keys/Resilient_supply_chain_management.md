@@ -6,7 +6,6 @@
   - 💭 #question Are there measures in place to minimize disruptions and delays?
   - 💭 #question Is the risk of potential loss of business minimized?
 - ##### 🚨 Risks
-
   - ###### 🚨Supply Chain Disruption
   - Interruptions in supply chain can lead to delays, increased costs, and loss of business.
   - ###### 🚨mitigation strategy

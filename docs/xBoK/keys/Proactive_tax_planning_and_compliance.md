@@ -6,7 +6,6 @@
   - 💭 #question Are there measures in place to minimize unanticipated tax obligations?
   - 💭 #question Is the risk of financial strain and legal complications minimized?
 - ##### 🚨 Risks
-
   - ###### 🚨Tax Liability
   - Unanticipated tax obligations can lead to financial strain and legal complications.
   - ###### 🚨mitigation strategy

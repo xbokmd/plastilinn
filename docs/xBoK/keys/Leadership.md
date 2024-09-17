@@ -6,7 +6,6 @@
   - 💭 #question Is the entrepreneur able to inspire and motivate others?
   - 💭 #question Is the entrepreneur capable of making strategic decisions and guiding the team?
 - ##### 🚨 Risks
-
   - ###### 🚨Leadership
   - Lack of strong leadership qualities can impact the ability to guide and motivate the team.
   - ###### 🚨mitigation strategy

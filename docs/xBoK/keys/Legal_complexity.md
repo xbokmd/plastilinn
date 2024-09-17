@@ -6,7 +6,6 @@
   - 💭 #question Are there any legal issues or considerations related to the product?
   - 💭 #question Is there a need for legal counsel or expertise?
 - ##### 🚨 Risks
-
   - ###### 🚨Legal Complexity
   - Legal complexities can impact the development and operation of the startup.
   - ###### 🚨mitigation strategy

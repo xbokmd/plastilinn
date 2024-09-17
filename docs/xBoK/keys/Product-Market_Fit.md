@@ -6,7 +6,6 @@
   - 💭 #question Have customers validated the product-market fit through feedback or purchases?
   - 💭 #question Is the product being recommended or referred by existing users?
 - ##### 🚨 Risks
-
   - ###### 🚨Product-Market Fit
   - Lack of product-market fit can result in low customer adoption and limited revenue generation.
   - ###### 🚨mitigation strategy

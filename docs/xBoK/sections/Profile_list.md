@@ -4,10 +4,6 @@
 - ## 📰 Content type (#profile)
   - Content is of type text and uses the following classes: #profile
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  
 - ## 📖 Description
   In business modeling, the concept of "profile list" refers to a detailed and organized collection of specific characteristics, behaviors, or attributes that define a particular group of customers, users, or stakeholders. This list is used to create a comprehensive understanding of the target audience, their needs, preferences, and how they interact with a product or service.
   
@@ -18,21 +14,8 @@
   The concept of "profile list" is essential in business modeling as it allows a company to segment its market, tailor its products or services to meet the specific needs of different customer groups, and develop targeted marketing strategies. It provides valuable insights that can drive product development, customer service, sales, and other key business functions. By understanding who their customers are and what they want, companies can design and deliver offerings that meet their customers' needs and expectations, thereby enhancing customer satisfaction, loyalty, and business performance.
 - ## 👉 Examples
   ### Space X
-  #profile Governmental Space Agencies
-  Agencies seeking reliable and cost-effective launch services for their space missions.
-  
-  #profile Commercial Satellite Operators
-  Operators requiring orbital deployment of satellites for communication, television, and navigation services.
-  
-  #profile Scientific Research Institutions
-  Institutions that need to conduct experiments in space or require transport to the International Space Station for research purposes.
-  
-  #profile Global Internet Service Providers
-  Companies aiming to expand their internet coverage globally using satellite technology.
-  
-  #profile Mars Colonization Enthusiasts
-  Entities focused on the development and realization of interplanetary travel and habitation projects.
-  ### vein visualizer
+  #profile Space Agency Project Manager
+  ### 
   
   ### extinguished animals meat
   
@@ -55,3 +38,5 @@
     - A Customer Journey Map is a visual representation of a customer's experience with a company, from initial contact to the final interaction. It helps businesses understand their customers' needs, motivations, and pain points at each stage of the journey. This tool can be used to create a profile list by identifying different types of customers and their experiences.
   - [[Market Segmentation]]
     - Market Segmentation is the process of dividing a market into distinct groups of buyers with different needs, characteristics, or behaviors. This tool can be used to create a profile list by identifying and understanding these different groups.
+- ## 🔑 Keys
+  

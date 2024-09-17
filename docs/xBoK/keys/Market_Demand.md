@@ -6,7 +6,6 @@
   - 💭 #question Have potential customers shown interest?
   - 💭 #question Are there any pre-orders or early commitments from customers?
 - ##### 🚨 Risks
-
   - ###### 🚨Market Demand
   - Lack of market demand can hinder the success and growth of the startup.
   - ###### 🚨mitigation strategy

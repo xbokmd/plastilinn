@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question How homogeneous is the target market segment?
 - ##### 🚨 Risks
-
   - ###### 🚨Segment Homogeneity
   - Lack of homogeneity in the target market segment can make it difficult to effectively target and market to customers.
   - ###### 🚨mitigation strategy

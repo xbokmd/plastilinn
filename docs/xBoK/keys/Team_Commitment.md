@@ -6,7 +6,6 @@
   - 💭 #question Are team members willing to put in the effort required?
   - 💭 #question Is there a shared vision and goals among the team?
 - ##### 🚨 Risks
-
   - ###### 🚨Team Commitment
   - Lack of commitment and dedication can result in low motivation and lack of focus among team members.
   - ###### 🚨mitigation strategy

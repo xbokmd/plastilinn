@@ -6,7 +6,6 @@
   - 💭 #question Are there opportunities for further automation?
   - 💭 #question Is there a plan for implementing automation in other areas of the business?
 - ##### 🚨 Risks
-
   - ###### 🚨Process Automation
   - Failure to implement process automation can result in inefficiencies and increased costs.
   - ###### 🚨mitigation strategy

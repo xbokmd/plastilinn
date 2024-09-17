@@ -6,7 +6,6 @@
   - 💭 #question Are there measures in place to minimize delays and reduce development costs?
   - 💭 #question Is the company able to seize market opportunities quickly?
 - ##### 🚨 Risks
-
   - ###### 🚨Product Development Delays
   - Delays can lead to loss of market opportunity and increased development costs.
   - ###### 🚨mitigation strategy

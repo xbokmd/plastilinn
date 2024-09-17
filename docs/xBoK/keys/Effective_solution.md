@@ -6,7 +6,6 @@
   - 💭 #question Is the solution user-friendly and intuitive?
   - 💭 #question Does it provide a seamless experience for customers?
 - ##### 🚨 Risks
-
   - ###### 🚨Inadequate solution
   - Offering a solution that doesn’t fully meet the needs or expectations of customers can lead to low adoption rates, poor customer satisfaction, and ultimately, business failure.
   - ###### 🚨mitigation strategy

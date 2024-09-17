@@ -6,7 +6,6 @@
   - 💭 #question Do customers feel a sense of urgency to solve the problem?
   - 💭 #question Is there a pressing need for a solution?
 - ##### 🚨 Risks
-
   - ###### 🚨Urgency Perception
   - Lack of perceived urgency can delay the sales cycle and hinder customer acquisition.
   - ###### 🚨mitigation strategy

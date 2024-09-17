@@ -6,7 +6,6 @@
   - 💭 #question Is the technology being used innovative?
   - 💭 #question Does the technology provide a competitive advantage?
 - ##### 🚨 Risks
-
   - ###### 🚨Use of Technology
   - Lack of effective use of technology can result in missed opportunities for innovation and competitive disadvantage.
   - ###### 🚨mitigation strategy

@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question What is the relevance of the unfair advantage?
 - ##### 🚨 Risks
-
   - ###### 🚨Relevance of the Advantage
   - Assessing the relevance and significance of the unfair advantage can help determine its potential for creating a competitive edge.
   - ###### 🚨mitigation strategy

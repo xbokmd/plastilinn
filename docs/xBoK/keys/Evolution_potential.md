@@ -6,7 +6,6 @@
   - 💭 #question Does it leverage technological advancements?
   - 💭 #question Is technology a key component of the idea?
 - ##### 🚨 Risks
-
   - ###### 🚨Evolution Potential
   - Lack of potential for evolution can limit the long-term growth and sustainability of the startup.
   - ###### 🚨mitigation strategy

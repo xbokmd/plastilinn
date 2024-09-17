@@ -6,7 +6,6 @@
   - 💭 #question Are these revenue sources diversified and sustainable?
   - 💭 #question Is the revenue model aligned with industry standards?
 - ##### 🚨 Risks
-
   - ###### 🚨Revenue Sources
   - Lack of clear and diversified revenue sources can result in dependence on a single source and increase business risk.
   - ###### 🚨mitigation strategy

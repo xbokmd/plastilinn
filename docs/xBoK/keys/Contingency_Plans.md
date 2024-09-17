@@ -6,7 +6,6 @@
   - 💭 #question Are these plans regularly reviewed and updated?
   - 💭 #question Is there a crisis management team?
 - ##### 🚨 Risks
-
   - ###### 🚨Contingency Plans
   - Lack of contingency plans can leave the business vulnerable to unexpected events or crises.
   - ###### 🚨mitigation strategy

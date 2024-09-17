@@ -1,4 +1,4 @@
-color:: 
+color:: grey
 icon:: 🗨️
 page-type:: [[class]]
 alias:: comments

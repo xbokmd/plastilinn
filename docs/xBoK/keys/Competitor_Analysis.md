@@ -6,7 +6,6 @@
   - 💭 #question What are the strengths and weaknesses of competitors?
   - 💭 #question How does the startup’s product or service differentiate from competitors?
 - ##### 🚨 Risks
-
   - ###### 🚨Competitor Analysis
   - Lack of understanding of competitors' strengths and weaknesses can hinder differentiation and positioning strategies.
   - ###### 🚨mitigation strategy

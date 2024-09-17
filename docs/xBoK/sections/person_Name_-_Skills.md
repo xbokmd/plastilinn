@@ -4,14 +4,6 @@
 - ## 📰 Content type (#skill)
   - Content is of type list and uses the following classes: #skill
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If person id___skills is defined as :the unique identification and competencies of individuals within a business model., What could it be?How experienced are the founders in starting and growing successful startups?
-  What specific skills and expertise do the founders bring to the table that will contribute to the success of the startup?
-  Have the founders worked together in the past, and if so, what was their track record of success?
-  How committed are the founders to the long-term vision and growth of the startup?
-  Are the founders open to seeking mentorship and guidance from industry experts to enhance their chances of success?
 - ## 📖 Description
   The concept of "Person/Skills" in business modeling refers to the unique identification and competencies of individuals within a business model. This concept is crucial in business design as it helps businesses understand the unique value each individual brings to the organization and informs strategic decisions about talent acquisition, development, and management.
   
@@ -40,31 +32,27 @@
   Musk has a deep knowledge of rocket science and space technology. He has been actively involved in the design and development of rockets and spacecrafts at Space X.
   
   #skill Entrepreneurship
-  Musk is a successful entrepreneur with a track record of founding and growing innovative companies. He has the ability to identify market opportunities and build successful business models.
+  Musk is a successful entrepreneur with a track record of founding and growing innovative companies.
   
   #skill Problem Solving
-  Musk is known for his problem-solving skills and his ability to tackle complex challenges. He has overcome numerous technical and operational obstacles in developing Space X solutions.
+  Musk is known for his problem-solving skills and his ability to tackle complex challenges.
   
   #skill Communication
-  Musk is an effective communicator and has the ability to articulate complex ideas and concepts clearly and concisely. He has used his communication skills to promote Space X solutions and engage with stakeholders.
+  Musk is an effective communicator and has the ability to articulate complex ideas and concepts clearly and concisely.
   
   #skill Resilience
-  Musk has demonstrated resilience and determination in the face of setbacks and challenges. He has the ability to persevere and find solutions to overcome obstacles.
+  Musk has demonstrated resilience and determination in the face of setbacks and challenges.
   
   #skill Creativity
-  Musk is known for his creative thinking and his ability to think innovatively. He has introduced innovative concepts and approaches in the space industry.
+  Musk is known for his creative thinking and his ability to think innovatively.
   
   #skill Strategic Thinking
-  Musk has a strategic mindset and is able to develop and execute long-term plans for Space X. He has a clear understanding of the competitive landscape and market dynamics.
+  Musk has a strategic mindset and is able to develop and execute long-term plans for Space X.
   
   #skill Risk Taking
   Musk is willing to take calculated risks and make bold decisions. He has taken on ambitious projects and pursued revolutionary technologies in the space industry.
-  ### vein visualizer
-  - #skill [[Medical Knowledge]] - Knowledge and understanding of medical concepts, terminology, and procedures.
-  - #skill [[Technical Expertise in Infrared Technology]] - Proficiency in using and troubleshooting infrared technology devices and equipment.
-  - #skill [[Customer Service]] - Ability to provide excellent service and support to customers, addressing their needs and concerns.
-  - #skill [[Training and Education]] - Experience in designing and delivering training programs and educational materials.
-  - #skill [[Problem Solving Skills]] - Ability to identify and analyze problems, develop effective solutions, and implement them.
+  ### 
+  
   ### extinguished animals meat
   - #skill [[Biotechnology and Genetic Engineering]]
   	- In-depth knowledge and expertise in biotechnology and genetic engineering techniques.
@@ -113,3 +101,5 @@
     - This is a technology tool that is used to plan, attract, develop, select, and retain talented individuals. Within a business model, it can be used to identify the skills and competencies of individuals and to manage their development and progression within the organization.
   - [[Job Analysis]]
     - This is a systematic process of collecting information about a job. A job analysis might include: the skills and competencies required to perform the job, the job's context and environment, the tools and technologies used in the job, and the relationships between the job and other jobs. This tool can be used to identify the skills and competencies required by individuals within a business model.
+- ## 🔑 Keys
+  

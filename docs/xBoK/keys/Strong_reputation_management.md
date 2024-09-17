@@ -6,7 +6,6 @@
   - 💭 #question Are there measures in place to prevent negative publicity?
   - 💭 #question Is customer trust maintained through effective reputation management?
 - ##### 🚨 Risks
-
   - ###### 🚨Reputational Damage
   - Negative publicity can lead to loss of customer trust and reduced business opportunities.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Is there a risk management plan in place?
   - 💭 #question Are there mitigation strategies for identified risks?
 - ##### 🚨 Risks
-
   - ###### 🚨Risk Identification
   - Failure to identify potential risks can lead to unpreparedness and increased vulnerability to negative events.
   - ###### 🚨mitigation strategy

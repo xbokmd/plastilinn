@@ -6,7 +6,6 @@
   - 💭 #question Is there a budget and is it being adhered to?
   - 💭 #question Are financial records and reports accurate and up-to-date?
 - ##### 🚨 Risks
-
   - ###### 🚨Financial Management
   - Effective financial management is crucial for the sustainability of the startup.
   - ###### 🚨mitigation strategy

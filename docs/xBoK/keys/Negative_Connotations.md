@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Does the name have any negative connotations in any language?
 - ##### 🚨 Risks
-
   - ###### 🚨Negative Connotations
   - Resemblance to words with negative connotations can impact brand perception and reputation.
   - ###### 🚨mitigation strategy

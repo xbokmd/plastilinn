@@ -1,4 +1,4 @@
-    Calculating the unit economics of a typical SpaceX space launch service involves understanding the revenue and costs associated with a single launch, which helps in determining profitability and financial viability. This simplified example will use estimated figures based on publicly available information and assumptions for illustration purposes.
+    Calculating the unit economics of a typical SpaceX space launch service involves understanding the revenue and costs associated with a single launch, which helps in determining profitability and financial viability.
 
 ### Revenue per Launch
 Let's consider the Falcon 9 rocket, SpaceX's workhorse, for this example.

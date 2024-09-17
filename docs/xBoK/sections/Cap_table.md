@@ -3,14 +3,6 @@
   - the financial resources, assets, and investments that a business uses to generate income and support its operations.
 - ## 📰 Content type 
   - Content is of type template
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If capital structure is defined as :the financial resources, assets, and investments that a business uses to generate income and support its operations., What could it be?How do we plan to secure initial funding for our startup?
-  What are the different sources of funding that we can explore?
-  How do we plan to attract investors to invest in our startup?
-  What is our timeline for securing funding and how will it align with our business milestones?
-  How do we plan to manage and allocate the funds once secured?
 - ## 📖 Description
   The concept of "Cap Table" in business modeling refers to the detailed breakdown of a company's shareholders and the equity they hold. It is a critical component of a business's financial structure, as it outlines the ownership stakes, the type of equity each stakeholder holds, and the value of these equities.
   
@@ -36,17 +28,8 @@
   | Employee Stock Options Pool | Reserved for employees| 40,000,000   | 14.4%       |
   | **Total**                   |                       | **275,000,000** | **100%** |
   
-  ### vein visualizer
-  - Crowdfunding: The company can raise capital by soliciting small investments from a large number of individuals through online platforms.
-  - Angel investors: High-net-worth individuals who provide capital in exchange for equity in the company.
-  - Bank loans: The company can borrow funds from banks or financial institutions, which will need to be repaid with interest.
-  - Government grants: The company can apply for grants from government agencies that support businesses in specific sectors or for specific purposes.
-  - Strategic partnerships: The company can form partnerships with other companies or investors who provide capital in exchange for a strategic alliance or access to the company's technology or market.
-  - Initial public offering (IPO): The company can go public by offering shares of its stock to the general public, raising capital through the sale of these shares on a stock exchange.
-  - Supplier financing: The company can negotiate extended payment terms with suppliers, effectively using their financing to support its operations.
-  - Asset-based lending: The company can use its assets, such as accounts receivable or inventory, as collateral to secure a loan.
-  - Lease financing: The company can lease equipment or property instead of purchasing it outright, freeing up capital for other purposes.
-  - Joint ventures: The company can enter into joint ventures with other companies, sharing the capital investment and the risks and rewards of the venture.
+  ### 
+  
   ### extinguished animals meat
   - Equity capital from venture capital firms or private equity investors
   - Debt capital through loans or bonds
@@ -97,3 +80,5 @@
     - Investment analysis can be used to evaluate the potential return on different investments that a company could make. This can be an important part of managing a cap table, as it can help to determine which investments are likely to provide the best return and therefore should be included in the cap table.
   - [[Risk Management]]
     - Risk management involves identifying and assessing potential risks that could affect a company's financial situation. This can be an important part of managing a cap table, as it can help to ensure that the company's financial resources are not put at unnecessary risk.
+- ## 🔑 Keys
+  

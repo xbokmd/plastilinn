@@ -6,7 +6,6 @@
   - 💭 #question Is there a clear vision and direction set by the leaders?
   - 💭 #question Do leaders effectively motivate and inspire the team?
 - ##### 🚨 Risks
-
   - ###### 🚨Leadership Skills
   - Lack of strong leadership can impact the team's performance and decision-making.
   - ###### 🚨mitigation strategy

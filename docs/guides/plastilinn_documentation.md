@@ -2,7 +2,7 @@
 [Features](#features)
 [xBoK](#xbok)
 [Artifacts](#artifacts)
-[Idea Definition Canvas](#idea-definition-canvas)
+[Idea Definition Canvas](🆔ea-definition-canvas)
 [Lean Canvas](#lean-canvas)
 [Business Model Canvas](#business-model-canvas)
 [Empathy Map](#empathy-map)
@@ -18,7 +18,7 @@
 [Open the idea definition guide](#open-the-idea-definition-guide)
 
 <span id="try-plastilinn"></span>
-#### Try plastilinn
+##### Try plastilinn
 
 - Download the sample document (based on Space X) from this link <a href="https://xbokmd.github.io/plastilinn/public/plastilinn-doc_SpaceX.md"  download="plastilinn-doc_SpaceX.md">Plastilinn sample doc</a>
 - Save it in a folder called "Plastilinn"
@@ -27,27 +27,27 @@
 - Now you have a Plastilinn document loaded. Explore the different options the app offers.
 
 <span id="create-a-new-business-from-scratch"></span>
-#### Create a new business from scratch
+##### Create a new business from scratch
 
 <span id="improve-an-existing-business"></span>
-#### Improve an existing business
+##### Improve an existing business
 
 <span id="download-the-Plastilinn-doc-template"></span>
-#### Download the Plastilinn doc template
+##### Download the Plastilinn doc template
 
 - Download the template from this link  <a href="https://xbokmd.github.io/plastilinn/public/pPlastilinn_doc_project_name.md"  download="Plastilinn_doc_project_name.md">Plastilinn doc template</a>
 - Save it in a folder called "Plastilinn"
 - Rename the template using your project's name (IE, "Plastilinn_doc_SpaceX.md")
 
 <span id="load-your-Plastilinn-doc"></span>
-#### Load your Plastilinn doc
+##### Load your Plastilinn doc
 
 Load the Plastilinn doc template you just downloaded by clicking the "choose file" button in the <a href="https://xbokmd.github.io/plastilinn/app.html" target="_blank">Plastilinn application</a>.
 
 <span id="open-the-idea-definition-guide"></span>
-#### Open the idea definition guide
+##### Open the idea definition guide
 
-Click on the [Idea Definition Guide](#idea-definition-guide) guide and follow the instructions.
+Click on the [Idea Definition Guide](🆔ea-definition-guide) guide and follow the instructions.
 
 <a href="https://xbokmd.github.io/plastilinn/app.html" target="_blank">Open the plastilinn app online</a>
 
@@ -148,30 +148,30 @@ The metamodel describes the structure and essential elements that should be cons
 This guide will help you outline your business idea in Plastilinn at a very high level.
 
 <span id="provide-a-brief-description-of-your-business-idea"></span>
-#### Provide a brief description of your business idea
+##### Provide a brief description of your business idea
 
 Describe your business idea in one or two paragraphs by editing the content of the [business summary](<#Business summary>) section.
 
 <span id="who-will-be-the-user-of-the-product-or-service"></span>
-#### Who will be the user of the product or service?
+##### Who will be the user of the product or service?
 
 Define the target customer segments you want to serve.
 
-#id [Main profile](<#Main profile>)
+🆔 [Main profile](<#Main profile>)
 
 <span id="problem"></span>
-#### Problem
+##### Problem
 
 List the top three problems your target customers face.
 
-#id [Main profile - Goals](<#Main profile - Goals>)
+🆔 [Main profile - Goals](<#Main profile - Goals>)
 
 <span id="solution"></span>
-#### Solution
+##### Solution
 
 Outline the proposed solutions to the top problems you've identified.
 
-#id [Main solution](<#Main solution>)
+🆔 [Main solution](<#Main solution>)
 
 ---
 
@@ -189,67 +189,67 @@ Outline the proposed solutions to the top problems you've identified.
 [Unfair Advantage](#unfair-advantage)
 
 <span id="customer-segments"></span>
-#### Customer Segments
+##### Customer Segments
 
 Define the target customer segments you want to serve.
 
-#id [Main profile](<#profile Main profile>)
+🆔 [Main profile](<#profile Main profile>)
 
 <span id="problem-1"></span>
-#### Problem
+##### Problem
 
 List the top three problems your target customers face.
 
-#id [goals](<#Main profile - Goals>)
+🆔 [goals](<#Main profile - Goals>)
 
 <span id="unique-value-proposition"></span>
-#### Unique Value Proposition
+##### Unique Value Proposition
 
 Describe the unique and compelling value you offer to your customers that sets you apart from the competition.
 
-#id[value proposition](<#Main profile - Value proposition>)
+🆔[value proposition](<#Main profile - Value proposition>)
 
 <span id="solution-1"></span>
-#### Solution
+##### Solution
 
 Outline the proposed solutions to the top problems you've identified.
 
-#id[solution](<#Main Solution - Solution>)
+🆔[solution](<#Main Solution - Solution>)
 
 <span id="channels"></span>
-#### Channels
+##### Channels
 
 List the channels you'll use to reach your target customers.
 
-#id[channels](<#Main profile - Channels>)
+🆔[channels](<#Main profile - Channels>)
 
 <span id="revenue-streams"></span>
-#### Revenue Streams
+##### Revenue Streams
 
 Identify the ways your business will generate revenue.
 
-#id[revenue lines](<#Revenue lines>)
+🆔[revenue lines](<#Revenue lines>)
 
 <span id="cost-structure"></span>
-#### Cost Structure
+##### Cost Structure
 
 Enumerate the main costs associated with your business model.
 
-#id[cost lines](<#Cost lines>)
+🆔[cost lines](<#Cost lines>)
 
 <span id="key-metrics"></span>
-#### Key Metrics
+##### Key Metrics
 
 Define the key metrics that will help you track your business's success.
 
-#id[metric list](<#Metric list>)
+🆔[metric list](<#Metric list>)
 
 <span id="unfair-advantage"></span>
-#### Unfair Advantage
+##### Unfair Advantage
 
 Describe any unfair advantage you may have that cannot be easily copied or bought by competitors.
 
-#id[unfair advantage](<#Unfair advantage>)
+🆔[unfair advantage](<#Unfair advantage>)
 
 <span id="business-model-canvas"></span>
 ### Business Model Canvas
@@ -265,40 +265,40 @@ Describe any unfair advantage you may have that cannot be easily copied or bough
 [Gain](#gain)
 
 <span id="think-feel"></span>
-#### Think & Feel
+##### Think & Feel
 
 What are the thoughts and feelings that occupy the customer's mind? Consider worries, aspirations, and how the environment affects them.
-#id think-feel
+🆔 think-feel
 
 <span id="hear"></span>
-#### Hear
+##### Hear
 
 What does the customer hear from their environment, friends, colleagues, and in the media? Include both positive and negative influences.
-#id hear
+🆔 hear
 
 <span id="see"></span>
-#### See
+##### See
 
 What does the customer see in their immediate environment, the market, and in the media? Capture their view of the world.
-#id see
+🆔 see
 
 <span id="say-do"></span>
-#### Say & Do
+##### Say & Do
 
 What does the customer say and do in their environment? How do they behave in public, and what might they be telling others?
-#id say-do
+🆔 say-do
 
 <span id="pain"></span>
-#### Pain
+##### Pain
 
 Identify the customer's pains. What frustrates them, causes them problems, or prevents them from achieving their goals?
-#id pain
+🆔 pain
 
 <span id="gain"></span>
-#### Gain
+##### Gain
 
 What are the customer's gains? Consider what successes look like, their hopes, and what they would consider a win.
-#id gain
+🆔 gain
 
 <span id="value-proposition-canvas"></span>
 ### Value Proposition Canvas
@@ -313,57 +313,57 @@ What are the customer's gains? Consider what successes look like, their hopes, a
 [Products \& Services](#products--services)
 
 <span id="customer-segment"></span>
-#### Customer Segment
+##### Customer Segment
 
 Describe the specific group of customers you are targeting.
 
-#id customer-profile
+🆔 customer-profile
 
 <span id="customer-jobs"></span>
-#### Customer Jobs
+##### Customer Jobs
 
 Enumerate the tasks your customers are trying to complete, problems they are trying to solve, or needs they are trying to satisfy.
 
-#id customer-jobs
+🆔 customer-jobs
 
 <span id="customer-pains"></span>
-#### Customer Pains
+##### Customer Pains
 
 Detail the negative experiences, emotions, and risks that your customers experience in the process of getting the job done.
 
-#id customer-pains
+🆔 customer-pains
 
 <span id="customer-gains"></span>
-#### Customer Gains
+##### Customer Gains
 
 Describe the benefits your customers dream of, including how they measure success and the positive outcomes they wish to achieve.
 
-#id customer-gains
+🆔 customer-gains
 
 <span id="value-proposition"></span>
-#### Value Proposition
+##### Value Proposition
 
 Articulate the unique value your product or service provides in addressing the customer jobs, relieving pains, and creating gains.
 
-#id value-proposition
+🆔 value-proposition
 
 <span id="pain-relievers"></span>
-#### Pain Relievers
+##### Pain Relievers
 
 Specify how your product or service alleviates specific customer pains.
 
-#id pain-relievers
+🆔 pain-relievers
 
 <span id="gain-creators"></span>
-#### Gain Creators
+##### Gain Creators
 
 Explain how your product or service creates customer gains, enhancing positive outcomes and benefits.
 
-#id gain-creators
+🆔 gain-creators
 
 <span id="products-services"></span>
-#### Products & Services
+##### Products & Services
 
 List the products or services you offer that tie into your value proposition.
 
-#id products-services
+🆔 products-services

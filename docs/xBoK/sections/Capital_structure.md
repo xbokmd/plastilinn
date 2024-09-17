@@ -3,14 +3,6 @@
   - the financial resources, assets, and investments that a business uses to generate income and support its operations.
 - ## 📰 Content type 
   - Content is of type template
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If capital structure is defined as :the financial resources, assets, and investments that a business uses to generate income and support its operations., What could it be?How do we plan to secure initial funding for our startup?
-  What are the different sources of funding that we can explore?
-  How do we plan to attract investors to invest in our startup?
-  What is our timeline for securing funding and how will it align with our business milestones?
-  How do we plan to manage and allocate the funds once secured?
 - ## 📖 Description
   The concept of "Capital Structure" in business modeling refers to the mix of financial resources, assets, and investments that a business utilizes to generate income and support its operations. This structure is not randomly assembled, but strategically designed to optimize the financial performance and sustainability of the business.
   
@@ -25,25 +17,18 @@
   In conclusion, the "Capital Structure" concept in business modeling is a critical element that contributes to the financial success and sustainability of the business. It emphasizes the importance of strategically managing the financial resources, assets, and investments in a business model.
 - ## 👉 Examples
   ### Space X
-  Elon Musk
-  He is the primary shareholder and owner of SpaceX, holding 42% equity and having 79% voting control.
+  # SpaceX 2003 Cap Table
   
-  Private Investors
-  Over the years, SpaceX has raised capital through various funding rounds, with investors contributing to the company's valuation. Notable investors include Google and Fidelity, who, in January 2015, invested $1 billion in exchange for 8.33% of the company.
+  | **Shareholder**      | **Role**                   | **Ownership (%)** | **Shares**  |
+  |----------------------|----------------------------|-------------------|-------------|
+  | **Elon Musk**        | Founder, CEO               | 54%               | 5,400,000   |
+  | **Early Investors**  | VC Firms, Angel Investors  | 30%               | 3,000,000   |
+  | **Gwynne Shotwell**   | COO, Early Employee        | 10%               | 1,000,000   |
+  | **Other Early Employees** | Engineers, Advisors   | 6%                | 600,000     |
+  | **Total**            |                            | **100%**          | **10,000,000** |
   
-  Employees
-  It's common for tech companies, including SpaceX, to offer stock options to employees. However, specific details about individual employee ownership or other minor shareholders were not provided in the content.
-  ### vein visualizer
-  - Crowdfunding: The company can raise capital by soliciting small investments from a large number of individuals through online platforms.
-  - Angel investors: High-net-worth individuals who provide capital in exchange for equity in the company.
-  - Bank loans: The company can borrow funds from banks or financial institutions, which will need to be repaid with interest.
-  - Government grants: The company can apply for grants from government agencies that support businesses in specific sectors or for specific purposes.
-  - Strategic partnerships: The company can form partnerships with other companies or investors who provide capital in exchange for a strategic alliance or access to the company's technology or market.
-  - Initial public offering (IPO): The company can go public by offering shares of its stock to the general public, raising capital through the sale of these shares on a stock exchange.
-  - Supplier financing: The company can negotiate extended payment terms with suppliers, effectively using their financing to support its operations.
-  - Asset-based lending: The company can use its assets, such as accounts receivable or inventory, as collateral to secure a loan.
-  - Lease financing: The company can lease equipment or property instead of purchasing it outright, freeing up capital for other purposes.
-  - Joint ventures: The company can enter into joint ventures with other companies, sharing the capital investment and the risks and rewards of the venture.
+  ### 
+  
   ### extinguished animals meat
   - Equity capital from venture capital firms or private equity investors
   - Debt capital through loans or bonds
@@ -94,3 +79,5 @@
     - A PESTEL analysis can help a company understand how external factors may impact its capital structure. For example, changes in economic conditions can affect interest rates, which can impact a company's cost of capital. Similarly, changes in legal regulations can affect a company's ability to raise capital.
   - [[Value Chain Analysis]]
     - This tool can be used to understand how a company's activities contribute to its value creation and costs. This can provide insights into the company's capital structure, as different activities may require different levels of investment and generate different returns.
+- ## 🔑 Keys
+  

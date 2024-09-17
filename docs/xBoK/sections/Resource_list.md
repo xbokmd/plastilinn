@@ -4,14 +4,6 @@
 - ## 📰 Content type (#asset)
   - Content is of type list and uses the following classes: #asset
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If resources is defined as :the assets, capabilities, and infrastructure a business uses to create and deliver value to its customers., What could it be?What specific activities will our startup engage in to create value for our customers?
-  How will these activities differentiate us from our competitors?
-  Are there any specific tasks or processes that we should prioritize or focus on to ensure the success of our startup?
-  How will our activities contribute to the overall customer experience and satisfaction?
-  Are there any potential risks or challenges associated with our chosen activities, and how can we mitigate them effectively?
 - ## 📖 Description
   The concept of "resource list" in business modeling refers to the tangible and intangible assets, capabilities, and infrastructure that a business utilizes to create and deliver value to its customers. This can encompass a wide range of resources, from physical assets like buildings and equipment, to human resources like employees and their skills, to intellectual property like patents and trademarks.
   
@@ -61,17 +53,8 @@
   
   #resource Brand and reputation
   Brand and reputation for attracting customers, investors, and talent.
-  ### vein visualizer
-  - #asset [[Manufacturing facilities]]
-  	- Facilities equipped with state-of-the-art machinery and technology for efficient and high-quality production of goods.
-  - #asset [[Research and development capabilities]]
-  	- A dedicated team of experts and resources focused on continuous innovation and development of new products and technologies.
-  - #asset [[Testing facilities]]
-  	- Specialized laboratories and equipment for rigorous testing and quality assurance of products.
-  - #asset [[Training and education resources]]
-  	- Comprehensive training programs and resources to educate and empower employees and customers with the necessary skills and knowledge.
-  - #asset [[Customer support infrastructure]]
-  	- A robust system and team in place to provide timely and effective assistance to customers, ensuring their satisfaction and loyalty.
+  ### 
+  
   ### extinguished animals meat
   - #asset [[Biotechnology and genetic engineering expertise]]
   	- A team of scientists and researchers with specialized knowledge and skills in biotechnology and genetic engineering.
@@ -120,3 +103,5 @@
     - The Resource-Based View is a method of analyzing and identifying a firm's strategic advantages based on the examination of the combination of its resources. It emphasizes the importance of firm-specific resources that are valuable, rare, inimitable, and non-substitutable (VRIN) to gain and maintain competitive advantage.
   - [[Balanced Scorecard]]
     - The Balanced Scorecard is a strategic planning and management system that organizations use to align business activities with the vision and strategy of the organization, improve internal and external communications, and monitor organization performance against strategic goals. It includes financial measures that tell the results of actions already taken, and operational measures on customer satisfaction, internal processes, and the organization's innovation and improvement activities—the drivers of future financial performance.
+- ## 🔑 Keys
+  

@@ -6,7 +6,6 @@
   - 💭 #question Do the projections align with the business plan and market potential?
   - 💭 #question Are the financial forecasts realistic and achievable?
 - ##### 🚨 Risks
-
   - ###### 🚨Financial Projections
   - Unrealistic or immature financial projections can lead to poor decision-making.
   - ###### 🚨mitigation strategy

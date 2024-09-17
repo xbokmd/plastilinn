@@ -31,9 +31,4 @@ Responsible for managing the IT infrastructure, software systems, and communicat
 #position Customer Support and Service Representatives
 Responsible for providing technical support, training, and assistance to customers using Space X's solutions.
 
-#position Quality Assurance and Safety Experts
-Responsible for ensuring the quality and safety of the solutions, conducting tests, inspections, and certifications.
-
-#position Public Relations and Communication Professionals
-Responsible for managing the public image of Space X, handling media relations, and communicating with stakeholders and the general public.
 

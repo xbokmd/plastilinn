@@ -10,9 +10,6 @@ Supply resupply missions to the International Space Station.
 #offering Manned Missions to the International Space Station
 Human-crewed missions to the International Space Station.
 
-#offering Advanced Rocket and Spacecraft Technologies
-Development of advanced technologies in rockets and spacecraft.
-
 #offering Future Colonization of Mars
 SpaceX's long-term goal of enabling the colonization of Mars.
 

@@ -9,7 +9,6 @@
   - 💭 #question Does it provide cost-saving benefits or efficiencies?
   - 💭 #question Can it contribute to financial savings for customers?
 - ##### 🚨 Risks
-
   - ###### 🚨Financial Benefits
   - Lack of financial benefits can reduce customer motivation to adopt the solution and limit revenue generation.
   - ###### 🚨mitigation strategy

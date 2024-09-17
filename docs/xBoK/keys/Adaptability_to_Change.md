@@ -6,7 +6,6 @@
   - 💭 #question Is there a culture of flexibility and agility within the organization?
   - 💭 #question Is the startup able to pivot or adjust strategies in response to market changes?
 - ##### 🚨 Risks
-
   - ###### 🚨Adaptability to Change
   - Lack of adaptability to change can result in missed opportunities and inability to respond to market changes.
   - ###### 🚨mitigation strategy

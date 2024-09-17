@@ -16,16 +16,15 @@ SpaceX is aiming to secure a contract with a space agency for a series of satell
 ### Total Acquisition Cost:
 \[ \text{Total Acquisition Cost} = \$500,000 + \$300,000 + \$200,000 + \$100,000 = \$1,100,000 \]
 
-### Number of New Customers Acquired:
+**Number of New Customers Acquired**
 For simplicity, let's assume SpaceX successfully secures a contract with 1 space agency in this scenario.
 
-### Calculation of CAC:
+**Calculation of CAC**
 \[ \text{CAC} = \frac{\text{Total Acquisition Cost}}{\text{Number of New Customers Acquired}} \]
 \[ \text{CAC} = \frac{\$1,100,000}{1} = \$1,100,000 \]
 
-### Justification:
+**Justification:**
 The calculated CAC of $1,100,000 represents the estimated cost SpaceX incurs to acquire a new contract with a space agency. Given the high value and long-term nature of contracts in the aerospace sector, this CAC might be justified as the revenue and strategic value derived from such a contract could far exceed the initial acquisition cost. Moreover, the relationship established through this acquisition could lead to further contracts and collaborations, enhancing the overall value obtained from the initial investment.
 
-This scenario simplifies the complex process of acquiring a space agency client and uses estimated costs for illustrative purposes. Actual acquisition costs can vary based on numerous factors, including the scale of marketing efforts, the intensity of the sales process, and the specific requirements of the proposal and negotiation phases.
 
 

@@ -4,14 +4,6 @@
 - ## 📰 Content type (#asset)
   - Content is of type list and uses the following classes: #asset
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If profile id___assets is defined as :Assets that our clients have...advantages for our business model, What could it be?What are the key messages that we should communicate to our target audience through our profile ID___messages?
-  How can we ensure that these messages effectively convey the value proposition of our startup?
-  Are there any specific actions that we want our target audience to take after receiving these messages? If so, how can we make sure that they are motivated to take these actions?
-  How can we differentiate our messages from those of our competitors in order to stand out and attract the attention of our target audience?
-  What channels or platforms would be most effective for delivering these messages to our target audience?
 - ## 📖 Description
   The concept of "Profile/Assets" in business modeling refers to the tangible and intangible resources that a company's clients possess and that can be leveraged for the benefit of the business. These assets can range from physical properties to skills, knowledge, relationships, and other forms of capital that the clients have. Understanding and utilizing these assets can provide significant advantages to a company's business model.
   
@@ -32,27 +24,18 @@
   Space agencies have contracts and budgets allocated to carry out their space missions. Space X can seek to obtain contracts for satellite launches, cargo resupply missions, or even contracts to transport astronauts to space.
   
   #asset Access to launchers and launch platforms
-  Space agencies have access to launch platforms, such as launch bases and space centers, which are vital for carrying out space missions. Space X could seek to use these facilities to launch their rockets and carry out their missions.
+  Space agencies have access to launch platforms, such as launch bases and space centers, which are vital for carrying out space missions.
   
   #asset Experience and technical knowledge
-  Space agencies have experts and scientists with experience in space missions and space technology. Space X can seek to collaborate with these experts and acquire specialized technical knowledge to improve their own capabilities and technologies.
+  Space agencies have experts and scientists with experience in space missions and space technology..
   
   #asset Data and scientific information
-  During space missions, agencies collect a large amount of scientific and research data. Space X can seek to access this data and scientific_information for their own analysis and development of space technology.
+  During space missions, agencies collect a large amount of scientific and research data.
   
   #asset International relations and collaborations
-  Space agencies often have established relationships with other national and international space agencies. Space X can seek to collaborate with these agencies and leverage these relationships to access international markets and expand their global reach.
-  ### vein visualizer
-  - #asset [[Industry partnerships and collaborations]]
-  	- Nuestra empresa puede formar asociaciones y colaboraciones con otras empresas en la industria de la salud, como compañías farmacéuticas o fabricantes de dispositivos médicos. Esto puede llevar al desarrollo conjunto de productos, recursos compartidos y ampliar el alcance del mercado.
-  - #asset [[Patents and intellectual property]]
-  	- Nuestra empresa puede tener patentes valiosas y propiedad intelectual relacionada con la tecnología de visualización de venas infrarrojas. Esto puede proporcionar una ventaja competitiva y oportunidades potenciales de licencia para generar ingresos adicionales.
-  - #asset [[Customer testimonials and success stories]]
-  	- Recopilar testimonios y historias de éxito de clientes satisfechos puede ser un activo valioso para los esfuerzos de marketing y ventas. Estos se pueden utilizar para mostrar la efectividad y los beneficios de nuestro dispositivo para atraer a nuevos clientes.
-  - #asset [[Research and clinical studies]]
-  	- Realizar investigaciones y estudios clínicos para validar la eficacia y seguridad de nuestro dispositivo puede ser un activo valioso. Esto puede ayudar a construir credibilidad, obtener aprobaciones regulatorias y diferenciar nuestro producto de los competidores.
-  - #asset [[Data analytics and insights]]
-  	- Recopilar y analizar datos del uso del dispositivo puede proporcionar_información valiosa sobre patrones de uso, preferencias de los clientes y posibles áreas de mejora. Estos datos se pueden aprovechar para optimizar nuestro dispositivo y mejorar la satisfacción del cliente.
+  Space agencies often have established relationships with other national and international space agencies.
+  ### 
+  
   ### extinguished animals meat
   - #asset [[Revived extinct animal species]]
   	- The company's ability to revive extinct animal species is a unique and valuable asset that sets them apart in the luxury food market.
@@ -101,3 +84,5 @@
     - The Resource-Based View is a method of analyzing and identifying a company's strategic assets. These are resources that are valuable, rare, difficult to imitate, and organized to capture value. By identifying these strategic assets, a company can develop strategies to protect and exploit them.
   - [[PESTEL Analysis]]
     - The PESTEL analysis can help a company to understand how external factors affect its assets. For example, technological changes can create opportunities to develop new assets, while legal changes can affect the value of existing assets.
+- ## 🔑 Keys
+  

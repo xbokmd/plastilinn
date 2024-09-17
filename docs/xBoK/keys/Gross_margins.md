@@ -6,7 +6,6 @@
   - 💭 #question Are the profit margins favorable?
   - 💭 #question Is the business model financially sustainable?
 - ##### 🚨 Risks
-
   - ###### 🚨Gross Margins
   - Unfavorable gross margins can impact the financial sustainability of the business model.
   - ###### 🚨mitigation strategy

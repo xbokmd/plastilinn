@@ -6,7 +6,6 @@
   - 💭 #question What is the average sales cycle duration in the market?
   - 💭 #question Is the sales process lengthy or complex?
 - ##### 🚨 Risks
-
   - ###### 🚨Sales Cycle Duration
   - Lengthy or complex sales cycles can delay revenue generation and hinder business growth.
   - ###### 🚨mitigation strategy

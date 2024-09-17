@@ -1,4 +1,4 @@
 - [[xBoK/examples/Space X]]
-- [[xBoK/examples/vein visualizer]]
+- [[xBoK/examples/]]
 - [[xBoK/examples/extinguished animals meat]]
 

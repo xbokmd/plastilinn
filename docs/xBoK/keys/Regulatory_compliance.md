@@ -6,7 +6,6 @@
   - 💭 #question Are there processes in place to monitor and adhere to laws and regulations?
   - 💭 #question Is the risk of legal penalties minimized?
 - ##### 🚨 Risks
-
   - ###### 🚨Regulatory risks
   - Non-compliance with laws and regulations can result in legal penalties, operational disruptions, and damage to reputation, affecting business viability.
   - ###### 🚨mitigation strategy

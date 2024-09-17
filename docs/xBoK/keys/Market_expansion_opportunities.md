@@ -6,7 +6,6 @@
   - 💭 #question Is the startup identifying and pursuing opportunities to expand the market?
   - 💭 #question Is there a strategy in place to overcome the limitations of a small market?
 - ##### 🚨 Risks
-
   - ###### 🚨Market too small
   - A small market may not provide enough demand for the product or service, limiting the potential for sales and growth and possibly leading to business failure.
   - ###### 🚨mitigation strategy

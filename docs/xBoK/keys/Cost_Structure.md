@@ -6,7 +6,6 @@
   - 💭 #question Are there strategies in place to reduce costs without compromising quality?
   - 💭 #question Are cost-saving measures regularly evaluated?
 - ##### 🚨 Risks
-
   - ###### 🚨Cost Optimization
   - Inefficient cost structure can impact profitability and financial sustainability.
   - ###### 🚨mitigation strategy

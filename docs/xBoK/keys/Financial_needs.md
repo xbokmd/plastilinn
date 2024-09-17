@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question How much money will be needed?
 - ##### 🚨 Risks
-
   - ###### 🚨Financial Needs
   - Lack of financial planning and understanding of funding needs can hinder the ability to secure necessary resources.
   - ###### 🚨mitigation strategy

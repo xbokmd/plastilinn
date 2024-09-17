@@ -4,14 +4,6 @@
 - ## 📰 Content type (#metric)
   - Content is of type list and uses the following classes: #metric
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If metrics is defined as :Metrics are quantifiable measures used to evaluate the performance and effectiveness of a business model., What could it be?What are the key functions needed to achieve our business goals?
-  How do these functions contribute to the overall success of our startup?
-  Are there any additional functions that we may have overlooked in our high-level specification?
-  How do these functions align with our overall business strategy?
-  What resources or expertise do we need to effectively carry out these functions?
 - ## 📖 Description
   A Metric List, in the context of business design, is a set of quantifiable measures that are used to assess the performance and effectiveness of a business model. These metrics serve as a tool for businesses to track their progress towards achieving their strategic objectives, and to identify areas where improvements can be made.
   
@@ -63,17 +55,8 @@
   
   #metric Investor confidence
   Monitoring investor sentiment and the company's ability to attract funding and investment can indicate confidence in its business model and growth prospects.
-  ### vein visualizer
-  - #metric [[Device sales growth]]
-  	- Tracking the growth in sales of the device can indicate the demand and market acceptance of the product.
-  - #metric [[Customer satisfaction rating]]
-  	- Measuring customer satisfaction through surveys or ratings can provide insights into the effectiveness of the device and support services.
-  - #metric [[Training effectiveness]]
-  	- Evaluating the effectiveness of the training provided to medical professionals can ensure proper usage of the device and enhance its value.
-  - #metric [[Service response time]]
-  	- Monitoring the time taken to respond to customer support requests can indicate the efficiency of the support services.
-  - #metric [[Device utilization rate]]
-  	- Assessing the rate at which the device is utilized by medical professionals can indicate its adoption and impact on medical procedures.
+  ### 
+  
   ### extinguished animals meat
   - #metric [[Número de especies animales extintas revividas]]
   	- Seguir el número de diferentes especies animales extintas revividas con éxito puede indicar el progreso de la empresa en ingeniería genética y clonación.
@@ -124,3 +107,5 @@
     - NPS is a customer loyalty metric that measures customers’ willingness to not only return for another purchase or service but also make a recommendation to their family, friends or colleagues. It is a powerful and straightforward metric that can be used to measure a customer's perception of a brand.
   - [[Customer Lifetime Value (CLV)]]
     - CLV is a prediction of the net profit attributed to the entire future relationship with a customer. This metric helps businesses understand a reasonable cost per acquisition.
+- ## 🔑 Keys
+  

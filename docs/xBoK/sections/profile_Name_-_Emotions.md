@@ -4,14 +4,6 @@
 - ## 📰 Content type (#emotion)
   - Content is of type list and uses the following classes: #emotion
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If profile id___emotions is defined as :Emotions that our stakeholders feel and that are relevant to empathize with them and be able to design a value proposition that resonates with them., What could it be?What are the specific problems or challenges that our target customers are currently facing in relation to our business?
-  How well do we understand the needs and desires of our stakeholders, and how have we validated these assumptions?
-  Are there any emerging trends or changes in the market that could impact the problems, needs, or desires of our stakeholders?
-  How does our business address and solve the problems, needs, or desires of our stakeholders in a unique and compelling way?
-  Have we identified any potential gaps or opportunities in the market that our business can capitalize on to better serve our stakeholders?
 - ## 📖 Description
   The concept of "Emotions" in business modeling refers to the emotional aspects that influence the behaviors and decisions of customers, employees, and other stakeholders. This concept is crucial in a business model as it helps companies understand and manage these emotional aspects to enhance their relationships with these stakeholders, improve their experiences, and ultimately, drive their business success.
   
@@ -30,16 +22,16 @@
   The opportunity to work with Space X, a recognized and innovative space company, can generate a feeling of excitement and anticipation.
   
   #emotion Confidence
-  The positive reputation and successful track record of Space X can instill confidence in the procurement manager regarding the potential success of the partnership.
+  The positive reputation and successful track record of Space X can instill confidence in the project manager regarding the potential success of the partnership.
   
   #emotion Inspiration
-  Working with Space X, known for its cutting-edge technology and advancements in space exploration, can inspire the procurement manager to contribute to the agency's goals.
+  Working with Space X, known for its cutting-edge technology and advancements in space exploration, can inspire the project manager to contribute to the agency's goals.
   
   #emotion Pride
-  Collaborating with Space X, a leading player in the space industry, can evoke a sense of pride and prestige for the procurement manager and the agency.
+  Collaborating with Space X, a leading player in the space industry, can evoke a sense of pride and prestige for the project manager and the agency.
   
   #emotion Uncertainty
-  The complexity of the acquisition process and the potential risks associated with selecting a new provider can generate a certain level of uncertainty for the procurement manager.
+  The complexity of the acquisition process and the potential risks associated with selecting a new provider can generate a certain level of uncertainty.
   
   #emotion Budget concerns
   Balancing the agency's budget constraints while ensuring high-quality services and equipment can generate concerns about financial viability.
@@ -47,19 +39,8 @@
   #emotion Pressure
   The responsibility of selecting a provider for critical space missions can create a sense of pressure and the need to make the right decision.
   
-  #emotion Frustration
-  Any challenges or delays in the acquisition process, such as navigating government regulations, can generate frustration for the procurement manager.
-  ### vein visualizer
-  - #segment [[Procurement Manager]]
-  	- The procurement manager is responsible for selecting providers and managing the acquisition process.
-  - #profile [[Space Agency]]
-  	- The agency is seeking a reliable and innovative provider for space-related equipment and services.
-  - #emotion [[Excitement]]
-  	- The opportunity to work with a recognized and innovative space company generates excitement.
-  - #emotion [[Confidence]]
-  	- The positive reputation and successful track record of the provider instill confidence.
-  - #emotion [[Uncertainty]]
-  	- The complexity of the acquisition process generates a certain level of uncertainty.
+  ### 
+  
   ### extinguished animals meat
   - #segment [[Luxury Food Enthusiasts]]
   	- Targeting individuals who appreciate and are willing to pay a premium price for unique gastronomic experiences.
@@ -120,3 +101,5 @@
     - VOC programs involve collecting and analyzing customer feedback to understand their emotions and needs. This information can then be used to design a value proposition that resonates with them.
   - [[Net Promoter Score (NPS)]]
     - NPS is a tool that measures customer loyalty and satisfaction. It can provide insights into the emotions of customers and how they feel about a company's products or services.
+- ## 🔑 Keys
+  

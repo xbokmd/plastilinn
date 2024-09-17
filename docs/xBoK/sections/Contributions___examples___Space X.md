@@ -16,6 +16,4 @@ Through his extensive network, Musk has facilitated partnerships, contracts, and
 #contribution Advocacy for Space and Regulatory Influence
 Musk's advocacy for space exploration and commercial space activities has contributed to shaping public policy and regulatory environments favorable to SpaceX's operations and the broader space industry.
 
-#contribution Financial Risk Management
-By continuously investing in SpaceX and securing contracts and funding, Musk has played a key role in the company's financial stability and growth, enabling ambitious projects like the Falcon rockets, Dragon spacecraft, and Starship.
 

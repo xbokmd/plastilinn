@@ -4,14 +4,6 @@
 - ## 📰 Content type (#competitor)
   - Content is of type list and uses the following classes: #competitor
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If segment id___competition is defined as :Entities or organizations or people who are trying to solve the same problems. For the same clients., What could it be?How have you identified the specific customer groups that your startup will target?
-  What methods or tools did you use to analyze the evolving needs and preferences of these customer groups?
-  Have you considered any potential changes in the market trends that could impact the needs and preferences of your target customer groups?
-  How will you ensure that your business model is adaptable to the evolving needs and preferences of your target customer groups?
-  Have you conducted any market research or surveys to validate the identified customer groups and their evolving needs and preferences?
 - ## 📖 Description
   The concept of "Competition" in business modeling refers to the analysis and understanding of other businesses that offer similar products or services in the same market. This involves identifying who these competitors are, understanding their strategies, strengths, and weaknesses, and determining how they could potentially impact your business.
   
@@ -36,26 +28,11 @@
   #competitor Roscosmos
   The Russian space agency, Roscosmos, competes in various segments of the space industry. They offer launch services using their Soyuz rockets, have their own crewed space program, and provide services to international partners.
   
-  #competitor Boeing
-  Boeing, a major aerospace company, is a competitor in the space industry. They are involved in satellite manufacturing, providing space transportation services, and have been a long-standing NASA contractor.
-  
-  #competitor Northrop Grumman
-  Northrop Grumman is an American aerospace and defense company that offers satellite manufacturing, space systems, and launch services. They are known for their Antares rocket and the Cygnus spacecraft for cargo resupply missions to the ISS.
-  
-  #competitor China Aerospace Science and Technology Corporation (CASC)
-  CASC is the main space contractor in China, responsible for various space missions, including satellite launches, lunar exploration, and space station development.
-  
-  #competitor Rocket Lab
-  An emerging private space company challenging the traditional space industry with innovative approaches and technologies.
-  
   #competitor Virgin Orbit
   An emerging private space company challenging the traditional space industry with innovative approaches and technologies.
   
-  #competitor Relativity Space
-  An emerging private space company challenging the traditional space industry with innovative approaches and technologies.
-  ### vein visualizer
-  - #segment [[VeinViewer]]
-  	- VeinViewer is a competitor that offers a similar device using near-infrared technology to visualize veins for medical professionals.
+  ### 
+  
   ### extinguished animals meat
   - #segment [[Luxury Exotic Meat Suppliers]]
   	- Competitors in the luxury food market that offer unique and exotic meat products, catering to consumers seeking exclusive gastronomic experiences.
@@ -116,3 +93,5 @@
     - This strategy, developed by W. Chan Kim and Renée Mauborgne, involves creating a new, uncontested market space (or "Blue Ocean") rather than competing in an existing market, which is often saturated and highly competitive ("Red Ocean").
   - [[PESTEL Analysis]]
     - The PESTEL analysis can help identify how external factors might affect the competition within a market segment. For example, changes in legal regulations might affect the competitive landscape.
+- ## 🔑 Keys
+  

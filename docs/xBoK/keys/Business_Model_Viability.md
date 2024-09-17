@@ -6,7 +6,6 @@
   - 💭 #question Is the business model sustainable in the long term?
   - 💭 #question Are there multiple revenue streams?
 - ##### 🚨 Risks
-
   - ###### 🚨Business Model Viability
   - A non-viable business model can lead to financial instability and failure.
   - ###### 🚨mitigation strategy

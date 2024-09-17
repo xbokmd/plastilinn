@@ -6,7 +6,6 @@
   - 💭 #question Are cash flow projections regularly updated?
   - 💭 #question Are there strategies in place to improve cash flow?
 - ##### 🚨 Risks
-
   - ###### 🚨Positive Cash Flow
   - Negative cash flow can lead to financial instability and business failure.
   - ###### 🚨mitigation strategy

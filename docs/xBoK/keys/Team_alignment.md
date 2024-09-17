@@ -6,7 +6,6 @@
   - 💭 #question Is there a shared understanding of the startup's mission and vision?
   - 💭 #question Is there effective communication and collaboration among team members?
 - ##### 🚨 Risks
-
   - ###### 🚨Team misalignment
   - Misalignment in team goals, values, or strategies can lead to internal conflicts, reduced productivity, and can hinder the achievement of business objectives.
   - ###### 🚨mitigation strategy

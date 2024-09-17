@@ -4,14 +4,6 @@
 - ## 📰 Content type (#function)
   - Content is of type list and uses the following classes: #function
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If functions need is defined as :High-level specification of the set of tasks that are necessary to carry out a business activity towards the achievement of a business goal., What could it be?How do you suggest we optimize our operations to ensure efficient delivery of our product or service to customers?
-  What are some key metrics or performance indicators we should be tracking to measure the effectiveness of our operations?
-  Are there any specific technologies or tools you recommend we implement to streamline our operations?
-  How can we ensure scalability and flexibility in our operations as our startup grows?
-  What are some potential risks or challenges we should be aware of in terms of our operations, and how can we mitigate them?
 - ## 📖 Description
   The concept of "Function List" in business modeling refers to a high-level specification of the tasks that are necessary to carry out a business activity towards the achievement of a business goal. This list is a crucial component of a business model as it outlines the key functions or tasks that need to be performed to deliver a product or service, create value for customers, and achieve the business objectives.
   
@@ -58,17 +50,8 @@
   
   #function Public relations and marketing
   Space X must engage in public relations and marketing activities to promote its solutions, attract customers, and build brand awareness.
-  ### vein visualizer
-  - #function [[Research and development]]
-  	- The company must invest in research and development to improve and expand the capabilities of the vein visualization device.
-  - #function [[Manufacturing and production]]
-  	- The company must manufacture and produce the vein visualization device to meet the demand of hospitals and medical clinics.
-  - #function [[Sales and distribution]]
-  	- The company must sell and distribute the vein visualization device to hospitals, clinics, and medical practices.
-  - #function [[Technical support and training]]
-  	- The company must provide technical support and training to users of the vein visualization device.
-  - #function [[Customer relationship management]]
-  	- The company must establish and maintain strong relationships with customers to ensure their satisfaction and loyalty.
+  ### 
+  
   ### extinguished animals meat
   - #function [[Scientific research and technological development]]
   	- The company must invest in R&D to understand and manipulate the DNA of extinct animals.
@@ -117,3 +100,5 @@
     - CPM is an algorithm for scheduling a set of project activities. It is a step-by-step project management technique to identify activities on the critical path. It is an approach to project scheduling that allows the project manager to manage the trade-off between the time and cost necessary to complete the project.
   - [[Lean Six Sigma]]
     - Lean Six Sigma is a method that relies on a collaborative team effort to improve performance by systematically removing waste and reducing variation. It combines lean manufacturing/lean enterprise and Six Sigma to eliminate the eight kinds of waste: Defects, Over-Production, Waiting, Non-Utilized Talent, Transportation, Inventory, Motion, and Extra-Processing.
+- ## 🔑 Keys
+  

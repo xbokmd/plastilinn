@@ -9,7 +9,6 @@
   - 💭 #question Are there processes in place to monitor and improve efficiency?
   - 💭 #question Is the company able to meet customer demands efficiently?
 - ##### 🚨 Risks
-
   - ###### 🚨Efficiency and Continuous Improvement
   - Lack of efficiency and continuous improvement can hinder the ability to adapt and meet customer demands.
   - ###### 🚨mitigation strategy

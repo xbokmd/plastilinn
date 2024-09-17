@@ -6,7 +6,6 @@
   - 💭 #question Does the pricing strategy maximize revenue and profitability?
   - 💭 #question Is the pricing aligned with the value provided by the solution?
 - ##### 🚨 Risks
-
   - ###### 🚨Price too high
   - Overpricing can deter potential customers, reduce market share, and negatively impact revenue and profitability, especially in price-sensitive markets.
   - ###### 🚨mitigation strategy

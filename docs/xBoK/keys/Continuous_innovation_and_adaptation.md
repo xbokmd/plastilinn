@@ -6,7 +6,6 @@
   - 💭 #question Is there a focus on staying updated with technological advancements?
   - 💭 #question Is the product or service regularly adapted to meet changing market needs?
 - ##### 🚨 Risks
-
   - ###### 🚨Technological Obsolescence
   - Rapid technological advancements can render products/services obsolete.
   - ###### 🚨mitigation strategy

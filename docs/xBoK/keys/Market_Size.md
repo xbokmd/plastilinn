@@ -6,7 +6,6 @@
   - 💭 #question Does the market present notable growth potential?
   - 💭 #question Is it an existing market or does it need to be created?
 - ##### 🚨 Risks
-
   - ###### 🚨Market Size
   - Lack of market size can limit the potential for scalable growth and revenue generation.
   - ###### 🚨mitigation strategy

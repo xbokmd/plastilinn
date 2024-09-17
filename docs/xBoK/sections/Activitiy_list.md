@@ -4,14 +4,6 @@
 - ## 📰 Content type (#work)
   - Content is of type list and uses the following classes: #work
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If activities is defined as :the tasks or processes that a business engages in to create, deliver, and capture value for its customers., What could it be?What is the recommended approach for determining the ownership distribution among founders in the founder agreement?
-  How can we ensure that the roles and responsibilities of each founder are clearly defined and documented in the founder agreement?
-  What provisions should be included in the founder agreement to address potential conflicts of interest or disputes among founders?
-  Are there any specific clauses or terms that are commonly included in founder agreements to protect the intellectual property rights of the founders?
-  Can you provide guidance on how to address the possibility of a founder leaving the company or wanting to sell their shares in the founder agreement?
 - ## 📖 Description
   The concept of an activity list, in the context of business modeling, refers to the comprehensive set of tasks or processes that a business undertakes to create, deliver, and capture value for its customers. This includes everything from the initial ideation and development of a product or service, to its production, marketing, sales, and after-sales service. 
   
@@ -36,17 +28,8 @@
   
   #work Research and development
   Space X must invest in research and development to improve its rockets and satellites and stay ahead of the competition.
-  ### vein visualizer
-  - #work [[Device production and assembly]]
-  	- The company must manufacture and assemble the infrared vein visualization device to meet customer demand.
-  - #work [[Quality control and testing]]
-  	- The company needs to ensure the device meets high standards and undergoes rigorous testing for accuracy and reliability.
-  - #work [[Distribution logistics]]
-  	- The company must manage the logistics of distributing the device to hospitals, clinics, and medical offices efficiently and on time.
-  - #work [[Technical support and troubleshooting]]
-  	- The company should provide prompt technical support and troubleshooting services to address any issues or concerns raised by customers.
-  - #work [[Training program development]]
-  	- The company needs to develop comprehensive training programs for healthcare professionals to effectively use the device and enhance patient care.
+  ### 
+  
   ### extinguished animals meat
   - #work [[Genome reconstruction and manipulation]]
   	- The company must invest in research and development to understand and manipulate the DNA of extinct animals.
@@ -97,3 +80,5 @@
     - Six Sigma is a set of techniques and tools for process improvement. It seeks to improve the quality of the output of a process by identifying and removing the causes of defects and minimizing variability in manufacturing and business processes.
   - [[Lean Manufacturing]]
     - Lean Manufacturing is a systematic method for waste minimization within a manufacturing system without sacrificing productivity. It considers the expenditure of resources for any goal other than the creation of value for the end customer to be wasteful, and thus a target for elimination.
+- ## 🔑 Keys
+  

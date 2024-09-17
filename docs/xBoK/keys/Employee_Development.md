@@ -6,7 +6,6 @@
   - 💭 #question Is there a budget for training and development?
   - 💭 #question Are employees encouraged to develop new skills?
 - ##### 🚨 Risks
-
   - ###### 🚨Employee Development
   - Lack of opportunities for employee development can result in a stagnant workforce and limited growth potential.
   - ###### 🚨mitigation strategy

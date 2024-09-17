@@ -6,7 +6,6 @@
   - 💭 #question Does the entrepreneur value continuous improvement and growth?
   - 💭 #question Is the entrepreneur receptive to new ideas and perspectives?
 - ##### 🚨 Risks
-
   - ###### 🚨Coachability
   - Resistance to feedback and unwillingness to learn and adapt can hinder personal and professional growth.
   - ###### 🚨mitigation strategy

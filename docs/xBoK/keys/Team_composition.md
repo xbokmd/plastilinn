@@ -6,7 +6,6 @@
   - 💭 #question Do their skills and expertise align and complement each other?
   - 💭 #question Is there diversity within the team?
 - ##### 🚨 Risks
-
   - ###### 🚨Team Composition
   - Lack of complementary skills and expertise among team members can result in gaps and inefficiencies.
   - ###### 🚨mitigation strategy

@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question What
 - ##### 🚨 Risks
-
   - ###### 🚨Capital Structure
   - Inefficient capital structure can impact the financial health of the startup.
   - ###### 🚨mitigation strategy

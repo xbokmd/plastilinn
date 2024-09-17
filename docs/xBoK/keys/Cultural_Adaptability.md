@@ -6,7 +6,6 @@
   - 💭 #question Are cultural differences considered in international markets?
   - 💭 #question Is there cultural training for employees?
 - ##### 🚨 Risks
-
   - ###### 🚨Cultural Adaptability
   - Lack of cultural adaptability can result in miscommunication and ineffective operations in international markets.
   - ###### 🚨mitigation strategy

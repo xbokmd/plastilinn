@@ -6,7 +6,6 @@
   - 💭 #question Are there partnerships or channels in place to reach target customers?
   - 💭 #question Is the marketing strategy aligned with the target market?
 - ##### 🚨 Risks
-
   - ###### 🚨Not finding suitable channels
   - Inability to access effective distribution and marketing channels can hinder reach and acquisition of customers, impacting sales and business growth.
   - ###### 🚨mitigation strategy

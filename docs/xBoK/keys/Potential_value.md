@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question How much value can it ultimately deliver?
 - ##### 🚨 Risks
-
   - ###### 🚨Potential Value
   - Lack of potential value can limit the attractiveness of the business to investors and customers.
   - ###### 🚨mitigation strategy

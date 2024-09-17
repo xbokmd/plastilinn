@@ -6,7 +6,6 @@
   - 💭 #question Are there measures to mitigate the impact of currency exchange fluctuations?
   - 💭 #question Is the profitability of international business ensured through currency risk management?
 - ##### 🚨 Risks
-
   - ###### 🚨Currency Exchange Risk
   - Currency exchange fluctuations can impact international business and profitability.
   - ###### 🚨mitigation strategy

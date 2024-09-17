@@ -3,17 +3,6 @@
   - An opportunity is a potential area for a business to generate revenue or create value for customers within its business model.
 - ## 📰 Content type 
   - Content is of type text
-- ## 🔑 Keys
-  - Opportunity > #key 💰60 [Momentum](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Momentum)
-  - Opportunity > #key 💰40 [Innovative approach](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Innovative_approach)
-  - Opportunity > #key 💰30 [Evolution potential](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Evolution_potential)
-  - Opportunity > #key 💰20 [Business obviousness](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Business_obviousness)
-- ## 🤖 innCoPilot
-  How did you identify the opportunity for your business? 
-  What market research have you conducted to validate the potential of this opportunity? 
-  How do you plan to capitalize on this opportunity and generate revenue? 
-  Have you identified any potential risks or challenges associated with this opportunity? 
-  How does this opportunity align with your target customers' needs and preferences?
 - ## 📖 Description
   In business modeling, the concept of "opportunity" refers to a set of circumstances that makes it possible for a business to achieve specific, strategic goals. Opportunities can arise from a variety of sources, such as changes in market trends, technological advancements, shifts in customer needs or behaviors, or regulatory changes. 
   
@@ -24,15 +13,9 @@
   In essence, the concept of "opportunity" in business modeling is about identifying and capitalizing on the potential for growth and value creation. It is a critical element in business design, driving strategic decision-making, innovation, and competitive positioning. It shapes the business's strategies for product development, market entry, customer engagement, and revenue generation.
 - ## 👉 Examples
   ### Space X
-  The opportunity for Space X lies in the growing demand for space exploration, satellite deployment, and commercial space travel.
+  The opportunity for Space X lies in the growing demand for space exploration, satellite deployment, and commercial space travel. By developing innovative and cost-effective solutions, Space X aims to disrupt the traditional space industry. Space X aims to capture a significant market share.
+  ### 
   
-  By developing innovative and cost-effective solutions, Space X aims to disrupt the traditional space industry.
-  
-  Space X aims to capture a significant market share.
-  ### vein visualizer
-  - An opportunity for the company could be the increasing demand for non-invasive medical procedures and the need for accurate vein visualization.
-  - By offering a device that improves the precision and efficiency of intravenous injections and other medical procedures, the company can tap into this growing market and capture a significant market share.
-  - Additionally, the company can explore partnerships with pharmaceutical companies or research institutions to further expand its reach and create value for customers.
   ### extinguished animals meat
   - An opportunity for the company lies in the growing demand for sustainable and ethically sourced luxury food products.
   - By offering meat from revived extinct animals, the company can cater to a niche market of consumers seeking unique gastronomic experiences and supporting innovative approaches to food production.
@@ -79,3 +62,81 @@
     - This tool looks at the activities that go into creating a product or service with the aim of identifying those that could be improved or optimized. This can help a business identify opportunities to create more value for customers or reduce costs.
   - [[PESTEL Analysis]]
     - By analyzing Political, Economic, Social, Technological, Ecological, and Legal factors, companies can identify how these external factors create opportunities for new revenue streams or value creation. For example, technological advancements can offer new opportunities for product or service innovation.
+- ## 🔑 Keys
+  ## Opportunity - Momentum
+  💰rating: 60
+  - #### is it a good time to launch? is it too early? is it too late?
+  - ##### 💭 Questions
+    - 💭 #question Is it the right time to launch the startup?
+    - 💭 #question Is the market timing favorable?
+    - 💭 #question Is there a window of opportunity for the startup?
+  - ##### 🚨 Risks
+    - ###### 🚨Momentum
+    - Launching at the wrong time can result in missed opportunities or entering a saturated market.
+    - ###### 🚨mitigation strategy
+    - Evaluate the market timing for launching the startup and determine if the market timing is favorable.
+    - ###### 🚨contingency strategy
+    - Assess if there is a window of opportunity for the startup and consider the potential impact on market entry.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Evaluate the market timing for launching the startup
+    - ⚙️ #task  Determine if the market timing is favorable.
+  
+  
+  ## Opportunity - Innovative approach
+  💰rating: 40
+  - #### The value proposition should be innovative, offering something new or significantly improved compared to existing solutions.
+  - ##### 💭 Questions
+    - 💭 #question Is the product or service innovative?
+    - 💭 #question Does it offer something that is not currently available in the market?
+    - 💭 #question Is the innovation protected (e.g., patents, trade secrets)?
+  - ##### 🚨 Risks
+    - ###### 🚨Innovative Approach
+    - Lack of innovation can make it difficult to differentiate from competitors and attract customers.
+    - ###### 🚨mitigation strategy
+    - Foster a culture of innovation and allocate resources for research and development.
+    - ###### 🚨contingency strategy
+    - Encourage employees to contribute ideas and protect innovation through patents or trade secrets.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Foster a culture of innovation through brainstorming sessions
+    - ⚙️ #task  Allocate resources for research and development
+    - ⚙️ #task  Encourage employees to contribute ideas.
+  
+  
+  ## Opportunity - Evolution potential
+  💰rating: 30
+  - #### can it evolve into a different idea?
+  - ##### 💭 Questions
+    - 💭 #question Does the idea make use of new and affordable technologies?
+    - 💭 #question Does it leverage technological advancements?
+    - 💭 #question Is technology a key component of the idea?
+  - ##### 🚨 Risks
+    - ###### 🚨Evolution Potential
+    - Lack of potential for evolution can limit the long-term growth and sustainability of the startup.
+    - ###### 🚨mitigation strategy
+    - Evaluate the potential for the idea to evolve into different ideas or products.
+    - ###### 🚨contingency strategy
+    - Determine if there is room for growth and expansion and leverage technological advancements.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Evaluate the potential for the idea to evolve into different ideas or products
+    - ⚙️ #task  Determine if there is room for growth and expansion.
+  
+  
+  ## Opportunity - Business obviousness
+  💰rating: 20
+  - #### Is it clear why people should use it?
+  - ##### 💭 Questions
+    - 💭 #question How much value can the startup ultimately deliver?
+    - 💭 #question What is the potential impact of the product or service?
+    - 💭 #question Can it create significant value for customers?
+  - ##### 🚨 Risks
+    - ###### 🚨Business Obviousness
+    - Lack of clarity in the value proposition can make it difficult for customers to understand the benefits of the product or service.
+    - ###### 🚨mitigation strategy
+    - Evaluate the clarity of the value proposition and determine if the solution is clear and compelling to customers.
+    - ###### 🚨contingency strategy
+    - Assess the potential impact of the product or service and its ability to create significant value for customers.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Evaluate the clarity of the value proposition
+    - ⚙️ #task  Determine if the solution is clear and compelling to customers.
+  
+  

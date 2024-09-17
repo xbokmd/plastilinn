@@ -4,14 +4,6 @@
 - ## 📰 Content type (#relationship)
   - Content is of type text and uses the following classes: #relationship
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If profile id___relationship is defined as :Relationship that we maintain with our stakeholders, which can be personal, automated, self-service, etc., What could it be?What is the unique value proposition of our product or service that sets us apart from competitors?
-  How well does our value proposition align with the needs and desires of our target customers?
-  What evidence or data do we have to support the effectiveness of our value proposition in convincing stakeholders to take the desired action?
-  Have we clearly communicated our value proposition to our target customers through our marketing and messaging strategies?
-  How can we further enhance or refine our value proposition to increase its persuasive power and drive more desired actions from stakeholders?
 - ## 📖 Description
   The concept of "profile/relationship" in business modeling refers to the identification and characterization of the relationships a company maintains with its stakeholders, which can be personal, automated, self-service, among others. These relationships are established and managed based on the specific profile or identity of each stakeholder.
   
@@ -22,25 +14,16 @@
   In essence, the concept of "profile/relationship" in business modeling is about understanding who a company's stakeholders are, how they prefer to interact with the company, and managing these relationships effectively to meet both the stakeholders' needs and the company's objectives. This is a crucial aspect of business design, as it informs the development of a company's customer engagement strategies, communication channels, and service delivery methods.
 - ## 👉 Examples
   ### Space X
-  - Long-term Partnerships
+  Long-term Partnerships
   Building sustained relationships through ongoing projects and contracts.
   
-  - Collaborative Development
+  Collaborative Development
   Engaging in joint research and development efforts to push the boundaries of space exploration.
   
-  - Customer Support and Consultation
+  Customer Support and Consultation
   Offering expert guidance and support throughout the mission planning and execution phases.
-  ### vein visualizer
-  - #relationship [[Customer Support Portal]]
-  	- A self-service online platform where customers can access resources, FAQs, and submit support tickets.
-  - #relationship [[Automated Email Notifications]]
-  	- Automated emails sent to customers to provide updates, reminders, and important_information.
-  - #relationship [[Personal Account Manager]]
-  	- Assigned account managers who provide personalized support and guidance to key customers.
-  - #relationship [[Online Community Forum]]
-  	- A platform where customers can interact with each other, share experiences, and seek advice.
-  - #relationship [[Customer Feedback Surveys]]
-  	- Regular surveys sent to customers to gather feedback and improve the product and services.
+  ### 
+  
   ### extinguished animals meat
   - #relationship [[VIP Gastronomes]]
   	- A segment of high-end food enthusiasts who value unique and exclusive culinary experiences.
@@ -89,3 +72,5 @@
     - An Empathy Map is a tool used to gain a deeper insight into the customers. By understanding the customers' needs, thoughts, emotions, and motivations, companies can design more effective and meaningful relationships with them.
   - [[Net Promoter Score (NPS)]]
     - NPS is a tool used to measure the loyalty of a company's customer relationships. It can provide valuable insights into the quality of these relationships and how they can be improved.
+- ## 🔑 Keys
+  

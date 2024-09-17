@@ -9,7 +9,6 @@
   - 💭 #question Are there processes in place to ensure high-quality customer service?
   - 💭 #question Is customer feedback used to improve service?
 - ##### 🚨 Risks
-
   - ###### 🚨Problem Resolution
   - Ineffective problem resolution can result in customer dissatisfaction and damage to the business reputation.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Is it easy to reach and engage with key decision makers?
   - 💭 #question Are there any gatekeepers or obstacles to accessing decision makers?
 - ##### 🚨 Risks
-
   - ###### 🚨Decision Makers Accessibility
   - Difficulty in reaching decision makers can hinder the sales process and customer acquisition.
   - ###### 🚨mitigation strategy

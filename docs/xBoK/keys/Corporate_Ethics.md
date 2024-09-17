@@ -6,7 +6,6 @@
   - 💭 #question Are employees trained on ethical conduct?
   - 💭 #question Is ethical conduct a priority for the leadership?
 - ##### 🚨 Risks
-
   - ###### 🚨Corporate Ethics
   - Lack of high ethical standards can damage the reputation and trust of the organization.
   - ###### 🚨mitigation strategy

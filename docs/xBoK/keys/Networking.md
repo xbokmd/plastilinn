@@ -6,7 +6,6 @@
   - 💭 #question Are there processes in place for networking and relationship-building?
   - 💭 #question Are there strategic partnerships or collaborations in place?
 - ##### 🚨 Risks
-
   - ###### 🚨Networking
   - Lack of a strong network can limit access to resources, partnerships, and opportunities for business growth.
   - ###### 🚨mitigation strategy

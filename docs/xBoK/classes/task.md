@@ -1,4 +1,4 @@
-color:: 
+color:: blue
 icon:: 🛠️
 page-type:: [[class]]
 alias:: tasks

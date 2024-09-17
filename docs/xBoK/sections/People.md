@@ -4,20 +4,6 @@
 - ## 📰 Content type (#person)
   - Content is of type list and uses the following classes: #person
 
-- ## 🔑 Keys
-  - People > #key 💰40 [Receptiveness to Feedback](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Receptiveness_to_Feedback)
-  - People > #key 💰40 [Competency scope](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Competency_scope)
-  - People > #key 💰30 [Relevant experience](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Relevant_experience)
-  - People > #key 💰25 [Market experience](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Market_experience)
-  - People > #key 💰25 [Skills and expectations overlap](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Skills_and_expectations_overlap)
-  - People > #key 💰15 [Vertical experience](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Vertical_experience)
-  - People > #key 💰10 [Experience working together](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Experience_working_together)
-- ## 🤖 innCoPilot
-  If founders is defined as :Founders are the individuals who establish and initiate a business model, often taking on leadership roles in its development and growth., What could it be?What specific_information should be included in our solution ID___brochure to effectively communicate the advantages of using our product or service to the end customer?
-  How can we ensure that the_information provided in our solution ID___brochure is clear, concise, and easily understandable for the target audience?
-  Are there any specific design elements or visual representations that we should consider incorporating into our solution ID___brochure to enhance its appeal and effectively convey the benefits of our product or service?
-  Should we include any testimonials or case studies in our solution ID___brochure to provide real-life examples of how our product or service has successfully helped other customers?
-  How can we make our solution ID___brochure stand out from competitors and effectively differentiate our product or service in the market?
 - ## 📖 Description
   The concept of "people" in business modeling refers to the founders or individuals who establish and initiate a business model. These individuals often take on leadership roles in the development and growth of the business. They are the visionaries who conceive the business idea, identify the market opportunity, and design the business model to exploit this opportunity.
   
@@ -31,15 +17,8 @@
 - ## 👉 Examples
   ### Space X
   These are the individuals who hold the most important positions in the company.
-  ### vein visualizer
-  - #person [[Steve Jobs]]
-  	- Co-founder of Apple Inc. and a visionary leader in the technology industry.
-  - #person [[Mark Zuckerberg]]
-  	- Co-founder and CEO of Facebook, driving the growth and development of the social media platform.
-  - #person [[Jeff Bezos]]
-  	- Founder of Amazon, revolutionizing e-commerce and leading the company to become a global powerhouse.
-  - #person [[Bill Gates]]
-  	- Co-founder of Microsoft and a prominent philanthropist, shaping the personal computer industry.
+  ### 
+  
   ### extinguished animals meat
   - #person [[Dr. Jane Goodall]]
   	- Renowned primatologist and conservationist, bringing expertise in biodiversity and animal welfare.
@@ -79,3 +58,139 @@
     - This tool identifies and analyzes the individuals or groups that have an interest in a business or project. This can include the founders, as well as other key individuals or groups that they have relationships with. It can help to identify the needs and expectations of these stakeholders, and how they can be managed effectively.
   - [[Balanced Scorecard]]
     - This strategic planning and management system can be used to align business activities with the vision and strategy of the organization, improve internal and external communications, and monitor organization performance against strategic goals. The founders play a key role in these processes.
+- ## 🔑 Keys
+  ## People - Receptiveness to Feedback
+  💰rating: 40
+  - #### Being open to feedback and criticism is essential for continuous improvement. It helps in making necessary adjustments to the product or strategy.
+  - ##### 💭 Questions
+    - 💭 #question Is the startup open to receiving feedback?
+    - 💭 #question Is there a process for collecting and analyzing feedback?
+    - 💭 #question Is feedback used to make improvements?
+  - ##### 🚨 Risks
+    - ###### 🚨Receptiveness to Feedback
+    - Resistance to feedback can hinder the ability to make necessary improvements and adjustments.
+    - ###### 🚨mitigation strategy
+    - Implement channels for collecting feedback and regularly review and analyze feedback.
+    - ###### 🚨contingency strategy
+    - Make data-driven decisions based on feedback and value continuous improvement and growth.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Implement channels for collecting feedback
+    - ⚙️ #task  Regularly review and analyze feedback
+    - ⚙️ #task  Make data-driven decisions based on feedback.
+  
+  
+  ## People - Competency scope
+  💰rating: 40
+  - #### are the skills necessary to successfully build the company present in the team members?
+  - ##### 💭 Questions
+    - 💭 #question Do team members possess the necessary skills and expertise?
+    - 💭 #question Are there any skill gaps within the team?
+    - 💭 #question Is the team capable of executing the business plan effectively?
+  - ##### 🚨 Risks
+    - ###### 🚨Competency Scope
+    - Lack of necessary skills and expertise within the team can hinder the execution of the business plan.
+    - ###### 🚨mitigation strategy
+    - Assess the competency scope of the team and determine if they possess the necessary skills and expertise.
+    - ###### 🚨contingency strategy
+    - Identify skill gaps within the team and consider hiring or training to fill those gaps.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Assess the competency scope of the team
+    - ⚙️ #task  Determine if they possess the necessary skills and expertise.
+  
+  
+  ## People - Relevant experience
+  💰rating: 30
+  - #### Evaluate the experience of the team in business management and leadership. Assess the experience of the team in startups and their track record.
+  - ##### 💭 Questions
+    - 💭 #question Do they have experience in business management?
+    - 💭 #question Have they worked at a startup before?
+  - ##### 🚨 Risks
+    - ###### 🚨Relevant Experience
+    - Lack of experience in business management and startups can impact the ability to effectively lead and grow the startup.
+    - ###### 🚨mitigation strategy
+    - Assess the previous experience of the team members in business management and leadership roles.
+    - ###### 🚨contingency strategy
+    - Consider their ability to effectively manage and lead the startup and evaluate their track record and success in previous ventures.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Assess the previous experience of the team members in business management and leadership roles
+    - ⚙️ #task  Consider their ability to effectively manage and lead the startup
+    - ⚙️ #task Evaluate the previous experience of the team members in starting and running startups
+    - ⚙️ #task  Consider their track record and success in previous ventures.
+  
+  
+  ## People - Market experience
+  💰rating: 25
+  - #### does the team have experience in the market?
+  - ##### 💭 Questions
+    - 💭 #question Does the team have experience in the target market?
+    - 💭 #question Do team members understand the market dynamics and customer needs?
+    - 💭 #question Is there industry-specific knowledge within the team?
+  - ##### 🚨 Risks
+    - ###### 🚨Market Experience
+    - Lack of market experience can result in a lack of understanding of customer needs and market dynamics.
+    - ###### 🚨mitigation strategy
+    - Assess the market experience of the team and determine if they have experience in the target market.
+    - ###### 🚨contingency strategy
+    - Evaluate if team members understand the market dynamics and customer needs and if there is industry-specific knowledge within the team.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Assess the market experience of the team
+    - ⚙️ #task  Determine if they have experience in the target market.
+  
+  
+  ## People - Skills and expectations overlap
+  💰rating: 25
+  - #### how well are roles defined? do different team members aspire to managing the company?
+  - ##### 💭 Questions
+    - 💭 #question Are the roles and expectations of team members well-defined?
+    - 💭 #question Is there clarity on individual responsibilities and contributions?
+    - 💭 #question Do team members have aligned goals and aspirations?
+  - ##### 🚨 Risks
+    - ###### 🚨Skills and Expectations Overlap
+    - Lack of clarity in roles and expectations can lead to confusion and inefficiencies within the team.
+    - ###### 🚨mitigation strategy
+    - Evaluate the overlap of skills and expectations within the team and determine if roles and responsibilities are well-defined.
+    - ###### 🚨contingency strategy
+    - Ensure there is clarity on individual responsibilities and contributions and that team members have aligned goals and aspirations.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Evaluate the overlap of skills and expectations within the team
+    - ⚙️ #task  Determine if roles and responsibilities are well-defined.
+  
+  
+  ## People - Vertical experience
+  💰rating: 15
+  - #### do founders have industry-specific knowledge and expertise?
+  - ##### 💭 Questions
+    - 💭 #question Does the entrepreneur have industry-specific knowledge and expertise?
+    - 💭 #question Is the entrepreneur familiar with the market and industry?
+    - 💭 #question Does the entrepreneur have relevant experience in the field?
+  - ##### 🚨 Risks
+    - ###### 🚨Vertical Experience
+    - Lack of industry-specific knowledge and expertise can hinder the ability to effectively navigate the market.
+    - ###### 🚨mitigation strategy
+    - Assess the industry-specific knowledge and expertise of the founder and determine if they have relevant experience in the field.
+    - ###### 🚨contingency strategy
+    - Consider if the entrepreneur has industry-specific knowledge and expertise and if they are familiar with the market and industry.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Assess the industry-specific knowledge and expertise of the founder
+    - ⚙️ #task  Determine if they have relevant experience in the field.
+  
+  
+  ## People - Experience working together
+  💰rating: 10
+  - #### 
+  - ##### 💭 Questions
+    - 💭 #question How well does the team work together?
+    - 💭 #question Has the team collaborated successfully in the past?
+    - 💭 #question Is there a track record of effective teamwork and collaboration?
+  - ##### 🚨 Risks
+    - ###### 🚨Experience Working Together
+    - Lack of experience working together can impact team dynamics and collaboration.
+    - ###### 🚨mitigation strategy
+    - Assess the experience of the team working together and determine if they have a track record of effective teamwork and collaboration.
+    - ###### 🚨contingency strategy
+    - Evaluate how well the team works together and if they have collaborated successfully in the past.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Assess the experience of the team working together
+    - ⚙️ #task  Determine if they have a track record of effective teamwork and collaboration.
+  
+  

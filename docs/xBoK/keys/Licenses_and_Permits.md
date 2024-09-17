@@ -6,7 +6,6 @@
   - 💭 #question Are there processes in place to ensure ongoing compliance with regulations?
   - 💭 #question Are there plans to acquire any additional licenses or permits?
 - ##### 🚨 Risks
-
   - ###### 🚨Licenses and Permits
   - Lack of necessary licenses and permits can lead to legal issues and hinder the operation of the startup.
   - ###### 🚨mitigation strategy

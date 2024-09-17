@@ -6,7 +6,6 @@
   - 💭 #question Is there a process for collecting and analyzing feedback?
   - 💭 #question Is feedback used to make improvements?
 - ##### 🚨 Risks
-
   - ###### 🚨Receptiveness to Feedback
   - Resistance to feedback can hinder the ability to make necessary improvements and adjustments.
   - ###### 🚨mitigation strategy

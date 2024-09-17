@@ -6,7 +6,6 @@
   - 💭 #question Is the problem important and relevant to potential customers?
   - 💭 #question Does the solution provide a compelling value proposition?
 - ##### 🚨 Risks
-
   - ###### 🚨Not severe enough problem
   - If the problem addressed is not critical for potential customers, they may not be willing to pay for the solution, affecting the revenue and sustainability of the business.
   - ###### 🚨mitigation strategy

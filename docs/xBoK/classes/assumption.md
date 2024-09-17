@@ -1,4 +1,4 @@
-color:: blue
+color:: red
 icon:: 🔮
 page-type:: [[class]]
 alias:: assumptions

@@ -3,15 +3,6 @@
   - the purpose or reason for the existence of a business, including its goals and values.
 - ## 📰 Content type 
   - Content is of type text
-- ## 🔑 Keys
-  - Mission > #key 💰30 [Realism - Ambition](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Realism_-_Ambition)
-  - Mission > #key 💰20 [Clarity of Conception](https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/keys/Clarity_of_Conception)
-- ## 🤖 innCoPilot
-  If mission is defined as :the purpose or reason for the existence of a business, including its goals and values., What could it be?How did you identify the opportunity for your business? 
-  What market research have you conducted to validate the potential of this opportunity? 
-  How do you plan to capitalize on this opportunity and generate revenue? 
-  Have you identified any potential risks or challenges associated with this opportunity? 
-  How does this opportunity align with your target customers' needs and preferences?
 - ## 📖 Description
   In business modeling, the concept of "mission" refers to the fundamental purpose or reason for the existence of a business. It is the driving force behind all business decisions and actions, providing a clear direction and focus for the organization. The mission is typically expressed in a mission statement, which is a brief, concise declaration of the business's core purpose.
   
@@ -23,11 +14,8 @@
 - ## 👉 Examples
   ### Space X
   Space X's mission is to make life multiplanetary by developing the technologies necessary for space exploration and colonization
-  ### vein visualizer
-  - The mission of the company is to enhance healthcare practices by providing medical professionals with innovative devices that utilize infrared technology to visualize veins.
-  - We aim to improve the accuracy and efficiency of intravenous procedures, ultimately contributing to better patient outcomes and experiences.
-  - Through continuous research and development, we strive to advance the capabilities of our devices and maintain strong customer relationships.
-  - We prioritize the values of excellence, reliability, and customer satisfaction.
+  ### 
+  
   ### extinguished animals meat
   - Our mission is to revive extinct species through biotechnology and genetic engineering, providing a unique gastronomic experience while promoting biodiversity conservation.
   - We aim to combine scientific research and technological development to recreate the distinctive characteristics of extinct animals, ensuring their well-being through specialized care.
@@ -58,3 +46,38 @@
     - The PESTEL analysis can be used to understand the external macro-environmental factors that affect a business's ability to achieve its mission. For example, social factors could influence public perception of a business's mission, or legal factors could impose restrictions on how a business can pursue its mission.
   - [[Value Proposition Canvas]]
     - This tool, also developed by Alexander Osterwalder, can be used to ensure that a business's products or services are aligned with its mission. The "value proposition" component should reflect the business's mission, and the "customer jobs, pains, and gains" components should reflect how the business fulfills its mission through its offerings.
+- ## 🔑 Keys
+  ## Mission - Realism - Ambition
+  💰rating: 30
+  - #### Evaluate the realism and ambition of the mission statement.
+  - ##### 💭 Questions
+    - 💭 #question Is the mission statement realistic and ambitious?
+  - ##### 🚨 Risks
+    - ###### 🚨Realism - Ambition
+    - Lack of realism or ambition in the mission statement can impact the motivation and alignment of stakeholders.
+    - ###### 🚨mitigation strategy
+    - Assess the realism and ambition of the mission statement and ensure it is clear, feasible, and aspirational.
+    - ###### 🚨contingency strategy
+    - Consider the potential for inspiring and motivating stakeholders.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Assess the clarity, feasibility, and aspirational nature of the mission statement
+    - ⚙️ #task  Consider the potential for inspiring and motivating stakeholders.
+  
+  
+  ## Mission - Clarity of Conception
+  💰rating: 20
+  - #### Evaluate the clarity and conception of the mission statement.
+  - ##### 💭 Questions
+    - 💭 #question Is the mission statement clear and well-conceived?
+  - ##### 🚨 Risks
+    - ###### 🚨Clarity of Conception
+    - Lack of clarity in the mission statement can result in confusion and lack of alignment within the organization.
+    - ###### 🚨mitigation strategy
+    - Evaluate the clarity and conception of the mission statement and ensure it is clear and well-conceived.
+    - ###### 🚨contingency strategy
+    - Use the mission statement to guide and align the organization.
+  - ##### ⚙️ Tasks
+    - ⚙️ #task Assess the effectiveness and coherence of the mission statement
+    - ⚙️ #task  Consider the potential for guiding and aligning the organization.
+  
+  

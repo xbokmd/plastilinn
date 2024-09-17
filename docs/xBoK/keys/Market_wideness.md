@@ -6,7 +6,6 @@
   - 💭 #question What is the market reach and potential customer base?
   - 💭 #question Is there a large addressable market?
 - ##### 🚨 Risks
-
   - ###### 🚨Market Wideness
   - Lack of understanding of the potential customer base can limit market reach and customer acquisition.
   - ###### 🚨mitigation strategy

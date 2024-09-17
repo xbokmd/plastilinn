@@ -6,7 +6,6 @@
   - 💭 #question Is the user experience intuitive and seamless?
   - 💭 #question Is there a focus on usability and simplicity?
 - ##### 🚨 Risks
-
   - ###### 🚨Ease of Use
   - Lack of ease of use can result in customer frustration and limited product adoption.
   - ###### 🚨mitigation strategy

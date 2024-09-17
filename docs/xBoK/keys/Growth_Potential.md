@@ -6,7 +6,6 @@
   - 💭 #question Are there strategies in place to drive growth?
   - 💭 #question Is the startup positioned to capture a significant market share?
 - ##### 🚨 Risks
-
   - ###### 🚨Growth Potential
   - Lack of growth potential can limit the attractiveness of the business to investors and hinder long-term success.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Is it ready for customers to adopt new solutions?
   - 💭 #question Is there a demand for innovative products or services?
 - ##### 🚨 Risks
-
   - ###### 🚨Market Maturity
   - Lack of market readiness can hinder customer adoption and slow down business growth.
   - ###### 🚨mitigation strategy

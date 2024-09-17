@@ -6,7 +6,6 @@
   - 💭 #question Are new ideas encouraged and supported?
   - 💭 #question Is there a process for testing and learning from experiments?
 - ##### 🚨 Risks
-
   - ###### 🚨Culture of Experimentation
   - Lack of a culture of experimentation can hinder innovation and limit the ability to learn from successes and failures.
   - ###### 🚨mitigation strategy

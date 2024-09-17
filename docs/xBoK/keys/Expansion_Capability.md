@@ -6,7 +6,6 @@
   - 💭 #question Is there a strategy for international expansion?
   - 💭 #question Are there resources allocated for expansion?
 - ##### 🚨 Risks
-
   - ###### 🚨Expansion Capability
   - Lack of capability to expand into new markets can limit business growth opportunities.
   - ###### 🚨mitigation strategy

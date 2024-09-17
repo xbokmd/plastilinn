@@ -6,7 +6,6 @@
   - 💭 #question Has market research been conducted to gather customer insights?
   - 💭 #question Are customer needs and preferences considered in product development and marketing strategies?
 - ##### 🚨 Risks
-
   - ###### 🚨Customer Understanding
   - Lack of deep understanding of customer needs and preferences can result in products or services that do not resonate with the target market.
   - ###### 🚨mitigation strategy

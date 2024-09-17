@@ -6,7 +6,6 @@
   - 💭 #question Is the problem widely recognized by the target market?
   - 💭 #question Is the solution unique or better than existing alternatives?
 - ##### 🚨 Risks
-
   - ###### 🚨Solution to a Problem
   - Lack of an effective solution to a significant problem can result in low customer demand.
   - ###### 🚨mitigation strategy

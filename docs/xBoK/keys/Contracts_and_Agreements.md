@@ -6,7 +6,6 @@
   - 💭 #question Is there legal counsel available for contract review?
   - 💭 #question Are contractual obligations being met?
 - ##### 🚨 Risks
-
   - ###### 🚨Contracts and Agreements
   - Poor handling of contracts and agreements can lead to legal disputes and financial loss.
   - ###### 🚨mitigation strategy

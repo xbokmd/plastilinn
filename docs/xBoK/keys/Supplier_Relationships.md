@@ -6,7 +6,6 @@
   - 💭 #question Are there alternative suppliers in case of disruptions?
   - 💭 #question Are there processes in place to evaluate and select suppliers?
 - ##### 🚨 Risks
-
   - ###### 🚨Supplier Relationships
   - Lack of strong relationships with suppliers can result in delays or disruptions in the supply chain, impacting product availability and quality.
   - ###### 🚨mitigation strategy

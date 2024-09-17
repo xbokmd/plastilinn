@@ -3,10 +3,6 @@
   - A contract list refers to a comprehensive inventory of all the agreements and legal obligations between a business and its stakeholders.
 - ## 📰 Content type 
   - Content is of type text
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  
 - ## 📖 Description
   The concept of "Contract List" in business modeling refers to a comprehensive inventory of all the agreements, contracts, and legal obligations that exist between a business and its stakeholders. This list is a crucial component of a business's operational structure, as it outlines the nature of the relationships, the obligations each party has, and the legal implications of these agreements.
   
@@ -20,20 +16,14 @@
 - ## 👉 Examples
   ### Space X
   Government Contracts for Launch Services
-  Contracts with government entities, notably NASA and the Department of Defense (DoD), for launching satellites, cargo, and crew to space. These include Commercial Resupply Services (CRS) contracts to resupply the International Space Station (ISS) and contracts under the Commercial Crew Program to transport astronauts to and from the ISS.
+  Contracts with government entities, notably NASA and the Department of Defense (DoD), for launching satellites, cargo, and crew to space.
   
   Commercial Satellite Launch Contracts
-  Agreements with commercial entities for launching satellites into orbit. These contracts are with satellite operators and companies in telecommunications, Earth observation, and other sectors requiring satellite deployment services.
+  Agreements with commercial entities for launching satellites into orbit.
   
   Starlink Internet Service Agreements
-  Contracts related to the deployment, operation, and customer subscriptions for SpaceX's Starlink satellite internet service. This includes agreements with consumers, businesses, and potentially government entities for providing broadband internet access globally.
-  
-  Space Tourism and Private Passenger Flights Agreements
-  Contracts with individuals and private entities for space tourism services. This includes agreements for suborbital flights, orbital missions, and potentially future missions around the moon, as announced for the Dear Moon project and other proposed private astronaut missions.
-  
-  Development and Collaboration Agreements
-  Contracts with technology and industry partners for the development of aerospace technology, including the development of the Starship spacecraft, R&D on propulsion systems, life support systems for Mars missions, and other innovative aerospace technologies. These agreements might involve collaboration with other aerospace companies, research institutions, and government agencies to advance space exploration capabilities.
-  ### vein visualizer
+  Contracts related to the deployment, operation, and customer subscriptions for SpaceX's Starlink satellite internet service.
+  ### 
   
   ### extinguished animals meat
   
@@ -54,3 +44,5 @@
     - Contract lists are crucial in risk management. They help identify potential risks associated with each contract, such as non-compliance, non-performance, or financial risks. This can be done using various risk management frameworks, such as ISO 31000 or COSO ERM.
   - [[Stakeholder Analysis]]
     - This tool is used to identify and understand the needs and expectations of major stakeholders. A contract list can be a useful input to this process, as it provides a clear picture of the formal relationships between the business and its stakeholders.
+- ## 🔑 Keys
+  

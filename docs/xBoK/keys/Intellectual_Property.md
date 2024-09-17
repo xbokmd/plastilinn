@@ -6,7 +6,6 @@
   - 💭 #question Are there patents, trademarks, or copyrights in place?
   - 💭 #question Is there a strategy for managing and enforcing intellectual property rights?
 - ##### 🚨 Risks
-
   - ###### 🚨Intellectual Property
   - Failure to protect intellectual property can result in loss of competitive advantage and potential infringement issues.
   - ###### 🚨mitigation strategy

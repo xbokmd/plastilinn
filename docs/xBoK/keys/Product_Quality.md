@@ -6,7 +6,6 @@
   - 💭 #question Have customers expressed satisfaction with the quality?
   - 💭 #question Is there a quality control process in place?
 - ##### 🚨 Risks
-
   - ###### 🚨Product Quality
   - Lack of product quality can result in customer dissatisfaction and damage the brand reputation.
   - ###### 🚨mitigation strategy

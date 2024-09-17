@@ -6,7 +6,6 @@
   - 💭 #question Does the idea address a specific problem or need?
   - 💭 #question Is there a clear value proposition?
 - ##### 🚨 Risks
-
   - ###### 🚨Clarity of the Idea
   - Ambiguity in the business idea can lead to confusion and lack of focus.
   - ###### 🚨mitigation strategy

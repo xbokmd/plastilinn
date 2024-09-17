@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Is the vision statement realistic and ambitious?
 - ##### 🚨 Risks
-
   - ###### 🚨Realism - Ambition
   - Assessing the realism and ambition of the vision statement can help determine its potential for guiding the organization.
   - ###### 🚨mitigation strategy

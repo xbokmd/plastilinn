@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Is the vision statement clear and well-conceived?
 - ##### 🚨 Risks
-
   - ###### 🚨Clarity of Conception
   - Evaluating the clarity and conception of the vision statement can help determine its effectiveness in guiding and aligning the organization.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Are there any skill gaps within the team?
   - 💭 #question Is the team capable of executing the business plan effectively?
 - ##### 🚨 Risks
-
   - ###### 🚨Competency Scope
   - Lack of necessary skills and expertise within the team can hinder the execution of the business plan.
   - ###### 🚨mitigation strategy

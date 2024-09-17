@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Are the organization's goals precisely defined and clear?
 - ##### 🚨 Risks
-
   - ###### 🚨Precisely Defined Objectives
   - Lack of precisely defined goals can lead to confusion and lack of focus within the organization.
   - ###### 🚨mitigation strategy

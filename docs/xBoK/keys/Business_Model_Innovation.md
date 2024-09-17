@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question How innovative is the business model?
 - ##### 🚨 Risks
-
   - ###### 🚨Business Model Innovation
   - Lack of innovation can make it difficult to compete in the market.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Does the entrepreneur speak multiple languages?
   - 💭 #question Is the entrepreneur capable of leading the startup?
 - ##### 🚨 Risks
-
   - ###### 🚨Founder's Capacity
   - Lack of knowledge, skills, and experience can impact the success of the startup.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Is the strategy tailored to the target market?
   - 💭 #question Are there measurable goals for the marketing campaign?
 - ##### 🚨 Risks
-
   - ###### 🚨Marketing Strategy
   - Ineffective marketing strategies can result in low brand awareness and limited sales.
   - ###### 🚨mitigation strategy

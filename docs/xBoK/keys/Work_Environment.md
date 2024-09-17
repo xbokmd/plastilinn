@@ -6,7 +6,6 @@
   - 💭 #question Are there policies and practices in place to promote work-life balance and employee well-being?
   - 💭 #question Are employee feedback and suggestions considered?
 - ##### 🚨 Risks
-
   - ###### 🚨Work Environment
   - Lack of a positive work environment can result in low employee morale and productivity.
   - ###### 🚨mitigation strategy

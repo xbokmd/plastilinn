@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Does the name sound similar when pronounced in different languages?
 - ##### 🚨 Risks
-
   - ###### 🚨Phonetic Consistency
   - Inconsistent pronunciation can lead to confusion and miscommunication in different languages.
   - ###### 🚨mitigation strategy

@@ -4,10 +4,6 @@
 - ## 📰 Content type (#segment)
   - Content is of type list and uses the following classes: #segment
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  
 - ## 📖 Description
   In business modeling, a "segment list" refers to the categorization of a company's market into distinct subsets of consumers with common needs, characteristics, or behaviors. These segments can be defined based on various factors such as demographic, geographic, psychographic, and behavioral traits. 
   
@@ -29,11 +25,8 @@
   The commercial companies segment includes private companies that require space transportation and communication services for their business operations.
   
   #segment ISS Cargo Transport Customers
-   This segment includes space agencies and scientific organizations that require transportation of cargo to the International Space Station (ISS). They need a partner to deliver supplies, equipment, and scientific experiments to the astronauts on board the space station.
-  
-  #segment Third-Party Launch and Cargo Customers
-  This segment comprises companies and organizations in the space industry that require launch and cargo services for their own satellite deployments or space missions. They are seeking a reliable and efficient partner to handle their launch and cargo needs, providing Space X with additional revenue streams and increased utilization of their rockets and resources.
-  ### vein visualizer
+   This segment includes space agencies and scientific organizations that require transportation of cargo to the International Space Station (ISS).
+  ### 
   
   ### extinguished animals meat
   
@@ -56,3 +49,5 @@
     - This tool focuses on understanding the tasks that customers are trying to accomplish, or the "jobs" they need to get done. By understanding these jobs, companies can identify different customer segments based on the different jobs they are trying to accomplish.
   - [[Empathy Map]]
     - This tool helps to gain a deeper insight into customers. It involves understanding what the customer is thinking and feeling, what they are hearing, seeing, saying and doing. This can help to identify different customer segments based on their different experiences and perspectives.
+- ## 🔑 Keys
+  

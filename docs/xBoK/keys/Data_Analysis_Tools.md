@@ -6,7 +6,6 @@
   - 💭 #question Are there processes in place for data collection, analysis, and interpretation?
   - 💭 #question Is data used to drive business strategies and improvements?
 - ##### 🚨 Risks
-
   - ###### 🚨Data Analysis Tools
   - Failure to utilize data analysis tools can result in missed opportunities and ineffective decision-making.
   - ###### 🚨mitigation strategy

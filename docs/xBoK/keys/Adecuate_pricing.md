@@ -7,7 +7,6 @@
   - 💭 #question Is pricing regularly evaluated and adjusted?
   - 💭 #question Is the pricing scheme coherent? Are the prices too high or too low? Are they consistent with the unit economics? Is there flexibility to adapt to different circumstances? Does it generate recurring revenue or one-off? Is it according to the value generated for the customer?
 - ##### 🚨 Risks
-
   - ###### 🚨Adequate Pricing
   - Lack of an appropriate pricing strategy can result in customer resistance and limited revenue generation.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Are there processes to minimize the risk of financial losses due to fraud?
   - 💭 #question Is the risk of damage to reputation minimized?
 - ##### 🚨 Risks
-
   - ###### 🚨Fraud Risks
   - Fraud can lead to financial losses and damage to reputation.
   - ###### 🚨mitigation strategy

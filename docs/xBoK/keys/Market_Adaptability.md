@@ -6,7 +6,6 @@
   - 💭 #question Is there a process for monitoring market trends and customer preferences?
   - 💭 #question Is the startup responsive to changes in competitive forces?
 - ##### 🚨 Risks
-
   - ###### 🚨Market Adaptability
   - Inability to adapt to market changes can result in loss of competitiveness and missed opportunities.
   - ###### 🚨mitigation strategy

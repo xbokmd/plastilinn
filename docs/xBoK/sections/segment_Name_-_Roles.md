@@ -4,14 +4,6 @@
 - ## 📰 Content type (#role)
   - Content is of type list and uses the following classes: #role
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If segment id___roles is defined as :Roles involved in the purchasing decision of our product or service by the customers. For example, it can be the financial director, the technical director, a member of the core family, etcetera., What could it be?Who are the key stakeholders in our industry that we need to establish relationships with in order to fulfill our objectives?
-  How can we identify potential partners or stakeholders who can help us achieve our business goals?
-  What strategies can we implement to establish and maintain strong relationships with our key stakeholders?
-  How can we leverage our relationships with stakeholders to gain a competitive advantage in the market?
-  How can we ensure that our business is meeting the needs and objectives of our key stakeholders in a mutually beneficial way?
 - ## 📖 Description
   In business modeling, "segment/roles" refers to the categorization of different groups within a business model based on their specific roles or functions. This concept is crucial in understanding the dynamics of a business and how different segments interact with each other and contribute to the overall functioning of the business.
   
@@ -26,40 +18,26 @@
   In essence, the concept of segment/roles is a fundamental aspect of business modeling, providing a clear structure and direction for the organization and contributing to its overall success and sustainability.
 - ## 👉 Examples
   ### Space X
-  #role Procurement Manager
-  Responsible for managing the acquisition process, including identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts.
-  
   #role Project Manager
   Oversees the specific mission or project for which Space X's services are being procured. They coordinate with various internal teams, stakeholders, and Space X to ensure the successful execution of the mission.
+  
+  #role Procurement Manager
+  Responsible for managing the acquisition process, including identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts.
   
   #role Technical Team
   A team of technical experts, including engineers and scientists, assesses the technical requirements of the mission. They work closely with Space X to ensure that the proposed solution meets the agency's specifications and objectives.
   
   #role Contracting Officer
-  Responsible for managing the contractual relationship between the government agency and Space X. They negotiate the terms and conditions of the contract, ensure compliance with procurement regulations, and handle any contractual modifications or disputes.
+  Responsible for managing the contractual relationship between the government agency and Space X..
   
   #role Financial Analyst
-  Assesses the cost proposals submitted by Space X and evaluates the financial feasibility of the project. They analyze the budget, pricing, and financial terms to ensure value for money and alignment with the agency's budgetary constraints.
+  Assesses the cost proposals submitted by Space X and evaluates the financial feasibility of the project.
   
   #role Legal Counsel
-  Reviews and provides advice on the contractual agreements, ensuring compliance with relevant laws, regulations, and policies. They may also assist in negotiating terms and addressing legal issues that may arise during the sales process.
+  Reviews and provides advice on the contractual agreements, ensuring compliance with relevant laws, regulations, and policies.
   
-  #role End Users / Scientists / Astronauts
-  Depending on the nature of the mission, the end users, scientists, or astronauts who will utilize the services provided by Space X may also have a role in defining the requirements and evaluating the suitability of the solution.
+  ### 
   
-  #role Decision makers
-  Senior management and decision-makers within the government agency play a crucial role in approving the procurement, aligning it with the agency's strategic objectives, and providing overall guidance and authorization for the contract with Space X.
-  ### vein visualizer
-  - #role [[Chief Medical Officer]]
-  	- Responsible for evaluating the device's effectiveness and safety in medical procedures.
-  - #role [[Hospital Administrator]]
-  	- Makes decisions regarding the adoption of new medical devices and oversees the budget for purchasing.
-  - #role [[Nursing Staff]]
-  	- Provides feedback on the device's usability and its impact on patient care.
-  - #role [[Biomedical Engineer]]
-  	- Assesses the device's technical specifications and compatibility with existing medical equipment.
-  - #role [[Medical Training Coordinator]]
-  	- Coordinates the training of medical staff on how to use the device effectively and safely.
   ### extinguished animals meat
   - #role [[Gourmet Chef]]
   	- Influences the purchasing decision by evaluating the quality, taste, and potential culinary applications of the revived extinct animal meat.
@@ -108,3 +86,5 @@
     - Similar to the Customer Journey Map, this tool involves mapping out the entire purchasing process from the customer's perspective. This can help identify the roles of different individuals at each stage of the process, and how they influence the purchasing decision.
   - [[PESTEL Analysis]]
     - By analyzing Political, Economic, Social, Technological, Ecological, and Legal factors, companies can identify how these external factors affect the roles involved in the purchasing decision. For example, legal regulations might dictate who can make certain purchasing decisions in a company.
+- ## 🔑 Keys
+  

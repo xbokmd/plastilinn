@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Are the business objectives ambitious and challenging?
 - ##### 🚨 Risks
-
   - ###### 🚨Ambitious Goals
   - Lack of ambitious goals can hinder the growth and innovation of the startup.
   - ###### 🚨mitigation strategy

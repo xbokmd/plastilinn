@@ -6,7 +6,6 @@
   - 💭 #question Is there a thorough understanding of market dynamics, customer needs, and competition?
   - 💭 #question Are business decisions_informed by market insights?
 - ##### 🚨 Risks
-
   - ###### 🚨Lack of market knowledge
   - Insufficient understanding of market dynamics, customer needs, and competition can lead to poor business decisions, product misalignment, and loss of market share.
   - ###### 🚨mitigation strategy

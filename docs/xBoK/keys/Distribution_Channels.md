@@ -6,7 +6,6 @@
   - 💭 #question Are distribution costs minimized?
   - 💭 #question Is there a strategy for expanding distribution channels?
 - ##### 🚨 Risks
-
   - ###### 🚨Distribution Channels
   - Inefficient or ineffective distribution channels can hinder the timely and cost-effective delivery of products to customers.
   - ###### 🚨mitigation strategy

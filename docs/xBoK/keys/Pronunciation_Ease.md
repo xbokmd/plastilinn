@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Is the name easy to pronounce in different languages?
 - ##### 🚨 Risks
-
   - ###### 🚨Pronunciation Ease
   - Difficult pronunciation can hinder brand recognition and global reach.
   - ###### 🚨mitigation strategy

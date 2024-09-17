@@ -4,14 +4,6 @@
 - ## 📰 Content type (#function)
   - Content is of type list and uses the following classes: #function
 
-- ## 🔑 Keys
-  
-- ## 🤖 innCoPilot
-  If person id___functions is defined as :Specification of the functions that a person who is a stakeholder of the business can carry out, because they possess the capacity and experience to successfully complete them., What could it be?How important is it for our startup to have a diverse and well-rounded team of physical persons as stakeholders?
-  What are the key roles and responsibilities that physical persons should assume within our startup?
-  How can we ensure that the physical persons involved in our startup have the necessary skills and expertise to contribute to its success?
-  Are there any specific physical persons that we should consider including in our stakeholders group based on their industry connections or experience?
-  What strategies can we implement to effectively manage and motivate the physical persons in our startup to ensure their long-term commitment and dedication?
 - ## 📖 Description
   The concept of Person/Functions in business modeling refers to the identification and specification of the roles and responsibilities that a person, who is a stakeholder in the business, can perform. This is based on their capacity, skills, and experience to successfully carry out these functions. 
   
@@ -45,25 +37,8 @@
   #function Industry collaboration
   Collaborating with other industry leaders and organizations to advance space exploration and technology
   
-  #function Policy advocacy
-  Advocating for policies and regulations that support the growth and development of the space industry
   
-  #function Sales and marketing
-  Promoting the benefits and capabilities of Space X's solutions to potential customers and clients
-  
-  #function Compliance and regulation
-  Ensuring compliance with legal and regulatory requirements in the space industry
-  
-  #function Financial oversight
-  Monitoring and evaluating the financial performance and sustainability of Space X
-  
-  #function Business development
-  Identifying and pursuing new business opportunities and markets for Space X's solutions
-  
-  #function Culture and innovation
-  Fostering a culture of innovation, collaboration, and continuous improvement within the company.
-  
-  ### vein visualizer
+  ### 
   
   ### extinguished animals meat
   
@@ -86,3 +61,5 @@
     - A competency framework is a structure that sets out and defines each individual competency (such as skills, behaviors, and attitudes) required by individuals in their roles. It can be used to specify the functions that a person or stakeholder can carry out, as it identifies the specific competencies needed to perform a role successfully.
   - [[Skills Matrix]]
     - A skills matrix is a visual tool that shows the skills and competencies of a team. It can be used to specify the functions that a person or stakeholder can carry out, as it identifies the skills and experience of each team member, helping to assign roles and responsibilities effectively.
+- ## 🔑 Keys
+  

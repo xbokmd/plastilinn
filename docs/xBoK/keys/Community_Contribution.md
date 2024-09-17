@@ -6,7 +6,6 @@
   - 💭 #question Are there corporate social responsibility initiatives in place?
   - 💭 #question Does the startup engage in philanthropy or volunteerism?
 - ##### 🚨 Risks
-
   - ###### 🚨Community Contribution
   - Lack of positive contributions to the community can result in a negative brand image and missed opportunities for goodwill.
   - ###### 🚨mitigation strategy

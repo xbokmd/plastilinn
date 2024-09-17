@@ -6,7 +6,6 @@
   - 💭 #question Are there processes in place to attract and retain skilled employees?
   - 💭 #question Is the productivity and innovation of the team maintained?
 - ##### 🚨 Risks
-
   - ###### 🚨Talent Acquisition and Retention
   - Inability to acquire and retain skilled employees can impact productivity and innovation.
   - ###### 🚨mitigation strategy

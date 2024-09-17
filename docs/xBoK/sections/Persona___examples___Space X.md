@@ -1,12 +1,12 @@
       Name: Sarah Johnson
 Demographic_information:
-Role: #stakeholder Satellite Launch Customers / #segment Government Agencies / #role Procurement Manager
+Role: #stakeholder Satellite Launch Customers / #segment Government Agencies / #role Project Manager
 Age: 40
 Gender: Female
 Location: Washington, D.C., United States
 Education: Bachelor's degree in Business Administration
 Background and Goals:
-Sarah Johnson is an experienced procurement professional working for a space agency.
+Sarah Johnson is an experienced project manager professional working for NASA.
 She has been with the agency for over 10 years and has a strong background in contract management and acquisition processes.
 Her primary goal is to ensure that the agency procures the necessary services and equipment to support its space missions efficiently and within budget.
 Sarah is responsible for identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts.

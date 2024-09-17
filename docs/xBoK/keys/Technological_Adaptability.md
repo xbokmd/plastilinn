@@ -6,7 +6,6 @@
   - 💭 #question Is there a strategy for adopting and integrating new technologies?
   - 💭 #question Is the startup aware of emerging technologies relevant to its industry?
 - ##### 🚨 Risks
-
   - ###### 🚨Technological Adaptability
   - Lack of adaptability to new technologies can result in obsolescence and inability to keep up with market trends.
   - ###### 🚨mitigation strategy

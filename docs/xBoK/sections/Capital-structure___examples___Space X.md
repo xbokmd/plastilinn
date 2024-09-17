@@ -1,9 +1,11 @@
-    Elon Musk
-He is the primary shareholder and owner of SpaceX, holding 42% equity and having 79% voting control.
+    # SpaceX 2003 Cap Table
 
-Private Investors
-Over the years, SpaceX has raised capital through various funding rounds, with investors contributing to the company's valuation. Notable investors include Google and Fidelity, who, in January 2015, invested $1 billion in exchange for 8.33% of the company.
+| **Shareholder**      | **Role**                   | **Ownership (%)** | **Shares**  |
+|----------------------|----------------------------|-------------------|-------------|
+| **Elon Musk**        | Founder, CEO               | 54%               | 5,400,000   |
+| **Early Investors**  | VC Firms, Angel Investors  | 30%               | 3,000,000   |
+| **Gwynne Shotwell**   | COO, Early Employee        | 10%               | 1,000,000   |
+| **Other Early Employees** | Engineers, Advisors   | 6%                | 600,000     |
+| **Total**            |                            | **100%**          | **10,000,000** |
 
-Employees
-It's common for tech companies, including SpaceX, to offer stock options to employees. However, specific details about individual employee ownership or other minor shareholders were not provided in the content.
 

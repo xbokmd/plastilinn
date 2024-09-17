@@ -6,7 +6,6 @@
   - 💭 #question Are there processes in place to monitor and ensure ongoing compliance?
   - 💭 #question Are there any legal risks or issues that need to be addressed?
 - ##### 🚨 Risks
-
   - ###### 🚨Risk Management
   - Failure to manage legal risks can lead to legal issues and damage the reputation of the startup.
   - ###### 🚨mitigation strategy

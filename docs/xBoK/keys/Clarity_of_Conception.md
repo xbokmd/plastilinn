@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question Is the mission statement clear and well-conceived?
 - ##### 🚨 Risks
-
   - ###### 🚨Clarity of Conception
   - Lack of clarity in the mission statement can result in confusion and lack of alignment within the organization.
   - ###### 🚨mitigation strategy

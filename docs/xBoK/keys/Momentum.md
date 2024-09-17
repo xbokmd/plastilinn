@@ -6,7 +6,6 @@
   - 💭 #question Is the market timing favorable?
   - 💭 #question Is there a window of opportunity for the startup?
 - ##### 🚨 Risks
-
   - ###### 🚨Momentum
   - Launching at the wrong time can result in missed opportunities or entering a saturated market.
   - ###### 🚨mitigation strategy

@@ -6,7 +6,6 @@
   - 💭 #question Are there strategies in place to retain customers at a high rate?
   - 💭 #question Is customer satisfaction regularly assessed and addressed?
 - ##### 🚨 Risks
-
   - ###### 🚨Customer Churn
   - Losing customers at a high rate can significantly impact revenue and growth potential.
   - ###### 🚨mitigation strategy

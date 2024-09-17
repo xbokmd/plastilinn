@@ -6,7 +6,6 @@
   - 💭 #question Does it result in financial losses or expenses for customers?
   - 💭 #question Is there a financial incentive for customers to solve the problem?
 - ##### 🚨 Risks
-
   - ###### 🚨Financial Damage
   - Lack of financial impact can reduce the motivation for customers to solve the problem.
   - ###### 🚨mitigation strategy

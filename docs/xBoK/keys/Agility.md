@@ -12,7 +12,6 @@
   - 💭 #question Is there a plan for quickly launching the product?
   - 💭 #question Is the product development process efficient?
 - ##### 🚨 Risks
-
   - ###### 🚨Agility
   - Lack of agility can result in missed opportunities and inability to adapt to market changes.
   - ###### 🚨mitigation strategy

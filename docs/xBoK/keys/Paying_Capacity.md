@@ -4,7 +4,6 @@
 - ##### 💭 Questions
   - 💭 #question What is the paying capacity of the target market segment?
 - ##### 🚨 Risks
-
   - ###### 🚨Paying Capacity
   - Lack of paying capacity in the target market segment can limit revenue generation and profitability.
   - ###### 🚨mitigation strategy

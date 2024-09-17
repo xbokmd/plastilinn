@@ -6,7 +6,6 @@
   - 💭 #question How difficult is it for new competitors to enter?
   - 💭 #question Are there any significant obstacles or challenges?
 - ##### 🚨 Risks
-
   - ###### 🚨Entry Barriers
   - High barriers to entry can limit market access and increase competition.
   - ###### 🚨mitigation strategy

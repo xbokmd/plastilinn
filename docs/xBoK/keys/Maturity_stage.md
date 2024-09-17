@@ -6,7 +6,6 @@
   - 💭 #question What is the growth potential of the startup?
   - 💭 #question How many users can the startup potentially reach? How much money can be made?
 - ##### 🚨 Risks
-
   - ###### 🚨Growth Potential
   - Limited growth potential can hinder the long-term success of the startup.
   - ###### 🚨mitigation strategy

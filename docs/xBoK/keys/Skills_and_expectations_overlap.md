@@ -6,7 +6,6 @@
   - 💭 #question Is there clarity on individual responsibilities and contributions?
   - 💭 #question Do team members have aligned goals and aspirations?
 - ##### 🚨 Risks
-
   - ###### 🚨Skills and Expectations Overlap
   - Lack of clarity in roles and expectations can lead to confusion and inefficiencies within the team.
   - ###### 🚨mitigation strategy

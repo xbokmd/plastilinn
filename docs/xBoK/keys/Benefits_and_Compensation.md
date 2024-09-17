@@ -6,7 +6,6 @@
   - 💭 #question Are these packages aligned with industry standards?
   - 💭 #question Are employee benefits regularly reviewed and updated?
 - ##### 🚨 Risks
-
   - ###### 🚨Benefits and Compensation
   - Inadequate benefits and compensation packages can result in difficulty attracting and retaining talented employees.
   - ###### 🚨mitigation strategy
