@@ -70,182 +70,147 @@
   - [[Corporate Social Responsibility (CSR) Frameworks]]
     - CSR Frameworks, such as ISO 26000, can also play a role in the legal component of a business model. While CSR goes beyond legal compliance, a strong commitment to CSR can help to ensure that a business is not only complying with laws and regulations, but also acting ethically and responsibly in its interactions with stakeholders.
 - ## 🔑 Keys
-  ## Legal - Strong intellectual property protection
+  ##### Legal - Strong intellectual property protection
   💰rating: 70
-  - #### Having strong measures in place to protect intellectual property helps maintain a competitive advantage and reduces the risk of theft and legal disputes.
-  - ##### 💭 Questions
+  - Having strong measures in place to protect intellectual property helps maintain a competitive advantage and reduces the risk of theft and legal disputes.
+  - **💭 Questions**
     - 💭 #question Does the startup have strong measures to protect intellectual property?
     - 💭 #question Are there patents, trademarks, or copyrights in place?
     - 💭 #question Is the risk of theft and legal disputes minimized?
-  - ##### 🚨 Risks
-    - ###### 🚨Intellectual Property Theft
-    - Unauthorized use or theft of intellectual property can lead to loss of competitive advantage and legal disputes.
-    - ###### 🚨mitigation strategy
-    - Implement robust IP protection strategies and regularly monitor for infringements.
-    - ###### 🚨contingency strategy
-    - Pursue legal action against infringers and strengthen IP protection measures.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Implement strong measures to protect intellectual property
-    - ⚙️ #task  File for patents, trademarks, or copyrights as necessary
-    - ⚙️ #task  Minimize the risk of theft and legal disputes through IP protection.
+  - **🚨 Risks**
+    - 🚨Intellectual Property Theft
+      - Unauthorized use or theft of intellectual property can lead to loss of competitive advantage and legal disputes.
+    - 🚨mitigation strategy
+      - Implement robust IP protection strategies and regularly monitor for infringements.
+    - 🚨contingency strategy
+      - Pursue legal action against infringers and strengthen IP protection measures.
   
   
-  ## Legal - Risk Management
+  ##### Legal - Risk Management
   💰rating: 60
-  - #### Managing legal risks by understanding and complying with laws and regulations is essential to avoid legal issues and protect the business.
-  - ##### 💭 Questions
+  - Managing legal risks by understanding and complying with laws and regulations is essential to avoid legal issues and protect the business.
+  - **💭 Questions**
     - 💭 #question Is the startup compliant with relevant laws and regulations?
     - 💭 #question Are there processes in place to monitor and ensure ongoing compliance?
     - 💭 #question Are there any legal risks or issues that need to be addressed?
-  - ##### 🚨 Risks
-    - ###### 🚨Risk Management
-    - Failure to manage legal risks can lead to legal issues and damage the reputation of the startup.
-    - ###### 🚨mitigation strategy
-    - Consult legal counsel for risk management and develop and communicate legal compliance policies.
-    - ###### 🚨contingency strategy
-    - Train staff in legal risk management and regularly review and update compliance processes.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Consult legal counsel for risk management
-    - ⚙️ #task  Develop and communicate legal compliance policies
-    - ⚙️ #task  Train staff in legal risk management.
+  - **🚨 Risks**
+    - 🚨Risk Management
+      - Failure to manage legal risks can lead to legal issues and damage the reputation of the startup.
+    - 🚨mitigation strategy
+      - Consult legal counsel for risk management and develop and communicate legal compliance policies.
+    - 🚨contingency strategy
+      - Train staff in legal risk management and regularly review and update compliance processes.
   
   
-  ## Legal - Legal Compliance
+  ##### Legal - Legal Compliance
   💰rating: 60
-  - #### Adhering to laws and regulations is essential to avoid legal issues. This includes compliance with business, employment, and industry-specific laws.
-  - ##### 💭 Questions
+  - Adhering to laws and regulations is essential to avoid legal issues. This includes compliance with business, employment, and industry-specific laws.
+  - **💭 Questions**
     - 💭 #question Is the startup compliant with relevant laws and regulations?
     - 💭 #question Are there legal advisors or counsel available?
     - 💭 #question Are licenses and permits in place?
-  - ##### 🚨 Risks
-    - ###### 🚨Legal Compliance
-    - Non-compliance with laws and regulations can lead to legal issues and penalties.
-    - ###### 🚨mitigation strategy
-    - Ensure the startup is compliant with relevant laws and regulations and consult legal advisors or counsel when needed.
-    - ###### 🚨contingency strategy
-    - Regularly review and update compliance policies and monitor ongoing compliance.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Consult with legal counsel for compliance requirements
-    - ⚙️ #task  Develop and communicate compliance policies
-    - ⚙️ #task  Regularly review legal compliance status.
+  - **🚨 Risks**
+    - 🚨Legal Compliance
+      - Non-compliance with laws and regulations can lead to legal issues and penalties.
+    - 🚨mitigation strategy
+      - Ensure the startup is compliant with relevant laws and regulations and consult legal advisors or counsel when needed.
+    - 🚨contingency strategy
+      - Regularly review and update compliance policies and monitor ongoing compliance.
   
   
-  ## Legal - Licenses and Permits
+  ##### Legal - Licenses and Permits
   💰rating: 60
-  - #### Obtaining necessary licenses and permits is essential for legal operation. This is especially important in regulated industries.
-  - ##### 💭 Questions
+  - Obtaining necessary licenses and permits is essential for legal operation. This is especially important in regulated industries.
+  - **💭 Questions**
     - 💭 #question Does the startup have the necessary licenses and permits to operate legally?
     - 💭 #question Are there processes in place to ensure ongoing compliance with regulations?
     - 💭 #question Are there plans to acquire any additional licenses or permits?
-  - ##### 🚨 Risks
-    - ###### 🚨Licenses and Permits
-    - Lack of necessary licenses and permits can lead to legal issues and hinder the operation of the startup.
-    - ###### 🚨mitigation strategy
-    - Obtain the necessary licenses and permits for legal operation and establish processes to ensure ongoing compliance.
-    - ###### 🚨contingency strategy
-    - Plan for acquiring any additional licenses or permits as needed.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Obtain necessary licenses and permits for legal operation
-    - ⚙️ #task  Establish processes to ensure ongoing compliance with regulations
-    - ⚙️ #task  Plan for acquiring any additional licenses or permits as needed.
+  - **🚨 Risks**
+    - 🚨Licenses and Permits
+      - Lack of necessary licenses and permits can lead to legal issues and hinder the operation of the startup.
+    - 🚨mitigation strategy
+      - Obtain the necessary licenses and permits for legal operation and establish processes to ensure ongoing compliance.
+    - 🚨contingency strategy
+      - Plan for acquiring any additional licenses or permits as needed.
   
   
-  ## Legal - Protectability
+  ##### Legal - Protectability
   💰rating: 45
-  - #### how easy is it to protect the idea? can I obtain a patent?
-  - ##### 💭 Questions
+  - how easy is it to protect the idea? can I obtain a patent?
+  - **💭 Questions**
     - 💭 #question Does the idea have potential for evolution?
     - 💭 #question Can it be developed into a different idea or product?
     - 💭 #question Is there room for growth and expansion?
-  - ##### 🚨 Risks
-    - ###### 🚨Protectability
-    - Lack of protection for the idea can lead to intellectual property issues and competition.
-    - ###### 🚨mitigation strategy
-    - Assess the protectability of the idea and determine if it can be patented or protected in other ways.
-    - ###### 🚨contingency strategy
-    - Identify and address any potential intellectual property issues.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the protectability of the idea
-    - ⚙️ #task  Determine if it can be patented or protected in other ways
-    - ⚙️ #task  Identify any potential intellectual property issues.
+  - **🚨 Risks**
+    - 🚨Protectability
+      - Lack of protection for the idea can lead to intellectual property issues and competition.
+    - 🚨mitigation strategy
+      - Assess the protectability of the idea and determine if it can be patented or protected in other ways.
+    - 🚨contingency strategy
+      - Identify and address any potential intellectual property issues.
   
   
-  ## Legal - Contracts and Agreements
+  ##### Legal - Contracts and Agreements
   💰rating: 35
-  - #### Proper legal handling of contracts and agreements is essential to protect the interests of the business and avoid disputes.
-  - ##### 💭 Questions
+  - Proper legal handling of contracts and agreements is essential to protect the interests of the business and avoid disputes.
+  - **💭 Questions**
     - 💭 #question Are contracts and agreements legally sound?
     - 💭 #question Is there legal counsel available for contract review?
     - 💭 #question Are contractual obligations being met?
-  - ##### 🚨 Risks
-    - ###### 🚨Contracts and Agreements
-    - Poor handling of contracts and agreements can lead to legal disputes and financial loss.
-    - ###### 🚨mitigation strategy
-    - Ensure contracts and agreements are legally sound and meet the interests of the business.
-    - ###### 🚨contingency strategy
-    - Seek legal counsel for contract review and negotiation and monitor and fulfill contractual obligations.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Ensure contracts and agreements are legally sound and meet the interests of the business
-    - ⚙️ #task  Seek legal counsel for contract review and negotiation
-    - ⚙️ #task  Monitor and fulfill contractual obligations.
+  - **🚨 Risks**
+    - 🚨Contracts and Agreements
+      - Poor handling of contracts and agreements can lead to legal disputes and financial loss.
+    - 🚨mitigation strategy
+      - Ensure contracts and agreements are legally sound and meet the interests of the business.
+    - 🚨contingency strategy
+      - Seek legal counsel for contract review and negotiation and monitor and fulfill contractual obligations.
   
   
-  ## Legal - Legal complexity
+  ##### Legal - Legal complexity
   💰rating: 25
-  - #### does it involve legal issues in any form?
-  - ##### 💭 Questions
+  - does it involve legal issues in any form?
+  - **💭 Questions**
     - 💭 #question Does the product involve any legal complexities?
     - 💭 #question Are there any legal issues or considerations related to the product?
     - 💭 #question Is there a need for legal counsel or expertise?
-  - ##### 🚨 Risks
-    - ###### 🚨Legal Complexity
-    - Legal complexities can impact the development and operation of the startup.
-    - ###### 🚨mitigation strategy
-    - Evaluate if the product involves any legal complexities and determine if there are any legal issues or considerations.
-    - ###### 🚨contingency strategy
-    - Seek legal counsel or expertise to navigate any legal complexities.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Evaluate if the product involves any legal complexities
-    - ⚙️ #task  Determine if there are any legal issues or considerations.
+  - **🚨 Risks**
+    - 🚨Legal Complexity
+      - Legal complexities can impact the development and operation of the startup.
+    - 🚨mitigation strategy
+      - Evaluate if the product involves any legal complexities and determine if there are any legal issues or considerations.
+    - 🚨contingency strategy
+      - Seek legal counsel or expertise to navigate any legal complexities.
   
   
-  ## Legal - Regulatory compliance
+  ##### Legal - Regulatory compliance
   💰rating: 20
-  - #### Ensuring compliance with laws and regulations minimizes the risk of legal penalties, operational disruptions, and damage to reputation, ensuring the viability of the business.
-  - ##### 💭 Questions
+  - Ensuring compliance with laws and regulations minimizes the risk of legal penalties, operational disruptions, and damage to reputation, ensuring the viability of the business.
+  - **💭 Questions**
     - 💭 #question Does the startup ensure regulatory compliance?
     - 💭 #question Are there processes in place to monitor and adhere to laws and regulations?
     - 💭 #question Is the risk of legal penalties minimized?
-  - ##### 🚨 Risks
-    - ###### 🚨Regulatory risks
-    - Non-compliance with laws and regulations can result in legal penalties, operational disruptions, and damage to reputation, affecting business viability.
-    - ###### 🚨mitigation strategy
-    - Consult with legal experts to ensure compliance with all applicable laws and regulations.
-    - ###### 🚨contingency strategy
-    - Develop a compliance checklist and regularly review legal compliance.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Establish processes to monitor and ensure regulatory compliance
-    - ⚙️ #task  Stay updated on relevant laws and regulations
-    - ⚙️ #task  Minimize the risk of legal penalties through compliance.
+  - **🚨 Risks**
+    - 🚨Regulatory risks
+      - Non-compliance with laws and regulations can result in legal penalties, operational disruptions, and damage to reputation, affecting business viability.
+    - 🚨mitigation strategy
+      - Consult with legal experts to ensure compliance with all applicable laws and regulations.
+    - 🚨contingency strategy
+      - Develop a compliance checklist and regularly review legal compliance.
   
   
-  ## Legal - Intellectual Property
+  ##### Legal - Intellectual Property
   💰rating: 20
-  - #### Protecting intellectual property (IP) is crucial. IP can be a valuable asset for startups, especially in technology sectors.
-  - ##### 💭 Questions
+  - Protecting intellectual property (IP) is crucial. IP can be a valuable asset for startups, especially in technology sectors.
+  - **💭 Questions**
     - 💭 #question Is the startup protecting its intellectual property?
     - 💭 #question Are there patents, trademarks, or copyrights in place?
     - 💭 #question Is there a strategy for managing and enforcing intellectual property rights?
-  - ##### 🚨 Risks
-    - ###### 🚨Intellectual Property
-    - Failure to protect intellectual property can result in loss of competitive advantage and potential infringement issues.
-    - ###### 🚨mitigation strategy
-    - Protect intellectual property through patents, trademarks, or copyrights and develop a strategy for managing and enforcing intellectual property rights.
-    - ###### 🚨contingency strategy
-    - Regularly review and update intellectual property protection measures.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Protect intellectual property through patents, trademarks, or copyrights
-    - ⚙️ #task  Develop a strategy for managing and enforcing intellectual property rights
-    - ⚙️ #task  Regularly review and update intellectual property protection measures.
+  - **🚨 Risks**
+    - 🚨Intellectual Property
+      - Failure to protect intellectual property can result in loss of competitive advantage and potential infringement issues.
+    - 🚨mitigation strategy
+      - Protect intellectual property through patents, trademarks, or copyrights and develop a strategy for managing and enforcing intellectual property rights.
+    - 🚨contingency strategy
+      - Regularly review and update intellectual property protection measures.
   
   

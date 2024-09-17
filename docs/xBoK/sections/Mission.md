@@ -47,37 +47,31 @@
   - [[Value Proposition Canvas]]
     - This tool, also developed by Alexander Osterwalder, can be used to ensure that a business's products or services are aligned with its mission. The "value proposition" component should reflect the business's mission, and the "customer jobs, pains, and gains" components should reflect how the business fulfills its mission through its offerings.
 - ## 🔑 Keys
-  ## Mission - Realism - Ambition
+  ##### Mission - Realism - Ambition
   💰rating: 30
-  - #### Evaluate the realism and ambition of the mission statement.
-  - ##### 💭 Questions
+  - Evaluate the realism and ambition of the mission statement.
+  - **💭 Questions**
     - 💭 #question Is the mission statement realistic and ambitious?
-  - ##### 🚨 Risks
-    - ###### 🚨Realism - Ambition
-    - Lack of realism or ambition in the mission statement can impact the motivation and alignment of stakeholders.
-    - ###### 🚨mitigation strategy
-    - Assess the realism and ambition of the mission statement and ensure it is clear, feasible, and aspirational.
-    - ###### 🚨contingency strategy
-    - Consider the potential for inspiring and motivating stakeholders.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the clarity, feasibility, and aspirational nature of the mission statement
-    - ⚙️ #task  Consider the potential for inspiring and motivating stakeholders.
+  - **🚨 Risks**
+    - 🚨Realism - Ambition
+      - Lack of realism or ambition in the mission statement can impact the motivation and alignment of stakeholders.
+    - 🚨mitigation strategy
+      - Assess the realism and ambition of the mission statement and ensure it is clear, feasible, and aspirational.
+    - 🚨contingency strategy
+      - Consider the potential for inspiring and motivating stakeholders.
   
   
-  ## Mission - Clarity of Conception
+  ##### Mission - Clarity of Conception
   💰rating: 20
-  - #### Evaluate the clarity and conception of the mission statement.
-  - ##### 💭 Questions
+  - Evaluate the clarity and conception of the mission statement.
+  - **💭 Questions**
     - 💭 #question Is the mission statement clear and well-conceived?
-  - ##### 🚨 Risks
-    - ###### 🚨Clarity of Conception
-    - Lack of clarity in the mission statement can result in confusion and lack of alignment within the organization.
-    - ###### 🚨mitigation strategy
-    - Evaluate the clarity and conception of the mission statement and ensure it is clear and well-conceived.
-    - ###### 🚨contingency strategy
-    - Use the mission statement to guide and align the organization.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the effectiveness and coherence of the mission statement
-    - ⚙️ #task  Consider the potential for guiding and aligning the organization.
+  - **🚨 Risks**
+    - 🚨Clarity of Conception
+      - Lack of clarity in the mission statement can result in confusion and lack of alignment within the organization.
+    - 🚨mitigation strategy
+      - Evaluate the clarity and conception of the mission statement and ensure it is clear and well-conceived.
+    - 🚨contingency strategy
+      - Use the mission statement to guide and align the organization.
   
   

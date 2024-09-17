@@ -59,138 +59,114 @@
   - [[Balanced Scorecard]]
     - This strategic planning and management system can be used to align business activities with the vision and strategy of the organization, improve internal and external communications, and monitor organization performance against strategic goals. The founders play a key role in these processes.
 - ## 🔑 Keys
-  ## People - Receptiveness to Feedback
+  ##### People - Receptiveness to Feedback
   💰rating: 40
-  - #### Being open to feedback and criticism is essential for continuous improvement. It helps in making necessary adjustments to the product or strategy.
-  - ##### 💭 Questions
+  - Being open to feedback and criticism is essential for continuous improvement. It helps in making necessary adjustments to the product or strategy.
+  - **💭 Questions**
     - 💭 #question Is the startup open to receiving feedback?
     - 💭 #question Is there a process for collecting and analyzing feedback?
     - 💭 #question Is feedback used to make improvements?
-  - ##### 🚨 Risks
-    - ###### 🚨Receptiveness to Feedback
-    - Resistance to feedback can hinder the ability to make necessary improvements and adjustments.
-    - ###### 🚨mitigation strategy
-    - Implement channels for collecting feedback and regularly review and analyze feedback.
-    - ###### 🚨contingency strategy
-    - Make data-driven decisions based on feedback and value continuous improvement and growth.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Implement channels for collecting feedback
-    - ⚙️ #task  Regularly review and analyze feedback
-    - ⚙️ #task  Make data-driven decisions based on feedback.
+  - **🚨 Risks**
+    - 🚨Receptiveness to Feedback
+      - Resistance to feedback can hinder the ability to make necessary improvements and adjustments.
+    - 🚨mitigation strategy
+      - Implement channels for collecting feedback and regularly review and analyze feedback.
+    - 🚨contingency strategy
+      - Make data-driven decisions based on feedback and value continuous improvement and growth.
   
   
-  ## People - Competency scope
+  ##### People - Competency scope
   💰rating: 40
-  - #### are the skills necessary to successfully build the company present in the team members?
-  - ##### 💭 Questions
+  - are the skills necessary to successfully build the company present in the team members?
+  - **💭 Questions**
     - 💭 #question Do team members possess the necessary skills and expertise?
     - 💭 #question Are there any skill gaps within the team?
     - 💭 #question Is the team capable of executing the business plan effectively?
-  - ##### 🚨 Risks
-    - ###### 🚨Competency Scope
-    - Lack of necessary skills and expertise within the team can hinder the execution of the business plan.
-    - ###### 🚨mitigation strategy
-    - Assess the competency scope of the team and determine if they possess the necessary skills and expertise.
-    - ###### 🚨contingency strategy
-    - Identify skill gaps within the team and consider hiring or training to fill those gaps.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the competency scope of the team
-    - ⚙️ #task  Determine if they possess the necessary skills and expertise.
+  - **🚨 Risks**
+    - 🚨Competency Scope
+      - Lack of necessary skills and expertise within the team can hinder the execution of the business plan.
+    - 🚨mitigation strategy
+      - Assess the competency scope of the team and determine if they possess the necessary skills and expertise.
+    - 🚨contingency strategy
+      - Identify skill gaps within the team and consider hiring or training to fill those gaps.
   
   
-  ## People - Relevant experience
+  ##### People - Relevant experience
   💰rating: 30
-  - #### Evaluate the experience of the team in business management and leadership. Assess the experience of the team in startups and their track record.
-  - ##### 💭 Questions
+  - Evaluate the experience of the team in business management and leadership. Assess the experience of the team in startups and their track record.
+  - **💭 Questions**
     - 💭 #question Do they have experience in business management?
     - 💭 #question Have they worked at a startup before?
-  - ##### 🚨 Risks
-    - ###### 🚨Relevant Experience
-    - Lack of experience in business management and startups can impact the ability to effectively lead and grow the startup.
-    - ###### 🚨mitigation strategy
-    - Assess the previous experience of the team members in business management and leadership roles.
-    - ###### 🚨contingency strategy
-    - Consider their ability to effectively manage and lead the startup and evaluate their track record and success in previous ventures.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the previous experience of the team members in business management and leadership roles
-    - ⚙️ #task  Consider their ability to effectively manage and lead the startup
-    - ⚙️ #task Evaluate the previous experience of the team members in starting and running startups
-    - ⚙️ #task  Consider their track record and success in previous ventures.
+  - **🚨 Risks**
+    - 🚨Relevant Experience
+      - Lack of experience in business management and startups can impact the ability to effectively lead and grow the startup.
+    - 🚨mitigation strategy
+      - Assess the previous experience of the team members in business management and leadership roles.
+    - 🚨contingency strategy
+      - Consider their ability to effectively manage and lead the startup and evaluate their track record and success in previous ventures.
   
   
-  ## People - Market experience
+  ##### People - Market experience
   💰rating: 25
-  - #### does the team have experience in the market?
-  - ##### 💭 Questions
+  - does the team have experience in the market?
+  - **💭 Questions**
     - 💭 #question Does the team have experience in the target market?
     - 💭 #question Do team members understand the market dynamics and customer needs?
     - 💭 #question Is there industry-specific knowledge within the team?
-  - ##### 🚨 Risks
-    - ###### 🚨Market Experience
-    - Lack of market experience can result in a lack of understanding of customer needs and market dynamics.
-    - ###### 🚨mitigation strategy
-    - Assess the market experience of the team and determine if they have experience in the target market.
-    - ###### 🚨contingency strategy
-    - Evaluate if team members understand the market dynamics and customer needs and if there is industry-specific knowledge within the team.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the market experience of the team
-    - ⚙️ #task  Determine if they have experience in the target market.
+  - **🚨 Risks**
+    - 🚨Market Experience
+      - Lack of market experience can result in a lack of understanding of customer needs and market dynamics.
+    - 🚨mitigation strategy
+      - Assess the market experience of the team and determine if they have experience in the target market.
+    - 🚨contingency strategy
+      - Evaluate if team members understand the market dynamics and customer needs and if there is industry-specific knowledge within the team.
   
   
-  ## People - Skills and expectations overlap
+  ##### People - Skills and expectations overlap
   💰rating: 25
-  - #### how well are roles defined? do different team members aspire to managing the company?
-  - ##### 💭 Questions
+  - how well are roles defined? do different team members aspire to managing the company?
+  - **💭 Questions**
     - 💭 #question Are the roles and expectations of team members well-defined?
     - 💭 #question Is there clarity on individual responsibilities and contributions?
     - 💭 #question Do team members have aligned goals and aspirations?
-  - ##### 🚨 Risks
-    - ###### 🚨Skills and Expectations Overlap
-    - Lack of clarity in roles and expectations can lead to confusion and inefficiencies within the team.
-    - ###### 🚨mitigation strategy
-    - Evaluate the overlap of skills and expectations within the team and determine if roles and responsibilities are well-defined.
-    - ###### 🚨contingency strategy
-    - Ensure there is clarity on individual responsibilities and contributions and that team members have aligned goals and aspirations.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Evaluate the overlap of skills and expectations within the team
-    - ⚙️ #task  Determine if roles and responsibilities are well-defined.
+  - **🚨 Risks**
+    - 🚨Skills and Expectations Overlap
+      - Lack of clarity in roles and expectations can lead to confusion and inefficiencies within the team.
+    - 🚨mitigation strategy
+      - Evaluate the overlap of skills and expectations within the team and determine if roles and responsibilities are well-defined.
+    - 🚨contingency strategy
+      - Ensure there is clarity on individual responsibilities and contributions and that team members have aligned goals and aspirations.
   
   
-  ## People - Vertical experience
+  ##### People - Vertical experience
   💰rating: 15
-  - #### do founders have industry-specific knowledge and expertise?
-  - ##### 💭 Questions
+  - do founders have industry-specific knowledge and expertise?
+  - **💭 Questions**
     - 💭 #question Does the entrepreneur have industry-specific knowledge and expertise?
     - 💭 #question Is the entrepreneur familiar with the market and industry?
     - 💭 #question Does the entrepreneur have relevant experience in the field?
-  - ##### 🚨 Risks
-    - ###### 🚨Vertical Experience
-    - Lack of industry-specific knowledge and expertise can hinder the ability to effectively navigate the market.
-    - ###### 🚨mitigation strategy
-    - Assess the industry-specific knowledge and expertise of the founder and determine if they have relevant experience in the field.
-    - ###### 🚨contingency strategy
-    - Consider if the entrepreneur has industry-specific knowledge and expertise and if they are familiar with the market and industry.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the industry-specific knowledge and expertise of the founder
-    - ⚙️ #task  Determine if they have relevant experience in the field.
+  - **🚨 Risks**
+    - 🚨Vertical Experience
+      - Lack of industry-specific knowledge and expertise can hinder the ability to effectively navigate the market.
+    - 🚨mitigation strategy
+      - Assess the industry-specific knowledge and expertise of the founder and determine if they have relevant experience in the field.
+    - 🚨contingency strategy
+      - Consider if the entrepreneur has industry-specific knowledge and expertise and if they are familiar with the market and industry.
   
   
-  ## People - Experience working together
+  ##### People - Experience working together
   💰rating: 10
-  - #### 
-  - ##### 💭 Questions
+  - 
+  - **💭 Questions**
     - 💭 #question How well does the team work together?
     - 💭 #question Has the team collaborated successfully in the past?
     - 💭 #question Is there a track record of effective teamwork and collaboration?
-  - ##### 🚨 Risks
-    - ###### 🚨Experience Working Together
-    - Lack of experience working together can impact team dynamics and collaboration.
-    - ###### 🚨mitigation strategy
-    - Assess the experience of the team working together and determine if they have a track record of effective teamwork and collaboration.
-    - ###### 🚨contingency strategy
-    - Evaluate how well the team works together and if they have collaborated successfully in the past.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the experience of the team working together
-    - ⚙️ #task  Determine if they have a track record of effective teamwork and collaboration.
+  - **🚨 Risks**
+    - 🚨Experience Working Together
+      - Lack of experience working together can impact team dynamics and collaboration.
+    - 🚨mitigation strategy
+      - Assess the experience of the team working together and determine if they have a track record of effective teamwork and collaboration.
+    - 🚨contingency strategy
+      - Evaluate how well the team works together and if they have collaborated successfully in the past.
   
   

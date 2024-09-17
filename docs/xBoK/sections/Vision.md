@@ -41,37 +41,31 @@
   - [[Value Proposition Canvas]]
     - The Value Proposition Canvas is a tool that helps businesses to understand their customers' needs and to design products and services that meet these needs. The vision of the company can guide the design of the value proposition, ensuring that it aligns with the long-term aspirations and goals of the business model.
 - ## 🔑 Keys
-  ## Vision - Realism - Ambition
+  ##### Vision - Realism - Ambition
   💰rating: 10
-  - #### Evaluate the realism and ambition of the vision statement.
-  - ##### 💭 Questions
+  - Evaluate the realism and ambition of the vision statement.
+  - **💭 Questions**
     - 💭 #question Is the vision statement realistic and ambitious?
-  - ##### 🚨 Risks
-    - ###### 🚨Realism - Ambition
-    - Assessing the realism and ambition of the vision statement can help determine its potential for guiding the organization.
-    - ###### 🚨mitigation strategy
-    - Assess the clarity, feasibility, and aspirational nature of the vision statement and consider its potential for inspiring and guiding the organization.
-    - ###### 🚨contingency strategy
-    - Assess the clarity, feasibility, and aspirational nature of the vision statement and consider its potential for inspiring and guiding the organization.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the clarity, feasibility, and aspirational nature of the vision statement
-    - ⚙️ #task  Consider the potential for inspiring and guiding the organization.
+  - **🚨 Risks**
+    - 🚨Realism - Ambition
+      - Assessing the realism and ambition of the vision statement can help determine its potential for guiding the organization.
+    - 🚨mitigation strategy
+      - Assess the clarity, feasibility, and aspirational nature of the vision statement and consider its potential for inspiring and guiding the organization.
+    - 🚨contingency strategy
+      - Assess the clarity, feasibility, and aspirational nature of the vision statement and consider its potential for inspiring and guiding the organization.
   
   
-  ## Vision - Clarity of Conception
+  ##### Vision - Clarity of Conception
   💰rating: 10
-  - #### Evaluate the clarity and conception of the vision statement.
-  - ##### 💭 Questions
+  - Evaluate the clarity and conception of the vision statement.
+  - **💭 Questions**
     - 💭 #question Is the vision statement clear and well-conceived?
-  - ##### 🚨 Risks
-    - ###### 🚨Clarity of Conception
-    - Evaluating the clarity and conception of the vision statement can help determine its effectiveness in guiding and aligning the organization.
-    - ###### 🚨mitigation strategy
-    - Assess the effectiveness and coherence of the vision statement and consider its potential for guiding and aligning the organization.
-    - ###### 🚨contingency strategy
-    - Assess the effectiveness and coherence of the vision statement and consider its potential for guiding and aligning the organization.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the effectiveness and coherence of the vision statement
-    - ⚙️ #task  Consider the potential for guiding and aligning the organization.
+  - **🚨 Risks**
+    - 🚨Clarity of Conception
+      - Evaluating the clarity and conception of the vision statement can help determine its effectiveness in guiding and aligning the organization.
+    - 🚨mitigation strategy
+      - Assess the effectiveness and coherence of the vision statement and consider its potential for guiding and aligning the organization.
+    - 🚨contingency strategy
+      - Assess the effectiveness and coherence of the vision statement and consider its potential for guiding and aligning the organization.
   
   

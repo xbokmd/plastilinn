@@ -62,123 +62,99 @@
   - [[Porter's Five Forces]]
     - Porter's Five Forces is a model that identifies and analyzes five competitive forces that shape every industry and helps determine an industry's weaknesses and strengths. It can be used to understand the competitive landscape and develop a strategic marketing approach.
 - ## 🔑 Keys
-  ## Marketing - Effective distribution and marketing channels
+  ##### Marketing - Effective distribution and marketing channels
   💰rating: 70
-  - #### Access to suitable distribution and marketing channels enables reach and acquisition of customers, positively impacting sales and business growth.
-  - ##### 💭 Questions
+  - Access to suitable distribution and marketing channels enables reach and acquisition of customers, positively impacting sales and business growth.
+  - **💭 Questions**
     - 💭 #question Does the startup have effective distribution and marketing channels?
     - 💭 #question Are there partnerships or channels in place to reach target customers?
     - 💭 #question Is the marketing strategy aligned with the target market?
-  - ##### 🚨 Risks
-    - ###### 🚨Not finding suitable channels
-    - Inability to access effective distribution and marketing channels can hinder reach and acquisition of customers, impacting sales and business growth.
-    - ###### 🚨mitigation strategy
-    - Identify and test multiple channels early on to determine the most effective ones.
-    - ###### 🚨contingency strategy
-    - Diversify marketing and distribution channels to ensure reach.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Develop effective distribution and marketing channels to reach target customers
-    - ⚙️ #task  Establish partnerships or channels to expand market reach
-    - ⚙️ #task  Align the marketing strategy with the target market.
+  - **🚨 Risks**
+    - 🚨Not finding suitable channels
+      - Inability to access effective distribution and marketing channels can hinder reach and acquisition of customers, impacting sales and business growth.
+    - 🚨mitigation strategy
+      - Identify and test multiple channels early on to determine the most effective ones.
+    - 🚨contingency strategy
+      - Diversify marketing and distribution channels to ensure reach.
   
   
-  ## Marketing - Market Demand
+  ##### Marketing - Market Demand
   💰rating: 65
-  - #### There should be a genuine demand in the market for the product or service. This demand is what will drive sales and revenue.
-  - ##### 💭 Questions
+  - There should be a genuine demand in the market for the product or service. This demand is what will drive sales and revenue.
+  - **💭 Questions**
     - 💭 #question Is there a demonstrated demand for the product or service?
     - 💭 #question Have potential customers shown interest?
     - 💭 #question Are there any pre-orders or early commitments from customers?
-  - ##### 🚨 Risks
-    - ###### 🚨Market Demand
-    - Lack of market demand can hinder the success and growth of the startup.
-    - ###### 🚨mitigation strategy
-    - Conduct market research to assess demand and gather customer feedback and interest.
-    - ###### 🚨contingency strategy
-    - Secure pre-orders or commitments from customers to validate market demand.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Conduct market research to assess demand
-    - ⚙️ #task  Gather customer feedback and interest
-    - ⚙️ #task  Secure pre-orders or commitments from customers.
+  - **🚨 Risks**
+    - 🚨Market Demand
+      - Lack of market demand can hinder the success and growth of the startup.
+    - 🚨mitigation strategy
+      - Conduct market research to assess demand and gather customer feedback and interest.
+    - 🚨contingency strategy
+      - Secure pre-orders or commitments from customers to validate market demand.
   
   
-  ## Marketing - Strong reputation management
+  ##### Marketing - Strong reputation management
   💰rating: 60
-  - #### Effective management of reputation helps to prevent negative publicity, maintain customer trust, and maximize business opportunities.
-  - ##### 💭 Questions
+  - Effective management of reputation helps to prevent negative publicity, maintain customer trust, and maximize business opportunities.
+  - **💭 Questions**
     - 💭 #question Does the startup have strong reputation management practices?
     - 💭 #question Are there measures in place to prevent negative publicity?
     - 💭 #question Is customer trust maintained through effective reputation management?
-  - ##### 🚨 Risks
-    - ###### 🚨Reputational Damage
-    - Negative publicity can lead to loss of customer trust and reduced business opportunities.
-    - ###### 🚨mitigation strategy
-    - Maintain high standards of conduct and actively manage public relations.
-    - ###### 🚨contingency strategy
-    - Implement damage control strategies and rebuild public trust.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Implement strong reputation management practices
-    - ⚙️ #task  Monitor and address any negative publicity promptly
-    - ⚙️ #task  Maintain customer trust through effective reputation management.
+  - **🚨 Risks**
+    - 🚨Reputational Damage
+      - Negative publicity can lead to loss of customer trust and reduced business opportunities.
+    - 🚨mitigation strategy
+      - Maintain high standards of conduct and actively manage public relations.
+    - 🚨contingency strategy
+      - Implement damage control strategies and rebuild public trust.
   
   
-  ## Marketing - Marketing Strategy
+  ##### Marketing - Marketing Strategy
   💰rating: 60
-  - #### An effective marketing strategy is essential for creating market awareness and driving sales. It should be aligned with the startup’s goals and target market.
-  - ##### 💭 Questions
+  - An effective marketing strategy is essential for creating market awareness and driving sales. It should be aligned with the startup’s goals and target market.
+  - **💭 Questions**
     - 💭 #question What is the marketing strategy?
     - 💭 #question Is the strategy tailored to the target market?
     - 💭 #question Are there measurable goals for the marketing campaign?
-  - ##### 🚨 Risks
-    - ###### 🚨Marketing Strategy
-    - Ineffective marketing strategies can result in low brand awareness and limited sales.
-    - ###### 🚨mitigation strategy
-    - Develop a marketing plan with clear objectives and tailor the strategy to the target market.
-    - ###### 🚨contingency strategy
-    - Allocate a budget for marketing activities and measure and analyze the effectiveness of marketing campaigns.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Develop a marketing plan with clear objectives
-    - ⚙️ #task  Allocate a budget for marketing activities
-    - ⚙️ #task  Measure and analyze the effectiveness of marketing campaigns.
+  - **🚨 Risks**
+    - 🚨Marketing Strategy
+      - Ineffective marketing strategies can result in low brand awareness and limited sales.
+    - 🚨mitigation strategy
+      - Develop a marketing plan with clear objectives and tailor the strategy to the target market.
+    - 🚨contingency strategy
+      - Allocate a budget for marketing activities and measure and analyze the effectiveness of marketing campaigns.
   
   
-  ## Marketing - Barriers to Entry
+  ##### Marketing - Barriers to Entry
   💰rating: 45
-  - #### Creating barriers to entry can make it difficult for new competitors to enter the market, protecting the startup’s market share.
-  - ##### 💭 Questions
+  - Creating barriers to entry can make it difficult for new competitors to enter the market, protecting the startup’s market share.
+  - **💭 Questions**
     - 💭 #question Are there barriers to entry for potential competitors?
     - 💭 #question Are there unique resources or capabilities that make it difficult for new entrants to compete?
     - 💭 #question Is there intellectual property protection?
-  - ##### 🚨 Risks
-    - ###### 🚨Barriers to Entry
-    - Lack of barriers to entry can make it easier for competitors to enter the market and threaten the startup's market share.
-    - ###### 🚨mitigation strategy
-    - Create barriers to entry through unique resources, capabilities, or intellectual property protection.
-    - ###### 🚨contingency strategy
-    - Regularly assess and strengthen barriers to entry and monitor potential threats from new entrants.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Create barriers to entry through unique resources, capabilities, or intellectual property protection
-    - ⚙️ #task  Regularly assess and strengthen barriers to entry
-    - ⚙️ #task  Monitor and address potential threats from new entrants.
+  - **🚨 Risks**
+    - 🚨Barriers to Entry
+      - Lack of barriers to entry can make it easier for competitors to enter the market and threaten the startup's market share.
+    - 🚨mitigation strategy
+      - Create barriers to entry through unique resources, capabilities, or intellectual property protection.
+    - 🚨contingency strategy
+      - Regularly assess and strengthen barriers to entry and monitor potential threats from new entrants.
   
   
-  ## Marketing - Comprehensive market research and analysis
+  ##### Marketing - Comprehensive market research and analysis
   💰rating: 30
-  - #### Thorough understanding of market dynamics, customer needs, and competition enables_informed business decisions, product alignment, and market share growth.
-  - ##### 💭 Questions
+  - Thorough understanding of market dynamics, customer needs, and competition enables_informed business decisions, product alignment, and market share growth.
+  - **💭 Questions**
     - 💭 #question Does the startup conduct comprehensive market research and analysis?
     - 💭 #question Is there a thorough understanding of market dynamics, customer needs, and competition?
     - 💭 #question Are business decisions_informed by market insights?
-  - ##### 🚨 Risks
-    - ###### 🚨Lack of market knowledge
-    - Insufficient understanding of market dynamics, customer needs, and competition can lead to poor business decisions, product misalignment, and loss of market share.
-    - ###### 🚨mitigation strategy
-    - Invest in market research and industry analysis to gain insights into market trends and customer needs.
-    - ###### 🚨contingency strategy
-    - Continuously monitor market trends and adjust business strategy accordingly.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Conduct comprehensive market research and analysis to understand market dynamics, customer needs, and competition
-    - ⚙️ #task  Use market insights to_inform business decisions
-    - ⚙️ #task  Continuously monitor and analyze the market for opportunities and threats.
+  - **🚨 Risks**
+    - 🚨Lack of market knowledge
+      - Insufficient understanding of market dynamics, customer needs, and competition can lead to poor business decisions, product misalignment, and loss of market share.
+    - 🚨mitigation strategy
+      - Invest in market research and industry analysis to gain insights into market trends and customer needs.
+    - 🚨contingency strategy
+      - Continuously monitor market trends and adjust business strategy accordingly.
   
   

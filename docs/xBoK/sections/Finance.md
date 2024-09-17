@@ -66,121 +66,99 @@
   - [[Budgeting]]
     - Budgeting is a financial tool that involves planning for future income and expenses. It helps businesses to allocate resources efficiently, control costs, and plan for financial goals. It's a crucial part of financial management in any business model.
 - ## 🔑 Keys
-  ## Finance - Profitability
+  ##### Finance - Profitability
   💰rating: 60
-  - #### The ability to generate sustainable profits is crucial. It reflects the financial health and long-term viability of the business.
-  - ##### 💭 Questions
+  - The ability to generate sustainable profits is crucial. It reflects the financial health and long-term viability of the business.
+  - **💭 Questions**
     - 💭 #question Is the startup profitable or on a clear path to profitability?
     - 💭 #question Are profit margins healthy?
     - 💭 #question Is there a plan to improve profitability?
-  - ##### 🚨 Risks
-    - ###### 🚨Profitability
-    - Lack of profitability can hinder the long-term viability of the startup.
-    - ###### 🚨mitigation strategy
-    - Develop strategies to improve profitability, such as cost optimization and pricing strategies.
-    - ###### 🚨contingency strategy
-    - Implement initiatives to increase revenue and reduce costs to achieve sustainable profitability.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Develop strategies to improve profitability, such as cost optimization and pricing strategies
-    - ⚙️ #task  Regularly review and analyze profit margins
-    - ⚙️ #task  Implement initiatives to increase revenue and reduce costs.
+  - **🚨 Risks**
+    - 🚨Profitability
+      - Lack of profitability can hinder the long-term viability of the startup.
+    - 🚨mitigation strategy
+      - Develop strategies to improve profitability, such as cost optimization and pricing strategies.
+    - 🚨contingency strategy
+      - Implement initiatives to increase revenue and reduce costs to achieve sustainable profitability.
   
   
-  ## Finance - Gross margins
+  ##### Finance - Gross margins
   💰rating: 60
-  - #### Gross margins
-  - ##### 💭 Questions
+  - Gross margins
+  - **💭 Questions**
     - 💭 #question What are the gross margins of the business model?
     - 💭 #question Are the profit margins favorable?
     - 💭 #question Is the business model financially sustainable?
-  - ##### 🚨 Risks
-    - ###### 🚨Gross Margins
-    - Unfavorable gross margins can impact the financial sustainability of the business model.
-    - ###### 🚨mitigation strategy
-    - Evaluate the gross margins of the business model and identify opportunities for improvement.
-    - ###### 🚨contingency strategy
-    - Implement pricing strategies and cost optimization measures to achieve favorable profit margins.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Evaluate the gross margins of the business model
-    - ⚙️ #task  Determine if the profit margins are favorable.
+  - **🚨 Risks**
+    - 🚨Gross Margins
+      - Unfavorable gross margins can impact the financial sustainability of the business model.
+    - 🚨mitigation strategy
+      - Evaluate the gross margins of the business model and identify opportunities for improvement.
+    - 🚨contingency strategy
+      - Implement pricing strategies and cost optimization measures to achieve favorable profit margins.
   
   
-  ## Finance - Financial Management
+  ##### Finance - Financial Management
   💰rating: 50
-  - #### Effective financial management is crucial. The startup must manage its finances to maintain cash flow, reduce costs, and ensure profitability.
-  - ##### 💭 Questions
+  - Effective financial management is crucial. The startup must manage its finances to maintain cash flow, reduce costs, and ensure profitability.
+  - **💭 Questions**
     - 💭 #question Are there financial controls in place?
     - 💭 #question Is there a budget and is it being adhered to?
     - 💭 #question Are financial records and reports accurate and up-to-date?
-  - ##### 🚨 Risks
-    - ###### 🚨Financial Management
-    - Effective financial management is crucial for the sustainability of the startup.
-    - ###### 🚨mitigation strategy
-    - Implement financial controls and processes to ensure accurate and up-to-date financial records.
-    - ###### 🚨contingency strategy
-    - Develop a budget and regularly monitor adherence to it.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Implement financial controls
-    - ⚙️ #task  Develop a budget and monitor adherence
-    - ⚙️ #task  Regularly review financial records for accuracy.
+  - **🚨 Risks**
+    - 🚨Financial Management
+      - Effective financial management is crucial for the sustainability of the startup.
+    - 🚨mitigation strategy
+      - Implement financial controls and processes to ensure accurate and up-to-date financial records.
+    - 🚨contingency strategy
+      - Develop a budget and regularly monitor adherence to it.
   
   
-  ## Finance - Finantial needs
+  ##### Finance - Finantial needs
   💰rating: 45
-  - #### how much money will be needed?
-  - ##### 💭 Questions
+  - how much money will be needed?
+  - **💭 Questions**
     - 💭 #question How much financial investment will be needed for the startup?
     - 💭 #question Are there significant financial needs or requirements?
     - 💭 #question Is there a plan for securing funding?
-  - ##### 🚨 Risks
-    - ###### 🚨Financial Needs
-    - Insufficient funding can hinder the growth and development of the startup.
-    - ###### 🚨mitigation strategy
-    - Determine the financial needs of the startup and develop a plan to secure funding.
-    - ###### 🚨contingency strategy
-    - Build relationships with potential investors and explore funding options such as loans or grants.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Determine the financial needs of the startup
-    - ⚙️ #task  Assess the amount of money that will be needed.
+  - **🚨 Risks**
+    - 🚨Financial Needs
+      - Insufficient funding can hinder the growth and development of the startup.
+    - 🚨mitigation strategy
+      - Determine the financial needs of the startup and develop a plan to secure funding.
+    - 🚨contingency strategy
+      - Build relationships with potential investors and explore funding options such as loans or grants.
   
   
-  ## Finance - Proactive tax planning and compliance
+  ##### Finance - Proactive tax planning and compliance
   💰rating: 15
-  - #### Implementing proactive tax planning strategies and ensuring compliance with tax regulations can help avoid unanticipated tax obligations, reducing financial strain and legal complications.
-  - ##### 💭 Questions
+  - Implementing proactive tax planning strategies and ensuring compliance with tax regulations can help avoid unanticipated tax obligations, reducing financial strain and legal complications.
+  - **💭 Questions**
     - 💭 #question Does the startup engage in proactive tax planning and compliance?
     - 💭 #question Are there measures in place to minimize unanticipated tax obligations?
     - 💭 #question Is the risk of financial strain and legal complications minimized?
-  - ##### 🚨 Risks
-    - ###### 🚨Tax Liability
-    - Unanticipated tax obligations can lead to financial strain and legal complications.
-    - ###### 🚨mitigation strategy
-    - Seek advice from tax professionals and ensure compliance with tax laws.
-    - ###### 🚨contingency strategy
-    - Optimize tax planning and address tax liabilities promptly.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Engage in proactive tax planning to minimize unanticipated tax obligations
-    - ⚙️ #task  Ensure compliance with tax regulations
-    - ⚙️ #task  Minimize the risk of financial strain and legal complications through effective tax planning and compliance.
+  - **🚨 Risks**
+    - 🚨Tax Liability
+      - Unanticipated tax obligations can lead to financial strain and legal complications.
+    - 🚨mitigation strategy
+      - Seek advice from tax professionals and ensure compliance with tax laws.
+    - 🚨contingency strategy
+      - Optimize tax planning and address tax liabilities promptly.
   
   
-  ## Finance - Currency risk management
+  ##### Finance - Currency risk management
   💰rating: 10
-  - #### Implementing strategies to manage currency exchange fluctuations in order to mitigate the impact on international business and profitability.
-  - ##### 💭 Questions
+  - Implementing strategies to manage currency exchange fluctuations in order to mitigate the impact on international business and profitability.
+  - **💭 Questions**
     - 💭 #question Does the startup have strategies in place to manage currency risk?
     - 💭 #question Are there measures to mitigate the impact of currency exchange fluctuations?
     - 💭 #question Is the profitability of international business ensured through currency risk management?
-  - ##### 🚨 Risks
-    - ###### 🚨Currency Exchange Risk
-    - Currency exchange fluctuations can impact international business and profitability.
-    - ###### 🚨mitigation strategy
-    - Implement currency hedging strategies and monitor exchange rate movements.
-    - ###### 🚨contingency strategy
-    - Diversify currency holdings and adjust pricing strategies.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Develop strategies to manage currency risk in international business operations
-    - ⚙️ #task  Implement measures to mitigate the impact of currency exchange fluctuations
-    - ⚙️ #task  Ensure the profitability of international business through currency risk management.
+  - **🚨 Risks**
+    - 🚨Currency Exchange Risk
+      - Currency exchange fluctuations can impact international business and profitability.
+    - 🚨mitigation strategy
+      - Implement currency hedging strategies and monitor exchange rate movements.
+    - 🚨contingency strategy
+      - Diversify currency holdings and adjust pricing strategies.
   
   

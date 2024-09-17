@@ -103,71 +103,59 @@
   - [[Trademark Search]]
     - Before finalizing a name, businesses should conduct a trademark search to ensure that the name is not already in use. This can help avoid legal issues and ensure that the name is unique and distinctive.
 - ## 🔑 Keys
-  ## Naming - Pronunciation Ease
+  ##### Naming - Pronunciation Ease
   💰rating: 20
-  - #### Is the name easy to pronounce in different languages?
-  - ##### 💭 Questions
+  - Is the name easy to pronounce in different languages?
+  - **💭 Questions**
     - 💭 #question Is the name easy to pronounce in different languages?
-  - ##### 🚨 Risks
-    - ###### 🚨Pronunciation Ease
-    - Difficult pronunciation can hinder brand recognition and global reach.
-    - ###### 🚨mitigation strategy
-    - Assess the ease of pronunciation of the chosen name in various languages and consider the potential impact on brand recognition.
-    - ###### 🚨contingency strategy
-    - Choose a name that is easy to pronounce in different languages to facilitate global reach.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess the ease of pronunciation of the chosen name in various languages
-    - ⚙️ #task  Consider the potential impact on brand recognition and global reach.
+  - **🚨 Risks**
+    - 🚨Pronunciation Ease
+      - Difficult pronunciation can hinder brand recognition and global reach.
+    - 🚨mitigation strategy
+      - Assess the ease of pronunciation of the chosen name in various languages and consider the potential impact on brand recognition.
+    - 🚨contingency strategy
+      - Choose a name that is easy to pronounce in different languages to facilitate global reach.
   
   
-  ## Naming - Phonetic Consistency
+  ##### Naming - Phonetic Consistency
   💰rating: 10
-  - #### Does it sound similar when pronounced in different languages (like "Kodak")?
-  - ##### 💭 Questions
+  - Does it sound similar when pronounced in different languages (like "Kodak")?
+  - **💭 Questions**
     - 💭 #question Does the name sound similar when pronounced in different languages?
-  - ##### 🚨 Risks
-    - ###### 🚨Phonetic Consistency
-    - Inconsistent pronunciation can lead to confusion and miscommunication in different languages.
-    - ###### 🚨mitigation strategy
-    - Evaluate if the chosen name maintains consistency in its pronunciation across different languages.
-    - ###### 🚨contingency strategy
-    - Choose a name that sounds similar when pronounced in different languages to facilitate brand recognition.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Evaluate if the chosen name maintains consistency in its pronunciation across different languages
-    - ⚙️ #task  Consider the potential impact on brand recognition and global reach.
+  - **🚨 Risks**
+    - 🚨Phonetic Consistency
+      - Inconsistent pronunciation can lead to confusion and miscommunication in different languages.
+    - 🚨mitigation strategy
+      - Evaluate if the chosen name maintains consistency in its pronunciation across different languages.
+    - 🚨contingency strategy
+      - Choose a name that sounds similar when pronounced in different languages to facilitate brand recognition.
   
   
-  ## Naming - Spelling from Pronunciation
+  ##### Naming - Spelling from Pronunciation
   💰rating: 10
-  - #### If someone hears it, can they easily write it correctly in different languages?
-  - ##### 💭 Questions
+  - If someone hears it, can they easily write it correctly in different languages?
+  - **💭 Questions**
     - 💭 #question Can the name be easily written correctly in different languages?
-  - ##### 🚨 Risks
-    - ###### 🚨Spelling from Pronunciation
-    - Difficult spelling based on pronunciation can lead to confusion and misspellings in different languages.
-    - ###### 🚨mitigation strategy
-    - Assess if the chosen name can be easily written correctly based on its pronunciation in various languages.
-    - ###### 🚨contingency strategy
-    - Choose a name that can be easily written correctly in different languages to facilitate brand recognition.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Assess if the chosen name can be easily written correctly based on its pronunciation in various languages
-    - ⚙️ #task  Consider the potential impact on brand recognition and global reach.
+  - **🚨 Risks**
+    - 🚨Spelling from Pronunciation
+      - Difficult spelling based on pronunciation can lead to confusion and misspellings in different languages.
+    - 🚨mitigation strategy
+      - Assess if the chosen name can be easily written correctly based on its pronunciation in various languages.
+    - 🚨contingency strategy
+      - Choose a name that can be easily written correctly in different languages to facilitate brand recognition.
   
   
-  ## Naming - Negative Connotations
+  ##### Naming - Negative Connotations
   💰rating: 10
-  - #### Both phonetically and in writing, does it resemble any word that has negative connotations in any language?
-  - ##### 💭 Questions
+  - Both phonetically and in writing, does it resemble any word that has negative connotations in any language?
+  - **💭 Questions**
     - 💭 #question Does the name have any negative connotations in any language?
-  - ##### 🚨 Risks
-    - ###### 🚨Negative Connotations
-    - Resemblance to words with negative connotations can impact brand perception and reputation.
-    - ###### 🚨mitigation strategy
-    - Evaluate if the chosen name resembles any word with negative connotations in any language.
-    - ###### 🚨contingency strategy
-    - Choose a name that does not have negative connotations in any language to maintain a positive brand image.
-  - ##### ⚙️ Tasks
-    - ⚙️ #task Evaluate if the chosen name resembles any word with negative connotations in any language
-    - ⚙️ #task  Consider the potential impact on brand perception and reputation.
+  - **🚨 Risks**
+    - 🚨Negative Connotations
+      - Resemblance to words with negative connotations can impact brand perception and reputation.
+    - 🚨mitigation strategy
+      - Evaluate if the chosen name resembles any word with negative connotations in any language.
+    - 🚨contingency strategy
+      - Choose a name that does not have negative connotations in any language to maintain a positive brand image.
   
   
