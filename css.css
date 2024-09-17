@@ -569,14 +569,15 @@ span[data-marker="\3D\3D"]::before { --emoji: "🟰2"; --opacity: 0.4; }
 span[data-marker="\3D\3D\3D"]::before { --emoji: "🟰3"; --opacity: 0.6; }
 span[data-marker="\3D\3D\3D\3D"]::before { --emoji: "🟰4"; --opacity: 0.8; }
 span[data-marker="\3D\3D\3D\3D\3D"]::before { --emoji: "🟰5"; --opacity: 1; }
-span[data-marker="\8D"]::before { --emoji: "🟢1"; --opacity: 0.2; }
-span[data-marker="\8D\8D"]::before { --emoji: "🟢2"; --opacity: 0.4; }
-span[data-marker="\8D\8D\8D"]::before { --emoji: "🟢3"; --opacity: 0.6; }
-span[data-marker="\8D\8D\8D\8D"]::before { --emoji: "🟢4"; --opacity: 0.8; }
-span[data-marker="\8D\8D\8D\8D\8D"]::before { --emoji: "🟢5"; --opacity: 1; }
-span[data-marker="\9D"]::before { --emoji: "🔴1"; --opacity: 0.2; }
-span[data-marker="\9D\9D"]::before { --emoji: "🔴2"; --opacity: 0.4; }
-span[data-marker="\9D\9D\9D"]::before { --emoji: "🔴3"; --opacity: 0.6; }
-span[data-marker="\9D\9D\9D\9D"]::before { --emoji: "🔴4"; --opacity: 0.8; }
-span[data-marker="\9D\9D\9D\9D\9D"]::before { --emoji: "🔴5"; --opacity: 1; }
+span[data-marker="\00008D"]::before { content: "🟢1"; opacity: 0.2; }
+span[data-marker="\00008D\00008D"]::before { content: "🟢2"; opacity: 0.4; }
+span[data-marker="\00008D\00008D\00008D"]::before { content: "🟢3"; opacity: 0.6; }
+span[data-marker="\00008D\00008D\00008D\00008D"]::before { content: "🟢4"; opacity: 0.8; }
+span[data-marker="\00008D\00008D\00008D\00008D\00008D"]::before { content: "🟢5"; opacity: 1; }
+span[data-marker="\00009D"]::before { content: "🔴1"; opacity: 0.2; }
+span[data-marker="\00009D\00009D"]::before { content: "🔴2"; opacity: 0.4; }
+span[data-marker="\00009D\00009D\00009D"]::before { content: "🔴3"; opacity: 0.6; }
+span[data-marker="\00009D\00009D\00009D\00009D"]::before { content: "🔴4"; opacity: 0.8; }
+span[data-marker="\00009D\00009D\00009D\00009D\00009D"]::before { content: "🔴5"; opacity: 1; }
+
 
