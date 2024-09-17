@@ -365,6 +365,10 @@ textarea {
     border-color: #007bff; /* Cambia el color del borde a azul al pasar el cursor o enfocar */
 }
 
+a {
+    text-decoration: none !important;
+}
+
 code {
     white-space: pre-wrap;
   }
