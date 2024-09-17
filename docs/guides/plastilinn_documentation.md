@@ -35,7 +35,7 @@
 <span id="download-the-Plastilinn-doc-template"></span>
 ##### Download the Plastilinn doc template
 
-- Download the template from this link  <a href="https://xbokmd.github.io/plastilinn/public/pPlastilinn_doc_project_name.md"  download="Plastilinn_doc_project_name.md">Plastilinn doc template</a>
+- Download the template from this link  <a href="https://xbokmd.github.io/plastilinn/public/Plastilinn_doc_project_name.md"  download="Plastilinn_doc_project_name.md">Plastilinn doc template</a>
 - Save it in a folder called "Plastilinn"
 - Rename the template using your project's name (IE, "Plastilinn_doc_SpaceX.md")
 
