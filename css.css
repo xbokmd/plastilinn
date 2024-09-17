@@ -463,6 +463,7 @@ span[data-tag]::before {
     left: 0;
 }
 
+span[data-tag="key"] { background-color: #FFCCCC; } span[data-tag="key"]::before { content: "🔑";}
 span[data-tag="organization"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="organization"]::before { content: "🏢";}
 span[data-tag="journey"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="journey"]::before { content: "✈️";}
 span[data-tag="solution"] { background-color: rgba(191,219,254,var(--tw-bg-opacity)) !important; } span[data-tag="solution"]::before { content: "💊";}
