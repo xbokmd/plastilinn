@@ -117,6 +117,14 @@ a {
     /* Ajusta este valor según lo necesites */
 }
 
+.md-block-container-middle {
+  flex: 2;
+}
+
+.md-block-container-right {
+  flex: 1;
+}
+
 .md-block-container-middle>div {
     /* Tus estilos aquí */
     border-bottom: 1px solid #F5F5F5;
