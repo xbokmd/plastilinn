@@ -47,7 +47,7 @@ Load the Plastilinn doc template you just downloaded by clicking the "choose fil
 <span id="open-the-idea-definition-guide"></span>
 ##### Open the idea definition guide
 
-Click on the [Idea Definition Guide](🆔ea-definition-guide) guide and follow the instructions.
+Click on the [Idea Definition Guide](#idea-definition-guide) guide and follow the instructions.
 
 <a href="https://xbokmd.github.io/plastilinn/app.html" target="_blank">Open the plastilinn app online</a>
 

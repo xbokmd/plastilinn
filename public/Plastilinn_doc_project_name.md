@@ -1,3 +1,8 @@
+<!--
+Go to https://xbokmd.github.io/plastilinn/app.html and load this document
+More info plastilinn.com
+-->
+
 # Business idea
 
 ## Opportunity

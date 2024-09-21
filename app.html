@@ -20,12 +20,6 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
-    <style>
-        .index-level-1 {
-            display: block;
-            width: 100%;
-        }
-    </style>
 </head>
 
 <body>
@@ -40,6 +34,7 @@
                                 <img src="assets/logo.png" alt="Logo de mi empresa" class="h-8">
                             </div>
                             <kbd class="kbd kbd-xs">Plastilinn V0.3.0</kbd>
+                            <div id="license"></div>
                             <div class="flex flex-row justify-between gap-2">
                                 <button @click="changeSidebar('guides')"
                                     class="collapse-filter-button btn btn-primary btn-outline btn-sm">
@@ -103,9 +98,9 @@
                 </div>
             </header>
             <!-- MAIN CONTAINER -->
-            <div class="flex-1 flex flex-row overflow-y-hidden">
+            <div class="container mx-auto mt-6 flex overflow-y-hidden">
                 <!-- SIDEBAR -->
-                <nav class="order-first w-1/4 overflow-y-auto custom-scrollbar"
+                <nav class="order-first w-2/5 overflow-y-auto custom-scrollbar"
                     style="min-width: 520px; scroll-behavior: smooth;">
                     <!-- Secciones con visibilidad condicional -->
                     <div class="p-2">
@@ -181,11 +176,13 @@
                                                     </ul>
                                                 </div>
                                             </div>
+
                                             <div v-for="(values, markerName) in prepareMarkers()" :key="markerName"
-                                                class="marker-group mb-4 px-2 py-3 bg-gray-200 rounded-md shadow-lg">
-                                                <div class="marker-name text-center font-semibold text-blue-600 mb-2">{{
-                                                    markerName }}</div>
-                                                <ul class="flex justify-center items-center flex-wrap gap-2">
+                                                class="marker-group bg-gray-200 rounded-md shadow-lg">
+                                                <ul class="flex flex-wrap gap-2">
+                                                    <li>
+                                                        <div class="badge badge-neutral">{{ markerName }}</div>
+                                                    </li>
                                                     <li v-for="value in values" :key="`marker-${markerName}-${value}`"
                                                         class="filter-switch-item">
                                                         <input class="checkbox checkbox-primary sr-only"
@@ -197,37 +194,6 @@
                                                             value }}</label>
                                                     </li>
                                                 </ul>
-                                            </div>
-                                        </div>
-                                        <div class="">
-                                            <!-- Botones para aplicar filtros directamente -->
-                                            <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
-                                                <button @click="setFilterTags(['!!!!!', '!!!!'])"
-                                                    class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
-                                                    High priority
-                                                </button>
-                                                <div class="flex items-center bg-gray-100 px-4 py-2">
-                                                    <p>
-                                                        <span data-marker="!!!!!">!!!!!</span> <kbd
-                                                            class="kbd kbd-xs">#!!!!!</kbd> or
-                                                        <span data-marker="!!!!">!!!!</span> <kbd
-                                                            class="kbd kbd-xs">#!!!!</kbd>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="rounded-lg shadow-md overflow-hidden border border-red-500 m-2">
-                                                <button @click="setFilterTags(['*****', '?????'])"
-                                                    class="bg-red-500 text-white px-4 py-2 hover:bg-red-600 focus:ring-red-500 focus:ring-opacity-50 w-full">
-                                                    High importance or uncertainty
-                                                </button>
-                                                <div class="flex items-center bg-gray-100 px-4 py-2">
-                                                    <p>
-                                                        <span data-marker="*****">*****</span> <kbd
-                                                            class="kbd kbd-xs">#*****</kbd> or
-                                                        <span data-marker="?????">?????</span> <kbd
-                                                            class="kbd kbd-xs">#?????</kbd>
-                                                    </p>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -258,7 +224,7 @@
                     </div>
                 </nav>
                 <!-- CONTENT -->
-                <main class="flex-auto border-l border-r border-gray-200 overflow-y-auto"
+                <main class="w-3/5 flex-auto border-l border-r border-gray-200 overflow-y-auto"
                     style="scroll-behavior: smooth;">
                     <div class="toast toast-top toast-end">
                         <div class="alert mt-20">
@@ -600,6 +566,26 @@
             },
             methods: {
 
+                processLicense() {
+        const params = new URLSearchParams(window.location.search);
+        const license = params.get('license');
+        
+        if (license) {
+            // Verificar si el primer carácter de la licencia es '0'
+            if (license.charAt(0) === '0') {
+                this.license = 'free'; // Variable global en el contexto de Vue
+            } else {
+                this.license = 'premium'; // Variable global en el contexto de Vue
+            }
+
+            // Asignar el valor de la licencia al div con ID "license"
+            const licenseDiv = document.getElementById('license');
+            if (licenseDiv) {
+                licenseDiv.innerText = this.license;
+            }
+        }
+    },
+
                 changeSidebar(section) {
                     this.currentSidebarSection = section;
                     // Si la sección no es 'filter', resetea el input de búsqueda y los tags de filtro
@@ -612,7 +598,7 @@
                 // METAMODEL
 
                 processMetamodel() {
-                    axios.get('https://xbokmd.github.io/plastilinn/metamodel.json')
+                    axios.get('https://xbokmd.github.io/plastilinn/metamodel/00000000.json')
                         .then((response) => {
                             if (response.data && response.data.classes && response.data.sections) {
                                 this.metamodel = response.data;
@@ -1705,6 +1691,7 @@
 
             },
             mounted() {
+                this.processLicense();
                 this.processMetamodel(); // Otras inicializaciones pueden ir aquí
                 this.highlightOnLoad(); // Resalta el elemento si la página se cargó con un hash.
                 window.addEventListener('hashchange', this.highlightOnLoad);
