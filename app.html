@@ -98,7 +98,7 @@
                 </div>
             </header>
             <!-- MAIN CONTAINER -->
-            <div class="container mx-auto mt-6 flex overflow-y-hidden">
+            <div class="mx-auto flex overflow-y-hidden">
                 <!-- SIDEBAR -->
                 <nav class="order-first w-2/5 overflow-y-auto custom-scrollbar"
                     style="min-width: 520px; scroll-behavior: smooth;">
@@ -567,24 +567,24 @@
             methods: {
 
                 processLicense() {
-        const params = new URLSearchParams(window.location.search);
-        const license = params.get('license');
-        
-        if (license) {
-            // Verificar si el primer carácter de la licencia es '0'
-            if (license.charAt(0) === '0') {
-                this.license = 'free'; // Variable global en el contexto de Vue
-            } else {
-                this.license = 'premium'; // Variable global en el contexto de Vue
-            }
+                    const params = new URLSearchParams(window.location.search);
+                    const license = params.get('license');
 
-            // Asignar el valor de la licencia al div con ID "license"
-            const licenseDiv = document.getElementById('license');
-            if (licenseDiv) {
-                licenseDiv.innerText = this.license;
-            }
-        }
-    },
+                    if (license) {
+                        // Verificar si el primer carácter de la licencia es '0'
+                        if (license.charAt(0) === '0') {
+                            this.license = 'free'; // Variable global en el contexto de Vue
+                        } else {
+                            this.license = 'premium'; // Variable global en el contexto de Vue
+                        }
+
+                        // Asignar el valor de la licencia al div con ID "license"
+                        const licenseDiv = document.getElementById('license');
+                        if (licenseDiv) {
+                            licenseDiv.innerText = this.license;
+                        }
+                    }
+                },
 
                 changeSidebar(section) {
                     this.currentSidebarSection = section;
