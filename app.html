@@ -286,44 +286,50 @@
                                             <div
                                                 class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow custom-flex-2">
                                                 <div v-html="block.contentParsed"></div>
+
+                                                <!-- Mostrar 'premium content' solo si NO tiene metamodel.name y el título es un encabezado Markdown (empieza con # seguido de un espacio) -->
+                                                <div v-if="isPremiumContent(block)">
+                                                    <span>premium content</span>
+                                                </div>
                                             </div>
                                             <div
                                                 class="md-block-container-right metadata-container text-gray-500 w-full rounded-md text-sm text-center">
                                                 <div
                                                     class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500">
-                                                    <div class="xbok-block-tags flex items-center">
+                                                    <div class="xbok-block-tags flex items-center"
+                                                        v-if="block.metamodel">
                                                         <button @click="openBlockEditModal(block)"
-                                                            class="btn btn-primary btn-outline btn-outline bg-base-200 p-2 rounded opacity-100 hover:opacity-100 focus:opacity-100">
+                                                            class="btn btn-primary btn-outline bg-base-200 p-2 rounded">
                                                             📝
                                                         </button>
                                                         <div :id="block.metamodel.name"
-                                                            class="block-metamodel section inline-flex"
-                                                            v-if="block.metamodel">
+                                                            class="block-metamodel section inline-flex">
                                                             <button @click="openInfoModal(block.metamodel.name)"
-                                                                class="btn btn-primary btn-outline btn-outline bg-base-200 p-2 rounded opacity-100 hover:opacity-100 focus:opacity-100">
+                                                                class="btn btn-primary btn-outline">
                                                                 🆔
                                                             </button>
                                                         </div>
                                                         <div :id="block.metamodel.name"
-                                                            class="block-metamodel section inline-flex"
-                                                            v-if="block.metamodel">
+                                                            class="block-metamodel section inline-flex">
                                                             <button
                                                                 @click="openInfoModal(block.metamodel.name + '?id=🔑-keys')"
-                                                                class="btn btn-primary btn-outline btn-outline bg-base-200 p-2 rounded opacity-100 hover:opacity-100 focus:opacity-100">
+                                                                class="btn btn-primary btn-outline">
                                                                 <a v-if="block.metamodel?.name"
                                                                     :href="`#${block.metamodel.name} keys`">🔑</a>
                                                             </button>
                                                         </div>
-                                                        <div class="md-block-container-right markers-container"
-                                                            v-html="block.markersParsed">
-                                                        </div>
-                                                        <div class="md-block-container-right metadata-container"
-                                                            v-html="block.tagsParsed">
+                                                        <div v-else>
+                                                            <span><a href="#premium">🔒 premium content</a></span>
                                                         </div>
                                                     </div>
+                                                    <div class="md-block-container-right markers-container"
+                                                        v-html="block.markersParsed"></div>
+                                                    <div class="md-block-container-right metadata-container"
+                                                        v-html="block.tagsParsed"></div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -586,6 +592,11 @@
                     }
                 },
 
+                isPremiumContent(block) {
+                    // Mostrar 'premium content' si NO tiene metamodel.name y el título es un encabezado Markdown
+                    return !block.metamodel?.name && /^#+\s/.test(block.title);
+                },
+
                 changeSidebar(section) {
                     this.currentSidebarSection = section;
                     // Si la sección no es 'filter', resetea el input de búsqueda y los tags de filtro
@@ -647,7 +658,7 @@
                     const lines = content.split(/\r?\n/);
 
                     lines.forEach((line) => {
-                        if (/^\s*([-*\d.]*)*\s*#/.test(line)) {
+                        if (/^\s*[-*]?\s*#/.test(line)) {
                             if (currentBlock.length > 0) {
                                 this.model.push(currentBlock.join('\n'));
                                 currentBlock = [];
