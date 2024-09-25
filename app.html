@@ -31,10 +31,11 @@
                     <div id="navbar" class="navbar bg-base-100 shadow-2xl">
                         <div class="navbar-start">
                             <div class="p-5">
-                                <img src="assets/logo.png" alt="Logo de mi empresa" class="h-8">
+                                <img src="https://xbokmd.github.io/plastilinn/assets/logo.png" alt="Logo" class="h-8">
                             </div>
-                            <kbd class="kbd kbd-xs">Plastilinn V0.3.0</kbd>
-                            <div id="license"></div>
+                            <kbd class="kbd kbd-xs">Plastilinn V0.3.0
+                                {{ license }} <span v-if="detectedLanguage"> ({{ detectedLanguage }})</span>
+                            </kbd>
                             <div class="flex flex-row justify-between gap-2">
                                 <button @click="changeSidebar('guides')"
                                     class="collapse-filter-button btn btn-primary btn-outline btn-sm">
@@ -629,14 +630,45 @@
                     }
                     const modelName = this.getModelNameFromFileName(file.name);
                     this.modelName = modelName; // Actualiza modelName con el resultado de la función
+
                     const reader = new FileReader();
                     reader.onload = (e) => {
                         const content = e.target.result;
+
+                        // Detectar la variable de idioma en el contenido Markdown
+                        const languageMatch = content.match(/<!--\s*language:\s*(\w+)\s*-->/);
+                            let language = 'en'; // Valor por defecto (inglés)
+                        if (languageMatch && languageMatch[1]) {
+                            language = languageMatch[1]; // Obtener el valor del idioma si está presente
+                        }
+
+                        // Almacenar el idioma detectado
+                        this.detectedLanguage = language;
+
+                        // Procesar el contenido del archivo Markdown
                         this.parseModelMarkdown(content);
                     };
                     reader.readAsText(file);
                     this.updateModelMarkdown();
                     this.modelMarkdownLoaded = true;
+                },
+
+                // Método para mostrar el idioma al lado del logo
+                displayLanguageNextToLogo(language) {
+                    const logoElement = document.querySelector('.navbar-start'); // Ubica el contenedor del logo
+                    if (logoElement) {
+                        // Remover cualquier elemento previo de idioma
+                        const previousLanguageElement = logoElement.querySelector('.language-label');
+                        if (previousLanguageElement) {
+                            previousLanguageElement.remove();
+                        }
+
+                        // Crear un nuevo span para mostrar el idioma
+                        const languageElement = document.createElement('span');
+                        languageElement.textContent = `(${language})`; // Mostrar el idioma detectado
+                        languageElement.classList.add('ml-2', 'text-gray-500', 'language-label'); // Añadir clase para estilo
+                        logoElement.appendChild(languageElement); // Insertar el elemento al lado del logo
+                    }
                 },
 
                 getModelNameFromFileName(fileName) {
@@ -658,7 +690,7 @@
                     const lines = content.split(/\r?\n/);
 
                     lines.forEach((line) => {
-                        if (/^\s*[-*]?\s*#/.test(line)) {
+                        if (/^\s*[*]?\s*#/.test(line)) {
                             if (currentBlock.length > 0) {
                                 this.model.push(currentBlock.join('\n'));
                                 currentBlock = [];
