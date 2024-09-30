@@ -455,14 +455,12 @@ box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); /* Sombra suave alrededor */
 
 span[data-tag] {
     position: relative;
-    padding-left: 1.4rem !important;
     border-radius: 4px;
     font-size: 1rem !important;
 }
 
 span[data-tag]::before {
     content: "⚪"; /* Emoji por defecto */
-    position: absolute;
     left: 0;
 }
 
