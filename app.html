@@ -30,7 +30,7 @@
                 <div id="top-container" class="bg-gray-200 w-full fixed">
                     <div id="navbar" class="navbar bg-base-100 shadow-2xl">
                         <div class="navbar-start">
-                            <div class="p-5">
+                            <div>
                                 <img src="https://xbokmd.github.io/plastilinn/assets/logo.png" alt="Logo" class="h-8">
                             </div>
                             <kbd class="kbd kbd-xs">Plastilinn V0.3.0
@@ -59,15 +59,7 @@
                                     </span>Search</button>
                             </div>
                         </div>
-                        <div class="navbar-center">
-                            <div class="flex-1 text-center rounded-lg p-2 m-2" v-if="modelName">
-                                <h4>{{ modelName }}
-                                    <button @click="openEditorInModal" class="btn btn-primary btn-outline">
-                                        edit
-                                    </button>
-                                </h4>
-                            </div>
-                        </div>
+
                         <div class="navbar-end">
                             <div class="join">
                                 <button id="downloadBtn" @click="downloadMarkdown"
@@ -96,6 +88,31 @@
                         </div>
                     </div>
 
+                </div>
+                <div>
+                    <div class="bg-gray-200 rounded-lg shadow" id="plastilinn-tag-filter" v-if="modelName">
+                        <span class="flex-1 text-center rounded-lg">📄 {{ modelName }}
+                            <button @click="openEditorInModal" class="btn btn-primary btn-outline">
+                                edit
+                            </button>
+                        </span>
+                        <span class="text-lg font-semibold"><span class="material-symbols-outlined" translate="no">
+                                filter_alt </span> Filtered tags and markers</span>
+                        <!-- Contenedor para las etiquetas, ahora debajo del encabezado -->
+                        <span id="show-selected" class="p-2 gap-2 rounded bg-red-300">
+                            <span class="gap-2">
+                                <span v-for="tag in selectedTags" :key="tag" class="h-8 px-2 text-sm" :data-tag="tag">{{
+                                    tag }}</span>
+                                <span v-for="marker in selectedMarkers" :key="marker" class="h-8 px-2 text-sm"
+                                    :data-marker="marker">{{
+                                    marker }}</span>
+                            </span>
+                        </span>
+                        <button @click="resetSelectedTagsAndMarkers" class="btn btn-ghost">
+                            <span class="material-symbols-outlined" translate="no">restart_alt</span>
+                            Reset
+                        </button>
+                    </div>
                 </div>
             </header>
             <!-- MAIN CONTAINER -->
@@ -134,31 +151,6 @@
                                         <div class="flex flex-col w-full p-4 bg-white rounded-lg shadow-sm">
                                             <!-- Filtro de etiquetas -->
                                             <div class="flex flex-col mt-4">
-                                                <div class="flex flex-col mb-4 p-2 bg-gray-200 rounded-lg shadow">
-                                                    <!-- Encabezado con Filter y Reset en la misma línea -->
-                                                    <div class="flex justify-between items-center mb-2">
-                                                        <span class="text-lg font-semibold">Filtered tags and
-                                                            markers</span>
-                                                        <button @click="resetSelectedTagsAndMarkers"
-                                                            class="btn btn-ghost">
-                                                            <span class="material-symbols-outlined"
-                                                                translate="no">restart_alt</span>
-                                                            Reset
-                                                        </button>
-                                                    </div>
-                                                    <!-- Contenedor para las etiquetas, ahora debajo del encabezado -->
-                                                    <div id="show-selected"
-                                                        class="flex flex-wrap p-2 gap-2 rounded bg-red-300">
-                                                        <div class="flex flex-wrap gap-2">
-                                                            <span v-for="tag in selectedTags" :key="tag"
-                                                                class="flex items-center justify-center h-8 px-2 text-sm"
-                                                                :data-tag="tag">{{ tag }}</span>
-                                                            <span v-for="marker in selectedMarkers" :key="marker"
-                                                                class="flex items-center justify-center h-8 px-2 text-sm"
-                                                                :data-marker="marker">{{ marker }}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                 <div class="tag-group mb-4 px-2 py-3 bg-gray-200 rounded-md shadow-lg">
                                                     <div class="tag-name text-center font-semibold text-blue-600 mb-2">
                                                         Tags
@@ -288,9 +280,9 @@
                                                 class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow custom-flex-2">
                                                 <div v-html="block.contentParsed"></div>
 
-                                                <!-- Mostrar 'premium content' solo si NO tiene metamodel.name y el título es un encabezado Markdown (empieza con # seguido de un espacio) -->
+                                                <!-- Mostrar 'pro' solo si NO tiene metamodel.name y el título es un encabezado Markdown (empieza con # seguido de un espacio) -->
                                                 <div v-if="isPremiumContent(block)">
-                                                    <span>premium content</span>
+                                                    <span>pro</span>
                                                 </div>
                                             </div>
                                             <div
@@ -320,7 +312,7 @@
                                                             </button>
                                                         </div>
                                                         <div v-else>
-                                                            <span><a href="#premium">🔒 premium content</a></span>
+                                                            <span><a href="#premium">🔒 pro</a></span>
                                                         </div>
                                                     </div>
                                                     <div class="md-block-container-right markers-container"
@@ -401,10 +393,10 @@
             class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
             <div class="relative bg-white w-11/12 h-5/6 p-5 shadow-lg rounded-md">
                 <!-- Contenedor del editor -->
-                <div id="doc-editor-container"></div>
                 <button @click="saveNewEditorContent(); closeFullScreenEditor()"
-                    class="btn btn-primary btn-outline mt-4">Save</button>
-                <button @click="closeFullScreenEditor()" class="absolute btn mt-4">Close</button>
+                    class="btn m2 btn-success">Save</button>
+                <button @click="closeFullScreenEditor()" class="btn m-2 btn-error">Close</button>
+                <div id="doc-editor-container"></div>
             </div>
         </div>
         <div id="confirmation-message"
@@ -594,7 +586,7 @@
                 },
 
                 isPremiumContent(block) {
-                    // Mostrar 'premium content' si NO tiene metamodel.name y el título es un encabezado Markdown
+                    // Mostrar 'pro' si NO tiene metamodel.name y el título es un encabezado Markdown
                     return !block.metamodel?.name && /^#+\s/.test(block.title);
                 },
 
@@ -1123,9 +1115,9 @@
                 },
 
                 openEditorInModal() {
+                    this.updateModelMarkdown();  // Actualiza el contenido del Markdown antes de abrir el editor
                     this.isFullScreenEditorOpen = true;  // Abre el modal
 
-                    // Usa un setTimeout para asegurar que el DOM se ha renderizado completamente
                     setTimeout(() => {
                         const editorContainer = document.querySelector('#doc-editor-container');
                         if (!editorContainer) {
@@ -1133,14 +1125,20 @@
                             return;
                         }
 
+                        // Verifica si el contenido está cargado antes de inicializar el editor
+                        if (!this.modelMarkdown || this.modelMarkdown.trim() === '') {
+                            console.error('No markdown content available');
+                            this.modelMarkdown = '# Your initial markdown content here';
+                        }
+
                         this.newEditorInstance = new toastui.Editor({
                             el: editorContainer,
                             initialEditType: 'markdown',
                             previewStyle: 'tab',
                             height: '500px',
-                            initialValue: this.modelMarkdown, // Contenido inicial
+                            initialValue: this.modelMarkdown,  // Asegúrate de que el contenido Markdown esté disponible aquí
                         });
-                    }, 500); // Ajusta el tiempo si es necesario
+                    }, 500);
                 },
 
 
@@ -1200,8 +1198,9 @@
                     const newTitle = this.extractBlockTitle(editedContent); // Suponiendo que tengas una función similar para el contenido editado
 
                     if (oldTitle !== newTitle) {
-                        alert("You have changed the title of a block. If you have references to this title in the document, " +
-                            "you might want to use the search and replace feature within the sidebar filter. " +
+                        alert("You have changed the title of the block." +
+                            "If you didn't intend to do so (IE, you were pasting a response generated by AI), simply close the block editor (click the Close window button), open it again and paste the response below the heading" +
+                            "If you wand to change the title, you might want to use the search and replace feature within the Search menu. " +
                             `Search "${oldTitle}" and replace it with "${newTitle}"`);
                     }
 
