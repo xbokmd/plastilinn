@@ -1,5 +1,5 @@
 [Artifacts](#artifacts)
-[Idea Definition Canvas](🆔ea-definition-canvas)
+[Idea Definition Canvas](idea-definition-canvas)
 [Lean Canvas](#lean-canvas)
 [Business Model Canvas](#business-model-canvas)
 [Empathy Map](#empathy-map)
@@ -11,7 +11,7 @@
 ## Artifacts
 
 <span id="idea-definition-canvas"></span>
-### Idea Definition Guide
+### Idea Definition Canvas
 
 [Provide a brief description of your business idea](#provide-a-brief-description-of-your-business-idea)
 [Who will be the user of the product or service?](#who-will-be-the-user-of-the-product-or-service)

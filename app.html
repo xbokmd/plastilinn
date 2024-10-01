@@ -87,33 +87,43 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div>
-                    <div class="bg-gray-200 rounded-lg shadow" id="plastilinn-tag-filter" v-if="modelName">
-                        <span class="flex-1 text-center rounded-lg">📄 {{ modelName }}
-                            <button @click="openEditorInModal" class="btn btn-primary btn-outline">
-                                edit
+                    <div class="bg-gray-200 rounded-lg shadow flex items-center justify-between"
+                        id="plastilinn-tag-filter" v-if="modelName">
+                        <!-- Parte izquierda: Título y botón de edición -->
+                        <div class="flex items-center space-x-2">
+                            <span class="text-lg font-semibold flex items-center space-x-2">📄 {{ modelName }}</span>
+                            <button @click="openEditorInModal"
+                                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-3 rounded transition duration-300">
+                                Edit
                             </button>
-                        </span>
-                        <span class="text-lg font-semibold"><span class="material-symbols-outlined" translate="no">
-                                filter_alt </span> Filtered tags and markers</span>
-                        <!-- Contenedor para las etiquetas, ahora debajo del encabezado -->
-                        <span id="show-selected" class="p-2 gap-2 rounded bg-red-300">
-                            <span class="gap-2">
-                                <span v-for="tag in selectedTags" :key="tag" class="h-8 px-2 text-sm" :data-tag="tag">{{
-                                    tag }}</span>
-                                <span v-for="marker in selectedMarkers" :key="marker" class="h-8 px-2 text-sm"
-                                    :data-marker="marker">{{
-                                    marker }}</span>
-                            </span>
-                        </span>
-                        <button @click="resetSelectedTagsAndMarkers" class="btn btn-ghost">
-                            <span class="material-symbols-outlined" translate="no">restart_alt</span>
-                            Reset
-                        </button>
+                        </div>
+                        <!-- Parte derecha: Filtro de etiquetas y botón Reset -->
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center text-lg font-semibold text-gray-700 space-x-2">
+                                <span class="material-symbols-outlined">filter_alt</span> Active filters
+                            </div>
+                            <!-- Contenedor para las etiquetas seleccionadas -->
+                            <div id="show-selected" class="flex gap-2 p-2 bg-red-100 rounded">
+                                <span class="gap-2">
+                                    <span v-for="tag in selectedTags" :key="tag"
+                                        class="h-8 px-2 text-sm bg-gray-300 rounded" :data-tag="tag">{{ tag }}</span>
+                                    <span v-for="marker in selectedMarkers" :key="marker"
+                                        class="h-8 px-2 text-sm bg-gray-300 rounded" :data-marker="marker">{{ marker
+                                        }}</span>
+                                </span>
+                            </div>
+
+                            <!-- Botón de Reset -->
+                            <button @click="resetSelectedTagsAndMarkers" class="btn">
+                                <span class="material-symbols-outlined" translate="no">restart_alt</span>
+                                Reset
+                            </button>
+                        </div>
                     </div>
                 </div>
+
             </header>
             <!-- MAIN CONTAINER -->
             <div class="mx-auto flex overflow-y-hidden">
@@ -219,13 +229,6 @@
                 <!-- CONTENT -->
                 <main class="w-3/5 flex-auto border-l border-r border-gray-200 overflow-y-auto"
                     style="scroll-behavior: smooth;">
-                    <div class="toast toast-top toast-end">
-                        <div class="alert mt-20">
-                            <button @click="changeSidebar('guides')" class="btn btn-link btn-sm"><a
-                                    href="#editing-your-plastilinn-doc">❓Editing Your
-                                    Plastilinn doc</a></button>
-                        </div>
-                    </div>
                     <div class="leading-10">
                         <div id="content" class="bg-gray-200 p-1 rounded">
                             <div class="plastilinn-hero hero pt-12" v-if="!modelMarkdownLoaded">
@@ -277,7 +280,7 @@
                                         <div v-for="block in searchFilteredBlocks" :key="block.id" :id="block.title"
                                             class="md-block flex">
                                             <div
-                                                class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow custom-flex-2">
+                                                class="md-block-container-middle md-block-content shadow-xl hover:shadow-2xl transition-shadow bg-white w-4/5">
                                                 <div v-html="block.contentParsed"></div>
 
                                                 <!-- Mostrar 'pro' solo si NO tiene metamodel.name y el título es un encabezado Markdown (empieza con # seguido de un espacio) -->
@@ -286,7 +289,7 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="md-block-container-right metadata-container text-gray-500 w-full rounded-md text-sm text-center">
+                                                class="md-block-container-right metadata-container text-gray-500 rounded-md text-sm text-center w-1/5">
                                                 <div
                                                     class="flex flex-col items-start justify-start w-full bg-gray-200 rounded-md text-sm text-gray-500">
                                                     <div class="xbok-block-tags flex items-center"
@@ -315,10 +318,7 @@
                                                             <span><a href="#premium">🔒 pro</a></span>
                                                         </div>
                                                     </div>
-                                                    <div class="md-block-container-right markers-container"
-                                                        v-html="block.markersParsed"></div>
-                                                    <div class="md-block-container-right metadata-container"
-                                                        v-html="block.tagsParsed"></div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -694,6 +694,25 @@
                         this.model.push(currentBlock.join('\n'));
                     }
                     return this.model;
+                },
+
+                // Método para manejar la descarga cuando el usuario intenta cerrar la pestaña
+                handleBeforeUnload(event) {
+                    // Mostrar mensaje de advertencia personalizado
+                    const message = "You might have unsaved changes. Do you want to download your document before closing? Close this alert and click on the download button";
+
+                    // Establecer el mensaje de advertencia en el evento
+                    event.returnValue = message;
+
+                    // También devolver el mensaje para ciertos navegadores
+                    return message;
+                },
+                // Método para asegurarte de que se elimine el listener cuando no es necesario
+                addBeforeUnloadListener() {
+                    window.addEventListener('beforeunload', this.handleBeforeUnload);
+                },
+                removeBeforeUnloadListener() {
+                    window.removeEventListener('beforeunload', this.handleBeforeUnload);
                 },
 
                 // BLOCK PROCESSING
@@ -1746,7 +1765,15 @@
                 this.currentSidebarSection = 'guides'; // Cambia la sección activa a 'guides'
                 const guideUrl = 'https://xbokmd.github.io/plastilinn/docs/guides/plastilinn_documentation.md';
                 this.loadGuideMarkdownContent(guideUrl); // Cargar la guía directamente
+
+                // Agregar el listener cuando el componente esté montado
+                this.addBeforeUnloadListener();
             },
+
+            beforeUnmount() {
+                // Eliminar el listener antes de que el componente sea destruido
+                this.removeBeforeUnloadListener();
+            }
         })
             .mount('#vue-app');
     </script>
