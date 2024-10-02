@@ -1,209 +1,531 @@
-<!--
-Go to https://xbokmd.github.io/plastilinn/app.html and load this document
-More info plastilinn.com
--->
 
-# Business idea
+<!-- Go to https://xbokmd.github.io/plastilinn/app.html and load this document. More info plastilinn.com -->
+<!-- language: en -->
+# Business summary #***** #>
 
-## Opportunity
 
-## Inspiration
+# Business idea #*** #>
 
-## Business status
 
-## Challenges
+## Opportunity #** #>
 
-## Unfair advantage
 
-# Business objectives
+## Inspiration #** #>
 
-## Mission
 
-## Vision
+## Business status #**** #>
 
-## Strategy
 
-## Organization values
+## Challenges #**** #>
 
-## Organization goals
 
-# Stakeholders
+## Unfair advantage #*** #>
 
-# Segment list
 
-## #segment Main segment
+# Business objectives #**** #>
 
-### #segment Main segment - Segmentation criteria
 
-### #segment Main segment - Market size
+## Mission #*** #>
 
-### #segment Main segment - Market trends
 
-### #segment Main segment - Partners
+## Vision #*** #>
 
-### #segment Main segment - Competition
 
-### #segment Main segment - Roles
+## Strategy #*** #>
 
-# Profile list
 
-## #profile Main profile
+## Organization values #*** #>
 
-### #profile Main profile - Segmentation
 
-### #profile Main profile - Persona
+## Organization goals #**** #>
 
-### #profile Main profile - Goals
+#goal_organization
 
-### #profile Main profile - Perceptions
 
-### #profile Main profile - Emotions
+# Stakeholders #**** #>
 
-### #profile Main profile - Value proposition
+#stakeholder
 
-#### #profile Main profile - Quantified value proposition
 
-### #profile Main profile - Relationship
+# Segment list #**** #>
 
-### #profile Main profile - Messages
+#segment
 
-### #profile Main profile - Channels
 
-### #profile Main profile - Assets
+## #segment Main segment - Segment #**** #>
 
-### #profile Main profile - Transactions
+#segment
 
-### #profile Main profile - Journey
 
-### #profile Main profile - Funnel
+### #segment Main segment - Segmentation criteria #*** #>
 
-### #profile Main profile - Sales strategy
+#segmentation
 
-# Solution list
 
-## #solution Main solution
+### #segment Main segment - Market size #*** #>
 
-### #solution Main solution - Category
 
-### #solution Main solution - Components
+### #segment Main segment - Market trends #* #>
 
-### #solution Main solution - Features
 
-### #solution Main solution - Roadmap
+### #segment Main segment - Partners #* #>
 
-### #solution Main solution - Offerings
+#partner
 
-### #solution Main solution - Profiles
 
-### #solution Main solution - Pricing
+### #segment Main segment - Competition #** #>
 
-### #solution Main solution - Brochure
+#competitor
 
-# Marketing
 
-## Naming
+### #segment Main segment - Roles #** #>
 
-## Branding
+#role
 
-## Visual identity
 
-## Logo
+# Profile list #*** #>
 
-## Marketing plan
+#profile
 
-# Operations
 
-## Activitiy list
+## #profile Main profile - Profile #***** #>
 
-## Function list
+#profile
 
-## Resource list
 
-# Metric list
+### #profile Main profile - Segmentation #*** #>
 
-## Life time value
+#segmentation
 
-## Customer aquisition cost
 
-# Team
+### #profile Main profile - Persona #** #>
 
-## People
 
-### #person Main person
+### #profile Main profile - Goals #***** #>
 
-#### #person Main person - Goals
+#goal
 
-#### #person Main person - Skills
 
-#### #person Main person - Functions
+### #profile Main profile - Perceptions #* #>
 
-#### #person Main person - Contributions
+#perception
 
-#### #person Main person - Compensations
 
-## Position list
+### #profile Main profile - Emotions #* #>
 
-# Project plan
+#emotion
 
-## Phases
 
-## Milestones
+### #profile Main profile - Value proposition #*** #>
 
-# Finance
+#value
 
-## Revenue lines
 
-## Cost lines
+#### #profile Main profile - Quantified value proposition #* #>
 
-## Unit economics
 
-## Funding strategy
+### #profile Main profile - Relationship #* #>
 
-## Funding sources
+#relationship
 
-## Capital structure
 
-### Cap table
+### #profile Main profile - Messages #** #>
 
-## Cashflow projections
+#message
 
-## Finantial projections
 
-# Legal
+### #profile Main profile - Channels #*** #>
 
-## Legal issues
+#channel
 
-## Contract list
 
-# Communication
+### #profile Main profile - Assets #** #>
 
-## Pitch
+#asset
 
-## Business brochure
 
-## Web
+### #profile Main profile - Transactions #* #>
 
-## Storytelling
+#transaction
 
-## Presentations
 
-# Analysis
+### #profile Main profile - Journey #** #>
 
-## Assumption list
 
-## Risk list
+### #profile Main profile - Funnel #* #>
 
-# Validation
 
-## Experiment list
+### #profile Main profile - Sales strategy #* #>
 
-### #experiment Main experiment
 
-# References
+# Solution list #**** #>
 
-# Artifacts
+#solution
 
-# Keys
 
-# Attachments
+## #solution Main solution - Solution #***** #>
+
+#solution
+
+
+### #solution Main solution - Category #** #>
+
+
+### #solution Main solution - Components #* #>
+
+
+### #solution Main solution - Features #** #>
+
+#feature
+
+
+### #solution Main solution - Roadmap #* #>
+
+
+### #solution Main solution - Offerings #** #>
+
+#offering
+
+
+### #solution Main solution - Profiles #** #>
+
+#profile
+
+
+### #solution Main solution - Pricing #** #>
+
+
+### #solution Main solution - Brochure #* #>
+
+
+# Marketing #** #>
+
+
+## Naming #** #>
+
+
+## Branding #* #>
+
+
+## Visual identity #* #>
+
+
+## Logo #* #>
+
+
+## Marketing plan #* #>
+
+
+# Operations #*** #>
+
+
+## Activitiy list #** #>
+
+#work
+
+
+## Function list #** #>
+
+#function
+
+
+## Resource list #** #>
+
+#asset
+
+
+# Metric list #*** #>
+
+#metric
+
+
+## Life time value #*** #>
+
+
+## Customer aquisition cost #*** #>
+
+
+# Team #**** #>
+
+
+## People #**** #>
+
+#person
+
+
+### #person Main person - Person #**** #>
+
+#person
+
+
+#### #person Main person - Goals #*** #>
+
+
+#### #person Main person - Skills #*** #>
+
+#skill
+
+
+#### #person Main person - Functions #*** #>
+
+#function
+
+
+#### #person Main person - Contributions #*** #>
+
+
+#### #person Main person - Compensations #*** #>
+
+
+## Position list #** #>
+
+#position
+
+
+# Project plan #** #>
+
+
+## Phases #* #>
+
+#phase
+
+
+## Milestones #** #>
+
+#milestone
+
+
+# Finance #*** #>
+
+
+## Revenue lines #*** #>
+
+#revenue
+
+
+## Cost lines #** #>
+
+#cost
+
+
+## Unit economics #** #>
+
+
+## Funding strategy #** #>
+
+
+## Funding sources #* #>
+
+
+## Capital structure #** #>
+
+
+### Cap table #* #>
+
+
+## Cashflow projections #** #>
+
+
+## Finantial projections #* #>
+
+
+# Legal #** #>
+
+
+## Legal issues #** #>
+
+
+## Contract list #* #>
+
+
+# Communication #** #>
+
+
+## Pitch #* #>
+
+
+## Business brochure #* #>
+
+
+## Web #* #>
+
+
+## Storytelling #* #>
+
+
+## Presentations #* #>
+
+
+# Analysis #**** #>
+
+
+## Assumption list #*** #>
+
+#assumption
+
+
+## Risk list #***** #>
+
+#risk
+
+
+# Validation #***** #>
+
+
+## Experiment list #*** #>
+
+#experiment
+
+
+### #experiment Main experiment - Experiment #*** #>
+
+#experiment
+
+
+# Keys #**** #>
+
+##### Opportunity keys
+- Opportunity > #key Momentum
+- Opportunity > #key Innovative approach
+- Opportunity > #key Evolution potential
+- Opportunity > #key Business obviousness
+
+##### Mission keys
+- Mission > #key Realism - Ambition
+- Mission > #key Clarity of Conception
+
+##### Vision keys
+- Vision > #key Realism - Ambition
+- Vision > #key Clarity of Conception
+
+##### Strategy keys
+- Strategy > #key Expansion Capability
+- Strategy > #key Cultural Adaptability
+- Strategy > #key Cultural Sensitivity
+- Strategy > #key International Logistics
+
+##### Marketing keys
+- Marketing > #key Effective distribution and marketing channels
+- Marketing > #key Market Demand
+- Marketing > #key Strong reputation management
+- Marketing > #key Marketing Strategy
+- Marketing > #key Barriers to Entry
+- Marketing > #key Comprehensive market research and analysis
+
+##### Naming keys
+- Naming > #key Pronunciation Ease
+- Naming > #key Phonetic Consistency
+- Naming > #key Spelling from Pronunciation
+- Naming > #key Negative Connotations
+
+##### Operations keys
+- Operations > #key Robust cybersecurity measures
+- Operations > #key Problem Resolution
+- Operations > #key Efficiency and Continuous Improvement
+- Operations > #key Process Automation
+- Operations > #key Production Capability
+
+##### Team keys
+- Team > #key Founder's capacity
+- Team > #key Founder's commitment
+- Team > #key Leadership Skills
+- Team > #key Attitude for improvement
+- Team > #key Founder's circumstances
+- Team > #key Team Skills
+- Team > #key Team Commitment
+- Team > #key Adaptability to Change
+- Team > #key Team alignment
+- Team > #key Effective talent acquisition and retention
+- Team > #key Culture of Experimentation
+- Team > #key Human Resource Management
+- Team > #key Talent Retention
+- Team > #key Work Environment
+- Team > #key Team composition
+- Team > #key Benefits and Compensation
+- Team > #key Employee Development
+
+##### People keys
+- People > #key Receptiveness to Feedback
+- People > #key Competency scope
+- People > #key Relevant experience
+- People > #key Market experience
+- People > #key Skills and expectations overlap
+- People > #key Vertical experience
+- People > #key Experience working together
+
+##### Finance keys
+- Finance > #key Profitability
+- Finance > #key Gross margins
+- Finance > #key Financial Management
+- Finance > #key Finantial needs
+- Finance > #key Proactive tax planning and compliance
+- Finance > #key Currency risk management
+
+##### Legal keys
+- Legal > #key Strong intellectual property protection
+- Legal > #key Risk Management
+- Legal > #key Legal Compliance
+- Legal > #key Licenses and Permits
+- Legal > #key Protectability
+- Legal > #key Contracts and Agreements
+- Legal > #key Legal complexity
+- Legal > #key Regulatory compliance
+- Legal > #key Intellectual Property
+
+# References #* #>
+
+
+# Artifacts #*** #>
+
+
+# Attachments #* #>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

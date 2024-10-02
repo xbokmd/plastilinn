@@ -14,7 +14,7 @@
   The concept of "profile list" is essential in business modeling as it allows a company to segment its market, tailor its products or services to meet the specific needs of different customer groups, and develop targeted marketing strategies. It provides valuable insights that can drive product development, customer service, sales, and other key business functions. By understanding who their customers are and what they want, companies can design and deliver offerings that meet their customers' needs and expectations, thereby enhancing customer satisfaction, loyalty, and business performance.
 - ## 👉 Examples
   ### Space X
-  #profile Space Agency Project Manager
+  - #profile Space Agency Project Manager
   ### 
   
   ### extinguished animals meat

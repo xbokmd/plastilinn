@@ -19,7 +19,7 @@
   In summary, the Storytelling model in business design is a strategic approach that uses narrative techniques to communicate a brand's purpose, values, and mission, build emotional connections, clarify its value proposition, inspire action, and shape its culture and identity. It is a powerful tool for enhancing brand perception, customer engagement, and business performance.
 - ## 👉 Examples
   ### Space X
-  #persona Sarah Johnson (Space Agency Project Manager)
+  - #persona Sarah Johnson (Space Agency Project Manager)
   
   **SpaceX: A New Era in Space Exploration**
   

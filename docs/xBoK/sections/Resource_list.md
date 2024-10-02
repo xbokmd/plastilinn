@@ -18,75 +18,75 @@
   In essence, the concept of "resource list" in business modeling is about identifying and understanding the key resources that a company needs to operate and succeed. It's a crucial aspect of business design, as it can significantly impact a company's operational efficiency, competitive advantage, and overall business performance.
 - ## 👉 Examples
   ### Space X
-  #resource Manufacturing facilities
+  - #resource Manufacturing facilities
   Facilities equipped with the necessary tools and equipment for rocket and spacecraft manufacturing.
   
-  #resource Research and development capabilities
+  - #resource Research and development capabilities
   Capabilities to innovate and improve rockets, spacecraft, and other technologies.
   
-  #resource Testing facilities
+  - #resource Testing facilities
   Facilities for conducting tests and simulations to ensure performance and safety.
   
-  #resource Launch sites
+  - #resource Launch sites
   Access to launch pads and associated infrastructure for launching rockets and spacecraft.
   
-  #resource Satellites
+  - #resource Satellites
   Fleet of satellites for the Starlink project, providing global internet coverage.
   
-  #resource IT infrastructure
+  - #resource IT infrastructure
   Robust IT infrastructure to support operations, communication networks, data storage, and software systems.
   
-  #resource Supply chain
+  - #resource Supply chain
   Reliable supply chain for sourcing components, materials, and equipment.
   
-  #resource Human capital
+  - #resource Human capital
   Skilled workforce with expertise in engineering, science, operations, and management.
   
-  #resource Financial resources
+  - #resource Financial resources
   Resources to fund operations, research and development, manufacturing, and other activities.
   
-  #resource Intellectual property
+  - #resource Intellectual property
   Intellectual property, including patents, trademarks, and trade secrets.
   
-  #resource Partnerships and collaborations
+  - #resource Partnerships and collaborations
   Partnerships and collaborations with other organizations for additional resources and expertise.
   
-  #resource Brand and reputation
+  - #resource Brand and reputation
   Brand and reputation for attracting customers, investors, and talent.
   ### 
   
   ### extinguished animals meat
-  - #asset [[Biotechnology and genetic engineering expertise]]
+  - #asset Biotechnology and genetic engineering expertise
   	- A team of scientists and researchers with specialized knowledge and skills in biotechnology and genetic engineering.
-  - #asset [[Animal care and veterinary specialists]]
+  - #asset Animal care and veterinary specialists
   	- Experienced professionals who can provide proper care and medical attention to the revived extinct animals.
-  - #asset [[Facilities for animal housing and breeding]]
+  - #asset Facilities for animal housing and breeding
   	- Well-designed facilities and habitats to ensure the comfort and well-being of the revived extinct animals.
-  - #asset [[High-quality meat processing and packaging facilities]]
+  - #asset High-quality meat processing and packaging facilities
   	- State-of-the-art facilities for processing and packaging the luxury meat, maintaining its quality and freshness.
-  - #asset [[Marketing and sales team]]
+  - #asset Marketing and sales team
   	- A team of marketing and sales experts who can effectively promote and sell the luxury meat to the target audience.
   ### Exotic Pet Rental
-  - #asset [[Inventory management system]]
+  - #asset Inventory management system
   	- A system to efficiently track and manage inventory, ensuring availability of exotic pets for rental.
-  - #asset [[Transportation fleet]]
+  - #asset Transportation fleet
   	- A fleet of vehicles equipped for the safe and secure transportation of exotic pets to and from customers' homes.
-  - #asset [[Pet care supplies]]
+  - #asset Pet care supplies
   	- A wide range of supplies and products necessary for the care and well-being of exotic pets during the rental period.
-  - #asset [[Customer database]]
+  - #asset Customer database
   	- A comprehensive database to store customer_information, preferences, and rental history for personalized service.
-  - #asset [[Online platform]]
+  - #asset Online platform
   	- An intuitive and user-friendly online platform for customers to browse available pets, make reservations, and access resources and support.
   ### Underwater restaurant
-  - #asset [[Unique underwater location]]
+  - #asset Unique underwater location
   	- The restaurant's prime location underwater provides a distinctive and captivating dining experience.
-  - #asset [[Specially designed entrance and interior]]
+  - #asset Specially designed entrance and interior
   	- The restaurant's submarine-themed decor and entrance create an immersive atmosphere for guests.
-  - #asset [[Professional divers and marine experts]]
+  - #asset Professional divers and marine experts
   	- Trained staff ensure the safety and preservation of the marine life surrounding the restaurant.
-  - #asset [[High-quality ingredients]]
+  - #asset High-quality ingredients
   	- The use of fresh and high-quality ingredients ensures exceptional culinary offerings.
-  - #asset [[Entertainment and educational activities]]
+  - #asset Entertainment and educational activities
   	- Live music, educational sessions, and interactive experiences enhance the overall dining experience.
 - ## 🗄️ Topics
   

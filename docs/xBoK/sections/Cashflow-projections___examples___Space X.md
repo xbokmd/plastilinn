@@ -1,4 +1,4 @@
-    ### Basic Cash Flow Projections (in $ millions)
+    - #- #- # Basic Cash Flow Projections (in $ millions)
 
 | Category                          | Phase 1 | Phase 2 | Phase 3 |
 |-----------------------------------|---------|---------|---------|
@@ -17,8 +17,7 @@
 | **Total Outflows**                | -2200   | -3100   | -4000   |
 | **Net Cash Flow**                 | 400     | 1800    | 4200    |
 | **Cumulative Cash Flow**          | 400     | 2200    | 6400    |
-
-### Explanation:
+     #- #- # Explanation:
      **Cash Inflows** represent the revenue streams from SpaceX's various operations, increasing over time as the company expands its service offerings and scales its operations.
      **Cash Outflows** include all major categories of expenses SpaceX would incur, reflecting the investments in R&D, manufacturing, operations, and other operational costs.
      **Net Cash Flow** for each phase is calculated by subtracting Total Outflows from Total Inflows, indicating the operational cash generated (or used) during each phase.

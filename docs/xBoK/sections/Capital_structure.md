@@ -17,7 +17,7 @@
   In conclusion, the "Capital Structure" concept in business modeling is a critical element that contributes to the financial success and sustainability of the business. It emphasizes the importance of strategically managing the financial resources, assets, and investments in a business model.
 - ## 👉 Examples
   ### Space X
-  # SpaceX 2003 Cap Table
+  - # SpaceX 2003 Cap Table
   
   | **Shareholder**      | **Role**                   | **Ownership (%)** | **Shares**  |
   |----------------------|----------------------------|-------------------|-------------|

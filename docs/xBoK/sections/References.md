@@ -25,37 +25,37 @@
   ### 
   
   ### extinguished animals meat
-  - #solution [[VeinView]]
+  - #solution VeinView
   	- A device that uses infrared technology to visualize veins, aiding medical professionals in performing intravenous injections and other procedures requiring access to veins.
-  - #solution [[VeinSense]]
+  - #solution VeinSense
   	- An innovative software solution that enhances the accuracy and efficiency of vein visualization, improving the success rate of medical procedures.
-  - #solution [[VeinTech]]
+  - #solution VeinTech
   	- A comprehensive training program that educates healthcare professionals on the proper use of vein visualization devices, ensuring optimal outcomes for patients.
-  - #solution [[VeinCare]]
+  - #solution VeinCare
   	- A maintenance and support package that offers ongoing technical assistance, software updates, and troubleshooting services for vein visualization devices.
-  - #solution [[VeinConnect]]
+  - #solution VeinConnect
   	- An online platform that connects medical professionals using vein visualization devices, fostering collaboration, knowledge sharing, and best practice exchange.
   ### Exotic Pet Rental
-  - #solution [[Research and development]]
+  - #solution Research and development
   	- Invest in cutting-edge biotechnology and genetic engineering research to understand and manipulate the DNA of extinct animals.
-  - #solution [[Cloning and reproduction]]
+  - #solution Cloning and reproduction
   	- Utilize cloning and assisted reproduction techniques to create living individuals of extinct species.
-  - #solution [[Care and maintenance]]
+  - #solution Care and maintenance
   	- Establish specialized facilities and employ veterinary experts to ensure the well-being and development of revived extinct animals.
-  - #solution [[Production and marketing of luxury meat]]
+  - #solution Production and marketing of luxury meat
   	- Ethically slaughter and process the animals, packaging the meat with high-quality standards for the luxury food market.
-  - #solution [[Marketing and sales]]
+  - #solution Marketing and sales
   	- Implement innovative marketing strategies to promote the unique value and sustainability of the company's products to a select target audience.
   ### Underwater restaurant
-  - #step1 [[Unique Entrance Design]]
+  - #step1 Unique Entrance Design
   	- Configuring the entrance with a unique design that resembles a submarine hatch, creating a sense of anticipation for guests.
-  - #step2 [[Panoramic Views]]
+  - #step2 Panoramic Views
   	- Installing large, floor-to-ceiling windows and glass walls in the dining area to maximize the panoramic views of the underwater environment.
-  - #step3 [[Nautical-themed Decor]]
+  - #step3 Nautical-themed Decor
   	- Incorporating nautical-themed decor, such as portholes and submarine-inspired furnishings, to enhance the submarine atmosphere.
-  - #step4 [[Underwater Lighting]]
+  - #step4 Underwater Lighting
   	- Utilizing specially designed lighting fixtures that mimic the colors and movements of the underwater world, creating a mesmerizing ambiance.
-  - #step5 [[Environmental Preservation]]
+  - #step5 Environmental Preservation
   	- Implementing strict environmental guidelines and employing professional divers and marine experts to ensure the preservation and protection of the marine life surrounding the restaurant.
 - ## 🗄️ Topics
   

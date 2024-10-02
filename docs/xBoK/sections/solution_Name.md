@@ -18,49 +18,49 @@
   In essence, the solution model is a powerful tool for businesses to create value for their customers, differentiate themselves from their competitors, and drive their growth. It is a key component of business design and a critical driver of business success.
 - ## 👉 Examples
   ### Space X
-  #solution Space X services
-  - #solution Falcon 9
+  - #solution Space X services
+  - - #solution Falcon 9
     A two-stage rocket designed for the reliable and cost-effective transport of satellites and spacecraft to orbit. It is capable of carrying payloads of up to 22,800 kilograms to low Earth orbit and 8,300 kilograms to geostationary transfer orbit.
-  -  #solution Falcon Heavy
+  -  - #solution Falcon Heavy
     A heavy-lift launch vehicle that is currently the most powerful operational rocket in the world. It is capable of carrying payloads of up to 63,800 kilograms to low Earth orbit and 26,700 kilograms to geostationary transfer orbit.
-   - #solution Dragon spacecraft
+   - - #solution Dragon spacecraft
     A reusable spacecraft designed for both cargo and crewed missions. It is capable of carrying up to 7 passengers to and from the International Space Station and can also deliver cargo to other destinations in sp- ace.
-    - #solution Starship
+    - - #solution Starship
     A fully reusable spacecraft currently under development by Space X. It is designed to be capable of carrying both crew and cargo to various destinations in space, including the Moon, Mars, and beyond.
   ### 
   
   ### extinguished animals meat
-  - #solution [[ReviveMeat]]
+  - #solution ReviveMeat
   	- A specialized process that allows the company to recreate the meat of extinct animals using biotechnology and genetic engineering techniques.
-  - #solution [[ExquisiteEats]]
+  - #solution ExquisiteEats
   	- A line of luxury meat products made from the meat of revived extinct animals, offering a unique and exclusive gastronomic experience.
-  - #solution [[BioCuisine]]
+  - #solution BioCuisine
   	- A range of high-end culinary creations made from the meat of revived extinct animals, catering to discerning customers in the luxury food market.
-  - #solution [[ReviveGourmet]]
+  - #solution ReviveGourmet
   	- A premium meat brand that focuses on reviving extinct animal species and offering their meat as a sustainable and ethical alternative for meat enthusiasts.
-  - #solution [[GeneticDelights]]
+  - #solution GeneticDelights
   	- A collection of gourmet meat products made from the DNA of extinct animals, providing a one-of-a-kind indulgence for food connoisseurs.
   ### Exotic Pet Rental
-  - #solution [[PetPal]]
+  - #solution PetPal
     	- A mobile app that connects pet owners with experienced pet sitters, providing a convenient and reliable solution for pet care when owners are away.
-  - #solution [[PetTrack]]
+  - #solution PetTrack
     	- A GPS tracking device that attaches to pet collars, allowing owners to monitor their pet's location in real-time and ensure their safety.
-  - #solution [[PetFit]]
+  - #solution PetFit
     	- A fitness tracker designed specifically for pets, providing owners with insights into their pet's activity levels, calories burned, and overall health.
-  - #solution [[PetHealth]]
+  - #solution PetHealth
     	- An online platform that offers comprehensive pet health records, reminders for vaccinations and appointments, and access to veterinary advice and resources.
-  - #solution [[PetGroom]]
+  - #solution PetGroom
     	- A mobile grooming service that brings professional pet groomers directly to customers' homes, providing convenience and personalized care for pets.
   ### Underwater restaurant
-  - #solution [[OceanView]]
+  - #solution OceanView
   	- A virtual reality (VR) experience that allows customers to explore and interact with the underwater world from the comfort of their homes.
-  - #solution [[MarineChef]]
+  - #solution MarineChef
   	- A subscription-based meal delivery service that brings the unique flavors and dishes of the Submarine Themed Restaurant to customers' doorsteps.
-  - #solution [[SubmarineExplorer]]
+  - #solution SubmarineExplorer
   	- A guided underwater tour experience where customers can explore the marine environment surrounding the restaurant with professional divers.
-  - #solution [[SubmarineSouvenirs]]
+  - #solution SubmarineSouvenirs
   	- A line of merchandise and souvenirs inspired by the Submarine Themed Restaurant, allowing customers to take a piece of the experience home with them.
-  - #solution [[MarineLifeEducation]]
+  - #solution MarineLifeEducation
   	- An educational program that offers interactive workshops and classes on marine life conservation and the importance of protecting underwater ecosystems.
 - ## 🗄️ Topics
   

@@ -28,7 +28,7 @@
   - Recruitment: The website aims to recruit individuals passionate about contributing to the future of space exploration.
   - Investor and Media Relations: Providing press releases, financial reports, and other resources for investors and media to access the latest news and insights into SpaceX's operations and financial health.
   
-  [### Space X](https://www.Space X.com/)
+  [- #- #- # Space X](https://www.Space X.com/)
   ### 
   
   ### extinguished animals meat

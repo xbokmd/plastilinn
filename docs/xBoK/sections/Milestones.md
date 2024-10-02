@@ -20,59 +20,59 @@
   In summary, the Milestones model in business design provides a framework for setting, tracking, and achieving significant achievements or events that indicate substantial progress or success in a business model. It is a critical component of business design, influencing strategic planning, motivation, communication with stakeholders, and risk management.
 - ## 👉 Examples
   ### Space X
-  #milestone First successful rocket launch
+  - #milestone First successful rocket launch
   This milestone marks the successful launch of Space X's first rocket into space. It demonstrates the company's ability to design, manufacture, and launch rockets, and establishes Space X as a player in the space industry.
   
-  #milestone First successful satellite deployment
+  - #milestone First successful satellite deployment
   This milestone marks the successful deployment of Space X's first satellite into orbit. It showcases the company's ability to provide satellite communication services and contributes to the development of its Starlink project.
   
-  #milestone First successful manned mission (achived Feb 2020)
+  - #milestone First successful manned mission (achived Feb 2020)
   Successful launch and return of astronauts in a Space X spacecraft.
   
-  #milestone First successful landing of a reusable rocket (expected Jun 2025)
+  - #milestone First successful landing of a reusable rocket (expected Jun 2025)
   Successful landing of a Space X rocket after launch, demonstrating the company's advancement in rocket reusability.
   
-  #milestone Successful completion of a major contract
+  - #milestone Successful completion of a major contract
   Successful completion of a significant contract, such as launching multiple satellites for a client or delivering cargo to the International Space Station.
   
-  #milestone Achievement of profitability
+  - #milestone Achievement of profitability
   Point at which Space X achieves profitability, generating more revenue than expenses.
   
   
   ### 
   
   ### extinguished animals meat
-  - #milestone [[Successful revival of the first extinct animal]]
+  - #milestone Successful revival of the first extinct animal
   	- This milestone marks the company's achievement in reviving the DNA of an extinct animal and successfully creating a living individual of the species.
-  - #milestone [[Establishment of a breeding program]]
+  - #milestone Establishment of a breeding program
   	- This milestone represents the successful establishment of a breeding program for the revived extinct animals, ensuring their long-term sustainability and genetic diversity.
-  - #milestone [[First successful sale of revived animal meat]]
+  - #milestone First successful sale of revived animal meat
   	- This milestone signifies the company's first successful sale of meat from a revived extinct animal in the luxury food market, demonstrating market acceptance and demand.
-  - #milestone [[Expansion into additional luxury food markets]]
+  - #milestone Expansion into additional luxury food markets
   	- This milestone represents the company's expansion into new luxury food markets, both domestically and internationally, increasing its customer base and revenue streams.
-  - #milestone [[Recognition and awards for ethical practices]]
+  - #milestone Recognition and awards for ethical practices
   	- This milestone includes receiving recognition and awards for the company's ethical practices in biotechnology and genetic engineering, enhancing its reputation and attracting more customers.
   ### Exotic Pet Rental
-  - #milestone [[Achievement of regulatory approvals]]
+  - #milestone Achievement of regulatory approvals
   	- This milestone marks the successful attainment of regulatory approvals for the vein visualization device. It demonstrates compliance with industry standards and allows for wider market access.
-  - #milestone [[Successful implementation of a training program]]
+  - #milestone Successful implementation of a training program
   	- This milestone represents the successful implementation of a training program for healthcare professionals on the proper use of the vein visualization device. It ensures optimal utilization and customer satisfaction.
-  - #milestone [[Introduction of new product variations]]
+  - #milestone Introduction of new product variations
   	- This milestone signifies the introduction of new variations or models of the vein visualization device, catering to different customer preferences and expanding the product line.
-  - #milestone [[Establishment of a strong distribution network]]
+  - #milestone Establishment of a strong distribution network
   	- This milestone indicates the establishment of a robust distribution network, including partnerships with distributors and retailers. It ensures widespread availability and accessibility of the vein visualization device.
-  - #milestone [[Recognition and awards]]
+  - #milestone Recognition and awards
   	- This milestone includes receiving recognition and awards from healthcare industry organizations or publications. It highlights the company's innovation, impact, and positive reputation in the healthcare sector.
   ### Underwater restaurant
-  - #milestone [[Successful launch of the Submarine Themed Restaurant]]
+  - #milestone Successful launch of the Submarine Themed Restaurant
   	- This milestone marks the grand opening and successful launch of the restaurant, attracting customers and generating positive reviews.
-  - #milestone [[Achievement of high customer satisfaction ratings]]
+  - #milestone Achievement of high customer satisfaction ratings
   	- This milestone represents the attainment of consistently high customer satisfaction ratings, reflecting the quality of the dining experience and service provided.
-  - #milestone [[Expansion of the restaurant chain]]
+  - #milestone Expansion of the restaurant chain
   	- This milestone signifies the successful expansion of the Submarine Themed Restaurant into new locations, increasing its reach and customer base.
-  - #milestone [[Recognition and awards in the hospitality industry]]
+  - #milestone Recognition and awards in the hospitality industry
   	- This milestone includes receiving recognition and awards from industry organizations, establishing the Submarine Themed Restaurant as a leader in the unique dining experience sector.
-  - #milestone [[Partnership with marine conservation organizations]]
+  - #milestone Partnership with marine conservation organizations
   	- This milestone marks the establishment of partnerships with marine conservation organizations, demonstrating the restaurant's commitment to environmental sustainability and marine life preservation.
 - ## 🗄️ Topics
   

@@ -25,53 +25,53 @@
   ### 
   
   ### extinguished animals meat
-  - #segment [[Luxury food enthusiasts]]:
+  - #segment Luxury food enthusiasts:
   	- Targeting individuals who appreciate exclusive and unique gastronomic experiences.
-  - #profile [[High-end restaurant owners___chefs]]:
+  - #profile High-end restaurant owners___chefs:
   	- Focusing on decision-makers in the culinary industry who seek innovative and premium ingredients.
-  - #message [[Reviving culinary history]]:
+  - #message Reviving culinary history:
   	- Highlighting how the company brings back extinct animals to offer a taste of the past.
-  - #message [[Exceptional quality and flavor]]:
+  - #message Exceptional quality and flavor:
   	- Emphasizing the superior taste and quality of the meat from revived extinct animals.
-  - #message [[Sustainable luxury]]:
+  - #message Sustainable luxury:
   	- Promoting the company's commitment to sustainability and ethical practices in the luxury food market.
-  - #solution [[Gastronomic Delights]]:
+  - #solution Gastronomic Delights:
   	- A range of exclusive meat products sourced from revived extinct animals, providing a one-of-a-kind culinary experience.
-  - #solution [[Chef's Selection]]:
+  - #solution Chef's Selection:
   	- A curated selection of meat cuts from different revived extinct animals, allowing chefs to create unique and extraordinary dishes.
-  - #solution [[Luxury Culinary Events]]:
+  - #solution Luxury Culinary Events:
   	- Exquisite dining experiences featuring dishes made from the meat of revived extinct animals, hosted at prestigious venues.
-  - #solution [[Premium Packaging]]:
+  - #solution Premium Packaging:
   	- Elegant and luxurious packaging for the meat products, enhancing the overall presentation and appeal to discerning customers.
-  - #solution [[Gourmet Education]]:
+  - #solution Gourmet Education:
   	- Educational programs and workshops for chefs and food enthusiasts, exploring the history and culinary potential of revived extinct animals.
   ### Exotic Pet Rental
-  - #segment [[Pet lovers]]
+  - #segment Pet lovers
   	- Targeting individuals who have a love for animals and are interested in experiencing the companionship of exotic pets.
-  - #profile [[Busy professionals]]
+  - #profile Busy professionals
   	- Focusing on individuals who have limited time and may not be able to commit to the long-term responsibility of owning a pet.
-  - #message [[Rent your dream pet]]
+  - #message Rent your dream pet
   	- Highlighting the opportunity to enjoy the experience of having an exotic pet without the long-term commitment.
-  - #message [[Expertly cared for pets]]
+  - #message Expertly cared for pets
   	- Emphasizing the high standard of care and well-being provided to the exotic pets available for rent.
-  - #message [[Temporary companionship made easy]]
+  - #message Temporary companionship made easy
   	- Promoting the convenience and ease of renting an exotic pet for a specific period of time.
   ### Underwater restaurant
-  - #segment [[Food enthusiasts]]
+  - #segment Food enthusiasts
   	- Targeting individuals who have a passion for unique dining experiences and culinary delights.
-  - #profile [[Tourists___travelers]]
+  - #profile Tourists___travelers
   	- Focusing on visitors who are seeking memorable and immersive experiences during their travels.
-  - #message [[Unforgettable underwater dining]]
+  - #message Unforgettable underwater dining
   	- Highlighting the extraordinary and immersive dining experience offered by the submarine themed restaurant.
-  - #message [[Delicious cuisine with a view]]
+  - #message Delicious cuisine with a view
   	- Emphasizing the diverse and delectable menu options served amidst captivating marine views.
-  - #message [[Magical ambiance surrounded by marine life]]
+  - #message Magical ambiance surrounded by marine life
   	- Promoting the enchanting atmosphere created by the underwater environment and marine creatures.
-  - #solution [[Underwater events and activities]]
+  - #solution Underwater events and activities
   	- Offering live music performances, educational sessions, and interactive experiences to enhance the overall visit and create lasting memories.
-  - #solution [[Comprehensive marketing strategy]]
+  - #solution Comprehensive marketing strategy
   	- Employing online and offline advertising, social media campaigns, collaborations with tourist agencies, and word-of-mouth recommendations to attract customers.
-  - #solution [[Safety and environmental preservation]]
+  - #solution Safety and environmental preservation
   	- Ensuring the safety and comfort of guests by employing professional divers and following strict environmental guidelines for the protection of the underwater ecosystem.
 - ## 🗄️ Topics
   

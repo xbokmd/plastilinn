@@ -6,5 +6,7 @@
 - ### [[uncertainty]]
 - ### [[risk]]
 - ### [[validation]]
+- ### [[positive]]
+- ### [[negative]]
 
 

@@ -23,7 +23,7 @@
   For instance, a retail business might use cashflow projections to plan for seasonal fluctuations in sales and expenses. This would allow the business to manage its cash effectively, ensuring that it has sufficient cash to cover its expenses during slow periods and to invest in inventory and marketing during peak periods. This demonstrates the value of "Cashflow Projections" in driving the business model and ensuring financial sustainability.
 - ## 👉 Examples
   ### Space X
-  ### Basic Cash Flow Projections (in $ millions)
+  - #- #- # Basic Cash Flow Projections (in $ millions)
   
   | Category                          | Phase 1 | Phase 2 | Phase 3 |
   |-----------------------------------|---------|---------|---------|
@@ -43,7 +43,7 @@
   | **Net Cash Flow**                 | 400     | 1800    | 4200    |
   | **Cumulative Cash Flow**          | 400     | 2200    | 6400    |
   
-  ### Explanation:
+  - #- #- # Explanation:
   
   - **Cash Inflows** represent the revenue streams from SpaceX's various operations, increasing over time as the company expands its service offerings and scales its operations.
   - **Cash Outflows** include all major categories of expenses SpaceX would incur, reflecting the investments in R&D, manufacturing, operations, and other operational costs.

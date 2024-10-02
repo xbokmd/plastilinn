@@ -16,54 +16,54 @@
   In conclusion, an experiment list is a critical tool in business design and modeling. It provides a systematic and evidence-based approach to validating the key assumptions and hypotheses of a business model, reducing risks and increasing the chances of success. It is a crucial component of a lean and agile business model, promoting continuous learning and adaptation in response to market feedback and changes.
 - ## 👉 Examples
   ### Space X
-  #experiment Reusable Rocket Test
+  - #experiment Reusable Rocket Test
   - Assumption: Cost reduction through reusable rockets will significantly lower launch costs.
   - Experiment: Conduct rapid, repeated launches with reusable rockets (e.g., Falcon 9) in a short timeframe to assess wear, repair costs, and operational efficiency compared to traditional rockets.
   - Metric: Cost per launch and turnaround time for the next flight.
   
-  #experiment Market Demand Validation for Commercial Space Services
+  - #experiment Market Demand Validation for Commercial Space Services
   - Assumption: There is Demand for commercial space services that is growing and sustained.
   - Experiment: Launch a pre-sale campaign or survey potential clients (e.g., satellite companies) to measure interest in launch services and track how many requests for quotes are received.
   - Metric: Number of quote requests and early reservations.
   
-  #experiment Crewed Mission Safety Simulation
+  - #experiment Crewed Mission Safety Simulation
   - Risk: Safety and Crewed Missions require robust systems for frequent human spaceflights.
   - Experiment: Conduct in-flight abort and atmospheric re-entry simulations with the Crew Dragon capsule, testing the safety of emergency systems in different critical scenarios.
   - Metric: Success rate of safe aborts and performance of emergency systems.
   ### 
   
   ### extinguished animals meat
-  - #experiment [[Customer Validation]]
+  - #experiment Customer Validation
   	- Conduct surveys and interviews with potential customers to validate the value proposition of the vein visualization device and gather feedback for improvements.
-  - #experiment [[Pricing Strategy]]
+  - #experiment Pricing Strategy
   	- Test different pricing models and price points to determine the optimal pricing strategy that maximizes revenue while remaining competitive in the market.
-  - #experiment [[Marketing Channels]]
+  - #experiment Marketing Channels
   	- Experiment with different marketing channels, such as social media advertising, targeted email campaigns, and partnerships with medical associations, to identify the most effective channels for reaching and engaging with healthcare professionals.
-  - #experiment [[Training Program Enhancement]]
+  - #experiment Training Program Enhancement
   	- Assess the effectiveness of the current training program by gathering feedback from users and conduct pilot tests of enhanced training materials or methods to improve user proficiency and satisfaction.
-  - #experiment [[Expansion into New Markets]]
+  - #experiment Expansion into New Markets
   	- Explore opportunities to expand the distribution of the vein visualization device into new geographic markets or other healthcare specialties through pilot programs and partnerships with local distributors or healthcare providers.
   ### Exotic Pet Rental
-  - #experiment [[Pet Selection]]
+  - #experiment Pet Selection
   	- Test different exotic pet species to determine which ones are most popular and in high demand among customers.
-  - #experiment [[Rental Periods]]
+  - #experiment Rental Periods
   	- Experiment with different rental periods (e.g., daily, weekly, monthly) to determine the optimal duration that balances customer satisfaction and operational efficiency.
-  - #experiment [[Complementary Services]]
+  - #experiment Complementary Services
   	- Test the demand for additional services, such as pet grooming or training, to assess their potential as revenue streams and enhance the overall customer experience.
-  - #experiment [[Marketing Channels]]
+  - #experiment Marketing Channels
   	- Experiment with various marketing channels, such as online advertising, social media influencers, and collaborations with local pet stores, to identify the most effective ways to reach and attract customers.
-  - #experiment [[Customer Satisfaction]]
+  - #experiment Customer Satisfaction
   	- Conduct surveys and collect feedback from customers to measure their satisfaction with the rental service and identify areas for improvement.
   ### Underwater restaurant
-  - #experiment [[Underwater Lighting Enhancement]]
+  - #experiment Underwater Lighting Enhancement
   	- Test different lighting techniques and fixtures to enhance the underwater ambiance and create a more captivating dining experience for guests.
-  - #experiment [[Menu Innovation]]
+  - #experiment Menu Innovation
   	- Introduce new dishes or unique culinary offerings to gauge customer preferences and expand the menu to cater to a wider range of tastes and preferences.
-  - #experiment [[Interactive Experience Evaluation]]
+  - #experiment Interactive Experience Evaluation
   	- Assess the popularity and effectiveness of interactive experiences, such as fish feeding and guided underwater tours, by gathering feedback from guests and measuring their impact on customer satisfaction and repeat visits.
-  - #experiment [[Marketing Campaign Effectiveness]]
+  - #experiment Marketing Campaign Effectiveness
   	- Measure the effectiveness of different marketing strategies and campaigns by tracking customer acquisition, engagement, and conversion rates to optimize marketing efforts and allocate resources efficiently.
-  - #experiment [[Sustainability Initiatives]]
+  - #experiment Sustainability Initiatives
   	- Implement and evaluate sustainability initiatives, such as reducing plastic waste and implementing eco-friendly practices, to assess their impact on the restaurant's brand reputation and customer satisfaction.
 - ## 🗄️ Topics
   - ### TODO #topic topic/Modelo de negocio/Ciclo de modelado de negocio/Validación/Experimentos

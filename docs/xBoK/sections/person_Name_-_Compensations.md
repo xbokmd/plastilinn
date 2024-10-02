@@ -15,16 +15,16 @@
   In essence, the concept of "Person/Outputs" in business modeling is about identifying and tracking the individuals or entities that generate value for the business, and the specific forms of value they generate. This is a crucial aspect of business design, as it helps the business to understand where its value comes from, manage its relationships with its value generators, and optimize its operations to maximize this value.
 - ## 👉 Examples
   ### Space X
-  #compensation Equity Stake
+  - #compensation Equity Stake
   As the founder of SpaceX, Elon Musk holds a significant equity stake in the company. This equity represents the largest portion of his potential compensation, as the value of SpaceX increases with successful missions and expansions.
   
-  #compensation Salary and Bonuses
+  - #compensation Salary and Bonuses
   Musk takes a relatively modest salary from his companies, he may be eligible for bonuses tied to performance milestones or specific achievements.
   
-  #compensation Influence on Future Space Exploration
+  - #compensation Influence on Future Space Exploration
   Musk's role in SpaceX gives him unparalleled influence over the future of space exploration and the opportunity to realize his vision of making life multi-planetary.
   
-  #compensation Satisfaction and Legacy
+  - #compensation Satisfaction and Legacy
   The success of SpaceX and its impact on space exploration contribute to Musk's personal satisfaction and legacy.
   ### 
   

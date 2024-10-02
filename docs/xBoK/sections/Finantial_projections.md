@@ -35,7 +35,7 @@
   - **Administrative and General**: Overhead costs including staff salaries, facilities, and other corporate expenses.
   - **Marketing and Sales**: Expenses related to promoting services, securing contracts, and customer acquisition.
   
-  ### Financial Projections Table (in $ millions)
+  - #- #- # Financial Projections Table (in $ millions)
   
   | Category                    | Phase 1 | Phase 2 | Phase 3 |
   |-----------------------------|---------|---------|---------|

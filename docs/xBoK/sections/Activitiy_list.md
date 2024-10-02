@@ -14,54 +14,54 @@
   In essence, an activity list is not just a to-do list for a business. It is a strategic tool that helps a business to understand and manage its operations, focus on its core competencies, and create a unique and compelling value proposition for its customers. It is a critical aspect of business design, as it directly impacts the business's ability to meet its objectives and satisfy its customers.
 - ## 👉 Examples
   ### Space X
-  #work Rocket design and manufacturing
+  - #work Rocket design and manufacturing
   Space X must design and manufacture rockets that are safe, reliable, and cost-effective for space transportation.
   
-  #work Launch and mission management
+  - #work Launch and mission management
   Space X must provide launch and mission management services to ensure successful placement of payloads in space.
   
-  #work Satellite design and manufacturing
+  - #work Satellite design and manufacturing
   Space X must design and manufacture satellites capable of providing communication services to clients in space.
   
-  #work Satellite deployment and management
+  - #work Satellite deployment and management
   Space X must provide satellite deployment and management services to ensure successful operation of satellites in space.
   
-  #work Research and development
+  - #work Research and development
   Space X must invest in research and development to improve its rockets and satellites and stay ahead of the competition.
   ### 
   
   ### extinguished animals meat
-  - #work [[Genome reconstruction and manipulation]]
+  - #work Genome reconstruction and manipulation
   	- The company must invest in research and development to understand and manipulate the DNA of extinct animals.
-  - #work [[Cloning and assisted reproduction]]
+  - #work Cloning and assisted reproduction
   	- The company needs to use cloning and assisted reproduction techniques to create living individuals of the extinct species.
-  - #work [[Facility establishment and animal care]]
+  - #work Facility establishment and animal care
   	- The company must establish facilities and care centers to house and breed the revived extinct animals.
-  - #work [[Meat production and processing]]
+  - #work Meat production and processing
   	- The company should ethically and respectfully slaughter the animals and process the meat to high-quality standards.
-  - #work [[Marketing and sales promotion]]
+  - #work Marketing and sales promotion
   	- The company needs to implement marketing strategies and use selective sales channels to reach their target audience.
   ### Exotic Pet Rental
-  - #work [[Pet selection and care]]
+  - #work Pet selection and care
   	- The company must carefully select and care for exotic pets to ensure their health and well-being during the rental period.
-  - #work [[Temporary housing and supplies]]
+  - #work Temporary housing and supplies
   	- The company should provide suitable housing and necessary supplies for exotic pets to ensure customers are well-equipped during the rental period.
-  - #work [[Customer guidance and support]]
+  - #work Customer guidance and support
   	- The company needs to offer guidance and support to customers, providing_information on proper care and addressing any concerns or questions.
-  - #work [[Contract management]]
+  - #work Contract management
   	- The company must manage contracts and establish responsibilities with customers to ensure the safety and well-being of both pets and customers.
-  - #work [[Marketing and promotion]]
+  - #work Marketing and promotion
   	- The company should actively promote the exotic pet rental service through various channels to attract more customers and increase visibility.
   ### Underwater restaurant
-  - #work [[Underwater environment maintenance]]
+  - #work Underwater environment maintenance
   	- The restaurant must employ professional divers and marine experts to maintain the underwater environment and ensure the safety and comfort of guests.
-  - #work [[Menu development and culinary preparation]]
+  - #work Menu development and culinary preparation
   	- The restaurant needs talented chefs to create a diverse and delicious menu, using fresh and high-quality ingredients to provide exceptional dining experiences.
-  - #work [[Event planning and execution]]
+  - #work Event planning and execution
   	- The restaurant should organize occasional live music performances, educational sessions, and interactive experiences to enhance guests' visits and create memorable moments.
-  - #work [[Marketing and promotion]]
+  - #work Marketing and promotion
   	- The restaurant should implement a comprehensive marketing strategy, including online and offline advertising, social media campaigns, collaborations with tourist agencies, and word-of-mouth recommendations.
-  - #work [[Customer service and satisfaction]]
+  - #work Customer service and satisfaction
   	- The restaurant should prioritize excellent customer service, ensuring guests have a positive dining experience and addressing any concerns or feedback promptly.
 - ## 🗄️ Topics
   

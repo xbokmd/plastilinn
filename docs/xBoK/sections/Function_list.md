@@ -18,72 +18,72 @@
   In conclusion, the "Function List" concept in business modeling is a vital tool that helps businesses to plan, manage, and optimize their operations towards the achievement of their business goals.
 - ## 👉 Examples
   ### Space X
-  #function Spacecraft development and manufacturing
+  - #function Spacecraft development and manufacturing
   Space X must design and manufacture spacecraft, such as the Dragon spacecraft and Starship, for crewed and uncrewed missions.
   
-  #function Space exploration and colonization
+  - #function Space exploration and colonization
   Space X must invest in research and development to enable human colonization of Mars and explore other destinations in space.
   
-  #function Satellite communication services
+  - #function Satellite communication services
   Space X must provide satellite communication services through its Starlink project, delivering high-speed internet access to remote areas.
   
-  #function Rocket reusability and recovery
+  - #function Rocket reusability and recovery
   Space X must develop and implement technologies for the recovery and reuse of rockets, reducing the cost of space transportation.
   
-  #function Landing and recovery systems
+  - #function Landing and recovery systems
   Space X must develop landing and recovery systems for rockets and spacecraft, ensuring safe and controlled landings after missions.
   
-  #function Supply chain and logistics management
+  - #function Supply chain and logistics management
   Space X must manage its supply chain and logistics to ensure the timely delivery of components and materials for rocket and spacecraft manufacturing.
   
-  #function Quality assurance and safety
+  - #function Quality assurance and safety
   Space X must conduct rigorous testing and quality assurance to ensure the reliability and safety of its rockets and spacecraft.
   
-  #function Customer support and service
+  - #function Customer support and service
   Space X must provide customer support and service to address inquiries and provide technical assistance to its customers.
   
-  #function Partnerships and collaborations development
+  - #function Partnerships and collaborations development
   Space X must establish partnerships and collaborations with other organizations to leverage expertise and resources in space exploration and technology.
   
-  #function Regulatory compliance
+  - #function Regulatory compliance
   Space X must comply with legal and regulatory requirements related to space exploration, satellite deployment, and other activities.
   
-  #function Public relations and marketing
+  - #function Public relations and marketing
   Space X must engage in public relations and marketing activities to promote its solutions, attract customers, and build brand awareness.
   ### 
   
   ### extinguished animals meat
-  - #function [[Scientific research and technological development]]
+  - #function Scientific research and technological development
   	- The company must invest in R&D to understand and manipulate the DNA of extinct animals.
-  - #function [[Cloning and assisted reproduction techniques]]
+  - #function Cloning and assisted reproduction techniques
   	- The company must use cloning and reproduction methods to create living individuals of extinct species.
-  - #function [[Facilities and care centers management]]
+  - #function Facilities and care centers management
   	- The company must establish and manage facilities for housing and breeding revived extinct animals.
-  - #function [[Meat production and processing]]
+  - #function Meat production and processing
   	- The company must ethically slaughter and process the meat of revived extinct animals.
-  - #function [[Marketing and sales strategies]]
+  - #function Marketing and sales strategies
   	- The company must implement marketing strategies to promote and sell its luxury meat products.
   ### Exotic Pet Rental
-  - #function [[Pet selection and care]]
+  - #function Pet selection and care
   	- The company must carefully select and care for the exotic pets, ensuring they are in good health and well-being during the rental period.
-  - #function [[Temporary housing and supplies]]
+  - #function Temporary housing and supplies
   	- The company must provide temporary housing and supplies, such as cages and food, to ensure customers can provide proper care to the rented pets.
-  - #function [[Expert guidance and assistance]]
+  - #function Expert guidance and assistance
   	- The company must offer guidance and assistance to customers, providing_information and recommendations on the proper care of exotic pets.
-  - #function [[Safety and contract management]]
+  - #function Safety and contract management
   	- The company must establish safety protocols and ensure customers meet requirements and sign contracts to ensure the well-being of the pets.
-  - #function [[Marketing and promotion]]
+  - #function Marketing and promotion
   	- The company must promote its exotic pet rental service through various marketing channels to attract more customers and increase visibility.
   ### Underwater restaurant
-  - #function [[Restaurant operations]]
+  - #function Restaurant operations
   	- The restaurant must efficiently manage its daily operations, including food preparation, service, and customer satisfaction.
-  - #function [[Menu development and culinary innovation]]
+  - #function Menu development and culinary innovation
   	- The restaurant must continuously develop and innovate its menu to offer unique and delicious dishes that cater to different tastes.
-  - #function [[Interior design and ambiance]]
+  - #function Interior design and ambiance
   	- The restaurant must create and maintain a captivating submarine-themed interior design and ambiance to enhance the dining experience.
-  - #function [[Marine life preservation and care]]
+  - #function Marine life preservation and care
   	- The restaurant must ensure the preservation and care of the marine life surrounding the establishment, employing experts and following environmental guidelines.
-  - #function [[Events and entertainment]]
+  - #function Events and entertainment
   	- The restaurant must organize events and entertainment activities, such as live music performances and interactive experiences, to enhance guests' visits.
 - ## 🗄️ Topics
   

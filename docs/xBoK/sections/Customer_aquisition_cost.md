@@ -15,10 +15,10 @@
   ### Space X
   To calculate the Customer Acquisition Cost (CAC) for SpaceX acquiring a space agency as a client, we must consider various activities and expenses involved in the acquisition process. The CAC is the total cost of sales and marketing efforts required to acquire a new customer, divided by the number of new customers acquired. Here's a hypothetical scenario and calculation:
   
-  ### Scenario:
+  - #- #- # Scenario:
   SpaceX is aiming to secure a contract with a space agency for a series of satellite launches. The acquisition activities include marketing efforts, proposal preparations, meetings, and negotiation processes.
   
-  ### Costs:
+  - #- #- # Costs:
   1. **Marketing and Advertising**: SpaceX invests in targeted marketing campaigns, including industry-specific conferences, online advertising, and promotional materials aimed at space agencies. 
      - Estimated Cost: $500,000
   2. **Sales Team Expenses**: This includes salaries and commissions for the sales team directly involved in the acquisition process, travel expenses for meetings, and other related costs.
@@ -28,7 +28,7 @@
   4. **Negotiation and Legal Fees**: Costs for legal consultation during contract negotiation, and other administrative expenses.
      - Estimated Cost: $100,000
   
-  ### Total Acquisition Cost:
+  - #- #- # Total Acquisition Cost:
   \[ \text{Total Acquisition Cost} = \$500,000 + \$300,000 + \$200,000 + \$100,000 = \$1,100,000 \]
   
   **Number of New Customers Acquired**

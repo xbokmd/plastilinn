@@ -14,55 +14,55 @@
   The concept of "profile/perceptions" is crucial in business modeling as it provides insights into the target audience's mindset, which can guide the development of products, services, and marketing strategies. By understanding their customers' perceptions, companies can address any misconceptions, align their offerings with customer expectations, and build a strong, positive brand image. This can enhance customer satisfaction, loyalty, and ultimately, business performance.
 - ## 👉 Examples
   ### Space X
-  #perception Cutting-edge technology and innovation in rocket design and space exploration
+  - #perception Cutting-edge technology and innovation in rocket design and space exploration
   Space X has been recognized for its cutting-edge technology and innovative approach to rocket design and space exploration.
   
-  #perception Successful track record of Space X in satellite launches and cargo missions
+  - #perception Successful track record of Space X in satellite launches and cargo missions
   Space X has demonstrated a successful track record in satellite launches and cargo missions, showcasing its ability to meet the objectives and requirements of its clients.
   
-  #perception Reusable rocket systems that can reduce launch costs and increase operational efficiency
+  - #perception Reusable rocket systems that can reduce launch costs and increase operational efficiency
   Space X has developed reusable rocket systems, such as the Falcon 9 and Falcon Heavy, which have the potential to significantly reduce launch costs and improve operational efficiency.
   
-  #perception Positive feedback and reviews from other space agencies or clients who have worked with Space X
+  - #perception Positive feedback and reviews from other space agencies or clients who have worked with Space X
   Space X has received positive feedback and reviews from other space agencies and clients it has collaborated with.
   
-  #perception Industry news and expectations surrounding Space X's achievements
+  - #perception Industry news and expectations surrounding Space X's achievements
   
   
   ### 
   
   ### extinguished animals meat
-  - #perception [[Reviving extinct animals through biotechnology and genetic engineering]]
+  - #perception Reviving extinct animals through biotechnology and genetic engineering
   	- The company's use of biotechnology and genetic engineering to revive extinct animals generates interest and curiosity.
-  - #perception [[Unique and exclusive gastronomic experience with luxury meat from revived extinct species]]
+  - #perception Unique and exclusive gastronomic experience with luxury meat from revived extinct species
   	- The company offers a unique and exclusive gastronomic experience by selling luxury meat from revived extinct species.
-  - #perception [[Commitment to sustainability and ethical practices in biotechnology and genetic engineering]]
+  - #perception Commitment to sustainability and ethical practices in biotechnology and genetic engineering
   	- The company's commitment to sustainability and ethical practices in biotechnology and genetic engineering appeals to environmentally conscious consumers.
-  - #perception [[Innovative approach to biodiversity conservation and animal welfare]]
+  - #perception Innovative approach to biodiversity conservation and animal welfare
   	- The company's innovative approach to biodiversity conservation and animal welfare resonates with individuals concerned about these issues.
-  - #perception [[Collaboration with experts and compliance with legal and ethical regulations]]
+  - #perception Collaboration with experts and compliance with legal and ethical regulations
   	- The company's collaboration with experts and adherence to legal and ethical regulations instills confidence in its operations.
   ### Exotic Pet Rental
-  - #perception [[Convenient and hassle-free experience in renting exotic pets]]
+  - #perception Convenient and hassle-free experience in renting exotic pets
   	- Our exotic pet rental service provides a convenient and hassle-free experience for customers, allowing them to enjoy the companionship of an exotic pet without the long-term responsibilities.
-  - #perception [[High-quality and well-cared-for exotic pets for rent]]
+  - #perception High-quality and well-cared-for exotic pets for rent
   	- We ensure that our exotic pets are of high quality and well-cared-for, providing customers with the assurance that they are renting healthy and happy animals.
-  - #perception [[Expert guidance and support in caring for rented exotic pets]]
+  - #perception Expert guidance and support in caring for rented exotic pets
   	- Our team of experts offers guidance and support to customers, ensuring they have the knowledge and resources to properly care for the rented exotic pets.
-  - #perception [[Complementary services and care kits to enhance the rental experience]]
+  - #perception Complementary services and care kits to enhance the rental experience
   	- We provide complementary services and care kits that include everything customers need to provide the best care for the rented exotic pets, enhancing their overall rental experience.
-  - #perception [[Safety and well-being of pets and customers prioritized]]
+  - #perception Safety and well-being of pets and customers prioritized
   	- We prioritize the safety and well-being of our pets and customers, requiring customers to meet certain requirements and sign a contract to ensure responsible care during the rental period.
   ### Underwater restaurant
-  - #solution [[AdventureSeekerVR]]
+  - #solution AdventureSeekerVR
   	- A virtual reality (VR) experience that allows adventure-seeking tourists and food enthusiasts to embark on thrilling adventures in various exotic locations around the world.
-  - #solution [[MarineLifeExplorer]]
+  - #solution MarineLifeExplorer
   	- A guided tour experience that caters to marine life enthusiasts and nature lovers, offering an up-close and personal encounter with diverse marine species and their habitats.
-  - #solution [[FamilyDiningAdventure]]
+  - #solution FamilyDiningAdventure
   	- A unique dining experience designed specifically for families and children, offering interactive entertainment, themed menus, and a memorable atmosphere.
-  - #solution [[InstaWorthyExperiences]]
+  - #solution InstaWorthyExperiences
   	- An array of curated experiences and photo opportunities that cater to tourists seeking memorable and Instagrammable moments, ensuring stunning and shareable content.
-  - #solution [[GourmetFoodieExperience]]
+  - #solution GourmetFoodieExperience
   	- A culinary journey that satisfies the taste buds of foodies interested in trying diverse and high-quality cuisine, offering a range of gourmet dishes and unique flavors.
 - ## 🗄️ Topics
   

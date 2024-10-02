@@ -14,46 +14,46 @@
   In essence, the concept of "segment" or "segmentation criteria" in business modeling is about understanding and categorizing the diverse needs and preferences of a company's customer base. This allows the company to more effectively target its offerings and marketing efforts, improving customer satisfaction and business performance. It is a critical element in business design, shaping the development of a company's products, services, and marketing strategies.
 - ## 👉 Examples
   ### Space X
-  #segmentation Organization size (small, medium, large)
-  #segmentation Organization revenue levels
-  #segmentation geographic location (regions or countries, orbits, particular launch sites)
-  #segmentation adoption and use of space technologies (require customized launches with more sophisticated technologies such as reusable rockets or multi-payload capabilities, seek more standard and cost-effective solutions)
-  #segmentation industry (telecommunications, defense, scientific research, etc.)
+  - #segmentation Organization size (small, medium, large)
+  - #segmentation Organization revenue levels
+  - #segmentation geographic location (regions or countries, orbits, particular launch sites)
+  - #segmentation adoption and use of space technologies (require customized launches with more sophisticated technologies such as reusable rockets or multi-payload capabilities, seek more standard and cost-effective solutions)
+  - #segmentation industry (telecommunications, defense, scientific research, etc.)
   
   ### 
   
   ### extinguished animals meat
-  - #segmentation [[Firmographic segmentation]]
+  - #segmentation Firmographic segmentation
   	- Categorizing B2B markets based on industry type, company size, location, and purchasing power.
-  - #segmentation [[Geographic segmentation]]
+  - #segmentation Geographic segmentation
   	- Dividing the market based on location, climate, population density, and cultural differences.
-  - #segmentation [[Demographic segmentation]]
+  - #segmentation Demographic segmentation
   	- Categorizing the market based on age, gender, income, occupation, and education.
-  - #segmentation [[Psychographic segmentation]]
+  - #segmentation Psychographic segmentation
   	- Segmenting the market based on psychological characteristics, attitudes, beliefs, values, interests, and lifestyles.
-  - #segmentation [[Behavioral segmentation]]
+  - #segmentation Behavioral segmentation
   	- Classifying the market based on consumer behavior, including purchase patterns, usage rate, loyalty, and benefits sought.
   ### Exotic Pet Rental
-  - #segmentation [[Firmographic segmentation]]
+  - #segmentation Firmographic segmentation
   	- Categorizing companies based on industry type, size, location, and purchasing power.
-  - #segmentation [[Geographic segmentation]]
+  - #segmentation Geographic segmentation
   	- Dividing a market based on location, climate, population density, and cultural differences.
-  - #segmentation [[Demographic segmentation]]
+  - #segmentation Demographic segmentation
   	- Categorizing a market based on age, gender, income, occupation, and education.
-  - #segmentation [[Psychographic segmentation]]
+  - #segmentation Psychographic segmentation
   	- Segmenting a market based on attitudes, beliefs, values, interests, and lifestyles of consumers.
-  - #segmentation [[Behavioral segmentation]]
+  - #segmentation Behavioral segmentation
   	- Classifying a market based on consumer behavior, including purchase patterns, usage rate, loyalty, and benefits sought.
   ### Underwater restaurant
-  - #solution [[Firmographic segmentation]]
+  - #solution Firmographic segmentation
   	- Dividing a market based on industry type, company size, location, and purchasing power.
-  - #solution [[Geographic segmentation]]
+  - #solution Geographic segmentation
   	- Categorizing a market based on location, climate, population density, and cultural differences.
-  - #solution [[Demographic segmentation]]
+  - #solution Demographic segmentation
   	- Segmenting a market based on age, gender, income, occupation, and education.
-  - #solution [[Psychographic segmentation]]
+  - #solution Psychographic segmentation
   	- Classifying a market based on attitudes, beliefs, values, interests, and lifestyles of consumers.
-  - #solution [[Behavioral segmentation]]
+  - #solution Behavioral segmentation
   	- Segmenting a market based on consumer behavior, including purchase patterns, usage rate, loyalty, and benefits sought.
 - ## 🗄️ Topics
   

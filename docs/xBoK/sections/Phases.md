@@ -22,46 +22,46 @@
   For instance, a tech startup might go through these phases as follows: They identify a market need for a new type of software (Idea Generation), design a freemium business model to deliver this software (Business Model Design), develop and launch the software (Implementation), track user engagement and conversion rates (Evaluation), and introduce a premium subscription tier based on user feedback (Evolution). This demonstrates the value of "Phases" in driving the business model and ensuring its success and sustainability.
 - ## 👉 Examples
   ### Space X
-  #phase 1:Initial Commercial Operations
+  - #phase 1:Initial Commercial Operations
   - Early satellite launches, initial ISS missions
-  #phase 2 Expansion of Services 
+  - #phase 2 Expansion of Services 
   - Introduction of Starlink, expansion of ISS missions, initial space tourism missions
-  #phase 3 Interplanetary Mission Development
+  - #phase 3 Interplanetary Mission Development
   - Development of Mars colonization technology, advanced space tourism missions)
   ### 
   
   ### extinguished animals meat
-  - #phase [[Expansion Phase]]:
+  - #phase Expansion Phase:
   	- Scaling operations, investing in facilities, and increasing capacity.
-  - #phase [[Marketing and Sales Phase]]:
+  - #phase Marketing and Sales Phase:
   	- Implementing marketing strategies and reaching target audience.
-  - #phase [[Sustainability and Regulation Phase]]:
+  - #phase Sustainability and Regulation Phase:
   	- Collaborating with experts and ensuring compliance with regulations.
-  - #phase [[Care and Maintenance Phase]]:
+  - #phase Care and Maintenance Phase:
   	- Establishing facilities and providing appropriate care for the animals.
-  - #phase [[Production and Marketing Phase]]:
+  - #phase Production and Marketing Phase:
   	- Ethically slaughtering animals and marketing the meat in the luxury food market.
   ### Exotic Pet Rental
-  - #phase [[Expansion Phase]]:
+  - #phase Expansion Phase:
   	- Scaling operations, investing in facilities, and increasing capacity.
-  - #phase [[Falcon 9]]:
+  - #phase Falcon 9:
   	- A reliable and cost-effective rocket for satellite transportation.
-  - #phase [[Falcon Heavy]]:
+  - #phase Falcon Heavy:
   	- The world's most powerful operational rocket for heavy-lift missions.
-  - #phase [[Starship Development Phase]]:
+  - #phase Starship Development Phase:
   	- Developing a fully reusable spacecraft for interplanetary travel.
-  - #phase [[Customer Acquisition Phase]]:
+  - #phase Customer Acquisition Phase:
   	- Marketing and acquiring new customers for the exotic pet rental service.
   ### Underwater restaurant
-  - #phase [[Expansion Phase]]:
+  - #phase Expansion Phase:
   	- Scaling operations, investing in facilities, and increasing capacity.
-  - #phase [[Marketing Phase]]:
+  - #phase Marketing Phase:
   	- Implementing marketing strategies to promote the restaurant and attract customers.
-  - #phase [[Customer Experience Phase]]:
+  - #phase Customer Experience Phase:
   	- Ensuring a memorable dining experience through ambiance, service, and menu offerings.
-  - #phase [[Environmental Conservation Phase]]:
+  - #phase Environmental Conservation Phase:
   	- Following strict guidelines to preserve and protect the underwater ecosystem.
-  - #phase [[Event and Activity Phase]]:
+  - #phase Event and Activity Phase:
   	- Organizing live music performances, educational sessions, and interactive experiences.
 - ## 🗄️ Topics
   

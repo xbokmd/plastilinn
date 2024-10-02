@@ -25,37 +25,37 @@
   ### 
   
   ### extinguished animals meat
-  - #relationship [[VIP Gastronomes]]
+  - #relationship VIP Gastronomes
   	- A segment of high-end food enthusiasts who value unique and exclusive culinary experiences.
-  - #relationship [[Ethical Gourmet Advocates]]
+  - #relationship Ethical Gourmet Advocates
   	- Individuals who prioritize ethical sourcing and sustainable food production and are interested in supporting innovative approaches.
-  - #relationship [[Luxury Restaurants and Chefs]]
+  - #relationship Luxury Restaurants and Chefs
   	- Establishments and professionals known for their commitment to quality and creativity, who can showcase and promote the company's unique meat offerings.
-  - #relationship [[Specialty Food Retailers]]
+  - #relationship Specialty Food Retailers
   	- Retailers specializing in gourmet and luxury food products, who can feature and sell the company's meat to their discerning customers.
-  - #relationship [[Food and Travel Influencers]]
+  - #relationship Food and Travel Influencers
   	- Influencers with a focus on gastronomy and luxury experiences, who can help create buzz and generate interest in the company's products.
   ### Exotic Pet Rental
-  - #relationship [[VIP Membership Program]]
+  - #relationship VIP Membership Program
   	- A personalized program for loyal customers, offering exclusive benefits, discounts, and priority access to new exotic pets.
-  - #relationship [[Virtual Pet Consultations]]
+  - #relationship Virtual Pet Consultations
   	- Online consultations with exotic pet experts to provide personalized advice and guidance to customers.
-  - #relationship [[Pet Adoption Partnerships]]
+  - #relationship Pet Adoption Partnerships
   	- Collaborations with local animal shelters and rescue organizations to promote pet adoption and support animal welfare.
-  - #relationship [[Educational Workshops]]
+  - #relationship Educational Workshops
   	- Workshops and seminars conducted by experts to educate customers about the care, behavior, and unique needs of exotic pets.
-  - #relationship [[Pet Health Insurance]]
+  - #relationship Pet Health Insurance
   	- Collaboration with insurance providers to offer pet health insurance options for rented exotic pets, ensuring their well-being during the rental period.
   ### Underwater restaurant
-  - #relationship [[VIP Dining Club]]
+  - #relationship VIP Dining Club
   	- A personalized program for loyal customers, offering exclusive perks, reservations, and special events.
-  - #relationship [[Marine Education Program]]
+  - #relationship Marine Education Program
   	- Collaborations with local schools and organizations to provide educational sessions on marine life and conservation.
-  - #relationship [[Underwater Dining Experiences]]
+  - #relationship Underwater Dining Experiences
   	- Special events where guests can participate in unique dining experiences, such as underwater picnics or themed dinners.
-  - #relationship [[Guided Underwater Tours]]
+  - #relationship Guided Underwater Tours
   	- Expert-led tours for guests to explore the surrounding marine environment and learn about the underwater ecosystem.
-  - #relationship [[Fish Feeding Experience]]
+  - #relationship Fish Feeding Experience
   	- Interactive activities where guests can participate in feeding the fish and learn about their feeding habits.
 - ## 🗄️ Topics
   

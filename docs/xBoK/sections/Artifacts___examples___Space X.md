@@ -1,4 +1,4 @@
-  <h2>Business Model Canvas (#profile Main profile)</h2>
+  <h2>Business Model Canvas (- #profile Main profile)</h2>
 <div id="business-model-canvas" class="bg-gray-100 h-screen p-5">
     <div class="row-span-2 grid h-3/5 grid-cols-5 bg-white shadow-lg">
         <div class="row-span-2 border pl-2">
@@ -41,7 +41,7 @@
         </div>
     </div>
 </div>
-<h2>Value Proposition Canvas (#profile Main profile)</h2>
+<h2>Value Proposition Canvas (- #profile Main profile)</h2>
 <div id="value-proposition-canvas" class="bg-gray-100 h-screen p-5">
     <div class="grid h-3/5 grid-cols-2 gap-4 bg-white shadow-lg p-5">
         <!-- Customer Segment -->
@@ -78,7 +78,7 @@
         </div>
     </div>
 </div>
-<h2>Empathy Map (#profile Main profile)</h2>
+<h2>Empathy Map (- #profile Main profile)</h2>
 <div id="empathy-map" class="bg-gray-100 h-screen p-5">
     <div class="grid h-3/5 grid-cols-2 gap-4 bg-white shadow-lg p-5">
         <!-- What Customer Thinks and Feels -->

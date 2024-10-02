@@ -13,54 +13,54 @@
   In essence, the concept of "organization values" in business modeling is about defining and embodying the principles that drive a company's actions and decisions. It is a fundamental element in business design, shaping the company's culture, strategy, and brand identity. It influences how the company is perceived by its stakeholders and how it contributes to society at large.
 - ## 👉 Examples
   ### Space X
-  #organization_value Innovation
+  - #organization_value Innovation
   Continuously pushing the boundaries of space technology to develop more efficient, reliable, and cost-effective spacecraft and rockets.
   
-  #organization_value Reliability
+  - #organization_value Reliability
   Ensuring the highest standards of safety and dependability in every mission to protect crew, cargo, and spacecraft integrity.
   
-  #organization_value
-  EfficiencyStreamlining processes and leveraging vertical integration to reduce costs and improve the accessibility of space travel and exploration.
+  - #organization_value Efficiency
+  Streamlining processes and leveraging vertical integration to reduce costs and improve the accessibility of space travel and exploration.
   
-  #organization_value Sustainability
+  - #organization_value Sustainability
   Committing to sustainable space exploration practices, including the development of reusable rocket technology to minimize environmental impact.
   
-  #organization_value Visionary Leadership
+  - #organization_value Visionary Leadership
   Fostering a culture of bold ambitions and visionary goals, aiming to make life multi-planetary and ensure the long-term survival of humanity.
   ### 
   
   ### extinguished animals meat
-  -  [[ethical stewardship]]
+  -  ethical stewardship
   	- Assuming responsibility for the well-being of the revived animals, prioritizing their welfare and respecting their natural behaviors.
-  -  [[transparency]]
+  -  transparency
   	- Being open and honest about the processes and methods used in reviving extinct animals and producing luxury meat.
-  -  [[environmental conservation]]
+  -  environmental conservation
   	- Ensuring that the company's activities have minimal impact on the environment and actively supporting conservation efforts.
-  -  [[scientific excellence]]
+  -  scientific excellence
   	- Striving for the highest standards of scientific research and technological development in the field of biotechnology and genetic engineering.
-  -  [[cultural preservation]]
+  -  cultural preservation
   	- Respecting and valuing the cultural heritage associated with extinct species, promoting awareness and appreciation of their significance.
   ### Exotic Pet Rental
-  -  [[animal welfare]]
+  -  animal welfare
   	- Ensuring the well-being and humane treatment of exotic pets in our care.
-  -  [[customer empowerment]]
+  -  customer empowerment
   	- Empowering customers with knowledge and resources to make_informed decisions about exotic pet care.
-  -  [[safety]]
+  -  safety
   	- Prioritizing the safety of both our customers and the exotic pets we provide.
-  -  [[education]]
+  -  education
   	- Promoting awareness and understanding of exotic pets through educational initiatives.
-  -  [[flexibility]]
+  -  flexibility
   	- Adapting to the evolving needs and preferences of our customers and the exotic pet rental industry.
   ### Underwater restaurant
-  -  [[environmental stewardship]]
+  -  environmental stewardship
   	- Demonstrating a commitment to protecting and preserving the environment through sustainable practices and minimizing ecological impact.
-  -  [[diversity and inclusion]]
+  -  diversity and inclusion
   	- Embracing and celebrating diversity in all its forms, fostering an inclusive and equitable environment for employees and customers.
-  -  [[excellence]]
+  -  excellence
   	- Pursuing the highest standards of quality and performance in all aspects of the business.
-  -  [[creativity]]
+  -  creativity
   	- Encouraging and nurturing a culture of innovation, imagination, and originality.
-  -  [[passion]]
+  -  passion
   	- Fostering a deep enthusiasm and dedication for the restaurant's mission, creating a vibrant and energetic atmosphere.
 - ## 🗄️ Topics
   

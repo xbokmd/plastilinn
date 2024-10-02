@@ -19,48 +19,48 @@
   By developing a "Solution/Roadmap", a business can ensure that it is moving in the right direction, making progress towards its vision, and creating value for its stakeholders. For instance, the retail business might use its roadmap to guide its transition to sustainable fashion, track its progress, and communicate its achievements to its customers, employees, and investors. This would demonstrate the business's ability to leverage its "Solution/Roadmap" to drive its business model and create value.
 - ## 👉 Examples
   ### Space X
-  #roadmap Phase 1
+  - #roadmap Phase 1
     Development and testing of reusable rocket technology.
   
-  #roadmap Phase 2
+  - #roadmap Phase 2
     Launching and deploying satellites for commercial and government customers.
   
-  #roadmap Phase 3
+  - #roadmap Phase 3
     Conducting resupply missions to the International Space Station.
   
-  #roadmap Phase 4
+  - #roadmap Phase 4
     Developing and launching crewed missions to the International Space Station.
   
-  #roadmap Phase 5
+  - #roadmap Phase 5
     Establishing a sustainable presence on Mars.
   ### 
   
   ### extinguished animals meat
-  - #phase [[Phase 1]] Research and development of DNA manipulation techniques and genome reconstruction for extinct animals.
-  - #phase [[Phase 2]] Cloning and reproduction of extinct animals using stem cells or eggs from related living animals.
-  - #phase [[Phase 3]] Establishing care centers and facilities for housing and breeding the revived animals.
-  - #phase [[Phase 4]] Ethical and respectful slaughter of mature animals, followed by meat processing and packaging.
-  - #phase [[Phase 5]] Marketing and sales strategies targeting high-end restaurants and specialized stores.
-  - #phase [[Phase 6]] Collaboration with experts in biodiversity conservation and regulatory authorities to ensure compliance.
-  - #phase [[Phase 7]] Continuous investment in research and development to enhance techniques and ensure sustainability.
-  - #phase [[Phase 8]] Long-term partnerships with key customers and exploration of recurring revenue opportunities.
+  - #phase Phase 1 Research and development of DNA manipulation techniques and genome reconstruction for extinct animals.
+  - #phase Phase 2 Cloning and reproduction of extinct animals using stem cells or eggs from related living animals.
+  - #phase Phase 3 Establishing care centers and facilities for housing and breeding the revived animals.
+  - #phase Phase 4 Ethical and respectful slaughter of mature animals, followed by meat processing and packaging.
+  - #phase Phase 5 Marketing and sales strategies targeting high-end restaurants and specialized stores.
+  - #phase Phase 6 Collaboration with experts in biodiversity conservation and regulatory authorities to ensure compliance.
+  - #phase Phase 7 Continuous investment in research and development to enhance techniques and ensure sustainability.
+  - #phase Phase 8 Long-term partnerships with key customers and exploration of recurring revenue opportunities.
   
-  Note]] This roadmap should be subject to ethical, environmental, and regulatory considerations.
+  Note This roadmap should be subject to ethical, environmental, and regulatory considerations.
   ### Exotic Pet Rental
-  - #phase [[Phase 1]] Establish partnerships with exotic pet suppliers and experts to ensure a reliable and diverse inventory.
-  - #phase [[Phase 2]] Develop a user-friendly online platform for customers to browse and book exotic pets.
-  - #phase [[Phase 3]] Implement a thorough vetting process for customers to ensure responsible pet care.
-  - #phase [[Phase 4]] Create comprehensive care kits and guidelines for customers to provide optimal care during the rental period.
-  - #phase [[Phase 5]] Launch targeted marketing campaigns to raise awareness and attract customers.
-  - #phase [[Phase 6]] Continuously monitor and improve the health and well-being of rented pets through regular check-ups and feedback from customers.
-  - #phase [[Phase 7]] Explore expansion opportunities, such as franchising or partnering with pet stores, to reach a wider audience.
-  - #phase [[Phase 8]] Develop loyalty programs and referral incentives to encourage repeat business and word-of-mouth marketing.
+  - #phase Phase 1 Establish partnerships with exotic pet suppliers and experts to ensure a reliable and diverse inventory.
+  - #phase Phase 2 Develop a user-friendly online platform for customers to browse and book exotic pets.
+  - #phase Phase 3 Implement a thorough vetting process for customers to ensure responsible pet care.
+  - #phase Phase 4 Create comprehensive care kits and guidelines for customers to provide optimal care during the rental period.
+  - #phase Phase 5 Launch targeted marketing campaigns to raise awareness and attract customers.
+  - #phase Phase 6 Continuously monitor and improve the health and well-being of rented pets through regular check-ups and feedback from customers.
+  - #phase Phase 7 Explore expansion opportunities, such as franchising or partnering with pet stores, to reach a wider audience.
+  - #phase Phase 8 Develop loyalty programs and referral incentives to encourage repeat business and word-of-mouth marketing.
   ### Underwater restaurant
-  - #phase [[Phase 1]] Design and construction of the underwater restaurant, ensuring safety and functionality.
-  - #phase [[Phase 2]] Recruitment and training of professional divers and marine experts to maintain the marine life.
-  - #phase [[Phase 3]] Menu development and sourcing of high-quality ingredients for exceptional culinary offerings.
-  - #phase [[Phase 4]] Marketing and promotion of the restaurant through online and offline channels, targeting both locals and tourists.
-  - #phase [[Phase 5]] Implementation of events and activities to enhance the dining experience, such as live music performances and interactive experiences.
+  - #phase Phase 1 Design and construction of the underwater restaurant, ensuring safety and functionality.
+  - #phase Phase 2 Recruitment and training of professional divers and marine experts to maintain the marine life.
+  - #phase Phase 3 Menu development and sourcing of high-quality ingredients for exceptional culinary offerings.
+  - #phase Phase 4 Marketing and promotion of the restaurant through online and offline channels, targeting both locals and tourists.
+  - #phase Phase 5 Implementation of events and activities to enhance the dining experience, such as live music performances and interactive experiences.
 - ## 🗄️ Topics
   
 - ## 🧰 Tools

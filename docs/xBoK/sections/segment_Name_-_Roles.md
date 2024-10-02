@@ -18,58 +18,58 @@
   In essence, the concept of segment/roles is a fundamental aspect of business modeling, providing a clear structure and direction for the organization and contributing to its overall success and sustainability.
 - ## 👉 Examples
   ### Space X
-  #role Project Manager
+  - #role Project Manager
   Oversees the specific mission or project for which Space X's services are being procured. They coordinate with various internal teams, stakeholders, and Space X to ensure the successful execution of the mission.
   
-  #role Procurement Manager
+  - #role Procurement Manager
   Responsible for managing the acquisition process, including identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts.
   
-  #role Technical Team
+  - #role Technical Team
   A team of technical experts, including engineers and scientists, assesses the technical requirements of the mission. They work closely with Space X to ensure that the proposed solution meets the agency's specifications and objectives.
   
-  #role Contracting Officer
+  - #role Contracting Officer
   Responsible for managing the contractual relationship between the government agency and Space X..
   
-  #role Financial Analyst
+  - #role Financial Analyst
   Assesses the cost proposals submitted by Space X and evaluates the financial feasibility of the project.
   
-  #role Legal Counsel
+  - #role Legal Counsel
   Reviews and provides advice on the contractual agreements, ensuring compliance with relevant laws, regulations, and policies.
   
   ### 
   
   ### extinguished animals meat
-  - #role [[Gourmet Chef]]
+  - #role Gourmet Chef
   	- Influences the purchasing decision by evaluating the quality, taste, and potential culinary applications of the revived extinct animal meat.
-  - #role [[Luxury Food Buyer]]
+  - #role Luxury Food Buyer
   	- Responsible for sourcing and procuring exclusive and unique food products for high-end restaurants or specialty stores. They seek out novel and premium offerings to attract discerning customers.
-  - #role [[Sustainability Officer]]
+  - #role Sustainability Officer
   	- Plays a key role in evaluating the environmental impact and ethical considerations of the company's activities. They ensure that the sourcing and production methods align with sustainability goals.
-  - #role [[Marketing Director]]
+  - #role Marketing Director
   	- Develops and executes marketing strategies to create awareness and demand for the company's luxury meat products. They target consumers who value innovation, exclusivity, and unique gastronomic experiences.
-  - #role [[Regulatory Compliance Officer]]
+  - #role Regulatory Compliance Officer
   	- Ensures that the company's operations adhere to all legal and ethical regulations related to biotechnology, genetic engineering, and food safety. They mitigate risks and maintain compliance with applicable laws and guidelines.
   ### Exotic Pet Rental
-  - #role [[Pet Enthusiast]]
+  - #role Pet Enthusiast
   	- Individuals who are passionate about animals and want to experience the joy of having an exotic pet without long-term commitments.
-  - #role [[Busy Professionals]]
+  - #role Busy Professionals
   	- Individuals who have demanding careers and limited time to dedicate to the continuous care and commitment of a pet but still want to experience the companionship of an exotic pet.
-  - #role [[Families with Children]]
+  - #role Families with Children
   	- Families with children who want to introduce their kids to the wonders of exotic pets without the long-term responsibility and potential risks associated with owning one.
-  - #role [[Students]]
+  - #role Students
   	- Students who are fascinated by exotic pets but may not have the resources or ability to provide long-term care. Renting allows them to experience and learn about different species.
-  - #role [[Event Planners]]
+  - #role Event Planners
   	- Event planners who want to create unique and memorable experiences for their clients by incorporating exotic pets into special events or themed parties.
   ### Underwater restaurant
-  - #role [[Tourism Director]]
+  - #role Tourism Director
   	- Responsible for promoting tourism in the area and identifying unique experiences to attract visitors, including recommending our submarine themed restaurant.
-  - #role [[Event Planner]]
+  - #role Event Planner
   	- Organizes special events and occasions, such as birthdays or corporate dinners, and considers our restaurant as a unique and memorable venue option.
-  - #role [[Food Critic]]
+  - #role Food Critic
   	- Influential individuals who review and recommend dining establishments to their audience, including our submarine themed restaurant as a must-visit destination.
-  - #role [[Travel Agent]]
+  - #role Travel Agent
   	- Offers travel and dining recommendations to their clients, including our restaurant as a unique dining experience to enhance their trip.
-  - #role [[Marine Biologist]]
+  - #role Marine Biologist
   	- Professionals passionate about marine life and conservation who appreciate the educational aspect of our restaurant and recommend it to their network.
 - ## 🗄️ Topics
   

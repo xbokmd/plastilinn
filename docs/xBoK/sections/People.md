@@ -20,26 +20,26 @@
   ### 
   
   ### extinguished animals meat
-  - #person [[Dr. Jane Goodall]]
+  - #person Dr. Jane Goodall
   	- Renowned primatologist and conservationist, bringing expertise in biodiversity and animal welfare.
-  - #person [[Dr. George Church]]
+  - #person Dr. George Church
   	- Leading geneticist and pioneer in synthetic biology, providing scientific knowledge in DNA manipulation and biotechnology.
-  - #person [[Chef René Redzepi]]
+  - #person Chef René Redzepi
   	- Acclaimed chef and culinary innovator, contributing expertise in gastronomy and luxury food market trends.
-  - #person [[Dr. Jennifer Doudna]]
+  - #person Dr. Jennifer Doudna
   	- Inventor of CRISPR-Cas9 gene editing technology, offering expertise in genetic engineering and its applications.
-  - #person [[Dr. Craig Venter]]
+  - #person Dr. Craig Venter
   	- Renowned biologist and entrepreneur, specializing in genomics and synthetic life, bringing scientific and business acumen.
   ### Exotic Pet Rental
-  - #person [[Sara Blakely]]
+  - #person Sara Blakely
     	- Founder of Spanx, a successful shapewear brand, known for her innovative approach to women's undergarments.
-  - #person [[Travis Kalanick]]
+  - #person Travis Kalanick
     	- Co-founder of Uber, disrupting the transportation industry with the ride-sharing platform.
-  - #person [[Reed Hastings]]
+  - #person Reed Hastings
     	- Co-founder and CEO of Netflix, revolutionizing the way people consume entertainment.
-  - #person [[Larry Page]]
+  - #person Larry Page
     	- Co-founder of Google, leading the development of the world's most popular search engine.
-  - #person [[Jack Ma]]
+  - #person Jack Ma
     	- Founder of Alibaba Group, transforming e-commerce in China and becoming one of the world's richest individuals.
   ### Underwater restaurant
   

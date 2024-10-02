@@ -18,71 +18,71 @@
   For instance, a company might identify that its customers feel delighted when they receive personalized services. The company might then implement a customer relationship management system to provide more personalized services, enhance their customer experience, and increase their satisfaction and loyalty. This would demonstrate the company's ability to leverage its understanding of "Emotions" to drive its business model and create value.
 - ## 👉 Examples
   ### Space X
-  #emotion excitement
+  - #emotion excitement
   The opportunity to work with Space X, a recognized and innovative space company, can generate a feeling of excitement and anticipation.
   
-  #emotion Confidence
+  - #emotion Confidence
   The positive reputation and successful track record of Space X can instill confidence in the project manager regarding the potential success of the partnership.
   
-  #emotion Inspiration
+  - #emotion Inspiration
   Working with Space X, known for its cutting-edge technology and advancements in space exploration, can inspire the project manager to contribute to the agency's goals.
   
-  #emotion Pride
+  - #emotion Pride
   Collaborating with Space X, a leading player in the space industry, can evoke a sense of pride and prestige for the project manager and the agency.
   
-  #emotion Uncertainty
+  - #emotion Uncertainty
   The complexity of the acquisition process and the potential risks associated with selecting a new provider can generate a certain level of uncertainty.
   
-  #emotion Budget concerns
+  - #emotion Budget concerns
   Balancing the agency's budget constraints while ensuring high-quality services and equipment can generate concerns about financial viability.
   
-  #emotion Pressure
+  - #emotion Pressure
   The responsibility of selecting a provider for critical space missions can create a sense of pressure and the need to make the right decision.
   
   ### 
   
   ### extinguished animals meat
-  - #segment [[Luxury Food Enthusiasts]]
+  - #segment Luxury Food Enthusiasts
   	- Targeting individuals who appreciate and are willing to pay a premium price for unique gastronomic experiences.
-  - #profile [[High-end Restaurants and Specialized Stores]]
+  - #profile High-end Restaurants and Specialized Stores
   	- Focusing on establishments that cater to a sophisticated clientele and are known for offering exclusive and high-quality products.
-  - #emotion [[Exclusivity]]
+  - #emotion Exclusivity
   	- Offering meat from revived extinct animals creates a sense of exclusivity and rarity for customers.
-  - #emotion [[Curiosity]]
+  - #emotion Curiosity
   	- The concept of eating meat from extinct species can evoke curiosity and intrigue among consumers.
-  - #emotion [[Gourmet Adventure]]
+  - #emotion Gourmet Adventure
   	- Providing a distinctive and unconventional gastronomic experience appeals to adventurous and food-loving individuals.
   ### Exotic Pet Rental
-  - #segment [[Pet Enthusiasts]]
+  - #segment Pet Enthusiasts
   	- Individuals who are interested in exotic pets but have concerns about long-term commitments.
-  - #profile [[Rental Service Customers]]
+  - #profile Rental Service Customers
   	- People who are looking for a temporary and convenient solution to experience owning an exotic pet.
-  - #emotion [[Wonder]]
+  - #emotion Wonder
   	- The excitement and fascination of having an exotic pet in their home.
-  - #emotion [[Relief]]
+  - #emotion Relief
   	- The relief of not having to worry about long-term care and commitment.
-  - #emotion [[Curiosity]]
+  - #emotion Curiosity
   	- The desire to explore and interact with unique and fascinating species.
   ### Underwater restaurant
-  - #segment [[Tourists]]
+  - #segment Tourists
   	- Tourists seeking unique and memorable dining experiences.
-  - #profile [[Food enthusiasts]]
+  - #profile Food enthusiasts
   	- Individuals who appreciate diverse and high-quality culinary offerings.
-  - #emotion [[Wonder]]
+  - #emotion Wonder
   	- The mesmerizing underwater environment evokes a sense of wonder and awe.
-  - #emotion [[Curiosity]]
+  - #emotion Curiosity
   	- Guests are curious to explore and learn about the marine life surrounding them.
-  - #emotion [[Amazement]]
+  - #emotion Amazement
   	- The panoramic views and immersive submarine-themed decor create a sense of amazement.
-  - #solution [[OceanView]]
+  - #solution OceanView
   	- A virtual reality (VR) experience that allows customers to explore and interact with the underwater world from the comfort of their homes.
-  - #solution [[MarineChef]]
+  - #solution MarineChef
   	- A subscription-based meal delivery service that brings the unique flavors and dishes of the Submarine Themed Restaurant to customers' doorsteps.
-  - #solution [[SubmarineExplorer]]
+  - #solution SubmarineExplorer
   	- A guided underwater tour experience where customers can explore the marine environment surrounding the restaurant with professional divers.
-  - #solution [[SubmarineSouvenirs]]
+  - #solution SubmarineSouvenirs
   	- A line of merchandise and souvenirs inspired by the Submarine Themed Restaurant, allowing customers to take a piece of the experience home with them.
-  - #solution [[MarineLifeEducation]]
+  - #solution MarineLifeEducation
   	- An educational program that offers interactive workshops and classes on marine life conservation and the importance of protecting underwater ecosystems.
 - ## 🗄️ Topics
   

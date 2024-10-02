@@ -16,46 +16,46 @@
   The "Segment" concept in business modeling is crucial because it emphasizes the importance of understanding and catering to the diverse needs and preferences of different groups within a market. It encourages businesses to use data and analytics to identify and understand their target segments, and to develop targeted strategies to engage and serve them effectively. This can lead to increased customer satisfaction, loyalty, and ultimately, business success.
 - ## 👉 Examples
   ### Space X
-  #stakeholder Satellite Launch Customers / #segment Government Agencies
+  - #stakeholder Satellite Launch Customers / - #segment Government Agencies
   The government agencies segment includes national space agencies that require space transportation and communication services for their missions.
   ### 
   
   ### extinguished animals meat
-  - #segment [[Luxury Food Enthusiasts]]
+  - #segment Luxury Food Enthusiasts
   	- Individuals who are willing to pay a premium price for unique and exclusive gastronomic experiences.
-  - #segment [[High-end Restaurants]]
+  - #segment High-end Restaurants
   	- Upscale dining establishments that cater to customers seeking luxury and innovative culinary offerings.
-  - #segment [[Specialty Food Stores]]
+  - #segment Specialty Food Stores
   	- Stores that focus on offering high-quality and unique food products to discerning customers.
-  - #segment [[Gourmet Food Connoisseurs]]
+  - #segment Gourmet Food Connoisseurs
   	- Individuals who have a deep appreciation for fine and rare food items.
-  - #segment [[Sustainable and Ethical Food Consumers]]
+  - #segment Sustainable and Ethical Food Consumers
   	- Individuals who prioritize environmentally friendly and ethically sourced food products.
   ### Exotic Pet Rental
-  - #segment [[Pet Enthusiasts]]
+  - #segment Pet Enthusiasts
   	- Individuals who have a passion for animals and enjoy the experience of having pets, including exotic ones, without the long-term commitment.
-  - #segment [[Temporary Residents]]
+  - #segment Temporary Residents
   	- Individuals who are living in a particular area for a limited period, such as students or professionals on short-term assignments, who may want the companionship of an exotic pet without the long-term responsibility.
-  - #segment [[Event Planners]]
+  - #segment Event Planners
   	- Professionals who organize events and may require exotic pets for specific occasions or themed events, providing a unique and memorable experience for attendees.
-  - #segment [[Educational Institutions]]
+  - #segment Educational Institutions
   	- Schools, colleges, and universities that may want to provide educational experiences with exotic pets to enhance their curriculum or offer unique learning opportunities.
-  - #segment [[Animal Therapy Providers]]
+  - #segment Animal Therapy Providers
   	- Organizations and individuals who offer animal-assisted therapy services, such as hospitals, rehabilitation centers, and nursing homes, which can benefit from renting exotic pets to facilitate therapeutic interactions.
   ### Underwater restaurant
-  - #segment [[Tourists and Travelers]]
+  - #segment Tourists and Travelers
   	- Individuals seeking unique and memorable experiences during their travels
   	- Interested in the underwater dining experience offered by the Submarine Themed Restaurant.
-  - #segment [[Seafood Enthusiasts]]
+  - #segment Seafood Enthusiasts
   	- Individuals with a passion for seafood
   	- Looking for a dining experience that combines delicious cuisine with a captivating marine environment.
-  - #segment [[Special Occasion Celebrators]]
+  - #segment Special Occasion Celebrators
   	- Individuals and groups looking for a unique and memorable venue to celebrate special events
   	- Attracted to the immersive atmosphere of the Submarine Themed Restaurant.
-  - #segment [[Eco-conscious Diners]]
+  - #segment Eco-conscious Diners
   	- Individuals who prioritize environmental sustainability
   	- Attracted to a restaurant that follows strict environmental guidelines for the protection and preservation of the underwater ecosystem.
-  - #segment [[Adventure Seekers]]
+  - #segment Adventure Seekers
   	- Individuals always looking for thrilling and unique experiences
   	- Intrigued by the opportunity to dine in an underwater setting surrounded by fish and marine life.
 - ## 🗄️ Topics

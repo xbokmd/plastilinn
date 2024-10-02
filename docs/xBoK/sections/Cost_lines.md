@@ -16,64 +16,64 @@
   In essence, the concept of "Cost Lines" in business modeling is about identifying, categorizing, and managing the various costs involved in running a business. This is a critical aspect of business design, as it directly impacts the business's bottom line and its ability to achieve financial sustainability and growth.
 - ## 👉 Examples
   ### Space X
-  #cost Research and development costs
+  - #cost Research and development costs
   Space X invests heavily in research and development to innovate and improve their rockets, spacecraft, and other technologies (materials, equipment, testing, and personnel).
   
-  #cost Manufacturing costs
+  - #cost Manufacturing costs
   Space X incurs costs in manufacturing their rockets, spacecraft, and other components (sourcing materials, assembly, quality control, and production facilities).
   
-  #cost Launch operation costs
+  - #cost Launch operation costs
   Space X bears costs related to planning and executing launch operations (launch site rentals, permits, fuel, ground support equipment, and personnel).
   
-  #cost Satellite deployment costs
+  - #cost Satellite deployment costs
   Space X incurs costs for deploying and maintaining its satellite network for the Starlink project (manufacturing satellites, launching them into space, and ground control operations).
   
-  #cost Supply chain costs
+  - #cost Supply chain costs
   Space X manages a complex supply chain to source components, materials, and equipment for rocket and spacecraft manufacturing (procurement, inventory management, logistics, and supplier relationships).
   
-  #cost Operations and maintenance costs
+  - #cost Operations and maintenance costs
   Space X incurs ongoing costs for operating and maintaining their rockets, spacecraft, and other infrastructure (insurance, inspections, repairs, upgrades, and personnel).
   
-  #cost Marketing and sales costs
+  - #cost Marketing and sales costs
   Space X invests in marketing and sales activities to attract customers and promote their solutions (advertising, promotional events, sales team salaries, and marketing campaigns).
   
-  #cost Regulatory compliance costs
+  - #cost Regulatory compliance costs
   Space X must comply with legal and regulatory requirements in the space industry (permits, licenses, certifications, and compliance activities).
   
   ### 
   
   ### extinguished animals meat
-  - #cost [[Research and development costs]]
+  - #cost Research and development costs
   	- Costs associated with conducting research and development activities to explore new technologies and techniques in the field of reviving extinct animals.
-  - #cost [[Cloning and reproduction costs]]
+  - #cost Cloning and reproduction costs
   	- Expenses related to cloning and reproducing extinct animals, including the use of advanced biotechnology methods and equipment.
-  - #cost [[Care and maintenance costs]]
+  - #cost Care and maintenance costs
   	- The costs involved in providing proper care and maintenance for the revived extinct animals, such as feeding, housing, and medical care.
-  - #cost [[Production and processing costs]]
+  - #cost Production and processing costs
   	- Costs associated with the production and processing of meat products derived from revived extinct animals, including manufacturing and packaging expenses.
-  - #cost [[Marketing and sales costs]]
+  - #cost Marketing and sales costs
   	- Expenses related to marketing and selling the meat products made from revived extinct animals, such as advertising, promotion, and distribution costs.
   ### Exotic Pet Rental
-  - #cost [[Pet acquisition costs]]
+  - #cost Pet acquisition costs
   	- The company incurs expenses for acquiring exotic pets from reputable sources, ensuring their health and well-being.
-  - #cost [[Pet care costs]]
+  - #cost Pet care costs
   	- The company bears costs associated with providing proper care and nutrition to the exotic pets during their rental period.
-  - #cost [[Cleaning and maintenance costs]]
+  - #cost Cleaning and maintenance costs
   	- The company invests in cleaning supplies and maintenance services to ensure the exotic pets' habitats are clean and safe.
-  - #cost [[Insurance and liability costs]]
+  - #cost Insurance and liability costs
   	- The company incurs costs for insurance coverage to protect against risks and liabilities associated with the exotic pets.
-  - #cost [[Staff training and wages]]
+  - #cost Staff training and wages
   	- The company allocates funds for training its staff in handling and caring for exotic pets, as well as compensating them for their services.
   ### Underwater restaurant
-  - #cost [[Restaurant construction costs]]
+  - #cost Restaurant construction costs
   	- The company incurs expenses for constructing the submarine-themed restaurant, including materials, labor, and equipment.
-  - #cost [[Interior design and decor costs]]
+  - #cost Interior design and decor costs
   	- The company invests in creating an authentic and immersive dining experience through interior design and decor, including furniture, lighting, and themed elements.
-  - #cost [[Culinary costs]]
+  - #cost Culinary costs
   	- The company purchases high-quality ingredients and employs talented chefs to prepare delicious dishes for the menu.
-  - #cost [[Marine life maintenance costs]]
+  - #cost Marine life maintenance costs
   	- The company hires professional divers and marine experts to maintain the surrounding marine life, ensuring their safety and well-being.
-  - #cost [[Event and activity costs]]
+  - #cost Event and activity costs
   	- The company incurs expenses for organizing live music performances, educational sessions, and interactive experiences to enhance guests' visits.
 - ## 🗄️ Topics
   

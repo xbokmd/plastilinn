@@ -17,7 +17,7 @@
   ### Space X
   Name: Sarah Johnson
   Demographic_information:
-  Role: #stakeholder Satellite Launch Customers / #segment Government Agencies / #role Project Manager
+  Role: - #stakeholder Satellite Launch Customers / - #segment Government Agencies / - #role Project Manager
   Age: 40
   Gender: Female
   Location: Washington, D.C., United States

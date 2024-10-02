@@ -16,15 +16,15 @@
   In essence, a segment list is a powerful tool that enables businesses to create value for their customers, differentiate themselves from their competitors, and achieve sustainable growth. It is the foundation of customer-centric business design and a key driver of business success.
 - ## 👉 Examples
   ### Space X
-  The #stakeholder Satellite Launch Customers has these segments:
+  The - #stakeholder Satellite Launch Customers has these segments:
   
-  #segment Government Agencies
+  - #segment Government Agencies
   The government agencies segment includes national space agencies that require space transportation and communication services for their missions.
   
-  #segment Commercial Companies
+  - #segment Commercial Companies
   The commercial companies segment includes private companies that require space transportation and communication services for their business operations.
   
-  #segment ISS Cargo Transport Customers
+  - #segment ISS Cargo Transport Customers
    This segment includes space agencies and scientific organizations that require transportation of cargo to the International Space Station (ISS).
   ### 
   

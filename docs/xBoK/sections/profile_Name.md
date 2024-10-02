@@ -18,38 +18,38 @@
   For instance, a company might create a profile for a segment of customers who are environmentally conscious and prefer eco-friendly products. The company might also create a profile for a competitor who is known for its sustainable practices and popular among these customers. Based on these profiles, the company might decide to develop and market a new line of eco-friendly products to meet the needs of these customers and compete effectively with this competitor. This would demonstrate the company's ability to leverage its understanding of Profile to drive its business model and create value.
 - ## 👉 Examples
   ### Space X
-  #profile Space Agency Project Manager
-  #stakeholder Satellite Launch Customers / #segment Government Agencies / #role Project Manager
+  - #profile Space Agency Project Manager
+  - #stakeholder Satellite Launch Customers / - #segment Government Agencies / - #role Project Manager
   The project manager is responsible for managing the acquisition process, including identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts.
   ### 
   
   ### extinguished animals meat
-  - [[Luxury Food Connoisseur]]
+  - Luxury Food Connoisseur
   - The luxury food connoisseur is a high-end consumer who values unique and exclusive gastronomic experiences.
   - They are willing to pay a premium price for luxury food items that offer novelty and exceptional quality.
   - This segment appreciates the story and value behind the company's revived extinct animal meat, making them a potential target audience for marketing and sales efforts.
   - Their interest in sustainable and ethical practices aligns with the company's commitment, further enhancing their appeal as potential customers.
   ### Exotic Pet Rental
-  - [[Pet Store Owner___Manager]]
+  - Pet Store Owner___Manager
   	- The pet store owner___manager is responsible for running a pet store and catering to the needs of pet owners. They have a deep understanding of the pet industry and have a network of customers who may be interested in trying out exotic pets through a rental service. Partnering with pet store owners___managers can help the company reach a targeted audience and increase its customer base.
-  - [[Event Planner]]
+  - Event Planner
   	- Event planners organize various events, including parties, weddings, and corporate functions. They may have clients who are interested in unique and memorable experiences for their guests. Collaborating with event planners can provide the company with opportunities to offer exotic pets as part of event entertainment, attracting potential customers who may be interested in renting exotic pets for personal use as well.
-  - [[Tourism Agency]]
+  - Tourism Agency
   	- Tourism agencies promote and arrange travel experiences for tourists. By partnering with tourism agencies, the company can target tourists who are looking for unique and memorable experiences during their travels. Offering exotic pet rentals as a tourist attraction can attract visitors and provide them with a one-of-a-kind experience, contributing to the growth of the company's customer base.
-  - [[Educational Institutions]]
+  - Educational Institutions
   	- Educational institutions, such as schools and universities, often organize educational programs and events for students. Collaborating with educational institutions can provide the company with opportunities to offer educational experiences with exotic pets. This can include workshops, presentations, or temporary rentals for educational purposes, attracting students and educators who are interested in learning about exotic animals.
-  - [[Corporate Wellness Programs]]
+  - Corporate Wellness Programs
   	- Many companies prioritize employee wellness programs to promote a healthy work-life balance. Collaborating with corporate wellness programs can provide the company with opportunities to offer exotic pet rentals as a stress-relief activity for employees. This can attract corporate clients who are interested in providing unique and engaging experiences for their employees, contributing to the company's growth and revenue.
   ### Underwater restaurant
-  - [[Marine Tourism Operator]]
+  - Marine Tourism Operator
   	- The marine tourism operator specializes in organizing and conducting underwater excursions and experiences for tourists. They have a deep understanding of marine environments and can collaborate with the Submarine Themed Restaurant to offer combined packages that include both dining and underwater exploration.
-  - [[Environmental Conservationist]]
+  - Environmental Conservationist
   	- The environmental conservationist is dedicated to preserving and protecting marine ecosystems. They can be potential partners for the Submarine Themed Restaurant to collaborate on educational initiatives, environmental awareness campaigns, and sustainable practices to ensure the long-term health of the underwater environment.
-  - [[Luxury Travel Agent]]
+  - Luxury Travel Agent
   	- The luxury travel agent caters to high-end clientele seeking unique and exclusive travel experiences. They can promote the Submarine Themed Restaurant as a premium dining destination, attracting affluent travelers who value extraordinary experiences and are willing to pay a premium for them.
-  - [[Event Planner]]
+  - Event Planner
   	- The event planner specializes in organizing and managing various types of events, including corporate dinners, weddings, and special occasions. They can collaborate with the Submarine Themed Restaurant to create memorable and unique underwater dining experiences for their clients, adding a touch of novelty and excitement to their events.
-  - [[Food and Travel Blogger]]
+  - Food and Travel Blogger
   	- The food and travel blogger has a significant influence on their audience's dining and travel choices. They can be invited to experience the Submarine Themed Restaurant and share their immersive dining experience with their followers, generating buzz and attracting potential customers.
 - ## 🗄️ Topics
   

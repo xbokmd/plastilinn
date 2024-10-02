@@ -14,48 +14,48 @@
   The concept of "solution/features" is crucial in business modeling as it helps to shape the company's product or service design strategy. By tailoring their product or service features to the needs of the target customer groups, companies can increase the value of their offerings, enhance their competitive advantage, and drive revenue growth. This can lead to increased customer satisfaction, improved market share, and higher business performance.
 - ## 👉 Examples
   ### Space X
-  #feature Reusable first stage
+  - #feature Reusable first stage
   A component of Space X's rockets that is designed to be reused multiple times, reducing the cost of space launches.
   
-  #feature Payload capacity
+  - #feature Payload capacity
   The maximum weight or mass that a rocket can carry into space.
   
-  #feature Advanced avionics
+  - #feature Advanced avionics
   The electronic systems and components used in spacecraft and rockets for navigation, control, and communication.
   ### 
   
   ### extinguished animals meat
-  - #feature [[Revival of extinct species]]
+  - #feature Revival of extinct species
   	- The company's unique feature is the ability to revive extinct animals through biotechnology and genetic engineering.
-  - #feature [[Exclusive gastronomic experience]]
+  - #feature Exclusive gastronomic experience
   	- The company offers a unique and exclusive gastronomic experience by selling meat from revived extinct animals in the luxury food market.
-  - #feature [[Ethical and sustainable practices]]
+  - #feature Ethical and sustainable practices
   	- The company ensures ethical and sustainable practices by collaborating with biodiversity conservation experts and complying with all legal and ethical regulations.
-  - #feature [[High-quality meat production]]
+  - #feature High-quality meat production
   	- The company focuses on producing high-quality meat by following established standards and employing ethical slaughtering techniques.
-  - #feature [[Innovative marketing strategies]]
+  - #feature Innovative marketing strategies
   	- The company implements innovative marketing strategies to promote the story and value of its products, attracting consumers in the luxury food market.
   ### Exotic Pet Rental
-  - #feature [[Exotic pet selection]]
+  - #feature Exotic pet selection
           - Our service offers a wide variety of exotic pets, allowing customers to choose their preferred species.
-  - #feature [[Health and well-being]]
+  - #feature Health and well-being
           - We ensure that all rented pets are in good health and receive proper care and attention.
-  - #feature [[Temporary care kits]]
+  - #feature Temporary care kits
           - Customers are provided with complete care kits to ensure they can provide the best care during the rental period.
-  - #feature [[Expert guidance]]
+  - #feature Expert guidance
           - Our team of experts provides guidance and assistance to customers, ensuring they are well-informed about the proper care of exotic pets.
-  - #feature [[Safety and responsibility]]
+  - #feature Safety and responsibility
           - Customers must meet requirements and sign a contract to ensure the safety and well-being of our pets during the rental period.
   ### Underwater restaurant
-  - #solution [[Underwater dining pods]]
+  - #solution Underwater dining pods
   	- Our restaurant offers unique dining pods that are submerged underwater, providing a private and intimate dining experience.
-  - #solution [[Interactive touchscreens]]
+  - #solution Interactive touchscreens
   	- Each dining table is equipped with interactive touchscreens, allowing guests to learn more about the marine life they are observing.
-  - #solution [[Underwater photography service]]
+  - #solution Underwater photography service
   	- We provide a professional underwater photography service, capturing memorable moments for our guests to take home.
-  - #solution [[Underwater live streaming]]
+  - #solution Underwater live streaming
   	- Guests can enjoy live streaming of the underwater environment on screens throughout the restaurant, enhancing their dining experience.
-  - #solution [[Virtual reality underwater tours]]
+  - #solution Virtual reality underwater tours
   	- We offer virtual reality experiences where guests can take virtual tours of famous underwater locations around the world while dining.
 - ## 🗄️ Topics
   

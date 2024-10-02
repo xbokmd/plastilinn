@@ -20,54 +20,54 @@
   In summary, the Risk List model in business design is a strategic approach that involves identifying, documenting, and managing potential negative outcomes or uncertainties that may affect the success and sustainability of a business model. It is a crucial tool for enhancing business resilience, strategic planning, stakeholder communication, and overall business performance.
 - ## 👉 Examples
   ### Space X
-  #risk Technical Challenges
+  - #risk Technical Challenges
   Developing and operating advanced rocket technology is inherently complex and carries technical risks. Space X must overcome challenges related to propulsion systems, reusability, landing accuracy, and payload integration.
   
-  #risk Launch Failures
+  - #risk Launch Failures
   Launching rockets into space is a high-stakes endeavor, and failures can occur. Space X faces the risk of launch failures that can result in the loss of payloads and damage their reputation.
   
-  #risk Regulatory and Compliance
+  - #risk Regulatory and Compliance
   Operating in the space industry requires compliance with various regulations and governmental approvals. Compliance challenges or delays can impact their ability to conduct launches and generate revenue.
   
-  #risk Safety and Crewed Missions
+  - #risk Safety and Crewed Missions
   Ensuring the reliability and safety of crewed spacecraft, conducting rigorous testing, and managing risks associated with human spaceflight are critical concerns for Space X.
   
-  #risk Financial Viability
+  - #risk Financial Viability
   Space X faces financial risks, including securing adequate funding, managing costs, profitability challenges, and potential economic downturns that may affect demand for space services.
   ### 
   
   ### extinguished animals meat
-  - #risk [[Ethical Concerns]]
+  - #risk Ethical Concerns
   	- The company's use of biotechnology and genetic engineering to revive extinct animals may raise ethical concerns among consumers and animal rights organizations, potentially leading to backlash and boycotts.
-  - #risk [[Environmental Impact]]
+  - #risk Environmental Impact
   	- The process of reviving extinct animals and breeding them for meat production may have negative environmental consequences, such as habitat disruption and genetic contamination. This can result in regulatory restrictions and public opposition.
-  - #risk [[Health and Safety Risks]]
+  - #risk Health and Safety Risks
   	- The consumption of meat from revived extinct animals may pose health risks due to potential unknown effects on human health. This can lead to legal liabilities and damage to the company's reputation.
-  - #risk [[Limited Market Demand]]
+  - #risk Limited Market Demand
   	- The luxury food market is niche and may have limited demand for meat from extinct animals. The company may struggle to find enough customers willing to pay a premium price for this unique product.
-  - #risk [[Legal and Regulatory Constraints]]
+  - #risk Legal and Regulatory Constraints
   	- The company's activities involving biotechnology and genetic engineering may be subject to stringent regulations and oversight. Non-compliance or changes in regulations can hinder operations and increase costs.
   ### Exotic Pet Rental
-  - #risk [[Animal Welfare]]
+  - #risk Animal Welfare
   	- There is a risk of potential harm or stress to the exotic pets during the rental period, which could impact their health and well-being.
-  - #risk [[Legal and Liability]]
+  - #risk Legal and Liability
   	- Our business may face legal challenges or liability issues if customers misuse or mishandle the exotic pets, resulting in injuries or damages.
-  - #risk [[Demand Fluctuations]]
+  - #risk Demand Fluctuations
   	- The demand for exotic pet rentals may fluctuate, impacting our revenue and profitability. Factors such as seasonal variations or changing customer preferences can contribute to demand fluctuations.
-  - #risk [[Negative Public Perception]]
+  - #risk Negative Public Perception
   	- Some people may criticize or oppose the concept of exotic pet rentals, raising concerns about animal welfare or ethical considerations. Negative publicity can harm our reputation and affect customer trust.
-  - #risk [[Insurance Coverage]]
+  - #risk Insurance Coverage
   	- Obtaining appropriate insurance coverage for exotic pet rentals can be challenging, and inadequate coverage may expose our business to financial risks in case of accidents or incidents.
   ### Underwater restaurant
-  - #risk [[Environmental Impact]]
+  - #risk Environmental Impact
   	- The presence of a submarine-themed restaurant in an underwater environment may raise concerns about the impact on the marine ecosystem and conservation efforts. Ensuring sustainable practices and minimizing disturbance to marine life is crucial to maintaining public trust and avoiding potential backlash.
-  - #risk [[Infrastructure Challenges]]
+  - #risk Infrastructure Challenges
   	- Building and maintaining an underwater restaurant requires specialized infrastructure and ongoing maintenance. Risks include structural integrity, water leakage, and equipment malfunctions. Regular inspections and investment in maintenance are necessary to mitigate these risks.
-  - #risk [[Health and Safety]]
+  - #risk Health and Safety
   	- Operating a restaurant in an underwater environment presents unique health and safety challenges. Ensuring proper ventilation, emergency evacuation procedures, and adherence to food safety regulations are essential to protect both staff and customers.
-  - #risk [[Seasonal Demand]]
+  - #risk Seasonal Demand
   	- Depending on the location and target market, the demand for an underwater restaurant experience may be seasonal or subject to fluctuations. Managing revenue and expenses during low-demand periods is crucial to maintaining financial sustainability.
-  - #risk [[Perception and Customer Appeal]]
+  - #risk Perception and Customer Appeal
   	- While the concept of an underwater restaurant may be intriguing, some customers may have concerns about dining in such an environment. Addressing potential fears or misconceptions and effectively communicating the safety and uniqueness of the experience is important to attract and retain customers.
 - ## 🗄️ Topics
   - ### TODO #topic topic/Modelo de negocio/Ciclo de modelado de negocio/Análisis/Riesgos

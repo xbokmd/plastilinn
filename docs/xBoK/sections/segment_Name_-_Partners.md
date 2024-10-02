@@ -16,55 +16,55 @@
   In essence, the segment/partners is a strategic tool that enables businesses to build and manage their ecosystem, create and deliver value more effectively, and achieve competitive advantage. It is the backbone of collaborative business design and a key driver of business innovation and growth.
 - ## 👉 Examples
   ### Space X
-  #partner Commercial Satellite Operators
+  - #partner Commercial Satellite Operators
   Space X partners with commercial satellite operators to launch their satellites into orbit. Companies like SES, Iridium, and HughesNet have utilized Space X's launch services to deploy their satellite constellations.
   
-  #partner International Space Agencies
+  - #partner International Space Agencies
   Space X has collaborated with international space agencies, such as the European Space Agency (ESA) and the Japanese Aerospace Exploration Agency (JAXA), to launch scientific payloads or engage in cooperative space exploration missions.
   
-  #partner Research Institutions
+  - #partner Research Institutions
   Space X partners with research institutions to conduct scientific experiments or deploy research satellites into space.
   
-  #partner Contractors and Suppliers
+  - #partner Contractors and Suppliers
   Space X partners with contractors and suppliers for various aspects of their operations, including manufacturing rocket components, avionics systems, and ground support equipment.
   
-  #partner Ground Station Operators
+  - #partner Ground Station Operators
   Space X may collaborate with ground station operators to establish and maintain communication links with their satellites and spacecraft.
   
   ### 
   
   ### extinguished animals meat
-  - #stakeholder [[Gourmet Restaurants]]
+  - #stakeholder Gourmet Restaurants
   	- The company partners with gourmet restaurants to feature their luxury meat from revived extinct animals on their menus, attracting high-end customers.
-  - #stakeholder [[Luxury Food Retailers]]
+  - #stakeholder Luxury Food Retailers
   	- The company collaborates with luxury food retailers to sell their exclusive meat products, targeting affluent consumers who seek unique culinary experiences.
-  - #stakeholder [[Food Critics and Influencers]]
+  - #stakeholder Food Critics and Influencers
   	- The company engages with food critics and influencers to promote their luxury meat as a premium and extraordinary gastronomic offering.
-  - #stakeholder [[Environmental Conservation Organizations]]
+  - #stakeholder Environmental Conservation Organizations
   	- The company works with environmental conservation organizations to ensure that their activities align with biodiversity conservation efforts and address ethical concerns.
-  - #stakeholder [[Ethical Food Advocacy Groups]]
+  - #stakeholder Ethical Food Advocacy Groups
   	- The company collaborates with ethical food advocacy groups to address concerns and promote transparency in their processes, ensuring consumer trust.
   ### Exotic Pet Rental
-  - #stakeholder [[Pet Suppliers and Breeders]]
+  - #stakeholder Pet Suppliers and Breeders
   	- Our business partners with pet suppliers and breeders to source a wide variety of exotic pets for our rental service.
-  - #stakeholder [[Veterinarians and Animal Care Professionals]]
+  - #stakeholder Veterinarians and Animal Care Professionals
   	- We collaborate with veterinarians and animal care professionals to ensure the health and well-being of our exotic pets throughout their rental period.
-  - #stakeholder [[Pet Stores and Retailers]]
+  - #stakeholder Pet Stores and Retailers
   	- We work with pet stores and retailers to promote our rental service and offer complementary products and services to our customers.
-  - #stakeholder [[Animal Welfare Organizations]]
+  - #stakeholder Animal Welfare Organizations
   	- We maintain a relationship with animal welfare organizations to ensure ethical treatment of exotic pets and support their initiatives for responsible pet ownership.
-  - #stakeholder [[Environmental Conservation Groups]]
+  - #stakeholder Environmental Conservation Groups
   	- We partner with environmental conservation groups to raise awareness about the impact of exotic pet trade and support conservation efforts for these species.
   ### Underwater restaurant
-  - #stakeholder [[Tourist Agencies]]
+  - #stakeholder Tourist Agencies
   	- The submarine themed restaurant partners with tourist agencies to promote and recommend the dining experience to tourists visiting the area.
-  - #stakeholder [[Seafood Suppliers]]
+  - #stakeholder Seafood Suppliers
   	- The restaurant collaborates with seafood suppliers to ensure a fresh and high-quality supply of ingredients for their menu.
-  - #stakeholder [[Marine Conservation Organizations]]
+  - #stakeholder Marine Conservation Organizations
   	- The restaurant works with marine conservation organizations to support and contribute to the preservation of marine ecosystems.
-  - #stakeholder [[Local Fishermen]]
+  - #stakeholder Local Fishermen
   	- The restaurant partners with local fishermen to source sustainable seafood options and support the local fishing community.
-  - #stakeholder [[Interior Designers]]
+  - #stakeholder Interior Designers
   	- The restaurant collaborates with interior designers to create an authentic submarine-themed ambiance, enhancing the overall dining experience.
 - ## 🗄️ Topics
   

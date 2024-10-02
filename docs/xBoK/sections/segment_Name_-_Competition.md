@@ -16,65 +16,65 @@
   The "Competition" concept in business modeling is crucial because it helps businesses to understand the competitive landscape and to develop strategies that will allow them to compete effectively. This can lead to increased market share, customer loyalty, and ultimately, business success.
 - ## 👉 Examples
   ### Space X
-  #competitor Blue Origin
+  - #competitor Blue Origin
   Founded by Jeff Bezos, Blue Origin focuses on developing reusable rockets and spacecraft for various missions, including satellite launches and human spaceflight. They are also working on the New Glenn rocket and the lunar lander program.
   
-  #competitor United Launch Alliance (ULA)
+  - #competitor United Launch Alliance (ULA)
   ULA is a joint venture between Boeing and Lockheed Martin, offering launch services using their Atlas V and Delta IV rockets. They have a strong presence in government and military contracts, including launching national security satellites.
   
-  #competitor Arianespace
+  - #competitor Arianespace
   Arianespace is a European space company that provides launch services using the Ariane family of rockets. They have a significant market share in launching commercial satellites, particularly for European customers.
   
-  #competitor Roscosmos
+  - #competitor Roscosmos
   The Russian space agency, Roscosmos, competes in various segments of the space industry. They offer launch services using their Soyuz rockets, have their own crewed space program, and provide services to international partners.
   
-  #competitor Virgin Orbit
+  - #competitor Virgin Orbit
   An emerging private space company challenging the traditional space industry with innovative approaches and technologies.
   
   ### 
   
   ### extinguished animals meat
-  - #segment [[Luxury Exotic Meat Suppliers]]
+  - #segment Luxury Exotic Meat Suppliers
   	- Competitors in the luxury food market that offer unique and exotic meat products, catering to consumers seeking exclusive gastronomic experiences.
-  - #solution [[ReviveMeat]]
+  - #solution ReviveMeat
   	- A specialized process that allows the company to recreate the meat of extinct animals using biotechnology and genetic engineering techniques.
-  - #solution [[ExquisiteEats]]
+  - #solution ExquisiteEats
   	- A line of luxury meat products made from the meat of revived extinct animals, offering a unique and exclusive gastronomic experience.
-  - #solution [[BioCuisine]]
+  - #solution BioCuisine
   	- A range of high-end culinary creations made from the meat of revived extinct animals, catering to discerning customers in the luxury food market.
-  - #segment [[Biotechnology and Genetic Engineering Companies]]
+  - #segment Biotechnology and Genetic Engineering Companies
   	- Other companies engaged in biotechnology and genetic engineering, working on various applications and advancements in the field.
-  - #solution [[ReviveGourmet]]
+  - #solution ReviveGourmet
   	- A premium meat brand that focuses on reviving extinct animal species and offering their meat as a sustainable and ethical alternative for meat enthusiasts.
-  - #solution [[GeneticDelights]]
+  - #solution GeneticDelights
   	- A collection of gourmet meat products made from the DNA of extinct animals, providing a one-of-a-kind indulgence for food connoisseurs.
-  - #segment [[Sustainable and Ethical Food Companies]]
+  - #segment Sustainable and Ethical Food Companies
   	- Competitors focusing on sustainable and ethical food production, appealing to consumers who prioritize environmental and ethical considerations in their purchasing decisions.
-  - #segment [[Biodiversity Conservation Organizations]]
+  - #segment Biodiversity Conservation Organizations
   	- Entities dedicated to the conservation of biodiversity and protection of endangered species, advocating for the preservation of natural habitats and ecosystems.
-  - #segment [[High-end Restaurants and Specialty Food Stores]]
+  - #segment High-end Restaurants and Specialty Food Stores
   	- Competitors in the high-end dining and specialty food retail sector, offering unique and premium products to affluent consumers.
   ### Exotic Pet Rental
-  - #segment [[Pet Adoption Centers]]
+  - #segment Pet Adoption Centers
   	- Pet adoption centers provide an alternative option for individuals seeking companionship without long-term commitments by offering a variety of pets for adoption, including exotic species.
-  - #segment [[Petting Zoos]]
+  - #segment Petting Zoos
   	- Petting zoos provide an opportunity for people to interact with and experience exotic animals in a controlled environment, offering a similar temporary experience without the responsibility of ownership.
-  - #segment [[Animal Sanctuaries]]
+  - #segment Animal Sanctuaries
   	- Animal sanctuaries focus on providing a safe and caring environment for exotic animals, allowing visitors to observe and interact with the animals while supporting conservation efforts.
-  - #segment [[Zoos and Wildlife Parks]]
+  - #segment Zoos and Wildlife Parks
   	- Zoos and wildlife parks offer a wide range of exotic animals for visitors to see and learn about, providing an educational and temporary experience similar to our exotic pet rental service.
-  - #segment [[Animal Therapy Programs]]
+  - #segment Animal Therapy Programs
   	- Animal therapy programs utilize exotic animals to provide therapeutic benefits to individuals, allowing them to experience the calming and healing effects of interacting with these unique creatures.
   ### Underwater restaurant
-  - #segment [[Underwater Restaurants]]
+  - #segment Underwater Restaurants
   	- Other underwater restaurants around the world, such as The Rock Restaurant in Zanzibar and Ithaa Undersea Restaurant in the Maldives.
-  - #segment [[Aquarium Restaurants]]
+  - #segment Aquarium Restaurants
   	- Restaurants located within aquariums, such as the Aquarium Restaurant in Nashville and the Rainforest Cafe with its underwater-themed dining experience.
-  - #segment [[Luxury Dining Experiences]]
+  - #segment Luxury Dining Experiences
   	- High-end restaurants that offer unique and immersive dining experiences, such as Dinner in the Sky and The Grotto in Thailand.
-  - #segment [[Marine-themed Restaurants]]
+  - #segment Marine-themed Restaurants
   	- Restaurants with marine-themed decor and cuisine, such as The Crab Pot in Seattle and The Boathouse at Disney Springs.
-  - #segment [[Tourist Attractions]]
+  - #segment Tourist Attractions
   	- Other tourist attractions that offer unique experiences, such as theme parks, museums, and natural landmarks.
 - ## 🗄️ Topics
   

@@ -18,42 +18,42 @@
   In essence, the profile/transactions model is a powerful tool for businesses to manage their operations, understand their customers, and drive their performance. It is a key component of business design and a critical driver of business success.
 - ## 👉 Examples
   ### Space X
-  #transaction Contractual Agreements
+  - #transaction Contractual Agreements
   Space X engages in contractual agreements with space agencies for the provision of launch services, including the negotiation of terms, pricing, and other contractual obligations. These agreements outline the scope of work, performance requirements, and other relevant terms and conditions.
   ### 
   
   ### extinguished animals meat
-  - #segment [[Luxury Food Enthusiasts]]
+  - #segment Luxury Food Enthusiasts
   	- The company targets affluent individuals who are passionate about unique and exclusive gastronomic experiences.
-  - #segment [[High-End Restaurants]]
+  - #segment High-End Restaurants
   	- The company focuses on partnering with upscale restaurants that cater to customers seeking extraordinary dining options.
-  - #segment [[Specialty Food Retailers]]
+  - #segment Specialty Food Retailers
   	- The company collaborates with specialized food retailers that cater to a discerning customer base looking for premium and rare products.
-  - #transaction [[Exclusive Gastronomic Events]]
+  - #transaction Exclusive Gastronomic Events
   	- The company organizes exclusive events where customers can experience the taste of revived extinct animal meat in a luxurious setting.
-  - #transaction [[Collaborations with Celebrity Chefs]]
+  - #transaction Collaborations with Celebrity Chefs
   	- The company partners with renowned chefs to create signature dishes using the unique meat products, enhancing their desirability and market appeal.
   ### Exotic Pet Rental
-  - #segment [[Pet Enthusiasts]]
+  - #segment Pet Enthusiasts
   	- The company targets individuals who have a passion for pets and enjoy the unique experience of interacting with exotic animals.
-  - #segment [[Temporary Pet Owners]]
+  - #segment Temporary Pet Owners
   	- The company focuses on individuals who want to experience the companionship of an exotic pet without the long-term commitment.
-  - #segment [[Event Planners]]
+  - #segment Event Planners
   	- The company caters to event planners who want to add a unique and memorable touch to their events by incorporating exotic pets.
-  - #transaction [[Educational Institutions]]
+  - #transaction Educational Institutions
   	- The company offers educational institutions the opportunity to provide hands-on learning experiences with exotic pets for students.
-  - #transaction [[Advertising and Media Agencies]]
+  - #transaction Advertising and Media Agencies
   	- The company collaborates with advertising and media agencies to create captivating campaigns featuring exotic pets, attracting attention and generating interest.
   ### Underwater restaurant
-  - #segment [[Tourists and Travelers]]
+  - #segment Tourists and Travelers
   	- The restaurant targets tourists and travelers who are looking for unique dining experiences during their visit to the area.
-  - #segment [[Food Enthusiasts]]
+  - #segment Food Enthusiasts
   	- The restaurant appeals to food enthusiasts who are interested in trying new and innovative dining concepts.
-  - #segment [[Special Occasions]]
+  - #segment Special Occasions
   	- The restaurant caters to individuals and groups celebrating special occasions such as birthdays, anniversaries, or corporate events.
-  - #transaction [[Marine Life Enthusiasts]]
+  - #transaction Marine Life Enthusiasts
   	- The restaurant attracts customers who have a passion for marine life and enjoy being surrounded by underwater environments.
-  - #transaction [[Event Planners]]
+  - #transaction Event Planners
   	- The restaurant collaborates with event planners to host private events, weddings, or themed parties in the unique underwater setting.
 - ## 🗄️ Topics
   
