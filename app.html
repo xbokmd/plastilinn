@@ -20,6 +20,34 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://xbokmd.github.io/plastilinn/css.css">
+
+    <style>
+        @keyframes blinkRed {
+            0% {
+                background-color: transparent;
+            }
+
+            50% {
+                background-color: red;
+            }
+
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        #show-selected {
+            animation: blinkRed 1s infinite;
+            background-color: transparent;
+            /* Establecer color inicial transparente */
+        }
+
+        #show-selected:empty {
+            display: none;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -105,12 +133,12 @@
                                 <span class="material-symbols-outlined">filter_alt</span> Active filters
                             </div>
                             <!-- Contenedor para las etiquetas seleccionadas -->
-                            <div id="show-selected" class="flex gap-2 p-2 bg-red-100 rounded">
-                                <span class="gap-2">
-                                    <span v-for="tag in selectedTags" :key="tag"
-                                        class="h-8 px-2 text-sm bg-gray-300 rounded" :data-tag="tag">{{ tag }}</span>
+                            <div class="flex gap-2 p-2 bg-red-100 rounded">
+                                <span id="show-selected" class="gap-2 rounded">
+                                    <span v-for="tag in selectedTags" :key="tag" class="h-8 px-2 text-sm rounded"
+                                        :data-tag="tag">{{ tag }}</span>
                                     <span v-for="marker in selectedMarkers" :key="marker"
-                                        class="h-8 px-2 text-sm bg-gray-300 rounded" :data-marker="marker">{{ marker
+                                        class="h-8 px-2 text-sm rounded" :data-marker="marker">{{ marker
                                         }}</span>
                                 </span>
                             </div>
@@ -274,6 +302,27 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+
+
+
+                            <style>
+                                .md-block-content ul {
+                                    padding-left: 10px;
+                                }
+                            </style>
+
+
+
+
+
+
+
+
+
                             <div class="modelContainer m-2 p-0">
                                 <div class="flex flex-row w-full">
                                     <div class="md-block-wrapper w-full">
