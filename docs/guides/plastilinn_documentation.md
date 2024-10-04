@@ -17,11 +17,6 @@
 <span id="idea-definition-canvas"></span>
 ### Idea Definition Canvas
 
-[Provide a brief description of your business idea](#provide-a-brief-description-of-your-business-idea)
-[Who will be the user of the product or service?](#who-will-be-the-user-of-the-product-or-service)
-[Problem](#problem)
-[Solution](#solution)
-
 This guide will help you outline your business idea in Plastilinn at a very high level.
 
 ##### Idea Definition Canvas > Idea description
@@ -40,208 +35,153 @@ Edit the 🆔 [Main profile](<#Main profile>) section of your plastilinn doc
 
 List the top three problems your target customers face.
 
-🆔 [Main profile - Goals](<#Main profile - Goals>) section of your plastilinn doc
+Edit the 🆔 [Main profile - Goals](<#Main profile - Goals>) section of your plastilinn doc
 
 ##### Idea Definition Canvas > Solution
 
 Outline the proposed solutions to the top problems you've identified.
 
-🆔 [Main solution](<#Main solution>) section of your plastilinn doc
+Edit the 🆔 [Main solution](<#Main solution>) section of your plastilinn doc
 
 ---
 
-<span id="lean-canvas"></span>
 ### Lean Canvas
 
-[Customer Segments](#customer-segments)
-[Problem](#problem-1)
-[Unique Value Proposition](#unique-value-proposition)
-[Solution](#solution-1)
-[Channels](#channels)
-[Revenue Streams](#revenue-streams)
-[Cost Structure](#cost-structure)
-[Key Metrics](#key-metrics)
-[Unfair Advantage](#unfair-advantage)
-
-<span id="customer-segments"></span>
-##### Customer Segments
+##### Lean Canvas > Customer Segments
 
 Define the target customer segments you want to serve.
 
-🆔 [Main profile](<#profile Main profile>)
+Edit the 🆔 [Main profile](<#profile Main profile>) section of your plastilinn doc
 
-<span id="problem-1"></span>
-##### Problem
+##### Lean Canvas > Problem
 
 List the top three problems your target customers face.
 
-🆔 [goals](<#Main profile - Goals>)
+Edit the 🆔 [goals](<#Main profile - Goals>) section of your plastilinn doc
 
-<span id="unique-value-proposition"></span>
-##### Unique Value Proposition
+##### Lean Canvas > Unique Value Proposition
 
 Describe the unique and compelling value you offer to your customers that sets you apart from the competition.
 
-🆔[value proposition](<#Main profile - Value proposition>)
+Edit the 🆔[value proposition](<#Main profile - Value proposition>) section of your plastilinn doc
 
-<span id="solution-1"></span>
-##### Solution
+##### Lean Canvas > Solution
 
 Outline the proposed solutions to the top problems you've identified.
 
-🆔[solution](<#Main Solution - Solution>)
+Edit the 🆔[solution](<#Main Solution - Solution>) section of your plastilinn doc
 
-<span id="channels"></span>
-##### Channels
+##### Lean Canvas > Channels
 
 List the channels you'll use to reach your target customers.
 
-🆔[channels](<#Main profile - Channels>)
+Edit the 🆔[channels](<#Main profile - Channels>) section of your plastilinn doc
 
-<span id="revenue-streams"></span>
-##### Revenue Streams
+##### Lean Canvas > Revenue Streams
 
 Identify the ways your business will generate revenue.
 
-🆔[revenue lines](<#Revenue lines>)
+Edit the 🆔[revenue lines](<#Revenue lines>) section of your plastilinn doc
 
-<span id="cost-structure"></span>
-##### Cost Structure
+##### Lean Canvas > Cost Structure
 
 Enumerate the main costs associated with your business model.
 
-🆔[cost lines](<#Cost lines>)
+Edit the 🆔[cost lines](<#Cost lines>) section of your plastilinn doc
 
-<span id="key-metrics"></span>
-##### Key Metrics
+##### Lean Canvas > Key Metrics
 
 Define the key metrics that will help you track your business's success.
 
-🆔[metric list](<#Metric list>)
+Edit the 🆔[metric list](<#Metric list>) section of your plastilinn doc
 
-<span id="unfair-advantage"></span>
-##### Unfair Advantage
+##### Lean Canvas > Unfair Advantage
 
 Describe any unfair advantage you may have that cannot be easily copied or bought by competitors.
 
-🆔[unfair advantage](<#Unfair advantage>)
+Edit the 🆔[unfair advantage](<#Unfair advantage>) section of your plastilinn doc
 
-<span id="business-model-canvas"></span>
-### Business Model Canvas
-
-<span id="empathy-map"></span>
 ### Empathy Map
 
-[Think \& Feel](#think--feel)
-[Hear](#hear)
-[See](#see)
-[Say \& Do](#say--do)
-[Pain](#pain)
-[Gain](#gain)
-
-<span id="think-feel"></span>
-##### Think & Feel
+##### Empathy Map > Think & Feel
 
 What are the thoughts and feelings that occupy the customer's mind? Consider worries, aspirations, and how the environment affects them.
-🆔 think-feel
+Edit the 🆔 think-feel
 
-<span id="hear"></span>
-##### Hear
+##### Empathy Map > Hear
 
 What does the customer hear from their environment, friends, colleagues, and in the media? Include both positive and negative influences.
-🆔 hear
+Edit the 🆔 hear
 
-<span id="see"></span>
-##### See
+##### Empathy Map > See
 
 What does the customer see in their immediate environment, the market, and in the media? Capture their view of the world.
-🆔 see
+Edit the 🆔 see
 
-<span id="say-do"></span>
-##### Say & Do
+##### Empathy Map > Say & Do
 
 What does the customer say and do in their environment? How do they behave in public, and what might they be telling others?
-🆔 say-do
+Edit the 🆔 say-do
 
-<span id="pain"></span>
-##### Pain
+##### Empathy Map > Pain
 
 Identify the customer's pains. What frustrates them, causes them problems, or prevents them from achieving their goals?
-🆔 pain
+Edit the 🆔 pain
 
-<span id="gain"></span>
-##### Gain
+##### Empathy Map > Gain
 
 What are the customer's gains? Consider what successes look like, their hopes, and what they would consider a win.
-🆔 gain
+Edit the 🆔 gain
 
-<span id="value-proposition-canvas"></span>
 ### Value Proposition Canvas
 
-[Customer Segment](#customer-segment)
-[Customer Jobs](#customer-jobs)
-[Customer Pains](#customer-pains)
-[Customer Gains](#customer-gains)
-[Value Proposition](#value-proposition)
-[Pain Relievers](#pain-relievers)
-[Gain Creators](#gain-creators)
-[Products \& Services](#products--services)
-
-<span id="customer-segment"></span>
-##### Customer Segment
+##### Value Proposition Canvas > Customer Segment
 
 Describe the specific group of customers you are targeting.
 
-🆔 customer-profile
+Edit the 🆔 customer-profile
 
-<span id="customer-jobs"></span>
-##### Customer Jobs
+##### Value Proposition Canvas > Customer Jobs
 
 Enumerate the tasks your customers are trying to complete, problems they are trying to solve, or needs they are trying to satisfy.
 
-🆔 customer-jobs
+Edit the 🆔 customer-jobs
 
-<span id="customer-pains"></span>
-##### Customer Pains
+##### Value Proposition Canvas > Customer Pains
 
 Detail the negative experiences, emotions, and risks that your customers experience in the process of getting the job done.
 
-🆔 customer-pains
+Edit the 🆔 customer-pains
 
-<span id="customer-gains"></span>
-##### Customer Gains
+##### Value Proposition Canvas > Customer Gains
 
 Describe the benefits your customers dream of, including how they measure success and the positive outcomes they wish to achieve.
 
-🆔 customer-gains
+Edit the 🆔 customer-gains
 
-<span id="value-proposition"></span>
-##### Value Proposition
+##### Value Proposition Canvas > Value Proposition
 
 Articulate the unique value your product or service provides in addressing the customer jobs, relieving pains, and creating gains.
 
-🆔 value-proposition
+Edit the 🆔 value-proposition
 
-<span id="pain-relievers"></span>
-##### Pain Relievers
+##### Value Proposition Canvas > Pain Relievers
 
 Specify how your product or service alleviates specific customer pains.
 
-🆔 pain-relievers
+Edit the 🆔 pain-relievers
 
-<span id="gain-creators"></span>
-##### Gain Creators
+##### Value Proposition Canvas > Gain Creators
 
 Explain how your product or service creates customer gains, enhancing positive outcomes and benefits.
 
-🆔 gain-creators
+Edit the 🆔 gain-creators
 
-<span id="products-services"></span>
-##### Products & Services
+##### Value Proposition Canvas > Products & Services
 
 List the products or services you offer that tie into your value proposition.
 
-🆔 products-services
+Edit the 🆔 products-services
 
 <span id="premium"></span>
 ## Premium
