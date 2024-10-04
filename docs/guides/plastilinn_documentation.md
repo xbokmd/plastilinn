@@ -1,5 +1,5 @@
-<button>
-    <a href="https://plastilinn.com/#/pages/guide" target="_blank" style="color: white;"></i> Plastilinn guide</a>
+<button class="btn btn-primary btn-outline bg-base-200 p-2 rounded">
+    <a href="https://plastilinn.com/#/pages/guide" target="_blank"></i> Plastilinn guide</a>
 </button>
 
 **[Artifacts](#artifacts)**
@@ -26,25 +26,27 @@ This guide will help you outline your business idea in Plastilinn at a very high
 
 ##### Idea Definition Canvas > Idea description
 
-Describe your business idea in one or two paragraphs by editing the content of the [business summary](<#Business summary>) section.
+Describe your business idea in one or two paragraphs.
+
+Edit the 🆔 [Business idea](<#Business idea>) section of your plastilinn doc
 
 ##### Idea Definition Canvas > End user
 
 Who will be the user of the product or service? Define the target customer segments you want to serve.
 
-🆔 [Main profile](<#Main profile>)
+Edit the 🆔 [Main profile](<#Main profile>) section of your plastilinn doc
 
 ##### Idea Definition Canvas > Problems
 
 List the top three problems your target customers face.
 
-🆔 [Main profile - Goals](<#Main profile - Goals>)
+🆔 [Main profile - Goals](<#Main profile - Goals>) section of your plastilinn doc
 
 ##### Idea Definition Canvas > Solution
 
 Outline the proposed solutions to the top problems you've identified.
 
-🆔 [Main solution](<#Main solution>)
+🆔 [Main solution](<#Main solution>) section of your plastilinn doc
 
 ---
 
