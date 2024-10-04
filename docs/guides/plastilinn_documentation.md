@@ -1,9 +1,13 @@
-[Artifacts](#artifacts)
-[Idea Definition Canvas](idea-definition-canvas)
-[Lean Canvas](#lean-canvas)
-[Business Model Canvas](#business-model-canvas)
-[Empathy Map](#empathy-map)
-[Value Proposition Canvas](#value-proposition-canvas)
+<button style="background-color: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+    <a href="https://plastilinn.com/#/pages/guide" target="_blank" style="color: white;"><i class="fa-solid fa-file-arrow-down"></i> Plastilinn guide</a>
+</button>
+
+**[Artifacts](#artifacts)**
+- [Idea Definition Canvas](idea-definition-canvas)
+- [Lean Canvas](#lean-canvas)
+- [Business Model Canvas](#business-model-canvas)
+- [Empathy Map](#empathy-map)
+- [Value Proposition Canvas](#value-proposition-canvas)
 
 ---
 
@@ -13,7 +17,6 @@
 <span id="idea-definition-canvas"></span>
 ### Idea Definition Canvas
 
-[test]
 [Provide a brief description of your business idea](#provide-a-brief-description-of-your-business-idea)
 [Who will be the user of the product or service?](#who-will-be-the-user-of-the-product-or-service)
 [Problem](#problem)
