@@ -23,85 +23,87 @@ This guide will help you outline your business idea in Plastilinn at a very high
 
 Describe your business idea in one or two paragraphs.
 
-Edit the 🆔 [Business idea](<#Business idea>) section of your plastilinn doc
+Edit the 🆔 [Business idea](<#Business idea>) block of your plastilinn doc
 
 ##### Idea Definition Canvas > End user
 
 Who will be the user of the product or service? Define the target customer segments you want to serve.
 
-Edit the 🆔 [Main profile](<#Main profile>) section of your plastilinn doc
+Edit the 🆔 [Main profile](<#Main profile>) block of your plastilinn doc
 
 ##### Idea Definition Canvas > Problems
 
 List the top three problems your target customers face.
 
-Edit the 🆔 [Main profile - Goals](<#Main profile - Goals>) section of your plastilinn doc
+Edit the 🆔 [Main profile - Goals](<#Main profile - Goals>) block of your plastilinn doc
 
 ##### Idea Definition Canvas > Solution
 
 Outline the proposed solutions to the top problems you've identified.
 
-Edit the 🆔 [Main solution](<#Main solution>) section of your plastilinn doc
+Edit the 🆔 [Main solution](<#Main solution>) block of your plastilinn doc
 
 ---
 
 ### Lean Canvas
 
+
 ##### Lean Canvas > Customer Segments
 
 Define the target customer segments you want to serve.
 
-Edit the 🆔 [Main profile](<#profile Main profile>) section of your plastilinn doc
+Edit the 🆔 [Main profile](<#Main profile>) block of your plastilinn doc
 
 ##### Lean Canvas > Problem
 
 List the top three problems your target customers face.
 
-Edit the 🆔 [goals](<#Main profile - Goals>) section of your plastilinn doc
+Edit the 🆔 [goals](<#Main profile - Goals>) block of your plastilinn doc
 
 ##### Lean Canvas > Unique Value Proposition
 
 Describe the unique and compelling value you offer to your customers that sets you apart from the competition.
 
-Edit the 🆔[value proposition](<#Main profile - Value proposition>) section of your plastilinn doc
+Edit the 🆔[value proposition](<#Main profile - Value proposition>) block of your plastilinn doc
 
 ##### Lean Canvas > Solution
 
 Outline the proposed solutions to the top problems you've identified.
 
-Edit the 🆔[solution](<#Main Solution - Solution>) section of your plastilinn doc
+Edit the 🆔[solution](<#Main Solution>) block of your plastilinn doc
 
 ##### Lean Canvas > Channels
 
 List the channels you'll use to reach your target customers.
 
-Edit the 🆔[channels](<#Main profile - Channels>) section of your plastilinn doc
+Edit the 🆔[channels](<#Main profile - Channels>) block of your plastilinn doc
 
 ##### Lean Canvas > Revenue Streams
 
 Identify the ways your business will generate revenue.
 
-Edit the 🆔[revenue lines](<#Revenue lines>) section of your plastilinn doc
+Edit the 🆔[revenue lines](<#Revenue lines>) block of your plastilinn doc
 
 ##### Lean Canvas > Cost Structure
 
 Enumerate the main costs associated with your business model.
 
-Edit the 🆔[cost lines](<#Cost lines>) section of your plastilinn doc
+Edit the 🆔[cost lines](<#Cost lines>) block of your plastilinn doc
 
 ##### Lean Canvas > Key Metrics
 
 Define the key metrics that will help you track your business's success.
 
-Edit the 🆔[metric list](<#Metric list>) section of your plastilinn doc
+Edit the 🆔[metric list](<#Metric list>) block of your plastilinn doc
 
 ##### Lean Canvas > Unfair Advantage
 
 Describe any unfair advantage you may have that cannot be easily copied or bought by competitors.
 
-Edit the 🆔[unfair advantage](<#Unfair advantage>) section of your plastilinn doc
+Edit the 🆔[unfair advantage](<#Unfair advantage>) block of your plastilinn doc
 
 ### Empathy Map
+
 
 ##### Empathy Map > Think & Feel
 
