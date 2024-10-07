@@ -11,10 +11,9 @@
 
 ---
 
-<span id="artifacts"></span>
 ## Artifacts
 
-<span id="idea-definition-canvas"></span>
+
 ### Idea Definition Canvas
 
 This guide will help you outline your business idea in Plastilinn at a very high level.
@@ -47,6 +46,7 @@ Edit the 🆔 [Main solution](<#Main solution>) block of your plastilinn doc
 
 ### Lean Canvas
 
+The Lean Canvas is a simplified version of the business model canvas, tailored for startups and early-stage businesses. It is designed to be a more agile and dynamic tool, focusing on identifying and solving problems quickly, with an emphasis on understanding customer needs and building products that fit market demand.
 
 ##### Lean Canvas > Customer Segments
 
@@ -102,7 +102,7 @@ Describe any unfair advantage you may have that cannot be easily copied or bough
 
 Edit the 🆔[unfair advantage](<#Unfair advantage>) block of your plastilinn doc
 
-### Empathy Map
+### Empathy Map (WIP)
 
 
 ##### Empathy Map > Think & Feel
@@ -135,7 +135,7 @@ Edit the 🆔 pain
 What are the customer's gains? Consider what successes look like, their hopes, and what they would consider a win.
 Edit the 🆔 gain
 
-### Value Proposition Canvas
+### Value Proposition Canvas (WIP)
 
 ##### Value Proposition Canvas > Customer Segment
 

@@ -2416,7 +2416,7 @@
       "prompt": "Later in CUSTOM INFO, a business from an organization is described. Generate a logo for this company. The primary colors should be [specific colors, such as blue, green, etc.]. The style should be [minimalist, modern, elegant, classic, etc.], and the text should use a [serif, sans-serif, elegant, playful, etc.] font. The logo should convey [message or feeling you want to evoke, such as trust, energy, etc.]. Generate a logo in png format and ask the user if s/he wants to upload the image to imgur.\n\n\n\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/SpaceX-Logo.svg/640px-SpaceX-Logo.svg.png)\nFor Space X, the logo is a stylized representation of the company's name, featuring a sleek and modern design.\nIt incorporates the letter \"X\" in a unique way, symbolizing the company's focus on space exploration and innovation."
     },
     {
-      "item": "Persona",
+      "item": "profile Name - Persona",
       "caption": "Generate persona image",
       "url": "https://chatgpt.com/",
       "prompt": "Based on the \"Main profile - Persona\" section of the business mode described in CUSTOM INFO, generate a photographic portrait of the person described below, and add a link to download the image in png format:"
@@ -2434,7 +2434,7 @@
       "prompt": ""
     },
     {
-      "item": "values",
+      "item": "Organization values",
       "caption": "",
       "url": "",
       "prompt": ""
@@ -2452,7 +2452,7 @@
       "prompt": ""
     },
     {
-      "item": "solution",
+      "item": "solution Name",
       "caption": "",
       "url": "",
       "prompt": ""
