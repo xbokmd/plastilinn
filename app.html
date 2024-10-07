@@ -89,30 +89,28 @@
                         </div>
 
                         <div class="navbar-end">
-                            <div class="join">
-                                <button id="downloadBtn" @click="downloadMarkdown"
-                                    class="btn join-item btn-primary btn-outline no-animation">
-                                    <span class="material-symbols-outlined" translate="no">
-                                        download_for_offline
-                                    </span>
-                                    Download
-                                </button>
-                                <button id="exportBtn" @click="downloadHTML"
-                                    class="btn join-item btn-primary btn-outline no-animation">
-                                    <span class="material-symbols-outlined" translate="no">
-                                        download_for_offline
-                                    </span>
-                                    Export
-                                </button>
-                                <button @click="toggleAutoDownload"
-                                    :class="{'bg-green-500': autoDownloadEnabled, 'bg-gray-500': !autoDownloadEnabled}"
-                                    class="btn join-item btn-primary btn-outline no-animation">
-                                    <span class="material-symbols-outlined" translate="no">
-                                        toggle_on
-                                    </span>
-                                    Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
-                                </button>
-                            </div>
+                            <button id="downloadBtn" @click="downloadMarkdown"
+                                class="btn join-item btn-primary btn-outline no-animation">
+                                <span class="material-symbols-outlined" translate="no">
+                                    download_for_offline
+                                </span>
+                                Download
+                            </button>
+                            <button id="exportBtn" @click="downloadHTML"
+                                class="btn join-item btn-primary btn-outline no-animation">
+                                <span class="material-symbols-outlined" translate="no">
+                                    download_for_offline
+                                </span>
+                                Export
+                            </button>
+                            <button @click="toggleAutoDownload"
+                                :class="{'bg-green-500': autoDownloadEnabled, 'bg-gray-500': !autoDownloadEnabled}"
+                                class="btn join-item btn-primary btn-outline no-animation">
+                                <span class="material-symbols-outlined" translate="no">
+                                    toggle_on
+                                </span>
+                                Auto Download {{ autoDownloadEnabled ? 'ON' : 'OFF' }}
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -315,27 +313,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
-
-
-                            <style>
-                                .md-block-content ul {
-                                    padding-left: 10px;
-                                }
-                            </style>
-
-
-
-
-
-
-
-
-
                             <div class="modelContainer m-2 p-0">
                                 <div class="flex flex-row w-full">
                                     <div class="md-block-wrapper w-full">
@@ -726,7 +703,7 @@
                 },
 
                 getModelNameFromFileName(fileName) {
-                    let name = fileName.replace(/\.md$/, ''); // Elimina la extensión ".md"
+                    let name = fileName.replace(/\.(md|txt)$/, ''); // Elimina la extensión ".md" y ".txt"
                     name = name.replace(/ - saved.*$/, ''); // Elimina " - saved" y todo lo que sigue
                     return name;
                 },
@@ -1392,7 +1369,7 @@
                 generateFileName() {
                     const { modelName } = this; // Obtén el nombre actual del modelo
                     const timestamp = new Date().toISOString().replace(/[:-]|\.\d{3}/g, ''); // Genera un timestamp en el formato deseado
-                    return `${modelName} - saved ${timestamp}.md`; // Devuelve el nombre del archivo
+                    return `${modelName} - saved ${timestamp}.txt`; // Devuelve el nombre del archivo
                 },
 
                 // Método para guardar el contenido del nuevo editor como archivo Markdown

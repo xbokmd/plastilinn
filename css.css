@@ -453,6 +453,10 @@ border-color: #4f46e5; /* Cambia el color del borde al enfocar */
 box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); /* Sombra suave alrededor */
 }
 
+.md-block-content ul {
+    padding-left: 10px;
+}
+
 span[data-tag] {
     position: relative;
     border-radius: 4px;

@@ -116,18 +116,18 @@ Space X aims to establish a sustainable presence on Mars, developing technologie
 
 # Stakeholders #**** #>>>>>
 
-- - #stakeholder Satellite Launch Customers
+- #stakeholder Satellite Launch Customers
 This segment consists of commercial and government organizations that require satellite launch services. They are looking for a reliable and cost-effective platform to deploy their satellites and enhance their communication and Earth observation capabilities.
 
-- - #stakeholder Space Tourism Customers
+- #stakeholder Space Tourism Customers
 This segment consists of individuals and groups who are interested in experiencing weightlessness and enjoying unique views of Earth from space. They are willing to pay for the opportunity to become space tourists and have a once-in-a-lifetime experience.
 
-- - #stakeholder Space Exploration Enthusiasts
+- #stakeholder Space Exploration Enthusiasts
  This segment comprises individuals who are passionate about space exploration and are interested in participating in missions beyond low Earth orbit. They are looking for opportunities to travel to the Moon, Mars, and other destinations in the solar system.
 
 # Segment list #**** #>>>>>
 
-The - #stakeholder Satellite Launch Customers has these segments:
+The #stakeholder Satellite Launch Customers has these segments:
 
 - #segment Government Agencies
 The government agencies segment includes national space agencies that require space transportation and communication services for their missions.
@@ -140,7 +140,7 @@ The commercial companies segment includes private companies that require space t
 
 ## #segment Main segment #**** #>>>>>
 
-- #stakeholder Satellite Launch Customers / - #segment Government Agencies
+#stakeholder Satellite Launch Customers #segment Government Agencies
 The government agencies segment includes national space agencies that require space transportation and communication services for their missions.
 
 ### #segment Main segment - Segmentation criteria #*** #>>>>>
@@ -266,8 +266,10 @@ Reviews and provides advice on the contractual agreements, ensuring compliance w
 ## #profile Main profile #***** #>>>>>
 
 - #profile Space Agency Project Manager
-- #stakeholder Satellite Launch Customers / - #segment Government Agencies / - #role Project Manager
-The project manager is responsible for managing the acquisition process, including identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts.
+  #stakeholder Satellite Launch Customers
+  #segment Government Agencies
+  #role Project Manager
+  The project manager is responsible for managing the acquisition process, including identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts.
 
 ### #profile Main profile - Segmentation #*** #>>>>>
 
@@ -288,7 +290,7 @@ This segmentation criterion is applicable in B2B markets and categorizes compani
 
 Name: Sarah Johnson
 Demographic_information:
-Role: - #stakeholder Satellite Launch Customers / - #segment Government Agencies / - #role Project Manager
+Role: #stakeholder Satellite Launch Customers / #segment Government Agencies / #role Project Manager
 Age: 40
 Gender: Female
 Location: Washington, D.C., United States
@@ -569,13 +571,13 @@ Space X's long-term goal is to enable the colonization of Mars. They are develop
 ## #solution Main solution #***** #>>>>>
 
 - #solution Space X services
-- - #solution Falcon 9
+-#solution Falcon 9
   A two-stage rocket designed for the reliable and cost-effective transport of satellites and spacecraft to orbit. It is capable of carrying payloads of up to 22,800 kilograms to low Earth orbit and 8,300 kilograms to geostationary transfer orbit.
--  - #solution Falcon Heavy
+- #solution Falcon Heavy
   A heavy-lift launch vehicle that is currently the most powerful operational rocket in the world. It is capable of carrying payloads of up to 63,800 kilograms to low Earth orbit and 26,700 kilograms to geostationary transfer orbit.
- - - #solution Dragon spacecraft
+ -#solution Dragon spacecraft
   A reusable spacecraft designed for both cargo and crewed missions. It is capable of carrying up to 7 passengers to and from the International Space Station and can also deliver cargo to other destinations in sp- ace.
-  - - #solution Starship
+  -#solution Starship
   A fully reusable spacecraft currently under development by Space X. It is designed to be capable of carrying both crew and cargo to various destinations in space, including the Moon, Mars, and beyond.
 
 ### #solution Main solution - Category #** #>>>>>
@@ -949,7 +951,7 @@ These are the individuals who hold the most important positions in the company.
 
 ### #person Main person #**** #>>>>>
 
-- #person Elon Musk - #founder
+- #person Elon Musk #founder
 CEO and founder of Space X, Tesla, Neuralink, and The Boring Company. He is known for his ambitious vision of advancing technology and space exploration.
 Elon Musk is one of the founders of Space X and has played a crucial role in its establishment and development.
 He is a prominent entrepreneur and visionary known for his involvement in various ventures, including Tesla, Neuralink, and The Boring Company.
@@ -1630,6 +1632,22 @@ Calculate the cost per launch and measure savings compared to single-use rockets
 </div>
 
 # Attachments #* #>>>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
