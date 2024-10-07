@@ -90,14 +90,14 @@
 
                         <div class="navbar-end">
                             <button id="downloadBtn" @click="downloadMarkdown"
-                                class="btn join-item btn-primary btn-outline no-animation">
+                                class="btn btn-primary btn-outline no-animation">
                                 <span class="material-symbols-outlined" translate="no">
                                     download_for_offline
                                 </span>
                                 Download
                             </button>
                             <button id="exportBtn" @click="downloadHTML"
-                                class="btn join-item btn-primary btn-outline no-animation">
+                                class="btn btn-primary btn-outline no-animation">
                                 <span class="material-symbols-outlined" translate="no">
                                     download_for_offline
                                 </span>
@@ -105,7 +105,7 @@
                             </button>
                             <button @click="toggleAutoDownload"
                                 :class="{'bg-green-500': autoDownloadEnabled, 'bg-gray-500': !autoDownloadEnabled}"
-                                class="btn join-item btn-primary btn-outline no-animation">
+                                class="btn btn-primary btn-outline no-animation">
                                 <span class="material-symbols-outlined" translate="no">
                                     toggle_on
                                 </span>
@@ -260,7 +260,7 @@
                             <div class="plastilinn-hero hero pt-12" v-if="!modelMarkdownLoaded">
                                 <div class="hero-content text-center">
                                     <div class="">
-                                        <div role="alert" class="alert alert-error">
+                                        <div role="alert" class="alert alert-error mb-4">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -268,11 +268,9 @@
                                             </svg>
                                             <div>
                                                 <div class="font-bold">Disclaimer: Early Days Ahead! 🚧</div>
-                                                <div class="text-xs">Hey there, brave explorer! You’re
+                                                <div>Hey there, brave explorer! You’re
                                                     about to dive into the preview version
-                                                    of our app. It's still a bit like a baby giraffe—wobbly on its feet,
-                                                    but
-                                                    full of potential! 🦒 Expect some bumps, bugs, and quirky moments
+                                                    of our app. Expect some bumps, bugs, and quirky moments
                                                     along
                                                     the way. We're hard at work ironing out the kinks, and your feedback
                                                     will help us grow strong and steady. Thanks for being part of the
