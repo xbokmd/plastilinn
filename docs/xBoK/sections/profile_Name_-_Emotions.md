@@ -1,9 +1,57 @@
 # #profile Name - Emotions
 - ## 🔍 Definition
   - Emotions that our stakeholders feel and that are relevant to empathize with them and be able to design a value proposition that resonates with them.
+- ## 📹 Internet info and videos
+  - [Search info and videos about #profile Name - Emotions using AI](https://www.perplexity.ai/search?q=videos+about+Emotions:+Emotions+that+our+stakeholders+feel+and+that+are+relevant+to+empathize+with+them+and+be+able+to+design+a+value+proposition+that+resonates+with+them.
+)
 - ## 📰 Content type (#emotion)
   - Content is of type list and uses the following classes: #emotion
 
+- ## 📋 Class list
+
+<div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
+  <ul style='list-style-type: none; padding-left: 0;'>
+
+
+<li>- #emotion  😍  Love</li>
+<li>- #emotion  😂  Joy</li>
+<li>- #emotion  🙏  Gratitude</li>
+<li>- #emotion  🧘  Contentment</li>
+<li>- #emotion  🤩  Enthusiasm</li>
+<li>- #emotion  ❤️  Compassion</li>
+<li>- #emotion  🤝  Empathy</li>
+<li>- #emotion  💔  Sympathy</li>
+<li>- #emotion  🤞  Hope</li>
+<li>- #emotion  🏆  Pride</li>
+<li>- #emotion  🤯  Awe</li>
+<li>- #emotion  🤔  Curiosity</li>
+<li>- #emotion  🤪  Excitement</li>
+<li>- #emotion  🤝  Trust</li>
+<li>- #emotion  😲  Surprise</li>
+<li>- #emotion  🔜  Anticipation</li>
+<li>- #emotion  🤷  Confusion</li>
+<li>- #emotion  😕  Ambivalence</li>
+<li>- #emotion  🥱  Boredom</li>
+<li>- #emotion  🕰️  Nostalgia</li>
+<li>- #emotion  😩  Disappointment</li>
+<li>- #emotion  😔  Loneliness</li>
+<li>- #emotion  🤫  Envy</li>
+<li>- #emotion  😰  Anxiety</li>
+<li>- #emotion  🥺  Shame</li>
+<li>- #emotion  😳  Guilt</li>
+<li>- #emotion  😔  Sadness</li>
+<li>- #emotion  🤬  Resentment</li>
+<li>- #emotion  🤨  Jealousy</li>
+<li>- #emotion  😞  Regret</li>
+<li>- #emotion  😫  Frustration</li>
+<li>- #emotion  😠  Anger</li>
+<li>- #emotion  😨  Fear</li>
+<li>- #emotion  🤢  Disgust</li>
+<li>- #emotion  💀  Pity</li>
+<li>- #emotion  😵  Overwhelm</li>
+
+  </ul>
+</div>
 - ## 📖 Description
   The concept of "Emotions" in business modeling refers to the emotional aspects that influence the behaviors and decisions of customers, employees, and other stakeholders. This concept is crucial in a business model as it helps companies understand and manage these emotional aspects to enhance their relationships with these stakeholders, improve their experiences, and ultimately, drive their business success.
   
@@ -84,6 +132,8 @@
   	- A line of merchandise and souvenirs inspired by the Submarine Themed Restaurant, allowing customers to take a piece of the experience home with them.
   - #solution MarineLifeEducation
   	- An educational program that offers interactive workshops and classes on marine life conservation and the importance of protecting underwater ecosystems.
+- ## 🔑 Keys
+  
 - ## 🗄️ Topics
   
 - ## 🧰 Tools
@@ -101,5 +151,3 @@
     - VOC programs involve collecting and analyzing customer feedback to understand their emotions and needs. This information can then be used to design a value proposition that resonates with them.
   - [[Net Promoter Score (NPS)]]
     - NPS is a tool that measures customer loyalty and satisfaction. It can provide insights into the emotions of customers and how they feel about a company's products or services.
-- ## 🔑 Keys
-  

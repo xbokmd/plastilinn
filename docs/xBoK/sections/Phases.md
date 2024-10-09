@@ -1,9 +1,24 @@
 # Phases
 - ## 🔍 Definition
   - the distinct stages or steps involved in the development, implementation, and evolution of a business model.
+- ## 📹 Internet info and videos
+  - [Search info and videos about Phases using AI](https://www.perplexity.ai/search?q=videos+about+Phases:+the+distinct+stages+or+steps+involved+in+the+development,+implementation,+and+evolution+of+a+business+model.
+)
 - ## 📰 Content type (#phase)
   - Content is of type list and uses the following classes: #phase
 
+- ## 📋 Class list
+
+<div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
+  <ul style='list-style-type: none; padding-left: 0;'>
+
+
+<li>- #phase  Idea Stage</li>
+<li>- #phase  Seed Stage</li>
+<li>- #phase  Growth Stage</li>
+
+  </ul>
+</div>
 - ## 📖 Description
   The concept of "Phases" in business modeling refers to the distinct stages or steps involved in the development, implementation, and evolution of a business model. These phases are critical in shaping the business model and ensuring its success and sustainability. 
   
@@ -63,6 +78,8 @@
   	- Following strict guidelines to preserve and protect the underwater ecosystem.
   - #phase Event and Activity Phase:
   	- Organizing live music performances, educational sessions, and interactive experiences.
+- ## 🔑 Keys
+  
 - ## 🗄️ Topics
   
 - ## 🧰 Tools
@@ -76,5 +93,3 @@
     - Agile methodology, often used in software development, can also be applied to business model development. The phases in Agile include "Requirements, Design, Development, Testing, Deployment, Review". The process is iterative, with each phase being revisited in response to the insights gained in the previous phase.
   - [[Blue Ocean Strategy]]
     - The Blue Ocean Strategy, developed by W. Chan Kim and Renée Mauborgne, includes distinct phases in the development and implementation of a business model. These phases are "Reconstruct Market Boundaries, Focus on the Big Picture, Reach Beyond Existing Demand, Get the Strategic Sequence Right". The process involves creating a new market space (blue ocean), rather than competing in an existing market (red ocean).
-- ## 🔑 Keys
-  
