@@ -3,7 +3,10 @@
   - Means through which we interact with our clients throughout the life cycle.
 - ## 📰 Content type (#channel)
   - Content is of type list and uses the following classes: #channel
-  ```
+
+## List
+
+```
   - #[[channel]]  [[Pay-per-click/PPC advertising]]
   - #[[channel]]  [[Phone]]
   - #[[channel]]  [[SMS/Text messaging]]
@@ -143,7 +146,7 @@
   - #[[channel]]  [[Bullseye framework/Community Building]]
   - #[[channel]]  [[Bullseye framework/Targeting Blogs]]
   - #[[channel]]  [[Bullseye framework/Trade Shows (inc. Virtual)]]
-  ```
+```
 
 
 - ## 📖 Description
