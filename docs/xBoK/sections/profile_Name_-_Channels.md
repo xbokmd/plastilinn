@@ -5,8 +5,7 @@
   - Content is of type list and uses the following classes: #channel
 
 ## List
-
-```
+<div style="max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 300px;">
   - #[[channel]]  [[Pay-per-click/PPC advertising]]
   - #[[channel]]  [[Phone]]
   - #[[channel]]  [[SMS/Text messaging]]
@@ -108,46 +107,7 @@
   - #[[channel]]  [[Live video streaming/Facebook Live]]
   - #[[channel]]  [[Live video streaming/Instagram Live]]
   - #[[channel]]  [[Product sampling campaigns]]
-  - #[[channel]]  [[Crowdfunding platforms]]
-  - #[[channel]]  [[Online auctions]]
-  - #[[channel]]  [[Online classifieds]]
-  - #[[channel]]  [[Mobile app stores/Apple App Store]]
-  - #[[channel]]  [[Mobile app stores/Google Play Store]]
-  - #[[channel]]  [[User-generated content campaigns]]
-  - #[[channel]]  [[Loyalty apps]]
-  - #[[channel]]  [[SMS marketing campaigns]]
-  - #[[channel]]  [[Mobile wallet loyalty cards]]
-  - #[[channel]]  [[Customer feedback platforms]]
-  - #[[channel]]  [[Live chat support software]]
-  - #[[channel]]  [[Influencer endorsements]]
-  - #[[channel]]  [[Branded merchandise]]
-  - #[[channel]]  [[Virtual reality/VR storefronts]]
-  - #[[channel]]  [[Augmented reality/AR try-on experiences]]
-  - #[[channel]]  [[Online contest or giveaway platforms]]
-  - #[[channel]]  [[Social media contests or giveaways]]
-  - #[[channel]]  [[Customer appreciation events]]
-  - #[[channel]]  [[User-generated content competitions]]
-  - #[[channel]]  [[Bullseye framework/Viral Marketing]]
-  - #[[channel]]  [[Bullseye framework/Public relations]]
-  - #[[channel]]  [[Bullseye framework/Unconventional PR]]
-  - #[[channel]]  [[Bullseye framework/Search Engine Marketing]]
-  - #[[channel]]  [[Bullseye framework/Social & Display Ads]]
-  - #[[channel]]  [[Bullseye framework/Offline Advertising]]
-  - #[[channel]]  [[Bullseye framework/SEO]]
-  - #[[channel]]  [[Bullseye framework/Content Marketing]]
-  - #[[channel]]  [[Bullseye framework/Email Marketing]]
-  - #[[channel]]  [[Bullseye framework/Engineering As Marketing]]
-  - #[[channel]]  [[Bullseye framework/Business Development]]
-  - #[[channel]]  [[Bullseye framework/Sales]]
-  - #[[channel]]  [[Bullseye framework/Affiliate Programs]]
-  - #[[channel]]  [[Bullseye framework/Existing Platforms]]
-  - #[[channel]]  [[Bullseye framework/Events]]
-  - #[[channel]]  [[Bullseye framework/Speaking Engagements]]
-  - #[[channel]]  [[Bullseye framework/Community Building]]
-  - #[[channel]]  [[Bullseye framework/Targeting Blogs]]
-  - #[[channel]]  [[Bullseye framework/Trade Shows (inc. Virtual)]]
-```
-
+</div>
 
 - ## 📖 Description
   - In a business model, "channels" refer to the various methods and pathways a company uses to communicate with its customers and deliver its products or services. These channels play a crucial role in customer experience, as they are the touchpoints that directly interact with the market. They can be broadly categorized into two types:
