@@ -3,11 +3,11 @@
 </button>
 
 **[Artifacts](#artifacts)**
-- [Idea Definition Canvas](idea-definition-canvas)
-- [Lean Canvas](#lean-canvas)
-- [Business Model Canvas](#business-model-canvas)
-- [Empathy Map](#empathy-map)
-- [Value Proposition Canvas](#value-proposition-canvas)
+- [Idea Definition Canvas](idea-definition canvas)
+- [Lean Canvas](#lean canvas)
+- [Business Model Canvas](#business model canvas)
+- [Empathy Map](#empathy map)
+- [Value Proposition Canvas](#value proposition canvas)
 
 ---
 

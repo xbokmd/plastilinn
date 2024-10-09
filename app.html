@@ -39,7 +39,6 @@
         #show-selected {
             animation: blinkRed 1s infinite;
             background-color: transparent;
-            /* Establecer color inicial transparente */
         }
 
         #show-selected:empty {
@@ -203,7 +202,8 @@
                                             <div class="flex flex-col mt-4">
                                                 <div class="tag-group mb-4 px-2 py-3 bg-gray-200 rounded-md shadow-lg">
                                                     <div class="tag-name text-center font-semibold text-blue-600 mb-2">
-                                                        Tags
+                                                        Tags <a href="https://plastilinn.com/#/pages/guide?id=tags"
+                                                            target="_blank">ℹ️</a>
                                                     </div>
                                                     <ul class="flex justify-center items-center flex-wrap gap-2">
                                                         <li v-for="tag in tags" :key="`tag-${tag}`"
@@ -219,24 +219,29 @@
                                                     </ul>
                                                 </div>
                                             </div>
-
-                                            <div v-for="(values, markerName) in prepareMarkers()" :key="markerName"
-                                                class="marker-group bg-gray-200 rounded-md shadow-lg">
-                                                <ul class="flex flex-wrap gap-2">
-                                                    <li>
-                                                        <div class="badge badge-neutral">{{ markerName }}</div>
-                                                    </li>
-                                                    <li v-for="value in values" :key="`marker-${markerName}-${value}`"
-                                                        class="filter-switch-item">
-                                                        <input class="checkbox checkbox-primary sr-only"
-                                                            :id="`marker-${markerName}-${value}`"
-                                                            :value="`${markerName}:${value}`" type="checkbox"
-                                                            @change="toggleMarkerSelection(`${value}`)">
-                                                        <label :for="`marker-${markerName}-${value}`"
-                                                            class="cursor-pointer inline-block text-sm text-gray-600 hover:text-gray-800 bg-white rounded shadow p-1">{{
-                                                            value }}</label>
-                                                    </li>
-                                                </ul>
+                                            <div class="marker-group mb-4 px-2 py-3 bg-gray-200 rounded-md shadow-lg">
+                                                <div class="tag-name text-center font-semibold text-blue-600 mb-2">
+                                                    Markers <a href="https://plastilinn.com/#/pages/guide?id=markers"
+                                                        target="_blank">ℹ️</a>
+                                                </div>
+                                                <div v-for="(values, markerName) in prepareMarkers()" :key="markerName">
+                                                    <ul class="flex flex-wrap gap-2">
+                                                        <li>
+                                                            <div class="badge badge-neutral">{{ markerName }}</div>
+                                                        </li>
+                                                        <li v-for="value in values"
+                                                            :key="`marker-${markerName}-${value}`"
+                                                            class="filter-switch-item">
+                                                            <input class="checkbox checkbox-primary sr-only"
+                                                                :id="`marker-${markerName}-${value}`"
+                                                                :value="`${markerName}:${value}`" type="checkbox"
+                                                                @change="toggleMarkerSelection(`${value}`)">
+                                                            <label :for="`marker-${markerName}-${value}`"
+                                                                class="cursor-pointer inline-block text-sm text-gray-600 hover:text-gray-800 bg-white rounded shadow p-1">{{
+                                                                value }}</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
