@@ -45,6 +45,12 @@
         #show-selected:empty {
             display: none;
         }
+
+        .selected {
+            background-color: lightgrey;
+            border: blue;
+            /* Color de fondo para el botón seleccionado */
+        }
     </style>
 
 
@@ -64,27 +70,36 @@
                             <kbd class="kbd kbd-xs">Plastilinn V0.3.0
                                 {{ license }} <span v-if="detectedLanguage"> ({{ detectedLanguage }})</span>
                             </kbd>
-                            <div class="flex flex-row justify-between gap-2">
+                            <div class="flex flex-row justify-between gap-2" id="plastilinn-menu">
                                 <button @click="changeSidebar('guides')"
+                                    :class="{'selected': selectedButton === 'guides'}"
                                     class="collapse-filter-button btn btn-primary btn-outline btn-sm">
                                     <span class="material-symbols-outlined" translate="no">
                                         fact_check
-                                    </span>Guides</button>
+                                    </span>Guides
+                                </button>
                                 <button @click="changeSidebar('index')"
+                                    :class="{'selected': selectedButton === 'index'}"
                                     class="collapse-filter-button btn btn-primary btn-outline btn-sm">
                                     <span class="material-symbols-outlined" translate="no">
                                         list_alt
-                                    </span>Index</button>
+                                    </span>Index
+                                </button>
                                 <button @click="changeSidebar('filter')"
+                                    :class="{'selected': selectedButton === 'filter'}"
                                     class="collapse-filter-button btn btn-primary btn-outline btn-sm">
                                     <span class="material-symbols-outlined" translate="no">
                                         filter_alt
-                                    </span>Filter</button>
+                                    </span>Filter
+                                </button>
                                 <button @click="changeSidebar('search')"
+                                    :class="{'selected': selectedButton === 'search'}"
                                     class="collapse-filter-button btn btn-primary btn-outline btn-sm">
                                     <span class="material-symbols-outlined" translate="no">
                                         search
-                                    </span>Search</button>
+                                    </span>Search
+                                </button>
+
                             </div>
                         </div>
 
@@ -490,6 +505,7 @@
                     replaceText: '',
                     isFullScreenEditorOpen: false, // Estado para controlar el modal del editor en pantalla completa
                     selectedPrompt: null,
+                    selectedButton: null, // Para almacenar el botón seleccionado
                 };
             },
             computed: {
@@ -629,6 +645,8 @@
 
                 changeSidebar(section) {
                     this.currentSidebarSection = section;
+                    this.selectedButton = section; // Actualiza el botón seleccionado
+                    this.resetSelectedTagsAndMarkers(); // Llama al método de reset
                     // Si la sección no es 'filter', resetea el input de búsqueda y los tags de filtro
                     if (section !== 'filter') {
                         this.searchQuery = ''; // Resetea el input de búsqueda

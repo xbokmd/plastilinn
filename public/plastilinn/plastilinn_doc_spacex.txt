@@ -1,6 +1,7 @@
 
 <!-- Go to https://xbokmd.github.io/plastilinn/app.html and load this document. More info plastilinn.com -->
 <!-- language: en -->
+
 # Business summary #***** #>>>>>
 
 SpaceX, founded by Elon Musk, has emerged as a pioneering force in the aerospace industry, fundamentally altering the landscape of space exploration and transportation. Its business model centers on reducing space travel costs and making it accessible for cargo and eventually humans, with the ultimate goal of colonizing Mars. SpaceX has achieved significant milestones, such as the development of the Falcon and Starship rockets, and the Dragon spacecraft, which are pivotal for its commercial satellite launches, NASA missions, and planned interplanetary expeditions. The company’s innovative approach includes reusable rocket technology, which has dramatically decreased launch costs and increased the frequency of space missions.
@@ -1632,22 +1633,6 @@ Calculate the cost per launch and measure savings compared to single-use rockets
 </div>
 
 # Attachments #* #>>>>>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
