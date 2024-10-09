@@ -2,7 +2,7 @@
 - ## 🔍 Definition
   - Means through which we interact with our clients throughout the life cycle.
 - ## 📹 Internet info and videos
-  - [Use AI to find related articles and videos](https://www.perplexity.ai/search?q=videos about Channels: Means through which we interact with our customers throughout the lifecycle.)
+  - [Use AI to find related articles and videos](https://www.perplexity.ai/search?q=videos+about+Channels:+Means+through)
 - ## 📰 Content type (#channel)
   - Content is of type list and uses the following classes: #channel
 
