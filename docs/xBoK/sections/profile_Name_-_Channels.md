@@ -152,6 +152,7 @@
 
   </ul>
 </div>
+
 - ## 📖 Description
   - In a business model, ""channels"" refer to the various methods and pathways a company uses to communicate with its customers and deliver its products or services. These channels play a crucial role in customer experience, as they are the touchpoints that directly interact with the market. They can be broadly categorized into two types:
   - Distribution Channels: These are the pathways through which a product or service physically reaches the customer. This can include retail stores, online marketplaces, direct sales, third-party distributors, or any other means of getting the product into the customer's hands.
