@@ -4,7 +4,7 @@
 
 **[Artifacts](#artifacts)**
 - [Idea Definition Canvas](<#Idea Definition Canvas>)
-- [Lean Canvas](<#Lean Cnvas>)
+- [Lean Canvas](<#Lean Canvas>)
 - [Business Model Canvas](<#Business Model Canvas>)
 - [Empathy Map](<#Empathy Map>)
 - [Value Proposition Canvas](<#Value Proposition Canvas>)
