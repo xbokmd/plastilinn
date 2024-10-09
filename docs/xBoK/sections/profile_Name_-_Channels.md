@@ -2,14 +2,17 @@
 - ## 🔍 Definition
   - Means through which we interact with our clients throughout the life cycle.
 - ## 📹 Internet info and videos
-  - [Use AI to find related articles and videos](https://www.perplexity.ai/search?q=videos+about+Channels:+Means+through)
+  - [Search info and videos about #profile Name - Channels using AI](https://www.perplexity.ai/search?q=videos+about+Channels:+Means+through+which+we+interact+with+our+customers+throughout+the+lifecycle.
+)
 - ## 📰 Content type (#channel)
   - Content is of type list and uses the following classes: #channel
 
 - ## 📋 Class list
 
-<div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 300px;'>
+<div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
+
+
 <li>- #channel  Pay-per-click/PPC advertising</li>
 <li>- #channel  Phone</li>
 <li>- #channel  SMS/Text messaging</li>
@@ -152,7 +155,6 @@
 
   </ul>
 </div>
-
 - ## 📖 Description
   - In a business model, ""channels"" refer to the various methods and pathways a company uses to communicate with its customers and deliver its products or services. These channels play a crucial role in customer experience, as they are the touchpoints that directly interact with the market. They can be broadly categorized into two types:
   - Distribution Channels: These are the pathways through which a product or service physically reaches the customer. This can include retail stores, online marketplaces, direct sales, third-party distributors, or any other means of getting the product into the customer's hands.
