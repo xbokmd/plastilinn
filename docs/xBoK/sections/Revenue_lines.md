@@ -2,7 +2,7 @@
 - ## 🔍 Definition
   - the various sources of income that a business model generates through its offerings
 - ## 📹 Internet info and videos
-  - [Search info and videos about Revenue lines using AI](https://www.perplexity.ai/search?q=videos+about+Revenue+lines:+the+various+sources+of+income+that+a+business+model+generates+through+its+offerings
+  - 🤖 [Search info and videos about Revenue lines using AI](https://www.perplexity.ai/search?q=videos+about+Revenue+lines:+the+various+sources+of+income+that+a+business+model+generates+through+its+offerings
 )
 - ## 📰 Content type (#revenue)
   - Content is of type list and uses the following classes: #revenue
@@ -116,6 +116,7 @@
 
   </ul>
 </div>
+
 - ## 📖 Description
   The concept of "Revenue Lines" in business modeling refers to the various sources of income that a business model generates through its offerings. These revenue lines are not just random streams of income, but carefully identified and strategized sources that directly impact the financial health and sustainability of the business.
   

@@ -1,82 +1,82 @@
 - cost
-  - #[[cost]]  [[Employee salaries and benefits]]
-  - #[[cost]]  [[Office rent]]
-  - #[[cost]]  [[Utilities (electricity, water, etc.)]]
-  - #[[cost]]  [[Equipment and technology]]
-  - #[[cost]]  [[Software licenses and subscriptions]]
-  - #[[cost]]  [[Marketing and advertising expenses]]
-  - #[[cost]]  [[Research and development costs]]
-  - #[[cost]]  [[Inventory or raw materials]]
-  - #[[cost]]  [[Manufacturing or production expenses]]
-  - #[[cost]]  [[Shipping and logistics costs]]
-  - #[[cost]]  [[Packaging materials]]
-  - #[[cost]]  [[Professional services (legal, accounting, consulting)]]
-  - #[[cost]]  [[Insurance premiums]]
-  - #[[cost]]  [[Travel and accommodation expenses]]
-  - #[[cost]]  [[Office supplies]]
-  - #[[cost]]  [[Website hosting and maintenance]]
-  - #[[cost]]  [[Customer acquisition costs]]
-  - #[[cost]]  [[IT infrastructure and support]]
-  - #[[cost]]  [[Cloud computing services]]
-  - #[[cost]]  [[Data storage and management]]
-  - #[[cost]]  [[Product development expenses]]
-  - #[[cost]]  [[Quality control and testing]]
-  - #[[cost]]  [[Regulatory compliance costs]]
-  - #[[cost]]  [[Intellectual property fees]]
-  - #[[cost]]  [[Sales and distribution expenses]]
-  - #[[cost]]  [[Customer support and service costs]]
-  - #[[cost]]  [[Training and development programs]]
-  - #[[cost]]  [[Event sponsorship or participation fees]]
-  - #[[cost]]  [[Market research and surveys]]
-  - #[[cost]]  [[Content creation and production]]
-  - #[[cost]]  [[Payment processing fees]]
-  - #[[cost]]  [[Taxes and government fees]]
-  - #[[cost]]  [[Depreciation and amortization]]
-  - #[[cost]]  [[Repairs and maintenance]]
-  - #[[cost]]  [[Outsourcing expenses]]
-  - #[[cost]]  [[Prototyping and samples]]
-  - #[[cost]]  [[Warranty and customer returns]]
-  - #[[cost]]  [[Data security and privacy measures]]
-  - #[[cost]]  [[Product or service certifications]]
-  - #[[cost]]  [[Affiliate or referral program costs]]
-  - #[[cost]]  [[Office furniture and equipment]]
-  - #[[cost]]  [[Packaging design and printing]]
-  - #[[cost]]  [[Employee training and education]]
-  - #[[cost]]  [[Sales commissions and incentives]]
-  - #[[cost]]  [[Legal disputes and settlements]]
-  - #[[cost]]  [[Customer retention and loyalty programs]]
-  - #[[cost]]  [[IT security and cybersecurity measures]]
-  - #[[cost]]  [[Market entry or expansion costs]]
-  - #[[cost]]  [[Debt servicing and interest payments]]
-  - #[[cost]]  [[Trade show or conference attendance]]
-  - #[[cost]]  [[Employee recruitment and hiring costs]]
-  - #[[cost]]  [[Product or service customization expenses]]
-  - #[[cost]]  [[Licensing or royalty fees]]
-  - #[[cost]]  [[Translation or localization services]]
-  - #[[cost]]  [[Bank fees and charges]]
-  - #[[cost]]  [[Contingency and emergency funds]]
-  - #[[cost]]  [[Product or service refresh or updates]]
-  - #[[cost]]  [[Customer feedback and satisfaction surveys]]
-  - #[[cost]]  [[Intellectual property infringement defense]]
-  - #[[cost]]  [[Outsourced customer support services]]
-  - #[[cost]]  [[Environmental sustainability initiatives]]
-  - #[[cost]]  [[Donations and sponsorships]]
-  - #[[cost]]  [[Performance bonuses and incentives]]
-  - #[[cost]]  [[Payment of dividends to investors]]
-  - #[[cost]]  [[Travel and entertainment expenses]]
-  - #[[cost]]  [[Product recalls and quality control issues]]
-  - #[[cost]]  [[Regulatory compliance audits]]
-  - #[[cost]]  [[Telecommunications and internet expenses]]
-  - #[[cost]]  [[Market analysis and competitive research]]
-  - #[[cost]]  [[Employee benefits and perks]]
-  - #[[cost]]  [[Office renovations or improvements]]
-  - #[[cost]]  [[Sales and marketing software tools]]
-  - #[[cost]]  [[Corporate branding and identity]]
-  - #[[cost]]  [[Patent or trademark registrations]]
-  - #[[cost]]  [[Legal and patent filings]]
-  - #[[cost]]  [[Audit and accounting fees]]
-  - #[[cost]]  [[Intellectual property licensing]]
-  - #[[cost]]  [[Product liability insurance]]
-  - #[[cost]]  [[Employee health and wellness programs]]
-  - #[[cost]]  [[Intellectual property enforcement]]
+  <li>- #cost  Employee salaries and benefits</li>
+  <li>- #cost  Office rent</li>
+  <li>- #cost  Utilities (electricity, water, etc.)</li>
+  <li>- #cost  Equipment and technology</li>
+  <li>- #cost  Software licenses and subscriptions</li>
+  <li>- #cost  Marketing and advertising expenses</li>
+  <li>- #cost  Research and development costs</li>
+  <li>- #cost  Inventory or raw materials</li>
+  <li>- #cost  Manufacturing or production expenses</li>
+  <li>- #cost  Shipping and logistics costs</li>
+  <li>- #cost  Packaging materials</li>
+  <li>- #cost  Professional services (legal, accounting, consulting)</li>
+  <li>- #cost  Insurance premiums</li>
+  <li>- #cost  Travel and accommodation expenses</li>
+  <li>- #cost  Office supplies</li>
+  <li>- #cost  Website hosting and maintenance</li>
+  <li>- #cost  Customer acquisition costs</li>
+  <li>- #cost  IT infrastructure and support</li>
+  <li>- #cost  Cloud computing services</li>
+  <li>- #cost  Data storage and management</li>
+  <li>- #cost  Product development expenses</li>
+  <li>- #cost  Quality control and testing</li>
+  <li>- #cost  Regulatory compliance costs</li>
+  <li>- #cost  Intellectual property fees</li>
+  <li>- #cost  Sales and distribution expenses</li>
+  <li>- #cost  Customer support and service costs</li>
+  <li>- #cost  Training and development programs</li>
+  <li>- #cost  Event sponsorship or participation fees</li>
+  <li>- #cost  Market research and surveys</li>
+  <li>- #cost  Content creation and production</li>
+  <li>- #cost  Payment processing fees</li>
+  <li>- #cost  Taxes and government fees</li>
+  <li>- #cost  Depreciation and amortization</li>
+  <li>- #cost  Repairs and maintenance</li>
+  <li>- #cost  Outsourcing expenses</li>
+  <li>- #cost  Prototyping and samples</li>
+  <li>- #cost  Warranty and customer returns</li>
+  <li>- #cost  Data security and privacy measures</li>
+  <li>- #cost  Product or service certifications</li>
+  <li>- #cost  Affiliate or referral program costs</li>
+  <li>- #cost  Office furniture and equipment</li>
+  <li>- #cost  Packaging design and printing</li>
+  <li>- #cost  Employee training and education</li>
+  <li>- #cost  Sales commissions and incentives</li>
+  <li>- #cost  Legal disputes and settlements</li>
+  <li>- #cost  Customer retention and loyalty programs</li>
+  <li>- #cost  IT security and cybersecurity measures</li>
+  <li>- #cost  Market entry or expansion costs</li>
+  <li>- #cost  Debt servicing and interest payments</li>
+  <li>- #cost  Trade show or conference attendance</li>
+  <li>- #cost  Employee recruitment and hiring costs</li>
+  <li>- #cost  Product or service customization expenses</li>
+  <li>- #cost  Licensing or royalty fees</li>
+  <li>- #cost  Translation or localization services</li>
+  <li>- #cost  Bank fees and charges</li>
+  <li>- #cost  Contingency and emergency funds</li>
+  <li>- #cost  Product or service refresh or updates</li>
+  <li>- #cost  Customer feedback and satisfaction surveys</li>
+  <li>- #cost  Intellectual property infringement defense</li>
+  <li>- #cost  Outsourced customer support services</li>
+  <li>- #cost  Environmental sustainability initiatives</li>
+  <li>- #cost  Donations and sponsorships</li>
+  <li>- #cost  Performance bonuses and incentives</li>
+  <li>- #cost  Payment of dividends to investors</li>
+  <li>- #cost  Travel and entertainment expenses</li>
+  <li>- #cost  Product recalls and quality control issues</li>
+  <li>- #cost  Regulatory compliance audits</li>
+  <li>- #cost  Telecommunications and internet expenses</li>
+  <li>- #cost  Market analysis and competitive research</li>
+  <li>- #cost  Employee benefits and perks</li>
+  <li>- #cost  Office renovations or improvements</li>
+  <li>- #cost  Sales and marketing software tools</li>
+  <li>- #cost  Corporate branding and identity</li>
+  <li>- #cost  Patent or trademark registrations</li>
+  <li>- #cost  Legal and patent filings</li>
+  <li>- #cost  Audit and accounting fees</li>
+  <li>- #cost  Intellectual property licensing</li>
+  <li>- #cost  Product liability insurance</li>
+  <li>- #cost  Employee health and wellness programs</li>
+  <li>- #cost  Intellectual property enforcement</li>
 

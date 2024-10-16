@@ -1,76 +1,76 @@
 - experiment
-  - #[[experiment]]  [[Risk Assessment]]
-  - #[[experiment]]  [[Learning Experiment]]
-  - #[[experiment]]  [[Experiment Prioritization]]
-  - #[[experiment]]  [[Assumption Testing]]
-  - #[[experiment]]  [[Customer Interviews]]
-  - #[[experiment]]  [[Problem Interviews]]
-  - #[[experiment]]  [[Solution Interviews]]
-  - #[[experiment]]  [[Online Surveys]]
-  - #[[experiment]]  [[Value Proposition Experiment]]
-  - #[[experiment]]  [[Value Proposition Testing]]
-  - #[[experiment]]  [[Value Proposition Evaluation]]
-  - #[[experiment]]  [[Minimum Desirable Product (MDP)]]
-  - #[[experiment]]  [[Landing Pages and Lead Capture]]
-  - #[[experiment]]  [[Problem-Solution Fit]]
-  - #[[experiment]]  [[Problem-Solution Fit Testing]]
-  - #[[experiment]]  [[Customer Validation]]
-  - #[[experiment]]  [[Customer Development]]
-  - #[[experiment]]  [[Minimum Viable Product (MVP)]]
-  - #[[experiment]]  [[Pretotyping]]
-  - #[[experiment]]  [[The Mechanical Turk]]
-  - #[[experiment]]  [[The Pinocchio]]
-  - #[[experiment]]  [[The Minimalist Manual]]
-  - #[[experiment]]  [[The Provincial]]
-  - #[[experiment]]  [[The One Night Stand]]
-  - #[[experiment]]  [[The Fake Door]]
-  - #[[experiment]]  [[The Pretend-a-Co]]
-  - #[[experiment]]  [[Usability Testing]]
-  - #[[experiment]]  [[Technical Validation]]
-  - #[[experiment]]  [[Monetization Experiment]]
-  - #[[experiment]]  [[Price Acceptance Testing]]
-  - #[[experiment]]  [[Pricing Experiment]]
-  - #[[experiment]]  [[Revenue Streams Evaluation]]
-  - #[[experiment]]  [[Economic Viability Analysis]]
-  - #[[experiment]]  [[Product-Market Fit]]
-  - #[[experiment]]  [[Product-Market Fit Assessment]]
-  - #[[experiment]]  [[Product Development Iteration]]
-  - #[[experiment]]  [[Segmentation Experiment]]
-  - #[[experiment]]  [[Customer Lifecycle Evaluation]]
-  - #[[experiment]]  [[Customer Acquisition Experiment]]
-  - #[[experiment]]  [[Customer Experience Experiment]]
-  - #[[experiment]]  [[Sales Copy Testing]]
-  - #[[experiment]]  [[Sales Funnel Optimization Experiment]]
-  - #[[experiment]]  [[A-B Testing]]
-  - #[[experiment]]  [[Pirate Metrics Tracking]]
-  - #[[experiment]]  [[MVP Development]]
-  - #[[experiment]]  [[Lean Marketing Experiments]]
-  - #[[experiment]]  [[Initial Traction Evaluation]]
-  - #[[experiment]]  [[Customer Acquisition Cost Analysis]]
-  - #[[experiment]]  [[Continuous Customer Feedback]]
-  - #[[experiment]]  [[Strategic Collaborations Experiment]]
-  - #[[experiment]]  [[Shared Value Generation Experiment]]
-  - #[[experiment]]  [[Marketing ROI Analysis]]
-  - #[[experiment]]  [[Marketing Channels Experiment]]
-  - #[[experiment]]  [[International Expansion Experiment]]
-  - #[[experiment]]  [[Customer Retention Experiment]]
-  - #[[experiment]]  [[Supply Chain Analysis]]
-  - #[[experiment]]  [[Scalability Testing]]
-  - #[[experiment]]  [[Revenue Model Evaluation]]
-  - #[[experiment]]  [[Prototyping and Concept Testing]]
-  - #[[experiment]]  [[Pre-sales or Pre-orders]]
-  - #[[experiment]]  [[Positioning Testing]]
-  - #[[experiment]]  [[Partnership Experiments]]
-  - #[[experiment]]  [[Marketing Experiments]]
-  - #[[experiment]]  [[Market Validation]]
-  - #[[experiment]]  [[Keyword Analysis]]
-  - #[[experiment]]  [[International Market Validation]]
-  - #[[experiment]]  [[Lean Analytics]]
-  - #[[experiment]]  [[Upselling and Cross-selling Experiment]]
-  - #[[experiment]]  [[Geographical Localization Experiments]]
-  - #[[experiment]]  [[Expansion Potential Evaluation]]
-  - #[[experiment]]  [[Customer Service Feedback Analysis]]
-  - #[[experiment]]  [[Competitor Analysis]]
-  - #[[experiment]]  [[Branding Experiments]]
-  - #[[experiment]]  [[Affiliate Programs]]
+  <li>- #experiment  Risk Assessment</li>
+  <li>- #experiment  Learning Experiment</li>
+  <li>- #experiment  Experiment Prioritization</li>
+  <li>- #experiment  Assumption Testing</li>
+  <li>- #experiment  Customer Interviews</li>
+  <li>- #experiment  Problem Interviews</li>
+  <li>- #experiment  Solution Interviews</li>
+  <li>- #experiment  Online Surveys</li>
+  <li>- #experiment  Value Proposition Experiment</li>
+  <li>- #experiment  Value Proposition Testing</li>
+  <li>- #experiment  Value Proposition Evaluation</li>
+  <li>- #experiment  Minimum Desirable Product (MDP)</li>
+  <li>- #experiment  Landing Pages and Lead Capture</li>
+  <li>- #experiment  Problem-Solution Fit</li>
+  <li>- #experiment  Problem-Solution Fit Testing</li>
+  <li>- #experiment  Customer Validation</li>
+  <li>- #experiment  Customer Development</li>
+  <li>- #experiment  Minimum Viable Product (MVP)</li>
+  <li>- #experiment  Pretotyping</li>
+  <li>- #experiment  The Mechanical Turk</li>
+  <li>- #experiment  The Pinocchio</li>
+  <li>- #experiment  The Minimalist Manual</li>
+  <li>- #experiment  The Provincial</li>
+  <li>- #experiment  The One Night Stand</li>
+  <li>- #experiment  The Fake Door</li>
+  <li>- #experiment  The Pretend-a-Co</li>
+  <li>- #experiment  Usability Testing</li>
+  <li>- #experiment  Technical Validation</li>
+  <li>- #experiment  Monetization Experiment</li>
+  <li>- #experiment  Price Acceptance Testing</li>
+  <li>- #experiment  Pricing Experiment</li>
+  <li>- #experiment  Revenue Streams Evaluation</li>
+  <li>- #experiment  Economic Viability Analysis</li>
+  <li>- #experiment  Product-Market Fit</li>
+  <li>- #experiment  Product-Market Fit Assessment</li>
+  <li>- #experiment  Product Development Iteration</li>
+  <li>- #experiment  Segmentation Experiment</li>
+  <li>- #experiment  Customer Lifecycle Evaluation</li>
+  <li>- #experiment  Customer Acquisition Experiment</li>
+  <li>- #experiment  Customer Experience Experiment</li>
+  <li>- #experiment  Sales Copy Testing</li>
+  <li>- #experiment  Sales Funnel Optimization Experiment</li>
+  <li>- #experiment  A-B Testing</li>
+  <li>- #experiment  Pirate Metrics Tracking</li>
+  <li>- #experiment  MVP Development</li>
+  <li>- #experiment  Lean Marketing Experiments</li>
+  <li>- #experiment  Initial Traction Evaluation</li>
+  <li>- #experiment  Customer Acquisition Cost Analysis</li>
+  <li>- #experiment  Continuous Customer Feedback</li>
+  <li>- #experiment  Strategic Collaborations Experiment</li>
+  <li>- #experiment  Shared Value Generation Experiment</li>
+  <li>- #experiment  Marketing ROI Analysis</li>
+  <li>- #experiment  Marketing Channels Experiment</li>
+  <li>- #experiment  International Expansion Experiment</li>
+  <li>- #experiment  Customer Retention Experiment</li>
+  <li>- #experiment  Supply Chain Analysis</li>
+  <li>- #experiment  Scalability Testing</li>
+  <li>- #experiment  Revenue Model Evaluation</li>
+  <li>- #experiment  Prototyping and Concept Testing</li>
+  <li>- #experiment  Pre-sales or Pre-orders</li>
+  <li>- #experiment  Positioning Testing</li>
+  <li>- #experiment  Partnership Experiments</li>
+  <li>- #experiment  Marketing Experiments</li>
+  <li>- #experiment  Market Validation</li>
+  <li>- #experiment  Keyword Analysis</li>
+  <li>- #experiment  International Market Validation</li>
+  <li>- #experiment  Lean Analytics</li>
+  <li>- #experiment  Upselling and Cross-selling Experiment</li>
+  <li>- #experiment  Geographical Localization Experiments</li>
+  <li>- #experiment  Expansion Potential Evaluation</li>
+  <li>- #experiment  Customer Service Feedback Analysis</li>
+  <li>- #experiment  Competitor Analysis</li>
+  <li>- #experiment  Branding Experiments</li>
+  <li>- #experiment  Affiliate Programs</li>
 

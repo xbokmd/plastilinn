@@ -1,122 +1,122 @@
 - metric
-  - #[[metric]]  [[Total revenue]]
-  - #[[metric]]  [[Monthly recurring revenue (MRR)]]
-  - #[[metric]]  [[Annual recurring revenue (ARR)]]
-  - #[[metric]]  [[MRR/ARR growth rate]]
-  - #[[metric]]  [[Average contract value (ACV)]]
-  - #[[metric]]  [[Gross margin]]
-  - #[[metric]]  [[Customer acquisition cost (CAC)]]
-  - #[[metric]]  [[Customer lifetime value (CLTV)]]
-  - #[[metric]]  [[CLTV/CAC ratio]]
-  - #[[metric]]  [[Churn rate]]
-  - #[[metric]]  [[Average customer lifetime]]
-  - #[[metric]]  [[Lead conversion rate]]
-  - #[[metric]]  [[Visitor-to-lead conversion rate]]
-  - #[[metric]]  [[Website traffic]]
-  - #[[metric]]  [[Cost per lead (CPL)]]
-  - #[[metric]]  [[Customer retention rate]]
-  - #[[metric]]  [[Net promoter score (NPS)]]
-  - #[[metric]]  [[Customer satisfaction score (CSAT)]]
-  - #[[metric]]  [[Customer engagement score]]
-  - #[[metric]]  [[Active users]]
-  - #[[metric]]  [[Daily active users (DAU)]]
-  - #[[metric]]  [[Monthly active users (MAU)]]
-  - #[[metric]]  [[User growth rate]]
-  - #[[metric]]  [[User churn rate]]
-  - #[[metric]]  [[User acquisition cost (UAC)]]
-  - #[[metric]]  [[User lifetime value (ULV)]]
-  - #[[metric]]  [[ULV/UAC ratio]]
-  - #[[metric]]  [[Average revenue per user (ARPU)]]
-  - #[[metric]]  [[Average session duration]]
-  - #[[metric]]  [[Bounce rate]]
-  - #[[metric]]  [[Click-through rate (CTR)]]
-  - #[[metric]]  [[Conversion rate]]
-  - #[[metric]]  [[Cost per acquisition (CPA)]]
-  - #[[metric]]  [[Cost per conversion (CPC)]]
-  - #[[metric]]  [[Return on ad spend (ROAS)]]
-  - #[[metric]]  [[Social media followers]]
-  - #[[metric]]  [[Social media engagement rate]]
-  - #[[metric]]  [[Email open rate]]
-  - #[[metric]]  [[Email click-through rate (CTR)]]
-  - #[[metric]]  [[Email conversion rate]]
-  - #[[metric]]  [[Customer support response time]]
-  - #[[metric]]  [[Customer support satisfaction rate]]
-  - #[[metric]]  [[Number of support tickets resolved]]
-  - #[[metric]]  [[Time to market]]
-  - #[[metric]]  [[Burn rate]]
-  - #[[metric]]  [[Cash flow]]
-  - #[[metric]]  [[Cash runway]]
-  - #[[metric]]  [[Gross profit margin]]
-  - #[[metric]]  [[Net profit margin]]
-  - #[[metric]]  [[Return on investment (ROI)]]
-  - #[[metric]]  [[Payback period]]
-  - #[[metric]]  [[Breakeven point]]
-  - #[[metric]]  [[Customer acquisition channel breakdown]]
-  - #[[metric]]  [[Customer lifetime revenue]]
-  - #[[metric]]  [[Customer lifetime profit]]
-  - #[[metric]]  [[Sales conversion cycle length]]
-  - #[[metric]]  [[Lead-to-customer conversion time]]
-  - #[[metric]]  [[Customer onboarding time]]
-  - #[[metric]]  [[Product adoption rate]]
-  - #[[metric]]  [[Feature usage rate]]
-  - #[[metric]]  [[Average order value (AOV)]]
-  - #[[metric]]  [[Return rate]]
-  - #[[metric]]  [[Inventory turnover ratio]]
-  - #[[metric]]  [[Net promoter score for employees (eNPS)]]
-  - #[[metric]]  [[Employee satisfaction rate]]
-  - #[[metric]]  [[Employee turnover rate]]
-  - #[[metric]]  [[Employee productivity rate]]
-  - #[[metric]]  [[Time to hire]]
-  - #[[metric]]  [[Cost per hire]]
-  - #[[metric]]  [[Training cost per employee]]
-  - #[[metric]]  [[Employee engagement score]]
-  - #[[metric]]  [[Employee absenteeism rate]]
-  - #[[metric]]  [[Employee diversity ratio]]
-  - #[[metric]]  [[Website load time]]
-  - #[[metric]]  [[App downloads]]
-  - #[[metric]]  [[App user ratings]]
-  - #[[metric]]  [[App retention rate]]
-  - #[[metric]]  [[App crash rate]]
-  - #[[metric]]  [[App monetization rate]]
-  - #[[metric]]  [[Competitor market share]]
-  - #[[metric]]  [[Customer lifetime purchases]]
-  - #[[metric]]  [[Customer satisfaction index (CSI)]]
-  - #[[metric]]  [[Customer referral rate]]
-  - #[[metric]]  [[Customer loyalty rate]]
-  - #[[metric]]  [[Customer engagement score (CES)]]
-  - #[[metric]]  [[Active paying customers]]
-  - #[[metric]]  [[Monthly active paying customers (MAPC)]]
-  - #[[metric]]  [[Annual active paying customers (AAPC)]]
-  - #[[metric]]  [[Expansion revenue]]
-  - #[[metric]]  [[Upsell/cross-sell conversion rate]]
-  - #[[metric]]  [[Customer support resolution time]]
-  - #[[metric]]  [[Customer support ticket backlog]]
-  - #[[metric]]  [[Sales conversion rate by source]]
-  - #[[metric]]  [[Sales cycle length]]
-  - #[[metric]]  [[Sales velocity]]
-  - #[[metric]]  [[Average revenue per paying customer (ARPPC)]]
-  - #[[metric]]  [[Customer acquisition rate]]
-  - #[[metric]]  [[Net revenue churn]]
-  - #[[metric]]  [[Monthly recurring profit (MRP)]]
-  - #[[metric]]  [[Gross merchandise volume (GMV)]]
-  - #[[metric]]  [[Average revenue per user per month (ARPU/M)]]
-  - #[[metric]]  [[Average revenue per user per year (ARPU/Y)]]
-  - #[[metric]]  [[User-to-customer conversion rate]]
-  - #[[metric]]  [[User activation rate]]
-  - #[[metric]]  [[Customer profitability]]
-  - #[[metric]]  [[Marketing qualified leads (MQL)]]
-  - #[[metric]]  [[Sales accepted leads (SAL)]]
-  - #[[metric]]  [[Sales qualified leads (SQL)]]
-  - #[[metric]]  [[Opportunities created]]
-  - #[[metric]]  [[Proposal-to-close ratio]]
-  - #[[metric]]  [[Cash conversion cycle]]
-  - #[[metric]]  [[Cash burn rate]]
-  - #[[metric]]  [[Debt-to-equity ratio]]
-  - #[[metric]]  [[Return on marketing investment (ROMI)]]
-  - #[[metric]]  [[Market share growth rate]]
-  - #[[metric]]  [[Brand awareness]]
-  - #[[metric]]  [[Brand perception]]
-  - #[[metric]]  [[Time to resolution for product issues]]
-  - #[[metric]]  [[Time to resolution for service issues]]
-  - #[[metric]]  [[Product development cycle time]]
+  <li>- #metric  Total revenue</li>
+  <li>- #metric  Monthly recurring revenue (MRR)</li>
+  <li>- #metric  Annual recurring revenue (ARR)</li>
+  <li>- #metric  MRR/ARR growth rate</li>
+  <li>- #metric  Average contract value (ACV)</li>
+  <li>- #metric  Gross margin</li>
+  <li>- #metric  Customer acquisition cost (CAC)</li>
+  <li>- #metric  Customer lifetime value (CLTV)</li>
+  <li>- #metric  CLTV/CAC ratio</li>
+  <li>- #metric  Churn rate</li>
+  <li>- #metric  Average customer lifetime</li>
+  <li>- #metric  Lead conversion rate</li>
+  <li>- #metric  Visitor-to-lead conversion rate</li>
+  <li>- #metric  Website traffic</li>
+  <li>- #metric  Cost per lead (CPL)</li>
+  <li>- #metric  Customer retention rate</li>
+  <li>- #metric  Net promoter score (NPS)</li>
+  <li>- #metric  Customer satisfaction score (CSAT)</li>
+  <li>- #metric  Customer engagement score</li>
+  <li>- #metric  Active users</li>
+  <li>- #metric  Daily active users (DAU)</li>
+  <li>- #metric  Monthly active users (MAU)</li>
+  <li>- #metric  User growth rate</li>
+  <li>- #metric  User churn rate</li>
+  <li>- #metric  User acquisition cost (UAC)</li>
+  <li>- #metric  User lifetime value (ULV)</li>
+  <li>- #metric  ULV/UAC ratio</li>
+  <li>- #metric  Average revenue per user (ARPU)</li>
+  <li>- #metric  Average session duration</li>
+  <li>- #metric  Bounce rate</li>
+  <li>- #metric  Click-through rate (CTR)</li>
+  <li>- #metric  Conversion rate</li>
+  <li>- #metric  Cost per acquisition (CPA)</li>
+  <li>- #metric  Cost per conversion (CPC)</li>
+  <li>- #metric  Return on ad spend (ROAS)</li>
+  <li>- #metric  Social media followers</li>
+  <li>- #metric  Social media engagement rate</li>
+  <li>- #metric  Email open rate</li>
+  <li>- #metric  Email click-through rate (CTR)</li>
+  <li>- #metric  Email conversion rate</li>
+  <li>- #metric  Customer support response time</li>
+  <li>- #metric  Customer support satisfaction rate</li>
+  <li>- #metric  Number of support tickets resolved</li>
+  <li>- #metric  Time to market</li>
+  <li>- #metric  Burn rate</li>
+  <li>- #metric  Cash flow</li>
+  <li>- #metric  Cash runway</li>
+  <li>- #metric  Gross profit margin</li>
+  <li>- #metric  Net profit margin</li>
+  <li>- #metric  Return on investment (ROI)</li>
+  <li>- #metric  Payback period</li>
+  <li>- #metric  Breakeven point</li>
+  <li>- #metric  Customer acquisition channel breakdown</li>
+  <li>- #metric  Customer lifetime revenue</li>
+  <li>- #metric  Customer lifetime profit</li>
+  <li>- #metric  Sales conversion cycle length</li>
+  <li>- #metric  Lead-to-customer conversion time</li>
+  <li>- #metric  Customer onboarding time</li>
+  <li>- #metric  Product adoption rate</li>
+  <li>- #metric  Feature usage rate</li>
+  <li>- #metric  Average order value (AOV)</li>
+  <li>- #metric  Return rate</li>
+  <li>- #metric  Inventory turnover ratio</li>
+  <li>- #metric  Net promoter score for employees (eNPS)</li>
+  <li>- #metric  Employee satisfaction rate</li>
+  <li>- #metric  Employee turnover rate</li>
+  <li>- #metric  Employee productivity rate</li>
+  <li>- #metric  Time to hire</li>
+  <li>- #metric  Cost per hire</li>
+  <li>- #metric  Training cost per employee</li>
+  <li>- #metric  Employee engagement score</li>
+  <li>- #metric  Employee absenteeism rate</li>
+  <li>- #metric  Employee diversity ratio</li>
+  <li>- #metric  Website load time</li>
+  <li>- #metric  App downloads</li>
+  <li>- #metric  App user ratings</li>
+  <li>- #metric  App retention rate</li>
+  <li>- #metric  App crash rate</li>
+  <li>- #metric  App monetization rate</li>
+  <li>- #metric  Competitor market share</li>
+  <li>- #metric  Customer lifetime purchases</li>
+  <li>- #metric  Customer satisfaction index (CSI)</li>
+  <li>- #metric  Customer referral rate</li>
+  <li>- #metric  Customer loyalty rate</li>
+  <li>- #metric  Customer engagement score (CES)</li>
+  <li>- #metric  Active paying customers</li>
+  <li>- #metric  Monthly active paying customers (MAPC)</li>
+  <li>- #metric  Annual active paying customers (AAPC)</li>
+  <li>- #metric  Expansion revenue</li>
+  <li>- #metric  Upsell/cross-sell conversion rate</li>
+  <li>- #metric  Customer support resolution time</li>
+  <li>- #metric  Customer support ticket backlog</li>
+  <li>- #metric  Sales conversion rate by source</li>
+  <li>- #metric  Sales cycle length</li>
+  <li>- #metric  Sales velocity</li>
+  <li>- #metric  Average revenue per paying customer (ARPPC)</li>
+  <li>- #metric  Customer acquisition rate</li>
+  <li>- #metric  Net revenue churn</li>
+  <li>- #metric  Monthly recurring profit (MRP)</li>
+  <li>- #metric  Gross merchandise volume (GMV)</li>
+  <li>- #metric  Average revenue per user per month (ARPU/M)</li>
+  <li>- #metric  Average revenue per user per year (ARPU/Y)</li>
+  <li>- #metric  User-to-customer conversion rate</li>
+  <li>- #metric  User activation rate</li>
+  <li>- #metric  Customer profitability</li>
+  <li>- #metric  Marketing qualified leads (MQL)</li>
+  <li>- #metric  Sales accepted leads (SAL)</li>
+  <li>- #metric  Sales qualified leads (SQL)</li>
+  <li>- #metric  Opportunities created</li>
+  <li>- #metric  Proposal-to-close ratio</li>
+  <li>- #metric  Cash conversion cycle</li>
+  <li>- #metric  Cash burn rate</li>
+  <li>- #metric  Debt-to-equity ratio</li>
+  <li>- #metric  Return on marketing investment (ROMI)</li>
+  <li>- #metric  Market share growth rate</li>
+  <li>- #metric  Brand awareness</li>
+  <li>- #metric  Brand perception</li>
+  <li>- #metric  Time to resolution for product issues</li>
+  <li>- #metric  Time to resolution for service issues</li>
+  <li>- #metric  Product development cycle time</li>
 

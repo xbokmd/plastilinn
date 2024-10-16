@@ -2,7 +2,7 @@
 - ## 🔍 Definition
   - the distinct stages or steps involved in the development, implementation, and evolution of a business model.
 - ## 📹 Internet info and videos
-  - [Search info and videos about Phases using AI](https://www.perplexity.ai/search?q=videos+about+Phases:+the+distinct+stages+or+steps+involved+in+the+development,+implementation,+and+evolution+of+a+business+model.
+  - 🤖 [Search info and videos about Phases using AI](https://www.perplexity.ai/search?q=videos+about+Phases:+the+distinct+stages+or+steps+involved+in+the+development,+implementation,+and+evolution+of+a+business+model.
 )
 - ## 📰 Content type (#phase)
   - Content is of type list and uses the following classes: #phase
@@ -19,6 +19,7 @@
 
   </ul>
 </div>
+
 - ## 📖 Description
   The concept of "Phases" in business modeling refers to the distinct stages or steps involved in the development, implementation, and evolution of a business model. These phases are critical in shaping the business model and ensuring its success and sustainability. 
   

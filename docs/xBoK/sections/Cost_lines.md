@@ -2,7 +2,7 @@
 - ## 🔍 Definition
   - the expenses incurred in the production and delivery of a product or service within a business model.
 - ## 📹 Internet info and videos
-  - [Search info and videos about Cost lines using AI](https://www.perplexity.ai/search?q=videos+about+Cost+lines:+the+expenses+incurred+in+the+production+and+delivery+of+a+product+or+service+within+a+business+model.
+  - 🤖 [Search info and videos about Cost lines using AI](https://www.perplexity.ai/search?q=videos+about+Cost+lines:+the+expenses+incurred+in+the+production+and+delivery+of+a+product+or+service+within+a+business+model.
 )
 - ## 📰 Content type (#cost)
   - Content is of type list and uses the following classes: #cost
@@ -96,6 +96,7 @@
 
   </ul>
 </div>
+
 - ## 📖 Description
   The concept of "Cost Lines" in business modeling refers to the various expenses that a business incurs in the process of producing and delivering its products or services. These costs are an integral part of the business model, as they directly impact the profitability and financial sustainability of the business.
   

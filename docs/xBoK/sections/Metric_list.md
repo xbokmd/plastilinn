@@ -2,7 +2,7 @@
 - ## 🔍 Definition
   - Metrics are quantifiable measures used to evaluate the performance and effectiveness of a business model.
 - ## 📹 Internet info and videos
-  - [Search info and videos about Metric list using AI](https://www.perplexity.ai/search?q=videos+about+Metric+list:+Metrics+are+quantifiable+measures+used+to+evaluate+the+performance+and+effectiveness+of+a+business+model.
+  - 🤖 [Search info and videos about Metric list using AI](https://www.perplexity.ai/search?q=videos+about+Metric+list:+Metrics+are+quantifiable+measures+used+to+evaluate+the+performance+and+effectiveness+of+a+business+model.
 )
 - ## 📰 Content type (#metric)
   - Content is of type list and uses the following classes: #metric
@@ -136,6 +136,7 @@
 
   </ul>
 </div>
+
 - ## 📖 Description
   A Metric List, in the context of business design, is a set of quantifiable measures that are used to assess the performance and effectiveness of a business model. These metrics serve as a tool for businesses to track their progress towards achieving their strategic objectives, and to identify areas where improvements can be made.
   

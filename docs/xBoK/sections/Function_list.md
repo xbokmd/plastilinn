@@ -2,7 +2,7 @@
 - ## 🔍 Definition
   - High-level specification of the set of tasks that are necessary to carry out a business activity towards the achievement of a business goal.
 - ## 📹 Internet info and videos
-  - [Search info and videos about Function list using AI](https://www.perplexity.ai/search?q=videos+about+Function+list:+High-level+specification+of+the+set+of+tasks+that+are+necessary+to+carry+out+a+business+activity+aimed+at+achieving+a+business+objective.
+  - 🤖 [Search info and videos about Function list using AI](https://www.perplexity.ai/search?q=videos+about+Function+list:+High-level+specification+of+the+set+of+tasks+that+are+necessary+to+carry+out+a+business+activity+aimed+at+achieving+a+business+objective.
 )
 - ## 📰 Content type (#function)
   - Content is of type list and uses the following classes: #function
@@ -113,6 +113,7 @@
 
   </ul>
 </div>
+
 - ## 📖 Description
   The concept of "Function List" in business modeling refers to a high-level specification of the tasks that are necessary to carry out a business activity towards the achievement of a business goal. This list is a crucial component of a business model as it outlines the key functions or tasks that need to be performed to deliver a product or service, create value for customers, and achieve the business objectives.
   

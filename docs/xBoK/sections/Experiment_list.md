@@ -2,7 +2,7 @@
 - ## 🔍 Definition
   - Experiments are tests or trials designed to validate assumptions and hypotheses about a business model's value proposition, customer segments, and revenue streams.
 - ## 📹 Internet info and videos
-  - [Search info and videos about Experiment list using AI](https://www.perplexity.ai/search?q=videos+about+Experiment+list:+Experiments+are+tests+or+trials+designed+to+validate+assumptions+and+hypotheses+about+a+business+model's+value+proposition,+customer+segments,+and+revenue+streams.
+  - 🤖 [Search info and videos about Experiment list using AI](https://www.perplexity.ai/search?q=videos+about+Experiment+list:+Experiments+are+tests+or+trials+designed+to+validate+assumptions+and+hypotheses+about+a+business+model's+value+proposition,+customer+segments,+and+revenue+streams.
 )
 - ## 📰 Content type (#experiment)
   - Content is of type list and uses the following classes: #experiment
@@ -90,6 +90,7 @@
 
   </ul>
 </div>
+
 - ## 📖 Description
   The concept of "Experiment List" in business modeling refers to a systematic list of tests or trials designed to validate the assumptions and hypotheses about a business model's value proposition, customer segments, and revenue streams. This list is used as a roadmap to test and validate the viability and effectiveness of a business model before its full-scale implementation.
   
