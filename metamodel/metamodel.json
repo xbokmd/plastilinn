@@ -153,12 +153,12 @@
       "info": "\"goal\" refers to the specific objectives or targets that a company aims to achieve. These goals can be related to various aspects of the business, such as financial performance, market share, customer satisfaction, or product innovation. Goals provide a clear direction for the company and help guide decision-making and resource allocation to ensure progress towards the desired outcomes."
     },
     {
-      "name": "profile_goal",
-      "metamodelID": "profile_goal",
-      "icon": "🎯",
+      "name": "problem",
+      "metamodelID": "problem",
+      "icon": "😟",
       "color": "blue",
       "alias": "goals",
-      "info": "\"goal\" refers to the specific objectives or targets that a company aims to achieve. These goals can be related to various aspects of the business, such as financial performance, market share, customer satisfaction, or product innovation. Goals provide a clear direction for the company and help guide decision-making and resource allocation to ensure progress towards the desired outcomes."
+      "info": "\"Customer problem\" component refers to the specific challenges or pain points faced by target customers that the business aims to address. This element is crucial as it helps identify the needs and desires of customers, guiding the development of value propositions that effectively solve these problems. By understanding and articulating the customer problem, businesses can better tailor their offerings and enhance customer satisfaction, ultimately driving growth and success.\""
     },
     {
       "name": "hypothesis",
@@ -191,14 +191,6 @@
       "color": "green",
       "alias": "experiments",
       "info": "An \"experiment\" is a structured approach used by businesses to test hypotheses, validate assumptions, or explore new ideas. It involves designing and conducting controlled tests or trials to gather data, analyze results, and draw conclusions. Experiments can help businesses make data-driven decisions, optimize processes, and innovate their products or services. By systematically testing different variables and scenarios, businesses can uncover valuable insights and improve their overall performance."
-    },
-    {
-      "name": "question",
-      "metamodelID": "question",
-      "icon": "💭",
-      "color": "red",
-      "alias": "questions",
-      "info": "A \"question\" refers to an inquiry or problem that needs to be addressed within the business model. It can be related to various aspects of the business, such as customer needs, market trends, or operational efficiency. Questions are often used to guide decision-making processes and identify areas for improvement or innovation. By asking the right questions and seeking answers through research or experimentation, businesses can gain valuable insights and make informed decisions to drive success."
     },
     {
       "name": "insight",
@@ -275,7 +267,7 @@
     {
       "name": "profile",
       "metamodelID": "profile",
-      "icon": "🙎‍♂️",
+      "icon": "🙎",
       "color": "blue",
       "alias": "profiles",
       "info": "A \"profile\" refers to a detailed description or analysis of a specific customer segment or persona. It includes information such as demographics, behaviors, preferences, and needs of the target audience. Profiles are used to create a better understanding of the customer and to tailor the business model to meet their specific needs. By developing accurate and detailed profiles, businesses can create more effective marketing strategies, improve customer engagement, and increase customer satisfaction."
@@ -345,14 +337,6 @@
       "info": ""
     },
     {
-      "name": "profile_goal",
-      "metamodelID": "profile_goal",
-      "icon": "🎯",
-      "color": "blue",
-      "alias": "relationships",
-      "info": ""
-    },
-    {
       "name": "roadmap",
       "metamodelID": "roadmap",
       "icon": "🗺️",
@@ -393,14 +377,6 @@
       "info": ""
     },
     {
-      "name": "organization_value",
-      "metamodelID": "organization_value",
-      "icon": "🌟",
-      "color": "blue",
-      "alias": "relationships",
-      "info": ""
-    },
-    {
       "name": "trend",
       "metamodelID": "trend",
       "icon": "📈",
@@ -409,60 +385,12 @@
       "info": ""
     },
     {
-      "name": "topic",
-      "metamodelID": "topic",
-      "icon": "🗄️",
-      "color": "grey",
-      "alias": "topics",
-      "info": "\"topic\" refers to a specific subject or area of focus within the business model. It can refer to a particular aspect of the product or service, a market segment, a business process, or a strategic initiative. Topics provide a framework for organizing and analyzing information, and can help businesses identify areas for improvement or innovation. By focusing on specific topics, businesses can develop a deeper understanding of their business model and make more informed decisions."
-    },
-    {
       "name": "resource",
       "metamodelID": "resource",
       "icon": "🖥️",
       "color": "grey",
       "alias": "resources",
       "info": "\"resource\" refers to any asset or input that a business uses to create value and achieve its goals. This can include physical resources such as equipment, facilities, and inventory, as well as intangible resources such as intellectual property, human capital, and brand reputation. Effective resource management is critical for ensuring that a business has the necessary inputs to operate efficiently and effectively, and to achieve its desired outcomes."
-    },
-    {
-      "name": "unit",
-      "metamodelID": "unit",
-      "icon": "📓",
-      "color": "grey",
-      "alias": "units",
-      "info": "A \"unit\" refers to a specific component or element within the business model. It can be a department, team, process, or system that performs a specific function or contributes to the overall value proposition of the business. Units are often organized and managed in a way that maximizes efficiency and effectiveness, and they can be optimized or restructured to improve performance and achieve business goals. Understanding the role and function of each unit is essential for designing and implementing a successful business model."
-    },
-    {
-      "name": "content",
-      "metamodelID": "content",
-      "icon": "📘",
-      "color": "blue",
-      "alias": "",
-      "info": "\"content\" refers to the information, media, or materials that a business creates and shares with its target audience. This can include written articles, videos, images, social media posts, and other forms of communication. Content is often used to attract and engage customers, build brand awareness, and provide value to the target audience. Effective content creation and distribution can help businesses establish themselves as thought leaders in their industry and drive customer loyalty and engagement."
-    },
-    {
-      "name": "AI",
-      "metamodelID": "AI",
-      "icon": "🤖",
-      "color": "blue",
-      "alias": "ai",
-      "info": "\"AI\" refers to artificial intelligence, which is the simulation of human intelligence in machines that are programmed to perform tasks that typically require human intelligence, such as learning, problem-solving, and decision-making. AI can be used in various aspects of business design, such as data analysis, customer service, and product development. By leveraging AI, businesses can improve efficiency, accuracy, and speed in their operations, as well as gain insights and make predictions based on large amounts of data."
-    },
-    {
-      "name": "help",
-      "metamodelID": "help",
-      "icon": "🌐",
-      "color": "grey",
-      "alias": "",
-      "info": "\"help\" refers to the resources, tools, or support that businesses may need to achieve their goals and improve their performance. This can include external resources such as consultants, mentors, or industry experts, as well as internal resources such as training programs, software, or technology. Help can also refer to collaboration and partnerships with other businesses or organizations to achieve mutual benefits and shared goals. Access to help can be critical for businesses to overcome challenges, stay competitive, and achieve success."
-    },
-    {
-      "name": "block",
-      "metamodelID": "block",
-      "icon": "🧿",
-      "color": "blue",
-      "alias": "blocks",
-      "info": "A \"block\" refers to a specific component or element within a business model that can be analyzed and optimized. It can refer to a process, system, or function that contributes to the overall performance of the business. By breaking down the business model into smaller blocks, businesses can identify areas for improvement and make targeted changes to optimize their operations and achieve their goals. Blocks can also be used to visualize and communicate the different components of the business model to stakeholders and team members."
     },
     {
       "name": "assumption",
@@ -479,6 +407,14 @@
       "color": "grey",
       "alias": "comments",
       "info": "A comment is a statement or feedback provided by an individual or group regarding a specific aspect of the business. Comments can be positive or negative and can provide valuable insights into customer preferences, satisfaction levels, and areas for improvement. Businesses can use comments to identify trends, address concerns, and improve their overall customer experience. Comments can be gathered through various channels such as surveys, social media, or customer support interactions."
+    },
+    {
+      "name": "question",
+      "metamodelID": "question",
+      "icon": "💭",
+      "color": "red",
+      "alias": "questions",
+      "info": "A \"question\" refers to an inquiry or problem that needs to be addressed within the business model. It can be related to various aspects of the business, such as customer needs, market trends, or operational efficiency. Questions are often used to guide decision-making processes and identify areas for improvement or innovation. By asking the right questions and seeking answers through research or experimentation, businesses can gain valuable insights and make informed decisions to drive success."
     },
     {
       "name": "task",
@@ -754,11 +690,11 @@
       "weight": "****",
       "format": "tree",
       "id": "Organization-goals",
-      "classes": "goal_organization",
+      "classes": "goal",
       "definition": "Business goals are the specific objectives that a business model aims to achieve in terms of revenue, growth, profitability, or market share.",
       "info": "https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/Organization-goals",
       "question": "If Organization goals is defined as :Business goals are the specific objectives that a business model aims to achieve in terms of revenue, growth, profitability, or market share., what could it be?",
-      "example": "| #goal_organization /  (info) | Description | Units | Value | Term |\n| :---- | :---- | :---- | :---- | :---- |\n| 🎯#goal_organization Maximize revenue | SpaceX aims to capitalize on the growing space industry, focusing on satellite launches, Mars missions, and space tourism, with the goal of significant returns on investment. | B$ | 2 | Long term |\n| 🎯#goal_organization Expand global connectivity | Through the Starlink project, SpaceX intends to provide affordable, high-speed internet access to a vast portion of the global population, especially underserved regions. | devices/year | 50M | Long term |\n| 🎯#goal_organization Ensure ethical space exploration | Space missions can have significant implications on space sustainability and ethics. SpaceX is committed to ensuring all its projects comply with strict ethical standards. | \\- | \\- | Short, Medium, Long term |\n| 🎯#goal_organization Achieve flawless mission safety | Safety is a top priority for SpaceX, especially in human spaceflight missions. The company continuously improves its technology to ensure all missions are conducted with the highest safety standards. | \\- | \\- | Short term |"
+      "example": "| #goal /  (info) | Description | Units | Value | Term |\n| :---- | :---- | :---- | :---- | :---- |\n| 🎯#goal Maximize revenue | SpaceX aims to capitalize on the growing space industry, focusing on satellite launches, Mars missions, and space tourism, with the goal of significant returns on investment. | B$ | 2 | Long term |\n| 🎯#goal Expand global connectivity | Through the Starlink project, SpaceX intends to provide affordable, high-speed internet access to a vast portion of the global population, especially underserved regions. | devices/year | 50M | Long term |\n| 🎯#goal Ensure ethical space exploration | Space missions can have significant implications on space sustainability and ethics. SpaceX is committed to ensuring all its projects comply with strict ethical standards. | \\- | \\- | Short, Medium, Long term |\n| 🎯#goal Achieve flawless mission safety | Safety is a top priority for SpaceX, especially in human spaceflight missions. The company continuously improves its technology to ensure all missions are conducted with the highest safety standards. | \\- | \\- | Short term |"
     },
     {
       "name": "Stakeholders",
@@ -849,14 +785,14 @@
       "example": "🎩#role Project Manager\n\nOversees the specific mission or project for which Space X's services are being procured. They coordinate with various internal teams, stakeholders, and Space X to ensure the successful execution of the mission.\n\n🎩#role Procurement Manager\n\nResponsible for managing the acquisition process, including identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts.\n\n🎩#role Technical Team\n\nA team of technical experts, including engineers and scientists, assesses the technical requirements of the mission. They work closely with Space X to ensure that the proposed solution meets the agency's specifications and objectives.\n\n🎩#role Contracting Officer\n\nResponsible for managing the contractual relationship between the government agency and Space X..\n\n🎩#role Financial Analyst\n\nAssesses the cost proposals submitted by Space X and evaluates the financial feasibility of the project.\n\n🎩#role Legal Counsel\n\nReviews and provides advice on the contractual agreements, ensuring compliance with relevant laws, regulations, and policies.\n"
     },
     {
-      "name": "Profile",
+      "name": "Main profile",
       "weight": "*****",
       "format": "text",
-      "id": "Profile",
+      "id": "Main-profile",
       "classes": "profile",
       "definition": "A definition. Of who our client is. Narrowing down the segmentation criteria to specific values.",
-      "info": "https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/Profile",
-      "question": "If Profile is defined as :A definition. Of who our client is. Narrowing down the segmentation criteria to specific values., what could it be?",
+      "info": "https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/Main-profile",
+      "question": "If Main profile is defined as :A definition. Of who our client is. Narrowing down the segmentation criteria to specific values., what could it be?",
       "example": "🙎‍♂️#profile Space Agency Project Manager\n\n* Stakeholder Satellite Launch Customers\n* Segment Government Agencies\n* Role Project Manager\n\nThe project manager is responsible for managing the acquisition process, including identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts."
     },
     {
@@ -882,15 +818,15 @@
       "example": "**Sarah Johnson**\n\n![Mujer en el Puente del Amante, Tanjung Sepat](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Woman_at_Lover%27s_Bridge_Tanjung_Sepat_%28cropped%29.jpg/385px-Woman_at_Lover%27s_Bridge_Tanjung_Sepat_%28cropped%29.jpg)\n\nRole: stakeholder Satellite Launch Customers  \nSegment Government Agencies  \nRole Project Manager\n\n**Segmentation**\n\n\\* Age: 45 years.  \n\\* Income: $150,000 per year.  \n\\* Occupation: Engineer in the aerospace industry.  \n\\* Education: doctoral degrees in engineering  \n\\* Location: Los Angeles.  \n\\* Technology adoption: Highly tech-savvy  \n\\* Brand loyalty: High, prefer companies offering cutting-edge technology with a proven track record.  \n\\* Industry type: Telecommunications  \n\\* Company size: Large enterprises  \n\\* Revenue: Annual revenues $1200 million.\n\n**Background and Goals:**\n\nSarah Johnson is an experienced project manager professional working for NASA.  \nShe has been with the agency for over 10 years and has a strong background in contract management and acquisition processes.  \nHer primary goal is to ensure that the agency procures the necessary services and equipment to support its space missions efficiently and within budget.  \nSarah is responsible for identifying potential suppliers, issuing requests for proposals (RFPs), evaluating proposals, and negotiating contracts.\n\n**Motivations and Pain Points:**\n\nSarah is motivated by a passion for space exploration and a desire to contribute to the success of the agency's missions.  \nShe strives to find suppliers that offer innovative solutions, reliable performance, and competitive pricing.  \nSarah's pain points include the complexity of the procurement process, navigating government regulations and compliance requirements, and managing stakeholder expectations while ensuring value for money.  \nInformation and Decision-Making Preferences:  \nSarah stays updated on industry trends and advancements in space technology through industry publications, conferences, and professional networks.  \nShe relies on comprehensive proposals, technical specifications, and pricing details to evaluate supplier offerings.  \nSarah values clear communication, transparency, and responsive support from suppliers during the evaluation and negotiation process.\n\n**Key Challenges:**\n\nIdentifying suppliers with a track record of successful space missions and expertise in the specific services required by the agency.  \nBalancing the agency's budget constraints with the need for high-quality services and equipment.  \nNavigating the complex government procurement regulations, compliance requirements, and ensuring fairness and transparency in the acquisition process.  \nManaging stakeholder expectations and addressing any concerns or questions related to the selection of suppliers.\n\n**Preferred Solutions:**\n\nSarah looks for suppliers that can offer reliable and cost-effective solutions, demonstrate technical expertise, and have a proven track record of successful collaborations with space agencies.  \nShe values suppliers that understand the agency's mission objectives and can provide innovative approaches to meet the specific requirements.\n\n"
     },
     {
-      "name": "Goals",
+      "name": "Problems",
       "weight": "*****",
       "format": "list",
-      "id": "Goals",
-      "classes": "goal",
+      "id": "Problems",
+      "classes": "problem",
       "definition": "Problems, needs or desires that our stakeholders have and are relevant to my business.",
-      "info": "https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/Goals",
-      "question": "If Goals is defined as :Problems, needs or desires that our stakeholders have and are relevant to my business., what could it be?",
-      "example": "🎯#profile_goal Satellite Deployment\n\nClients needing to put a satellite into orbit face challenges with launch infrastructure, orbital placement accuracy, and costs. \n\n🎯#profile_goal Cost-effective Space Missions\n\nClients seek to minimize expenses for sending cargo or crew to space, demanding reliable yet affordable space transportation options.\n\n🎯#profile_goal Rapid Launch Scheduling\n\nSpace missions often face scheduling constraints due to limited launch windows and availability of launch vehicles.\n\n🎯#profile_goal Enhanced Payload Capabilities\n\nAgencies may require launching heavier or more complex payloads into orbit (larger satellites, space telescopes, or deep space probes).\n\n🎯#profile_goal Ride-share Opportunities\n\nSmaller satellites or missions with limited budgets could benefit from ride-share opportunities, where multiple payloads share a single launch to reduce costs.\n\n🎯#profile_goal Long-duration Missions and Deep Space Exploration\n\nBeyond Earth orbit, agencies might aim for missions to the Moon, Mars, or other celestial bodies.\n\n🎯#profile_goal In-orbit Services and Space Infrastructure\n\nAs space missions become more complex, the need for in-orbit services such as satellite servicing, refueling, or assembly grows.\n\n"
+      "info": "https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/Problems",
+      "question": "If Problems is defined as :Problems, needs or desires that our stakeholders have and are relevant to my business., what could it be?",
+      "example": "😟#problem Satellite Deployment\n\nClients needing to put a satellite into orbit face challenges with launch infrastructure, orbital placement accuracy, and costs. \n\n😟#problem Cost-effective Space Missions\n\nClients seek to minimize expenses for sending cargo or crew to space, demanding reliable yet affordable space transportation options.\n\n😟#problem Rapid Launch Scheduling\n\nSpace missions often face scheduling constraints due to limited launch windows and availability of launch vehicles.\n\n😟#problem Enhanced Payload Capabilities\n\nAgencies may require launching heavier or more complex payloads into orbit (larger satellites, space telescopes, or deep space probes).\n\n😟#problem Ride-share Opportunities\n\nSmaller satellites or missions with limited budgets could benefit from ride-share opportunities, where multiple payloads share a single launch to reduce costs.\n\n😟#problem Long-duration Missions and Deep Space Exploration\n\nBeyond Earth orbit, agencies might aim for missions to the Moon, Mars, or other celestial bodies.\n\n😟#problem In-orbit Services and Space Infrastructure\n\nAs space missions become more complex, the need for in-orbit services such as satellite servicing, refueling, or assembly grows.\n\n"
     },
     {
       "name": "Value proposition",
@@ -1003,14 +939,14 @@
       "example": "💊#solution Space X services\n\nLaunch services for satellites and spacecraft. Resupply missions to the International Space Station. Crewed missions to the International Space Station. Development of advanced rocket and spacecraft technologies.\n\n💊#solution Starlink\n\nA satellite constellation being constructed by Space X to provide global broadband internet coverage. It aims to deliver high-speed, low-latency internet access to users around the world, especially in underserved areas.\n\n💊#solution Mars colonization\n\nSpace X's long-term goal is to enable the colonization of Mars. They are developing the Starship spacecraft, which is intended to transport humans and cargo to Mars for the establishment of a sustainable presence on the planet.\n"
     },
     {
-      "name": "Solution",
+      "name": "Main solution",
       "weight": "*****",
       "format": "text",
-      "id": "Solution",
+      "id": "Main-solution",
       "classes": "solution",
       "definition": "a specific product, service, or process that a business offers to address the needs or problems of its customers.",
-      "info": "https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/Solution",
-      "question": "If Solution is defined as :a specific product, service, or process that a business offers to address the needs or problems of its customers., what could it be?",
+      "info": "https://xbokmd.github.io/plastilinn/raw.html#/docs/xBoK/sections/Main-solution",
+      "question": "If Main solution is defined as :a specific product, service, or process that a business offers to address the needs or problems of its customers., what could it be?",
       "example": "**Space X services**\n\n**Category**:  Space Launch Services: Launch services for satellites and spacecraft\n\n💊#solution Falcon 9\n\nA two-stage rocket designed for the reliable and cost-effective transport of satellites and spacecraft to orbit. It is capable of carrying payloads of up to 22,800 kilograms to low Earth orbit and 8,300 kilograms to geostationary transfer orbit.\n\n💊#solution Falcon Heavy\n\nA heavy-lift launch vehicle that is currently the most powerful operational rocket in the world. It is capable of carrying payloads of up to 63,800 kilograms to low Earth orbit and 26,700 kilograms to geostationary transfer orbit.\n\n💊#solution Dragon spacecraft\n\nA reusable spacecraft designed for both cargo and crewed missions. It is capable of carrying up to 7 passengers to and from the International Space Station and can also deliver cargo to other destinations in space.\n"
     },
     {
@@ -1543,8 +1479,8 @@
     },
     {
       "name": "Markers",
-      "weight": "",
-      "format": "",
+      "weight": "*****",
+      "format": "tables",
       "id": "Markers",
       "classes": "",
       "definition": "",
@@ -1696,7 +1632,7 @@
       "item": "Organization goals",
       "caption": "🤖 Open AI and copy prompt",
       "url": "https://chatgpt.com/g/g-CqzH3wBOC-plastilinn-business-advisor",
-      "prompt": "As a business model design expert, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each business unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\r\n  \r\n- Listening closely to understand the specifics of the business.\r\n- Providing concise, targeted guidance without unnecessary repetition or formalities.\r\n- Offering step-by-step feedback to ensure the document effectively captures the business model.\r\n- You focus on the client's needs and how to best articulate their business model.\n\nGOAL: Help the user write the Organization goals section of a document that describes his project business model based on CUSTOM INFO.\n\nQUESTION: Please suggest content for the Organization goals section of the business model.\n\nWRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn doc (taking the BLOCK EXAMPLE as a reference example of a properly formatted answer). In your response, each list component should begin with emoji and a '#tag', followed by the name, and then a line break followed by a description. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n\n--- BLOCK EXAMPLE START ---\n| #goal_organization /  (info) | Description | Units | Value | Term |\n| :---- | :---- | :---- | :---- | :---- |\n| 🎯#goal_organization Maximize revenue | SpaceX aims to capitalize on the growing space industry, focusing on satellite launches, Mars missions, and space tourism, with the goal of significant returns on investment. | B$ | 2 | Long term |\n| 🎯#goal_organization Expand global connectivity | Through the Starlink project, SpaceX intends to provide affordable, high-speed internet access to a vast portion of the global population, especially underserved regions. | devices/year | 50M | Long term |\n| 🎯#goal_organization Ensure ethical space exploration | Space missions can have significant implications on space sustainability and ethics. SpaceX is committed to ensuring all its projects comply with strict ethical standards. | \\- | \\- | Short, Medium, Long term |\n| 🎯#goal_organization Achieve flawless mission safety | Safety is a top priority for SpaceX, especially in human spaceflight missions. The company continuously improves its technology to ensure all missions are conducted with the highest safety standards. | \\- | \\- | Short term |\n--- BLOCK EXAMPLE END ---\n\nCUSTOM INFO: Here's some information about the business:\r\n\r\n--- CUSTOM INFO START ---\r\n{DOC_STRING}\r\n--- CUSTOM INFO END ---\n\n"
+      "prompt": "As a business model design expert, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each business unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\r\n  \r\n- Listening closely to understand the specifics of the business.\r\n- Providing concise, targeted guidance without unnecessary repetition or formalities.\r\n- Offering step-by-step feedback to ensure the document effectively captures the business model.\r\n- You focus on the client's needs and how to best articulate their business model.\n\nGOAL: Help the user write the Organization goals section of a document that describes his project business model based on CUSTOM INFO.\n\nQUESTION: Please suggest content for the Organization goals section of the business model.\n\nWRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn doc (taking the BLOCK EXAMPLE as a reference example of a properly formatted answer). In your response, each list component should begin with emoji and a '#tag', followed by the name, and then a line break followed by a description. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n\n--- BLOCK EXAMPLE START ---\n| #goal /  (info) | Description | Units | Value | Term |\n| :---- | :---- | :---- | :---- | :---- |\n| 🎯#goal Maximize revenue | SpaceX aims to capitalize on the growing space industry, focusing on satellite launches, Mars missions, and space tourism, with the goal of significant returns on investment. | B$ | 2 | Long term |\n| 🎯#goal Expand global connectivity | Through the Starlink project, SpaceX intends to provide affordable, high-speed internet access to a vast portion of the global population, especially underserved regions. | devices/year | 50M | Long term |\n| 🎯#goal Ensure ethical space exploration | Space missions can have significant implications on space sustainability and ethics. SpaceX is committed to ensuring all its projects comply with strict ethical standards. | \\- | \\- | Short, Medium, Long term |\n| 🎯#goal Achieve flawless mission safety | Safety is a top priority for SpaceX, especially in human spaceflight missions. The company continuously improves its technology to ensure all missions are conducted with the highest safety standards. | \\- | \\- | Short term |\n--- BLOCK EXAMPLE END ---\n\nCUSTOM INFO: Here's some information about the business:\r\n\r\n--- CUSTOM INFO START ---\r\n{DOC_STRING}\r\n--- CUSTOM INFO END ---\n\n"
     },
     {
       "item": "Stakeholders",
@@ -1780,7 +1716,7 @@
       "item": "Goals",
       "caption": "🤖 Open AI and copy prompt",
       "url": "https://chatgpt.com/g/g-CqzH3wBOC-plastilinn-business-advisor",
-      "prompt": "As a business model design expert, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each business unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\r\n  \r\n- Listening closely to understand the specifics of the business.\r\n- Providing concise, targeted guidance without unnecessary repetition or formalities.\r\n- Offering step-by-step feedback to ensure the document effectively captures the business model.\r\n- You focus on the client's needs and how to best articulate their business model.\n\nGOAL: Help the user write the Goals section of a document that describes his project business model based on CUSTOM INFO.\n\nQUESTION: Please suggest content for the Goals section of the business model.\n\nWRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn doc (taking the BLOCK EXAMPLE as a reference example of a properly formatted answer). In your response, each list component should begin with emoji and a '#tag', followed by the name, and then a line break followed by a description. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n\n--- BLOCK EXAMPLE START ---\n🎯#profile_goal Satellite Deployment\n\nClients needing to put a satellite into orbit face challenges with launch infrastructure, orbital placement accuracy, and costs. \n\n🎯#profile_goal Cost-effective Space Missions\n\nClients seek to minimize expenses for sending cargo or crew to space, demanding reliable yet affordable space transportation options.\n\n🎯#profile_goal Rapid Launch Scheduling\n\nSpace missions often face scheduling constraints due to limited launch windows and availability of launch vehicles.\n\n🎯#profile_goal Enhanced Payload Capabilities\n\nAgencies may require launching heavier or more complex payloads into orbit (larger satellites, space telescopes, or deep space probes).\n\n🎯#profile_goal Ride-share Opportunities\n\nSmaller satellites or missions with limited budgets could benefit from ride-share opportunities, where multiple payloads share a single launch to reduce costs.\n\n🎯#profile_goal Long-duration Missions and Deep Space Exploration\n\nBeyond Earth orbit, agencies might aim for missions to the Moon, Mars, or other celestial bodies.\n\n🎯#profile_goal In-orbit Services and Space Infrastructure\n\nAs space missions become more complex, the need for in-orbit services such as satellite servicing, refueling, or assembly grows.\n\n\n--- BLOCK EXAMPLE END ---\n\nCUSTOM INFO: Here's some information about the business:\r\n\r\n--- CUSTOM INFO START ---\r\n{DOC_STRING}\r\n--- CUSTOM INFO END ---\n\n"
+      "prompt": "As a business model design expert, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each business unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\r\n  \r\n- Listening closely to understand the specifics of the business.\r\n- Providing concise, targeted guidance without unnecessary repetition or formalities.\r\n- Offering step-by-step feedback to ensure the document effectively captures the business model.\r\n- You focus on the client's needs and how to best articulate their business model.\n\nGOAL: Help the user write the Goals section of a document that describes his project business model based on CUSTOM INFO.\n\nQUESTION: Please suggest content for the Goals section of the business model.\n\nWRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn doc (taking the BLOCK EXAMPLE as a reference example of a properly formatted answer). In your response, each list component should begin with emoji and a '#tag', followed by the name, and then a line break followed by a description. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n\n--- BLOCK EXAMPLE START ---\n\n--- BLOCK EXAMPLE END ---\n\nCUSTOM INFO: Here's some information about the business:\r\n\r\n--- CUSTOM INFO START ---\r\n{DOC_STRING}\r\n--- CUSTOM INFO END ---\n\n"
     },
     {
       "item": "Perceptions",
@@ -2014,7 +1950,7 @@
       "item": "Goals",
       "caption": "🤖 Open AI and copy prompt",
       "url": "https://chatgpt.com/g/g-CqzH3wBOC-plastilinn-business-advisor",
-      "prompt": "As a business model design expert, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each business unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\r\n  \r\n- Listening closely to understand the specifics of the business.\r\n- Providing concise, targeted guidance without unnecessary repetition or formalities.\r\n- Offering step-by-step feedback to ensure the document effectively captures the business model.\r\n- You focus on the client's needs and how to best articulate their business model.\n\nGOAL: Help the user write the Goals section of a document that describes his project business model based on CUSTOM INFO.\n\nQUESTION: Please suggest content for the Goals section of the business model.\n\nWRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn doc (taking the BLOCK EXAMPLE as a reference example of a properly formatted answer). In your response, each list component should begin with emoji and a '#tag', followed by the name, and then a line break followed by a description. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n\n--- BLOCK EXAMPLE START ---\n🎯#profile_goal Satellite Deployment\n\nClients needing to put a satellite into orbit face challenges with launch infrastructure, orbital placement accuracy, and costs. \n\n🎯#profile_goal Cost-effective Space Missions\n\nClients seek to minimize expenses for sending cargo or crew to space, demanding reliable yet affordable space transportation options.\n\n🎯#profile_goal Rapid Launch Scheduling\n\nSpace missions often face scheduling constraints due to limited launch windows and availability of launch vehicles.\n\n🎯#profile_goal Enhanced Payload Capabilities\n\nAgencies may require launching heavier or more complex payloads into orbit (larger satellites, space telescopes, or deep space probes).\n\n🎯#profile_goal Ride-share Opportunities\n\nSmaller satellites or missions with limited budgets could benefit from ride-share opportunities, where multiple payloads share a single launch to reduce costs.\n\n🎯#profile_goal Long-duration Missions and Deep Space Exploration\n\nBeyond Earth orbit, agencies might aim for missions to the Moon, Mars, or other celestial bodies.\n\n🎯#profile_goal In-orbit Services and Space Infrastructure\n\nAs space missions become more complex, the need for in-orbit services such as satellite servicing, refueling, or assembly grows.\n\n\n--- BLOCK EXAMPLE END ---\n\nCUSTOM INFO: Here's some information about the business:\r\n\r\n--- CUSTOM INFO START ---\r\n{DOC_STRING}\r\n--- CUSTOM INFO END ---\n\n"
+      "prompt": "As a business model design expert, you specialize in refining business models through detailed, specific feedback and brainstorming tailored to each business unique aspects. Your role is to assist in drafting a document that accurately describes a business model, focusing on clear, structured, and relevant advice. Your approach involves:\r\n  \r\n- Listening closely to understand the specifics of the business.\r\n- Providing concise, targeted guidance without unnecessary repetition or formalities.\r\n- Offering step-by-step feedback to ensure the document effectively captures the business model.\r\n- You focus on the client's needs and how to best articulate their business model.\n\nGOAL: Help the user write the Goals section of a document that describes his project business model based on CUSTOM INFO.\n\nQUESTION: Please suggest content for the Goals section of the business model.\n\nWRITE your answer in PLASTILINN FORMAT, which consists of the text of the answer without any comments or similar, that closely adheres to the format and style of the plastilinn doc (taking the BLOCK EXAMPLE as a reference example of a properly formatted answer). In your response, each list component should begin with emoji and a '#tag', followed by the name, and then a line break followed by a description. This is an example of an answer for the company Space X, an aerospace manufacturer and space transportation company:\n\n\n--- BLOCK EXAMPLE START ---\n\n--- BLOCK EXAMPLE END ---\n\nCUSTOM INFO: Here's some information about the business:\r\n\r\n--- CUSTOM INFO START ---\r\n{DOC_STRING}\r\n--- CUSTOM INFO END ---\n\n"
     },
     {
       "item": "Skills",
