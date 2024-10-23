@@ -1,13 +1,22 @@
-# Experiment list
-- ## 🔍 Definition
-  - Experiments are tests or trials designed to validate assumptions and hypotheses about a business model's value proposition, customer segments, and revenue streams.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Experiment list using AI](https://www.perplexity.ai/search?q=videos+about+Experiment+list:+Experiments+are+tests+or+trials+designed+to+validate+assumptions+and+hypotheses+about+a+business+model's+value+proposition,+customer+segments,+and+revenue+streams.
-)
-- ## 📰 Content type (#experiment)
-  - Content is of type list and uses the following classes: #experiment
 
-- ## 📋 Class list
+# Experiment list
+
+
+## 🔍 Definition
+Experiments are tests or trials designed to validate assumptions and hypotheses about a business model's value proposition, customer segments, and revenue streams.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Experiment list using AI](https://www.perplexity.ai/search?q=videos+about+Experiment+list:+Experiments+are+tests+or+trials+designed+to+validate+assumptions+and+hypotheses+about+a+business+model's+value+proposition,+customer+segments,+and+revenue+streams.
+)
+
+
+## 📰 Content type (#experiment)
+Content is of type list and uses the following classes: #experiment
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -91,7 +100,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   The concept of "Experiment List" in business modeling refers to a systematic list of tests or trials designed to validate the assumptions and hypotheses about a business model's value proposition, customer segments, and revenue streams. This list is used as a roadmap to test and validate the viability and effectiveness of a business model before its full-scale implementation.
   
   An experiment list can include various types of tests depending on the specific aspects of the business model that need validation. For instance, it may include customer interviews to validate assumptions about customer needs and preferences. It may also include prototype testing to validate the feasibility and attractiveness of a product or service offering.
@@ -101,7 +110,9 @@
   The experiment list serves as a structured approach to risk management in business design and modeling. It helps business leaders and stakeholders to identify and address potential flaws and weaknesses in a business model before they become costly mistakes. It also provides valuable insights and learnings that can be used to refine and improve the business model.
   
   In conclusion, an experiment list is a critical tool in business design and modeling. It provides a systematic and evidence-based approach to validating the key assumptions and hypotheses of a business model, reducing risks and increasing the chances of success. It is a crucial component of a lean and agile business model, promoting continuous learning and adaptation in response to market feedback and changes.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   🧪#experiment Reusable Rocket Test
   
@@ -161,15 +172,21 @@
   	Measure the effectiveness of different marketing strategies and campaigns by tracking customer acquisition, engagement, and conversion rates to optimize marketing efforts and allocate resources efficiently.
   #experiment Sustainability Initiatives
   	Implement and evaluate sustainability initiatives, such as reducing plastic waste and implementing eco-friendly practices, to assess their impact on the restaurant's brand reputation and customer satisfaction.
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   - ### TODO #topic topic/Modelo de negocio/Ciclo de modelado de negocio/Validación/Experimentos
     plastilinn-type:: [[topic]] [[guide-item]]
     xBoK-artifact:: [[experiment-list]]
     - {{embed [[topic/Modelo de negocio/Ciclo de modelado de negocio/Validación/Experimentos]]}}
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Lean Startup Methodology]]
     - The Lean Startup methodology, developed by Eric Ries, emphasizes the importance of conducting experiments to validate business assumptions. The methodology encourages businesses to create a "Minimum Viable Product" (MVP) and use it to test key business hypotheses. The feedback received from these experiments is then used to iterate and improve the business model.
   - [[Design Thinking]]

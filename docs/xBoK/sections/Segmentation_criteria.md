@@ -1,13 +1,22 @@
-# Segmentation criteria
-- ## 🔍 Definition
-  - the process of dividing a market into distinct groups of customers with similar needs or characteristics.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Segmentation criteria using AI](https://www.perplexity.ai/search?q=videos+about+Segmentation+criteria:+the+process+of+dividing+a+market+into+distinct+groups+of+customers+with+similar+needs+or+characteristics.
-)
-- ## 📰 Content type (#segmentation)
-  - Content is of type list and uses the following classes: #segmentation
 
-- ## 📋 Class list
+# Segmentation criteria
+
+
+## 🔍 Definition
+the process of dividing a market into distinct groups of customers with similar needs or characteristics.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Segmentation criteria using AI](https://www.perplexity.ai/search?q=videos+about+Segmentation+criteria:+the+process+of+dividing+a+market+into+distinct+groups+of+customers+with+similar+needs+or+characteristics.
+)
+
+
+## 📰 Content type (#segmentation)
+Content is of type list and uses the following classes: #segmentation
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -141,7 +150,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   In business modeling, the concept of "segment" or "segmentation criteria" refers to the process of dividing a company's market into distinct groups of buyers who might require separate products or marketing mixes. These groups, or segments, are defined by shared characteristics such as demographics, behaviors, needs, or preferences. The purpose of segmentation is to allow a company to better tailor its products, services, and marketing efforts to meet the specific needs of different customer groups.
   
   Segmentation criteria can be based on a wide range of factors, including age, gender, income, location, lifestyle, buying behavior, and more. The chosen criteria should be relevant to the product or service being offered, and should effectively differentiate different groups of customers.
@@ -149,7 +158,9 @@
   For example, a clothing retailer might segment its market based on age and gender, offering different product lines for men, women, and children. Within these broad segments, the retailer might further segment based on factors like fashion style or price sensitivity, offering different ranges for customers who prefer classic versus trendy styles, or budget versus premium pricing.
   
   In essence, the concept of "segment" or "segmentation criteria" in business modeling is about understanding and categorizing the diverse needs and preferences of a company's customer base. This allows the company to more effectively target its offerings and marketing efforts, improving customer satisfaction and business performance. It is a critical element in business design, shaping the development of a company's products, services, and marketing strategies.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   ✂️#segmentation Organization size (small, medium, large)
   
@@ -194,11 +205,17 @@
   	Classifying a market based on attitudes, beliefs, values, interests, and lifestyles of consumers.
   #solution Behavioral segmentation
   	Segmenting a market based on consumer behavior, including purchase patterns, usage rate, loyalty, and benefits sought.
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Business Model Canvas]]
     - In the Business Model Canvas, "customer segments" are one of the nine key components. This refers to the different groups of people or organizations an enterprise aims to reach and serve. Companies are advised to group customers into distinct segments based on common needs, behaviors, or other attributes.
   - [[Value Proposition Canvas]]

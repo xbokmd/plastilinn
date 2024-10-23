@@ -1,13 +1,22 @@
-# Function list
-- ## 🔍 Definition
-  - High-level specification of the set of tasks that are necessary to carry out a business activity towards the achievement of a business goal.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Function list using AI](https://www.perplexity.ai/search?q=videos+about+Function+list:+High-level+specification+of+the+set+of+tasks+that+are+necessary+to+carry+out+a+business+activity+aimed+at+achieving+a+business+objective.
-)
-- ## 📰 Content type (#function)
-  - Content is of type list and uses the following classes: #function
 
-- ## 📋 Class list
+# Function list
+
+
+## 🔍 Definition
+High-level specification of the set of tasks that are necessary to carry out a business activity towards the achievement of a business goal.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Function list using AI](https://www.perplexity.ai/search?q=videos+about+Function+list:+High-level+specification+of+the+set+of+tasks+that+are+necessary+to+carry+out+a+business+activity+aimed+at+achieving+a+business+objective.
+)
+
+
+## 📰 Content type (#function)
+Content is of type list and uses the following classes: #function
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -114,7 +123,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   The concept of "Function List" in business modeling refers to a high-level specification of the tasks that are necessary to carry out a business activity towards the achievement of a business goal. This list is a crucial component of a business model as it outlines the key functions or tasks that need to be performed to deliver a product or service, create value for customers, and achieve the business objectives.
   
   The function list is typically organized in a logical sequence, starting from the initial stages of the business process to the final stages. Each function or task in the list is clearly defined and includes details such as the resources required, the expected output, and the responsible party or department.
@@ -126,7 +135,9 @@
   Moreover, the function list can be used as a communication tool to clarify roles and responsibilities within the organization and ensure that everyone understands what needs to be done to achieve the business goals.
   
   In conclusion, the "Function List" concept in business modeling is a vital tool that helps businesses to plan, manage, and optimize their operations towards the achievement of their business goals.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   👔#function Development and manufacturing
   
@@ -195,11 +206,17 @@
   	The restaurant must ensure the preservation and care of the marine life surrounding the establishment, employing experts and following environmental guidelines.
   #function Events and entertainment
   	The restaurant must organize events and entertainment activities, such as live music performances and interactive experiences, to enhance guests' visits.
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Business Process Modeling Notation (BPMN)]]
     - BPMN is a graphical representation for specifying business processes in a business process model. It provides businesses with a standard method of illustrating the flow of activities (functions) in a process, making it easier to understand and improve.
   - [[Value Stream Mapping]]

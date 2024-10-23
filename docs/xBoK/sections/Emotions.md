@@ -1,13 +1,22 @@
-# Emotions
-- ## 🔍 Definition
-  - Emotions that our stakeholders feel and that are relevant to empathize with them and be able to design a value proposition that resonates with them.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Emotions using AI](https://www.perplexity.ai/search?q=videos+about+Emotions:+Emotions+that+our+stakeholders+feel+and+that+are+relevant+to+empathize+with+them+and+be+able+to+design+a+value+proposition+that+resonates+with+them.
-)
-- ## 📰 Content type (#emotion)
-  - Content is of type list and uses the following classes: #emotion
 
-- ## 📋 Class list
+# Emotions
+
+
+## 🔍 Definition
+Emotions that our stakeholders feel and that are relevant to empathize with them and be able to design a value proposition that resonates with them.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Emotions using AI](https://www.perplexity.ai/search?q=videos+about+Emotions:+Emotions+that+our+stakeholders+feel+and+that+are+relevant+to+empathize+with+them+and+be+able+to+design+a+value+proposition+that+resonates+with+them.
+)
+
+
+## 📰 Content type (#emotion)
+Content is of type list and uses the following classes: #emotion
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -53,7 +62,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   The concept of "Emotions" in business modeling refers to the emotional aspects that influence the behaviors and decisions of customers, employees, and other stakeholders. This concept is crucial in a business model as it helps companies understand and manage these emotional aspects to enhance their relationships with these stakeholders, improve their experiences, and ultimately, drive their business success.
   
   Emotions in business modeling typically involve the following aspects:
@@ -65,7 +74,9 @@
   - Stakeholder Emotions: This involves acknowledging and responding to the emotions that impact stakeholders' perceptions, support, and interactions. For example, a company might realize that its shareholders feel anxious about its financial stability. The company might then communicate its financial performance and plans more transparently to alleviate this anxiety, build their trust, and secure their support.
   
   For instance, a company might identify that its customers feel delighted when they receive personalized services. The company might then implement a customer relationship management system to provide more personalized services, enhance their customer experience, and increase their satisfaction and loyalty. This would demonstrate the company's ability to leverage its understanding of "Emotions" to drive its business model and create value.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   😐#emotion excitement
   The opportunity to work with Space X, a recognized and innovative space company, can generate a feeling of excitement and anticipation.
@@ -138,11 +149,17 @@
   	A line of merchandise and souvenirs inspired by the Submarine Themed Restaurant, allowing customers to take a piece of the experience home with them.
   #solution MarineLifeEducation
   	An educational program that offers interactive workshops and classes on marine life conservation and the importance of protecting underwater ecosystems.
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Empathy Map]]
     - The Empathy Map, originally developed by XPLANE, is a tool that helps businesses deeply understand their stakeholders' emotions. It is divided into four quadrants (Says, Thinks, Does, Feels) and allows teams to step into the shoes of the user and empathize with their feelings and attitudes.
   - [[Emotional Journey Map]]

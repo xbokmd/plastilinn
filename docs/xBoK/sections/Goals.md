@@ -1,13 +1,22 @@
-# Goals
-- ## 🔍 Definition
-  - 
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Goals using AI](https://www.perplexity.ai/search?q=videos+about+Goals:+
-)
-- ## 📰 Content type (#goal)
-  - Content is of type list and uses the following classes: #goal
 
-- ## 📋 Class list
+# Goals
+
+
+## 🔍 Definition
+
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Goals using AI](https://www.perplexity.ai/search?q=videos+about+Goals:+
+)
+
+
+## 📰 Content type (#goal)
+Content is of type list and uses the following classes: #goal
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -177,9 +186,11 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   
   ### 
@@ -190,9 +201,15 @@
   
   ### Underwater restaurant
   
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   

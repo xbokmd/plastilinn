@@ -1,13 +1,22 @@
-# Functions
-- ## 🔍 Definition
-  - Specification of the functions that a person who is a stakeholder of the business can carry out, because they possess the capacity and experience to successfully complete them.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Functions using AI](https://www.perplexity.ai/search?q=videos+about+Functions:+Specification+of+the+functions+that+a+person+who+is+a+stakeholder+of+the+business+can+carry+out,+because+they+possess+the+capacity+and+experience+to+successfully+accomplish+them.
-)
-- ## 📰 Content type (#function)
-  - Content is of type list and uses the following classes: #function
 
-- ## 📋 Class list
+# Functions
+
+
+## 🔍 Definition
+Specification of the functions that a person who is a stakeholder of the business can carry out, because they possess the capacity and experience to successfully complete them.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Functions using AI](https://www.perplexity.ai/search?q=videos+about+Functions:+Specification+of+the+functions+that+a+person+who+is+a+stakeholder+of+the+business+can+carry+out,+because+they+possess+the+capacity+and+experience+to+successfully+accomplish+them.
+)
+
+
+## 📰 Content type (#function)
+Content is of type list and uses the following classes: #function
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -114,7 +123,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   The concept of Person/Functions in business modeling refers to the identification and specification of the roles and responsibilities that a person, who is a stakeholder in the business, can perform. This is based on their capacity, skills, and experience to successfully carry out these functions. 
   
   In this model, each person is assigned a unique identifier to differentiate them from other stakeholders. The functions they can perform are then defined and associated with their ID. These functions can range from strategic decision-making and management tasks to operational activities and customer service roles. 
@@ -124,7 +133,9 @@
   For example, in a software development company, a person with the ID 'Developer1' might be assigned functions such as 'Code Development', 'Code Review', and 'Bug Fixing'. Another person with the ID 'Manager1' might be assigned functions such as 'Project Management', 'Resource Allocation', and 'Performance Evaluation'. 
   
   In essence, the Person/Functions model is a critical aspect of business design. It helps to structure the business, optimize its operations, and ensure that every stakeholder is contributing effectively to its success. It also provides a foundation for other business modeling concepts, such as process mapping and workflow design, by defining who does what in the business.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   👔#function Strategy definition
   Setting the strategic direction and vision for the company
@@ -161,11 +172,17 @@
   
   ### Underwater restaurant
   
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Business Model Canvas]]
     - In the Business Model Canvas, the "Key Activities" component can be related to the functions that a person or stakeholder can carry out. These activities are the most important tasks a company must carry out in order to fulfill its business purpose and create its value proposition. The people who perform these activities should have the necessary skills and experience.
   - [[RACI Matrix]]

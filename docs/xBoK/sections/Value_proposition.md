@@ -1,13 +1,22 @@
-# Value proposition
-- ## 🔍 Definition
-  - The reason that will convince this stakeholder to take the action we want them to take, such as buying a product.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Value proposition using AI](https://www.perplexity.ai/search?q=videos+about+Value+proposition:+The+reason+that+will+convince+this+stakeholder+to+perform+the+action+we+want+them+to+do,+such+as+buying+a+product.
-)
-- ## 📰 Content type (#value)
-  - Content is of type list and uses the following classes: #value
 
-- ## 📋 Class list
+# Value proposition
+
+
+## 🔍 Definition
+The reason that will convince this stakeholder to take the action we want them to take, such as buying a product.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Value proposition using AI](https://www.perplexity.ai/search?q=videos+about+Value+proposition:+The+reason+that+will+convince+this+stakeholder+to+perform+the+action+we+want+them+to+do,+such+as+buying+a+product.
+)
+
+
+## 📰 Content type (#value)
+Content is of type list and uses the following classes: #value
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -157,7 +166,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   In business modeling, the concept of "profile/value proposition" refers to the unique combination of products or services that a company offers to meet the specific needs of a particular customer segment. It is the unique value that a company promises to deliver to its customers, and the reason why customers should choose this company over its competitors. 
   
   The profile/value proposition is a critical component of business design as it defines the company's competitive advantage, shapes its business strategy, and drives its business operations. It is the foundation of a company's relationship with its customers and the key to its market success.
@@ -167,7 +176,9 @@
   The software company's value proposition is not just about its software. It is about the total value that the company delivers to its customers, including the quality of its software, the benefits that its software brings to its customers, and the support that the company provides to its customers. It is about how the company solves its customers' problems, meets their needs, and creates value for them.
   
   In essence, the profile/value proposition is a strategic tool that enables businesses to differentiate themselves from their competitors, attract and retain their customers, and achieve their business goals. It is the heart of business design and a key driver of business success.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   💎#value Cost Reduction through Reusability
   
@@ -231,11 +242,17 @@
   	A line of merchandise and souvenirs inspired by the Submarine Themed Restaurant, allowing customers to take a piece of the experience home with them.
   #solution MarineLifeEducation
   	An educational program that offers interactive workshops and classes on marine life conservation and the importance of protecting underwater ecosystems.
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Business Model Canvas]]
     - In the Business Model Canvas, the "Value Proposition" is one of the nine key components. It refers to the unique combination of products and services that a company offers to its customers. The value proposition should be designed in a way that it solves a problem or fulfills a need of the customer, making it the main reason for a customer to choose one company over another.
   - [[Value Proposition Canvas]]

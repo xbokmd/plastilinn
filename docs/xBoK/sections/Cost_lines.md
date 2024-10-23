@@ -1,13 +1,22 @@
-# Cost lines
-- ## 🔍 Definition
-  - the expenses incurred in the production and delivery of a product or service within a business model.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Cost lines using AI](https://www.perplexity.ai/search?q=videos+about+Cost+lines:+the+expenses+incurred+in+the+production+and+delivery+of+a+product+or+service+within+a+business+model.
-)
-- ## 📰 Content type (#cost)
-  - Content is of type list and uses the following classes: #cost
 
-- ## 📋 Class list
+# Cost lines
+
+
+## 🔍 Definition
+the expenses incurred in the production and delivery of a product or service within a business model.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Cost lines using AI](https://www.perplexity.ai/search?q=videos+about+Cost+lines:+the+expenses+incurred+in+the+production+and+delivery+of+a+product+or+service+within+a+business+model.
+)
+
+
+## 📰 Content type (#cost)
+Content is of type list and uses the following classes: #cost
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -97,7 +106,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   The concept of "Cost Lines" in business modeling refers to the various expenses that a business incurs in the process of producing and delivering its products or services. These costs are an integral part of the business model, as they directly impact the profitability and financial sustainability of the business.
   
   Cost Lines can be categorized into different types, depending on the nature of the expense. For example, direct costs are those that are directly tied to the production of a product or service, such as raw materials, labor, and manufacturing overhead. Indirect costs, on the other hand, are not directly tied to production, but are necessary for the overall operation of the business, such as administrative expenses, marketing costs, and rent.
@@ -107,7 +116,9 @@
   For instance, in a restaurant business, the "Cost Lines" could include the cost of food ingredients (a direct and variable cost), the salaries of the chefs and waitstaff (a direct and fixed cost), the rent for the restaurant premises (an indirect and fixed cost), and the cost of advertising (an indirect and variable cost).
   
   In essence, the concept of "Cost Lines" in business modeling is about identifying, categorizing, and managing the various costs involved in running a business. This is a critical aspect of business design, as it directly impacts the business's bottom line and its ability to achieve financial sustainability and growth.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   💸#cost Research and development costs
   
@@ -176,11 +187,17 @@
   	The company hires professional divers and marine experts to maintain the surrounding marine life, ensuring their safety and well-being.
   #cost Event and activity costs
   	The company incurs expenses for organizing live music performances, educational sessions, and interactive experiences to enhance guests' visits.
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Business Model Canvas]]
     - In the Business Model Canvas, "cost structure" is one of the nine key components. This refers to all the costs that a business will incur while operating under a specific business model. It includes both fixed and variable costs, and is directly related to the production and delivery of a product or service.
   - [[Value Proposition Canvas]]

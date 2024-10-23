@@ -1,13 +1,22 @@
-# Metric list
-- ## 🔍 Definition
-  - Metrics are quantifiable measures used to evaluate the performance and effectiveness of a business model.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Metric list using AI](https://www.perplexity.ai/search?q=videos+about+Metric+list:+Metrics+are+quantifiable+measures+used+to+evaluate+the+performance+and+effectiveness+of+a+business+model.
-)
-- ## 📰 Content type (#metric)
-  - Content is of type list and uses the following classes: #metric
 
-- ## 📋 Class list
+# Metric list
+
+
+## 🔍 Definition
+Metrics are quantifiable measures used to evaluate the performance and effectiveness of a business model.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Metric list using AI](https://www.perplexity.ai/search?q=videos+about+Metric+list:+Metrics+are+quantifiable+measures+used+to+evaluate+the+performance+and+effectiveness+of+a+business+model.
+)
+
+
+## 📰 Content type (#metric)
+Content is of type list and uses the following classes: #metric
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -137,7 +146,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   A Metric List, in the context of business design, is a set of quantifiable measures that are used to assess the performance and effectiveness of a business model. These metrics serve as a tool for businesses to track their progress towards achieving their strategic objectives, and to identify areas where improvements can be made.
   
   The Metric List begins with the identification of key performance indicators (KPIs). These are the critical measures that reflect the success or failure of a business model. KPIs can be financial, such as revenue or profit margins, or non-financial, such as customer satisfaction or employee turnover rates.
@@ -151,7 +160,9 @@
   An example of a Metric List in business design could be a retail company that uses metrics such as sales revenue, customer footfall, average transaction value, and customer satisfaction scores to evaluate the performance of its business model. The company would set targets for each of these metrics, track their performance using a dashboard, and regularly review and update the metrics to ensure they remain relevant and useful.
   
   In conclusion, a Metric List is a vital tool in business design that enables businesses to measure the performance and effectiveness of their business model. It provides a structured approach to tracking progress, identifying areas for improvement, and driving business growth and success.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   📐#metric Revenue growth
   
@@ -228,11 +239,17 @@
   	Analyzing the popularity of different menu items can help identify customer preferences and optimize the menu to maximize sales and customer satisfaction.
   #metric Online reviews and ratings
   	Monitoring online reviews and ratings on platforms like Yelp or TripAdvisor can provide insights into the restaurant's reputation and help identify areas for improvement.
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Balanced Scorecard]]
     - The Balanced Scorecard is a strategic planning and management system that organizations use to align business activities with the vision and strategy of the organization, improve internal and external communications, and monitor organization performance against strategic goals. It includes financial metrics, customer metrics, process metrics, and people metrics.
   - [[Key Performance Indicators (KPIs)]]

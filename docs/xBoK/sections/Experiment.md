@@ -1,13 +1,22 @@
-# Experiment
-- ## 🔍 Definition
-  - Experiments are tests or trials designed to validate assumptions and hypotheses about a business model's value proposition, customer segments, and revenue streams.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Experiment using AI](https://www.perplexity.ai/search?q=videos+about+Experiment:+Experiments+are+tests+or+trials+designed+to+validate+assumptions+and+hypotheses+about+a+business+model's+value+proposition,+customer+segments,+and+revenue+streams.
-)
-- ## 📰 Content type (#experiment)
-  - Content is of type text and uses the following classes: #experiment
 
-- ## 📋 Class list
+# Experiment
+
+
+## 🔍 Definition
+Experiments are tests or trials designed to validate assumptions and hypotheses about a business model's value proposition, customer segments, and revenue streams.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Experiment using AI](https://www.perplexity.ai/search?q=videos+about+Experiment:+Experiments+are+tests+or+trials+designed+to+validate+assumptions+and+hypotheses+about+a+business+model's+value+proposition,+customer+segments,+and+revenue+streams.
+)
+
+
+## 📰 Content type (#experiment)
+Content is of type text and uses the following classes: #experiment
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -91,7 +100,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   The concept of "Experiment" in business modeling refers to the systematic process of testing and validating the assumptions and hypotheses that underpin a business model. These experiments are designed to provide empirical evidence about the viability of the business model's value proposition, customer segments, and revenue streams. 
   
   Here are the key aspects of "Experiment" in business modeling:
@@ -107,7 +116,9 @@
   - Learning: The ultimate goal of these experiments is to learn more about the market, the customers, and the business environment. This learning can then be used to make more informed decisions and to develop a more effective and successful business model.
   
   In essence, the "Experiment" concept in business modeling is about reducing uncertainty and risk by systematically testing and validating the assumptions that underpin a business model. It's about learning and adapting based on empirical evidence, rather than simply relying on beliefs or guesses.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   🧪#experiment Reusable Rocket Test
   
@@ -163,11 +174,17 @@
   	Measure the effectiveness of different marketing strategies and campaigns by tracking customer acquisition, engagement, and conversion rates to optimize marketing efforts and allocate resources efficiently.
   #experiment Sustainability Initiatives
   	Implement and evaluate sustainability initiatives, such as reducing plastic waste and implementing eco-friendly practices, to assess their impact on the restaurant's brand reputation and customer satisfaction.
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Lean Startup Methodology]]
     - The Lean Startup methodology, developed by Eric Ries, emphasizes the importance of conducting experiments to validate business assumptions. The "Build-Measure-Learn" feedback loop is a core component of this methodology, where businesses build a minimum viable product (MVP), measure how it performs, and learn from the results to iterate or pivot the business model.
   - [[Design Thinking]]

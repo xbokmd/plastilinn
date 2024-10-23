@@ -1,13 +1,22 @@
-# Organization goals
-- ## 🔍 Definition
-  - Business goals are the specific objectives that a business model aims to achieve in terms of revenue, growth, profitability, or market share.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Organization goals using AI](https://www.perplexity.ai/search?q=videos+about+Organization+goals:+Business+goals+are+the+specific+objectives+that+a+business+model+aims+to+achieve+in+terms+of+revenue,+growth,+profitability,+or+market+share.
-)
-- ## 📰 Content type (#goal)
-  - Content is of type tree and uses the following classes: #goal
 
-- ## 📋 Class list
+# Organization goals
+
+
+## 🔍 Definition
+Business goals are the specific objectives that a business model aims to achieve in terms of revenue, growth, profitability, or market share.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Organization goals using AI](https://www.perplexity.ai/search?q=videos+about+Organization+goals:+Business+goals+are+the+specific+objectives+that+a+business+model+aims+to+achieve+in+terms+of+revenue,+growth,+profitability,+or+market+share.
+)
+
+
+## 📰 Content type (#goal)
+Content is of type tree and uses the following classes: #goal
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -177,7 +186,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   In business modeling, "organization goals" refer to the strategic objectives that a company aims to achieve over a specific period. These goals provide direction, facilitate planning, guide decision-making, and serve as a benchmark for evaluating performance. They are a critical component of a business model as they define the company's purpose, drive its activities, and shape its strategies.
   
   Organization goals typically encompass the following aspects:
@@ -191,7 +200,9 @@
   - Organizational Goals: These include the organizational outcomes that the company desires to realize, such as developing leadership, fostering innovation, promoting a positive culture, and enhancing employee engagement. They signify the company's dedication to creating a conducive work environment, nurturing talent, and fostering organizational health.
   
   For instance, an organization's goals might include increasing revenue by 20%, reducing operational costs by 10%, expanding to two new markets, and improving employee engagement by 15%. These goals would guide the company's strategies, decisions, and actions, and provide a standard for measuring its performance. If the company achieves these goals, it would indicate that it is successful in executing its business model and creating value. Conversely, if the company falls short of these goals, it would suggest that it needs to reassess its business model, strategies, or execution.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   | #goal /  (info) | Description | Units | Value | Term |
   | :---- | :---- | :---- | :---- | :---- |
@@ -249,11 +260,17 @@
   #goal Achieve profitability and long-term growth through efficient operations and cost management
   	Optimize operational processes to improve efficiency and reduce costs.
   	Regularly assess financial performance and make strategic adjustments to ensure profitability and sustainable growth.
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Balanced Scorecard]]
     - The Balanced Scorecard, developed by Robert Kaplan and David Norton, is a strategic planning and management system used extensively in business and industry, government, and nonprofit organizations worldwide to align business activities to the vision and strategy of the organization, improve internal and external communications, and monitor organization performance against strategic goals. It provides a framework that not only provides performance measurements, but helps planners identify what should be done and measured.
     

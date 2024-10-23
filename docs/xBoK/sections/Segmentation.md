@@ -1,13 +1,22 @@
-# Segmentation
-- ## 🔍 Definition
-  - the process of dividing a market into distinct groups of customers with similar needs or characteristics.
-- ## 📹 Internet info and videos
-  - 🤖 [Search info and videos about Segmentation using AI](https://www.perplexity.ai/search?q=videos+about+Segmentation:+the+process+of+dividing+a+market+into+distinct+groups+of+customers+with+similar+needs+or+characteristics.
-)
-- ## 📰 Content type (#segmentation)
-  - Content is of type list and uses the following classes: #segmentation
 
-- ## 📋 Class list
+# Segmentation
+
+
+## 🔍 Definition
+the process of dividing a market into distinct groups of customers with similar needs or characteristics.
+
+
+## 📹 Internet info and videos
+🤖 [Search info and videos about Segmentation using AI](https://www.perplexity.ai/search?q=videos+about+Segmentation:+the+process+of+dividing+a+market+into+distinct+groups+of+customers+with+similar+needs+or+characteristics.
+)
+
+
+## 📰 Content type (#segmentation)
+Content is of type list and uses the following classes: #segmentation
+
+
+
+## 📋 Class list
 
 <div style='max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 600px;'>
   <ul style='list-style-type: none; padding-left: 0;'>
@@ -141,7 +150,7 @@
   </ul>
 </div>
 
-- ## 📖 Description
+## 📖 Description
   In business modeling, the concept of "profile/segmentation" refers to the process of dividing a company's market into distinct groups of buyers who might require separate products or marketing mixes. These groups, or segments, are defined by shared characteristics such as demographics, behaviors, needs, or preferences. 
   
   The profile/segmentation is a fundamental component of business design as it allows companies to target their products or services more effectively, understand their customers better, and allocate their resources more efficiently. It enables businesses to differentiate themselves from their competitors, meet the specific needs of their customers, and achieve a competitive advantage.
@@ -151,7 +160,9 @@
   By understanding the unique characteristics and needs of each segment, the retailer can tailor its products, pricing, and marketing strategies to meet the specific needs of each segment. It can create a personalized shopping experience, build stronger relationships with its customers, and increase customer loyalty and satisfaction.
   
   In essence, the profile/segmentation is a strategic tool that enables businesses to understand and serve their market more effectively, create and deliver value more efficiently, and achieve sustainable growth. It is the foundation of customer-centric business design and a key driver of business success.
-- ## 👉 Examples
+
+
+## 👉 Examples
   ### Space X
   ✂️#segmentation Demographic segmentation
   
@@ -214,11 +225,17 @@
   	Classifying a market based on attitudes, beliefs, values, interests, and lifestyles of consumers.
   #solution Behavioral segmentation
   	Segmenting a market based on consumer behavior, including purchase patterns, usage rate, loyalty, and benefits sought.
-- ## 🔑 Keys
+
+
+## 🔑 Keys
   
-- ## 🗄️ Topics
+
+
+## 🗄️ Topics
   
-- ## 🧰 Tools
+
+
+## 🧰 Tools
   - [[Business Model Canvas]]
     - In the Business Model Canvas, "customer segments" is one of the nine key components. This refers to the different groups of people or organizations an enterprise aims to reach and serve. Companies need to identify and understand their customer segments in order to effectively meet their distinct needs and solve their problems.
   - [[Market Segmentation]]
