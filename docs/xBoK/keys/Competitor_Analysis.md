@@ -1,4 +1,4 @@
-## segment Name - Competition - Competitor Analysis
+## segments - Competition - Competitor Analysis
 #rating: 40
 - Understanding competitors and their offerings is crucial. This knowledge can help in differentiating the product and finding a unique selling proposition.
 - **💭 Questions**

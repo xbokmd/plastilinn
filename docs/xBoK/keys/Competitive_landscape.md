@@ -1,4 +1,4 @@
-## segment Name - Competition - Competitive landscape
+## segments - Competition - Competitive landscape
 #rating: 50
 - how many competitors exist? how big are they? how will they react?
 - **💭 Questions**

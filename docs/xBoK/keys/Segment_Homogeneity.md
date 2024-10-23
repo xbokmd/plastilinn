@@ -1,4 +1,4 @@
-## segment Name - Segment Homogeneity
+## segments - Segment Homogeneity
 #rating: 25
 - Evaluate the homogeneity of the target market segment and assess its potential for effective targeting and marketing strategies.
 - **💭 Questions**

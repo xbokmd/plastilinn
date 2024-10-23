@@ -1,4 +1,4 @@
-## solution Name - Financial benefits
+## solutions - Financial benefits
 #rating: 45
 - does the solution help the customer earn more money? does the solution make the customer save money?
 - **💭 Questions**

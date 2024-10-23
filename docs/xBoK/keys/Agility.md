@@ -1,4 +1,4 @@
-## solution Name - Agility
+## solutions - Agility
 #rating: 40
 - Understanding and managing the product life cycle is essential for adapting to changes in market demand and technology. How difficult will it be to launch a worthwhile version 1.0?
 - **💭 Questions**

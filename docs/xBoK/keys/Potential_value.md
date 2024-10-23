@@ -1,4 +1,4 @@
-## profile Name - Value proposition - Potential value
+## profiles - Value proposition - Potential value
 #rating: 40
 - Assess the potential value that the business can ultimately deliver.
 - **💭 Questions**

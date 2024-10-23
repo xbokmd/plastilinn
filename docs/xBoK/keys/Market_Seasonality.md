@@ -1,4 +1,4 @@
-## segment Name - Market Seasonality
+## segments - Market Seasonality
 #rating: 10
 - Evaluate the impact of market seasonality on the business.
 - **💭 Questions**

@@ -1,4 +1,4 @@
-## profile Name - Goals - Addressing a critical problem
+## profiles - Goals - Addressing a critical problem
 #rating: 80
 - Addressing a problem that is critical and important for potential customers increases their willingness to pay for the solution, ensuring revenue and sustainability for the business.
 - **💭 Questions**

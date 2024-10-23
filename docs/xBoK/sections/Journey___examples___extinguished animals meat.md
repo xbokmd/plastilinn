@@ -1,6 +1,6 @@
-      - Segment ID: Fine Dining Restaurants
-       Profile ID: Head Chef___Menu Planner
-       Journey:
+      Segment ID: Fine Dining Restaurants
+Profile ID: Head Chef___Menu Planner
+Journey:
   1. Awareness: The head chef becomes aware of our company and its unique meat offerings through industry events, culinary competitions, or word-of-mouth recommendations.
   2. Research and Exploration: The head chef conducts research to gather more_information about our revived extinct animal meats, including their taste, texture, and culinary potential. They explore our website, read articles or interviews about our products, and seek out reviews from other chefs.
   3. Initial Contact: The head chef reaches out to us via email or phone to express interest and request samples or additional_information, such as pricing and availability.

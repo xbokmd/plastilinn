@@ -1,4 +1,4 @@
-## segment Name - Market Adaptability
+## segments - Market Adaptability
 #rating: 40
 - The ability to adapt to market changes is crucial. This includes responding to customer preferences, trends, and competitive forces.
 - **💭 Questions**

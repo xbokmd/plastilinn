@@ -1,4 +1,4 @@
-## profile Name - Goals - Pain perception
+## profiles - Goals - Pain perception
 #rating: 70
 - does the problem really hurt?
 - **💭 Questions**

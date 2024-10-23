@@ -1,4 +1,4 @@
-## segment Name - Paying Capacity
+## segments - Paying Capacity
 #rating: 35
 - Evaluate the paying capacity of the target market segment and assess its potential for generating revenue and profitability.
 - **💭 Questions**

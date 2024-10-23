@@ -153,76 +153,81 @@
   In conclusion, a Metric List is a vital tool in business design that enables businesses to measure the performance and effectiveness of their business model. It provides a structured approach to tracking progress, identifying areas for improvement, and driving business growth and success.
 - ## 👉 Examples
   ### Space X
-  - #metric Revenue growth
+  📐#metric Revenue growth
+  
   Tracking the company's revenue growth over time can indicate the success of its products and services in the market.
   
-  - #metric Profitability
+  📐#metric Profitability
+  
   Analyzing the company's profitability, including gross profit margin and net profit margin, can provide insights into its financial performance and efficiency.
   
-  - #metric Customer acquisition cost
+  📐#metric Customer acquisition cost
+  
   Calculating the cost of acquiring new customers can help determine the effectiveness of Space X's marketing and sales efforts.
   
-  - #metric Customer retention rate
+  📐#metric Customer retention rate
+  
   Monitoring the percentage of customers who continue to use Space X's services over time can indicate customer satisfaction and loyalty.
   
-  - #metric Launch success rate
+  📐#metric Launch success rate
+  
   Tracking the success rate of Space X's rocket launches can demonstrate the reliability and performance of its launch vehicles.
   
-  - #metric Satellite deployment rate
+  📐#metric Satellite deployment rate
   Monitoring the rate at which Space X deploys satellites for its Starlink project can indicate the progress and scalability of its satellite network.
   
-  - #metric Research and development investment
+  📐#metric Research and development investment
   Assessing the company's investment in research and development can indicate its commitment to innovation and technological advancement.
   
-  - #metric Market share
+  📐#metric Market share
   Analyzing Space X's market share in the space industry can provide insights into its competitiveness and growth potential.
   
-  - #metric Employee satisfaction and retention
+  📐#metric Employee satisfaction and retention
   Monitoring employee satisfaction and retention rates can indicate the company's ability to attract and retain top talent.
   
-  - #metric Environmental impact
+  📐#metric Environmental impact
   Assessing the company's environmental impact, such as carbon emissions and waste generation, can demonstrate its commitment to sustainability.
   
-  - #metric Regulatory compliance
+  📐#metric Regulatory compliance
   Ensuring compliance with relevant laws and regulations in the space industry is important for Space X's operations and reputation.
   
-  - #metric Investor confidence
+  📐#metric Investor confidence
   Monitoring investor sentiment and the company's ability to attract funding and investment can indicate confidence in its business model and growth prospects.
   ### 
   
   ### extinguished animals meat
-  - #metric Número de especies animales extintas revividas
-  	- Seguir el número de diferentes especies animales extintas revividas con éxito puede indicar el progreso de la empresa en ingeniería genética y clonación.
-  - #metric Volumen de producción de carne
-  	- Monitorear el volumen de carne de lujo producida por la empresa puede demostrar su capacidad para satisfacer la demanda del mercado y escalar sus operaciones.
-  - #metric Precio promedio de venta por unidad
-  	- Analizar el precio promedio al que se vende la carne de lujo puede indicar la estrategia de precios de la empresa y el valor percibido de sus productos.
-  - #metric Calificación de satisfacción del cliente
-  	- Medir la satisfacción del cliente a través de encuestas o calificaciones puede proporcionar_información sobre la calidad y deseabilidad de la carne de animales extintos revividos.
-  - #metric Impacto ambiental
-  	- Evaluar el impacto ambiental de la empresa, como el uso de tierras y recursos, puede demostrar su compromiso con prácticas sostenibles en biotecnología e ingeniería genética.
+  #metric Número de especies animales extintas revividas
+  	Seguir el número de diferentes especies animales extintas revividas con éxito puede indicar el progreso de la empresa en ingeniería genética y clonación.
+  #metric Volumen de producción de carne
+  	Monitorear el volumen de carne de lujo producida por la empresa puede demostrar su capacidad para satisfacer la demanda del mercado y escalar sus operaciones.
+  #metric Precio promedio de venta por unidad
+  	Analizar el precio promedio al que se vende la carne de lujo puede indicar la estrategia de precios de la empresa y el valor percibido de sus productos.
+  #metric Calificación de satisfacción del cliente
+  	Medir la satisfacción del cliente a través de encuestas o calificaciones puede proporcionar_información sobre la calidad y deseabilidad de la carne de animales extintos revividos.
+  #metric Impacto ambiental
+  	Evaluar el impacto ambiental de la empresa, como el uso de tierras y recursos, puede demostrar su compromiso con prácticas sostenibles en biotecnología e ingeniería genética.
   ### Exotic Pet Rental
-  - #metric Rental utilization rate
-  	- Assessing the rate at which the exotic pets are rented can indicate the demand and popularity of the service.
-  - #metric Customer satisfaction rating
-  	- Measuring customer satisfaction through surveys or ratings can provide insights into the quality of the rental experience.
-  - #metric Return rate
-  	- Tracking the percentage of customers who return to rent exotic pets multiple times can indicate customer loyalty and repeat business.
-  - #metric Referral rate
-  	- Monitoring the number of customers who refer others to use the exotic pet rental service can indicate customer satisfaction and word-of-mouth marketing effectiveness.
-  - #metric Pet health and safety incidents
-  	- Tracking the number of health or safety incidents involving rented pets can indicate the effectiveness of the care and handling practices.
+  #metric Rental utilization rate
+  	Assessing the rate at which the exotic pets are rented can indicate the demand and popularity of the service.
+  #metric Customer satisfaction rating
+  	Measuring customer satisfaction through surveys or ratings can provide insights into the quality of the rental experience.
+  #metric Return rate
+  	Tracking the percentage of customers who return to rent exotic pets multiple times can indicate customer loyalty and repeat business.
+  #metric Referral rate
+  	Monitoring the number of customers who refer others to use the exotic pet rental service can indicate customer satisfaction and word-of-mouth marketing effectiveness.
+  #metric Pet health and safety incidents
+  	Tracking the number of health or safety incidents involving rented pets can indicate the effectiveness of the care and handling practices.
   ### Underwater restaurant
-  - #metric Average table turnover rate
-  	- Tracking the average time it takes for a table to be occupied and vacated can indicate the efficiency of the restaurant's operations and potential revenue generation.
-  - #metric Customer satisfaction rating
-  	- Measuring customer satisfaction through surveys or ratings can provide insights into the quality of the dining experience and the likelihood of repeat visits.
-  - #metric Reservation conversion rate
-  	- Monitoring the percentage of reservation inquiries that result in confirmed bookings can indicate the effectiveness of the restaurant's reservation system and marketing efforts.
-  - #metric Menu item popularity
-  	- Analyzing the popularity of different menu items can help identify customer preferences and optimize the menu to maximize sales and customer satisfaction.
-  - #metric Online reviews and ratings
-  	- Monitoring online reviews and ratings on platforms like Yelp or TripAdvisor can provide insights into the restaurant's reputation and help identify areas for improvement.
+  #metric Average table turnover rate
+  	Tracking the average time it takes for a table to be occupied and vacated can indicate the efficiency of the restaurant's operations and potential revenue generation.
+  #metric Customer satisfaction rating
+  	Measuring customer satisfaction through surveys or ratings can provide insights into the quality of the dining experience and the likelihood of repeat visits.
+  #metric Reservation conversion rate
+  	Monitoring the percentage of reservation inquiries that result in confirmed bookings can indicate the effectiveness of the restaurant's reservation system and marketing efforts.
+  #metric Menu item popularity
+  	Analyzing the popularity of different menu items can help identify customer preferences and optimize the menu to maximize sales and customer satisfaction.
+  #metric Online reviews and ratings
+  	Monitoring online reviews and ratings on platforms like Yelp or TripAdvisor can provide insights into the restaurant's reputation and help identify areas for improvement.
 - ## 🔑 Keys
   
 - ## 🗄️ Topics

@@ -1,4 +1,4 @@
-## segment Name - Market trends - Market wideness
+## segments - Market trends - Market wideness
 #rating: 30
 - How many people may ultimately use it?
 - **💭 Questions**

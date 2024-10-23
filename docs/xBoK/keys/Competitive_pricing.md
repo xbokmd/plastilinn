@@ -1,4 +1,4 @@
-## solution Name - Pricing - Competitive pricing
+## solutions - Pricing - Competitive pricing
 #rating: 40
 - Setting the right price for the product or service ensures that it remains competitive in the market, attracting potential customers and maximizing revenue and profitability.
 - **💭 Questions**

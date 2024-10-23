@@ -109,55 +109,60 @@
   In essence, the "Experiment" concept in business modeling is about reducing uncertainty and risk by systematically testing and validating the assumptions that underpin a business model. It's about learning and adapting based on empirical evidence, rather than simply relying on beliefs or guesses.
 - ## 👉 Examples
   ### Space X
-  - #experiment Reusable Rocket Test
+  🧪#experiment Reusable Rocket Test
+  
   Objective: Validate the Assumption: Cost reduction through reusable rockets by launching and reusing a Falcon 9 rocket multiple times to measure cost savings and operational efficiency.
   
   Tasks and Objectives
-  - #work Prepare Falcon 9 for Multiple Reuses
+  
+  ⚙️#work Prepare Falcon 9 for Multiple Reuses
+  
   Refurbish a previously flown Falcon 9 for 3 consecutive launches. Complete refurbishment within 10 days between launches.
   
-  - #work Conduct 3 Falcon 9 Launches
+  ⚙️#work Conduct 3 Falcon 9 Launches
+  
   Perform 3 launches within a 60-day period to test rapid reuse capabilities. Complete all 3 launches in 60 days.
   
-  - #work Analyze Cost and Time Savings
+  ⚙️#work Analyze Cost and Time Savings
+  
   Calculate the cost per launch and measure savings compared to single-use rockets. Complete cost analysis within 10 days after the last launch.
   
   
   ### 
   
   ### extinguished animals meat
-  - #experiment Customer Validation
-  	- Conduct surveys and interviews with potential customers to validate the value proposition of the vein visualization device and gather feedback for improvements.
-  - #experiment Pricing Strategy
-  	- Test different pricing models and price points to determine the optimal pricing strategy that maximizes revenue while remaining competitive in the market.
-  - #experiment Marketing Channels
-  	- Experiment with different marketing channels, such as social media advertising, targeted email campaigns, and partnerships with medical associations, to identify the most effective channels for reaching and engaging with healthcare professionals.
-  - #experiment Training Program Enhancement
-  	- Assess the effectiveness of the current training program by gathering feedback from users and conduct pilot tests of enhanced training materials or methods to improve user proficiency and satisfaction.
-  - #experiment Expansion into New Markets
-  	- Explore opportunities to expand the distribution of the vein visualization device into new geographic markets or other healthcare specialties through pilot programs and partnerships with local distributors or healthcare providers.
+  #experiment Customer Validation
+  	Conduct surveys and interviews with potential customers to validate the value proposition of the vein visualization device and gather feedback for improvements.
+  #experiment Pricing Strategy
+  	Test different pricing models and price points to determine the optimal pricing strategy that maximizes revenue while remaining competitive in the market.
+  #experiment Marketing Channels
+  	Experiment with different marketing channels, such as social media advertising, targeted email campaigns, and partnerships with medical associations, to identify the most effective channels for reaching and engaging with healthcare professionals.
+  #experiment Training Program Enhancement
+  	Assess the effectiveness of the current training program by gathering feedback from users and conduct pilot tests of enhanced training materials or methods to improve user proficiency and satisfaction.
+  #experiment Expansion into New Markets
+  	Explore opportunities to expand the distribution of the vein visualization device into new geographic markets or other healthcare specialties through pilot programs and partnerships with local distributors or healthcare providers.
   ### Exotic Pet Rental
-  - #experiment Pet Selection
-  	- Test different exotic pet species to determine which ones are most popular and in high demand among customers.
-  - #experiment Rental Periods
-  	- Experiment with different rental periods (e.g., daily, weekly, monthly) to determine the optimal duration that balances customer satisfaction and operational efficiency.
-  - #experiment Complementary Services
-  	- Test the demand for additional services, such as pet grooming or training, to assess their potential as revenue streams and enhance the overall customer experience.
-  - #experiment Marketing Channels
-  	- Experiment with various marketing channels, such as online advertising, social media influencers, and collaborations with local pet stores, to identify the most effective ways to reach and attract customers.
-  - #experiment Customer Satisfaction
-  	- Conduct surveys and collect feedback from customers to measure their satisfaction with the rental service and identify areas for improvement.
+  #experiment Pet Selection
+  	Test different exotic pet species to determine which ones are most popular and in high demand among customers.
+  #experiment Rental Periods
+  	Experiment with different rental periods (e.g., daily, weekly, monthly) to determine the optimal duration that balances customer satisfaction and operational efficiency.
+  #experiment Complementary Services
+  	Test the demand for additional services, such as pet grooming or training, to assess their potential as revenue streams and enhance the overall customer experience.
+  #experiment Marketing Channels
+  	Experiment with various marketing channels, such as online advertising, social media influencers, and collaborations with local pet stores, to identify the most effective ways to reach and attract customers.
+  #experiment Customer Satisfaction
+  	Conduct surveys and collect feedback from customers to measure their satisfaction with the rental service and identify areas for improvement.
   ### Underwater restaurant
-  - #experiment Underwater Lighting Enhancement
-  	- Test different lighting techniques and fixtures to enhance the underwater ambiance and create a more captivating dining experience for guests.
-  - #experiment Menu Innovation
-  	- Introduce new dishes or unique culinary offerings to gauge customer preferences and expand the menu to cater to a wider range of tastes and preferences.
-  - #experiment Interactive Experience Evaluation
-  	- Assess the popularity and effectiveness of interactive experiences, such as fish feeding and guided underwater tours, by gathering feedback from guests and measuring their impact on customer satisfaction and repeat visits.
-  - #experiment Marketing Campaign Effectiveness
-  	- Measure the effectiveness of different marketing strategies and campaigns by tracking customer acquisition, engagement, and conversion rates to optimize marketing efforts and allocate resources efficiently.
-  - #experiment Sustainability Initiatives
-  	- Implement and evaluate sustainability initiatives, such as reducing plastic waste and implementing eco-friendly practices, to assess their impact on the restaurant's brand reputation and customer satisfaction.
+  #experiment Underwater Lighting Enhancement
+  	Test different lighting techniques and fixtures to enhance the underwater ambiance and create a more captivating dining experience for guests.
+  #experiment Menu Innovation
+  	Introduce new dishes or unique culinary offerings to gauge customer preferences and expand the menu to cater to a wider range of tastes and preferences.
+  #experiment Interactive Experience Evaluation
+  	Assess the popularity and effectiveness of interactive experiences, such as fish feeding and guided underwater tours, by gathering feedback from guests and measuring their impact on customer satisfaction and repeat visits.
+  #experiment Marketing Campaign Effectiveness
+  	Measure the effectiveness of different marketing strategies and campaigns by tracking customer acquisition, engagement, and conversion rates to optimize marketing efforts and allocate resources efficiently.
+  #experiment Sustainability Initiatives
+  	Implement and evaluate sustainability initiatives, such as reducing plastic waste and implementing eco-friendly practices, to assess their impact on the restaurant's brand reputation and customer satisfaction.
 - ## 🔑 Keys
   
 - ## 🗄️ Topics

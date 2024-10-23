@@ -1,4 +1,4 @@
-## profile Name - Relationship - Customer satisfaction
+## profiles - Relationship - Customer satisfaction
 #rating: 70
 - Ensuring customer satisfaction is crucial to avoid negative reviews and retain business.
 - **💭 Questions**

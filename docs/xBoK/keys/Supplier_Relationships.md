@@ -1,4 +1,4 @@
-## segment Name - Partners - Supplier Relationships
+## segments - Partners - Supplier Relationships
 #rating: 30
 - Building and maintaining good relationships with suppliers can ensure the timely availability of quality materials or products.
 - **💭 Questions**

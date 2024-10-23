@@ -1,4 +1,4 @@
-## segment Name - Market maturity
+## segments - Market maturity
 #rating: 30
 - how mature is the market? Is it ready for customers?
 - **💭 Questions**

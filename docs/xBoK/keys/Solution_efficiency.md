@@ -1,4 +1,4 @@
-## solution Name - Solution efficiency
+## solutions - Solution efficiency
 #rating: 55
 - does the solution solve the problem?
 - **💭 Questions**

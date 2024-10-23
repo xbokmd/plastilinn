@@ -1,4 +1,4 @@
-## solution Name - Ease of Use
+## solutions - Ease of Use
 #rating: 45
 - The product should be user-friendly. Ease of use can enhance customer experience and contribute to product adoption.
 - **💭 Questions**

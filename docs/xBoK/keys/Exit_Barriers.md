@@ -1,4 +1,4 @@
-## segment Name - Exit Barriers
+## segments - Exit Barriers
 #rating: 15
 - Assess the barriers that customers may face when trying to switch from the solution to a competitor.
 - **💭 Questions**

@@ -1,4 +1,4 @@
-## solution Name - Offerings - Solutions offerings structure
+## solutions - Offerings - Solutions offerings structure
 #rating: 40
 - Evaluate the coherence and adaptability of the solution offerings structure, considering different customer profiles and providing appropriate options.
 - **💭 Questions**

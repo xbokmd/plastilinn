@@ -1,4 +1,4 @@
-## segment Name - Competition - Competitive Advantage
+## segments - Competition - Competitive Advantage
 #rating: 65
 - Establishing a unique selling proposition or competitive advantage is essential for standing out in the market.
 - **💭 Questions**

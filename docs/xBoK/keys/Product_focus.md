@@ -1,4 +1,4 @@
-## solution Name - Product focus
+## solutions - Product focus
 #rating: 30
 - Determine if the product or service focuses on solving a specific problem or if it is scattered.
 - **💭 Questions**

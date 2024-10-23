@@ -1,4 +1,4 @@
-## solution Name - Brochure - Business Brochure Quality
+## solutions - Brochure - Business Brochure Quality
 #rating: 20
 - Evaluate the quality of the business brochure, including its ability to effectively communicate relevant_information, convey the company's image, and generate a call to action.
 - **💭 Questions**

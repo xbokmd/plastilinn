@@ -1,4 +1,4 @@
-## segment Name - Accessibility to decision makers
+## segments - Accessibility to decision makers
 #rating: 40
 - Assess the accessibility to decision-makers in the target market.
 - **💭 Questions**

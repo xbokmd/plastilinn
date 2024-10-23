@@ -1,4 +1,4 @@
-## profile Name - Value proposition - Solution to a Problem
+## profiles - Value proposition - Solution to a Problem
 #rating: 70
 - The startup should offer a solution that addresses a real and significant problem faced by a target market.
 - **💭 Questions**

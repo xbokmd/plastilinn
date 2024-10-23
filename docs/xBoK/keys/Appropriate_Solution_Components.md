@@ -1,4 +1,4 @@
-## solution Name - Components - Appropriate Solution Components
+## solutions - Components - Appropriate Solution Components
 #rating: 20
 - Assess the solidity and maintenance guarantees of the solution components, including the potential for price increases.
 - **💭 Questions**

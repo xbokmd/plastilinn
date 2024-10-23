@@ -1,4 +1,4 @@
-## profile Name - Sales strategy - Decision makers accessibility
+## profiles - Sales strategy - Decision makers accessibility
 #rating: 30
 - how difficult is it to talk to the decision makers?
 - **💭 Questions**

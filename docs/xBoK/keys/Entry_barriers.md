@@ -1,4 +1,4 @@
-## segment Name - Entry barriers
+## segments - Entry barriers
 #rating: 30
 - how difficult is it to entry the market?
 - **💭 Questions**

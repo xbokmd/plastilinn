@@ -1,11 +1,7 @@
-    - #goal Launch and deployment of satellites for commercial and government clients
-Space X is dedicated to launching and deploying satellites for both commercial and government clients.
-     #goal Resupply missions to the International Space Station (ISS)
-Space X carries out resupply missions to the ISS, transporting supplies and necessary equipment to sustain the crew on the station.
-     #goal Development and launch of manned missions to the ISS
-Space X is developing and launching manned missions to the ISS, allowing astronauts to travel to and work on the space station.
-     #goal Development and testing of advanced rocket and spacecraft technologies
-Space X is constantly working on the development and testing of advanced technologies for rockets and spacecraft, with the goal of improving the efficiency and reliability of space systems.
-     #goal Establishment of a sustainable presence on Mars
-Space X aims to establish a sustainable presence on Mars, developing technologies and systems that enable humans to live and work on the red planet.
+    | #goal /  (info) | Description | Units | Value | Term |
+| :---- | :---- | :---- | :---- | :---- |
+| 🎯#goal Maximize revenue | SpaceX aims to capitalize on the growing space industry, focusing on satellite launches, Mars missions, and space tourism, with the goal of significant returns on investment. | B$ | 2 | Long term |
+| 🎯#goal Expand global connectivity | Through the Starlink project, SpaceX intends to provide affordable, high-speed internet access to a vast portion of the global population, especially underserved regions. | devices/year | 50M | Long term |
+| 🎯#goal Ensure ethical space exploration | Space missions can have significant implications on space sustainability and ethics. SpaceX is committed to ensuring all its projects comply with strict ethical standards. | \- | \- | Short, Medium, Long term |
+| 🎯#goal Achieve flawless mission safety | Safety is a top priority for SpaceX, especially in human spaceflight missions. The company continuously improves its technology to ensure all missions are conducted with the highest safety standards. | \- | \- | Short term |
 

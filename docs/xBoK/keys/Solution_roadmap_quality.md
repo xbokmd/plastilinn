@@ -1,4 +1,4 @@
-## solution Name - Roadmap - Solution roadmap quality
+## solutions - Roadmap - Solution roadmap quality
 #rating: 10
 - Assess the quality of the solution roadmap, including the incorporation of features, feasibility, and release planning.
 - **💭 Questions**

@@ -1,4 +1,4 @@
-## segment Name - Partners - Networking
+## segments - Partners - Networking
 #rating: 25
 - Building a strong network of contacts can provide access to resources, partnerships, and opportunities that can contribute to business growth.
 - **💭 Questions**

@@ -1,4 +1,4 @@
-  <h2>Business Model Canvas (- #profile Main profile)</h2>
+  <h2>Business Model Canvas (🙎‍♂️#profile Main profile)</h2>
 <div id="business-model-canvas" class="bg-gray-100 h-screen p-5">
     <div class="row-span-2 grid h-3/5 grid-cols-5 bg-white shadow-lg">
         <div class="row-span-2 border pl-2">
@@ -41,10 +41,10 @@
         </div>
     </div>
 </div>
-<h2>Value Proposition Canvas (- #profile Main profile)</h2>
+<h2>Value Proposition Canvas (🙎‍♂️#profile Main profile)</h2>
 <div id="value-proposition-canvas" class="bg-gray-100 h-screen p-5">
     <div class="grid h-3/5 grid-cols-2 gap-4 bg-white shadow-lg p-5">
-        <!-- Customer Segment -->
+        <!-Customer Segment -->
         <div class="border p-5">
             <h3>Customer Segment</h3>
             <div class="border-t mt-3">
@@ -60,7 +60,7 @@
                 <p>Lower space launch costs through reusable rockets and the potential to explore new commercial opportunities in space.</p>
             </div>
         </div>
-        <!-- Value Proposition -->
+        <!-Value Proposition -->
         <div class="border p-5">
             <h3>Value Proposition</h3>
             <div class="border-t mt-3">
@@ -78,35 +78,35 @@
         </div>
     </div>
 </div>
-<h2>Empathy Map (- #profile Main profile)</h2>
+<h2>Empathy Map (🙎‍♂️#profile Main profile)</h2>
 <div id="empathy-map" class="bg-gray-100 h-screen p-5">
     <div class="grid h-3/5 grid-cols-2 gap-4 bg-white shadow-lg p-5">
-        <!-- What Customer Thinks and Feels -->
+        <!-What Customer Thinks and Feels -->
         <div class="border p-5">
             <h3>What the Customer Thinks and Feels</h3>
             <p>The customers are excited about space exploration possibilities but are concerned about the costs and risks associated with space travel.</p>
         </div>
-        <!-- What Customer Sees -->
+        <!-What Customer Sees -->
         <div class="border p-5">
             <h3>What the Customer Sees</h3>
             <p>They see a growing market of private space launches and competition between aerospace companies to innovate in reusable rocket technology.</p>
         </div>
-        <!-- What Customer Hears -->
+        <!-What Customer Hears -->
         <div class="border p-5">
             <h3>What the Customer Hears</h3>
             <p>Customers hear about advancements in space technology, the colonization of Mars, and new commercial opportunities in Low Earth Orbit (LEO).</p>
         </div>
-        <!-- What Customer Says and Does -->
+        <!-What Customer Says and Does -->
         <div class="border p-5">
             <h3>What the Customer Says and Does</h3>
             <p>They express interest in space exploration projects and seek partnerships with advanced tech companies for successful missions.</p>
         </div>
-        <!-- Pains -->
+        <!-Pains -->
         <div class="border p-5">
             <h3>Pains</h3>
             <p>Worries about the high costs of space missions and the reliability of emerging technologies.</p>
         </div>
-        <!-- Gains -->
+        <!-Gains -->
         <div class="border p-5">
             <h3>Gains</h3>
             <p>The opportunity to access space with significantly lower costs thanks to SpaceX's reusable rocket technology.</p>

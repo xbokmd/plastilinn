@@ -1,4 +1,4 @@
-## solution Name - Pricing - Adecuate pricing
+## solutions - Pricing - Adecuate pricing
 #rating: 55
 - Having a well-thought-out pricing strategy is essential. It should take into account customer demand, competitor pricing, and cost structures;Determine if the pricing scheme is coherent, consistent with the value generated for the customer, and allows for flexibility and recurring revenue.
 - **💭 Questions**

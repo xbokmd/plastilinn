@@ -1,6 +1,11 @@
-      Image: A captivating image of a SpaceX rocket launch.
+      Image:
+
+![spacex](https://cdn2.picryl.com/photo/2015/04/17/dragon-spacecraft-grappled-by-ssrms-ff9d6b-1024.jpg)
+
 Title: "SpaceX: Pioneering the Future of Space Travel"
+
 Subtitle: "Innovation, Reliability, and Sustainability Beyond Earth"
+
 Our Mission and Vision:  "At SpaceX, our mission is to make life multi-planetary. Founded by Elon Musk, we're driving the future of space exploration through cutting-edge technology and innovation. Our vision extends from enhancing satellite deployment capabilities to colonizing Mars, ensuring the long-term survival of humanity."
 
 Space Launch Services: "Offering reliable and cost-effective launch solutions for satellites and spacecraft, with capabilities ranging from low Earth orbit to interplanetary missions."
@@ -16,5 +21,6 @@ Collaborative Partnerships: "Working hand-in-hand with space agencies to co-deve
 Sustainable Exploration: "Committed to minimizing environmental impact and ensuring a sustainable future for space travel."
 
 Call to Action: "Join us in pioneering the next era of space exploration. Contact us to discuss how we can support your mission objectives."
+
 Contact Information: "Website: www.spacex.com | Email: contact@spacex.com | Phone: (123) 456-7890"
 

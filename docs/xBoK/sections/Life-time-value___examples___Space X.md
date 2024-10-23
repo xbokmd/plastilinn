@@ -2,9 +2,10 @@
 
 **Average Contract Value (ACV)**
 First, determine the Average Contract Value (ACV) for services provided to space agencies, including launch services, satellite deployment, resupply missions, and manned missions. Assuming:
-     ACV for satellite launches: $60 million
-     ACV for ISS resupply missions: $150 million
-     ACV for crewed missions: $200 million
+
+ACV for satellite launches: $60 million
+ACV for ISS resupply missions: $150 million
+ACV for crewed missions: $200 million
 
 If a space agency contracts SpaceX for 2 satellite launches, 1 resupply mission, and 1 crewed mission annually, the yearly revenue from this agency would be:
 {Annual Revenue} = (2 times $60M) + $150M + $200M = $470M

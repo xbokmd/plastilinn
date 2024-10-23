@@ -128,73 +128,73 @@
   In conclusion, the "Function List" concept in business modeling is a vital tool that helps businesses to plan, manage, and optimize their operations towards the achievement of their business goals.
 - ## 👉 Examples
   ### Space X
-  - #function Spacecraft development and manufacturing
-  Space X must design and manufacture spacecraft, such as the Dragon spacecraft and Starship, for crewed and uncrewed missions.
+  👔#function Development and manufacturing
   
-  - #function Space exploration and colonization
-  Space X must invest in research and development to enable human colonization of Mars and explore other destinations in space.
+  SpaceX designs and manufactures reusable rockets like the Falcon 9 and spacecraft like the Dragon, focusing on reducing launch costs and increasing mission frequency.
   
-  - #function Satellite communication services
-  Space X must provide satellite communication services through its Starlink project, delivering high-speed internet access to remote areas.
+  👔#function Operations and mission management
   
-  - #function Rocket reusability and recovery
-  Space X must develop and implement technologies for the recovery and reuse of rockets, reducing the cost of space transportation.
+  Coordinates and executes satellite launches and crewed missions, ensuring that each mission meets technical requirements and deadlines.
   
-  - #function Landing and recovery systems
-  Space X must develop landing and recovery systems for rockets and spacecraft, ensuring safe and controlled landings after missions.
+  👔#function Research and development (R&D)
   
-  - #function Supply chain and logistics management
-  Space X must manage its supply chain and logistics to ensure the timely delivery of components and materials for rocket and spacecraft manufacturing.
+  Invests in continuous research and development to advance space technology, with the ultimate goal of facilitating Mars colonization and improving rocket reusability.
   
-  - #function Quality assurance and safety
-  Space X must conduct rigorous testing and quality assurance to ensure the reliability and safety of its rockets and spacecraft.
+  👔#function Finance and contracts
   
-  - #function Customer support and service
-  Space X must provide customer support and service to address inquiries and provide technical assistance to its customers.
+  Manages financial resources through securing government contracts, commercial agreements, and private funding, optimizing investment in new technologies and operations.
   
-  - #function Partnerships and collaborations development
-  Space X must establish partnerships and collaborations with other organizations to leverage expertise and resources in space exploration and technology.
+  👔#function Marketing and PR
   
-  - #function Regulatory compliance
-  Space X must comply with legal and regulatory requirements related to space exploration, satellite deployment, and other activities.
+  Handles strategic communication and media promotion, leveraging live launches and Elon Musk’s personal brand to increase the company’s visibility and attract customers.
   
-  - #function Public relations and marketing
-  Space X must engage in public relations and marketing activities to promote its solutions, attract customers, and build brand awareness.
+  👔#function Supply chain
+  
+  Coordinates suppliers, manufacturers, and distributors to ensure the efficient delivery of components and materials necessary for rocket manufacturing and launches.
+  
+  👔#function Compliance
+  
+  Ensures that SpaceX complies with all local and international regulations regarding rocket launches, satellite deployment, and safety for crewed flights.
+  
+  👔#function Customer support
+  
+  Provides technical assistance and support services to clients using satellite launch services and Starlink internet access, ensuring customer satisfaction and retention.
+  
   ### 
   
   ### extinguished animals meat
-  - #function Scientific research and technological development
-  	- The company must invest in R&D to understand and manipulate the DNA of extinct animals.
-  - #function Cloning and assisted reproduction techniques
-  	- The company must use cloning and reproduction methods to create living individuals of extinct species.
-  - #function Facilities and care centers management
-  	- The company must establish and manage facilities for housing and breeding revived extinct animals.
-  - #function Meat production and processing
-  	- The company must ethically slaughter and process the meat of revived extinct animals.
-  - #function Marketing and sales strategies
-  	- The company must implement marketing strategies to promote and sell its luxury meat products.
+  #function Scientific research and technological development
+  	The company must invest in R&D to understand and manipulate the DNA of extinct animals.
+  #function Cloning and assisted reproduction techniques
+  	The company must use cloning and reproduction methods to create living individuals of extinct species.
+  #function Facilities and care centers management
+  	The company must establish and manage facilities for housing and breeding revived extinct animals.
+  #function Meat production and processing
+  	The company must ethically slaughter and process the meat of revived extinct animals.
+  #function Marketing and sales strategies
+  	The company must implement marketing strategies to promote and sell its luxury meat products.
   ### Exotic Pet Rental
-  - #function Pet selection and care
-  	- The company must carefully select and care for the exotic pets, ensuring they are in good health and well-being during the rental period.
-  - #function Temporary housing and supplies
-  	- The company must provide temporary housing and supplies, such as cages and food, to ensure customers can provide proper care to the rented pets.
-  - #function Expert guidance and assistance
-  	- The company must offer guidance and assistance to customers, providing_information and recommendations on the proper care of exotic pets.
-  - #function Safety and contract management
-  	- The company must establish safety protocols and ensure customers meet requirements and sign contracts to ensure the well-being of the pets.
-  - #function Marketing and promotion
-  	- The company must promote its exotic pet rental service through various marketing channels to attract more customers and increase visibility.
+  #function Pet selection and care
+  	The company must carefully select and care for the exotic pets, ensuring they are in good health and well-being during the rental period.
+  #function Temporary housing and supplies
+  	The company must provide temporary housing and supplies, such as cages and food, to ensure customers can provide proper care to the rented pets.
+  #function Expert guidance and assistance
+  	The company must offer guidance and assistance to customers, providing_information and recommendations on the proper care of exotic pets.
+  #function Safety and contract management
+  	The company must establish safety protocols and ensure customers meet requirements and sign contracts to ensure the well-being of the pets.
+  #function Marketing and promotion
+  	The company must promote its exotic pet rental service through various marketing channels to attract more customers and increase visibility.
   ### Underwater restaurant
-  - #function Restaurant operations
-  	- The restaurant must efficiently manage its daily operations, including food preparation, service, and customer satisfaction.
-  - #function Menu development and culinary innovation
-  	- The restaurant must continuously develop and innovate its menu to offer unique and delicious dishes that cater to different tastes.
-  - #function Interior design and ambiance
-  	- The restaurant must create and maintain a captivating submarine-themed interior design and ambiance to enhance the dining experience.
-  - #function Marine life preservation and care
-  	- The restaurant must ensure the preservation and care of the marine life surrounding the establishment, employing experts and following environmental guidelines.
-  - #function Events and entertainment
-  	- The restaurant must organize events and entertainment activities, such as live music performances and interactive experiences, to enhance guests' visits.
+  #function Restaurant operations
+  	The restaurant must efficiently manage its daily operations, including food preparation, service, and customer satisfaction.
+  #function Menu development and culinary innovation
+  	The restaurant must continuously develop and innovate its menu to offer unique and delicious dishes that cater to different tastes.
+  #function Interior design and ambiance
+  	The restaurant must create and maintain a captivating submarine-themed interior design and ambiance to enhance the dining experience.
+  #function Marine life preservation and care
+  	The restaurant must ensure the preservation and care of the marine life surrounding the establishment, employing experts and following environmental guidelines.
+  #function Events and entertainment
+  	The restaurant must organize events and entertainment activities, such as live music performances and interactive experiences, to enhance guests' visits.
 - ## 🔑 Keys
   
 - ## 🗄️ Topics

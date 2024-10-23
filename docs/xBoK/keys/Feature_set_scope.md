@@ -1,4 +1,4 @@
-## solution Name - Features - Feature set scope
+## solutions - Features - Feature set scope
 #rating: 35
 - Determine if all the necessary features for the solution have been identified and if there is an appropriate balance between too many or too few features.
 - **💭 Questions**

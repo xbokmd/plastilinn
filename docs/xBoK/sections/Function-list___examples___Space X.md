@@ -1,23 +1,33 @@
-    - #function Spacecraft development and manufacturing
-Space X must design and manufacture spacecraft, such as the Dragon spacecraft and Starship, for crewed and uncrewed missions.
-     #function Space exploration and colonization
-Space X must invest in research and development to enable human colonization of Mars and explore other destinations in space.
-     #function Satellite communication services
-Space X must provide satellite communication services through its Starlink project, delivering high-speed internet access to remote areas.
-     #function Rocket reusability and recovery
-Space X must develop and implement technologies for the recovery and reuse of rockets, reducing the cost of space transportation.
-     #function Landing and recovery systems
-Space X must develop landing and recovery systems for rockets and spacecraft, ensuring safe and controlled landings after missions.
-     #function Supply chain and logistics management
-Space X must manage its supply chain and logistics to ensure the timely delivery of components and materials for rocket and spacecraft manufacturing.
-     #function Quality assurance and safety
-Space X must conduct rigorous testing and quality assurance to ensure the reliability and safety of its rockets and spacecraft.
-     #function Customer support and service
-Space X must provide customer support and service to address inquiries and provide technical assistance to its customers.
-     #function Partnerships and collaborations development
-Space X must establish partnerships and collaborations with other organizations to leverage expertise and resources in space exploration and technology.
-     #function Regulatory compliance
-Space X must comply with legal and regulatory requirements related to space exploration, satellite deployment, and other activities.
-     #function Public relations and marketing
-Space X must engage in public relations and marketing activities to promote its solutions, attract customers, and build brand awareness.
+    👔#function Development and manufacturing
+
+SpaceX designs and manufactures reusable rockets like the Falcon 9 and spacecraft like the Dragon, focusing on reducing launch costs and increasing mission frequency.
+
+👔#function Operations and mission management
+
+Coordinates and executes satellite launches and crewed missions, ensuring that each mission meets technical requirements and deadlines.
+
+👔#function Research and development (R&D)
+
+Invests in continuous research and development to advance space technology, with the ultimate goal of facilitating Mars colonization and improving rocket reusability.
+
+👔#function Finance and contracts
+
+Manages financial resources through securing government contracts, commercial agreements, and private funding, optimizing investment in new technologies and operations.
+
+👔#function Marketing and PR
+
+Handles strategic communication and media promotion, leveraging live launches and Elon Musk’s personal brand to increase the company’s visibility and attract customers.
+
+👔#function Supply chain
+
+Coordinates suppliers, manufacturers, and distributors to ensure the efficient delivery of components and materials necessary for rocket manufacturing and launches.
+
+👔#function Compliance
+
+Ensures that SpaceX complies with all local and international regulations regarding rocket launches, satellite deployment, and safety for crewed flights.
+
+👔#function Customer support
+
+Provides technical assistance and support services to clients using satellite launch services and Starlink internet access, ensuring customer satisfaction and retention.
+
 

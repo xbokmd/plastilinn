@@ -1,4 +1,4 @@
-## profile Name - Channels - Distribution Channels
+## profiles - Channels - Distribution Channels
 #rating: 65
 - Efficient distribution channels are crucial for delivering products to customers in a timely and cost-effective manner.
 - **💭 Questions**

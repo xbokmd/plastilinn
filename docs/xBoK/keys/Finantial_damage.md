@@ -1,4 +1,4 @@
-## profile Name - Goals - Finantial damage
+## profiles - Goals - Finantial damage
 #rating: 35
 - does the problem make the customer loose money?
 - **💭 Questions**

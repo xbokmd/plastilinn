@@ -1,4 +1,4 @@
-## solution Name - Product-Market Fit
+## solutions - Product-Market Fit
 #rating: 70
 - The product should satisfy a significant need in the market. Achieving product-market fit is a critical milestone for startups.
 - **💭 Questions**

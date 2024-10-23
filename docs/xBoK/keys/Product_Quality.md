@@ -1,4 +1,4 @@
-## solution Name - Product Quality
+## solutions - Product Quality
 #rating: 40
 - The product or service must be of high quality to meet or exceed customer expectations and to build a positive brand reputation.
 - **💭 Questions**

@@ -1,4 +1,4 @@
-## profile Name - Goals - Urgency perception
+## profiles - Goals - Urgency perception
 #rating: 45
 - is the problem perceived by the customer as urgent?
 - **💭 Questions**

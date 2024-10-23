@@ -1,4 +1,4 @@
-## segment Name - Partners - Strategic Alliances
+## segments - Partners - Strategic Alliances
 #rating: 40
 - Building strategic alliances and partnerships can provide access to resources, markets, and expertise, accelerating growth.
 - **💭 Questions**

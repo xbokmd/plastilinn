@@ -1,4 +1,4 @@
-## profile Name - Sales strategy - Sales cycle duration
+## profiles - Sales strategy - Sales cycle duration
 #rating: 35
 - how long will it take to an opportunity to turn into a deal?
 - **💭 Questions**

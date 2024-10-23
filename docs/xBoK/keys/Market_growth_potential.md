@@ -1,4 +1,4 @@
-## segment Name - Market trends - Market growth potential
+## segments - Market trends - Market growth potential
 #rating: 60
 - how big can the potential market be?
 - **💭 Questions**

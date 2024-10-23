@@ -126,25 +126,30 @@
   In essence, the Person/Functions model is a critical aspect of business design. It helps to structure the business, optimize its operations, and ensure that every stakeholder is contributing effectively to its success. It also provides a foundation for other business modeling concepts, such as process mapping and workflow design, by defining who does what in the business.
 - ## 👉 Examples
   ### Space X
-  - #function Strategy definition
+  👔#function Strategy definition
   Setting the strategic direction and vision for the company
   
-  - #function High level decision making
+  👔#function High level decision making
   Making high-level decisions regarding technology development, investments, and partnerships
   
-  - #function Operational oversight
+  👔#function Operational oversight
+  
   Overseeing the overall operations and performance of Space X
   
-  - #function Leadership and team motivation
+  👔#function Leadership and team motivation
+  
   Leading and inspiring the team to achieve ambitious goals
   
-  - #function Stakeholder engagement
+  👔#function Stakeholder engagement
+  
   Engaging with stakeholders, including government agencies, investors, and customers
   
-  - #function Public representation
+  👔#function Public representation
+  
   Representing Space X in public events, conferences, and media appearances
   
-  - #function Industry collaboration
+  👔#function Industry collaboration
+  
   Collaborating with other industry leaders and organizations to advance space exploration and technology
   
   
